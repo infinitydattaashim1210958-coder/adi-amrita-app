@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 029 · “শরীরের অদৃশ্য জাল: Collagen, Elastin ও Extracellular Matrix-এর রহস্য”</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 029">EPISODE 029</h1>
+  <div class="ttl">“শরীরের অদৃশ্য জাল: Collagen, Elastin ও Extracellular Matrix-এর রহস্য”</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">029</div></div>
+    <div class="face b"><div class="t2">“শরীরের অদৃশ্য জাল: Collagen, Elastin ও Extracellular Matrix-এর রহস্য”</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>Gray’s Anatomy — Episode 29</h3><div class="body">
+</div></section>
+<section class="sec r" id="s2"><h3>“শরীরের অদৃশ্য জাল: Collagen, Elastin ও Extracellular Matrix-এর রহস্য”</h3><div class="body">
+<p>Dhaka Medical College | Anatomy Department | Chapter 2: Integrating Cells into Tissues</p>
+</div></section>
+<section class="sec r" id="s3"><h3>Scene 1: Anatomy Lecture Theatre — ECM-এর আসল পরিচয়</h3><div class="body">
+<p>সকাল ৮টা ৩০ মিনিট।</p>
+<p>Adi ও Amrita আজ পাশাপাশি বসেছে। আগের দিনের পড়া খাতা খুলে Adi লিখল:</p>
+<p>ECM = Fibres + Interfibrillar Matrix</p>
+<p>Dr. Sharmin ক্লাসে ঢুকেই বললেন,</p>
+<p>— “গত ক্লাসে আমরা জেনেছি, Extracellular Matrix শুধু কোষের চারপাশের নিষ্ক্রিয় পদার্থ নয়। এটি cell-এর behaviour, migration, proliferation এবং tissue remodelling-এ ভূমিকা রাখে। আজ আমরা ECM-এর components বিস্তারিতভাবে পড়ব।”</p>
+<p>তিনি বোর্ডে একটি diagram আঁকলেন।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Extracellular Matrix Reorganization During Wound Healing and Its Impact on Abnormal Scarring - Meilang Xue, Christopher J. Jackson, 2015</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/6JE39r7ty7UYaA8pvtwBhLfbyI8h6F5ypPOoTucLzjXKriWhj-z76S_4A1rMlkin_GWMaBLr9IYhWl6AlkgW2oJatRzQnVoiDRgMhI43_S0RclOYGEa9AMVFY16aedSvj16ZBVYB1QgponkPxsaXuK4_J-2AhsyF1ZQdv-DCO9iSarOgo8FYjSMvZE0KgmBl?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Extracellular%20Matrix%20Reorganization%20During%20Wound%20Healing%20and%20Its%20Impact%20on%20Abnormal%20Scarring%20-%20Meilang%20Xue%2C%20Christopher%20J.%20Jackson%2C%202015">Image search ↗</a></figure>
+<p>— “ECM-কে প্রধানত দুটি functional component হিসেবে বুঝতে পারো।”</p>
+<ul><li>Fibrillar matrix — মূলত insoluble structural protein fibres।</li><li>Interfibrillar matrix (ground substance) — fibres-এর মধ্যবর্তী hydrated material, যার মধ্যে glycosaminoglycans, proteoglycans ও adhesive glycoproteins থাকে।</li></ul>
+<p>Rafi হাত তুলল।</p>
+<p>— “Madam, তাহলে collagen এবং elastin হলো fibrillar matrix-এর প্রধান protein?”</p>
+<p>— “হ্যাঁ। Insoluble fibres প্রধানত দুই ধরনের structural protein দিয়ে গঠিত—collagen family এবং elastin।”</p>
+<p>Dr. Sharmin বোর্ডে লিখলেন:</p>
+<p>Fibrillar matrix → Collagen + Elastin</p>
+<p>Interfibrillar matrix → GAGs + Proteoglycans + Adhesive glycoproteins</p>
+<p>— “এখন বলো, কোন component কোন ধরনের mechanical force resist করে?”</p>
+<p>Amrita উত্তর দিল,</p>
+<p>— “Collagen fibres tension resist করে। Elastin stretching-এর পর recoil বা resilience দেয়। আর hydrated proteoglycans ও glycosaminoglycans compressive force resist করতে সাহায্য করে।”</p>
+<p>— “Excellent. আজকের পুরো ক্লাসের foundation এটাই।”</p>
+</div></section>
+<section class="sec r" id="s4"><h3>Feynman explanation: Tissue কেন ভিন্নভাবে কাজ করে?</h3><div class="body">
+<p>Adi কাগজে তিনটি উদাহরণ আঁকল।</p>
+<ul><li>একটি tendon</li><li>একটি mesentery</li><li>একটি cartilage</li></ul>
+<p>তারপর Amrita-কে বলল,</p>
+<p>— “ভাব, tendon হলো শক্ত দড়ির মতো। টান দিলে সহজে লম্বা হবে না। তাই collagen বেশি।”</p>
+<p>— “Mesentery?”</p>
+<p>— “এটি শরীরের অঙ্গগুলোর সঙ্গে যুক্ত থাকে এবং shape পরিবর্তনের সুযোগ দেয়। তাই elastic fibres-এর ভূমিকা গুরুত্বপূর্ণ।”</p>
+<p>— “Cartilage?”</p>
+<p>— “এটি compression সহ্য করে। তাই hydrated GAGs ও proteoglycans বেশি গুরুত্বপূর্ণ।”</p>
+<p>Amrita মাথা নাড়ল।</p>
+<p>— “তাহলে tissue-এর mechanical properties নির্ভর করে ECM-এর কোন component কতটা আছে এবং কীভাবে সাজানো আছে তার ওপর।”</p>
+<p>Dr. Sharmin পেছন থেকে বললেন,</p>
+<p>— “ঠিক বলেছ। আর bone-এ soluble polymers-এর বড় অংশের জায়গায় mineral crystals থাকে, যা bone-কে incompressible rigidity দেয়।”</p>
+</div></section>
+<section class="sec r" id="s5"><h3>Scene 2: Collagen — শরীরের Structural Strength</h3><div class="body">
+<p>Dr. Sharmin বড় করে লিখলেন:</p>
+</div></section>
+<section class="sec r" id="s6"><h3>COLLAGENS</h3><div class="body">
+<p>— “Collagen হলো শরীরের অত্যন্ত গুরুত্বপূর্ণ structural protein family। Gray’s-এর বর্ণনা অনুযায়ী, শরীরের মোট protein-এর প্রায় ৩০% collagen।”</p>
+<p>ক্লাসে সবাই একটু অবাক।</p>
+<p>Rafi বলল,</p>
+<p>— “এত বেশি?”</p>
+<p>— “হ্যাঁ। Connective tissue-এর organization এবং mechanical strength-এর জন্য collagen অত্যন্ত গুরুত্বপূর্ণ।”</p>
+</div></section>
+<section class="sec r" id="s7"><h3>Collagen-এর common molecular characteristics</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “সব collagen-এর কিছু biochemical বৈশিষ্ট্য common।”</p>
+<p>তিনি বোর্ডে লিখলেন:</p>
+<ul><li>High content of hydroxyproline.</li><li>Three polypeptide chains.</li><li>Triple-helical molecular structure.</li><li>Extensive post-translational modification.</li><li>Secretion-এর পর individual molecules-এর মধ্যে cross-linking হয়ে stable polymers তৈরি।</li></ul>
+<p>Adi বলল,</p>
+<p>— “তিনটি polypeptide chain একসঙ্গে মিলে triple helix তৈরি করে। তাই collagen molecule-এর structure অন্য অনেক protein থেকে আলাদা।”</p>
+<p>— “সঠিক। Collagen-এর mechanical strength বোঝার জন্য triple-helical organization এবং পরবর্তী cross-linking গুরুত্বপূর্ণ।”</p>
+</div></section>
+<section class="sec r" id="s8"><h3>Collagen-এর classification</h3><div class="body">
+<p>Dr. Sharmin এবার একটি table আঁকলেন।</p>
+<div class="tw"><table><thead><tr><th>Collagen group</th><th>Types</th></tr></thead><tbody><tr><td>Fibril-forming</td><td>I, II, III, V, XI</td></tr><tr><td>Sheet/meshwork-forming</td><td>IV, VIII, X</td></tr><tr><td>Anchoring or linking</td><td>VI, VII, IX, XII, XIV, XVIII</td></tr><tr><td>Transmembrane</td><td>XIII, XVII</td></tr></tbody></table></div>
+<p>Amrita বলল,</p>
+<p>— “Madam, তাহলে সব collagen fibre তৈরি করে না?”</p>
+<p>— “একদম। কিছু collagen fibril তৈরি করে, কিছু sheet বা meshwork, কিছু anchoring বা linking-এ অংশ নেয়, আর কিছু transmembrane protein।”</p>
+<p>Adi লিখে রাখল:</p>
+<p>সব Collagen structural protein হলেও, সব Collagen fibril-forming নয়।</p>
+</div></section>
+<section class="sec r" id="s9"><h3>Type I Collagen</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “এবার সবচেয়ে abundant collagen—Type I।”</p>
+<p>তিনি বোর্ডে লিখলেন:</p>
+<p>Type I Collagen — Most abundant collagen</p>
+<p>এর প্রধান locations:</p>
+<ul><li>Dermis</li><li>Fasciae</li><li>Bone</li><li>Tendons</li><li>Ligaments</li><li>Blood vessels</li><li>Sclera of the eyeball</li></ul>
+<p>— “Type I collagen-এর triple-helical molecules পাশাপাশি staggered arrangement-এ align করে fibril তৈরি করে।”</p>
+<p>তিনি একটি diagram দেখালেন।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Current Insights into Collagen Type I</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/UcEUghlAqlzzxAKXutXObGYj5wQaWpsW7gGcFndVNayIKhwD8h6Obi3kAbM64E59-m8Hc1b35TdXMnqPQabMDWcyb6o8JStBtzb7AwSqyljN4-YAF1pe0Kpo_lVQE3podn-9aN3aRVT1iroh9gco0ehdWE1u8TKwkRzxTCXnXOPiSLbUz8c5Pey0C4tydf7W?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Current%20Insights%20into%20Collagen%20Type%20I">Image search ↗</a></figure>
+<p>— “প্রতিটি molecule-এর দৈর্ঘ্যের প্রায় তিন-চতুর্থাংশ neighbouring molecules-এর সঙ্গে overlap করে। ফলে fibril-এর মধ্যে characteristic banding pattern দেখা যায়।”</p>
+<p>Adi জিজ্ঞেস করল,</p>
+<p>— “Electron microscope-এ এই banding-এর repeat distance কত?”</p>
+<p>— “প্রায় ৬৫ nm।”</p>
+<p>Amrita বলল,</p>
+<p>— “এটাই collagen fibril-এর characteristic periodic banding।”</p>
+<p>Dr. Sharmin মাথা নাড়লেন।</p>
+<p>— “হ্যাঁ। আরও মনে রাখবে, collagen fibril-এর diameter tissue এবং age অনুযায়ী পরিবর্তিত হয়।”</p>
+<p>তিনি উদাহরণ দিলেন:</p>
+<ul><li>Developing tissue-তে fibril তুলনামূলক পাতলা হতে পারে।</li><li>Corneal stroma-তে fibrils uniform ও thin।</li><li>Tendon-এ fibrils অনেক বেশি thick হতে পারে।</li><li>High tensile loading-যুক্ত tissue-তে thicker fibrils দেখা যায়।</li></ul>
+<p>Adi প্রশ্ন করল,</p>
+<p>— “Tendon-এর fibril কি cornea-এর তুলনায় অনেক বেশি মোটা হতে পারে?”</p>
+<p>— “হ্যাঁ। Gray’s-এ tendon fibrils corneal fibrils-এর তুলনায় প্রায় ২০ গুণ পর্যন্ত thick হতে পারে বলে উল্লেখ করা হয়েছে।”</p>
+</div></section>
+<section class="sec r" id="s10"><h3>Collagen fibres-এর arrangement</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Fresh Type I collagen fibres tightly packed parallel fibrils দিয়ে তৈরি। এগুলো দেখতে white এবং glistening।”</p>
+<p>Amrita বলল,</p>
+<p>— “Light microscope-এ বিভিন্ন আকারের wavy বা crimped bundles দেখা যায়।”</p>
+<p>— “ঠিক। একটি bundle থেকে fibrils অন্য bundle-এর সঙ্গে interweave-ও করতে পারে। কিছু tissue-তে successive layers geometrical pattern-এ সাজানো থাকে।”</p>
+<p>তিনি cornea-এর উদাহরণ দিলেন।</p>
+<p>— “Corneal stroma-তে collagen fibrils-এর অত্যন্ত সুনির্দিষ্ট arrangement transparency বজায় রাখতে সাহায্য করে।”</p>
+<p>Rafi বলল,</p>
+<p>— “তাহলে collagen-এর শুধু পরিমাণ নয়, arrangement-ও function নির্ধারণ করে।”</p>
+<p>— “একদম।”</p>
+</div></section>
+<section class="sec r" id="s11"><h3>Scene 3: Type II, III এবং Reticular Fibres</h3><div class="body">
+<p>Dr. Sharmin এবার Type II collagen-এর কথা শুরু করলেন।</p>
+</div></section>
+<section class="sec r" id="s12"><h3>Type II Collagen</h3><div class="body">
+<p>— “Type II collagen-ও fibril-forming collagen।”</p>
+<p>এর অবস্থান:</p>
+<ul><li>Cartilage</li><li>Vitreous humour of the eye</li></ul>
+<p>তিনি বললেন,</p>
+<p>— “Vitreous humour-এ Type II collagen খুব thin fibrils তৈরি করে, প্রায় ১০ nm। অন্যদিকে ageing human cartilage-এ thick fibrils দেখা যায়।”</p>
+<p>Adi জিজ্ঞেস করল,</p>
+<p>— “Type II collagen কি Type I-এর মতো triple helix তৈরি করে?”</p>
+<p>— “হ্যাঁ। এর amino-acid sequence, banding pattern এবং post-translational modifications Type I-এর সঙ্গে অনেকটা similar।”</p>
+</div></section>
+<section class="sec r" id="s13"><h3>Type III Collagen</h3><div class="body">
+<p>Dr. Sharmin লিখলেন:</p>
+<p>Type III Collagen — Reticular fibres</p>
+<p>— “Type III collagen বিভিন্ন tissue-তে পাওয়া যায়। বিশেষ করে young এবং repairing tissue-তে এর উপস্থিতি গুরুত্বপূর্ণ।”</p>
+<p>এর distribution:</p>
+<ul><li>Dermis</li><li>Blood vessels</li><li>Liver</li><li>Kidney</li><li>Lymphoreticular tissues</li></ul>
+<p>তিনি বোর্ডে একটি meshwork আঁকলেন।</p>
+<p>— “Reticular fibres হলো fine, branching ও anastomosing fibres। এগুলো বিভিন্ন organ-এ supporting framework তৈরি করে।”</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Reticular Fibers – Kit Ng, Ph.D.</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/prZI4QsjNTVlsoDanRby7YHqUQ4bDTgCEJEx0unJj0fXPi9loMyS8nRAXictmHBMJTw9irBYYeqpF8kUcUNJwKLRsGNFLwZ5AMnQKkBmKk8dyen83vPeRqE68kFOYqqi_uEz59YxqecfFYQfRX-hGaICOo-WligCA5M-xDLG0eTqzH9QwsZqEbLWPrg6tzQT?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Reticular%20Fibers%20%E2%80%93%20Kit%20Ng%2C%20Ph.D.">Image search ↗</a></figure>
+<p>Amrita বলল,</p>
+<p>— “Reticular fibres liver, kidney, lymph node এবং spleen-এর মতো organ-এ supporting meshwork তৈরি করে।”</p>
+<p>— “ঠিক। এগুলো প্রধানত Type III collagen দিয়ে তৈরি।”</p>
+<p>Histological identification:</p>
+<ul><li>Silver salts দিয়ে ঐতিহাসিকভাবে intense staining দেখা যায়।</li><li>Conventional histological staining-এ তুলনামূলকভাবে poorly stained হয়।</li><li>Basal lamina-এর সঙ্গে association থাকতে পারে।</li><li>Collagen fibre bundles-এর আশপাশে পাওয়া যায়।</li></ul>
+<p>Adi বলল,</p>
+<p>— “Reticular fibres মানে এক ধরনের fine supporting network।”</p>
+<p>— “হ্যাঁ। তবে মনে রাখবে, reticular fibre-এর molecular identity হলো Type III collagen।”</p>
+</div></section>
+<section class="sec r" id="s14"><h3>অন্যান্য Collagen types</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “আজকের জন্য বাকি collagen-গুলোর classification পরিষ্কার রাখতে হবে।”</p>
+<ul><li>Type V ও XI — fibril-forming collagen।</li><li>Type IV — basal lamina-এর meshwork-forming collagen।</li><li>Type VIII ও X — sheet বা meshwork-forming group।</li><li>Type VI, VII, IX, XII, XIV ও XVIII — anchoring বা linking function-এর সঙ্গে সম্পর্কিত।</li><li>Type XIII ও XVII — transmembrane collagen।</li></ul>
+<p>Amrita বলল,</p>
+<p>— “Type IV তো আমরা আগের episode-এ Basal Lamina-তে পড়েছি।”</p>
+<p>— “ঠিক। Type IV collagen basal lamina-এর network তৈরিতে গুরুত্বপূর্ণ।”</p>
+</div></section>
+<section class="sec r" id="s15"><h3>Scene 4: Elastin — Stretch করে আবার ফিরে আসা</h3><div class="body">
+<p>Dr. Sharmin এবার collagen-এর পাশে লিখলেন:</p>
+</div></section>
+<section class="sec r" id="s16"><h3>ELASTIN</h3><div class="body">
+<p>— “Collagen tension resist করে, আর elastin stretching-এর পর recoil দেয়।”</p>
+<p>তিনি বোর্ডে একটি elastic band আঁকলেন।</p>
+<p>— “Elastin হলো প্রায় ৭০ kDa molecular weight-এর protein। এতে hydrophobic amino acids—বিশেষ করে valine ও alanine—সমৃদ্ধ।”</p>
+<p>Adi বলল,</p>
+<p>— “Elastic fibrils-এ শুধু elastin থাকে না। Fibrillin-ও থাকে।”</p>
+<p>— “সঠিক।”</p>
+</div></section>
+<section class="sec r" id="s17"><h3>Elastin-এর cross-linking</h3><div class="body">
+<p>Dr. Sharmin লিখলেন:</p>
+<p>Lysine residues → Desmosine + Isodesmosine</p>
+<p>— “Elastin molecules-এর মধ্যে extracellularly cross-linking হয়। Elastin-specific amino acids desmosine এবং isodesmosine এই cross-linking-এ গুরুত্বপূর্ণ।”</p>
+<p>Amrita বলল,</p>
+<p>— “এগুলো elastin-এর elastic properties বজায় রাখতে সাহায্য করে।”</p>
+<p>— “হ্যাঁ।”</p>
+</div></section>
+<section class="sec r" id="s18"><h3>Elastin-এর বৈশিষ্ট্য</h3><div class="body">
+<ul><li>Collagen-এর তুলনায় কম widely distributed।</li><li>Yellowish colour।</li><li>সাধারণত collagen fibrils-এর চেয়ে thinner, প্রায় 10–20 nm।</li><li>Electron microscope-এ collagen-এর মতো characteristic banding pattern নেই।</li><li>Routine histological stains-এ poorly stained হয়।</li><li>Orcein-containing preparation দিয়ে staining করা যায়।</li></ul>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “কিছু জায়গায় elastin sheet আকারেও থাকতে পারে। উদাহরণ হিসেবে aortic wall-এর fenestrated elastic lamellae।”</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>10-Aort3OIL</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/IayPgUfJqjOrHemPPjioyoieiFLm6pAlB0nLzsZld5zBarePZA5tl6s4pRaLLaT69Tf9OINVObH8ywApTjhI40Df8odf4yDoVzXNJWcwnWZ-9aR7Ent5g-gb1jq7VkXmLxz3kHEBGJ9J4_go8m9NNiWM6Y_mFPth-uAQu2BzwJS22fL35HLIewyPmy_N6THQ?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=10-Aort3OIL">Image search ↗</a></figure>
+<p>Rafi বলল,</p>
+<p>— “Aorta-র wall বারবার প্রসারিত ও সংকুচিত হয়, তাই elastic lamellae গুরুত্বপূর্ণ।”</p>
+<p>— “ঠিক। Elastin-rich structure সহজে stretch হয় এবং প্রায় সম্পূর্ণ recoil করতে পারে।”</p>
+</div></section>
+<section class="sec r" id="s19"><h3>বয়সের সঙ্গে Elastin</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “বয়স বাড়ার সঙ্গে elastin-rich structure calcify করতে পারে এবং elasticity হারাতে পারে।”</p>
+<p>Adi খাতায় লিখল:</p>
+<p>Elastin → Stretchability + Recoil</p>
+<p>Collagen → Tensile strength</p>
+<p>Amrita বলল,</p>
+<p>— “তাহলে দুটো protein একসঙ্গে থাকলে tissue strength এবং flexibility দুটোই পাওয়া যায়।”</p>
+<p>— “এটাই ECM-এর structural balance।”</p>
+</div></section>
+<section class="sec r" id="s20"><h3>Scene 5: Interfibrillar Matrix — Ground Substance-এর Molecular World</h3><div class="body">
+<p>দুপুরের ক্লাসের পর Dr. Sharmin নতুন section শুরু করলেন।</p>
+<p>— “এখন আমরা fibrils-এর মধ্যবর্তী matrix নিয়ে আলোচনা করব। এটিকে বলা হয় Interfibrillar Matrix বা Ground Substance।”</p>
+<p>বোর্ডে লিখলেন:</p>
+<ul><li>Glycosaminoglycans</li><li>Proteoglycans</li><li>Adhesive glycoproteins</li></ul>
+<p>— “এদের মধ্যে glycosaminoglycans অত্যন্ত গুরুত্বপূর্ণ।”</p>
+</div></section>
+<section class="sec r" id="s21"><h3>Glycosaminoglycans (GAGs)</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “GAGs হলো acidic, unbranched polysaccharide chains। এগুলো repeating disaccharide units দিয়ে তৈরি।”</p>
+<p>প্রতিটি disaccharide unit-এ থাকে:</p>
+<ul><li>এক বা একাধিক negatively charged group</li><li>Carboxylate group এবং/অথবা sulphate ester group</li></ul>
+<p>Amrita প্রশ্ন করল,</p>
+<p>— “Negative charge-এর physiological importance কী?”</p>
+<p>Dr. Sharmin বোর্ডে লিখলেন:</p>
+<p>Negative charges → Cation attraction → Water retention</p>
+<p>— “GAGs-এর polyanionic character-এর কারণে এগুলো interstitial fluid থেকে cations আকর্ষণ করে। ফলে osmotic activity বাড়ে এবং প্রচুর water ধরে রাখতে পারে।”</p>
+<p>Adi বলল,</p>
+<p>— “তাহলে GAGs hydrated gel তৈরি করে।”</p>
+<p>— “হ্যাঁ। এই hydrated gel fibrils-কে আলাদা রাখতে সাহায্য করে এবং tissue-কে stiffness ও compressive resistance দেয়।”</p>
+</div></section>
+<section class="sec r" id="s22"><h3>GAGs-এর নাম</h3><div class="body">
+<p>Dr. Sharmin একটি table লিখলেন:</p>
+<div class="tw"><table><thead><tr><th>GAG</th><th>ঐতিহাসিকভাবে যে tissue-তে প্রথম পরিচিত</th></tr></thead><tbody><tr><td>Hyaluronan</td><td>Vitreous body</td></tr><tr><td>Chondroitins</td><td>Cartilage</td></tr><tr><td>Dermatan</td><td>Skin</td></tr><tr><td>Keratan</td><td>Cornea</td></tr><tr><td>Heparan</td><td>Liver</td></tr></tbody></table></div>
+<p>— “এই নামগুলো ঐতিহাসিক discovery-র সঙ্গে সম্পর্কিত। এগুলোকে বর্তমান tissue distribution-এর একমাত্র সীমা মনে করবে না। অধিকাংশ GAG বিভিন্ন tissue-তে বিস্তৃতভাবে পাওয়া যায়।”</p>
+<p>Adi বলল,</p>
+<p>— “অর্থাৎ, chondroitin শুধু cartilage-এ সীমাবদ্ধ নয়।”</p>
+<p>— “ঠিক।”</p>
+</div></section>
+<section class="sec r" id="s23"><h3>Scene 6: Hyaluronan — একটি বিশেষ GAG</h3><div class="body">
+<p>Dr. Sharmin বোর্ডে বড় করে লিখলেন:</p>
+</div></section>
+<section class="sec r" id="s24"><h3>HYALURONAN</h3><div class="body">
+<p>— “GAG-এর মধ্যে একটি গুরুত্বপূর্ণ exception হলো Hyaluronan।”</p>
+<p>Amrita বলল,</p>
+<p>— “কারণ এর কোনো protein core নেই।”</p>
+<p>— “একদম। অন্য অনেক GAG proteoglycan-এর অংশ হিসেবে protein core-এর সঙ্গে যুক্ত থাকে। কিন্তু hyaluronan-এর নিজস্ব protein core নেই।”</p>
+</div></section>
+<section class="sec r" id="s25"><h3>Hyaluronan-এর বৈশিষ্ট্য</h3><div class="body">
+<ul><li>অত্যন্ত বড় molecule।</li><li>Molecular mass প্রায় 25,000 kDa।</li><li>Highly hydrated।</li><li>প্রায় সব ধরনের ECM-এ পাওয়া যায়।</li><li>Embryonic ও developing tissue-তে prominent component।</li></ul>
+<p>Adi প্রশ্ন করল,</p>
+<p>— “এটি তৈরি হয় কীভাবে?”</p>
+<p>— “Cell surface enzymes-এর মাধ্যমে সম্পূর্ণ molecule synthesize হয়। অন্য অনেক GAG-এর মতো secretory pathway-এর মধ্যে core protein-এর সঙ্গে যুক্ত হয়ে তৈরি হয় না।”</p>
+</div></section>
+<section class="sec r" id="s26"><h3>Hyaluronan-এর কাজ</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Hyaluronan-এর তিনটি গুরুত্বপূর্ণ function বুঝতে হবে।”</p>
+<p>1. Proteoglycan aggregation</p>
+<p>Hyaluronan নির্দিষ্ট binding site-যুক্ত proteoglycans এবং link proteins-এর সঙ্গে aggregate তৈরি করতে পারে।</p>
+<p>2. Compression resistance</p>
+<p>Cartilage-এ তৈরি হওয়া বড় proteoglycan aggregates compressive force resist করার গুরুত্বপূর্ণ unit।</p>
+<p>3. Lubrication</p>
+<p>Hyaluronan viscous solution তৈরি করে। Synovial joint-এর lubrication-এ এর ভূমিকা গুরুত্বপূর্ণ।</p>
+<p>তিনি আরও বললেন,</p>
+<p>— “Vitreous humour-এর মতো semi-rigid structure-এ hyaluronan water bind করে এবং collagen fibril network-এর সঙ্গে মিলে structural support দেয়।”</p>
+<p>Amrita বলল,</p>
+<p>— “তাহলে hyaluronan একই সঙ্গে hydration, lubrication এবং compression resistance-এর সঙ্গে যুক্ত।”</p>
+<p>— “খুব ভালো।”</p>
+</div></section>
+<section class="sec r" id="s27"><h3>Scene 7: Proteoglycans — Protein Core-এর সঙ্গে GAG Chains</h3><div class="body">
+<p>Adi বোর্ডের দিকে তাকিয়ে বলল,</p>
+<p>— “Madam, তাহলে proteoglycan এবং glycoprotein কি একই জিনিস?”</p>
+<p>Dr. Sharmin হেসে বললেন,</p>
+<p>— “দুটোই glycosylated molecule হতে পারে, কিন্তু তাদের structure এক নয়।”</p>
+</div></section>
+<section class="sec r" id="s28"><h3>Proteoglycan-এর structure</h3><div class="body">
+<p>— “Proteoglycan-এ একটি core protein-এর সঙ্গে GAG side chains যুক্ত থাকে।”</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Extracellular matrix: A regenerative conduit in dentistry - IP Int J Periodontol Implantol</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/FxnyRK_xahRf5x5ASsCwdrsyMFIczrW2ZCJ3qFhoxMQ5Qcok7FKUcTW_0eapzO8wFaX1cOxNIYSx2Jc8c7JqHcDg8NXIffANc-6OtVeitpKSnN9JocADvE0CuCe7iekL5HiIvZZTWpe9RbyyaUrtJSS0Wnl2wC3GDAUgkCMFiVJTyrVQ6f8UTTTq9toeL5SH?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Extracellular%20matrix%3A%20A%20regenerative%20conduit%20in%20dentistry%20-%20IP%20Int%20J%20Periodontol%20Implantol">Image search ↗</a></figure>
+<p>— “Secretory pathway-তে RER থেকে trans-Golgi network-এর মধ্যবর্তী সময়ে GAG side chains core protein-এর সঙ্গে যুক্ত হয়।”</p>
+<p>Adi বলল,</p>
+<p>— “একটি core protein-এ বিভিন্ন GAG chain যুক্ত হতে পারে?”</p>
+<p>— “হ্যাঁ। একই core protein বিভিন্ন tissue-তে ভিন্ন GAG side chains বহন করতে পারে।”</p>
+</div></section>
+<section class="sec r" id="s29"><h3>গুরুত্বপূর্ণ Proteoglycans</h3><div class="body">
+<p>Dr. Sharmin লিখলেন:</p>
+<div class="tw"><table><thead><tr><th>Proteoglycan</th><th>Association</th></tr></thead><tbody><tr><td>Aggrecan</td><td>Cartilage</td></tr><tr><td>Perlecan</td><td>Basal lamina</td></tr><tr><td>Decorin</td><td>Fibroblasts ও collagen fibril assembly</td></tr><tr><td>Syndecan</td><td>Embryonic tissues</td></tr></tbody></table></div>
+<p>— “এদের সব function এখনো সম্পূর্ণভাবে বোঝা যায়নি। তবে এই চারটি association খুব গুরুত্বপূর্ণ।”</p>
+<p>Amrita বলল,</p>
+<p>— “Aggrecan cartilage-এর সঙ্গে, Perlecan basal lamina-এর সঙ্গে, Decorin collagen fibril assembly-এর সঙ্গে এবং Syndecan embryonic tissue-এর সঙ্গে সম্পর্কিত।”</p>
+<p>— “ঠিক।”</p>
+</div></section>
+<section class="sec r" id="s30"><h3>Scene 8: Adhesive Glycoproteins — Cell ও Matrix-এর সংযোগ</h3><div class="body">
+<p>Dr. Sharmin এবার নতুন heading লিখলেন:</p>
+</div></section>
+<section class="sec r" id="s31"><h3>ADHESIVE GLYCOPROTEINS</h3><div class="body">
+<p>— “এই molecule-গুলো cell এবং ECM-এর মধ্যে adhesion তৈরি করতে সাহায্য করে। অনেক সময় collagen, proteoglycans এবং cell adhesion molecules-এর সঙ্গে interaction করে।”</p>
+<p>প্রধান family:</p>
+<ul><li>Fibronectin</li><li>Laminin</li><li>Tenascin</li><li>Vitronectin</li></ul>
+<p>তিনি বললেন,</p>
+<p>— “এদের binding sites থাকে অন্যান্য ECM molecule এবং cell adhesion molecules-এর জন্য, বিশেষ করে Integrins।”</p>
+<p>Adi বলল,</p>
+<p>— “তাহলে adhesive glycoproteins cell-কে matrix-এর সঙ্গে selectively attach হতে এবং migration করতে সাহায্য করে।”</p>
+<p>— “হ্যাঁ। এরা signalling molecule হিসেবেও কাজ করতে পারে।”</p>
+</div></section>
+<section class="sec r" id="s32"><h3>Fibronectin</h3><div class="body">
+<p>Dr. Sharmin লিখলেন:</p>
+<p>Fibronectin = Large adhesive glycoprotein</p>
+<p>— “Fibronectin একটি dimer। দুটি subunit disulphide link দিয়ে যুক্ত থাকে।”</p>
+<p>প্রতিটি subunit-এ থাকে:</p>
+<ul><li>Repetitive domains</li><li>Flexible connecting regions</li><li>Binding sites for collagen</li><li>Binding sites for heparin</li><li>Binding sites for cell-surface receptors, especially Integrins</li></ul>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>The Role of Extracellular Matrix (ECM) Adhesion Motifs in Functionalised Hydrogels</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/5nAeKIovqpU-xKIwBw_4FSN8Rju_fzNnQcked_k4gzM39-ADehFKIL5h_wuRPwX7E66KM5tCeXoiie6k0vOS9SBCFvWs_s0OGynFN8nH1djJQL28bGTM6fxNaZ6aAHBTE_5aGMootjVIGX1uoPttc5WCdBFvYYX7zIynmhHAphYE5TLFUP3s_Ixl--Nmy06I?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=The%20Role%20of%20Extracellular%20Matrix%20%28ECM%29%20Adhesion%20Motifs%20in%20Functionalised%20Hydrogels">Image search ↗</a></figure>
+<p>Amrita বলল,</p>
+<p>— “তাহলে Fibronectin একদিকে collagen-এর সঙ্গে, অন্যদিকে Integrin-এর মাধ্যমে cell-এর সঙ্গে যুক্ত হতে পারে।”</p>
+<p>— “একদম। এইভাবে এটি cell–matrix adhesion-এ গুরুত্বপূর্ণ ভূমিকা পালন করে।”</p>
+</div></section>
+<section class="sec r" id="s33"><h3>Fibronectin-এর বিভিন্ন form</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Connective tissue-তে Fibronectin cell surface-এ orderly arrangement-এ short filaments তৈরি করতে পারে।”</p>
+<p>তিনি আরও বললেন,</p>
+<p>— “Liver একটি related protein—plasma fibronectin—circulation-এ release করে।”</p>
+<p>Adi প্রশ্ন করল,</p>
+<p>— “Fibronectin-এর isoform কি সব tissue-তে একই?”</p>
+<p>— “না। Alternative splicing-এর মাধ্যমে বিভিন্ন isoform তৈরি হয়।”</p>
+<p>তিনি ব্যাখ্যা করলেন,</p>
+<ul><li>Embryonic tissue-তে বিশেষ Fibronectin isoform পাওয়া যায়।</li><li>Wound repair-এর সময় embryonic tissue-তে প্রকাশিত কিছু isoform আবার দেখা যায়।</li><li>এগুলো tissue proliferation এবং cell movement সহজ করে।</li><li>Repair সম্পন্ন হলে adult form আবার প্রকাশিত হয়।</li></ul>
+<p>Amrita বলল,</p>
+<p>— “অর্থাৎ Fibronectin শুধু স্থায়ী structural support দেয় না; development ও repair-এর সময় cell migration-এর environment-ও তৈরি করে।”</p>
+<p>— “সঠিক।”</p>
+</div></section>
+<section class="sec r" id="s34"><h3>Scene 9: Laminin — Basal Lamina-এর Molecular Architect</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Laminin-এর কথা তোমরা আগের episode-এ পড়েছ। আজ ECM-এর context-এ আবার বুঝব।”</p>
+<p>তিনি বোর্ডে লিখলেন:</p>
+<p>Laminin — Approximately 850 kDa</p>
+<p>— “Laminin একটি বড় flexible glycoprotein। এটি তিনটি polypeptide chain দিয়ে গঠিত।”</p>
+<ul><li>α chain</li><li>β chain</li><li>γ chain</li></ul>
+<p>— “Laminin-এর বিভিন্ন chain-এর isoform আছে। Gray’s-এ অন্তত ১৮ ধরনের laminin-এর কথা উল্লেখ করা হয়েছে।”</p>
+</div></section>
+<section class="sec r" id="s35"><h3>Laminin-এর structure</h3><div class="body">
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>PPT - THE EXTRACELLULAR MATRIX (ECM) PowerPoint Presentation, free download - ID:146784</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/tc-vZ9O8eJFH-VPGvTZvLlzzZf7eKLpdOkPSFoh7ru5HjIO7cG9MBW-RRvj58cQeShH-nzkJpFAKDFaqzm07-PMmfZVq5UOrCKTC-dDxG4g73t1BhdJjVy9XCAU9THI3g2jEtb8GJ1Gos2ZBHuLJdouzhGBABlTRFIHt0iIlkCPFe1Vf6QLw1F5Q41SqlLWM?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=PPT%20-%20THE%20EXTRACELLULAR%20MATRIX%20%28ECM%29%20PowerPoint%20Presentation%2C%20free%20download%20-%20ID%3A146784">Image search ↗</a></figure>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Prototypical laminin molecule-এর cruciform shape থাকে। এর terminal অংশের প্রায় দুই-তৃতীয়াংশ একে অপরের চারপাশে পেঁচিয়ে cross-এর stem তৈরি করে। ছোট free ends cross-এর বাকি অংশ তৈরি করে।”</p>
+<p>Adi বলল,</p>
+<p>— “তাই laminin-এর diagram-এ cross-এর মতো shape দেখা যায়।”</p>
+<p>— “ঠিক।”</p>
+</div></section>
+<section class="sec r" id="s36"><h3>Laminin-এর binding sites</h3><div class="body">
+<p>Laminin-এর binding sites রয়েছে:</p>
+<ul><li>Heparan sulphate</li><li>Type IV collagen</li><li>Entactin</li><li>Integrins</li></ul>
+<p>— “Laminin molecule নিজেরাও একত্রিত হয়ে flat regular meshwork তৈরি করতে পারে। Basal lamina-তে এই meshwork অত্যন্ত গুরুত্বপূর্ণ।”</p>
+<p>Amrita বলল,</p>
+<p>— “অর্থাৎ Laminin ও Type IV collagen-এর network basal lamina-এর structural organization-এ গুরুত্বপূর্ণ।”</p>
+<p>— “সঠিক।”</p>
+</div></section>
+<section class="sec r" id="s37"><h3>Scene 10: Tenascin — Cell Migration-এর পথপ্রদর্শক</h3><div class="body">
+<p>Dr. Sharmin লিখলেন:</p>
+</div></section>
+<section class="sec r" id="s38"><h3>TENASCIN</h3><div class="body">
+<p>— “Tenascin একটি বড় glycoprotein। এটি ছয়টি subunit নিয়ে তৈরি। এক প্রান্তে subunit-গুলো যুক্ত হয়ে wheel-এর spokes-এর মতো structure তৈরি করে।”</p>
+<p>Adi বলল,</p>
+<p>— “এটি কি একটিমাত্র molecule family?”</p>
+<p>— “না। Tenascin-এর একটি family আছে। Alternative splicing-এর মাধ্যমে বিভিন্ন tenascin molecule তৈরি হয়।”</p>
+<p>তিনি ব্যাখ্যা করলেন,</p>
+<ul><li>Embryonic tissue-তে Tenascin abundant।</li><li>Adult tissue-তে এর distribution restricted।</li><li>Early development-এ cell migration ও axonal growth guide করতে ভূমিকা রাখতে পারে।</li><li>Cell type ও isoform অনুযায়ী migration promote অথবা inhibit করতে পারে।</li></ul>
+<p>Amrita বলল,</p>
+<p>— “একই molecule কখনো migration বাড়াতে, আবার কখনো কমাতে পারে?”</p>
+<p>— “হ্যাঁ। Cell type এবং tenascin isoform-এর ওপর effect নির্ভর করে।”</p>
+</div></section>
+<section class="sec r" id="s39"><h3>Scene 11: ECM Degradation — যখন Matrix ভাঙতে হয়</h3><div class="body">
+<p>ক্লাসের শেষদিকে Dr. Sharmin আগের দিনের আলোচনা ফিরিয়ে আনলেন।</p>
+<p>— “ECM তৈরি হলেই কাজ শেষ নয়। Tissue development ও repair-এর সময় matrix-কে পরিবর্তন এবং কখনো degrade করতে হয়।”</p>
+<p>তিনি বোর্ডে লিখলেন:</p>
+<p>ECM remodelling</p>
+<p>প্রধান enzyme families:</p>
+<ul><li>Matrix metalloproteinases (MMPs)</li><li>ADAMs</li><li>ADAMTS</li></ul>
+<p>— “এগুলো ECM degradation-এ অংশ নেয়। Development, morphogenesis, angiogenesis, tissue repair এবং remodelling-এর জন্য controlled degradation গুরুত্বপূর্ণ।”</p>
+<p>Rafi প্রশ্ন করল,</p>
+<p>— “Madam, ECM degradation কি রোগও সৃষ্টি করতে পারে?”</p>
+<p>— “হ্যাঁ। Physiological regulation নষ্ট হলে pathological degradation হতে পারে।”</p>
+<p>Gray’s-এ উল্লেখিত উদাহরণ:</p>
+<ul><li>Atherosclerosis</li><li>Emphysema</li><li>Osteoarthritis</li><li>Diabetic vascular complications</li></ul>
+<p>Adi বলল,</p>
+<p>— “অর্থাৎ matrix degradation নিজে খারাপ নয়; নিয়ন্ত্রণহীন degradation সমস্যার কারণ।”</p>
+<p>— “ঠিক। Anatomy বোঝার সঙ্গে সঙ্গে structure-এর dynamic nature-ও বুঝতে হবে।”</p>
+</div></section>
+<section class="sec r" id="s40"><h3>Scene 12: Library — তিনটি Tissue, তিনটি Mechanical Strategy</h3><div class="body">
+<p>সন্ধ্যা ৬টা ২০ মিনিট।</p>
+<p>Adi একটি কাগজে তিনটি column তৈরি করল।</p>
+<div class="tw"><table><thead><tr><th>Tissue</th><th>Dominant ECM feature</th><th>Mechanical role</th></tr></thead><tbody><tr><td>Tendon</td><td>Collagen fibrils</td><td>Tensile strength</td></tr><tr><td>Mesentery</td><td>Elastic fibres</td><td>Stretch ও recoil</td></tr><tr><td>Cartilage</td><td>GAGs ও proteoglycans</td><td>Compression resistance</td></tr></tbody></table></div>
+<p>Amrita বলল,</p>
+<p>— “তাহলে tissue-এর function বুঝতে হলে তার matrix composition বুঝতে হবে।”</p>
+<p>Adi উত্তর দিল,</p>
+<p>— “হ্যাঁ। আর matrix composition বুঝতে হলে collagen, elastin, GAG, proteoglycan ও adhesive glycoprotein-এর কাজ আলাদা করে জানতে হবে।”</p>
+<p>Amrita খাতা বন্ধ করল।</p>
+<p>— “আজকে তুই বেশ ভালো পড়িয়েছিস।”</p>
+<p>Adi মুচকি হেসে বলল,</p>
+<p>— “আমি পড়াইনি। আমরা একসঙ্গে বুঝেছি।”</p>
+<p>Rafi দূর থেকে বলে উঠল,</p>
+<p>— “তোমরা দুজন একসঙ্গে বুঝতে বুঝতে একদিন Anatomy Department-এ professor হয়ে যাবি!”</p>
+<p>Mou হেসে বলল,</p>
+<p>— “তখনও কি library-তে পাশাপাশি বসে পড়বে?”</p>
+<p>Amrita একটু লজ্জা পেয়ে বইয়ের দিকে তাকাল। Adi কিছু বলল না। শুধু তার খাতার শেষ লাইনে লিখল:</p>
+<p>“A great doctor must understand not only the structure, but also why that structure exists.”</p>
+</div></section>
+<section class="sec r" id="s41"><h3>Episode 29 — Study Ledger</h3><div class="body">
+<p>Episode completed</p>
+<p>আজকের episode-এ Chapter 2-এর ECM অংশের molecular details আলোচনা করা হয়েছে।</p>
+<div class="tw"><table><thead><tr><th>Completed topic</th><th>আজকের শেখা</th></tr></thead><tbody><tr><td>Fibrillar matrix</td><td>Collagen ও Elastin</td></tr><tr><td>Interfibrillar matrix</td><td>GAGs, Proteoglycans ও adhesive glycoproteins</td></tr><tr><td>Collagen</td><td>Common biochemical features ও classification</td></tr><tr><td>Type I collagen</td><td>Structure, distribution, fibril arrangement, banding</td></tr><tr><td>Type II collagen</td><td>Cartilage ও vitreous humour</td></tr><tr><td>Type III collagen</td><td>Reticular fibres ও distribution</td></tr><tr><td>Other collagen types</td><td>Fibril, meshwork, linking ও transmembrane groups</td></tr><tr><td>Elastin</td><td>Molecular properties, cross-linking ও elastic recoil</td></tr><tr><td>GAGs</td><td>Structure, negative charge ও hydration</td></tr><tr><td>Hyaluronan</td><td>Structure, aggregation, lubrication</td></tr><tr><td>Proteoglycans</td><td>Core protein, GAG chains ও examples</td></tr><tr><td>Fibronectin</td><td>Dimer, binding sites, isoforms</td></tr><tr><td>Laminin</td><td>Structure, chain composition ও binding sites</td></tr><tr><td>Tenascin</td><td>Structure ও developmental functions</td></tr><tr><td>ECM degradation</td><td>MMPs, ADAMs, ADAMTS ও clinical associations</td></tr></tbody></table></div>
+<p>আজকের Gray’s Anatomy coverage</p>
+</div></section>
+<section class="sec r" id="s42"><h3>পৃষ্ঠা ৮৩–৮৪</h3><div class="body">
+<p>Chapter 2 — Integrating Cells into Tissues</p>
+<p>আজকের পড়া Page 83-এর Interfibrillar Matrix থেকে Page 84-এর Tenascin ও Connective Tissue Classification heading পর্যন্ত।</p>
+</div></section>
+<section class="sec r" id="s43"><h3>Episode 30 — শুরু হবে :</h3><div class="body">
+<p>CLASSIFICATION OF CONNECTIVE TISSUES — Page 84</p>
+<ul><li>Irregular connective tissues</li><li>Loose (areolar) connective tissue</li><li>Dense irregular connective tissue</li><li>Adipose tissue-এর connective tissue classification</li><li>Regular connective tissues</li><li>Tendon, ligament ও aponeurosis</li><li>Mucoid tissue</li><li>Mucosa ও supporting tissues</li></ul>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-028.html">← Episode 28</a><a href="index.html">সব পর্ব</a><a href="episode-030.html">Episode 30 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">Gray’s Anatomy — Episode 29</a><a href="#s2">“শরীরের অদৃশ্য জাল: Collagen, Elastin ও Extracellular Matrix-এর রহস্য”</a><a href="#s3">Scene 1: Anatomy Lecture Theatre — ECM-এর আসল পরিচয়</a><a href="#s4">Feynman explanation: Tissue কেন ভিন্নভাবে কাজ করে?</a><a href="#s5">Scene 2: Collagen — শরীরের Structural Strength</a><a href="#s6">COLLAGENS</a><a href="#s7">Collagen-এর common molecular characteristics</a><a href="#s8">Collagen-এর classification</a><a href="#s9">Type I Collagen</a><a href="#s10">Collagen fibres-এর arrangement</a><a href="#s11">Scene 3: Type II, III এবং Reticular Fibres</a><a href="#s12">Type II Collagen</a><a href="#s13">Type III Collagen</a><a href="#s14">অন্যান্য Collagen types</a><a href="#s15">Scene 4: Elastin — Stretch করে আবার ফিরে আসা</a><a href="#s16">ELASTIN</a><a href="#s17">Elastin-এর cross-linking</a><a href="#s18">Elastin-এর বৈশিষ্ট্য</a><a href="#s19">বয়সের সঙ্গে Elastin</a><a href="#s20">Scene 5: Interfibrillar Matrix — Ground Substance-এর Molecular World</a><a href="#s21">Glycosaminoglycans (GAGs)</a><a href="#s22">GAGs-এর নাম</a><a href="#s23">Scene 6: Hyaluronan — একটি বিশেষ GAG</a><a href="#s24">HYALURONAN</a><a href="#s25">Hyaluronan-এর বৈশিষ্ট্য</a><a href="#s26">Hyaluronan-এর কাজ</a><a href="#s27">Scene 7: Proteoglycans — Protein Core-এর সঙ্গে GAG Chains</a><a href="#s28">Proteoglycan-এর structure</a><a href="#s29">গুরুত্বপূর্ণ Proteoglycans</a><a href="#s30">Scene 8: Adhesive Glycoproteins — Cell ও Matrix-এর সংযোগ</a><a href="#s31">ADHESIVE GLYCOPROTEINS</a><a href="#s32">Fibronectin</a><a href="#s33">Fibronectin-এর বিভিন্ন form</a><a href="#s34">Scene 9: Laminin — Basal Lamina-এর Molecular Architect</a><a href="#s35">Laminin-এর structure</a><a href="#s36">Laminin-এর binding sites</a><a href="#s37">Scene 10: Tenascin — Cell Migration-এর পথপ্রদর্শক</a><a href="#s38">TENASCIN</a><a href="#s39">Scene 11: ECM Degradation — যখন Matrix ভাঙতে হয়</a><a href="#s40">Scene 12: Library — তিনটি Tissue, তিনটি Mechanical Strategy</a><a href="#s41">Episode 29 — Study Ledger</a><a href="#s42">পৃষ্ঠা ৮৩–৮৪</a><a href="#s43">Episode 30 — শুরু হবে :</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

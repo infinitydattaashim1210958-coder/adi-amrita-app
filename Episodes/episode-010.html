@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 010 · নীরব বার্তা, অদৃশ্য কথোপকথন</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 010">EPISODE 010</h1>
+  <div class="ttl">নীরব বার্তা, অদৃশ্য কথোপকথন</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">010</div></div>
+    <div class="face b"><div class="t2">নীরব বার্তা, অদৃশ্য কথোপকথন</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>পর্ব ১০: নীরব বার্তা, অদৃশ্য কথোপকথন</h3><div class="body">
+<p>Gray’s Anatomy · Chapter 1: Basic Structure and Function of Cells · Pages 42–44</p>
+</div></section>
+<section class="sec r" id="s2"><h3>১. যে কথোপকথন চোখে দেখা যায় না</h3><div class="body">
+<p>ঢাকা মেডিকেল কলেজের পুরোনো লাইব্রেরি।</p>
+<p>বিকেলের আলো জানালা দিয়ে ঢুকে পড়েছে। বাইরে গাছের পাতাগুলো বাতাসে দুলছে। লাইব্রেরির ভেতর প্রায় নীরবতা। দূরে কোথাও একটা ঘড়ির টিকটিক শব্দ শোনা যাচ্ছে।</p>
+<p>আদিত্য বইয়ের ওপর ঝুঁকে বসে আছে। সামনে Gray’s Anatomy খোলা। পৃষ্ঠার ওপর লেখা—</p>
+<p>Cell signalling.</p>
+<p>সে কয়েকবার শব্দটা পড়ল।</p>
+<p>তারপর কলমটা নামিয়ে রেখে বলল,</p>
+<p>— অমৃতা, একটা বিষয় বুঝতে পারছি না।</p>
+<p>অমৃতা পাশের চেয়ার থেকে মুখ তুলল।</p>
+<p>— বলুন।</p>
+<p>— আমাদের শরীরের প্রতিটি কোষ তো আলাদা আলাদা। তাহলে একটা কোষ কীভাবে আরেকটা কোষকে জানায় যে তার কী করা উচিত? কোষের তো মুখ নেই, কথা বলার ক্ষমতাও নেই!</p>
+<p>অমৃতা মৃদু হাসল।</p>
+<p>— মানুষের মতো কথা বলতে হয় না বলেই তো কোষের যোগাযোগ এত আশ্চর্যজনক।</p>
+<p>সে বইয়ের পাতায় আঙুল রাখল।</p>
+<p>— আমাদের শরীরে বিভিন্ন সিস্টেমকে একসঙ্গে কাজ করতে হয়। প্রত্যেকটি অঙ্গ ও কোষের কাজ আলাদা হলেও তাদের কার্যক্রমের মধ্যে সমন্বয় থাকা জরুরি। এই coordination এবং integration-এর জন্য শরীরে নানা ধরনের যোগাযোগব্যবস্থা রয়েছে। এই সম্মিলিত প্রক্রিয়াগুলোকেই বলা হয় Cell signalling।</p>
+<p>আদিত্য বলল,</p>
+<p>— অর্থাৎ কোষেরও নিজস্ব communication system আছে?</p>
+<p>— ঠিক তাই। ধরুন, একটি কোষ একটি signalling molecule তৈরি করল। সেই molecule অন্য একটি কোষের কাছে পৌঁছাল। দ্বিতীয় কোষটি যদি সেটিকে চিনতে পারে, তাহলে সেটি একটি নির্দিষ্ট প্রতিক্রিয়া সৃষ্টি করতে পারে।</p>
+<p>— কীভাবে চিনবে?</p>
+<p>— সাধারণত একটি নির্দিষ্ট receptor protein-এর মাধ্যমে।</p>
+<p>অমৃতা এবার কাগজে লিখল—</p>
+<p>Cell signalling-এর মূল ধারণা</p>
+<p>Signalling cell</p>
+<p>Signalling molecule তৈরি করে</p>
+<p>Receptor protein</p>
+<p>Recipient cell-এর নির্দিষ্ট receptor signal শনাক্ত করে</p>
+<p>Intracellular signalling</p>
+<p>Signal কোষের ভেতরে chemical message-এ রূপান্তরিত হয়</p>
+<p>Change in cell behaviour</p>
+<p>Recipient cell-এর কার্যক্রম পরিবর্তিত হয়</p>
+<p>— অর্থাৎ, যে কোষ signal পাঠায় তাকে signalling cell বলা যায়। আর যে কোষ signal গ্রহণ করে, সে recipient cell। Recipient cell সাধারণত plasma membrane-এ signal শনাক্ত করে এবং সেই signal-কে intracellular chemical message-এ রূপান্তরিত করে। শেষ পর্যন্ত কোষের আচরণ বা কার্যক্রম বদলে যায়।</p>
+<p>আদিত্য কিছুক্ষণ চুপ করে রইল।</p>
+<p>— তাহলে signal শুধু পৌঁছালেই হবে না, গ্রহণকারী কোষের সেটি বোঝার ব্যবস্থাও থাকতে হবে।</p>
+<p>— একদম। একই বার্তা পেলেও সব কোষ যে একইভাবে প্রতিক্রিয়া দেখাবে, তা নয়। কোন কোষে কোন receptor আছে, সেটিও গুরুত্বপূর্ণ।</p>
+<p>আদিত্য তার নোটে লিখল: Communication requires recognition.</p>
+<p>অমৃতা কথাটা দেখে মাথা নাড়ল।</p>
+<p>— সুন্দর লিখেছেন।</p>
+<p>আদিত্য একটু অপ্রস্তুত হয়ে কলমের ঢাকনা লাগিয়ে দিল।</p>
+</div></section>
+<section class="sec r" id="s3"><h3>২. দূরত্বের ভাষা: কেউ দূর থেকে বার্তা পাঠায়, কেউ পাশে বসে</h3><div class="body">
+<p>অমৃতা বইয়ের পরের অংশে চলে গেল।</p>
+<p>— এবার দেখুন, সব signal একই দূরত্ব অতিক্রম করে না। কিছু signal অনেক দূরে যায়, কিছু কাছের কোষে কাজ করে, আবার কিছু signal-এর জন্য কোষের গায়ে গা লাগানো প্রয়োজন।</p>
+<p>আদিত্য বলল,</p>
+<p>— তাহলে দূরত্ব অনুযায়ী আলাদা আলাদা signalling mechanism আছে?</p>
+<p>— হ্যাঁ। Gray’s-এ কয়েকটি গুরুত্বপূর্ণ ধরন বর্ণনা করা হয়েছে।</p>
+</div></section>
+<section class="sec r" id="s4"><h3>Endocrine signalling — দূরের ঠিকানায় বার্তা</h3><div class="body">
+<p>অমৃতা বলল,</p>
+<p>— প্রথমে ধরুন endocrine signalling। এখানে একটি কোষ hormone নিঃসরণ করে। Hormone রক্তপ্রবাহের মাধ্যমে দূরের target cell-এ পৌঁছাতে পারে।</p>
+<p>— অর্থাৎ রক্ত হচ্ছে পরিবহনের মাধ্যম?</p>
+<p>— ঠিক তাই। একটি endocrine cell থেকে নিঃসৃত hormone blood stream দিয়ে দূরের target cell-এ যায়। সেখানে উপযুক্ত receptor থাকলে কোষটি signal গ্রহণ করে।</p>
+<p>আদিত্য বলল,</p>
+<p>— এ যেন দূরের কাউকে চিঠি পাঠানো।</p>
+<p>— উপমাটা ভালো। তবে মনে রাখবেন, এখানে চিঠি নয়, hormone-ই হলো signalling molecule।</p>
+</div></section>
+<section class="sec r" id="s5"><h3>Synaptic signalling — স্নায়ুর দ্রুত বার্তা</h3><div class="body">
+<p>অমৃতা এবার একটি neuron-এর কথা তুলল।</p>
+<p>— Neuronal synaptic signalling একটু আলাদা। Neurone-এর axon বরাবর electrical impulse চলাচল করে। এরপর synapse বা neuromuscular junction-এ chemical transmitter নিঃসৃত হয়।</p>
+<p>— অর্থাৎ প্রথমে electrical, পরে chemical?</p>
+<p>— হ্যাঁ। Axon বরাবর electrical impulse transmission হয়, তারপর synapse বা neuromuscular junction-এ chemical transmitter signal বহন করে।</p>
+<p>আদিত্য বলল,</p>
+<p>— তাহলে স্নায়ুকোষের যোগাযোগে দুই ধরনের মাধ্যম একসঙ্গে কাজ করছে!</p>
+<p>অমৃতা সম্মতি জানাল।</p>
+</div></section>
+<section class="sec r" id="s6"><h3>Neurocrine বা neuroendocrine signalling — স্নায়ুকোষের হরমোন নিঃসরণ</h3><div class="body">
+<p>— আরেকটি বিশেষ ব্যবস্থা আছে, যেটি endocrine signalling-এর একটি specialized variation।</p>
+<p>— সেটি কী?</p>
+<p>— Neurocrine বা neuroendocrine signalling। এখানে neurones অথবা paraneurones hormone নিঃসরণ করে interstitial fluid এবং blood stream-এ।</p>
+<p>অমৃতা উদাহরণ দিল—</p>
+<p>— Suprarenal medulla-র chromaffin cells হলো paraneurone-এর একটি উদাহরণ।</p>
+<p>আদিত্য বইয়ের পাশে লিখল:</p>
+<p>Neurones / Paraneurones → Hormone → Interstitial fluid → Blood stream.</p>
+<p>— অর্থাৎ স্নায়বিক উৎস থেকেও hormone-জাতীয় signal রক্তে যেতে পারে।</p>
+<p>— ঠিক তাই।</p>
+</div></section>
+<section class="sec r" id="s7"><h3>Paracrine signalling — পাশের কোষের জন্য বার্তা</h3><div class="body">
+<p>লাইব্রেরির জানালার পাশে কয়েকটি চেয়ার পাশাপাশি রাখা ছিল। অমৃতা সেদিকে তাকিয়ে বলল,</p>
+<p>— এবার ধরুন, এই চেয়ারে আপনি বসে আছেন আর পাশের চেয়ারে আমি। আপনাকে কিছু জানাতে হলে দূরের কারও সাহায্য লাগবে না।</p>
+<p>আদিত্য হাসল।</p>
+<p>— সেটা তো বুঝলাম।</p>
+<p>— Paracrine signalling-এও কাছাকাছি কোষের মধ্যে এমন যোগাযোগ হয়। একটি cell স্থানীয় interstitial fluid-এ signalling molecule ছাড়ে। কাছাকাছি অন্য ধরনের cell, যার নির্দিষ্ট receptor আছে, সেটি সেই molecule শনাক্ত করে।</p>
+<p>— অর্থাৎ একই এলাকার কাছের কোষে signal কাজ করে।</p>
+<p>— হ্যাঁ। তবে লক্ষ্য করবেন, এখানে neighbouring cell-টি সাধারণত signalling cell থেকে ভিন্ন ধরনের।</p>
+</div></section>
+<section class="sec r" id="s8"><h3>Autocrine signalling — নিজের তৈরি বার্তায় নিজের সাড়া</h3><div class="body">
+<p>আদিত্য বলল,</p>
+<p>— তাহলে এমন হতে পারে যে একটি কোষ নিজের তৈরি signal নিজেই গ্রহণ করে?</p>
+<p>অমৃতা এবার হাসল।</p>
+<p>— আপনি পরের লাইনটাই বলে ফেলেছেন। সেটিই Autocrine signalling।</p>
+<p>এখানে কোষ নিজেই signalling molecule তৈরি করে এবং সেই একই signal-এর প্রতি নিজেও প্রতিক্রিয়া দেখায়।</p>
+<p>— তাহলে কোষ নিজের সঙ্গেই যোগাযোগ করছে!</p>
+<p>— বলা যায়। এই প্রক্রিয়া একই ধরনের কোষের একটি গোষ্ঠীর coordinated activity-কে শক্তিশালী করতে পারে। বিশেষ করে যখন স্থানীয় signalling molecule-এর concentration বেশি থাকে, তখন ওই কোষগুলো একসঙ্গে সাড়া দিতে পারে।</p>
+</div></section>
+<section class="sec r" id="s9"><h3>Juxtacrine বা contact-dependent signalling — স্পর্শের মাধ্যমে বার্তা</h3><div class="body">
+<p>অমৃতা এবার বইয়ের একটি বাক্যে দাগ দিল।</p>
+<p>— সবচেয়ে সরাসরি স্বল্প-দূরত্বের যোগাযোগের একটি ধরন হলো contact-dependent বা juxtacrine signalling।</p>
+<p>— এখানে কি signal molecule দূরে ছড়িয়ে যায় না?</p>
+<p>— না। এখানে একটি কোষের transmembrane protein পাশের কোষের surface receptor-এর সঙ্গে binding করে। অর্থাৎ কোষ দুটির সরাসরি সংস্পর্শ প্রয়োজন।</p>
+<p>সে আরও বলল,</p>
+<p>— এই signalling-এর সঙ্গে শুধু cell-to-cell contact-ই নয়, cell surface-এর integrin-এর সঙ্গে extracellular matrix-এর উপাদানের binding-ও সম্পর্কিত। এই ধরনের signalling development এবং immune responses-এর সময় গুরুত্বপূর্ণ।</p>
+<p>আদিত্য বলল,</p>
+<p>— তাহলে কোষের যোগাযোগের জন্য কখনো রক্ত লাগে, কখনো interstitial fluid, কখনো electrical impulse, আবার কখনো সরাসরি স্পর্শ!</p>
+<p>— ঠিক ধরেছেন।</p>
+</div></section>
+<section class="sec r" id="s10"><h3>৩. একই শরীর, ছয় রকম যোগাযোগ</h3><div class="body">
+<p>আদিত্য এবার Gray’s-এর Figure 1.7 খুলে বসলো।</p>
+<p>চিত্রটির শিরোনাম:</p>
+<p>The different modes of cell–cell signalling.</p>
+<p>অমৃতা একে একে ছয়টি অংশ বুঝিয়ে দিল।</p>
+<p>Figure 1.7 — Cell–cell signalling-এর ছয়টি ধরন</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Cascade for Endocrine system Flashcards | Quizlet</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/17Cj1FOeD_4rbZMm4QeB5aCcreMkYCpHcmn_pUcIXt-KglzXr8D6LeNAZwZY_QjhcW4tKGNpkK1pLrBdj-319hR8NkozP_MANdrJbOQ4b1KGmDV_MtSQjvTWak7GTb3RXoeRPT26OiPY3MB40hAosg0o3z_giEjjdPB6shqNgvMKy80wQVU_qoElG5lUsOaT?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Cascade%20for%20Endocrine%20system%20Flashcards%20%7C%20Quizlet">Image search ↗</a></figure>
+<p>A. Endocrine</p>
+<p>Hormone blood stream দিয়ে দূরের target cells-এ পৌঁছায়।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Infographic Modern by Bailey Brashers - Infogram</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/y8pcxCLyHjfaGDNmM2qmVyavfFmzoh6u45JIAhL-xT1epoRRAHYkisVgG6KTFxicNtw9O2CM0iAkkDaX-8SFZeRwzSN187z4T2UpHZwg6DhTfja98j3iYUQoIYJ6Rc3pRZbfXhz-N8w45hvYRNmdb4GQsxZiwu2PvPWYIOSqrEjwH0jqX8wZeQLcc1XyDrH7?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Infographic%20Modern%20by%20Bailey%20Brashers%20-%20Infogram">Image search ↗</a></figure>
+<p>B. Paracrine</p>
+<p>স্থানীয় signalling molecule কাছাকাছি অন্য কোষে কাজ করে।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>CBEHx (@CbeHx) on X</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/8grRQQMjomViWHwhamyHVzQyU7JpxGHR9fdZ3BrePRHKeMKXj3XDv3V5jLV5W2Ywv69aDWkS4xpYUPfw2a0cE0TIfChlHPmhznmw3cSw3mGoIeXMcewZ-_lkq9_NukOZ3KSjvzPstt5uqEBAB42TPpMOq70z9RIloXZJq5QUujblKEExvew71KNebRM41OME?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=CBEHx%20%28%40CbeHx%29%20on%20X">Image search ↗</a></figure>
+<p>C. Autocrine</p>
+<p>কোষ নিজের তৈরি signal নিজেই গ্রহণ করে।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Schematics of a typical neuron and chemical synapse. A typical neuron... | Download Scientific Diagram</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/J0bHOT65WqDV98TsEDn70MXneSxMxDP566eSvXe3HDMse6YsnX8kpy5oElFlXl6o0gvQV_1UNYO0oStbSwpWeBtFUDGy05FyPWZGqqw-7vhfDTXH8RxK1RelYBVENHICzjsNVK8JBZSWm2sYxTQoPCXYr1_O2y3GWAkB5_lSOJj_yhw9_7Q9YdawRteHyjGM?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Schematics%20of%20a%20typical%20neuron%20and%20chemical%20synapse.%20A%20typical%20neuron...%20%7C%20Download%20Scientific%20Diagram">Image search ↗</a></figure>
+<p>D. Synaptic</p>
+<p>Axon দিয়ে electrical impulse যায়; synapse-এ chemical transmitter নিঃসৃত হয়।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>PPT - Chapter 45 PowerPoint Presentation, free download - ID:4753426</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/V1jq9WRSdR5CQo-nJmAyckiZ_yEkbTOQfIXjQUg2wnimLfUzJsOmv9oOvmNeFj3glPYv7m7TsFVNfW6uLrfvTjZpxwvrR6lNuhuldi7xcs_7ipjbNt9YgdGdQwJqGkh3m0PFnaZd4hOH0z3j-w3clZztOuiKPTKwmEfa6Mtld6IB3TCciaJ2SMkm-6X5zpsJ?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=PPT%20-%20Chapter%2045%20PowerPoint%20Presentation%2C%20free%20download%20-%20ID%3A4753426">Image search ↗</a></figure>
+<p>E. Neurocrine</p>
+<p>Neurone বা paraneurone hormone interstitial fluid ও blood stream-এ নিঃসরণ করে।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>4: Cell to Cell Communication Flashcards | Quizlet</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/kOb3V46_h_qqsq7BX8I3iaFxo9LH9VOovQDINPaQNgiMQ4GHBvFTVXl_TmeOWkWsCrhjZR0j-dxpQ4DC4SkKUJqmPfMBIOh4hWliuAygRRcreTIAbPnSHzD1ReJPRs0wedUVPfMwkZIAYKaZuXeXnoW5Ey6uRPa-GGj0O9PJU6zfVd0-gcbm9NL1eIdJjtAp?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=4%3A%20Cell%20to%20Cell%20Communication%20Flashcards%20%7C%20Quizlet">Image search ↗</a></figure>
+<p>F. Contact-dependent</p>
+<p>পাশাপাশি কোষের transmembrane protein ও surface receptor-এর সরাসরি interaction হয়।</p>
+<p>চিত্রগুলো ধারণাটি বোঝানোর জন্য সহায়ক; Gray’s Anatomy-এর মূল Figure 1.7-এর প্রতিস্থাপন নয়।</p>
+<p>আদিত্য ছবিগুলোর দিকে তাকিয়ে বলল,</p>
+<p>— একটা কোষের জগতে এত রকম যোগাযোগ! অথচ আমরা বাইরে থেকে কিছুই দেখতে পাই না।</p>
+<p>অমৃতা বলল,</p>
+<p>— জীববিজ্ঞানের সবচেয়ে সুন্দর বিষয়গুলোর একটি হলো, অনেক গুরুত্বপূর্ণ ঘটনা আমাদের চোখের আড়ালেই ঘটে।</p>
+<p>আদিত্য এবার তার দিকে তাকাল।</p>
+<p>কথাটা কি শুধু কোষের ক্ষেত্রেই সত্যি?</p>
+<p>অমৃতা বইয়ের দিকে চোখ নামিয়ে নিল। তার ঠোঁটের কোণে অল্প একটু হাসি রয়ে গেল।</p>
+</div></section>
+<section class="sec r" id="s11"><h3>৪. বার্তাবাহক কারা? — Signalling molecules বা Ligands</h3><div class="body">
+<p>কিছুক্ষণ পর আদিত্য আবার প্রশ্ন করল,</p>
+<p>— এতক্ষণ signal কীভাবে যায় জানলাম। কিন্তু signal molecule-গুলো আসলে কী দিয়ে তৈরি?</p>
+<p>অমৃতা বলল,</p>
+<p>— এবার আমরা ঢুকছি Signalling molecules and their receptors অংশে।</p>
+<p>সে বইয়ের পৃষ্ঠাটি সামনে টেনে নিল।</p>
+<p>— অধিকাংশ signalling molecule-কে ligand বলা হয়। এদের বেশিরভাগই hydrophilic। তাই recipient cell-এর plasma membrane সরাসরি অতিক্রম করে ভেতরে যেতে পারে না। প্রথমে plasma membrane-এর receptor protein-এর সঙ্গে bind করতে হয়।</p>
+<p>— তাহলে ligand-এর ধরন কী?</p>
+<p>— Gray’s-এ প্রধানত কয়েকটি গোষ্ঠীর কথা বলা হয়েছে।</p>
+<p>১. Classic peptide hormones</p>
+<p>Endocrine system-এর peptide hormone-গুলো signalling molecule-এর একটি গুরুত্বপূর্ণ উদাহরণ।</p>
+<p>২. Cytokines</p>
+<p>Cytokines প্রধানত haemopoietic cell origin-এর signalling molecule। Inflammatory response এবং tissue remodelling-এ এগুলোর ভূমিকা রয়েছে।</p>
+<p>অমৃতা উদাহরণগুলো একে একে বলল:</p>
+<ul><li>Interferons</li><li>Interleukins</li><li>Tumour necrosis factor</li><li>Leukaemia inhibitory factor</li></ul>
+<p>আদিত্য বলল,</p>
+<p>— এগুলো নাম হিসেবে পরিচিত। কিন্তু সবগুলোই যে cytokine-এর উদাহরণ, সেটা একসঙ্গে মনে রাখা দরকার।</p>
+<p>— ঠিক তাই।</p>
+<p>৩. Polypeptide growth factors</p>
+<p>এবার অমৃতা একটু ধীরে ধীরে নামগুলো বলল, আর আদিত্য লিখে নিল।</p>
+<ul><li>Epidermal growth factor (EGF) superfamily</li><li>Nerve growth factor (NGF)</li><li>Platelet-derived growth factor (PDGF)</li><li>Fibroblast growth factor (FGF) family</li><li>Transforming growth factor beta (TGF-β)</li><li>Insulin-like growth factors</li></ul>
+<p>অমৃতা বলল,</p>
+<p>— Growth factor নাম শুনে মনে হতে পারে এদের কাজ শুধু growth বা বৃদ্ধি ঘটানো। কিন্তু Gray’s বলছে, এরা multifunctional molecule। নামের চেয়ে এদের action এবং cellular source অনেক বেশি বিস্তৃত।</p>
+<p>আদিত্য মাথা নাড়ল।</p>
+<p>— অর্থাৎ নাম দেখে কাজের পরিধি সীমিত করে ফেলা যাবে না।</p>
+<p>— একদম। আর এদের receptor-ও clinically গুরুত্বপূর্ণ। কিছু cancer-এ growth factor এবং তাদের receptor অস্বাভাবিকভাবে mutated বা aberrantly expressed হতে পারে।</p>
+<p>আদিত্য এবার একটু আগ্রহী হয়ে উঠল।</p>
+<p>— Cancer-এর সঙ্গে এই receptor-এর সম্পর্ক কীভাবে?</p>
+<p>অমৃতা বলল,</p>
+<p>— কোনো gene-এর cancer-causing variant-কে বলা হয় transforming oncogene। আর সেই gene-এর স্বাভাবিক wild-type version-কে বলা হয় cellular oncogene বা proto-oncogene।</p>
+<p>— অর্থাৎ স্বাভাবিক gene-এর পরিবর্তিত রূপ cancer-এর সঙ্গে সম্পর্কিত হতে পারে?</p>
+<p>— হ্যাঁ। Gray’s এখানে gene variant-এর নামকরণ এবং receptor-এর abnormal expression-এর কথা উল্লেখ করেছে।</p>
+</div></section>
+<section class="sec r" id="s12"><h3>৫. বার্তা গ্রহণের পর কী ঘটে?</h3><div class="body">
+<p>আদিত্য তার নোটের দিকে তাকাল।</p>
+<p>— Ligand receptor-এর সঙ্গে bind করল। তারপর?</p>
+<p>অমৃতা বলল,</p>
+<p>— Receptor শুধু বার্তা গ্রহণ করে না। Activated receptor একটি transducer হিসেবেও কাজ করে। এটি intracellular signal তৈরি করে।</p>
+<p>সে বোঝাল, এই intracellular signal দুই ধরনের হতে পারে।</p>
+<p>প্রথমত: Small diffusible second messengers</p>
+<p>এগুলো ছোট অণু, যা কোষের ভেতরে signal বহন করতে পারে।</p>
+<p>Gray’s-এর উদাহরণ:</p>
+<ul><li>Calcium</li><li>Cyclic adenosine monophosphate (cAMP)</li><li>Plasma membrane lipid-soluble diacylglycerol (DAG)</li></ul>
+<p>দ্বিতীয়ত: Larger protein complexes</p>
+<p>কিছু ক্ষেত্রে activated receptor বড় protein complex-এর মাধ্যমে signal তৈরি ও পরিবহন করে। এই complex signal-কে amplify করতে এবং target control system-এর কাছে পৌঁছে দিতে পারে।</p>
+<p>আদিত্য বলল,</p>
+<p>— অর্থাৎ receptor signal গ্রহণ করে, তারপর কোষের ভেতরে signal-এর নতুন ধাপ শুরু হয়।</p>
+<p>— ঠিক। বাইরে থেকে আসা বার্তাকে ভেতরের কার্যক্রমের সঙ্গে যুক্ত করার কাজটাই এখানে গুরুত্বপূর্ণ।</p>
+</div></section>
+<section class="sec r" id="s13"><h3>৬. সব বার্তার দরজায় receptor লাগে না</h3><div class="body">
+<p>বিকেলের আলো আরও ম্লান হয়ে এসেছে। লাইব্রেরির কয়েকজন শিক্ষার্থী বই বন্ধ করে চলে যাচ্ছে।</p>
+<p>আদিত্য পরের অনুচ্ছেদে চোখ রাখল।</p>
+<p>— কিন্তু এখানে তো বলা হচ্ছে কিছু signal সরাসরি plasma membrane অতিক্রম করতে পারে!</p>
+<p>অমৃতা বলল,</p>
+<p>— ঠিক। অধিকাংশ ligand hydrophilic হওয়ায় membrane পার হতে পারে না। কিন্তু কিছু signalling molecule hydrophobic। এরা plasma membrane অতিক্রম করতে পারে।</p>
+<p>এর উদাহরণ হিসেবে Gray’s উল্লেখ করেছে:</p>
+<ul><li>Steroid hormones</li><li>Thyroid hormones</li><li>Retinoids</li><li>Vitamin D</li></ul>
+<p>অমৃতা বলল,</p>
+<p>— Steroid hormone-এর একটি গুরুত্বপূর্ণ বৈশিষ্ট্য হলো, এটি কোষে non-selectively প্রবেশ করতে পারে। কিন্তু সব কোষে একই response তৈরি করে না। নির্দিষ্ট cytoplasmic অথবা nuclear receptor প্রকাশ করে এমন target cell-এই specific response সৃষ্টি হয়।</p>
+<p>আদিত্য বলল,</p>
+<p>— অর্থাৎ প্রবেশ করতে পারা আর নির্দিষ্ট response সৃষ্টি করতে পারা এক বিষয় নয়।</p>
+<p>— খুব ভালো। এই পার্থক্যটা মনে রাখবেন।</p>
+<p>অমৃতা আরও বলল,</p>
+<p>— Light stimulus-ও photoreceptor cell-এর plasma membrane অতিক্রম করে। অন্তত rod cell-এ এটি intracellularভাবে membrane-bound photosensitive receptor protein-এর সঙ্গে interaction করে।</p>
+<p>আদিত্য একটু থেমে বলল,</p>
+<p>— আর hydrophobic ligand-গুলো শরীরের তরলে কীভাবে পরিবাহিত হয়?</p>
+<p>— Blood stream বা interstitial fluid-এ এরা সাধারণত carrier protein-এর সঙ্গে যুক্ত অবস্থায় পরিবাহিত হয়। Water-soluble ligand-এর তুলনায় এদের half-life প্রায়ই বেশি হয় এবং target-এর ওপর effect-ও দীর্ঘস্থায়ী হতে পারে।</p>
+<p>আদিত্য তার নোটে লিখল:</p>
+<p>Hydrophobic ligands → carrier proteins → longer half-life → longer-lasting effects.</p>
+</div></section>
+<section class="sec r" id="s14"><h3>৭. এক অদ্ভুত বার্তাবাহক — Nitric oxide</h3><div class="body">
+<p>অমৃতা এবার এমন একটি signalling molecule-এর কথা বলল, যেটি অন্যদের তুলনায় ব্যতিক্রমী।</p>
+<p>— এর নাম Nitric oxide বা NO।</p>
+<p>— এটি কি hydrophobic ligand-এর মতো?</p>
+<p>— এটি একটি gas। Plasma membrane অতিক্রম করতে পারে। তবে এর signalling mechanism বেশ বিশেষ।</p>
+<p>আদিত্য বলল,</p>
+<p>— এর target কী?</p>
+<p>— Short-range nitric oxide signalling-এর প্রধান target হলো smooth muscle। NO-এর প্রতিক্রিয়ায় smooth muscle relax করে।</p>
+<p>অমৃতা বইয়ের বাক্যগুলো ধরে ধরে ব্যাখ্যা করল।</p>
+<p>Vascular endothelium থেকে nitric oxide নিঃসৃত হয়। রক্তনালির দেয়ালে সরবরাহকারী autonomic nerve-এর action-এর ফলে এই NO release হতে পারে। এরপর এটি স্থানীয় smooth muscle-কে relax করে এবং blood vessel-এর dilation ঘটায়।</p>
+<p>আদিত্য বলল,</p>
+<p>— অর্থাৎ vessel-এর smooth muscle relax করলে vessel প্রসারিত হয়।</p>
+<p>— হ্যাঁ। Gray’s এই mechanism-কে penile erection-এর সঙ্গেও যুক্ত করেছে।</p>
+<p>আদিত্য এবার NO-এর সবচেয়ে গুরুত্বপূর্ণ বৈশিষ্ট্যটি জানতে চাইল।</p>
+<p>অমৃতা বলল,</p>
+<p>— অধিকাংশ signalling molecule নির্দিষ্ট receptor protein-এর মাধ্যমে কাজ করে। কিন্তু nitric oxide এই দিক থেকে অস্বাভাবিক। এর কোনো specific receptor protein নেই। এটি সরাসরি intracellular response pathway-এর enzyme-এর ওপর কাজ করে।</p>
+<p>আদিত্য বিস্মিত হয়ে বলল,</p>
+<p>— তাহলে receptor ছাড়াও signalling সম্ভব!</p>
+<p>— সেটিই NO-কে বিশেষ করে তুলেছে।</p>
+</div></section>
+<section class="sec r" id="s15"><h3>৮. Receptor-এর বিশাল পরিবার</h3><div class="body">
+<p>লাইব্রেরির ঘড়িতে সন্ধ্যা ছয়টা বাজল।</p>
+<p>অমৃতা বইয়ের শেষ অংশটুকু খুলে বলল,</p>
+<p>— এবার receptor protein-এর বৈচিত্র্যটা বুঝে নিন। কারণ signal molecule যত গুরুত্বপূর্ণ, তাকে শনাক্ত করার receptor-ও ততটাই গুরুত্বপূর্ণ।</p>
+<p>Gray’s অনুযায়ী, receptor protein-এর প্রায় ২০টি আলাদা family রয়েছে। প্রতিটি family-তে একাধিক isoform থাকতে পারে, যেগুলো ভিন্ন ligand-এর প্রতি সাড়া দেয়।</p>
+<p>এদের অধিকাংশই transmembrane protein।</p>
+<p>অমৃতা বোঝাল, একটি receptor family-এর সদস্যদের মধ্যে structural feature-এর মিল থাকে। এই মিল কখনো extracellular domain-এর ligand-binding characteristic-এ, কখনো cytoplasmic domain-এর signal transduction property-তে, আবার কখনো দুটোতেই দেখা যায়।</p>
+<p>আদিত্য বলল,</p>
+<p>— তাহলে একই family-এর receptor-গুলোর গঠনগত কিছু মিল থাকে।</p>
+<p>— হ্যাঁ। তবে ligand-এর প্রকৃতি আর receptor family-এর মধ্যে সরাসরি নির্দিষ্ট সম্পর্ক সবসময় থাকে না। একই ligand ভিন্ন cell type-এ সম্পূর্ণ ভিন্ন ধরনের receptor activate করতে পারে। ফলে intracellular response তৈরির strategy-ও ভিন্ন হতে পারে।</p>
+<p>আদিত্য বলল,</p>
+<p>— অর্থাৎ একই signal হলেও কোন কোষ গ্রহণ করছে, তার ওপর response নির্ভর করতে পারে।</p>
+<p>— ঠিক তাই।</p>
+</div></section>
+<section class="sec r" id="s16"><h3>Cell surface receptor-এর তিনটি প্রধান group</h3><div class="body">
+<p>অমৃতা এবার তিনটি নাম লিখল:</p>
+<ul><li>Ion channel-linked receptors</li><li>G-protein coupled receptors (GPCRs)</li><li>Receptors linked to enzyme systems</li></ul>
+<p>সে বলল,</p>
+<p>— Cell surface receptor-গুলোকে সাধারণত এই তিনটি intracellular system-এর সঙ্গে সংযোগের ভিত্তিতে group করা হয়। তবে কিছু receptor এই তিনটি category-র কোনোটির মধ্যেই সহজে পড়ে না।</p>
+<p>আদিত্য বলল,</p>
+<p>— আর GPCR-এর গঠনটা কেমন?</p>
+<p>অমৃতা যেন এই প্রশ্নটির অপেক্ষাতেই ছিল।</p>
+<p>— GPCR খুব গুরুত্বপূর্ণ। Gray’s বলছে, পরিচিত সব G-protein coupled receptor membrane-এর মধ্য দিয়ে সাতবার অতিক্রম করে। এরা serpentine loop-এর মতো বিন্যাস তৈরি করে।</p>
+<p>— সাতবার?</p>
+<p>— হ্যাঁ। তাই এদের বলা হয় seven-pass transmembrane receptors। আর membrane-এর মধ্য দিয়ে যাওয়া অংশগুলো alpha-helical হওয়ায় এদের seven-helix receptors-ও বলা হয়।</p>
+<p>আদিত্য খাতায় সাতটি রেখা আঁকল। রেখাগুলো membrane-এর এপার থেকে ওপারে বারবার যাওয়া-আসা করছে।</p>
+<p>অমৃতা তার আঁকা দেখে বলল,</p>
+<p>— রেখাগুলো যেন ঠিক সাতটি থাকে।</p>
+<p>— সাতের জায়গায় ছয় হয়ে গেলে receptor কি রাগ করবে?</p>
+<p>অমৃতা হেসে ফেলল।</p>
+<p>— Receptor রাগ করবে কি না জানি না, তবে পরীক্ষক নিশ্চয়ই খুশি হবেন না!</p>
+<p>আদিত্যও হেসে উঠল।</p>
+</div></section>
+<section class="sec r" id="s17"><h3>GPCR-এর পরিচিত উদাহরণ</h3><div class="body">
+<p>Gray’s কয়েকটি পরিচিত উদাহরণ উল্লেখ করেছে:</p>
+<ul><li>Olfactory system-এর odorant-binding proteins</li><li>Light-sensitive receptor protein rhodopsin</li><li>Clinically useful অনেক drug-এর receptor</li></ul>
+<p>Receptor protein, তাদের activating ligand এবং biological function-এর বিস্তৃত তালিকার জন্য Gray’s, Pollard and Earnshaw (2008)-এর কথা উল্লেখ করেছে।</p>
+<p>আদিত্য বই বন্ধ করতে যাচ্ছিল। অমৃতা থামিয়ে দিল।</p>
+<p>— আরেকটু অপেক্ষা করুন। আজকের বিষয়টির শেষটা বুঝে নেওয়া দরকার।</p>
+</div></section>
+<section class="sec r" id="s18"><h3>৯. অজানা অনুভূতিরও কি কোনো receptor থাকে?</h3><div class="body">
+<p>বাইরে তখন সন্ধ্যা নেমেছে। লাইব্রেরির আলো জ্বলে উঠেছে। আদিত্য নিজের নোটগুলো গুছিয়ে রাখছে।</p>
+<p>অমৃতা তার বই বন্ধ করল।</p>
+<p>— আজ অনেকটা পড়া হলো।</p>
+<p>আদিত্য বলল,</p>
+<p>— একটা কথা বলি?</p>
+<p>— বলুন।</p>
+<p>— আগে ভাবতাম Anatomy মানে শুধু শরীরের অঙ্গ, পেশি, হাড় আর স্নায়ুর গঠন। কিন্তু এখন মনে হচ্ছে, শরীরের প্রতিটি কোষের ভেতরেও একটা বিশাল পৃথিবী আছে। সেখানে কেউ বার্তা পাঠাচ্ছে, কেউ গ্রহণ করছে, কেউ আবার সেই বার্তাকে নতুন নির্দেশে পরিণত করছে।</p>
+<p>অমৃতা কিছুক্ষণ তার দিকে তাকিয়ে রইল।</p>
+<p>— আপনি যখন কোনো বিষয় বুঝতে শুরু করেন, তখন সেটাকে শুধু মুখস্থ করেন না। নিজের মতো করে দেখতে শুরু করেন।</p>
+<p>আদিত্য একটু হাসল।</p>
+<p>— আর আপনি যখন বোঝান, তখন কঠিন বিষয়ও সহজ মনে হয়।</p>
+<p>অমৃতা কোনো উত্তর দিল না। শুধু বইয়ের ভেতর থেকে একটি ছোট কাগজ বের করে আদিত্যের দিকে এগিয়ে দিল। কাগজটিতে আজকের পড়ার একটি গুরুত্বপূর্ণ reference লেখা ছিল।</p>
+<p>আদিত্য কাগজটি নিল।</p>
+<p>— ধন্যবাদ।</p>
+<p>— কাল আবার পড়বেন। আজকের বিষয়গুলো একবার দেখে নেবেন।</p>
+<p>দুজন পাশাপাশি লাইব্রেরি থেকে বেরিয়ে এল।</p>
+<p>করিডরের শেষ প্রান্তে এসে অমৃতা একটু থামল। আদিত্যও থামল।</p>
+<p>তাদের মধ্যে অনেক কথা হয়নি। কিন্তু কখন যে একে অপরের উপস্থিতি দুজনের দৈনন্দিন অভ্যাসের অংশ হয়ে উঠেছে, সেটা কেউই ঠিক বুঝতে পারেনি।</p>
+<p>কোষের signal-এর মতোই কিছু অনুভূতি হয়তো প্রথমে খুব ক্ষীণ থাকে। তারপর ধীরে ধীরে তার প্রভাব স্পষ্ট হতে থাকে।</p>
+<p>কিন্তু সেই অনুভূতির জন্য কোনো নির্দিষ্ট receptor আছে কি না, তা এখনো তাদের কারও জানা নেই।</p>
+<p>আর কোষের গল্পও এখানেই শেষ নয়। কারণ plasma membrane-এর বাইরে থেকে আসা signal একবার কোষের ভেতরে প্রবেশ করলে, সেই বার্তাকে nucleus পর্যন্ত পৌঁছে দেয় কে?</p>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-009.html">← Episode 9</a><a href="index.html">সব পর্ব</a><a href="episode-011.html">Episode 11 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">পর্ব ১০: নীরব বার্তা, অদৃশ্য কথোপকথন</a><a href="#s2">১. যে কথোপকথন চোখে দেখা যায় না</a><a href="#s3">২. দূরত্বের ভাষা: কেউ দূর থেকে বার্তা পাঠায়, কেউ পাশে বসে</a><a href="#s4">Endocrine signalling — দূরের ঠিকানায় বার্তা</a><a href="#s5">Synaptic signalling — স্নায়ুর দ্রুত বার্তা</a><a href="#s6">Neurocrine বা neuroendocrine signalling — স্নায়ুকোষের হরমোন নিঃসরণ</a><a href="#s7">Paracrine signalling — পাশের কোষের জন্য বার্তা</a><a href="#s8">Autocrine signalling — নিজের তৈরি বার্তায় নিজের সাড়া</a><a href="#s9">Juxtacrine বা contact-dependent signalling — স্পর্শের মাধ্যমে বার্তা</a><a href="#s10">৩. একই শরীর, ছয় রকম যোগাযোগ</a><a href="#s11">৪. বার্তাবাহক কারা? — Signalling molecules বা Ligands</a><a href="#s12">৫. বার্তা গ্রহণের পর কী ঘটে?</a><a href="#s13">৬. সব বার্তার দরজায় receptor লাগে না</a><a href="#s14">৭. এক অদ্ভুত বার্তাবাহক — Nitric oxide</a><a href="#s15">৮. Receptor-এর বিশাল পরিবার</a><a href="#s16">Cell surface receptor-এর তিনটি প্রধান group</a><a href="#s17">GPCR-এর পরিচিত উদাহরণ</a><a href="#s18">৯. অজানা অনুভূতিরও কি কোনো receptor থাকে?</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

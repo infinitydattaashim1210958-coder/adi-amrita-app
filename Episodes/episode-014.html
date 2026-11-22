@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 014 · কোষের অদৃশ্য বর্ম — Intermediate Filaments ও তার শক্তির রহস্য</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 014">EPISODE 014</h1>
+  <div class="ttl">কোষের অদৃশ্য বর্ম — Intermediate Filaments ও তার শক্তির রহস্য</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">014</div></div>
+    <div class="face b"><div class="t2">কোষের অদৃশ্য বর্ম — Intermediate Filaments ও তার শক্তির রহস্য</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>Episode 14: কোষের অদৃশ্য বর্ম — Intermediate Filaments ও তার শক্তির রহস্য</h3><div class="body">
+<p>Gray’s Anatomy · Chapter 1: Basic Structure and Function of Cells · Page 51</p>
+<p>সকালের Dhaka Medical College। Anatomy lecture theatre-এর সামনের সারিতে আজ আদিত্য, অমৃতা, রুদ্র, সায়ন আর নন্দিনী বসেছে। সবার সামনে খোলা Gray’s Anatomy।</p>
+<p>গত ক্লাসে Microtubules-এর গঠন, গতিশীলতা, motor proteins এবং intracellular transport নিয়ে আলোচনা শেষ হয়েছে। কিন্তু অমৃতার মনে একটা প্রশ্ন রয়ে গেছে।</p>
+<p>অমৃতা: স্যার, Actin filaments কোষের movement-এ সাহায্য করে, Microtubules intracellular transport আর cell division-এ গুরুত্বপূর্ণ। কিন্তু কোষ যখন বারবার চাপ, টান বা বাঁকানোর মতো mechanical force-এর মুখোমুখি হয়, তখন কোষের structural strength কে বজায় রাখে?</p>
+<p>অধ্যাপক: খুব ভালো প্রশ্ন। কোষের এমন একটি cytoskeletal system আছে, যার প্রধান কাজের মধ্যে রয়েছে mechanical strength দেওয়া। আজ আমরা সেটিই পড়ব—Intermediate filaments।</p>
+<p>আদিত্য: তাহলে এগুলোকে কোষের structural reinforcement বলা যায়?</p>
+<p>অধ্যাপক: বলা যায়। তবে শুধু নাম মনে রাখলে হবে না। কীভাবে তৈরি হয়, কেন এত শক্তিশালী, কোন tissue-তে কোন ধরনের filament থাকে—সব বুঝতে হবে।</p>
+<p>রুদ্র পাশ থেকে ফিসফিস করে বলল—</p>
+<p>রুদ্র: আজ মনে হচ্ছে আমাদের কোষের construction engineering পড়ানো হবে!</p>
+<p>নন্দিনী: তুই আগে নিজের মাথার construction ঠিক কর। গতকাল Microtubule আর Microfilament গুলিয়ে ফেলেছিলি।</p>
+<p>সবাই হেসে উঠল।</p>
+</div></section>
+<section class="sec r" id="s2"><h3>১. Microtubules ও Actin থেকে Intermediate filaments: মূল পার্থক্য</h3><div class="body">
+<p>অধ্যাপক বোর্ডে তিনটি নাম লিখলেন:</p>
+<ul><li>Actin filaments</li><li>Microtubules</li><li>Intermediate filaments</li></ul>
+<p>অধ্যাপক: প্রথমে মৌলিক পার্থক্যটা বোঝো।</p>
+<p>Actin filaments এবং Microtubules তৈরি হয় globular protein থেকে। এই protein-গুলোর nucleotide-binding এবং nucleotide-hydrolysing activity রয়েছে।</p>
+<p>কিন্তু Intermediate filaments-এর গঠন আলাদা।</p>
+<p>Gray’s Anatomy অনুযায়ী:</p>
+<ul><li>Intermediate filaments প্রায় 10 nm thick।</li><li>এগুলো filamentous protein-এর একটি heterogeneous group দিয়ে তৈরি।</li><li>এদের monomer-গুলো filamentous।</li><li>এই monomer-গুলোর enzymatic activity নেই।</li></ul>
+<p>সায়ন: স্যার, তাহলে Actin আর Tubulin-এর মতো nucleotide ব্যবহার করে এদের assembly নিয়ন্ত্রণ হয় না?</p>
+<p>অধ্যাপক: এই অংশে Gray’s যে পার্থক্যটি স্পষ্ট করেছে, সেটি হলো Intermediate filament-এর monomer-এ nucleotide-binding এবং hydrolysing activity নেই। তাই Actin ও Microtubules-এর সঙ্গে এদের গঠনগত পার্থক্যটি মনে রাখবে।</p>
+<p>অমৃতা খাতায় লিখল:</p>
+<div class="tw"><table><thead><tr><th>বৈশিষ্ট্য</th><th>Actin ও Microtubules</th><th>Intermediate filaments</th></tr></thead><tbody><tr><td>Building blocks</td><td>Globular proteins</td><td>Filamentous proteins</td></tr><tr><td>Monomer-এর enzymatic activity</td><td>Nucleotide-binding ও hydrolysing activity আছে</td><td>নেই</td></tr><tr><td>Diameter</td><td>পৃথক</td><td>প্রায় 10 nm</td></tr></tbody></table></div>
+<p>আদিত্য: অর্থাৎ Intermediate filaments-এর বিশেষত্ব হলো filamentous protein দিয়ে তৈরি হওয়া এবং mechanical strength প্রদান করা।</p>
+<p>অমৃতা: হ্যাঁ, তবে mechanical strength কীভাবে তৈরি হয়, সেটা এখনো বুঝিনি।</p>
+<p>অধ্যাপক: সেটিই আজকের সবচেয়ে গুরুত্বপূর্ণ অংশ।</p>
+</div></section>
+<section class="sec r" id="s3"><h3>২. Intermediate filaments কীভাবে তৈরি হয়: Three-step assembly</h3><div class="body">
+<p>অধ্যাপক বোর্ডে লিখলেন:</p>
+<p>Three-step assembly</p>
+<ul><li>Parallel dimer formation</li><li>Tetramer formation</li><li>Unit length filament (ULF) formation and longitudinal assembly</li></ul>
+</div></section>
+<section class="sec r" id="s4"><h3>Step 1: Parallel dimer formation</h3><div class="body">
+<p>প্রতিটি Intermediate filament protein subunit-এর মধ্যে থাকে:</p>
+<ul><li>একটি central α-helical rod domain</li><li>একটি head domain</li><li>একটি tail domain</li></ul>
+<p>Central α-helical rod domain-এ প্রায় 310 amino acids থাকে।</p>
+<p>Head এবং tail domain non-α-helical; এগুলোর size পরিবর্তনশীল।</p>
+<p>দুটি protein subunit তাদের central α-helical rod domain দিয়ে একে অপরের চারদিকে coiled হয়ে একটি parallel dimer তৈরি করে।</p>
+<p>রুদ্র: Parallel মানে দুটো একই দিকে পাশাপাশি অবস্থান করছে?</p>
+<p>অধ্যাপক: ঠিক তাই।</p>
+<p>অমৃতা: তাহলে head এবং tail domain-এর কাজ কী?</p>
+<p>অধ্যাপক: Gray’s Anatomy অনুযায়ী, intermediate filament protein subunit-এর head ও tail domain-এর length এবং amino-acid sequence-এর variability রয়েছে। এগুলো Intermediate filaments-এর অন্যান্য protein-এর সঙ্গে interaction নিয়ন্ত্রণে ভূমিকা রাখে বলে মনে করা হয়।</p>
+<p>অর্থাৎ, protein-এর এই অংশগুলোর পার্থক্য Intermediate filaments-এর বিভিন্ন ধরনের protein-এর মধ্যে বৈচিত্র্য তৈরি করে।</p>
+</div></section>
+<section class="sec r" id="s5"><h3>Step 2: Tetramer formation</h3><div class="body">
+<p>এবার দুটি dimer একত্রিত হয়।</p>
+<p>তবে এখানে একটি গুরুত্বপূর্ণ বিষয় আছে।</p>
+<p>দুটি dimer antiparallel অবস্থানে এবং half-staggered arrangement-এ যুক্ত হয়।</p>
+<p>এর ফলে একটি tetrameric unit তৈরি হয়।</p>
+<p>সায়ন: স্যার, antiparallel বলতে কী বোঝাচ্ছে?</p>
+<p>অধ্যাপক: ধরো, দুটি দণ্ড পাশাপাশি রাখা আছে। প্রথমটির head বামদিকে, tail ডানদিকে। দ্বিতীয়টির head ডানদিকে, tail বামদিকে। অর্থাৎ তারা বিপরীত orientation-এ রয়েছে। এটাই antiparallel arrangement।</p>
+<p>আদিত্য: তাহলে এই arrangement-এর কারণে Intermediate filament-এর polarity থাকে না?</p>
+<p>অধ্যাপক: খুব ভালো। ঠিক পরের অংশেই সেটি আসছে।</p>
+</div></section>
+<section class="sec r" id="s6"><h3>Step 3: Unit length filament (ULF)</h3><div class="body">
+<p>এবার আটটি tetramer lateral association-এর মাধ্যমে একত্রিত হয়।</p>
+<p>তৈরি হয়:</p>
+<p>Unit length filament</p>
+<ul><li>ULF-এর thickness প্রায় 16 nm।</li><li>Individual ULF একটির পর একটি end-to-end যুক্ত হয়।</li><li>এভাবে short filaments তৈরি হয়।</li><li>আরও ULF এবং existing filaments-এর সঙ্গে annealing-এর মাধ্যমে filament longitudinal direction-এ বড় হয়।</li><li>Filament elongation-এর পর internal compaction ঘটে।</li><li>শেষ পর্যন্ত প্রায় 30 nm thick intermediate filament তৈরি হয়।</li></ul>
+<p>নন্দিনী: একটু দাঁড়াও। শুরুতে Intermediate filaments-এর thickness 10 nm বললেন, আবার ULF 16 nm, mature filament 30 nm—তিনটা আলাদা মাপ কেন?</p>
+<p>অধ্যাপক: খুব গুরুত্বপূর্ণ পর্যবেক্ষণ। এখানে তিনটি আলাদা বিষয়:</p>
+<ul><li>10 nm: Intermediate filaments-এর সাধারণ বর্ণিত diameter।</li><li>16 nm: ULF-এর thickness।</li><li>30 nm: internal compaction-এর পর তৈরি intermediate filament-এর thickness, যেমন এই assembly description-এ উল্লেখ করা হয়েছে।</li></ul>
+<p>তাই পরীক্ষায় প্রশ্নের wording অনুযায়ী মাপটি লিখবে। সবগুলোকে একই stage-এর measurement ভেবে গুলিয়ে ফেলবে না।</p>
+</div></section>
+<section class="sec r" id="s7"><h3>৩. Intermediate filaments কেন এত শক্তিশালী?</h3><div class="body">
+<p>অধ্যাপক বোর্ডে একটি বাক্য লিখলেন:</p>
+<p>High tensile strength and resistance to mechanical forces</p>
+<p>অধ্যাপক: Intermediate filaments-এর dimer, tetramer এবং ULF-এর tight association এদের mechanical strength তৈরি করে।</p>
+<p>এরা বিশেষভাবে resistance প্রদান করে:</p>
+<ul><li>Stretching</li><li>Compression</li><li>Twisting</li><li>Bending</li></ul>
+<p>আদিত্য: অর্থাৎ কোষ যখন টান বা চাপের সম্মুখীন হয়, Intermediate filaments তার structural integrity বজায় রাখতে সাহায্য করে।</p>
+<p>অধ্যাপক: ঠিক। Gray’s Anatomy এদের high tensile strength-এর বিষয়টি বিশেষভাবে উল্লেখ করেছে।</p>
+</div></section>
+<section class="sec r" id="s8"><h3>Intermediate filaments-এর polarity নেই কেন?</h3><div class="body">
+<p>এবার অমৃতা প্রশ্ন করল—</p>
+<p>অমৃতা: Actin filaments ও Microtubules-এর plus end এবং minus end থাকে। কিন্তু Intermediate filaments non-polar কেন?</p>
+<p>অধ্যাপক: মনে করো, Intermediate filament-এর tetramer তৈরির সময় দুটি dimer antiparallel orientation-এ যুক্ত হয়েছে। এই বিপরীতমুখী arrangement-এর ফলে filament-এর দুই প্রান্তে একই ধরনের directional polarity তৈরি হয় না।</p>
+<p>এ কারণে Intermediate filaments হলো non-polar।</p>
+<p>আরেকটি গুরুত্বপূর্ণ পার্থক্য:</p>
+<ul><li>Intermediate filaments nucleotide bind করে না।</li><li>G-actin ও tubulin dimers-এর মতো nucleotide-binding বৈশিষ্ট্য এদের নেই।</li><li>ULF-গুলো end-to-end annealing-এর মাধ্যমে যুক্ত হয়।</li></ul>
+<p>অন্যদিকে F-actin এবং Microtubules polarized। এদের plus end, minus end থাকে এবং plus end সাধারণত minus end-এর তুলনায় দ্রুত grow করে।</p>
+<p>রুদ্র: অর্থাৎ Intermediate filaments-এর assembly mechanism-ও Actin আর Microtubules-এর মতো নয়।</p>
+<p>অধ্যাপক: একদম ঠিক।</p>
+</div></section>
+<section class="sec r" id="s9"><h3>৪. কোষের ভেতরে Intermediate filaments-এর অবস্থান ও কাজ</h3><div class="body">
+<p>অধ্যাপক এবার একটি নতুন প্রশ্ন করলেন।</p>
+<p>অধ্যাপক: Intermediate filaments শুধু mechanical strength দেয়, নাকি আরও কোনো ভূমিকা আছে?</p>
+<p>সায়ন: অন্যান্য cellular structures-এর attachment-এর জন্য scaffolding হিসেবেও কাজ করে?</p>
+<p>অধ্যাপক: ঠিক বলেছ।</p>
+<p>Gray’s Anatomy অনুযায়ী Intermediate filaments:</p>
+<ul><li>বিভিন্ন cell type-এ পাওয়া যায়।</li><li>অনেক cell-এ প্রচুর পরিমাণে থাকে।</li><li>যেখানে structural strength প্রয়োজন, সেখানে mechanical support দেয়।</li><li>অন্যান্য structure-এর attachment-এর জন্য scaffolding তৈরি করে।</li><li>Cytoplasm-এর মধ্যে extensive network তৈরি করে।</li></ul>
+<p>এই network-এর বিস্তার হতে পারে:</p>
+<ul><li>Perinuclear cage-like arrangement থেকে</li><li>Cell surface পর্যন্ত</li></ul>
+<p>অমৃতা: অর্থাৎ nucleus-এর চারপাশ থেকে শুরু করে cell surface পর্যন্ত একটি structural network থাকতে পারে।</p>
+<p>অধ্যাপক: হ্যাঁ। আরেকটি গুরুত্বপূর্ণ বিষয়—Intermediate filaments-এর বিভিন্ন molecular class নির্দিষ্ট tissue অথবা maturity-এর নির্দিষ্ট অবস্থার সঙ্গে সম্পর্কিত।</p>
+<p>তাই এগুলো ব্যবহার করে কোনো cell-এর origin অথবা differentiation-এর degree সম্পর্কে ধারণা পাওয়া যায়।</p>
+<p>এ কারণে histopathology-তেও Intermediate filaments যথেষ্ট গুরুত্বপূর্ণ।</p>
+<p>আদিত্য: তাহলে কোনো tissue sample-এ নির্দিষ্ট Intermediate filament protein শনাক্ত করা গেলে cell-এর পরিচয় সম্পর্কে ধারণা পাওয়া সম্ভব।</p>
+<p>অধ্যাপক: ঠিক। তবে মনে রাখবে, Gray’s এখানে Intermediate filament-কে cell origin ও differentiation-এর indicator হিসেবে উল্লেখ করেছে।</p>
+</div></section>
+<section class="sec r" id="s10"><h3>৫. Intermediate filaments-এর পাঁচটি Type</h3><div class="body">
+<p>অধ্যাপক বোর্ডে লিখলেন:</p>
+</div></section>
+<section class="sec r" id="s11"><h3>Five types of Intermediate filaments</h3><div class="body">
+<p>Gray’s Anatomy Intermediate filament proteins-কে তাদের primary structure এবং tissue-specific expression-এর ভিত্তিতে পাঁচটি distinct type-এ ভাগ করেছে।</p>
+<p>আজকের ক্লাসে সবচেয়ে গুরুত্বপূর্ণ বিষয় হলো—কোন Type কোন tissue বা cell-এর সঙ্গে সম্পর্কিত।</p>
+</div></section>
+<section class="sec r" id="s12"><h3>Type I ও Type II: Keratin</h3><div class="body">
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Glossary. Atlas of Plant and Animal Hystology</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/26lLyolujmSaMfCKEp5-FbZrH4gb6ZtJDvY1Vhv9vsz_neryY0IUVkJgoJxk5AY7vZ1sxKkmfQh5gE_NcUsI3iWFGx159wpOTMpG3hDD2Oj3Dhxyj-8AiJhqXD2ZOSku3FlJxJn2v6w6JqW3ZUecclSXqB4YEs_jTtDZ2IE3gCB6ca_OkEAawNO7F6TAU6v4?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Glossary.%20Atlas%20of%20Plant%20and%20Animal%20Hystology">Image search ↗</a></figure>
+<p>অধ্যাপক: Keratin বা Cytokeratin protein পাওয়া যায় epithelia-তে।</p>
+<p>এখানে একটি গুরুত্বপূর্ণ বৈশিষ্ট্য রয়েছে:</p>
+<p>Keratin filaments সবসময় সমান অনুপাতে দুটি ধরনের keratin দিয়ে তৈরি heteropolymers:</p>
+<ul><li>Type I — Acidic keratins</li><li>Type II — Basic to neutral keratins</li></ul>
+<p>প্রায় 20 types of acidic keratin এবং 20 types of basic/neutral keratin protein পরিচিত।</p>
+<p>নন্দিনী: স্যার, তাহলে Keratin filament তৈরি করতে acidic এবং basic/neutral—দুই ধরনের keratin-ই দরকার?</p>
+<p>অধ্যাপক: Gray’s-এর বর্ণনা অনুযায়ী, হ্যাঁ। Keratin filaments-এ এদের equal ratio থাকে।</p>
+</div></section>
+<section class="sec r" id="s13"><h3>Epidermis-এ Keratin-এর পরিবর্তন</h3><div class="body">
+<p>এবার অধ্যাপক epidermis-এর কথা তুললেন।</p>
+<p>Epidermis-এর মধ্যে keratinocyte-গুলো যখন mature হয় এবং basal layer থেকে superficial layer-এর দিকে যায়, তখন keratin heteropolymers-এর expression পরিবর্তিত হয়।</p>
+<p>অমৃতা: অর্থাৎ সব epidermal layer-এ একই Keratin expression থাকে না?</p>
+<p>অধ্যাপক: ঠিক তাই।</p>
+<p>Genetic abnormalities of keratins epithelial mechanical stability-কে প্রভাবিত করতে পারে।</p>
+<p>Gray’s Anatomy এখানে দুটি গুরুত্বপূর্ণ disease-এর উদাহরণ দিয়েছে।</p>
+</div></section>
+<section class="sec r" id="s14"><h3>A. Epidermolysis bullosa simplex</h3><div class="body">
+<ul><li>Mechanical trauma-এর পর skin blistering হয়।</li><li>Epidermal basal cells-এর lysis ঘটে।</li><li>Keratin 5 এবং Keratin 14-এর gene-এ defect থাকলে cytoskeletal instability তৈরি হয়।</li><li>এর ফলে epidermis-এর basal cells-এ cellular fragility দেখা যায়।</li></ul>
+<p>রুদ্র: তাহলে basal cell-এর mechanical stability নষ্ট হওয়ার সঙ্গে Keratin 5 ও 14-এর সম্পর্ক রয়েছে।</p>
+<p>অধ্যাপক: হ্যাঁ।</p>
+</div></section>
+<section class="sec r" id="s15"><h3>B. Epidermolytic hyperkeratosis</h3><div class="body">
+<ul><li>Keratin 1 এবং Keratin 10 affected হলে epidermis-এর spinous বা prickle cell layer-এর cells lyse করে।</li><li>এর ফলে intraepidermal blistering হয়।</li></ul>
+<p>আদিত্য: দুটো disease-এর পার্থক্যটা পরিষ্কার হলো। প্রথমটিতে basal cells, আর দ্বিতীয়টিতে spinous layer-এর cells আক্রান্ত।</p>
+<p>অধ্যাপক: খুব ভালো। এই পার্থক্যটি মনে রাখবে।</p>
+</div></section>
+<section class="sec r" id="s16"><h3>Type III: Vimentin, Desmin, GFAP ও Peripherin</h3><div class="body">
+<p>Type III intermediate filament proteins-এর মধ্যে রয়েছে:</p>
+<ul><li>Vimentin</li><li>Desmin</li><li>Glial fibrillary acidic protein (GFAP)</li><li>Peripherin</li></ul>
+<p>Gray’s Anatomy অনুযায়ী, এই Type III proteins homopolymer intermediate filaments তৈরি করে।</p>
+<p>অধ্যাপক: এবার প্রত্যেকটির tissue distribution দেখো।</p>
+<div class="tw"><table><thead><tr><th>Protein</th><th>কোথায় প্রকাশিত হয়</th></tr></thead><tbody><tr><td>Vimentin</td><td>Mesenchyme-derived connective tissue cells এবং early development-এর কিছু ectodermal cells</td></tr><tr><td>Desmin</td><td>Muscle cells</td></tr><tr><td>GFAP</td><td>Glial cells</td></tr><tr><td>Peripherin</td><td>Peripheral axons</td></tr></tbody></table></div>
+<p>সায়ন: স্যার, Vimentin কি connective tissue-এর cell শনাক্ত করতে কাজে লাগে?</p>
+<p>অধ্যাপক: Gray’s-এর tissue-specific expression-এর বর্ণনা থেকে সেটি বোঝা যায়। বিভিন্ন Intermediate filament class-এর tissue specificity histopathology-তে cell-এর origin এবং differentiation নির্ধারণে সহায়ক।</p>
+</div></section>
+<section class="sec r" id="s17"><h3>Type IV: Neurofilaments, Nestin, Syncoilin ও α-internexin</h3><div class="body">
+<p>Type IV intermediate filaments-এর অন্তর্ভুক্ত:</p>
+<ul><li>Neurofilaments</li><li>Nestin</li><li>Syncoilin</li><li>α-internexin</li></ul>
+<p>এদের মধ্যে Neurofilaments বিশেষভাবে গুরুত্বপূর্ণ।</p>
+<p>অধ্যাপক: Neurofilaments হলো neurones-এর একটি major cytoskeletal element। বিশেষ করে axons-এ এরা প্রধান cytoskeletal protein।</p>
+<p>Neurofilaments হলো heteropolymers। এগুলোর তিনটি molecular-weight class রয়েছে:</p>
+<ul><li>NF–L: Low molecular weight</li><li>NF–M: Medium molecular weight</li><li>NF–H: High molecular weight</li></ul>
+<p>একটি বিশেষ বিষয় মনে রাখবে:</p>
+<p>NF–L সবসময় NF–M অথবা NF–H-এর যেকোনো একটির সঙ্গে উপস্থিত থাকে।</p>
+<p>অমৃতা: অর্থাৎ NF–L একা থাকে না; NF–M অথবা NF–H-এর সঙ্গে combination তৈরি করে।</p>
+<p>অধ্যাপক: ঠিক।</p>
+</div></section>
+<section class="sec r" id="s18"><h3>Neurofibrillary tangles</h3><div class="body">
+<p>Neurofilaments-এর abnormal accumulation-কে neurofibrillary tangles বলা হয়।</p>
+<p>Gray’s Anatomy অনুযায়ী, এই abnormal accumulation বিভিন্ন neuropathological condition-এর characteristic feature।</p>
+</div></section>
+<section class="sec r" id="s19"><h3>Nestin</h3><div class="body">
+<p>Nestin একটি neurofilament protein-এর মতো। এটি বিশেষত neurectodermal stem cells-এ Intermediate filaments তৈরি করে।</p>
+<p>আদিত্য: তাহলে Type IV-এর protein-গুলোর মধ্যে Neurofilaments axons-এর সঙ্গে, আর Nestin neurectodermal stem cells-এর সঙ্গে সম্পর্কিত।</p>
+<p>অধ্যাপক: ঠিক।</p>
+</div></section>
+<section class="sec r" id="s20"><h3>Type V: Nuclear lamins</h3><div class="body">
+<p>এবার অধ্যাপক বোর্ডে লিখলেন:</p>
+<p>Type V — Nuclear lamins</p>
+<p>এর অন্তর্ভুক্ত:</p>
+<ul><li>Lamin A</li><li>Lamin B1</li><li>Lamin B2</li></ul>
+<p>এগুলো সব nucleated cells-এর nuclear envelope-এর inner surface বরাবর থাকে।</p>
+<p>Lamin C হলো Lamin A-এর একটি splice variant।</p>
+<p>নন্দিনী: স্যার, Lamins-ও Intermediate filaments?</p>
+<p>অধ্যাপক: হ্যাঁ। Type V Intermediate filament group-এর অন্তর্ভুক্ত।</p>
+<p>Lamins-এর দুটি গুরুত্বপূর্ণ ভূমিকা রয়েছে:</p>
+<ul><li>Nucleus-এর জন্য mechanical framework তৈরি করা।</li><li>Nucleus-এর periphery-তে chromatin সংগঠিত করে এমন protein-গুলোর attachment site হিসেবে কাজ করা।</li></ul>
+<p>তবে Lamins-এর একটি বিশেষ structural বৈশিষ্ট্য আছে।</p>
+<p>এগুলো linear bundles তৈরি করে না। বরং irregular, anastomosing network of filaments তৈরি করে।</p>
+<p>রুদ্র: Anastomosing মানে একাধিক filament পরস্পরের সঙ্গে যুক্ত হয়ে জালের মতো network তৈরি করছে?</p>
+<p>অধ্যাপক: ঠিক। এটিই Lamins-এর structural arrangement-এর গুরুত্বপূর্ণ বৈশিষ্ট্য।</p>
+</div></section>
+<section class="sec r" id="s21"><h3>৬. আজকের ক্লাসের সবচেয়ে গুরুত্বপূর্ণ তুলনা</h3><div class="body">
+<p>ক্লাস শেষ হওয়ার আগে অধ্যাপক বললেন—</p>
+<p>অধ্যাপক: তোমরা এতক্ষণ যে পাঁচটি Type পড়লে, সেগুলোকে tissue-specific expression অনুযায়ী সাজিয়ে ফেলো।</p>
+<div class="tw"><table><thead><tr><th>Type</th><th>Intermediate filament proteins</th><th>প্রধান অবস্থান</th></tr></thead><tbody><tr><td>I ও II</td><td>Keratins</td><td>Epithelia</td></tr><tr><td>III</td><td>Vimentin, Desmin, GFAP, Peripherin</td><td>Connective tissue, muscle, glial cells, peripheral axons</td></tr><tr><td>IV</td><td>Neurofilaments, Nestin, Syncoilin, α-internexin</td><td>Neurones/axons এবং neurectodermal stem cells</td></tr><tr><td>V</td><td>Lamins</td><td>Nuclear envelope-এর inner surface</td></tr></tbody></table></div>
+<p>সায়ন: স্যার, পাঁচটি Type-এর মধ্যে সবচেয়ে বেশি clinical relevance কোনটির?</p>
+<p>অধ্যাপক: একটিকে বেছে নেওয়ার দরকার নেই। Keratin defects epithelial fragility ও blistering-এর সঙ্গে সম্পর্কিত। Neurofilament accumulation neuropathological conditions-এ দেখা যায়। আর Lamins-এর abnormalities nuclear structure-এর সঙ্গে সম্পর্কিত। তোমাদের প্রত্যেকটি বুঝতে হবে।</p>
+</div></section>
+<section class="sec r" id="s22"><h3>৭. সন্ধ্যার লাইব্রেরি: পড়াশোনার বাইরে ছোট্ট একটা মুহূর্ত</h3><div class="body">
+<p>বিকেল গড়িয়ে সন্ধ্যা। Anatomy library-র এক কোণে পাঁচজন বসে আছে। আজকের lecture-এর notes মিলিয়ে নিচ্ছে তারা।</p>
+<p>রুদ্র: আমার মনে হয়, Intermediate filaments-এর পাঁচটা Type মুখস্থ করতে গিয়ে আমার নিজের intermediate brain filament তৈরি হয়ে গেছে।</p>
+<p>নন্দিনী: তোর brain-এর আগে revision দরকার।</p>
+<p>অমৃতা হেসে ফেলল। আদিত্য তার দিকে তাকিয়ে বলল—</p>
+<p>আদিত্য: তুই Keratin 5 আর 14-এর disease association লিখেছিস?</p>
+<p>অমৃতা: লিখেছি। কিন্তু তুই একটা জিনিস বাদ দিয়েছিস।</p>
+<p>আদিত্য: কী?</p>
+<p>অমৃতা: Neurofilament-এর NF–L সবসময় NF–M অথবা NF–H-এর সঙ্গে থাকে। তোর notes-এ শুধু তিনটার নাম আছে।</p>
+<p>আদিত্য খাতা খুলে দেখল। সত্যিই কথাটা বাদ পড়েছে।</p>
+<p>আদিত্য: বাহ! তুই তো আমার notes-এর quality controller হয়ে গেছিস।</p>
+<p>অমৃতা: কেউ তো হতে হবে। ভবিষ্যতে বড় doctor হতে চাইলে ছোট ভুলগুলো এখনই ধরতে হবে।</p>
+<p>আদিত্য: ঠিক আছে, ম্যাডাম। কাল থেকে আমার notes audit করার দায়িত্ব তোর।</p>
+<p>অমৃতা: দায়িত্ব নিতে পারি, তবে তুই আমার notes-ও check করবি।</p>
+<p>রুদ্র: বুঝলাম। আমাদের group study এখন থেকে quality assurance department!</p>
+<p>সবাই আবার হেসে উঠল।</p>
+<p>কিন্তু হাসির মাঝেও অমৃতা লক্ষ করল, আদিত্য তার ভুলগুলো লুকায় না। বরং মন দিয়ে সংশোধন করে। আর আদিত্যও বুঝতে পারছিল—অমৃতার সঙ্গে পড়লে শুধু পড়া শেষ হয় না, নিজের বোঝার জায়গাগুলোও পরিষ্কার হয়।</p>
+<p>তাদের বন্ধুত্বের ভিতটা এভাবেই আরও শক্ত হচ্ছিল।</p>
+<p>Source checked</p>
+<p>আজকের আলোচিত বিষয়</p>
+<ul><li> Axonal transport, IFT particles, IFT-A ও IFT-B, ciliogenesis, intramanchette transport, photoreceptor cilium, ciliopathies ও BBSome।</li><li>Intermediate filaments-এর গঠন, 3-step assembly, ULF, polarity, mechanical strength ও tissue distribution।</li><li>Type I–V Intermediate filaments এবং তাদের সংশ্লিষ্ট protein ও disease association।</li></ul>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-013.html">← Episode 13</a><a href="index.html">সব পর্ব</a><a href="episode-015.html">Episode 15 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">Episode 14: কোষের অদৃশ্য বর্ম — Intermediate Filaments ও তার শক্তির রহস্য</a><a href="#s2">১. Microtubules ও Actin থেকে Intermediate filaments: মূল পার্থক্য</a><a href="#s3">২. Intermediate filaments কীভাবে তৈরি হয়: Three-step assembly</a><a href="#s4">Step 1: Parallel dimer formation</a><a href="#s5">Step 2: Tetramer formation</a><a href="#s6">Step 3: Unit length filament (ULF)</a><a href="#s7">৩. Intermediate filaments কেন এত শক্তিশালী?</a><a href="#s8">Intermediate filaments-এর polarity নেই কেন?</a><a href="#s9">৪. কোষের ভেতরে Intermediate filaments-এর অবস্থান ও কাজ</a><a href="#s10">৫. Intermediate filaments-এর পাঁচটি Type</a><a href="#s11">Five types of Intermediate filaments</a><a href="#s12">Type I ও Type II: Keratin</a><a href="#s13">Epidermis-এ Keratin-এর পরিবর্তন</a><a href="#s14">A. Epidermolysis bullosa simplex</a><a href="#s15">B. Epidermolytic hyperkeratosis</a><a href="#s16">Type III: Vimentin, Desmin, GFAP ও Peripherin</a><a href="#s17">Type IV: Neurofilaments, Nestin, Syncoilin ও α-internexin</a><a href="#s18">Neurofibrillary tangles</a><a href="#s19">Nestin</a><a href="#s20">Type V: Nuclear lamins</a><a href="#s21">৬. আজকের ক্লাসের সবচেয়ে গুরুত্বপূর্ণ তুলনা</a><a href="#s22">৭. সন্ধ্যার লাইব্রেরি: পড়াশোনার বাইরে ছোট্ট একটা মুহূর্ত</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

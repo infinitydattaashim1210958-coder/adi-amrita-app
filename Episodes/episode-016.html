@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 016 · Chromosomes ও Telomeres: জীবনের নকশা, প্রজন্মের স্মৃতি এবং সময়ের ছাপ</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 016">EPISODE 016</h1>
+  <div class="ttl">Chromosomes ও Telomeres: জীবনের নকশা, প্রজন্মের স্মৃতি এবং সময়ের ছাপ</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">016</div></div>
+    <div class="face b"><div class="t2">Chromosomes ও Telomeres: জীবনের নকশা, প্রজন্মের স্মৃতি এবং সময়ের ছাপ</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>Episode 16 — Chromosomes ও Telomeres: জীবনের নকশা, প্রজন্মের স্মৃতি এবং সময়ের ছাপ</h3><div class="body">
+<p>এবার আমরা Episode 15-এর শেষ বিষয় Chromatin থেকে পরবর্তী শিরোনাম Chromosomes and telomeres-এ এগোচ্ছি। আজকের পর্বে শুধু Chromosome-এর গঠন নয়—Centromere, Kinetochore, Telomere, Telomerase, Replicative senescence, Karyotyping এবং chromosome banding ও FISH পর্যন্ত ধারাবাহিকভাবে পড়ব।</p>
+<p>Adi &amp; Amrita | Gray’s Anatomy Study Series | Chapter 1</p>
+</div></section>
+<section class="sec r" id="s2"><h3>১. Anatomy lecture hall — DNA-র শেষ পর্যন্ত যাত্রা</h3><div class="body">
+<p>ঢাকা মেডিকেল কলেজের Anatomy lecture hall।</p>
+<p>Professor বোর্ডে আগের দিনের আলোচনাটি লিখলেন:</p>
+<p>Chromatin → Chromosomes</p>
+<p>“গত ক্লাসে আমরা Chromatin-এর packaging এবং Euchromatin ও Heterochromatin নিয়ে আলোচনা করেছি। আজকে দেখব, Cell division-এর সময় এই Chromatin কীভাবে আরও reorganized এবং condensed হয়ে Chromosome তৈরি করে।”</p>
+<p>আদি খাতা খুলল। Amrita তার পাশে বসে আছে। পেছনে রুদ্র ও সায়ান নিজেদের মধ্যে কথা বলছে।</p>
+<p>Professor বললেন,</p>
+<p>“Chromosome শুধু DNA-র একটা দণ্ডাকার গঠন নয়। এর মধ্যে এমন কিছু specialized regions আছে, যেগুলো Chromosome-এর maintenance এবং cell division-এর জন্য গুরুত্বপূর্ণ।”</p>
+<p>বোর্ডে লেখা হলো:</p>
+<p>Chromosomes and telomeres</p>
+</div></section>
+<section class="sec r" id="s3"><h3>Chromosome কী?</h3><div class="body">
+<p>Eukaryotic cell-এর Nuclear DNA organized থাকে linear units হিসেবে। এই linear units-গুলোর নাম Chromosomes।</p>
+<p>Gray’s Anatomy অনুযায়ী, একটি normal human diploid cell-এর DNA-তে রয়েছে:</p>
+<ul><li>মোট প্রায় nucleotide pairs।</li><li>মোট 46টি Chromosomes।</li><li>এর মধ্যে 44টি autosomes এবং 2টি sex chromosomes।</li></ul>
+<p>Professor বললেন,</p>
+<p>“এখানে 46টি Chromosome মানে 46টি পৃথক DNA molecule। প্রতিটি Chromosome-এর নিজস্ব DNA molecule রয়েছে।”</p>
+</div></section>
+<section class="sec r" id="s4"><h3>Human chromosomes-এর আকার</h3><div class="body">
+<p>Gray’s Anatomy-তে উল্লেখিত তথ্য:</p>
+<div class="tw"><table><thead><tr><th>Chromosome</th><th>Nucleotide pairs</th></tr></thead><tbody><tr><td>Largest human chromosome — Chromosome 1</td><td></td></tr><tr><td>Smallest human chromosome — Y chromosome</td><td></td></tr></tbody></table></div>
+<p>রুদ্র বলল,</p>
+<p>“তাহলে Chromosome 1-এ Y chromosome-এর তুলনায় অনেক বেশি DNA রয়েছে!”</p>
+<p>Professor বললেন,</p>
+<p>“হ্যাঁ। তবে শুধু DNA-র দৈর্ঘ্য দিয়ে Chromosome-এর সব বৈশিষ্ট্য বোঝা যাবে না। এবার এর specialized regions পড়ি।”</p>
+</div></section>
+<section class="sec r" id="s5"><h3>২. Centromere ও Kinetochore — Chromosome-এর গুরুত্বপূর্ণ সংযোগস্থল</h3><div class="body">
+<p>Professor বোর্ডে একটি Chromosome-এর schematic outline আঁকলেন।</p>
+<p>“প্রতিটি Chromosomal DNA molecule-এ কিছু specialized nucleotide sequences থাকে, যেগুলো Chromosome-এর maintenance-এর সঙ্গে যুক্ত।”</p>
+<p>এগুলোর মধ্যে একটি গুরুত্বপূর্ণ অঞ্চল:</p>
+<p>Centromeric DNA region</p>
+</div></section>
+<section class="sec r" id="s6"><h3>Kinetochore কী?</h3><div class="body">
+<p>Mitosis চলাকালে Centromeric DNA region-এ একটি disc-shaped structure তৈরি হয়।</p>
+<p>এর নাম:</p>
+<p>Kinetochore</p>
+<p>Kinetochore হলো একটি complex array of proteins দিয়ে তৈরি structure।</p>
+<p>এটি Centromeric DNA region-এ একটি substructure হিসেবে গঠিত হয়।</p>
+<p>এর সঙ্গে যুক্ত হয়:</p>
+<p>Kinetochore microtubules of the spindle</p>
+<p>অর্থাৎ Spindle-এর Kinetochore microtubules Chromosome-এর Kinetochore-এর সঙ্গে attach করে।</p>
+<p>আদি বলল,</p>
+<p>“তাহলে Centromere হলো Chromosomal DNA-র region, আর Kinetochore হলো সেই region-এ গঠিত protein structure, যেখানে spindle microtubules attach করে?”</p>
+<p>Professor বললেন,</p>
+<p>“ঠিক। এই পার্থক্যটা খুব গুরুত্বপূর্ণ। Centromere এবং Kinetochore একই জিনিস নয়।”</p>
+<p>Amrita খাতায় লিখল:</p>
+<ul><li>Centromere: Specialized centromeric DNA region.</li><li>Kinetochore: Protein complex assembled at the centromeric region.</li><li>Attachment: Kinetochore microtubules of the spindle attach to the kinetochore.</li></ul>
+<p>সায়ান বলল,</p>
+<p>“পরীক্ষায় Centromere আর Kinetochore এক করে লিখলে নম্বর কাটা যাবে।”</p>
+<p>রুদ্র উত্তর দিল,</p>
+<p>“শুধু নম্বর না, concept-ও কাটা যাবে!”</p>
+</div></section>
+<section class="sec r" id="s7"><h3>৩. Telomere — Chromosome-এর প্রান্তের বিশেষ DNA sequence</h3><div class="body">
+<p>Professor এবার Chromosome-এর দুই প্রান্তে চিহ্ন দিলেন।</p>
+<p>“Chromosome-এর আরেকটি বিশেষ region আছে, যেটি Centromere-এর মতো মাঝখানে নয়, বরং একেবারে শেষ প্রান্তে থাকে।”</p>
+<p>এর নাম:</p>
+<p>Telomere</p>
+<p>Telomere প্রতিটি Chromosomal DNA molecule-এর শেষ প্রান্তকে নির্দেশ করে।</p>
+</div></section>
+<section class="sec r" id="s8"><h3>Telomere-এর nucleotide sequence</h3><div class="body">
+<p>Gray’s Anatomy অনুযায়ী Telomere গঠিত হয় শত শত পুনরাবৃত্ত nucleotide sequence দিয়ে।</p>
+<p>এই sequence হলো:</p>
+<p>TELOMERIC REPEAT</p>
+</div></section>
+<section class="sec r" id="s9"><h3>TTAGGG</h3><div class="body">
+<p>Hundreds of repeated sequence units</p>
+<p>অর্থাৎ Telomere-এ একই nucleotide sequence বারবার repeat করে।</p>
+<p>আদি বলল,</p>
+<p>“Centromere-এর কাজ আমরা spindle attachment-এর সঙ্গে যুক্ত করে বুঝেছি। আর Telomere Chromosomal DNA molecule-এর শেষ প্রান্ত define করে।”</p>
+<p>Amrita বলল,</p>
+<p>“ঠিক। এবার আসল সমস্যা—DNA replication-এর সময় Chromosome-এর শেষ প্রান্ত কীভাবে maintain হয়?”</p>
+</div></section>
+<section class="sec r" id="s10"><h3>৪. DNA replication-এর সমস্যা — Chromosome-এর শেষ প্রান্ত কেন বিশেষ?</h3><div class="body">
+<p>পরদিন Molecular Biology discussion-এ Professor প্রশ্ন করলেন,</p>
+<p>“Chromosomal DNA-র একেবারে শেষ অংশকে বাকি DNA-র মতো একইভাবে replicate করা যায় না কেন?”</p>
+<p>আদি কিছুক্ষণ চিন্তা করল।</p>
+<p>Professor বললেন,</p>
+<p>“Gray’s Anatomy এখানে একটি গুরুত্বপূর্ণ বিষয় উল্লেখ করেছে।”</p>
+<p>Chromosome-এর একেবারে শেষ প্রান্তগুলোকে Chromosome-এর বাকি অংশের মতো একই DNA polymerase দিয়ে replicate করা যায় না।</p>
+<p>ফলে এই শেষ প্রান্তগুলো maintain করার জন্য একটি specialized enzyme প্রয়োজন।</p>
+<p>এর নাম:</p>
+<p>Telomerase</p>
+</div></section>
+<section class="sec r" id="s11"><h3>Telomerase-এর গঠন</h3><div class="body">
+<p>Telomerase-এর মধ্যে একটি RNA subunit থাকে।</p>
+<p>এই RNA subunit একটি template হিসেবে কাজ করে।</p>
+<p>এর সাহায্যে Telomerase Telomere-এর:</p>
+<p>TTAGGG repeats</p>
+<p>দীর্ঘ করতে পারে।</p>
+<p>অর্থাৎ Telomerase RNA template ব্যবহার করে Telomeric DNA sequence-এর repeat সংখ্যা বাড়াতে সাহায্য করে।</p>
+</div></section>
+<section class="sec r" id="s12"><h3>Telomerase কেন Reverse transcriptase?</h3><div class="body">
+<p>এখানে একটি গুরুত্বপূর্ণ molecular concept রয়েছে।</p>
+<p>Telomerase হলো এক ধরনের specialized polymerase, যেটি RNA sequence-কে template হিসেবে ব্যবহার করে DNA তৈরি করে।</p>
+<p>এই বৈশিষ্ট্যের কারণে Telomerase-কে বলা হয়:</p>
+<p>Reverse transcriptase</p>
+<p>সাধারণভাবে Reverse transcriptase RNA থেকে DNA তৈরি করে।</p>
+<p>Telomerase-ও নিজের RNA subunit-কে template হিসেবে ব্যবহার করে Telomeric DNA repeats lengthen করে।</p>
+<p>Professor বললেন,</p>
+<p>“একটি enzyme-এর মধ্যে RNA template এবং DNA synthesis—এই দুই বিষয় একসঙ্গে আছে। তাই Telomerase-এর Reverse transcriptase nature মনে রাখবে।”</p>
+<p>নন্দিনী জিজ্ঞেস করল,</p>
+<p>“স্যার, Telomerase কি সব কোষে সমানভাবে active?”</p>
+<p>Professor উত্তর দিলেন,</p>
+<p>“না। এবার সেই অংশটাই পড়ব।”</p>
+</div></section>
+<section class="sec r" id="s13"><h3>৫. Telomere shortening — কোষের বিভাজনের সঙ্গে সময়ের সম্পর্ক</h3><div class="body">
+<p>Gray’s Anatomy অনুযায়ী, successive cell divisions-এর সঙ্গে Telomere ছোট হতে থাকে।</p>
+<p>এর একটি কারণ হলো:</p>
+<p>Telomerase activity reduced or absent in differentiated cells with a finite lifespan.</p>
+<p>অর্থাৎ যেসব differentiated cell-এর lifespan সীমিত, সেগুলোতে Telomerase activity কমে যায় অথবা অনুপস্থিত থাকে।</p>
+<p>ফলে successive cell divisions-এর সঙ্গে Telomeric DNA sequence-এর length কমতে পারে।</p>
+</div></section>
+<section class="sec r" id="s14"><h3>Mammals-এ Telomerase activity</h3><div class="body">
+<p>Gray’s Anatomy-তে উল্লেখ করা হয়েছে, Mammals-এ Telomerase সক্রিয় থাকে:</p>
+<ul><li>Germ-cell lineage-এ</li><li>Stem cells-এ</li></ul>
+<p>অন্যদিকে Somatic cells-এ Telomerase expression cancer-এর দিকে পরিচালিত করতে পারে অথবা cancer development-এ ভূমিকা রাখতে পারে—বইয়ে এই association উল্লেখ করা হয়েছে।</p>
+</div></section>
+<section class="sec r" id="s15"><h3>Replicative senescence</h3><div class="body">
+<p>এবার Professor বোর্ডে লিখলেন:</p>
+<p>Lack of telomere maintenance → Telomere shortening → Replicative senescence</p>
+<p>যখন proliferating cells-এ Telomere যথাযথভাবে maintain হয় না, তখন successive divisions-এর ফলে Telomere ছোট হতে থাকে।</p>
+<p>এক পর্যায়ে কোষের division বন্ধ হয়ে যেতে পারে।</p>
+<p>এই অবস্থাকে বলা হয়:</p>
+<p>Replicative senescence</p>
+<p>Amrita বলল,</p>
+<p>“অর্থাৎ Telomere maintenance-এর অভাবের ফলে proliferating cell একসময় আর divide করতে পারে না।”</p>
+<p>Professor বললেন,</p>
+<p>“ঠিক। তবে মনে রাখবে, এখানে আমরা Gray’s Anatomy-র বর্ণিত Telomere maintenance এবং replicative senescence-এর সম্পর্কটাই আলোচনা করছি।”</p>
+</div></section>
+<section class="sec r" id="s16"><h3>Telomere এবং ageing</h3><div class="body">
+<p>Gray’s Anatomy-তে Telomere shortening-এর সঙ্গে ageing এবং cell senescence-এর সম্পর্ক উল্লেখ করা হয়েছে।</p>
+<p>ধীরে ধীরে Telomere হারানোর ফলে হতে পারে:</p>
+<ul><li>Tissue atrophy</li><li>Stem cell depletion</li><li>Deficient tissue repair</li><li>Deficient tissue regeneration</li></ul>
+<p>আদি বলল,</p>
+<p>“তাহলে Telomere শুধু Chromosome-এর শেষ প্রান্তের repeat sequence নয়। Tissue maintenance-এর সঙ্গেও এর সম্পর্ক আছে।”</p>
+<p>Amrita মাথা নাড়ল।</p>
+<p>“এবার disease association-গুলো পড়।”</p>
+</div></section>
+<section class="sec r" id="s17"><h3>৬. Telomerase dysfunction এবং disease association</h3><div class="body">
+<p>Professor এবার কয়েকটি রোগের নাম বোর্ডে লিখলেন।</p>
+<p>Gray’s Anatomy অনুযায়ী, Telomerase অথবা এর RNA-containing template-এর loss-of-function mutation-এর সঙ্গে কয়েকটি disease-এর সম্পর্ক রয়েছে।</p>
+</div></section>
+<section class="sec r" id="s18"><h3>Dyskeratosis congenita</h3><div class="body">
+<p>এটি একটি গুরুত্বপূর্ণ disease association।</p>
+<p>Gray’s Anatomy-তে বৈশিষ্ট্য হিসেবে উল্লেখ করা হয়েছে:</p>
+<ul><li>Abnormal skin pigmentation</li><li>Nail dystrophy</li><li>Mucosal leukoplasia</li></ul>
+</div></section>
+<section class="sec r" id="s19"><h3>Other associated diseases</h3><div class="body">
+<p>Telomerase অথবা RNA-containing template-এর loss-of-function mutations-এর সঙ্গে আরও যেসব condition-এর সম্পর্ক উল্লেখ করা হয়েছে:</p>
+<ul><li>Aplastic anaemia</li><li>Pulmonary fibrosis</li></ul>
+<p>রুদ্র বলল,</p>
+<p>“একটা Chromosome-এর terminal repeat maintain করার enzyme-এর defect থেকে skin, nail, mucosa, blood এবং lung-এর disease association!”</p>
+<p>Professor বললেন,</p>
+<p>“এ কারণেই Cellular biology-র molecular details-গুলো Histology ও clinical medicine বুঝতে সাহায্য করে।”</p>
+</div></section>
+<section class="sec r" id="s20"><h3>৭. Karyotyping — Chromosome-কে শনাক্ত করার পদ্ধতি</h3><div class="body">
+<p>পরের দিন Anatomy practical-এর আগে Professor বললেন,</p>
+<p>“এখন আমরা Chromosome-এর structure পড়েছি। কিন্তু কোনো ব্যক্তির Chromosome number অথবা structure abnormal কি না, সেটা কীভাবে নির্ণয় করবে?”</p>
+<p>নন্দিনী বলল,</p>
+<p>“Karyotyping, Sir?”</p>
+<p>“Exactly.”</p>
+</div></section>
+<section class="sec r" id="s21"><h3>Karyotyping কী?</h3><div class="body">
+<p>Chromosome number এবং structure-এর characterization-কে বলা হয়:</p>
+<p>Karyotyping</p>
+<p>Gray’s Anatomy অনুযায়ী, অনেক genetic abnormality সরাসরি Chromosomal pattern-এর সঙ্গে সম্পর্কিত।</p>
+<p>তাই Chromosome number ও structure-এর characterization diagnostic importance বহন করে।</p>
+</div></section>
+<section class="sec r" id="s22"><h3>Chromosome শনাক্ত করার জন্য কোন পর্যায় সবচেয়ে উপযোগী?</h3><div class="body">
+<p>Chromosome-এর identifying features সবচেয়ে ভালো দেখা যায়:</p>
+<p>Metaphase</p>
+<p>তবে আরও বিস্তারিত analysis-এর জন্য Prophase chromosomes-ও ব্যবহার করা যেতে পারে।</p>
+<p>Professor বললেন,</p>
+<p>“Metaphase-এ Chromosome condensed এবং তুলনামূলকভাবে সহজে শনাক্ত করা যায়। তাই Karyotyping-এ Metaphase গুরুত্বপূর্ণ।”</p>
+</div></section>
+<section class="sec r" id="s23"><h3>Karyotyping-এর জন্য cell source</h3><div class="body">
+<p>Gray’s Anatomy অনুযায়ী Chromosome analysis-এর জন্য ব্যবহার করা যায়:</p>
+<ul><li>Blood sample থেকে পৃথক করা Lymphocytes</li><li>অন্যান্য tissue থেকে নেওয়া cells</li></ul>
+</div></section>
+<section class="sec r" id="s24"><h3>Prenatal chromosome diagnosis</h3><div class="body">
+<p>Fetal chromosome pattern নির্ণয়ের জন্য বইয়ে দুটি sample source উল্লেখ করা হয়েছে:</p>
+<p>1. Amniocentesis</p>
+<p>Uterus থেকে Amniotic fluid aspirate করা হয়। এই fluid-এর মধ্যে fetal cells থাকে।</p>
+<p>2. Chorionic villus sampling</p>
+<p>Placenta থেকে Chorionic villus tissue-এর একটি ছোট অংশ নেওয়া হয়।</p>
+<p>এই samples থেকেও fetal chromosome analysis করা যায়।</p>
+</div></section>
+<section class="sec r" id="s25"><h3>৮. Laboratory-তে Karyotyping — ধাপে ধাপে</h3><div class="body">
+<p>Professor এবার practical class-এ Karyotyping-এর process বোঝাতে শুরু করলেন।</p>
+<p>“তোমরা মনে রাখবে, Chromosome দেখার জন্য শুধু cell সংগ্রহ করলেই হবে না। Cell-কে এমন অবস্থায় আনতে হবে, যাতে Chromosome ভালোভাবে দেখা যায়।”</p>
+<p>Gray’s Anatomy-তে বর্ণিত sequence:</p>
+</div></section>
+<section class="sec r" id="s26"><h3>Step 1 — Cell collection</h3><div class="body">
+<p>Lymphocytes অথবা অন্য tissue থেকে cells সংগ্রহ করা হয়।</p>
+<p>Prenatal diagnosis-এর ক্ষেত্রে Amniotic fluid বা Chorionic villus tissue থেকে fetal cells নেওয়া হয়।</p>
+</div></section>
+<section class="sec r" id="s27"><h3>Step 2 — Cell culture</h3><div class="body">
+<p>যে উৎস থেকেই cells সংগ্রহ করা হোক না কেন, সেগুলোকে:</p>
+<p>Cultured in vitro</p>
+<p>করা হয়।</p>
+</div></section>
+<section class="sec r" id="s28"><h3>Step 3 — Cell division stimulation</h3><div class="body">
+<p>Cell division stimulate করার জন্য উপযুক্ত agents ব্যবহার করা হয়।</p>
+</div></section>
+<section class="sec r" id="s29"><h3>Step 4 — Metaphase arrest</h3><div class="body">
+<p>Mitosis-কে Metaphase পর্যায়ে থামিয়ে দেওয়া হয়।</p>
+<p>এর জন্য ব্যবহার করা হয়:</p>
+<p>Spindle inhibitors</p>
+</div></section>
+<section class="sec r" id="s30"><h3>Step 5 — Hypotonic solution</h3><div class="body">
+<p>Cells-কে Hypotonic solution-এ রাখলে সেগুলো swell করে।</p>
+</div></section>
+<section class="sec r" id="s31"><h3>Step 6 — Fixation and mechanical rupture</h3><div class="body">
+<p>এরপর cells-গুলোকে gently fixed করা হয়।</p>
+<p>তারপর Slide-এর ওপর mechanically rupture করে Chromosome ছড়িয়ে দেওয়া হয়।</p>
+</div></section>
+<section class="sec r" id="s32"><h3>Step 7 — Chromosome staining</h3><div class="body">
+<p>এরপর বিভিন্ন পদ্ধতিতে Chromosome stain করা হয়।</p>
+<p>এতে individual Chromosome-কে শনাক্ত করা যায়:</p>
+<ul><li>Size</li><li>Shape</li><li>Distribution of stain</li></ul>
+<p>আদি পুরো sequence-টি খাতায় লিখল:</p>
+<p>Karyotyping workflow</p>
+<ul><li>Cell collection</li><li>In vitro culture</li><li>Stimulation of cell division</li><li>Metaphase arrest by spindle inhibitors</li><li>Swelling in hypotonic solution</li><li>Gentle fixation and mechanical rupture</li><li>Chromosome spreading and staining</li><li>Identification by size, shape and staining pattern</li></ul>
+<p>সায়ান বলল,</p>
+<p>“এই sequence-টা একবার বুঝলে আর আলাদা আলাদা করে মুখস্থ করতে হবে না।”</p>
+<p>Professor বললেন,</p>
+<p>“ঠিক। প্রতিটি step-এর উদ্দেশ্য বুঝে পড়বে।”</p>
+</div></section>
+<section class="sec r" id="s33"><h3>৯. Chromosome banding — প্রতিটি Chromosome-এর আলাদা পরিচয়</h3><div class="body">
+<p>Chromosome-এর size ও shape দেখেই সব abnormality শনাক্ত করা সম্ভব নয়।</p>
+<p>তাই staining-এর distribution ব্যবহার করে Chromosome-কে আরও ভালোভাবে identify করা হয়।</p>
+<p>Gray’s Anatomy অনুযায়ী:</p>
+<p>Banding techniques Chromosome-specific differential staining patterns প্রদর্শন করে।</p>
+</div></section>
+<section class="sec r" id="s34"><h3>Q-banding</h3><div class="body">
+<p>Fluorescence staining-এর জন্য ব্যবহার করা হয়:</p>
+<ul><li>Quinacrine mustard</li><li>Related compounds</li></ul>
+<p>এতে তৈরি হয়:</p>
+<p>Q bands</p>
+</div></section>
+<section class="sec r" id="s35"><h3>G-banding</h3><div class="body">
+<p>Chromatin-কে partially denature করার পর Giemsa staining ব্যবহার করা হয়।</p>
+<p>এতে তৈরি হয়:</p>
+<p>G bands</p>
+</div></section>
+<section class="sec r" id="s36"><h3>Other banding techniques</h3><div class="body">
+<p>Gray’s Anatomy-তে আরও কয়েকটি পদ্ধতির উল্লেখ রয়েছে:</p>
+<p>R-banding — Reverse Giemsa staining</p>
+<p>এখানে Light এবং dark areas উল্টে যায়।</p>
+<p>C-banding</p>
+<p>Silver salts ব্যবহার করে Constitutive heterochromatin stain করা হয়।</p>
+<p>T-banding</p>
+<p>Chromosome-এর শেষ প্রান্ত বা Telomere stain করার জন্য ব্যবহৃত হয়।</p>
+</div></section>
+<section class="sec r" id="s37"><h3>Banding methods: Consolidation</h3><div class="body">
+<div class="tw"><table><thead><tr><th>Method</th><th>Principle / feature</th></tr></thead><tbody><tr><td>Q-banding</td><td>Quinacrine mustard fluorescence staining</td></tr><tr><td>G-banding</td><td>Giemsa staining after partial chromatin denaturation</td></tr><tr><td>R-banding</td><td>Reverse Giemsa staining; light-dark pattern reversed</td></tr><tr><td>C-banding</td><td>Silver salts; constitutive heterochromatin</td></tr><tr><td>T-banding</td><td>Chromosome ends / Telomeres</td></tr></tbody></table></div>
+<p>Professor বললেন,</p>
+<p>“এই পদ্ধতিগুলোর সম্মিলিত ব্যবহার Chromosome-কে numbered autosomal pairs হিসেবে classify করতে সাহায্য করে।”</p>
+<p>Classification করা হয়:</p>
+<p>Chromosome 1 থেকে 22, সঙ্গে sex chromosomes।</p>
+</div></section>
+<section class="sec r" id="s38"><h3>১০. Human chromosomes-এর classification — A থেকে G group</h3><div class="body">
+<p>Gray’s Anatomy-তে Chromosome-এর major classes একটি table-এ দেওয়া হয়েছে।</p>
+<p>এই classification মূলত Chromosome-এর size, centromere position এবং satellite-এর উপস্থিতির ভিত্তিতে সাজানো।</p>
+<div class="tw"><table><thead><tr><th>Group</th><th>Chromosomes</th><th>Features</th></tr></thead><tbody><tr><td>A</td><td>1–3</td><td>Large metacentric chromosomes</td></tr><tr><td>B</td><td>4–5</td><td>Large submetacentric chromosomes</td></tr><tr><td>C</td><td>6–12 + X</td><td>Medium-sized metacentric chromosomes</td></tr><tr><td>D</td><td>13–15</td><td>Medium-sized acrocentrics with satellites</td></tr><tr><td>E</td><td>16–18</td><td>Shorter metacentrics (16) or submetacentrics (17, 18)</td></tr><tr><td>F</td><td>19–20</td><td>Shortest metacentrics</td></tr><tr><td>G</td><td>21–22 + Y</td><td>Short acrocentrics; 21 and 22 with satellites, Y without</td></tr></tbody></table></div>
+</div></section>
+<section class="sec r" id="s39"><h3>Metacentric, Submetacentric ও Acrocentric</h3><div class="body">
+<p>Professor বললেন,</p>
+<p>“এখানে তিনটি শব্দ খুব গুরুত্বপূর্ণ।”</p>
+<ul><li>Metacentric: Chromosome-এর centromere-এর অবস্থান এমন যে দুই arm তুলনামূলকভাবে সমান।</li><li>Submetacentric: Centromere কেন্দ্র থেকে কিছুটা সরে থাকায় দুই arm অসমান।</li><li>Acrocentric: Centromere এক প্রান্তের কাছাকাছি অবস্থান করে।</li></ul>
+<p>এই তিনটি morphology-র সঙ্গে satellite-এর উপস্থিতি বা অনুপস্থিতি মিলিয়ে Group A–G classification বোঝা যায়।</p>
+<p>বিশেষভাবে মনে রাখবে:</p>
+<ul><li>Group D: Chromosomes 13–15 — satellites আছে।</li><li>Group G: Chromosomes 21 ও 22 — satellites আছে; Y chromosome-এ নেই।</li></ul>
+</div></section>
+<section class="sec r" id="s40"><h3>১১. Fluorescence in situ hybridization — FISH</h3><div class="body">
+<p>পরের practical discussion-এ Professor নতুন একটি technique-এর কথা বললেন।</p>
+<p>“Banding techniques উন্নত হওয়ার ফলে Chromosome-এর abnormal pattern শনাক্ত করা সহজ হয়েছে। কিন্তু খুব ছোট abnormality শনাক্ত করতে আরও উন্নত পদ্ধতি দরকার।”</p>
+<p>এই প্রসঙ্গে Gray’s Anatomy উল্লেখ করেছে:</p>
+<p>Fluorescence in situ hybridization (FISH)</p>
+<p>এখানে ব্যবহার করা হয়:</p>
+<p>Fluorescent DNA probes</p>
+<p>এই probes নির্দিষ্ট Chromosome-এর জন্য specific হয়।</p>
+<p>এর ফলে খুব ছোট Chromosomal abnormalities-ও শনাক্ত করা সম্ভব।</p>
+<p>আদি বলল,</p>
+<p>“মানে Banding pattern-এর পাশাপাশি specific Chromosome-targeted fluorescent DNA probe ব্যবহার করে abnormality identify করা যায়?”</p>
+<p>Professor বললেন,</p>
+<p>“হ্যাঁ। Gray’s Anatomy-তে এই পদ্ধতির গুরুত্ব হিসেবে very small abnormalities শনাক্ত করার ক্ষমতার কথা উল্লেখ করা হয়েছে।”</p>
+<p>নন্দিনী বলল,</p>
+<p>“তাহলে Karyotyping শুধু Chromosome গুনে দেখা নয়। Chromosome-এর structure এবং staining pattern-ও বিশ্লেষণ করতে হয়।”</p>
+<p>“একদম ঠিক।”</p>
+</div></section>
+<section class="sec r" id="s41"><h3>১২. রাতের Library — একটি ছোট্ট প্রতিশ্রুতি</h3><div class="body">
+<p>সেদিন Library বন্ধ হওয়ার কিছুক্ষণ আগে।</p>
+<p>আদি ও Amrita পাশাপাশি বসে Page 54 ও Page 55-এর আলোচনা শেষ করছিল।</p>
+<p>রুদ্র বলল,</p>
+<p>“আজকে এত কিছু পড়লাম—Centromere, Kinetochore, Telomere, Telomerase, Karyotyping, Banding, FISH। মাথা ঘুরছে!”</p>
+<p>সায়ান বলল,</p>
+<p>“তুই শুধু নাম মুখস্থ করেছিস বলেই মাথা ঘুরছে। Concept বুঝলে সহজ।”</p>
+<p>Amrita আদির খাতার দিকে তাকাল।</p>
+<p>“তোর Telomerase-এর explanation ভালো হয়েছে।”</p>
+<p>আদি বলল,</p>
+<p>“তোর জন্যই তো বুঝতে পারলাম।”</p>
+<p>“আবার শুরু করলি!”</p>
+<p>“কী করব? সত্যি কথা বলছি।”</p>
+<p>Amrita কিছুক্ষণ চুপ করে রইল। তারপর ধীরে বলল,</p>
+<p>“আমাদের একটা জিনিস মনে রাখতে হবে, Adi।”</p>
+<p>“কী?”</p>
+<p>“আমরা শুধু বই শেষ করার জন্য পড়ছি না। আমরা এমনভাবে পড়ছি, যেন রোগী সামনে এলে তার disease-এর পেছনের cellular mechanism-টা বুঝতে পারি।”</p>
+<p>আদি বলল,</p>
+<p>“তাহলে একটা শর্ত।”</p>
+<p>“কী শর্ত?”</p>
+<p>“এই পুরো Gray’s Anatomy একসঙ্গে শেষ করব।”</p>
+<p>Amrita হাত বাড়িয়ে তার খাতার ওপর রাখা কলমটা তুলে দিল।</p>
+<p>“Deal. তবে কোনো chapter skip করা যাবে না।”</p>
+<p>দূরে Library-র ঘড়িতে রাত আটটা বাজল।</p>
+<p>তাদের সামনে তখনও Gray’s Anatomy-র অসংখ্য পৃষ্ঠা বাকি।</p>
+</div></section>
+<section class="sec r" id="s42"><h3>আজকের Anatomy Consolidation</h3><div class="body">
+<p>Episode 16 — Gray’s Anatomy source-derived revision</p>
+</div></section>
+<section class="sec r" id="s43"><h3>A. Chromosome fundamentals</h3><div class="body">
+<ul><li>Normal human diploid cell: 46 chromosomes.</li><li>44 autosomes + 2 sex chromosomes.</li><li>Total DNA: approximately nucleotide pairs.</li><li>Largest chromosome: Chromosome 1, nucleotide pairs.</li><li>Smallest chromosome: Y chromosome, nucleotide pairs.</li></ul>
+</div></section>
+<section class="sec r" id="s44"><h3>B. Centromere and telomere</h3><div class="body">
+<div class="tw"><table><thead><tr><th>Structure</th><th>Important feature</th></tr></thead><tbody><tr><td>Centromere</td><td>Specialized centromeric DNA region</td></tr><tr><td>Kinetochore</td><td>Protein complex assembled at centromeric region</td></tr><tr><td>Telomere</td><td>Defines end of each chromosomal DNA molecule</td></tr><tr><td>Telomeric repeat</td><td>TTAGGG</td></tr><tr><td>Telomerase</td><td>Uses RNA subunit as template to lengthen telomeric repeats</td></tr><tr><td>Replicative senescence</td><td>Cell division stops following loss of telomere maintenance</td></tr></tbody></table></div>
+</div></section>
+<section class="sec r" id="s45"><h3>C. Telomerase-associated conditions</h3><div class="body">
+<ul><li>Dyskeratosis congenita</li><li>Aplastic anaemia</li><li>Pulmonary fibrosis</li></ul>
+<p>Dyskeratosis congenita-এর source-listed features:</p>
+<ul><li>Abnormal skin pigmentation</li><li>Nail dystrophy</li><li>Mucosal leukoplasia</li></ul>
+</div></section>
+<section class="sec r" id="s46"><h3>D. Karyotyping</h3><div class="body">
+<p>Sequence: Cell collection → In vitro culture → Cell division stimulation → Metaphase arrest → Hypotonic solution → Fixation → Mechanical rupture → Chromosome spreading → Staining.</p>
+<p>Banding methods:</p>
+<ul><li>Q-banding — Quinacrine mustard</li><li>G-banding — Giemsa</li><li>R-banding — Reverse Giemsa</li><li>C-banding — Silver salts; constitutive heterochromatin</li><li>T-banding — Telomeres</li></ul>
+<p>FISH: Fluorescent DNA probes specific for chromosomes; permits identification of very small abnormalities.</p>
+</div></section>
+<section class="sec r" id="s47"><h3>Source Verification</h3><div class="body">
+<ul><li>Covered: Chromosomes and telomeres, centromere, kinetochore, telomerase, replicative senescence, associated diseases, Karyotyping, chromosome banding, A–G classification and FISH.</li></ul>
+<p>আজকের সম্পন্ন অংশ: Chromosomes and telomeres</p>
+<p>Page 54: Chromosomes, telomeres, Karyotyping, banding techniques, chromosome classification and FISH-এর আলোচনা সম্পন্ন।</p>
+<p>Page 55: Telomerase-associated ageing, cell senescence এবং loss-of-function mutation-এর disease associations সম্পন্ন।</p>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-015.html">← Episode 15</a><a href="index.html">সব পর্ব</a><a href="episode-017.html">Episode 17 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">Episode 16 — Chromosomes ও Telomeres: জীবনের নকশা, প্রজন্মের স্মৃতি এবং সময়ের ছাপ</a><a href="#s2">১. Anatomy lecture hall — DNA-র শেষ পর্যন্ত যাত্রা</a><a href="#s3">Chromosome কী?</a><a href="#s4">Human chromosomes-এর আকার</a><a href="#s5">২. Centromere ও Kinetochore — Chromosome-এর গুরুত্বপূর্ণ সংযোগস্থল</a><a href="#s6">Kinetochore কী?</a><a href="#s7">৩. Telomere — Chromosome-এর প্রান্তের বিশেষ DNA sequence</a><a href="#s8">Telomere-এর nucleotide sequence</a><a href="#s9">TTAGGG</a><a href="#s10">৪. DNA replication-এর সমস্যা — Chromosome-এর শেষ প্রান্ত কেন বিশেষ?</a><a href="#s11">Telomerase-এর গঠন</a><a href="#s12">Telomerase কেন Reverse transcriptase?</a><a href="#s13">৫. Telomere shortening — কোষের বিভাজনের সঙ্গে সময়ের সম্পর্ক</a><a href="#s14">Mammals-এ Telomerase activity</a><a href="#s15">Replicative senescence</a><a href="#s16">Telomere এবং ageing</a><a href="#s17">৬. Telomerase dysfunction এবং disease association</a><a href="#s18">Dyskeratosis congenita</a><a href="#s19">Other associated diseases</a><a href="#s20">৭. Karyotyping — Chromosome-কে শনাক্ত করার পদ্ধতি</a><a href="#s21">Karyotyping কী?</a><a href="#s22">Chromosome শনাক্ত করার জন্য কোন পর্যায় সবচেয়ে উপযোগী?</a><a href="#s23">Karyotyping-এর জন্য cell source</a><a href="#s24">Prenatal chromosome diagnosis</a><a href="#s25">৮. Laboratory-তে Karyotyping — ধাপে ধাপে</a><a href="#s26">Step 1 — Cell collection</a><a href="#s27">Step 2 — Cell culture</a><a href="#s28">Step 3 — Cell division stimulation</a><a href="#s29">Step 4 — Metaphase arrest</a><a href="#s30">Step 5 — Hypotonic solution</a><a href="#s31">Step 6 — Fixation and mechanical rupture</a><a href="#s32">Step 7 — Chromosome staining</a><a href="#s33">৯. Chromosome banding — প্রতিটি Chromosome-এর আলাদা পরিচয়</a><a href="#s34">Q-banding</a><a href="#s35">G-banding</a><a href="#s36">Other banding techniques</a><a href="#s37">Banding methods: Consolidation</a><a href="#s38">১০. Human chromosomes-এর classification — A থেকে G group</a><a href="#s39">Metacentric, Submetacentric ও Acrocentric</a><a href="#s40">১১. Fluorescence in situ hybridization — FISH</a><a href="#s41">১২. রাতের Library — একটি ছোট্ট প্রতিশ্রুতি</a><a href="#s42">আজকের Anatomy Consolidation</a><a href="#s43">A. Chromosome fundamentals</a><a href="#s44">B. Centromere and telomere</a><a href="#s45">C. Telomerase-associated conditions</a><a href="#s46">D. Karyotyping</a><a href="#s47">Source Verification</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

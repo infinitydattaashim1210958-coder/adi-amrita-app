@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 030 · “শরীরের সংযোগজাল: যে Tissue অঙ্গকে ধরে রাখে, রক্ষা করে এবং বদলে যায়”</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 030">EPISODE 030</h1>
+  <div class="ttl">“শরীরের সংযোগজাল: যে Tissue অঙ্গকে ধরে রাখে, রক্ষা করে এবং বদলে যায়”</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">030</div></div>
+    <div class="face b"><div class="t2">“শরীরের সংযোগজাল: যে Tissue অঙ্গকে ধরে রাখে, রক্ষা করে এবং বদলে যায়”</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>Gray’s Anatomy — Episode 30</h3><div class="body">
+</div></section>
+<section class="sec r" id="s2"><h3>“শরীরের সংযোগজাল: যে Tissue অঙ্গকে ধরে রাখে, রক্ষা করে এবং বদলে যায়”</h3><div class="body">
+<p>Dhaka Medical College — Department of Anatomy</p>
+</div></section>
+<section class="sec r" id="s3"><h3>Scene 1: সকাল ৮টা ৩০ — Anatomy Lecture Theatre</h3><div class="body">
+<p>Dr. Sharmin বোর্ডে লিখলেন:</p>
+<p>CLASSIFICATION OF CONNECTIVE TISSUES</p>
+<p>ক্লাসে Adi, Amrita, Rafi, Mou—সবাই উপস্থিত।</p>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “গত ক্লাসে আমরা ECM-এর molecular components পড়েছি। আজ দেখব, এই components বিভিন্ন অনুপাতে এবং বিভিন্ন arrangement-এ থাকলে connective tissue-এর appearance ও function কীভাবে বদলে যায়।”</p>
+<p>তিনি বোর্ডে একটি flowchart আঁকলেন।</p>
+<p>General connective tissues</p>
+<p>Irregular connective tissues</p>
+<ul><li>Loose (areolar) connective tissue</li><li>Dense irregular connective tissue</li><li>Adipose tissue</li></ul>
+<p>Regular connective tissues</p>
+<ul><li>Fibres regularly orientated</li><li>Sheets: fasciae, aponeuroses</li><li>Thick bundles: ligaments, tendons</li></ul>
+<p>— “Connective tissue-এর classification নির্ভর করে মূলত fibrous components-এর orientation এবং matrix-এর characteristics-এর ওপর।”</p>
+<p>Rafi জিজ্ঞেস করল,</p>
+<p>— “Madam, irregular মানে কি tissue-এর কোনো organization নেই?”</p>
+<p>— “না। Irregular মানে fibrous components একই নির্দিষ্ট দিকে নিয়মিতভাবে orientated নয়। এর অর্থ tissue disorganized বা functionless নয়।”</p>
+<p>Amrita বলল,</p>
+<p>— “তাহলে regular connective tissue-তে fibres-এর orientation নির্দিষ্ট mechanical stress-এর সঙ্গে সম্পর্কিত।”</p>
+<p>— “Exactly!”</p>
+<p>Adi খাতায় লিখল:</p>
+<p>Connective tissue classification → Fibre orientation + Matrix composition + Functional requirement</p>
+</div></section>
+<section class="sec r" id="s4"><h3>Scene 2: Loose Connective Tissue — অঙ্গগুলোর মধ্যবর্তী নমনীয় সংযোগ</h3><div class="body">
+<p>Dr. Sharmin লিখলেন:</p>
+</div></section>
+<section class="sec r" id="s5"><h3>LOOSE (AREOLAR) CONNECTIVE TISSUE</h3><div class="body">
+<p>— “Loose connective tissue হলো সবচেয়ে generalized form of connective tissue। এটি শরীরের বিভিন্ন স্থানে ব্যাপকভাবে distributed।”</p>
+<p>তিনি বললেন,</p>
+<p>— “এর প্রধান কাজ হলো বিভিন্ন structure-কে একসঙ্গে bind করা, কিন্তু একই সঙ্গে যথেষ্ট movement-এর সুযোগ রাখা।”</p>
+<p>Amrita প্রশ্ন করল,</p>
+<p>— “অর্থাৎ, এটি শুধু structure-কে আটকে রাখে না, movement-ও allow করে?”</p>
+<p>— “ঠিক। Binding without restricting movement—এটাই এর একটি গুরুত্বপূর্ণ functional concept।”</p>
+</div></section>
+<section class="sec r" id="s6"><h3>Location</h3><div class="body">
+<p>Dr. Sharmin বোর্ডে location-গুলো লিখলেন:</p>
+<ul><li>Digestive tract ও অন্যান্য mucosa-lined viscera-র submucosa।</li><li>Fat-বিহীন কিছু অঞ্চলের subcutaneous tissue—যেমন eyelids, penis, scrotum ও labia।</li><li>Muscles, vessels ও nerves-কে surrounding structures-এর সঙ্গে connect করে।</li><li>Organs-এর ভিতরে gland-এর lobes ও lobules-কে bind করে।</li><li>Mucosal epithelium-এর নিচে lamina propria তৈরি করে।</li><li>Vascular endothelia-র supporting layer গঠনে থাকে।</li><li>Muscle ও nerve fibres-এর মধ্যে এবং fascicles-এর ভিতরে থাকে।</li></ul>
+<p>Adi বলল,</p>
+<p>— “Madam, lamina propria কি তাহলে loose connective tissue?”</p>
+<p>— “হ্যাঁ। Mucosal epithelium-এর নিচে থাকা lamina propria সাধারণত loose connective tissue দিয়ে তৈরি।”</p>
+</div></section>
+<section class="sec r" id="s7"><h3>Structure</h3><div class="body">
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Areolar Connective Tissue Definition Location Function</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/iCjwXrY9OTC348xNTpDGnPPLMtpPLA-aKTwwTULPoeAICaZRd5kT3Gmfl9GnK9CTv20j_MBQo00J-_2exl8Ahgyh1bUV0BpOY4wzLV-mURBgjWw-LdNoLEBbKjHzp9DbWYufXdsqPryCh2yYULPwjjthyVQQt_sGXc44LW6wAOpY8OVIEw5M178IPz5QaxcM?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Areolar%20Connective%20Tissue%20Definition%20Location%20Function">Image search ↗</a></figure>
+<p>Dr. Sharmin ব্যাখ্যা করলেন:</p>
+<ul><li>Thin collagen fibres।</li><li>Elastin fibres।</li><li>Fibres সবদিকে interlace করে।</li><li>Large meshes তৈরি হয়।</li><li>Meshes-এর মধ্যে soft, semi-fluid ground substance থাকে।</li><li>বিভিন্ন connective tissue cells ছড়িয়ে থাকে।</li><li>Adipocytes-ও থাকতে পারে, সাধারণত ছোট ছোট group-এ, বিশেষত blood vessels-এর আশপাশে।</li></ul>
+<p>Rafi বলল,</p>
+<p>— “তাহলে loose connective tissue-তে collagen এবং elastin দুটোই আছে। ফলে tensile strength ও elasticity—দুটোই পাওয়া যায়।”</p>
+<p>— “সঠিক।”</p>
+</div></section>
+<section class="sec r" id="s8"><h3>Special variant: Eye-এর choroid ও sclera</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Loose connective tissue-এর একটি variant choroid ও sclera-তে পাওয়া যায়। এখানে প্রচুর pigment cells বা melanocytes থাকে।”</p>
+<p>Amrita বলল,</p>
+<p>— “অর্থাৎ একই basic connective tissue framework-এর মধ্যে cell population বদলালে tissue-এর বৈশিষ্ট্যও বদলাতে পারে।”</p>
+<p>— “খুব ভালো observation।”</p>
+</div></section>
+<section class="sec r" id="s9"><h3>Scene 3: Dense Irregular Connective Tissue — বহু দিকের Stress-এর বিরুদ্ধে প্রতিরক্ষা</h3><div class="body">
+<p>Dr. Sharmin বোর্ডে লিখলেন:</p>
+</div></section>
+<section class="sec r" id="s10"><h3>DENSE IRREGULAR CONNECTIVE TISSUE</h3><div class="body">
+<p>— “এবার এমন connective tissue, যা considerable mechanical stress-এর সম্মুখীন হয় এবং ensheathed organs-কে protection দেয়।”</p>
+<p>তিনি একটি diagram আঁকলেন—অনেকগুলো thick collagen bundle বিভিন্ন দিকে ছড়িয়ে আছে।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>PPT - Chapter 4b: Connective Tissue PowerPoint Presentation, free download - ID:1777200</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/z95TBBZeGHQcY9mOBFW2AE6Q68NFymQiwvO1Da4aXe42cnUDGmG0EE1K8V-RUnjMGXJMAIL0DyFg8NXng9H8cJUoBfLwXYzSHvYuZ_yBa4pBfq_CkETDnbFFba_cWES4td5wRrk7p2n_If7Pl5dKyiEQVxC-1jx09Jz599QGIJzNjvBLlqAgKRkiE6MNf4aK?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=PPT%20-%20Chapter%204b%3A%20Connective%20Tissue%20PowerPoint%20Presentation%2C%20free%20download%20-%20ID%3A1777200">Image search ↗</a></figure>
+<p>— “এর matrix-এ collagen fibres-এর proportion অনেক বেশি। Fibres thick bundles তৈরি করে এবং তিনটি dimension-এ একে অপরের সঙ্গে interweave করে।”</p>
+<p>Adi বলল,</p>
+<p>— “যেহেতু fibres একাধিক direction-এ orientated, তাই বিভিন্ন দিক থেকে আসা mechanical stress resist করতে পারে।”</p>
+<p>— “ঠিক।”</p>
+</div></section>
+<section class="sec r" id="s11"><h3>Cellular characteristics</h3><div class="body">
+<ul><li>Tissue তুলনামূলকভাবে acellular।</li><li>Active fibroblasts কম।</li><li>Fibroblasts সাধারণত flattened।</li><li>তাদের nuclei heterochromatic।</li></ul>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Dense irregular connective tissue-এর fibroblasts সাধারণত collagen-rich matrix-এর মধ্যে কম সক্রিয় অবস্থায় থাকে।”</p>
+</div></section>
+<section class="sec r" id="s12"><h3>Locations</h3><div class="body">
+<ul><li>Dermis-এর reticular layer।</li><li>Muscle ও nerve-এর superficial connective tissue sheaths।</li><li>Large blood vessels-এর adventitia।</li><li>বিভিন্ন gland ও organ-এর capsules।</li><li>Testis।</li><li>Sclera of the eye।</li><li>Periostea।</li><li>Perichondria।</li></ul>
+<p>Rafi প্রশ্ন করল,</p>
+<p>— “Madam, periosteum এবং perichondrium-এ dense irregular connective tissue থাকে কেন?”</p>
+<p>— “এগুলো যথাক্রমে bone ও cartilage-এর চারপাশে supporting connective tissue covering তৈরি করে। বিভিন্ন দিকের mechanical stress মোকাবিলায় collagen bundle-এর multidirectional arrangement উপযোগী।”</p>
+<p>Adi ও Amrita একে অপরের দিকে তাকাল।</p>
+<p>Amrita ফিসফিস করে বলল,</p>
+<p>— “আজকে connective tissue classification অনেক পরিষ্কার হচ্ছে।”</p>
+<p>Adi বলল,</p>
+<p>— “কারণ আমরা structure-এর সঙ্গে function-টাও মিলিয়ে পড়ছি।”</p>
+</div></section>
+<section class="sec r" id="s13"><h3>Scene 4: Adipose Tissue — শুধু Fat নয়, একটি Organized Tissue</h3><div class="body">
+<p>Dr. Sharmin লিখলেন:</p>
+</div></section>
+<section class="sec r" id="s14"><h3>ADIPOSE TISSUE</h3><div class="body">
+<p>— “তোমরা আগের episode-এ adipocyte-এর morphology, white fat, brown fat ও adipokines পড়েছ। আজ আমরা connective tissue classification-এর মধ্যে adipose tissue-এর অবস্থান বুঝব।”</p>
+<p>তিনি বোর্ডে লিখলেন:</p>
+<p>Adipose tissue = Adipocytes + Vascular loose connective tissue + Fibrous septa</p>
+<p>— “Loose connective tissue-তে অল্প কিছু adipocyte শরীরের অনেক জায়গায় পাওয়া যায়। কিন্তু adipose tissue-তে adipocytes-ই principal cellular component।”</p>
+</div></section>
+<section class="sec r" id="s15"><h3>Architecture</h3><div class="body">
+<ul><li>Adipocytes vascular loose connective tissue-এর মধ্যে embedded থাকে।</li><li>Tissue সাধারণত lobules-এ বিভক্ত।</li><li>Lobules-এর মধ্যে stronger fibrous septa থাকে।</li><li>এই septa-র মধ্যে বড় blood vessels চলাচল করে।</li></ul>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Tejido conjuntivo. Células y fibras</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/_7j5v_mqQ-d1L2Q9bJIk3t8hnZ-JrIUn_XVaXDHlis1qDvTxQrA-k7jo2Mr5I-kvBXavDQFpvQLQpgUQ9TqqI5cNqV5eks4O0HqzEszDIQYGrk-MSFi_PQ-qou88_2-6AtWgrDSloCoRwaWZcSaPtlPmgWwYTJXB28rSh9SdzkIe0k-KL67WZRRoejWO7Cfl?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Tejido%20conjuntivo.%20C%C3%A9lulas%20y%20fibras">Image search ↗</a></figure>
+</div></section>
+<section class="sec r" id="s16"><h3>Distribution</h3><div class="body">
+<p>Dr. Sharmin location-গুলো বললেন:</p>
+<ul><li>Subcutaneous tissue।</li><li>Mesenteries ও omenta।</li><li>Female breast।</li><li>Bone marrow।</li><li>Eyeball-এর পেছনে retro-orbital fat।</li><li>Kidneys-এর চারপাশে।</li><li>Foot-এর plantar skin-এর গভীরে।</li><li>অনেক synovial membrane-এ localized fat pads।</li></ul>
+<p>— “Subcutaneous adipose tissue-এর distribution-এ age ও sex অনুযায়ী characteristic differences থাকে।”</p>
+</div></section>
+<section class="sec r" id="s17"><h3>Functions</h3><div class="body">
+<p>তিনি বোর্ডে লিখলেন:</p>
+<ul><li>Energy stores।</li><li>Metabolic lipids-এর source।</li><li>Thermal insulation—বিশেষত subcutaneous fat।</li><li>Mechanical shock absorbers।</li></ul>
+<p>— “Mechanical shock absorption-এর উদাহরণ?”</p>
+<p>Amrita উত্তর দিল,</p>
+<p>— “Soles of the feet, palms of the hands, gluteal region এবং synovial membranes-এর fat pads।”</p>
+<p>— “সঠিক।”</p>
+<p>Adi বলল,</p>
+<p>— “অর্থাৎ adipose tissue একটি specialized connective tissue, যার কাজ শুধু energy storage নয়।”</p>
+<p>— “ঠিক। আগের ক্লাসে আমরা adipose tissue-এর endocrine role-ও আলোচনা করেছি।”</p>
+<p>Rafi হেসে বলল,</p>
+<p>— “Adi, তুই adipose tissue-কে এত গুরুত্ব দিচ্ছিস কেন? নিজের adipose tissue নিয়ে চিন্তা?”</p>
+<p>ক্লাসে হাসির শব্দ উঠল।</p>
+<p>Amrita বলল,</p>
+<p>— “তুই আগে নিজের histology ঠিক কর!”</p>
+</div></section>
+<section class="sec r" id="s18"><h3>Scene 5: Regular Connective Tissue — Stress-এর Direction অনুযায়ী Fibre Arrangement</h3><div class="body">
+<p>Dr. Sharmin এবার লিখলেন:</p>
+</div></section>
+<section class="sec r" id="s19"><h3>REGULAR CONNECTIVE TISSUES</h3><div class="body">
+<p>— “Regular connective tissue হলো highly fibrous tissue, যেখানে fibres নিয়মিতভাবে orientated থাকে।”</p>
+<p>তিনি দুটি diagram আঁকলেন।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Histologi:Jaringan Ikat( Connective Tissue) | BlogK Putih</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/H5ojYLFt5P4gOke1QnZnzzbYZ1evNpk0kwATqfCXBot4SxILBh5-zeZlU6uAvpycB0gApNzYKvQ_5Q6fleg8kH0-7fMpCnrs8x1-_vDWYw8lz-17AIihHw7HThnN6h1hDob74_M89spXdPDsGDuiBarjdn1R-2KEf4_gnJUa-eFBX_fMjA-e7OLv10jD_PnS?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Histologi%3AJaringan%20Ikat%28%20Connective%20Tissue%29%20%7C%20BlogK%20Putih">Image search ↗</a></figure>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>PPT - Connective Tissue Development and Types PowerPoint Presentation, free download - ID:9455156</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/I1ledzPBKKbdyvvLdAIMxgFaMt4JLAQl--2XtPPVofGUHS25Vt0-rB_SoAyN7IKhvt6RQ2juWz11s7i9l1bTd-M4IZmhW_qUpAX3S209jBgCy4XYD5A-eN1vlrMAC41ZXtC2zx_MlJbYjZWzl6lUoGlwBwAw27BbhEdEkmNma6BxhrpItozelWn8ioIJkjfm?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=PPT%20-%20Connective%20Tissue%20Development%20and%20Types%20PowerPoint%20Presentation%2C%20free%20download%20-%20ID%3A9455156">Image search ↗</a></figure>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Medi Know: Die interaktive Lernplattform für Medizinstudierende, Ärzt:innen und den Rettungsdienst</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/8UngBzxhQq5V-3elTU1Y0rYSjD3lz8rB0mnYrQ0Ijz7eT5CiHjJKMCJwZuWgo10o3xfakk3xKNqmvq301tiSzHmAoige5J3IjqabYCZaExEs8rOt4bRozdivLFsDMQMNuP78jhw6ww559Rclt_L8mRAngCThD2lSJ0MTxd65rgF-IMasyLbMAwQjYEY5EcaE?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Medi%20Know%3A%20Die%20interaktive%20Lernplattform%20f%C3%BCr%20Medizinstudierende%2C%20%C3%84rzt%3Ainnen%20und%20den%20Rettungsdienst">Image search ↗</a></figure>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Aponeurotic Fiber Exchange and Formation of the Rectus Sheath Diagram | Quizlet</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/o6ndpiOuFlGbDra4rVmdR3hy-xtZONxi_lK2yX2c5TZW9ny1kCqAopP922MQAGJG5kmz4KzQDqdVY05GqLCneysfaybibCRrRjo5IV2vM6GGk1YeGEUX6PghMmadWqPSKjhb2GVLdgn0keetb8ZR2Xnm8Un9orzJatVyFra7Ba7ine2UbCguYgPuRUj0MQ2V?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Aponeurotic%20Fiber%20Exchange%20and%20Formation%20of%20the%20Rectus%20Sheath%20Diagram%20%7C%20Quizlet">Image search ↗</a></figure>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Curso Histologia 06 Tejido Conectivo Denso | PPTX</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/L672qq5GvjeWBo1E63tcsZnnHaeAHQD4ucO_nQWFslGrzJAjsnlzAIQKKSm_1pD7dfBCNKcBNAaJuRXuVpO8WrPDKVG9JCnV93nPIG4mIylz18ye2xKT8t0sQHmxCIo2rSpS73q-YMT5rSzoQJtL5gFOa35DO6b0jVenYmUTtiCefixt3AoRD2i2Rn1brwHy?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Curso%20Histologia%2006%20Tejido%20Conectivo%20Denso%20%7C%20PPTX">Image search ↗</a></figure>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Data-informed reconstruction of a bipennate muscle’s aponeurosis and its fibre distribution for performing continuum-mechanical simulations | Biomechanics and Modeling in Mechanobiology | Springer Nature Link</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/fMZqwYP5N9qwjY1T5rgPUURs1JESKc7bFxcNIRipAPmr0KKxxdmNCOjB9t84ZCV5T6ghHZ65t1nfy24vPHebdKEo4ICfgTQeWmJ1uMgO4TBPrWKyAzIQzRM41OENbxyGqjHqomsbAviIwK3WVQAhSUCK4msLAcTaEVkfmFUz7PCZT6NQ_mUD5_6yGsfjt6WB?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Data-informed%20reconstruction%20of%20a%20bipennate%20muscle%E2%80%99s%20aponeurosis%20and%20its%20fibre%20distribution%20for%20performing%20continuum-mechanical%20simulations%20%7C%20Biomechanics%20and%20Modeling%20in%20Mechanobiology%20%7C%20Springer%20Nature%20Link">Image search ↗</a></figure>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Biochemical and Histological Differences between Longitudinal and Vertical Fibres of Dupuytren’s Palmar Aponeurosis and Innovative Clinical Implications | MDPI</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/eLhGPBER0Y7mR9yf82TsDmi3emnGlB1L23984iCw0mC583sGFnP2VX7MZD0H_IcgVxm0PHA5c_sJB49qFegEt77EPk3xP1-6YuN2_GtsqFN9H4AcVC56ub5Nn1N8DZqvQqKCP1nSmkx3Is-BDx806rVD6g8sWmuZcLoG3GS86k-uL29OJGowIOTlFIGlyusE?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Biochemical%20and%20Histological%20Differences%20between%20Longitudinal%20and%20Vertical%20Fibres%20of%20Dupuytren%E2%80%99s%20Palmar%20Aponeurosis%20and%20Innovative%20Clinical%20Implications%20%7C%20MDPI">Image search ↗</a></figure>
+<p>— “এগুলো কখনো sheet তৈরি করে, যেমন fasciae ও aponeuroses; আবার কখনো thick bundles তৈরি করে, যেমন ligaments ও tendons।”</p>
+</div></section>
+<section class="sec r" id="s20"><h3>Fibre orientation ও mechanical stress</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “এই structure-গুলোর মধ্যে fibre-এর direction নির্ভর করে তারা কোন ধরনের stress-এর সম্মুখীন হয় তার ওপর।”</p>
+<p>Adi বলল,</p>
+<p>— “Tendon-এ collagen bundles প্রধানত parallel arrangement-এ থাকে, কারণ tensile force নির্দিষ্ট direction-এ transmit হয়।”</p>
+<p>— “হ্যাঁ। তবে tendon-এর মধ্যেও fibrous bundles-এর interweaving থাকে। এটি structural stability এবং resilience বাড়ায়।”</p>
+</div></section>
+<section class="sec r" id="s21"><h3>Tendon cells</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “যে fibroblasts fibres secrete করে, তারা কখনো fibrous structure-এর মধ্যে trapped হয়ে যায়।”</p>
+<p>তখন:</p>
+<ul><li>Cell compressed হয়।</li><li>তুলনামূলক inactive হয়ে যায়।</li><li>Stellate profile তৈরি করতে পারে।</li><li>Nucleus ছোট ও heterochromatic হয়।</li></ul>
+<p>এই cells-কে বলা হয় tendon cells।</p>
+<p>Adi জিজ্ঞেস করল,</p>
+<p>— “তাহলে tendon cell হলো tendon-এর মধ্যে থাকা modified বা relatively inactive fibroblast?”</p>
+<p>— “হ্যাঁ।”</p>
+<p>তিনি আরও বললেন,</p>
+<p>— “Tendon-এর external surface-এ থাকা fibroblasts active থাকতে পারে। তারা continued fibre formation-এ অংশ নেয় এবং injured tissue repair-এর জন্য cell pool হিসেবেও কাজ করে।”</p>
+</div></section>
+<section class="sec r" id="s22"><h3>Elastin-rich regular connective tissue</h3><div class="body">
+<p>— “Regular connective tissue প্রধানত collagenous হলেও কিছু ligament-এ significant amount of elastin থাকে।”</p>
+<p>উদাহরণ:</p>
+<ul><li>Ligamenta flava of vertebral laminae।</li><li>Vocal folds।</li></ul>
+<p>— “Cornea-তেও collagen fibres precise geometrical pattern-এ সাজানো থাকে।”</p>
+<p>Amrita বলল,</p>
+<p>— “অর্থাৎ regular tissue মানেই সবসময় parallel collagen bundles নয়; sheet বা geometrical pattern-ও হতে পারে।”</p>
+<p>— “ঠিক।”</p>
+</div></section>
+<section class="sec r" id="s23"><h3>Scene 6: Mucoid Tissue — Embryonic Connective Tissue-এর বিশেষ রূপ</h3><div class="body">
+<p>Dr. Sharmin নতুন heading লিখলেন:</p>
+</div></section>
+<section class="sec r" id="s24"><h3>MUCOID TISSUE</h3><div class="body">
+<p>— “Mucoid tissue প্রধানত mesenchyme থেকে connective tissue development-এর একটি stage হিসেবে দেখা যায়।”</p>
+<p>তিনি একটি diagram দেখালেন।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Anatomy of General Connective Tissue.pptx</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/tGTcydwT1sF7U8sK-RqrX0BbyfrwCAedFp2umFxOfbZEYFrjNnJ3f31B_J28qZV-TIgWwhi_Cln1GMJ5Yzr1jULDIK0GbLXVAcAEuRbvfR85WfY6axC2ZGScoTwPazESCiqn_XwpibS9GdqrSNtphWf_j-9BNPiPW-8-UDAW2vz3my9cc-6cJDRUl-mDSSIK?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Anatomy%20of%20General%20Connective%20Tissue.pptx">Image search ↗</a></figure>
+</div></section>
+<section class="sec r" id="s25"><h3>Wharton’s jelly</h3><div class="body">
+<p>— “Umbilical cord-এর bulk অংশ গঠন করে Wharton’s jelly। এটি mucoid tissue-এর একটি গুরুত্বপূর্ণ উদাহরণ।”</p>
+<p>এর বৈশিষ্ট্য:</p>
+<ul><li>Extracellular matrix প্রচুর।</li><li>Hydrated mucoid material বেশি।</li><li>Fine collagen fibre meshwork থাকে।</li><li>Nucleated fibroblast-like cells থাকে।</li><li>Cells-এর branching processes থাকে।</li><li>Typical mucoid tissue-তে fibres সাধারণত অল্প।</li></ul>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “তবে full-term umbilical cord-এ perivascular collagen fibres পাওয়া যায়।”</p>
+</div></section>
+<section class="sec r" id="s26"><h3>Postnatal locations</h3><div class="body">
+<p>জন্মের পর mucoid tissue-এর persistent form পাওয়া যায়:</p>
+<ul><li>Developing tooth-এর pulp।</li><li>Vitreous body of the eye।</li><li>Intervertebral disc-এর nucleus pulposus।</li></ul>
+<p>Amrita বলল,</p>
+<p>— “Vitreous body-তে এটি persistent form হিসেবে থাকে এবং সেখানে fibres ও cells দুটোই কম।”</p>
+<p>— “ঠিক।”</p>
+<p>Adi বলল,</p>
+<p>— “তাহলে mucoid tissue-এর প্রধান বৈশিষ্ট্য হলো hydrated matrix-এর আধিক্য এবং comparatively sparse fibres।”</p>
+<p>— “একদম।”</p>
+</div></section>
+<section class="sec r" id="s27"><h3>Scene 7: Transdifferentiation ও Metaplasia — Cell কি নিজের পরিচয় বদলাতে পারে?</h3><div class="body">
+<p>দুপুরের পর Dr. Sharmin বোর্ডে লিখলেন:</p>
+</div></section>
+<section class="sec r" id="s28"><h3>TRANSDIFFERENTIATION AND METAPLASIA</h3><div class="body">
+<p>ক্লাস একটু চুপ হয়ে গেল।</p>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “এবার একটি গুরুত্বপূর্ণ cellular phenomenon পড়ব। Development-এর সময় epithelium এবং mesenchymal cell population-এর মধ্যে transition হতে পারে।”</p>
+<p>তিনি দুটি cell population আঁকলেন:</p>
+<ul><li>Epithelium: polarized cells-এর sheet।</li><li>Mesenchyme: polarity-বিহীন বা comparatively non-polarized cells।</li></ul>
+</div></section>
+<section class="sec r" id="s29"><h3>Developmental transitions</h3><div class="body">
+<p>— “Normal development-এ epithelial cells এবং mesenchymal cells-এর মধ্যে transition ঘটে।”</p>
+<p>এটি developmental process-এর অংশ।</p>
+<p>কিন্তু postnatal life-এ অধিকাংশ well-described transitions:</p>
+<ul><li>এক epithelial cell type থেকে অন্য epithelial cell type-এ;</li><li>অথবা এক mesenchymal cell type থেকে অন্য mesenchymal cell type-এ।</li></ul>
+<p>এগুলো সাধারণত epithelial–mesenchymal boundary অতিক্রম করে না।</p>
+</div></section>
+<section class="sec r" id="s30"><h3>Metaplasia</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Metaplasia হলো একটি differentiated cell type-এর পরিবর্তে অন্য differentiated cell type-এর আবির্ভাব। অধিকাংশ ক্ষেত্রে এটি environmental change বা trauma-র সঙ্গে সম্পর্কিত adaptive response।”</p>
+<p>এ ধরনের পরিবর্তিত cell-কে বলা হয় metaplastic cell।</p>
+<p>তিনি বললেন,</p>
+<p>— “বেশিরভাগ metaplasia pathological, যদিও কিছু ক্ষেত্রে এটি physiological adaptation-এর উদাহরণ হতে পারে।”</p>
+</div></section>
+<section class="sec r" id="s31"><h3>Example 1: Endocervical squamous metaplasia</h3><div class="body">
+<p>— “Distal endocervical canal-এর columnar secretory epithelium vaginal environment-এর hormonal stimulation-এর সংস্পর্শে এলে squamous metaplasia হতে পারে।”</p>
+<p>Adi জিজ্ঞেস করল,</p>
+<p>— “এটি কি physiological example?”</p>
+<p>— “হ্যাঁ। Gray’s-এ এটিকে common এবং physiologically normal example হিসেবে উল্লেখ করা হয়েছে।”</p>
+</div></section>
+<section class="sec r" id="s32"><h3>Example 2: Barrett’s oesophagus</h3><div class="body">
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Esophageal Disorders and Gastroesophageal Reflux Disease | AMBOSS Rotation Prep</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/7Bte5JiHCUggESVUXt97u0JG2ajHH9CbQCsHK-k3IuV5LDQJM6F4gcB3aOls4K_CnWtmTmdIHCLDtXOEtC_kxAdKqwoG_RdyNg5T1YTohGuxiuFZt9lhbCQ4JNgO_KPw7GY1iub9Nlo1VyS0H9BqNO8OSDOP9m8_JNAm-lhoILkR3ELtNiwhuDT2qCQmE4it?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Esophageal%20Disorders%20and%20Gastroesophageal%20Reflux%20Disease%20%7C%20AMBOSS%20Rotation%20Prep">Image search ↗</a></figure>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “এবার pathological example।”</p>
+<ul><li>Lower oesophagus-এর stratified squamous epithelium দীর্ঘদিন gastric juice reflux-এর কারণে acid exposure-এর সম্মুখীন হয়।</li><li>Original epithelium পরিবর্তিত হয়ে mucus-secreting columnar epithelium তৈরি হয়।</li><li>এই পরিবর্তনকে Barrett’s oesophagus বলা হয়।</li><li>এটি pathological।</li><li>Malignant change-এর ঝুঁকি থাকে।</li></ul>
+<p>Rafi বলল,</p>
+<p>— “অর্থাৎ environmental stress-এর সঙ্গে মানিয়ে নিতে epithelium বদলে যায়, কিন্তু সেই adaptation-এর clinical consequence থাকতে পারে।”</p>
+<p>— “ঠিক।”</p>
+</div></section>
+<section class="sec r" id="s33"><h3>Example 3: Respiratory epithelial metaplasia</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Upper airway-এর respiratory epithelium cigarette smoke-এর irritant exposure-এর প্রতিক্রিয়ায় squamous metaplasia develop করতে পারে।”</p>
+<p>Amrita বলল,</p>
+<p>— “তাহলে এই উদাহরণটি pathological adaptive change।”</p>
+<p>— “হ্যাঁ।”</p>
+</div></section>
+<section class="sec r" id="s34"><h3>Example 4: Mesenchymal (osseous) metaplasia</h3><div class="body">
+<p>— “Muscle-এর fibrous connective tissue বারবার damage-এর সম্মুখীন হলে সেখানে trabeculae of bone develop করতে পারে।”</p>
+<p>Adi বলল,</p>
+<p>— “এখানে connective tissue-এর মধ্যে bone তৈরি হচ্ছে?”</p>
+<p>— “হ্যাঁ। এটি mesenchymal বা osseous metaplasia-এর উদাহরণ।”</p>
+<p>Dr. Sharmin আরও বললেন,</p>
+<p>— “এই পরিবর্তনে differentiated cells-এর চেয়ে affected tissue-এর stem cells পরিবেশের পরিবর্তনে differentiation pathway বদলাতে পারে বলে মনে করা হয়।”</p>
+<p>— “Stimulus সরিয়ে দিলে পরিবর্তনটি reversible হতে পারে।”</p>
+<p>Adi নোট করল:</p>
+<p>Metaplasia: Environmental stimulus → Altered differentiation pathway → New differentiated cell type</p>
+<p>Dr. Sharmin সতর্ক করলেন,</p>
+<p>— “এটিকে সরলভাবে একটি mature cell সরাসরি আরেকটি mature cell-এ রূপান্তরিত হয়—এভাবে সব ক্ষেত্রে ব্যাখ্যা করবে না। Tissue stem-cell response গুরুত্বপূর্ণ হতে পারে।”</p>
+</div></section>
+<section class="sec r" id="s35"><h3>Scene 8: Mucosa — Hollow Organ-এর Inner Lining</h3><div class="body">
+<p>Dr. Sharmin বোর্ডে লিখলেন:</p>
+</div></section>
+<section class="sec r" id="s36"><h3>MUCOSA (MUCOUS MEMBRANE)</h3><div class="body">
+<p>— “Mucosa অনেক internal hollow organ-এর lining তৈরি করে। যেসব organ-এর inner surface mucus দিয়ে moist থাকে, সেখানে mucosa পাওয়া যায়।”</p>
+<p>উদাহরণ:</p>
+<ul><li>Intestines</li><li>Conducting portions of the airway</li><li>Genital tract</li><li>Urinary tract</li></ul>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>General histologic anatomy of the tubular digestive tract – Veterinary Histology</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/Z13mVD-yECqQd1rgZ_i0IM72CxdMsKsaUq409BvY-N7tH8oQolS-hwLoP_w9WqthF5IxHBnWAnyGOde4TAxHsgnIq6h8zUYVtW5yCwB_1gJ04-AspzXZQjvMaIBZUthy5gYXa-SwvOuNCG3-Zjz8kDUwkuqgWLOXMQt-vbXm2mhAB2kq1_YHMbieUvhAUv49?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=General%20histologic%20anatomy%20of%20the%20tubular%20digestive%20tract%20%E2%80%93%20Veterinary%20Histology">Image search ↗</a></figure>
+</div></section>
+<section class="sec r" id="s37"><h3>Mucosa proper — তিনটি অংশ</h3><div class="body">
+<p>Dr. Sharmin বোর্ডে তিনটি layer লিখলেন:</p>
+<ul><li>Epithelium</li><li>Lamina propria</li><li>Muscularis mucosae</li></ul>
+<p>— “এটাই mucosa proper-এর fundamental organization।”</p>
+<p>তিনি বিস্তারিত বললেন:</p>
+<p>1. Epithelium</p>
+<ul><li>Internal surface cover করে।</li><li>Mucosal, submucosal বা extrinsic glands-এর ducts এর surface-এ open করতে পারে।</li></ul>
+<p>2. Lamina propria</p>
+<ul><li>Epithelium-এর নিচে থাকে।</li><li>Loose connective tissue দিয়ে তৈরি।</li><li>Mucosal epithelium-কে support দেয়।</li></ul>
+<p>3. Muscularis mucosae</p>
+<ul><li>Thin layer of smooth muscle।</li><li>কিছু mucosa-তে অনুপস্থিত থাকতে পারে।</li><li>কখনো elastic fibre layer দ্বারা replaced হতে পারে।</li></ul>
+<p>Amrita প্রশ্ন করল,</p>
+<p>— “Madam, muscularis mucosae এবং muscularis externa কি একই?”</p>
+<p>— “না। দুটো আলাদা layer। Muscularis mucosae mucosa proper-এর অংশ। Muscularis externa সাধারণত এর বাইরে থাকে এবং hollow organ-এর lumen-এর movement-এ গুরুত্বপূর্ণ ভূমিকা রাখে।”</p>
+</div></section>
+<section class="sec r" id="s38"><h3>Mucosa-কে membrane বলা হয় কেন?</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Mucous membrane-কে underlying structure থেকে sheet বা membrane হিসেবে peel away করা যায়। Separation plane সাধারণত muscularis mucosae বরাবর থাকে।”</p>
+</div></section>
+<section class="sec r" id="s39"><h3>Submucosa</h3><div class="body">
+<p>— “Muscularis mucosae-এর নিচে সাধারণত supporting connective tissue layer থাকে, যার নাম submucosa।”</p>
+<p>এতে থাকতে পারে:</p>
+<ul><li>Mucous glands</li><li>Seromucous glands</li></ul>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Visceral inflammation হলে প্রধানত lamina propria ও submucosa-এর connective tissues আক্রান্ত হয়।”</p>
+<p>এর বৈশিষ্ট্য:</p>
+<ul><li>Dilated vessels</li><li>Oedema</li><li>Extravasated immune defence cells-এর accumulation</li></ul>
+</div></section>
+<section class="sec r" id="s40"><h3>Muscularis externa</h3><div class="body">
+<p>— “বেশিরভাগ mucosa-কে এক বা একাধিক smooth muscle layer support করে, যাকে muscularis externa বলা হয়।”</p>
+<p>এর contraction:</p>
+<ul><li>Airway-এর মতো organ-এ mucosal lumen constrict করতে পারে।</li><li>Intestine-এর মতো organ-এ opposing direction-এ orientated muscle layers থাকলে peristaltic movement তৈরি করতে পারে।</li></ul>
+</div></section>
+<section class="sec r" id="s41"><h3>Outer covering</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Muscle-এর বাইরের surface serosa দিয়ে covered হতে পারে। আবার retroperitoneal structure বা pelvic floor অতিক্রমকারী structure-এ connective tissue adventitia থাকতে পারে।”</p>
+</div></section>
+<section class="sec r" id="s42"><h3>Scene 9: Mucus — Surface Protection-এর Molecular Mechanism</h3><div class="body">
+<p>Dr. Sharmin লিখলেন:</p>
+</div></section>
+<section class="sec r" id="s43"><h3>MUCUS</h3><div class="body">
+<p>— “Mucus হলো বিভিন্ন ধরনের complex glycoproteins-এর viscous suspension। এই glycoproteins-কে বলা হয় Mucins।”</p>
+</div></section>
+<section class="sec r" id="s44"><h3>Mucus secretion-এর source</h3><div class="body">
+<ul><li>Scattered individual epithelial cells—বিশেষ করে goblet cells।</li><li>Secretory surface epithelium—যেমন stomach lining।</li><li>Mucous glands।</li><li>Seromucous glands।</li></ul>
+<p>— “Mucus-এর precise composition নির্ভর করে কোন tissue এবং কোন secretory cell এটি তৈরি করছে তার ওপর।”</p>
+</div></section>
+<section class="sec r" id="s45"><h3>Mucin-এর molecular structure</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “সব mucins-এর একটি filamentous core protein থাকে, যার সঙ্গে carbohydrate chains যুক্ত থাকে। এই chains সাধারণত branched।”</p>
+<p>তিনি বললেন,</p>
+<p>— “Salivary mucus-এ প্রায় ৬০০টি carbohydrate chain থাকতে পারে।”</p>
+<p>Carbohydrate residues-এর উদাহরণ:</p>
+<ul><li>Glucose</li><li>Fucose</li><li>Galactose</li><li>N-acetylglucosamine</li><li>Sialic acid</li></ul>
+<p>তিনি ABO blood group-এর সঙ্গে একটি বিশেষ সম্পর্ক ব্যাখ্যা করলেন।</p>
+<p>— “কিছু carbohydrate chain-এর terminal residues অনেক মানুষের ABO blood group antigen-এর সঙ্গে identical হতে পারে। এরা secretor gene বহনকারী secretors-দের মধ্যে পাওয়া যায় এবং appropriate clinical tests-এর মাধ্যমে salivary mucus-এ detect করা সম্ভব।”</p>
+</div></section>
+<section class="sec r" id="s46"><h3>Mucus-এর function</h3><div class="body">
+<ul><li>Surface-কে drying থেকে রক্ষা করে।</li><li>Water bind করে।</li><li>Lubrication প্রদান করে।</li><li>Concentrated অবস্থায় underlying tissue-এর ওপর viscous protective layer তৈরি করে।</li></ul>
+</div></section>
+<section class="sec r" id="s47"><h3>Mucus synthesis</h3><div class="body">
+<p>Adi প্রশ্ন করল,</p>
+<p>— “Mucin synthesis কোথায় শুরু হয়?”</p>
+<p>— “Rough endoplasmic reticulum-এ।”</p>
+<p>Dr. Sharmin ধাপে ধাপে বোঝালেন:</p>
+<ul><li>Rough Endoplasmic Reticulum (RER) — Mucin-এর protein component synthesis শুরু হয়।</li><li>Golgi complex — Sulphated carbohydrates যুক্ত হয়ে glycoprotein mucinogen তৈরি হয়।</li><li>Secretory vesicles — Mucinogen ছোট, dense, membrane-bound vesicles-এ export হয়।</li><li>Cell surface — Vesicles cell surface-এর কাছে এসে swell করে এবং membrane-এর সঙ্গে fuse হয়।</li><li>Release — Vesicles-এর contents বাইরে release হয়।</li></ul>
+<p>Amrita বলল,</p>
+<p>— “তাহলে mucinogen হলো secretory form, আর বাইরে release হওয়ার পর mucus-এর অংশ হয়ে surface protect করে।”</p>
+<p>— “সঠিক।”</p>
+</div></section>
+<section class="sec r" id="s48"><h3>Scene 10: Serosa — Body Cavities-এর Smooth Covering</h3><div class="body">
+<p>Dr. Sharmin বোর্ডে লিখলেন:</p>
+</div></section>
+<section class="sec r" id="s49"><h3>SEROSA (SEROUS MEMBRANE)</h3><div class="body">
+<p>— “Serosa হলো একটি single layer of squamous mesothelial cells, যার নিচে loose connective tissue থাকে।”</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Membranes – Integrated Human Anatomy and Physiology</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/vFsV0G0olAZt54-1DA0jx2RxqTwnpnLJ8I1i6zh37ddkgcgrzQ2IQYQjenH-AVlyidDWpQTYaOVcWPKs4MKG_fm2yx_W0bacogruAO2QM92R2MSiwSHykKllekswrZYgSR_hXEhxFHneWnuo3HPc74rCTvyJmG44sulJ7-a_JHaPcGEoimxxB2T9Zv26kacU?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Membranes%20%E2%80%93%20Integrated%20Human%20Anatomy%20and%20Physiology">Image search ↗</a></figure>
+</div></section>
+<section class="sec r" id="s50"><h3>Structure</h3><div class="body">
+<p>Mesothelial layer:</p>
+<ul><li>Single layer of squamous cells।</li><li>Keratin intermediate filaments express করে।</li></ul>
+<p>Underlying connective tissue:</p>
+<ul><li>Loose connective tissue।</li><li>Numerous blood vessels।</li><li>Numerous lymphatic vessels।</li></ul>
+</div></section>
+<section class="sec r" id="s51"><h3>Locations</h3><div class="body">
+<p>Serosa:</p>
+<ul><li>Pleural cavities line করে।</li><li>Pericardial cavity line করে।</li><li>Peritoneal cavity line করে।</li><li>এসব cavity-র ভিতরের organ-এর external surface cover করে।</li><li>Abdomen-এ organs-কে envelop করা mesenteries-ও cover করে।</li></ul>
+</div></section>
+<section class="sec r" id="s52"><h3>Parietal ও Visceral layers</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Serosa-র দুটি layer-এর মধ্যে একটি potential space থাকে।”</p>
+<ul><li>Outer layer: Parietal serosa</li><li>Inner layer: Visceral serosa</li></ul>
+<p>এই potential space-এ অল্প পরিমাণ protein-containing serous fluid থাকে।</p>
+<p>— “এই fluid প্রধানত interstitial fluid-এর exudate।”</p>
+<p>Adi বলল,</p>
+<p>— “তাহলে serous fluid দুই surface-এর মধ্যে friction কমাতে সাহায্য করে।”</p>
+<p>— “এটাই serous membrane-এর functional importance বোঝার একটি উপায়।”</p>
+</div></section>
+<section class="sec r" id="s53"><h3>Scene 11: Fascia — Anatomy Dissection-এর বাস্তব সংযোগ</h3><div class="body">
+<p>শেষ ক্লাসে Dr. Sharmin লিখলেন:</p>
+</div></section>
+<section class="sec r" id="s54"><h3>FASCIA</h3><div class="body">
+<p>— “Fascia হলো একটি generic term। এমন sheath, sheet বা অন্য dissectible mass of connective tissue, যা unaided eye-তে দেখা যায়।”</p>
+<p>তিনি বললেন,</p>
+<p>— “এখানে একটি গুরুত্বপূর্ণ Terminologia Anatomica বিষয় আছে।”</p>
+</div></section>
+<section class="sec r" id="s55"><h3>Historical terminology</h3><div class="body">
+<ul><li>Superficial fascia</li><li>Deep fascia</li></ul>
+<p>এই শব্দগুলো English anatomical language-এ এখনও প্রচলিত।</p>
+<p>কিন্তু এগুলো Terminologia Anatomica-তে আর অন্তর্ভুক্ত নয়।</p>
+<p>Recommended synonymous terms:</p>
+<ul><li>Tela subcutanea</li><li>Hypodermis</li><li>Subcutaneous tissue</li></ul>
+<p>— “এগুলো superficial fascia-এর পরিবর্তে recommended terminology।”</p>
+</div></section>
+<section class="sec r" id="s56"><h3>Deep connective tissue condensations</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Deep-lying connective tissue condensation-কে location অনুযায়ী নাম দেওয়া হয়।”</p>
+<p>উদাহরণ:</p>
+<ul><li>Muscles-এর fascia: Fascia musculorum</li><li>Viscera-এর fascia: Fascia visceralis</li></ul>
+</div></section>
+<section class="sec r" id="s57"><h3>Neurovascular bundles</h3><div class="body">
+<p>— “Peripheral nerves, blood vessels এবং lymph vessels-এর চারপাশে loosely packed connective tissue থাকে। এগুলো বিভিন্ন structure-এর মধ্যে চলাচলের সময় তাদের ঘিরে রাখে এবং অনেক ক্ষেত্রে একসঙ্গে connect করে neurovascular bundle তৈরি করে।”</p>
+</div></section>
+<section class="sec r" id="s58"><h3>Vascular sheath</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “কিছু বড় vessel-এর চারপাশে dense connective tissue sheath থাকে।”</p>
+<p>উদাহরণ:</p>
+<ul><li>Common carotid artery</li><li>Femoral artery</li></ul>
+<p>— “এই sheath functionally গুরুত্বপূর্ণ হতে পারে। Pulsating artery-এর সঙ্গে বড় vein-কে কাছাকাছি রেখে venous return-এ সহায়তা করতে পারে।”</p>
+<p>Amrita বলল,</p>
+<p>— “অর্থাৎ fascia শুধু আলাদা আলাদা muscle-কে ঘিরে রাখে না; neurovascular structure-এর organization-এও ভূমিকা রাখে।”</p>
+<p>— “একদম।”</p>
+</div></section>
+<section class="sec r" id="s59"><h3>Scene 12: সন্ধ্যা ৬টা ৪৫ — Library-তে শেষ আলোচনা</h3><div class="body">
+<p>লাইব্রেরিতে আজ সবাই একটু ক্লান্ত।</p>
+<p>Rafi বলল,</p>
+<p>— “আজকের chapter-এ connective tissue-এর এত রকম structure! Loose, dense, regular, adipose, mucoid—সব একসঙ্গে মনে রাখা কঠিন।”</p>
+<p>Mou বলল,</p>
+<p>— “কঠিন না, function দিয়ে মনে রাখ।”</p>
+<p>Amrita খাতা টেনে নিল।</p>
+<p>— “চল, Feynman technique-এ একবার বুঝিয়ে বলি।”</p>
+<p>সে লিখল:</p>
+<ul><li>Loose connective tissue: Structure-কে bind করে, কিন্তু movement allow করে।</li><li>Dense irregular connective tissue: Thick collagen bundles বিভিন্ন direction-এ সাজিয়ে multidirectional stress resist করে।</li><li>Adipose tissue: Energy storage, metabolic lipid source, thermal insulation ও shock absorption।</li><li>Regular connective tissue: Fibres নির্দিষ্ট stress-এর direction অনুযায়ী orientated।</li><li>Mucoid tissue: Hydrated mucoid matrix-সমৃদ্ধ developmental connective tissue।</li><li>Mucosa: Epithelium + lamina propria + muscularis mucosae।</li><li>Mucus: Mucins-সমৃদ্ধ viscous secretion, যা surface protect ও lubricate করে।</li><li>Serosa: Mesothelium + loose connective tissue।</li><li>Fascia: চোখে দেখা যায় এমন dissectible connective tissue sheath বা sheet।</li></ul>
+<p>Adi বলল,</p>
+<p>— “তুই একটা জিনিস বাদ দিয়েছিস।”</p>
+<p>— “কী?”</p>
+<p>— “Metaplasia।”</p>
+<p>Amrita আবার লিখল:</p>
+<p>Metaplasia: Environmental change বা trauma-র সঙ্গে সম্পর্কিত adaptive change, যেখানে একটি differentiated cell type-এর পরিবর্তে অন্য differentiated cell type দেখা যায়।</p>
+<p>Adi বলল,</p>
+<p>— “এবার Chapter 2-এর শেষটা সত্যিই কাছে।”</p>
+<p>Amrita তাকিয়ে রইল।</p>
+<p>— “আমরা একদিন সব শেষ করব, তাই না?”</p>
+<p>Adi মৃদু হেসে বলল,</p>
+<p>— “Gray’s Anatomy শেষ করব। কিন্তু একসঙ্গে শেখা শেষ করব না।”</p>
+<p>Amrita উত্তর দিল না। শুধু তার পাশে নিজের খাতাটা রেখে দিল।</p>
+</div></section>
+<section class="sec r" id="s60"><h3>Episode 30 — Study Ledger</h3><div class="body">
+<p>আজকের পড়া সম্পন্ন</p>
+<p>আজ Chapter 2-এর বাকি connective tissue classification ও supporting tissue topics আলোচনা করা হয়েছে।</p>
+<div class="tw"><table><thead><tr><th>Section</th><th>Coverage</th></tr></thead><tbody><tr><td>Classification of connective tissues</td><td>Irregular ও regular classification</td></tr><tr><td>Loose connective tissue</td><td>Function, locations, structure, variant</td></tr><tr><td>Dense irregular connective tissue</td><td>Structure, cellular features, locations</td></tr><tr><td>Adipose tissue</td><td>Organization, distribution, functions</td></tr><tr><td>Regular connective tissues</td><td>Fibre orientation, tendon cells, elastin-rich examples</td></tr><tr><td>Mucoid tissue</td><td>Wharton's jelly, postnatal locations</td></tr><tr><td>Transdifferentiation and metaplasia</td><td>Developmental transitions, physiological ও pathological examples</td></tr><tr><td>Mucosa</td><td>Epithelium, lamina propria, muscularis mucosae, submucosa, muscularis externa</td></tr><tr><td>Mucus</td><td>Mucins, carbohydrate chains, synthesis ও functions</td></tr><tr><td>Serosa</td><td>Mesothelium, parietal ও visceral layers, serous fluid</td></tr><tr><td>Fascia</td><td>Terminology, deep connective tissue, neurovascular sheaths</td></tr></tbody></table></div>
+<p>আজকের Gray’s Anatomy coverage</p>
+</div></section>
+<section class="sec r" id="s61"><h3>পৃষ্ঠা ৮৪–৮৬</h3><div class="body">
+<p>Chapter 2 — Integrating Cells into Tissues</p>
+</div></section>
+<section class="sec r" id="s62"><h3>Chapter 2-এর সমাপ্তি</h3><div class="body">
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-029.html">← Episode 29</a><a href="index.html">সব পর্ব</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">Gray’s Anatomy — Episode 30</a><a href="#s2">“শরীরের সংযোগজাল: যে Tissue অঙ্গকে ধরে রাখে, রক্ষা করে এবং বদলে যায়”</a><a href="#s3">Scene 1: সকাল ৮টা ৩০ — Anatomy Lecture Theatre</a><a href="#s4">Scene 2: Loose Connective Tissue — অঙ্গগুলোর মধ্যবর্তী নমনীয় সংযোগ</a><a href="#s5">LOOSE (AREOLAR) CONNECTIVE TISSUE</a><a href="#s6">Location</a><a href="#s7">Structure</a><a href="#s8">Special variant: Eye-এর choroid ও sclera</a><a href="#s9">Scene 3: Dense Irregular Connective Tissue — বহু দিকের Stress-এর বিরুদ্ধে প্রতিরক্ষা</a><a href="#s10">DENSE IRREGULAR CONNECTIVE TISSUE</a><a href="#s11">Cellular characteristics</a><a href="#s12">Locations</a><a href="#s13">Scene 4: Adipose Tissue — শুধু Fat নয়, একটি Organized Tissue</a><a href="#s14">ADIPOSE TISSUE</a><a href="#s15">Architecture</a><a href="#s16">Distribution</a><a href="#s17">Functions</a><a href="#s18">Scene 5: Regular Connective Tissue — Stress-এর Direction অনুযায়ী Fibre Arrangement</a><a href="#s19">REGULAR CONNECTIVE TISSUES</a><a href="#s20">Fibre orientation ও mechanical stress</a><a href="#s21">Tendon cells</a><a href="#s22">Elastin-rich regular connective tissue</a><a href="#s23">Scene 6: Mucoid Tissue — Embryonic Connective Tissue-এর বিশেষ রূপ</a><a href="#s24">MUCOID TISSUE</a><a href="#s25">Wharton’s jelly</a><a href="#s26">Postnatal locations</a><a href="#s27">Scene 7: Transdifferentiation ও Metaplasia — Cell কি নিজের পরিচয় বদলাতে পারে?</a><a href="#s28">TRANSDIFFERENTIATION AND METAPLASIA</a><a href="#s29">Developmental transitions</a><a href="#s30">Metaplasia</a><a href="#s31">Example 1: Endocervical squamous metaplasia</a><a href="#s32">Example 2: Barrett’s oesophagus</a><a href="#s33">Example 3: Respiratory epithelial metaplasia</a><a href="#s34">Example 4: Mesenchymal (osseous) metaplasia</a><a href="#s35">Scene 8: Mucosa — Hollow Organ-এর Inner Lining</a><a href="#s36">MUCOSA (MUCOUS MEMBRANE)</a><a href="#s37">Mucosa proper — তিনটি অংশ</a><a href="#s38">Mucosa-কে membrane বলা হয় কেন?</a><a href="#s39">Submucosa</a><a href="#s40">Muscularis externa</a><a href="#s41">Outer covering</a><a href="#s42">Scene 9: Mucus — Surface Protection-এর Molecular Mechanism</a><a href="#s43">MUCUS</a><a href="#s44">Mucus secretion-এর source</a><a href="#s45">Mucin-এর molecular structure</a><a href="#s46">Mucus-এর function</a><a href="#s47">Mucus synthesis</a><a href="#s48">Scene 10: Serosa — Body Cavities-এর Smooth Covering</a><a href="#s49">SEROSA (SEROUS MEMBRANE)</a><a href="#s50">Structure</a><a href="#s51">Locations</a><a href="#s52">Parietal ও Visceral layers</a><a href="#s53">Scene 11: Fascia — Anatomy Dissection-এর বাস্তব সংযোগ</a><a href="#s54">FASCIA</a><a href="#s55">Historical terminology</a><a href="#s56">Deep connective tissue condensations</a><a href="#s57">Neurovascular bundles</a><a href="#s58">Vascular sheath</a><a href="#s59">Scene 12: সন্ধ্যা ৬টা ৪৫ — Library-তে শেষ আলোচনা</a><a href="#s60">Episode 30 — Study Ledger</a><a href="#s61">পৃষ্ঠা ৮৪–৮৬</a><a href="#s62">Chapter 2-এর সমাপ্তি</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

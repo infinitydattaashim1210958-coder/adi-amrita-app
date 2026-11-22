@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 015 · নিউক্লিয়াস: কোষের নিয়ন্ত্রণকক্ষের গোপন স্থাপত্য</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 015">EPISODE 015</h1>
+  <div class="ttl">নিউক্লিয়াস: কোষের নিয়ন্ত্রণকক্ষের গোপন স্থাপত্য</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">015</div></div>
+    <div class="face b"><div class="t2">নিউক্লিয়াস: কোষের নিয়ন্ত্রণকক্ষের গোপন স্থাপত্য</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>Episode 15 — নিউক্লিয়াস: কোষের নিয়ন্ত্রণকক্ষের গোপন স্থাপত্য</h3><div class="body">
+<p>এবার Episode 15-এ আমরা Intermediate Filaments-এর পরের অংশ থেকেই শুরু করছি—Nucleus। আগের পর্বের শেষের পর আর কোনো বিষয় বাদ দিয়ে সামনে এগোব না। আজকের পড়ার মূল বিষয় হবে Nuclear envelope, Nuclear lamina, Laminopathies, Nuclear pore transport এবং Chromatin-এর গঠন ও বিন্যাস।</p>
+<p>Adi &amp; Amrita | Gray’s Anatomy Study Series | Chapter 1</p>
+</div></section>
+<section class="sec r" id="s2"><h3>১. Anatomy Lecture Hall — কোষের ভেতরের সবচেয়ে গুরুত্বপূর্ণ কক্ষ</h3><div class="body">
+<p>ঢাকা মেডিকেল কলেজের Anatomy lecture hall।</p>
+<p>সামনের বোর্ডে বড় করে লেখা—</p>
+<p>NUCLEUS</p>
+<p>Professor বোর্ডের দিকে তাকিয়ে বললেন,</p>
+<p>“গত ক্লাসে তোমরা Intermediate Filaments পড়েছ। আজ আমরা এমন একটি structure নিয়ে আলোচনা করব, যার ভেতরে কোষের genetic material সংগঠিত থাকে। কিন্তু শুধু DNA-র ঘর বললে Nucleus-কে বোঝা হবে না। এর নিজস্ব architecture, membrane system, transport mechanism এবং internal organization রয়েছে।”</p>
+<p>রুদ্র পাশে বসে আদিকে ফিসফিস করে বলল,</p>
+<p>“আজকে মনে হয় কোষের Head Office পড়ব!”</p>
+<p>সায়ান বলল, “Head Office বললে হবে না। Office-এর security system-টাও বুঝতে হবে।”</p>
+<p>Amrita হেসে বলল, “তাহলে আজকে security guard-এর কাজও তোকে বুঝতে হবে!”</p>
+<p>Professor বোর্ডে লিখলেন—</p>
+</div></section>
+<section class="sec r" id="s3"><h3>Nucleus: General characteristics</h3><div class="body">
+<p>Gray’s Anatomy অনুযায়ী:</p>
+<ul><li>Nucleus সাধারণত কোষের সবচেয়ে বড় intracellular structure।</li><li>সাধারণত spherical অথবা ellipsoid আকৃতির।</li><li>এর diameter প্রায় 3–10 μm।</li></ul>
+<p>Professor বললেন,</p>
+<p>“একটা কথা মনে রাখবে—Nucleus-এর আকার সব কোষে এক নয়। তবে এখানে বই যে সাধারণ বৈশিষ্ট্যগুলো দিয়েছে, সেগুলোই আমাদের আলোচনার ভিত্তি।”</p>
+<p>আদি খাতায় লিখল:</p>
+<p>Nucleus = Usually largest intracellular structure; spherical or ellipsoid; 3–10 μm diameter.</p>
+</div></section>
+<section class="sec r" id="s4"><h3>Histological staining of the nucleus</h3><div class="body">
+<p>Professor এবার জিজ্ঞেস করলেন,</p>
+<p>“তোমরা Histology-তে Haematoxylin দিয়ে nucleus stain হতে দেখেছ। কিন্তু কেন?”</p>
+<p>নন্দিনী উত্তর দিল,</p>
+<p>“কারণ DNA ও RNA-তে phosphate group থাকে?”</p>
+<p>“ঠিক। এবার পুরো mechanism-টা বলো।”</p>
+<p>Professor বোর্ডে লিখলেন:</p>
+<ul><li>Haematoxylin</li><li>Toluidine blue</li><li>DNA</li><li>RNA</li><li>Phosphate groups</li><li>Basophilia</li></ul>
+<p>DNA ও RNA-র phosphate groups acidic components হিসেবে কাজ করে। এই phosphate groups negatively charged।</p>
+<p>তাই DNA এবং RNA basic dyes-এর প্রতি binding affinity প্রদর্শন করে। এই কারণেই এদের basophilic বলা হয়।</p>
+<p>এখানে একটি গুরুত্বপূর্ণ পার্থক্য:</p>
+<ul><li>Haematoxylin ও Toluidine blue—কোষ ও tissue section-এ DNA/RNA-র acidic components শনাক্ত করতে ব্যবহৃত conventional histological stains।</li><li>Feulgen reaction হলো DNA-র জন্য specific stain।</li></ul>
+<p>Amrita বলল,</p>
+<p>“অর্থাৎ Basophilia-র মূল কারণ হলো DNA/RNA-র negatively charged phosphate groups-এর সঙ্গে basic dye-এর affinity।”</p>
+<p>Professor মাথা নাড়লেন।</p>
+<p>“Excellent. এই সম্পর্কটা বুঝে রাখবে। শুধু stain-এর নাম মুখস্থ করলে হবে না।”</p>
+</div></section>
+<section class="sec r" id="s5"><h3>২. Nuclear envelope — নিউক্লিয়াসের সুরক্ষিত সীমানা</h3><div class="body">
+<p>Library-তে বিকেলের group study শুরু হয়েছে।</p>
+<p>আজকের আলোচনার দায়িত্ব নিয়েছে Amrita। সে বোর্ডে একটি শিরোনাম লিখল:</p>
+<p>Nuclear envelope</p>
+<p>“Adi, তুই বল তো, Nucleus কি Cytoplasm-এর সঙ্গে সরাসরি মিশে থাকে?”</p>
+<p>“না। Nuclear envelope দিয়ে আলাদা থাকে।”</p>
+<p>“ভালো। কিন্তু Nuclear envelope একটা single membrane নয়।”</p>
+<p>সে লিখল—</p>
+<p>Nuclear envelope consists of:</p>
+<ul><li>Inner nuclear membrane (INM)</li><li>Outer nuclear membrane (ONM)</li><li>Perinuclear space</li></ul>
+<p>Nucleus-কে ঘিরে থাকে দুটি membrane—Inner nuclear membrane এবং Outer nuclear membrane।</p>
+<p>এদের মাঝখানে থাকে একটি space, যার নাম perinuclear space।</p>
+<p>Perinuclear space-এর width: 40–50 nm</p>
+<p>কিন্তু এই space সম্পূর্ণ বিচ্ছিন্ন কোনো compartment নয়।</p>
+<p>এটি endoplasmic reticulum-এর lumen-এর সঙ্গে continuous।</p>
+<p>আদি বলল,</p>
+<p>“মানে Nuclear envelope আর Endoplasmic reticulum-এর মধ্যে structural continuity রয়েছে?”</p>
+<p>“একদম। এবার ONM আর INM-এর পার্থক্যটা বল।”</p>
+</div></section>
+<section class="sec r" id="s6"><h3>Outer nuclear membrane (ONM)</h3><div class="body">
+<ul><li>Endoplasmic reticulum-এর সঙ্গে একাধিক connection রয়েছে।</li><li>ER-এর সঙ্গে membrane protein components share করে।</li></ul>
+</div></section>
+<section class="sec r" id="s7"><h3>Inner nuclear membrane (INM)</h3><div class="body">
+<p>INM-এ কিছু specific integral membrane proteins থাকে।</p>
+<p>Gray’s Anatomy এখানে দুটি গুরুত্বপূর্ণ protein-এর নাম উল্লেখ করেছে:</p>
+<ul><li>Lamin B receptor</li><li>Emerin</li></ul>
+<p>এই দুটি protein chromatin bridging proteins-এর binding sites প্রদান করে।</p>
+<p>অর্থাৎ এগুলো Nuclear envelope-এর ভেতরের দিকে chromatin organization-এর সঙ্গে সম্পর্কিত।</p>
+</div></section>
+<section class="sec r" id="s8"><h3>Emerin mutation এবং Emery–Dreifuss muscular dystrophy</h3><div class="body">
+<p>Amrita এবার লিখল:</p>
+<p>Emerin mutation → X-linked Emery–Dreifuss muscular dystrophy (EDMD)</p>
+<p>Emerin-কে encode করা gene-এ mutation হলে X-linked Emery–Dreifuss muscular dystrophy হতে পারে।</p>
+<p>Gray’s Anatomy এই disease-এর বৈশিষ্ট্য হিসেবে উল্লেখ করেছে:</p>
+<ul><li>Skeletal muscle wasting</li><li>Cardiomyopathy</li></ul>
+<p>রুদ্র বলল,</p>
+<p>“একটা Nuclear membrane protein-এর mutation থেকে skeletal muscle আর heart-এর disease!”</p>
+<p>আদি উত্তর দিল,</p>
+<p>“এটাই তো গুরুত্বপূর্ণ। Cellular architecture-এর protein-ও tissue-level disease-এর সঙ্গে যুক্ত হতে পারে।”</p>
+<p>Amrita একটু মুচকি হেসে বলল,</p>
+<p>“আজকে তুই বেশ ভালো উত্তর দিচ্ছিস।”</p>
+<p>“তোর কাছে পড়লে ভুল করার সুযোগ কম।”</p>
+<p>সায়ান পাশ থেকে বলল,</p>
+<p>“বইয়ের প্রতি ভালোবাসা, নাকি শিক্ষিকার প্রতি?”</p>
+<p>“চুপ কর, পড়তে দে!”</p>
+</div></section>
+<section class="sec r" id="s9"><h3>৩. Nuclear lamina — Nucleus-এর অভ্যন্তরীণ শক্ত কাঠামো</h3><div class="body">
+<p>পরদিন Professor আবার lecture শুরু করলেন।</p>
+<p>বোর্ডে লিখলেন—</p>
+<p>Nuclear lamina</p>
+<p>Professor বললেন,</p>
+<p>“তোমরা Intermediate Filaments পড়েছ। Nuclear lamina-র সঙ্গে তার সম্পর্ক কী?”</p>
+<p>নন্দিনী উত্তর দিল,</p>
+<p>“Lamins হলো Type V intermediate filament proteins।”</p>
+<p>“ঠিক। এবার Nuclear lamina-র structure বলো।”</p>
+</div></section>
+<section class="sec r" id="s10"><h3>Nuclear lamina: Basic structure</h3><div class="body">
+<p>Nuclear lamina হলো একটি:</p>
+<ul><li>Protein-dense meshwork</li><li>Thickness: 15–20 nm</li><li>Location: Inner nuclear membrane-এর inner face-এর সঙ্গে associated</li></ul>
+<p>এর প্রধান উপাদান হলো Lamins।</p>
+<p>Lamins হলো Type V intermediate filament proteins।</p>
+<p>এগুলো দুটি প্রধান শ্রেণিতে বিভক্ত:</p>
+<ul><li>A-type lamins</li><li>B-type lamins</li></ul>
+</div></section>
+<section class="sec r" id="s11"><h3>Nuclear lamina-এর functions</h3><div class="body">
+<p>Professor বোর্ডে তিনটি function লিখলেন:</p>
+<p>1. Mechanical reinforcement</p>
+<p>Nuclear lamina Nuclear membrane-কে mechanically reinforce করে।</p>
+<p>অর্থাৎ Nucleus-এর membrane-কে mechanical strength প্রদান করে।</p>
+<p>2. Determination of nuclear shape</p>
+<p>Nucleus-এর shape নির্ধারণে Nuclear lamina গুরুত্বপূর্ণ ভূমিকা পালন করে।</p>
+<p>3. Chromatin anchorage</p>
+<p>এটি এমন proteins-এর binding site প্রদান করে, যেগুলো Chromatin-কে Cytoskeleton-এর সঙ্গে anchor করে।</p>
+<p>আদি বলল,</p>
+<p>“তাহলে Nuclear lamina শুধু Nucleus-এর নিচে একটা support layer নয়। এটি Nuclear shape এবং Chromatin organization-এর সঙ্গেও সম্পর্কিত।”</p>
+<p>Professor বললেন,</p>
+<p>“Exactly.”</p>
+</div></section>
+<section class="sec r" id="s12"><h3>Lamin A এবং Laminopathies</h3><div class="body">
+<p>এবার Professor একটু থামলেন।</p>
+<p>“এখানে একটি গুরুত্বপূর্ণ disease association আছে।”</p>
+<p>Gray’s Anatomy অনুযায়ী, Nuclear lamin A-র সঙ্গে human disease-এর একটি বিস্তৃত সম্পর্ক রয়েছে। বইয়ে উল্লেখ করা হয়েছে, Lamin A-র 350-এর বেশি mutations শনাক্ত হয়েছে।</p>
+<p>এই ধরনের disease-গুলোকে বলা হয়:</p>
+<p>Laminopathies</p>
+<p>Laminopathies-এ দেখা যায়:</p>
+<ul><li>Nuclear structural abnormalities</li><li>Structurally weakened nuclei</li><li>Mechanical damage to nuclei</li></ul>
+<p>অর্থাৎ Lamin A-র mutation Nuclear structure-কে দুর্বল করে দিতে পারে।</p>
+<p>রুদ্র বলল,</p>
+<p>“যে protein Nucleus-কে শক্ত রাখে, সেটার defect হলে Nucleus-ই দুর্বল হয়ে যায়।”</p>
+<p>Professor বললেন,</p>
+<p>“সেটাই মূল ধারণা।”</p>
+</div></section>
+<section class="sec r" id="s13"><h3>৪. A-type এবং B-type Lamins — একই পরিবারের আলাদা সদস্য</h3><div class="body">
+<p>রাতের Library session।</p>
+<p>আদি ও Amrita পাশাপাশি বসে। আজ Lamin-এর classification নিয়ে বিস্তারিত আলোচনা হবে।</p>
+<p>Amrita বলল,</p>
+<p>“তুই একটা জিনিস মনে রাখ। A-type এবং B-type lamins-এর নাম কাছাকাছি হলেও তাদের gene এবং tissue expression আলাদা করে বুঝতে হবে।”</p>
+</div></section>
+<section class="sec r" id="s14"><h3>A-type lamins</h3><div class="body">
+<p>Gray’s Anatomy অনুযায়ী A-type lamins-এর মধ্যে রয়েছে:</p>
+<ul><li>Lamin A</li><li>Lamin C</li><li>Lamin C2</li><li>Lamin A Δ10</li></ul>
+<p>এই চারটি variant একটি gene থেকে encoded হয়:</p>
+<p>LMNA</p>
+<p>এখানে গুরুত্বপূর্ণ পার্থক্য:</p>
+<div class="tw"><table><thead><tr><th>Lamin</th><th>Expression</th></tr></thead><tbody><tr><td>Lamin A</td><td>Somatic cells</td></tr><tr><td>Lamin C</td><td>Somatic cells</td></tr><tr><td>Lamin C2</td><td>Testis</td></tr><tr><td>Lamin A Δ10</td><td>LMNA-encoded variant</td></tr></tbody></table></div>
+<p>Lamin A, Emerin-এর সঙ্গে interaction করে।</p>
+</div></section>
+<section class="sec r" id="s15"><h3>B-type lamins</h3><div class="body">
+<p>B-type lamins-এর মধ্যে রয়েছে:</p>
+<ul><li>Lamin B1</li><li>Lamin B2</li><li>Lamin B3</li></ul>
+<p>এদের expression:</p>
+<ul><li>Lamin B1 এবং Lamin B2—Somatic cells-এ expressed।</li><li>Lamin B3—Testis-specific।</li></ul>
+<p>Gene relationship:</p>
+<div class="tw"><table><thead><tr><th>Lamin</th><th>Gene</th></tr></thead><tbody><tr><td>Lamin B1</td><td>LMNB1</td></tr><tr><td>Lamin B2</td><td>LMNB2</td></tr><tr><td>Lamin B3</td><td>Testis-specific B-type lamin</td></tr></tbody></table></div>
+<p>সায়ান বলল,</p>
+<p>“তাহলে LMNA থেকে A-type-এর কয়েকটি variant, আর LMNB1 ও LMNB2 থেকে B1 এবং B2।”</p>
+<p>Amrita বলল,</p>
+<p>“ঠিক। আর Lamin C2 ও Lamin B3—দুটোর testis association মনে রাখবি।”</p>
+<p>আদি খাতায় একটি ছোট summary লিখল:</p>
+<ul><li>LMNA → Lamin A, Lamin C, Lamin C2, Lamin A Δ10</li><li>LMNB1 → Lamin B1</li><li>LMNB2 → Lamin B2</li><li>Lamin B3 → Testis-specific</li></ul>
+</div></section>
+<section class="sec r" id="s16"><h3>৫. Laminopathies — যখন Nuclear architecture ভেঙে পড়ে</h3><div class="body">
+<p>পরের দিন Clinical discussion-এর আগে Professor আবার Nuclear lamina নিয়ে প্রশ্ন করলেন।</p>
+<p>“Lamin A mutation-এর সঙ্গে কোন কোন disease-এর সম্পর্ক রয়েছে?”</p>
+<p>Amrita বলল,</p>
+<p>“Progeria এবং বিভিন্ন dystrophy।”</p>
+<p>Professor বললেন,</p>
+<p>“Gray’s Anatomy-তে এর মধ্যে autosomal dominant Emery–Dreifuss muscular dystrophy-র কথাও আছে।”</p>
+</div></section>
+<section class="sec r" id="s17"><h3>Progeria এবং Progerin</h3><div class="body">
+<p>Lamin A-র একটি truncated, farnesylated form রয়েছে:</p>
+<p>Progerin</p>
+<p>Gray’s Anatomy অনুযায়ী Progerin-এর কারণে:</p>
+<ul><li>Mesenchymal stem cells-এর cell proliferation-এ defect হয়।</li><li>Mesenchymal stem cells-এ DNA damage দেখা যায়।</li><li>Vascular smooth muscle cells-এও এই ধরনের defect ও DNA damage-এর কথা উল্লেখ করা হয়েছে।</li></ul>
+<p>Affected patients-এর ক্ষেত্রে দেখা যায়:</p>
+<ul><li>Cardiovascular disease</li><li>Early death</li></ul>
+<p>আদি বলল,</p>
+<p>“অর্থাৎ Progerin-এর abnormal form cell proliferation এবং DNA integrity—দুটোকেই প্রভাবিত করতে পারে।”</p>
+<p>Professor বললেন,</p>
+<p>“ঠিক। তবে বইয়ের বর্ণিত mechanism-এর বাইরে গিয়ে অতিরিক্ত অনুমান করবে না।”</p>
+</div></section>
+<section class="sec r" id="s18"><h3>Lamin B1 এবং Lamin B2</h3><div class="body">
+<p>Gray’s Anatomy আরও কয়েকটি গুরুত্বপূর্ণ observation দিয়েছে:</p>
+<p>1. Absence of Lamin B1 and Lamin B2</p>
+<p>Lamin B1 এবং Lamin B2 উভয়টি অনুপস্থিত এমন mice জন্ম পর্যন্ত survive করে।</p>
+<p>তবে Lamin B1 অথবা Lamin B2 অনুপস্থিত থাকলে neuronal development compromised হয়।</p>
+<p>2. Lamin B1 overexpression</p>
+<p>Lamin B1-এর overexpression-এর সঙ্গে সম্পর্ক রয়েছে:</p>
+<p>Autosomal dominant leukodystrophy</p>
+<p>এতে Central nervous system-এ gradual demyelination ঘটে।</p>
+<p>রুদ্র বলল,</p>
+<p>“একদিকে Lamin কম থাকলে neuronal development সমস্যা, অন্যদিকে Lamin B1 বেশি হলেও disease association!”</p>
+<p>Amrita উত্তর দিল,</p>
+<p>“তাই protein-এর function জানার পাশাপাশি তার expression-এর abnormality-ও বুঝতে হয়।”</p>
+</div></section>
+<section class="sec r" id="s19"><h3>৬. Cell division-এর সময় Nuclear lamina-র কী হয়?</h3><div class="body">
+<p>Professor এবার বোর্ডে লিখলেন:</p>
+<p>Interphase → Prophase → Telophase</p>
+<p>“এখন আমরা Nuclear lamina-র structural changes বুঝব।”</p>
+</div></section>
+<section class="sec r" id="s20"><h3>Interphase</h3><div class="body">
+<p>Interphase-এর সময় condensed chromatin বা heterochromatin Nuclear envelope-এর কাছাকাছি aggregate করার প্রবণতা দেখায়।</p>
+</div></section>
+<section class="sec r" id="s21"><h3>End of mitotic and meiotic prophase</h3><div class="body">
+<p>Mitotic এবং meiotic prophase-এর শেষে Lamins phosphorylation-এর মাধ্যমে disassemble হয়।</p>
+<p>এর ফলে:</p>
+<ul><li>Lamin filaments ভেঙে যায়।</li><li>Nuclear membranes vesiculate হয়।</li><li>Nuclear membranes Endoplasmic reticulum-এর মধ্যে disperse হয়।</li></ul>
+<p>অর্থাৎ Nuclear envelope স্থায়ীভাবে হারিয়ে যায় না; cell division-এর সময় এর components পুনর্বিন্যস্ত হয়।</p>
+</div></section>
+<section class="sec r" id="s22"><h3>Telophase</h3><div class="body">
+<p>Mitosis-এর শেষের দিকে, অর্থাৎ Telophase-এ:</p>
+<ul><li>Nuclear periphery-র proteins, যার মধ্যে Lamins-ও রয়েছে, chromosome surface-এর সঙ্গে associate করে।</li><li>এগুলো membrane vesicles-এর জন্য docking sites তৈরি করে।</li><li>Vesicles পরস্পরের সঙ্গে fusion করে।</li><li>Nuclear envelope পুনর্গঠিত হয়।</li><li>Lamin dephosphorylation-এর পর Nuclear lamina পুনর্গঠিত হয়।</li></ul>
+<p>আদি বোর্ডে লিখল:</p>
+<p>Nuclear lamina during cell division</p>
+<ul><li>Prophase<div class="ct">Lamin phosphorylation → Lamin filament disassembly</div></li><li>Membrane vesiculation<div class="ct">Nuclear membranes vesiculate and disperse into ER</div></li><li>Telophase<div class="ct">Nuclear periphery proteins associate with chromosome surfaces</div></li><li>Reconstruction<div class="ct">Vesicle fusion + Lamin dephosphorylation → Nuclear envelope and lamina reformation</div></li></ul>
+<p>Professor বললেন,</p>
+<p>“এখানে phosphorylation এবং dephosphorylation-এর ভূমিকা খুব গুরুত্বপূর্ণ। Nuclear lamina-র disassembly এবং পুনর্গঠনের সঙ্গে এই ঘটনাগুলো সম্পর্কিত।”</p>
+</div></section>
+<section class="sec r" id="s23"><h3>৭. Nuclear pore complex — Nucleus-এর নিরাপত্তা ও পরিবহনব্যবস্থা</h3><div class="body">
+<p>সেদিন Anatomy practical-এর পর সবাই আবার Library-তে বসেছে।</p>
+<p>Amrita বলল,</p>
+<p>“এবার আসল security system। Nucleus-এর ভেতরে সব molecule ইচ্ছেমতো ঢুকতে পারে না।”</p>
+<p>আদি বলল,</p>
+<p>“মানে Nuclear pore complex?”</p>
+<p>“হ্যাঁ।”</p>
+</div></section>
+<section class="sec r" id="s24"><h3>Nuclear pores</h3><div class="body">
+<p>Nuclear envelope-এ বিশেষ ধরনের structure থাকে, যেগুলোকে বলা হয়:</p>
+<p>Nuclear pore structures</p>
+<p>এগুলোর মাধ্যমে Nucleus এবং Cytoplasm-এর মধ্যে molecule transport হয়।</p>
+<p>Gray’s Anatomy অনুযায়ী Nuclear pores হলো:</p>
+<p>Highly selective directional molecular filters</p>
+<p>এরা নির্দিষ্ট molecule-কে Nucleus-এর ভেতরে প্রবেশ করতে এবং নির্দিষ্ট molecule-কে বাইরে যেতে সাহায্য করে।</p>
+<p>উদাহরণ:</p>
+<ul><li>Histones এবং gene regulatory proteins Cytoplasm-এ synthesized হলেও Nucleus-এ কাজ করে।</li><li>Ribosomal subunits, transfer RNAs এবং messenger RNAs Nucleus-এ synthesized বা processed হওয়ার পর Cytoplasm-এ যেতে পারে।</li></ul>
+</div></section>
+<section class="sec r" id="s25"><h3>Nuclear pore-এর ultrastructure</h3><div class="body">
+<p>Gray’s Anatomy-তে Nuclear pore-এর কিছু নির্দিষ্ট measurement দেওয়া হয়েছে:</p>
+<div class="tw"><table><thead><tr><th>Feature</th><th>Measurement</th></tr></thead><tbody><tr><td>Nuclear pore-এর outer diameter</td><td>130 nm</td></tr><tr><td>Inner pore-এর effective diameter for free diffusion</td><td>9 nm</td></tr><tr><td>Active cell-এর Nuclear envelope-এ pore সংখ্যা</td><td>Up to 4000</td></tr><tr><td>Nuclear pore complex-এর protein সংখ্যা</td><td>More than 50</td></tr></tbody></table></div>
+<p>Nuclear pore complex-এর রয়েছে:</p>
+<p>Octagonal symmetry</p>
+<p>এটি ৫০টির বেশি protein দিয়ে তৈরি। এই protein-গুলোকে বলা হয়:</p>
+<p>Nucleoporins</p>
+<p>Nuclear pore complex-এর চারপাশে Inner এবং Outer nuclear membranes একে অপরের সঙ্গে fuse করে।</p>
+<p>একটি গুরুত্বপূর্ণ তথ্য:</p>
+<p>Nuclear pore-এর effective diameter for free diffusion প্রায় 9 nm হলেও এটি দিয়ে transport কেবল passive diffusion-এর বিষয় নয়। এখানে selective transport machinery-ও কাজ করে।</p>
+</div></section>
+<section class="sec r" id="s26"><h3>Nuclear pore-এর permeability</h3><div class="body">
+<p>Gray’s Anatomy অনুযায়ী Nuclear pores small molecules, ions এবং প্রায় 17 kDa পর্যন্ত proteins-এর জন্য freely permeable।</p>
+<p>বড় protein-এর transport-এর জন্য বিশেষ transport receptor-এর প্রয়োজন হয়।</p>
+</div></section>
+<section class="sec r" id="s27"><h3>৮. Importins, NLS এবং Exportins — Nuclear transport-এর molecular machinery</h3><div class="body">
+<p>আদি এবার বলল,</p>
+<p>“বড় protein কীভাবে Nucleus-এ ঢোকে?”</p>
+<p>Amrita বলল,</p>
+<p>“এখানেই Importin-এর কাজ।”</p>
+</div></section>
+<section class="sec r" id="s28"><h3>Nuclear import</h3><div class="body">
+<p>Nucleus-এ প্রবেশকারী অধিকাংশ protein নির্দিষ্ট transport receptor-এর সঙ্গে complex তৈরি করে।</p>
+<p>এই receptor-গুলোর নাম:</p>
+<p>Importins</p>
+<p>Importin Cytoplasm এবং Nucleus-এর মধ্যে shuttle করে।</p>
+<p>কিন্তু Importin কীভাবে বুঝবে কোন protein-কে Nucleus-এ নিয়ে যেতে হবে?</p>
+<p>এখানে প্রয়োজন হয় একটি নির্দিষ্ট amino acid sequence-এর।</p>
+<p>Nuclear localization sequence (NLS)</p>
+<p>NLS হলো cargo protein-এর মধ্যে থাকা একটি short amino acid sequence।</p>
+<p>Cargo protein-এর সঙ্গে Importin-এর binding দুইভাবে হতে পারে:</p>
+<ul><li>Direct binding</li><li>Adapter protein-এর মাধ্যমে binding</li></ul>
+<p>এরপর Importin এবং তার cargo Nuclear pore-এর components-এর সঙ্গে interaction করে pore-এর মধ্য দিয়ে অতিক্রম করে।</p>
+<p>Gray’s Anatomy-র গুরুত্বপূর্ণ তথ্য:</p>
+<p>এই movement-টি Nuclear pore-এর মধ্য দিয়ে energy-independent process হিসেবে বর্ণনা করা হয়েছে।</p>
+</div></section>
+<section class="sec r" id="s29"><h3>Nuclear export</h3><div class="body">
+<p>শুধু Nucleus-এ ঢোকাই নয়, Nucleus থেকে Cytoplasm-এ molecule বের হওয়ার ব্যবস্থাও রয়েছে।</p>
+<p>Protein এবং RNA molecules-এর export-এর জন্য কাজ করে:</p>
+<p>Exportins</p>
+<p>Importins-এর মতো Exportins-ও transport receptor।</p>
+</div></section>
+<section class="sec r" id="s30"><h3>Ran — Nuclear transport-এর regulator</h3><div class="body">
+<p>Import এবং export-এর regulation-এ কাজ করে একটি small GTPase:</p>
+<p>Ras-related nuclear protein (Ran)</p>
+<p>এটি Nuclear envelope-এর মধ্য দিয়ে protein import ও export নিয়ন্ত্রণ করে।</p>
+<p>আদি খাতায় পুরো mechanism-টা লিখল:</p>
+<p>Nuclear transport: Key molecules</p>
+<p>Import</p>
+<p>Importin</p>
+<p>Cargo protein-এর সঙ্গে binding করে Nuclear pore-এর মধ্য দিয়ে Nucleus-এ প্রবেশে সাহায্য করে।</p>
+<p>Recognition</p>
+<p>Nuclear localization sequence (NLS)</p>
+<p>Cargo protein-এর short amino acid sequence, যা Importin binding-এর জন্য প্রয়োজনীয়।</p>
+<p>Export</p>
+<p>Exportin</p>
+<p>Protein এবং RNA molecules-কে Nucleus থেকে Cytoplasm-এ export করে।</p>
+<p>Regulation</p>
+<p>Ran</p>
+<p>Small GTPase; Nuclear import এবং export regulate করে।</p>
+<p>রুদ্র বলল,</p>
+<p>“তাহলে NLS হলো address, Importin হলো transporter, Exportin হলো ফেরত পাঠানোর ব্যবস্থা আর Ran পুরো transport system regulate করে!”</p>
+<p>Amrita বলল,</p>
+<p>“Feynman explanation হিসেবে ভালো। তবে মনে রাখবি, এগুলো analogy; molecular mechanism-এর বিকল্প নয়।”</p>
+</div></section>
+<section class="sec r" id="s31"><h3>৯. Chromatin — DNA-র packaging system</h3><div class="body">
+<p>পরের lecture-এ Professor নতুন heading লিখলেন:</p>
+<p>Chromatin</p>
+<p>“এবার আমরা Nucleus-এর ভেতরে DNA কীভাবে সংগঠিত থাকে, তা বুঝব।”</p>
+</div></section>
+<section class="sec r" id="s32"><h3>Chromatin কী?</h3><div class="body">
+<p>Nucleus-এর DNA একা অবস্থান করে না।</p>
+<p>এটি DNA–protein complex আকারে সংগঠিত থাকে। এই complex-এর নাম:</p>
+<p>Chromatin</p>
+<p>Chromatin-এর protein constituents প্রধানত দুই ধরনের:</p>
+<ul><li>Histones</li><li>Non-histone proteins</li></ul>
+</div></section>
+<section class="sec r" id="s33"><h3>Non-histone proteins</h3><div class="body">
+<p>Non-histone proteins অত্যন্ত heterogeneous group।</p>
+<p>এর মধ্যে রয়েছে:</p>
+<ul><li>Structural proteins</li><li>DNA polymerases</li><li>RNA polymerases</li><li>Gene regulatory proteins</li></ul>
+</div></section>
+<section class="sec r" id="s34"><h3>Histones</h3><div class="body">
+<p>Chromatin-এর সবচেয়ে abundant protein group হলো Histones।</p>
+<p>এদের প্রধান কাজ হলো Chromosomal DNA-কে তার primary level of organization-এ package করা।</p>
+<p>এই primary level হলো:</p>
+<p>Nucleosome</p>
+</div></section>
+<section class="sec r" id="s35"><h3>Core histones</h3><div class="body">
+<p>চারটি core histone protein রয়েছে:</p>
+<ul><li>H2A</li><li>H2B</li><li>H3</li><li>H4</li></ul>
+<p>এরা equal ratios-এ একত্রিত হয়ে তৈরি করে:</p>
+<p>Compact octameric nucleosome core</p>
+<p>আরেকটি histone রয়েছে:</p>
+<p>H1</p>
+<p>H1-এর কাজ হলো Chromatin-এর further compaction-এ সাহায্য করা।</p>
+<p>Professor বললেন,</p>
+<p>“এখন বুঝতে হবে DNA কীভাবে Nucleosome-এর চারপাশে সাজানো থাকে।”</p>
+</div></section>
+<section class="sec r" id="s36"><h3>DNA winding around nucleosome</h3><div class="body">
+<p>Gray’s Anatomy অনুযায়ী:</p>
+<ul><li>প্রতিটি chromosome-এ একটি DNA molecule থাকে।</li><li>DNA প্রতিটি nucleosome core-এর চারপাশে দুইবার ঘুরে থাকে।</li><li>এই winding-এর জন্য প্রায় 165 nucleotide pairs ব্যবহৃত হয়।</li></ul>
+<p>এর ফলে তৈরি হয়:</p>
+<p>11 nm chromatin fibre</p>
+<p>Electron microscope-এ এই structure-কে দেখা যায়:</p>
+<p>Beads on a string</p>
+<p>এখানে:</p>
+<ul><li>Beads = Nucleosome cores</li><li>String = Intervening DNA</li></ul>
+<p>একটি bead থেকে পরের bead-এর মধ্যে DNA-র variable length থাকে। Gray’s Anatomy-তে typical linker DNA length প্রায় 35 nucleotide pairs উল্লেখ করা হয়েছে।</p>
+</div></section>
+<section class="sec r" id="s37"><h3>Nucleosome proper</h3><div class="body">
+<p>Nucleosome core region এবং একটি linker region মিলে তৈরি করে:</p>
+<p>Nucleosome proper</p>
+<p>এর typical length প্রায়:</p>
+<p>200 nucleotide pairs</p>
+<p>আদি বলল,</p>
+<p>“অর্থাৎ 165 nucleotide pairs nucleosome core-এর চারপাশে wound থাকে, আর linker DNA যোগ হলে nucleosome proper প্রায় 200 nucleotide pairs হয়।”</p>
+<p>Professor বললেন,</p>
+<p>“ঠিক। এই দুই measurement গুলিয়ে ফেলবে না।”</p>
+</div></section>
+<section class="sec r" id="s38"><h3>১০. 30 nm chromatin fibre — DNA-র আরও compact packaging</h3><div class="body">
+<p>Nucleosome-এর beads-on-a-string structure সাধারণত আরও compact হয়।</p>
+<p>Gray’s Anatomy অনুযায়ী, Chromatin সাধারণত আরও packaging-এর মাধ্যমে তৈরি করে:</p>
+<p>30 nm thick fibre</p>
+<p>এখানে প্রতি nucleosome-এ একটি করে H1 histone যুক্ত থাকে।</p>
+<p>H1 DNA এবং protein—উভয়ের সঙ্গে interaction করে nucleosome packing-কে আরও compact করে।</p>
+<p>এরপর 30 nm fibre-ও আরও coiled বা folded হয়ে larger domains তৈরি করতে পারে।</p>
+</div></section>
+<section class="sec r" id="s39"><h3>Active transcription-এর সময় কী হয়?</h3><div class="body">
+<p>এই larger domains-এর কিছু অংশ transcription-এর সময় decondense এবং extend করতে পারে।</p>
+<p>অর্থাৎ Chromatin সবসময় একই degree of compaction-এ থাকে না।</p>
+<p>এবার Professor বোর্ডে লিখলেন:</p>
+<p>Euchromatin vs Heterochromatin</p>
+</div></section>
+<section class="sec r" id="s40"><h3>১১. Euchromatin — অপেক্ষাকৃত কম condensed Chromatin</h3><div class="body">
+<p>Euchromatin হলো Nuclear region-এর এমন অংশ, যা appropriately stained tissue section-এ pale দেখায় অথবা electron micrograph-এ relatively electron-lucent দেখায়।</p>
+<p>Gray’s Anatomy অনুযায়ী:</p>
+<ul><li>Euchromatin প্রধানত 30 nm fibres এবং loops দিয়ে গঠিত হতে পারে।</li><li>এতে transcriptionally active genes থাকে।</li><li>Transcriptionally active cells-এর Nucleus সাধারণত predominantly euchromatic হয়।</li></ul>
+<p>উদাহরণ হিসেবে বইয়ে উল্লেখ করা হয়েছে:</p>
+<p>Most neurones</p>
+<p>অর্থাৎ অধিকাংশ Neurone-এর Nucleus predominantly euchromatic।</p>
+<p>Amrita বলল,</p>
+<p>“Euchromatin-এর pale appearance এবং transcriptionally active genes—এই দুটি feature একসঙ্গে মনে রাখ।”</p>
+</div></section>
+<section class="sec r" id="s41"><h3>১২. Heterochromatin — বেশি condensed Chromatin</h3><div class="body">
+<p>Euchromatin-এর বিপরীতে Heterochromatin অপেক্ষাকৃত compacted Chromatin।</p>
+<p>Histological staining-এ এটি dark দেখায় এবং electron micrograph-এ electron-dense হয়।</p>
+</div></section>
+<section class="sec r" id="s42"><h3>Location</h3><div class="body">
+<p>Gray’s Anatomy অনুযায়ী Heterochromatin প্রধানত পাওয়া যায়:</p>
+<ul><li>Nuclear periphery-তে</li><li>Nucleolus-এর পাশে</li></ul>
+<p>তবে Nuclear pore-এর উপরিভাগের অঞ্চল এই peripheral distribution-এর একটি ব্যতিক্রম।</p>
+</div></section>
+<section class="sec r" id="s43"><h3>Molecular characteristics</h3><div class="body">
+<p>Heterochromatin-এ Histone proteins নির্দিষ্ট ধরনের post-translational modifications বহন করে।</p>
+<p>এর মধ্যে রয়েছে characteristic residues-এ:</p>
+<p>Methylation</p>
+<p>এই modification-এর ফলে specific heterochromatin-associated proteins bind করতে পারে।</p>
+</div></section>
+<section class="sec r" id="s44"><h3>Types of heterochromatin</h3><div class="body">
+<p>Gray’s Anatomy এখানে দুটি ধরনের Heterochromatin উল্লেখ করেছে:</p>
+<p>1. Constitutive heterochromatin</p>
+<p>এতে non-coding DNA regions থাকে।</p>
+<p>উদাহরণ:</p>
+<p>Centromeric regions</p>
+<p>2. Facultative heterochromatin</p>
+<p>Development অথবা cell maturation-এর সময় কিছু কোষে DNA transcriptionally inactive হয়ে যায়। এই DNA facultative heterochromatin-এর অংশ হয়।</p>
+<p>একটি গুরুত্বপূর্ণ উদাহরণ:</p>
+<p>Inactive X chromosome in females</p>
+<p>এটি Facultative heterochromatin-এর উদাহরণ।</p>
+</div></section>
+<section class="sec r" id="s45"><h3>Barr body</h3><div class="body">
+<p>Inactive X chromosome-কে Light microscope-এ শনাক্ত করা যায়:</p>
+<p>Barr body</p>
+<p>এটি deeply staining structure হিসেবে দেখা যায়।</p>
+<p>Gray’s Anatomy অনুযায়ী এটি প্রায়ই:</p>
+<ul><li>Nuclear periphery-র কাছে থাকে, অথবা</li><li>Mature multilobed neutrophil leukocyte-এর nuclear lobe থেকে drumstick extension হিসেবে দেখা যেতে পারে।</li></ul>
+<p>নন্দিনী বলল,</p>
+<p>“অর্থাৎ Female-এর inactive X chromosome-কে Barr body হিসেবে দেখা যেতে পারে।”</p>
+<p>Professor বললেন,</p>
+<p>“ঠিক। আর neutrophil-এর drumstick appearance-টিও বইয়ে উল্লেখ করা হয়েছে।”</p>
+</div></section>
+<section class="sec r" id="s46"><h3>১৩. Transcriptionally inactive cells — যখন Chromatin আরও condensed হয়</h3><div class="body">
+<p>সব কোষের Chromatin একই রকম থাকে না।</p>
+<p>Gray’s Anatomy অনুযায়ী Transcriptionally inactive cells-এ Chromatin প্রধানত condensed, heterochromatic state-এ থাকে।</p>
+<p>কিছু ক্ষেত্রে এটি total Chromatin-এর প্রায় 90% পর্যন্ত হতে পারে।</p>
+<p>বইয়ে উদাহরণ দেওয়া হয়েছে:</p>
+<ul><li>Mature neutrophil leukocytes</li><li>Orthochromatic erythroblasts</li></ul>
+</div></section>
+<section class="sec r" id="s47"><h3>Mature neutrophil leukocyte</h3><div class="body">
+<p>এদের Nucleus multilobular এবং densely staining হয়।</p>
+<p>এর সঙ্গে condensed Chromatin-এর সম্পর্ক রয়েছে।</p>
+</div></section>
+<section class="sec r" id="s48"><h3>Orthochromatic erythroblasts</h3><div class="body">
+<p>এগুলো late-stage erythrocyte precursors।</p>
+<p>এদের Nucleus অত্যন্ত condensed থাকে।</p>
+</div></section>
+<section class="sec r" id="s49"><h3>Mixed euchromatin এবং heterochromatin</h3><div class="body">
+<p>অধিকাংশ mature cell-এ Euchromatin এবং Heterochromatin—দুই ধরনের Chromatin-ই থাকে।</p>
+<p>এর অর্থ, DNA-র কেবল একটি অংশ transcription-এর জন্য সক্রিয় থাকে।</p>
+</div></section>
+<section class="sec r" id="s50"><h3>Plasma cell এবং clock-face nucleus</h3><div class="body">
+<p>Professor বললেন,</p>
+<p>“এবার একটি গুরুত্বপূর্ণ histological example।”</p>
+<p>B lymphocyte থেকে তৈরি Plasma cell-এর Nucleus-এ অনেক Chromatin condensed অবস্থায় থাকে।</p>
+<p>এই condensed Chromatin Nuclear periphery-র চারপাশে regular masses হিসেবে সাজানো থাকতে পারে।</p>
+<p>এতে তৈরি হয়:</p>
+<p>Clock-face nucleus</p>
+<p>এখানে একটি গুরুত্বপূর্ণ বিষয়:</p>
+<p>Plasma cell সক্রিয়ভাবে transcription করলেও তার অনেক Chromatin condensed অবস্থায় থাকতে পারে।</p>
+<p>কারণ, তার protein synthesis প্রধানত একটি নির্দিষ্ট ধরনের Immunoglobulin-এর জন্য হয়। ফলে তার genome-এর একটি বড় অংশ inactive অবস্থায় থাকে।</p>
+<p>আদি বলল,</p>
+<p>“মানে একটি cell খুব active protein synthesis করলেও তার পুরো genome একসঙ্গে active থাকতে হবে—এমন নয়।”</p>
+<p>Professor বললেন,</p>
+<p>“Excellent. আজকের সবচেয়ে গুরুত্বপূর্ণ conceptual point-গুলোর একটি।”</p>
+</div></section>
+<section class="sec r" id="s51"><h3>১৪. রাতের শেষ Library session</h3><div class="body">
+<p>রাত অনেক হয়েছে।</p>
+<p>রুদ্র বই বন্ধ করে বলল,</p>
+<p>“আজকে Nucleus-এর ভেতরে একটা পুরো শহর ঘুরে এলাম। বাইরে Nuclear envelope, ভেতরে Lamina, দরজায় Nuclear pore, security-তে Importin-Exportin, আর ভিতরে DNA-র packaging system।”</p>
+<p>সায়ান বলল,</p>
+<p>“আর শহরের রাস্তা হলো Chromatin-এর organization!”</p>
+<p>Amrita হেসে বলল,</p>
+<p>“তোমরা analogy বানাতে বানাতে Anatomy-কে গল্প বানিয়ে ফেলছ!”</p>
+<p>আদি বলল,</p>
+<p>“কিন্তু গল্পের মধ্যে concept-গুলো মনে থাকছে।”</p>
+<p>Amrita একটু চুপ করে থেকে বলল,</p>
+<p>“তুই জানিস, আমি চাই আমরা শুধু পরীক্ষায় ভালো না করি। আমরা যেন প্রতিটি structure-এর কারণ, organization আর function বুঝতে পারি।”</p>
+<p>আদি উত্তর দিল,</p>
+<p>“সেটাই তো আমাদের লক্ষ্য। একদিন আমরা দুজনেই ভালো ডাক্তার হব।”</p>
+<p>“দুজনেই?”</p>
+<p>“হ্যাঁ। তুই একা ভালো ডাক্তার হবি, আর আমি খারাপ—এটা হতে দেব নাকি?”</p>
+<p>Amrita হেসে বই বন্ধ করল।</p>
+<p>“ঠিক আছে, কালকে আবার পড়া হবে। তবে আজকে তোর NLS আর Nucleosome-এর পার্থক্য মনে আছে কি না, সেটা পরে দেখব।”</p>
+<p>“তুই আমাকে বিশ্বাস করিস না?”</p>
+<p>“Anatomy-তে কাউকে অন্ধভাবে বিশ্বাস করতে নেই, মহাশয়।”</p>
+</div></section>
+<section class="sec r" id="s52"><h3>আজকের Anatomy Consolidation</h3><div class="body">
+<p>Episode 15 — Source-derived revision notes</p>
+<div class="tw"><table><thead><tr><th>Topic</th><th>Essential facts</th></tr></thead><tbody><tr><td>Nucleus</td><td>Usually largest intracellular structure; 3–10 μm</td></tr><tr><td>DNA/RNA staining</td><td>Negatively charged phosphate groups; basophilic</td></tr><tr><td>Feulgen reaction</td><td>Specific stain for DNA</td></tr><tr><td>Nuclear envelope</td><td>INM + ONM; 40–50 nm perinuclear space</td></tr><tr><td>INM proteins</td><td>Lamin B receptor, Emerin</td></tr><tr><td>Emerin mutation</td><td>X-linked EDMD</td></tr><tr><td>Nuclear lamina</td><td>15–20 nm; A-type and B-type lamins</td></tr><tr><td>A-type lamins</td><td>Lamin A, C, C2, A Δ10; LMNA</td></tr><tr><td>B-type lamins</td><td>Lamin B1, B2, B3</td></tr><tr><td>Lamin B1 gene</td><td>LMNB1</td></tr><tr><td>Lamin B2 gene</td><td>LMNB2</td></tr><tr><td>Nuclear pore</td><td>Outer diameter 130 nm; free diffusion pore 9 nm</td></tr><tr><td>Nuclear pore complex</td><td>Octagonal symmetry; over 50 nucleoporins</td></tr><tr><td>Active cell</td><td>Up to 4000 nuclear pores</td></tr><tr><td>Nuclear transport</td><td>Importins, NLS, Exportins, Ran</td></tr><tr><td>Chromatin</td><td>DNA + Histones + Non-histone proteins</td></tr><tr><td>Core histones</td><td>H2A, H2B, H3, H4</td></tr><tr><td>H1</td><td>Further chromatin compaction</td></tr><tr><td>DNA per nucleosome core</td><td>165 nucleotide pairs</td></tr><tr><td>Linker DNA</td><td>Typically about 35 nucleotide pairs</td></tr><tr><td>Nucleosome proper</td><td>About 200 nucleotide pairs</td></tr><tr><td>Chromatin fibre</td><td>11 nm; further packaging into 30 nm fibre</td></tr><tr><td>Euchromatin</td><td>Pale; transcriptionally active genes</td></tr><tr><td>Heterochromatin</td><td>Dark; compacted</td></tr><tr><td>Constitutive heterochromatin</td><td>Includes centromeric regions</td></tr><tr><td>Facultative heterochromatin</td><td>Includes inactive X chromosome</td></tr><tr><td>Barr body</td><td>Inactive X chromosome</td></tr><tr><td>Clock-face nucleus</td><td>Plasma cell</td></tr></tbody></table></div>
+</div></section>
+<section class="sec r" id="s53"><h3>Source Verification</h3><div class="body">
+<ul><li>Verified source sections: Nucleus, Nuclear envelope, Nuclear lamina, Laminopathies, Nuclear pore transport, Chromatin, Euchromatin and Heterochromatin.</li><li>Source boundary: Page 53-এর Plasma cell discussion পর্যন্ত অনুসরণ করা হয়েছে। Page 54-এর Chromosomes and telomeres অংশ এখনো শুরু করা হয়নি।</li></ul>
+<p>আজকের অন্তর্ভুক্ত পৃষ্ঠা: Page 51-এর Nucleus অংশ থেকে Page 53-এর Chromatin discussion পর্যন্ত।</p>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-014.html">← Episode 14</a><a href="index.html">সব পর্ব</a><a href="episode-016.html">Episode 16 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">Episode 15 — নিউক্লিয়াস: কোষের নিয়ন্ত্রণকক্ষের গোপন স্থাপত্য</a><a href="#s2">১. Anatomy Lecture Hall — কোষের ভেতরের সবচেয়ে গুরুত্বপূর্ণ কক্ষ</a><a href="#s3">Nucleus: General characteristics</a><a href="#s4">Histological staining of the nucleus</a><a href="#s5">২. Nuclear envelope — নিউক্লিয়াসের সুরক্ষিত সীমানা</a><a href="#s6">Outer nuclear membrane (ONM)</a><a href="#s7">Inner nuclear membrane (INM)</a><a href="#s8">Emerin mutation এবং Emery–Dreifuss muscular dystrophy</a><a href="#s9">৩. Nuclear lamina — Nucleus-এর অভ্যন্তরীণ শক্ত কাঠামো</a><a href="#s10">Nuclear lamina: Basic structure</a><a href="#s11">Nuclear lamina-এর functions</a><a href="#s12">Lamin A এবং Laminopathies</a><a href="#s13">৪. A-type এবং B-type Lamins — একই পরিবারের আলাদা সদস্য</a><a href="#s14">A-type lamins</a><a href="#s15">B-type lamins</a><a href="#s16">৫. Laminopathies — যখন Nuclear architecture ভেঙে পড়ে</a><a href="#s17">Progeria এবং Progerin</a><a href="#s18">Lamin B1 এবং Lamin B2</a><a href="#s19">৬. Cell division-এর সময় Nuclear lamina-র কী হয়?</a><a href="#s20">Interphase</a><a href="#s21">End of mitotic and meiotic prophase</a><a href="#s22">Telophase</a><a href="#s23">৭. Nuclear pore complex — Nucleus-এর নিরাপত্তা ও পরিবহনব্যবস্থা</a><a href="#s24">Nuclear pores</a><a href="#s25">Nuclear pore-এর ultrastructure</a><a href="#s26">Nuclear pore-এর permeability</a><a href="#s27">৮. Importins, NLS এবং Exportins — Nuclear transport-এর molecular machinery</a><a href="#s28">Nuclear import</a><a href="#s29">Nuclear export</a><a href="#s30">Ran — Nuclear transport-এর regulator</a><a href="#s31">৯. Chromatin — DNA-র packaging system</a><a href="#s32">Chromatin কী?</a><a href="#s33">Non-histone proteins</a><a href="#s34">Histones</a><a href="#s35">Core histones</a><a href="#s36">DNA winding around nucleosome</a><a href="#s37">Nucleosome proper</a><a href="#s38">১০. 30 nm chromatin fibre — DNA-র আরও compact packaging</a><a href="#s39">Active transcription-এর সময় কী হয়?</a><a href="#s40">১১. Euchromatin — অপেক্ষাকৃত কম condensed Chromatin</a><a href="#s41">১২. Heterochromatin — বেশি condensed Chromatin</a><a href="#s42">Location</a><a href="#s43">Molecular characteristics</a><a href="#s44">Types of heterochromatin</a><a href="#s45">Barr body</a><a href="#s46">১৩. Transcriptionally inactive cells — যখন Chromatin আরও condensed হয়</a><a href="#s47">Mature neutrophil leukocyte</a><a href="#s48">Orthochromatic erythroblasts</a><a href="#s49">Mixed euchromatin এবং heterochromatin</a><a href="#s50">Plasma cell এবং clock-face nucleus</a><a href="#s51">১৪. রাতের শেষ Library session</a><a href="#s52">আজকের Anatomy Consolidation</a><a href="#s53">Source Verification</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

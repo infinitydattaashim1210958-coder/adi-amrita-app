@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 025 · The Secret Language of Glands</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+code.bx{font-family:"Special Elite","Noto Serif Bengali",monospace;font-size:.88em;color:var(--teal);background:rgba(98,211,198,.07);border:1px solid #2c5a58;border-radius:7px;padding:1px 9px;margin:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 025">EPISODE 025</h1>
+  <div class="ttl">The Secret Language of Glands</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">025</div></div>
+    <div class="face b"><div class="t2">The Secret Language of Glands</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>Gray’s Anatomy: The Adi–Amrita Chronicles</h3><div class="body">
+</div></section>
+<section class="sec r" id="s2"><h3>Episode 25 — The Secret Language of Glands</h3><div class="body">
+<p>Dhaka Medical College | Chapter 2: Integrating Cells into Tissues | Page 77–79</p>
+</div></section>
+<section class="sec r" id="s3"><h3>১. একটি প্রশ্ন, যা পুরো ক্লাসকে থামিয়ে দিল</h3><div class="body">
+<p>ঢাকা মেডিকেল কলেজের Anatomy lecture gallery।</p>
+<p>সকাল ৯টা ১০ মিনিট।</p>
+<p>Adi ও Amrita আজ পাশাপাশি বসেছে। তাদের সামনে Gray’s Anatomy খোলা। আগের দিনের পড়া শেষ করে Adi পৃষ্ঠার ওপর আঙুল রেখে বলল—</p>
+<p>Adi: “আজ Glands শুরু। কিন্তু একটা ব্যাপার ভাবছি—একই epithelial tissue কখনো protective barrier, কখনো absorptive surface, আবার কখনো secretion করে কীভাবে?”</p>
+<p>Amrita: “সম্ভবত cell-এর specialization-এর জন্য। একই basic epithelial organization থেকে আলাদা function তৈরি হতে পারে।”</p>
+<p>Adi: “তাহলে আজকে বুঝতে হবে secretion-এর জন্য cell-এর ভিতরে কী পরিবর্তন হয়।”</p>
+<p>পেছন থেকে Rafi বলল—</p>
+<p>“তোরা দুজন কি Anatomy পড়তে এসেছিস, নাকি Anatomy-র রহস্য উদ্‌ঘাটন করতে?”</p>
+<p>Nabila বলল—</p>
+<p>“ওদের ছেড়ে দে। আমাদেরও তো বড় doctor হতে হবে!”</p>
+<p>ঠিক তখন ডা. শারমিন ম্যাডাম ক্লাসে প্রবেশ করলেন।</p>
+<p>তিনি বোর্ডে লিখলেন:</p>
+<p>GLANDS — Specialized epithelial structures for secretion</p>
+<p>ডা. শারমিন: “আজকের ক্লাসে তোমাদের একটা বিষয় পরিষ্কার করতে হবে। Secretion শুধু কোনো substance cell-এর বাইরে ফেলে দেওয়া নয়। এটি একটি highly organized cellular process। এর জন্য cell-এর metabolism, organelles, membrane trafficking এবং surrounding tissue-এর সঙ্গে communication—সবকিছু সমন্বিতভাবে কাজ করে।”</p>
+</div></section>
+<section class="sec r" id="s4"><h3>২. Glandular epithelium: Secretion-এর জন্য cell-এর specialization</h3><div class="body">
+<p>ম্যাডাম প্রথমে বোঝালেন, অনেক epithelial cell-এর একটি গুরুত্বপূর্ণ ক্ষমতা রয়েছে—তারা তাদের free surface-এর environment পরিবর্তন করতে পারে।</p>
+<p>এটি সম্ভব হয় directed transport-এর মাধ্যমে। Cell প্রয়োজন অনুযায়ী transport করতে পারে:</p>
+<ul><li>Ions</li><li>Water</li><li>Macromolecules</li></ul>
+<p>Glandular tissue-তে এই ক্ষমতা বিশেষভাবে উন্নত।</p>
+<p>এখানকার cell-গুলোর metabolism এবং structural organization বিশেষভাবে adapted হয় synthesis ও secretion of macromolecules-এর জন্য। সাধারণত secretion apical surface দিয়ে হয়।</p>
+<p>Glandular cells দুইভাবে সংগঠিত হতে পারে:</p>
+<p>1. Isolated secretory cells</p>
+<p>কিছু secretory cell অন্য non-secretory epithelial cells-এর মধ্যে বিচ্ছিন্নভাবে অবস্থান করে।</p>
+<p>উদাহরণ: Small intestine-এর absorptive epithelium-এর মধ্যে goblet cells।</p>
+<p>2. Coherent sheets of secretory cells</p>
+<p>অনেক secretory cell একত্রে একটি continuous epithelial sheet তৈরি করে।</p>
+<p>উদাহরণ:</p>
+<ul><li>Stomach-এর mucous lining</li><li>Complex salivary glands-এর secretory epithelium</li></ul>
+<p>Amrita হাত তুলল।</p>
+<p>Amrita: “ম্যাডাম, goblet cell কি gland হিসেবে বিবেচিত হয়, যদিও এটি একা একটি epithelial cell?”</p>
+<p>ডা. শারমিন: “হ্যাঁ। এটি একটি unicellular gland। Gland হতে হলে বিশাল organ হওয়া বাধ্যতামূলক নয়। একটি specialized secretory cell-ও glandular function সম্পাদন করতে পারে।”</p>
+<p>Adi খাতায় লিখল:</p>
+<p>Glands may be unicellular or multicellular.</p>
+</div></section>
+<section class="sec r" id="s5"><h3>৩. Glands-এর প্রধান classification</h3><div class="body">
+<p>ম্যাডাম বোর্ডে একটি বড় diagram আঁকলেন।</p>
+<p>Glands</p>
+<p>Exocrine glands</p>
+<p>Duct-এর মাধ্যমে surface-এ secretion।</p>
+<p>Endocrine glands</p>
+<p>Duct নেই; interstitial fluid-এ hormone secretion।</p>
+<p>Paracrine glandular cells</p>
+<p>Secretions local diffusion-এর মাধ্যমে nearby target cells-এ কাজ করে।</p>
+<p>Neurosecretory tissues</p>
+<p>Nervous system-derived tissues-ও secretory function সম্পাদন করতে পারে।</p>
+</div></section>
+<section class="sec r" id="s6"><h3>Exocrine glands</h3><div class="body">
+<p>Exocrine glands সাধারণত duct-এর মাধ্যমে এমন surface-এ secretion দেয়, যা body exterior-এর সঙ্গে continuous।</p>
+<p>যেমন:</p>
+<ul><li>Alimentary tract</li><li>Respiratory system</li><li>Urinary ducts</li><li>Genital ducts ও তাদের derivatives</li><li>Skin</li></ul>
+</div></section>
+<section class="sec r" id="s7"><h3>Endocrine glands</h3><div class="body">
+<p>Endocrine glands হলো ductless glands।</p>
+<p>এরা hormone সরাসরি connective tissue-এর interstitial fluid-এ release করে। এরপর hormone circulation-এ প্রবেশ করে এবং শরীরের বিভিন্ন স্থানে target cells-এর activity পরিবর্তন করে।</p>
+</div></section>
+<section class="sec r" id="s8"><h3>Neurosecretory tissues</h3><div class="body">
+<p>কিছু nervous system-derived tissue-ও secretion করে।</p>
+<p>Gray’s Anatomy-তে উদাহরণ হিসেবে রয়েছে:</p>
+<ul><li>Suprarenal medulla</li><li>Neurohypophysis</li></ul>
+<p>এগুলোকে neurosecretory tissue হিসেবে বিবেচনা করা হয়।</p>
+</div></section>
+<section class="sec r" id="s9"><h3>Paracrine glandular cells</h3><div class="body">
+<p>এদের secretion immediate vicinity-তে থাকা cellular targets-এর ওপর কাজ করে।</p>
+<p>অনেক paracrine cells-কে neuroendocrine cells হিসেবেও শ্রেণিবদ্ধ করা হয়, কারণ তারা এমন molecule secrete করে, যা nervous system-এ neurotransmitter বা neuromodulator হিসেবে ব্যবহৃত হয়।</p>
+<p>Feynman technique</p>
+<p>Amrita বলল—</p>
+<p>“একটা বাড়ির কথা ভাবি। Exocrine gland হলো এমন একটি kitchen, যেখান থেকে নির্দিষ্ট pipe দিয়ে খাবার বাইরে বা নির্দিষ্ট জায়গায় পাঠানো হয়। Endocrine gland হলো এমন ব্যবস্থা, যেখানে message সরাসরি circulation-এ পাঠানো হয়, যাতে দূরের target-এ পৌঁছায়। আর Paracrine হলো পাশের ঘরে message পাঠানো।”</p>
+<p>ম্যাডাম বললেন—</p>
+<p>“ভালো analogy। তবে মনে রেখো, এগুলো বোঝার জন্য উপমা। বাস্তবে secretion-এর molecular mechanisms আলাদা।”</p>
+</div></section>
+<section class="sec r" id="s10"><h3>৪. Exocrine glands: Secretion কীভাবে বাইরে যায়?</h3><div class="body">
+<p>ম্যাডাম এবার বোর্ডে লিখলেন—</p>
+<p>EXOCRINE GLANDS</p>
+<p>“আজকের সবচেয়ে গুরুত্বপূর্ণ অংশগুলোর একটি হলো mechanism of secretion।”</p>
+<p>Exocrine glands-এ secretion-এর তিনটি প্রধান process আলোচনা করা হয়েছে:</p>
+<ul><li>Merocrine</li><li>Apocrine</li><li>Holocrine</li></ul>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Epithelial Tissues - Types, Functions, characteristics, Shape, Structure, Epithelia, Epithelium</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/nr8zEEXZ_QKZE-BxG0vBXolwvANKq5F2bHxdF-1N5QjrNRWwNrBUMDzTk57H1A_LBWVCxRFuVGpNezspBJXDz2bGfAnxfjZBXiZsSgZMHW5SDHsDrIi5HFgQ4MVoInQER3wH5JR3nxAvLAMoxG7XtUNup_sj2smvq5fwC_i45oDlJFZZrJNABIww9JJJhDcO?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Epithelial%20Tissues%20-%20Types%2C%20Functions%2C%20characteristics%2C%20Shape%2C%20Structure%2C%20Epithelia%2C%20Epithelium">Image search ↗</a></figure>
+</div></section>
+<section class="sec r" id="s11"><h3>A. Merocrine secretion</h3><div class="body">
+<p>Most common mechanism</p>
+<p>এটি সবচেয়ে common secretory mechanism।</p>
+<p>ধাপগুলো বোঝো:</p>
+<ul><li>Secretory product cell-এর ভিতরে তৈরি হয়।</li><li>Product membrane-bound vesicle-এ package হয়।</li><li>Vesicle cell surface-এর দিকে এগিয়ে যায়।</li><li>Vesicle membrane ও plasma membrane fuse করে।</li><li>Vesicle-এর contents cell-এর বাইরে release হয়।</li></ul>
+<p>এই process-এ vesicle membrane plasma membrane-এর সঙ্গে fuse করে এবং secretion বাইরে চলে যায়।</p>
+<p>এটি exocytosis-এর একটি বিশেষ উদাহরণ।</p>
+<p>Vesicle membrane-এর specialized transmembrane molecules, plasma membrane-এর cytoplasmic side-এর marker proteins চিনতে পারে। এই recognition-এর মাধ্যমে interaction শুরু হয় এবং অন্যান্য protein-এর সাহায্যে membrane fusion ঘটে।</p>
+<p>অনেক cell-এ secretion-এর stimulus হিসেবে intracellular calcium concentration বৃদ্ধি কাজ করে।</p>
+<p>Examples:</p>
+<ul><li>অধিকাংশ exocrine glands</li><li>Salivary gland-এর অনেক secretion</li><li>Pancreatic enzyme secretion</li></ul>
+<p>Feynman explanation</p>
+<p>Adi বলল—</p>
+<p>“ম্যাডাম, vesicle-কে যদি একটা delivery packet ধরি, তাহলে packet-এর বাইরের membrane cell membrane-এর সঙ্গে মিশে যায় এবং packet-এর contents বাইরে বেরিয়ে আসে। কিন্তু packet-এর membrane নিজে cell membrane-এর অংশ হয়ে যায়।”</p>
+<p>“Exactly,” ম্যাডাম বললেন।</p>
+</div></section>
+<section class="sec r" id="s12"><h3>Eccrine glands সম্পর্কে একটি গুরুত্বপূর্ণ সংশোধন</h3><div class="body">
+<p>Gray’s Anatomy-তে বলা হয়েছে, skin-এর simple sweat glands-কে একসময় eccrine glands বলা হতো, কারণ ধারণা ছিল এগুলো plasma থেকে ions ও water exudate হিসেবে transport করে।</p>
+<p>কিন্তু পরে জানা যায়, এরা অল্প পরিমাণ protein-ও merocrine mechanism-এ secrete করে। তাই এদের merocrine glands হিসেবে reclassify করা হয়েছে।</p>
+<p>এখানে পুরোনো নাম এবং বর্তমান classification-এর পার্থক্য বুঝতে হবে।</p>
+</div></section>
+<section class="sec r" id="s13"><h3>B. Apocrine secretion</h3><div class="body">
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>File:405 Modes of Secretion by Glands Apocrine.png - Wikimedia Commons</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/rMklUhm_gcG0WnfPscaLaku5QSf2dZI0_KwJR3oLj525Vk5N94VOlDmTWymJ7SoFv7CYDJ14EquUKHTWj7mMbhvv0YMGLU3VvIPJUQAIZ8Lsu-ASYAm7w0KI9WKObmXefBpKgnfcbLAHUBbDE0CLN9IBCESmVuxjGp9qnVTUwhRiAKKWBswdzpxZuxCA8NRL?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=File%3A405%20Modes%20of%20Secretion%20by%20Glands%20Apocrine.png%20-%20Wikimedia%20Commons">Image search ↗</a></figure>
+<p>এখানে secretory product-এর সঙ্গে cell-এর apical cytoplasm-এর একটি অংশও বিচ্ছিন্ন হয়ে যায়।</p>
+<p>অর্থাৎ শুধু secretion বের হয় না—একটু cytoplasm-ও secretion-এর সঙ্গে চলে যায়।</p>
+<p>এটি merocrine-এর মতো নয়, যেখানে vesicle membrane plasma membrane-এর সঙ্গে fuse করে।</p>
+<p>সবচেয়ে ভালোভাবে বোঝা উদাহরণ: Mammary gland-এর milk fat secretion।</p>
+<p>Milk fat cell থেকে বের হওয়ার সময় ছোট একটি অংশ cytoplasm-এর সঙ্গে membrane-bound lipid globule হিসেবে release হয়।</p>
+<p>আরও বেশি cytoplasm secretion-এর সঙ্গে যুক্ত হতে পারে specialized apocrine sweat glands-এ:</p>
+<ul><li>Axilla</li><li>Anogenital regions</li></ul>
+<p>গুরুত্বপূর্ণ: Mammary gland এক ধরনের secretion mechanism-ই ব্যবহার করে না।</p>
+<ul><li>Milk fat → Apocrine secretion</li><li>Milk protein (casein) → Merocrine secretion</li></ul>
+<p>Amrita বলল—</p>
+<p>“একই gland-এর একই cell population-এ different secretory products-এর জন্য different mechanisms থাকতে পারে?”</p>
+<p>“হ্যাঁ,” ম্যাডাম বললেন।</p>
+</div></section>
+<section class="sec r" id="s14"><h3>C. Holocrine secretion</h3><div class="body">
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Histology of glands | PPTX</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/fT0otCxqJ4BBwduozyWEfx7DiGbmnR6AjgDpawnrWiQlR0Eye_68uCR2uHsshwodb5Nw6OrLaY6j0ThGvApdO8Gz8wHjdAzDLkjZcPmKhknLaMmHnxQDD4sdDWkOWRUmFJpIzSO3Tld3yaRmOBq2mEdaWTn3qiIZQJJc-sD_10sgipVd9Z6JVZatNqhKFVKF?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Histology%20of%20glands%20%7C%20PPTX">Image search ↗</a></figure>
+<p>এখানে সম্পূর্ণ cell-টিই secretion-এর অংশ হয়ে যায়।</p>
+<p>ধাপগুলো:</p>
+<ul><li>Cell-এর মধ্যে secretory products জমা হয়।</li><li>Cell secretory material দিয়ে পূর্ণ হয়।</li><li>সম্পূর্ণ cell disintegrate করে।</li><li>Accumulated secretion adjacent duct অথবা hair follicle-এ release হয়।</li></ul>
+<p>Example: Sebaceous glands of skin</p>
+<p>এগুলো sebum produce করে।</p>
+<p>Rafi বলল—</p>
+<p>“তাহলে holocrine gland-এ secretion বের হওয়ার জন্য cell নিজেই sacrifice করে!”</p>
+<p>ম্যাডাম বললেন—</p>
+<p>“ঠিক। কিন্তু মনে রাখবে, এটি একটি organized physiological process। Basal cell population থেকে নতুন cell তৈরি হয়ে gland-এর secretory cell population বজায় থাকে।”</p>
+</div></section>
+<section class="sec r" id="s15"><h3>৫. তিনটি secretion mechanism-এর পার্থক্য</h3><div class="body">
+<div class="tw"><table><thead><tr><th>Feature</th><th>Merocrine</th><th>Apocrine</th><th>Holocrine</th></tr></thead><tbody><tr><td>Release mechanism</td><td>Exocytosis</td><td>Apical cytoplasm pinches off</td><td>Whole cell disintegrates</td></tr><tr><td>Cytoplasm lost?</td><td>না</td><td>কিছু অংশ</td><td>সম্পূর্ণ cell</td></tr><tr><td>Example</td><td>অধিকাংশ exocrine glands</td><td>Mammary milk fat</td><td>Sebaceous gland</td></tr></tbody></table></div>
+<p>Amrita বলল—</p>
+<p>“তিনটি mechanism-এর পার্থক্য এক লাইনে মনে রাখা যায়।”</p>
+<p>Adi বলল—</p>
+<p>“Merocrine-এ product, Apocrine-এ product plus apical cytoplasm, Holocrine-এ পুরো cell।”</p>
+<p>“এইবার ঠিক ধরেছিস,” Amrita বলল।</p>
+</div></section>
+<section class="sec r" id="s16"><h3>৬. Structural and functional classification of Exocrine glands</h3><div class="body">
+<p>ম্যাডাম এবার বোর্ডে কয়েকটি diagram আঁকলেন।</p>
+<p>Exocrine glands-এর structural organization অনুযায়ী তাদের classification করা হয়।</p>
+</div></section>
+<section class="sec r" id="s17"><h3>A. Unicellular glands</h3><div class="body">
+<p>একটি single secretory cell-ই gland হিসেবে কাজ করে।</p>
+<p>উদাহরণ: Goblet cell।</p>
+</div></section>
+<section class="sec r" id="s18"><h3>B. Multicellular glands</h3><div class="body">
+<p>এগুলো অনেকগুলো secretory cell নিয়ে গঠিত।</p>
+<p>এদের কয়েকটি structural arrangement হতে পারে।</p>
+<ul><li>Simple sheet of secretory cells</li><li>Simple tubular glands</li><li>Simple branched tubular glands</li><li>Simple coiled tubular glands</li><li>Simple acinar বা alveolar glands</li><li>Compound glands with branched ducts</li></ul>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Glandular Epithelium: Histology | Concise Medical Knowledge</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/KGDjsDYStUIrncfAWlS04KgdCMyIoRL2A0coglQaaBJOrvkEiBqL7wxun7G_pbVt4IVfm0jZha0g2cYPBaYFnK0DnRBIgS0RrqNEaiGDCZr6P8QTxvACtl3ifznXQ_CP7HLnZzihQ2NVO2x8uK4b0gvCO-7K8ZRE0-3cQ7NxUQLocpq2dUy9SJyLUI_IvufY?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Glandular%20Epithelium%3A%20Histology%20%7C%20Concise%20Medical%20Knowledge">Image search ↗</a></figure>
+</div></section>
+<section class="sec r" id="s19"><h3>Simple glands</h3><div class="body">
+<p>যাদের duct unbranched থাকে।</p>
+<p>এদের secretory portion হতে পারে:</p>
+<ul><li>Tubular</li><li>Branched tubular</li><li>Coiled tubular</li><li>Acinar বা alveolar</li></ul>
+<p>কিছু gland-এর secretory portion সরাসরি surface-এর সঙ্গে যুক্ত থাকে, আবার কিছু gland-এর blind-ending secretory portion থাকে, যা একটি non-secretory duct-এর মাধ্যমে surface-এ পৌঁছায়।</p>
+<p>এই duct secretions-এর composition modify করতে পারে।</p>
+<p>Examples:</p>
+<ul><li>Small intestine-এর wall-এ simple unbranched tubular glands</li><li>Uterus-এর কিছু gland</li><li>Simple coiled tubular glands</li></ul>
+</div></section>
+<section class="sec r" id="s20"><h3>Compound glands</h3><div class="body">
+<p>যাদের ductal system branched।</p>
+<p>এদের duct অনেকটা tree-like arrangement তৈরি করতে পারে।</p>
+<p>এ ধরনের gland-এর secretory units হতে পারে:</p>
+<ul><li>Acinar</li><li>Alveolar</li><li>Tubular</li><li>Tubulo-acinar</li></ul>
+<p>Example: Exocrine pancreas</p>
+<p>এতে elaborate ductal tree এবং acinar secretory lobules থাকে।</p>
+<p>একটি secretory unit-এর মধ্যে একাধিক type-এর secretory cell থাকতে পারে, আবার কোনো কোনো unit নির্দিষ্ট এক ধরনের secretion-এর জন্য specialized হতে পারে।</p>
+</div></section>
+<section class="sec r" id="s21"><h3>Glands-এর secretion অনুযায়ী classification</h3><div class="body">
+<p>Exocrine glands-এর secretory products-এর ভিত্তিতেও classification করা হয়।</p>
+<p>Mucous glands</p>
+<p>এদের secretory cells-এর বৈশিষ্ট্য:</p>
+<ul><li>Frothy cytoplasm</li><li>Basally placed flattened nuclei</li><li>Carbohydrate-rich mucin</li></ul>
+<p>Metachromatic stains এবং PAS staining-এ এরা deeply stain করতে পারে। তবে routine histological preparation-এ processing-এর সময় water-rich mucin-এর বড় অংশ বের হয়ে যাওয়ায় অনেক সময় দুর্বল staining দেখা যায়।</p>
+<p>Serous glands</p>
+<p>এদের secretory cells-এর বৈশিষ্ট্য:</p>
+<ul><li>Centrally placed nuclei</li><li>Eosinophilic secretory granules</li><li>Glycoprotein secretion</li><li>Lysozyme</li><li>Digestive enzymes</li></ul>
+<p>Mixed glands</p>
+<p>একই gland-এ mucous এবং serous components উভয়ই থাকতে পারে।</p>
+<div class="tw"><table><thead><tr><th>Gland</th><th>Type</th></tr></thead><tbody><tr><td>Sublingual salivary gland</td><td>Predominantly mucous</td></tr><tr><td>Parotid salivary gland</td><td>Predominantly serous</td></tr><tr><td>Submandibular salivary gland</td><td>Mixed</td></tr></tbody></table></div>
+<p>Submandibular gland-এ কিছু lobule predominantly mucous এবং অন্যগুলো serous হতে পারে।</p>
+<p>Mucous acini কখনো serous cell clusters-এর সঙ্গে shared lumen তৈরি করে। Routine preparation-এ এই serous clusters-কে serous demilunes হিসেবে দেখা যায়।</p>
+<p>ম্যাডাম সতর্ক করলেন—</p>
+<p>“এটি একটি useful general classification। কিন্তু বাস্তবে gland-এর molecular secretion অনেক complex হতে পারে। একই cell-এ বিভিন্ন secretory molecules-এর mixture থাকতে পারে।”</p>
+</div></section>
+<section class="sec r" id="s22"><h3>৭. Endocrine glands: Duct ছাড়া দূরে message পাঠানো</h3><div class="body">
+<p>দুপুরের দিকে ক্লাসের আলোচনায় নতুন প্রশ্ন উঠল।</p>
+<p>Nabila: “ম্যাডাম, Endocrine gland-এর duct না থাকলে secretion কোথায় যায়?”</p>
+<p>ডা. শারমিন: “খুব ভালো প্রশ্ন। Endocrine gland-এর secretion প্রথমে connective tissue-এর interstitial fluid-এ যায়, তারপর circulation-এ প্রবেশ করে।”</p>
+</div></section>
+<section class="sec r" id="s23"><h3>Endocrine gland-এর structural organization</h3><div class="body">
+<p>Endocrine cells সাধারণত capillaries অথবা sinusoids-এর আশেপাশে সাজানো থাকে।</p>
+<p>এদের vascular supply অত্যন্ত গুরুত্বপূর্ণ।</p>
+<p>কারণ hormone-কে circulation-এ প্রবেশ করতে হয়।</p>
+<p>এখানে capillaries-এর endothelial lining অনেক ক্ষেত্রে fenestrated হয়, যাতে macromolecules দ্রুত vessel wall অতিক্রম করতে পারে।</p>
+<p>Endocrine cells কয়েকভাবে arranged হতে পারে:</p>
+<ul><li>Vascular network-এর মধ্যে clusters।</li><li>Parallel vascular channels-এর মাঝখানে cords।</li><li>Stored secretion-কে ঘিরে hollow follicular arrangement।</li></ul>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Glands histology | PPTX</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/63e_kWzegOsFsNYcyTXUnu9DolNJWxMla8A-dxk8sgKIhpdiBZctB9WpxQdlR2YJgrtsSo-r56DClGKIrMbpreigLVW9k_GEvEt64pYRW3HygwCzsVvHIH2HdQB9PZktGB_JOnDBSVFik040QRIr9AbZkDFgfhkG_CuJesfk0lxnk8eGPIm2J5PYFuIOeI2R?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Glands%20histology%20%7C%20PPTX">Image search ↗</a></figure>
+<p>Specialized ductless endocrine glands-এর উদাহরণ:</p>
+<ul><li>Pituitary</li><li>Pineal</li><li>Thyroid</li><li>Parathyroid</li></ul>
+<p>কিন্তু hormone-producing cells শুধু এই endocrine glands-এ সীমাবদ্ধ নয়।</p>
+<p>Gray’s Anatomy-তে আরও উল্লেখ আছে:</p>
+<ul><li>Pancreatic islets</li><li>Thymic epithelial cells</li><li>Kidney juxtaglomerular apparatus-এর renin-secreting cells</li><li>Kidney-এর erythropoietin-secreting cells</li><li>Circumventricular organs</li><li>Testicular interstitial Leydig cells</li><li>Ovarian interstitial follicular ও luteal cells</li><li>Placental cells during pregnancy</li><li>কিছু cardiac myocytes, বিশেষ করে atrial wall-এর myocytes</li></ul>
+<p>Adi: “অর্থাৎ endocrine function শুধু একটি পৃথক endocrine organ-এর বৈশিষ্ট্য নয়। অন্য organ system-এর cell-ও hormone secretion করতে পারে।”</p>
+<p>ডা. শারমিন: “একদম। Organ-এর classification এবং তার cell-এর functional specialization—দুটিকে আলাদা করে বুঝতে হবে।”</p>
+</div></section>
+<section class="sec r" id="s24"><h3>৮. Diffuse neuroendocrine system</h3><div class="body">
+<p>ম্যাডাম এবার বললেন—</p>
+<p>“Endocrine cells সবসময় একটি বড় gland তৈরি করে থাকে না।”</p>
+<p>অনেক endocrine cells বিভিন্ন tissue-তে বিচ্ছিন্নভাবে ছড়িয়ে থাকে। এদের একত্রে বলা হয় Diffuse neuroendocrine system।</p>
+<p>এরা সাধারণত mucosal epithelium-এর মধ্যে থাকে।</p>
+<p>তাদের basal surface প্রায়ই basal lamina-র ওপর থাকে।</p>
+<p>External stimulus পেলে তারা product basal direction-এ interstitial fluid-এ release করে।</p>
+<p>Example: Gastrin-secreting G cells of small intestine।</p>
+<p>এদের secretory granules-এর:</p>
+<ul><li>Shape</li><li>Size</li><li>Ultrastructure</li></ul>
+<p>cell type অনুযায়ী ভিন্ন হয়।</p>
+<p>অনেক neuroendocrine cells-এর নামকরণ তাদের secretory product অনুযায়ী করা হয়।</p>
+<p>এরা nervous system-এর chemical mediators-এর সঙ্গে অনেক secretory product share করে।</p>
+<p>ম্যাডাম বললেন—</p>
+<p>“এই কারণেই neuroendocrine system-কে শুধু endocrine histology হিসেবে পড়লে হবে না। Nervous system-এর সঙ্গে এর functional relationship-ও বুঝতে হবে।”</p>
+</div></section>
+<section class="sec r" id="s25"><h3>৯. Control of glandular secretion: কে gland-কে নির্দেশ দেয়?</h3><div class="body">
+<p>এবার ম্যাডাম বোর্ডে লিখলেন—</p>
+<p>CONTROL OF GLANDULAR SECRETION</p>
+<p>“শরীরের tissue ও organ systems-এর activities tightly regulated। এখানে প্রধান ভূমিকা পালন করে endocrine এবং autonomic nervous systems।”</p>
+<p>Glandular activity নিয়ন্ত্রণের কয়েকটি গুরুত্বপূর্ণ mechanism রয়েছে।</p>
+</div></section>
+<section class="sec r" id="s26"><h3>A. Endocrine control</h3><div class="body">
+<p>Endocrine signals interstitial fluid এবং blood plasma-এর মাধ্যমে target cells-এ পৌঁছায়।</p>
+<p>এগুলো:</p>
+<ul><li>Gland-এর synthetic activity বাড়াতে পারে।</li><li>Secretory product release করাতে পারে।</li><li>Exocytosis stimulate করতে পারে।</li></ul>
+<p>অনেক hormone cell surface receptor-এর মাধ্যমে কাজ করে এবং second messenger systems দ্বারা signal transmit করে।</p>
+</div></section>
+<section class="sec r" id="s27"><h3>B. Autonomic nervous system</h3><div class="body">
+<p>Autonomic nervous system glandular activity-কে বিভিন্নভাবে নিয়ন্ত্রণ করে।</p>
+<p>Vasomotor control</p>
+<p>Endocrine glands-এর rich vascular supply থাকে।</p>
+<p>Autonomic vasomotor nerves gland-এর blood flow পরিবর্তন করতে পারে। এর ফলে glandular activity-ও পরিবর্তিত হতে পারে।</p>
+<p>Direct secretomotor control</p>
+<p>Autonomic secretomotor fibres:</p>
+<ul><li>Gland cell-এর basal surface-এ synapse করতে পারে।</li><li>অথবা gland-এর আশেপাশে neuromediator release করতে পারে, যা diffusion-এর মাধ্যমে cell-এ পৌঁছায়।</li></ul>
+<p>Gray’s Anatomy-তে suprarenal medulla-কে direct neural control-এর উদাহরণ হিসেবে উল্লেখ করা হয়েছে।</p>
+<p>Indirect autonomic control</p>
+<p>কখনো autonomic nervous system একটি neuroendocrine cell-এর মাধ্যমে অন্য glandular cell-কে indirectly influence করে।</p>
+<p>উদাহরণ হিসেবে gastric lining-এর neuroendocrine cell থেকে neurogenically released histamine-এর মাধ্যমে G cells-এর activity প্রভাবিত হওয়ার কথা বলা হয়েছে।</p>
+</div></section>
+<section class="sec r" id="s28"><h3>C. Myoepithelial cell-এর সাহায্যে secretion</h3><div class="body">
+<p>কিছু exocrine glands-এর secretory units ও ছোট ducts-কে surrounding করে myoepithelial cells।</p>
+<p>এদের contraction secretion দ্রুত বের করে দিতে সাহায্য করে।</p>
+<p>এরা দুইভাবে control হতে পারে:</p>
+<ul><li>Direct neural control — যেমন salivary glands।</li><li>Circulating hormone-এর response — যেমন mammary gland-এ oxytocin-এর প্রতি response।</li></ul>
+<p>Amrita বলল—</p>
+<p>“তাহলে gland-এর secretion শুধু secretory cell-এর ওপর নির্ভর করে না। Blood flow, nerve supply, hormone এবং myoepithelial contraction—সবকিছু মিলেই কাজ করে।”</p>
+<p>“ঠিক,” ম্যাডাম বললেন।</p>
+</div></section>
+<section class="sec r" id="s29"><h3>১০. Feedback loops and endocrine axes: শরীরের self-regulation</h3><div class="body">
+<p>পরবর্তী ক্লাসে ম্যাডাম আবার একই topic-এ ফিরে এলেন।</p>
+<p>তিনি বোর্ডে লিখলেন—</p>
+<p>Feedback loops and endocrine axes</p>
+<p>Pituitary gland, বিশেষ করে adenohypophysis, অনেক সময় master gland হিসেবে পরিচিত।</p>
+<p>কারণ এটি endocrine physiological processes-এর কেন্দ্রীয় অংশ হিসেবে কাজ করে।</p>
+<p>Adenohypophysis-এর regulatory hormones অন্য endocrine glands-এর synthesis ও secretion stimulate করে।</p>
+<p>এই ব্যবস্থার মাধ্যমে Central nervous system non-neural mechanism-এ শরীরের বিভিন্ন organ-এর activity integrate করতে পারে।</p>
+</div></section>
+<section class="sec r" id="s30"><h3>Hypothalamus এবং adenohypophysis</h3><div class="body">
+<p>Hypothalamus ও adenohypophysis endocrine feedback loops-এর গুরুত্বপূর্ণ কেন্দ্র।</p>
+<p>Feedback loop হতে পারে:</p>
+<ul><li>Positive feedback</li><li>Negative feedback</li></ul>
+<p>Positive feedback example:</p>
+<p>Gray’s Anatomy-তে দেওয়া উদাহরণ:</p>
+<ul><li>Hypothalamus adenohypophysis থেকে FSH release stimulate করে।</li><li>FSH ovarian follicular maturation stimulate করে।</li><li>Ovarian follicles oestradiol secrete করে।</li><li>Oestradiol breast ও endometrial target tissues-এ কাজ করে।</li><li>এই উদাহরণে oestradiol hypothalamus এবং adenohypophysis-এ ফিরে গিয়ে তাদের activity reinforce করে।</li></ul>
+<p>এটি positive feedback-এর উদাহরণ।</p>
+<p>Negative feedback example:</p>
+<ul><li>Hypothalamus এবং adenohypophysis testicular testosterone production stimulate করে।</li><li>Testosterone skeletal muscle-সহ বিভিন্ন target tissue-তে কাজ করে।</li><li>Circulating testosterone hypothalamus ও adenohypophysis-এর stimulation কমিয়ে দেয়।</li><li>ফলে testosterone production-এর ওপর inhibitory feedback তৈরি হয়।</li></ul>
+<p>এটি negative feedback-এর উদাহরণ।</p>
+<p>Positive feedback — Oestradiol example</p>
+<p>Hypothalamus</p>
+<p>Adenohypophysis → FSH</p>
+<p>Ovarian follicular maturation</p>
+<p>Oestradiol</p>
+<p>Hypothalamus ও adenohypophysis-এর activity reinforce করে</p>
+<p>Negative feedback — Testosterone example</p>
+<p>Hypothalamus + Adenohypophysis</p>
+<p>Testicular testosterone production</p>
+<p>Circulating testosterone</p>
+<p>Hypothalamus ও adenohypophysis-এর stimulation কমায়</p>
+<p>Feynman technique</p>
+<p>Adi বলল—</p>
+<p>“Positive feedback-এ output আবার system-কে আরও বেশি stimulate করে। Negative feedback-এ output system-এর আগের stimulation কমিয়ে দেয়।”</p>
+<p>ম্যাডাম বললেন—</p>
+<p>“এটাই মূল ধারণা। তবে বাস্তব endocrine axes-এ একাধিক hormone, receptor এবং feedback level থাকতে পারে।”</p>
+</div></section>
+<section class="sec r" id="s31"><h3>১১. Library discussion: Adi ও Amrita-র প্রথম বড় disagreement</h3><div class="body">
+<p>বিকেল ৪টা।</p>
+<p>Anatomy library-তে চারজন বসে আছে।</p>
+<p>Nabila বলল—</p>
+<p>“আমার কাছে সবচেয়ে কঠিন মনে হয়েছে exocrine আর endocrine glands-এর classification।”</p>
+<p>Rafi বলল—</p>
+<p>“আমার কাছে merocrine, apocrine, holocrine সহজ। কিন্তু structural classification মনে রাখা কঠিন।”</p>
+<p>Adi একটি কাগজে diagram আঁকল।</p>
+<p>Adi: “আমরা gland-কে তিনটি প্রশ্ন দিয়ে বুঝতে পারি।”</p>
+<ul><li>Secretion কোথায় যায়?</li><li>Secretion কীভাবে বের হয়?</li><li>Gland-এর structure কেমন?</li></ul>
+<p>Amrita বলল—</p>
+<p>“কিন্তু product-এর nature-ও তো classification-এর ভিত্তি।”</p>
+<p>Adi মাথা নাড়ল।</p>
+<p>“ঠিক। তাহলে চারটি dimension:</p>
+<ul><li>Destination: Exocrine/Endocrine/Paracrine</li><li>Release mechanism: Merocrine/Apocrine/Holocrine</li><li>Architecture: Unicellular/Multicellular, Simple/Compound</li><li>Secretory product: Mucous/Serous/Mixed”</li></ul>
+<p>Rafi বলল—</p>
+<p>“এবার বুঝলাম। এতদিন সব classification একসঙ্গে মুখস্থ করতে গিয়ে গুলিয়ে ফেলছিলাম।”</p>
+<p>Amrita মৃদু হেসে বলল—</p>
+<p>“দেখেছিস? Anatomy-তে structure-এর আগে classification-এর logic বুঝতে হয়।”</p>
+<p>Adi তার দিকে তাকাল।</p>
+<p>“তুই বুঝিয়ে দিলে কঠিন জিনিসও সহজ হয়ে যায়।”</p>
+<p>Nabila সঙ্গে সঙ্গে বলল—</p>
+<p>“আহা! Glandular secretion-এর সঙ্গে emotional secretion-ও চলছে!”</p>
+<p>চারজন হেসে উঠল।</p>
+<p>কিন্তু Adi ও Amrita দুজনেই জানত—তাদের বন্ধুত্বের মধ্যে এমন এক ধরনের বিশ্বাস তৈরি হচ্ছে, যা শুধু পড়ার টেবিলেই সীমাবদ্ধ নয়।</p>
+</div></section>
+<section class="sec r" id="s32"><h3>Episode 25 — আজকের Study Ledger</h3><div class="body">
+<p>Chapter 2 — Glands</p>
+<p>Completed sections</p>
+<ul><li>Glandular epithelial specialization</li><li>Unicellular ও multicellular glands</li><li>Exocrine, endocrine ও paracrine glandular cells</li><li>Neurosecretory tissues</li><li>Merocrine secretion ও exocytosis</li><li>Apocrine secretion</li><li>Holocrine secretion</li><li>Mammary gland-এর mixed secretory mechanisms</li><li>Structural classification of exocrine glands</li><li>Simple ও compound glands</li><li>Tubular, acinar, alveolar ও tubulo-acinar arrangements</li><li>Mucous, serous ও mixed glands</li><li>Endocrine glandular architecture</li><li>Fenestrated capillaries ও sinusoids</li><li>Diffuse neuroendocrine system</li><li>Control of glandular secretion</li><li>Autonomic nervous system ও endocrine control</li><li>Myoepithelial cell-mediated secretion</li><li>Feedback loops and endocrine axes</li><li>Positive ও negative feedback-এর  উদাহরণ<div class="ct">Page coverage:  Page 77–79</div></li></ul>
+<p>পরবর্তী অধ্যয়ন শুরু হবে:</p>
+<p>Page 79 — <code class="bx">BASEMENT MEMBRANE AND BASAL LAMINA</code></p>
+<p>সেখানে আলোচনা হবে:</p>
+<ul><li>Basement membrane ও basal lamina-এর পার্থক্য</li><li>Basal lamina-এর ultrastructure</li><li>Lamina densa ও lamina lucida-র source-ভিত্তিক বিবরণ</li><li>Laminin ও Type IV collagen</li><li>Entactin (nidogen) ও Perlecan</li><li>Tissue-specific molecular composition</li><li>Clinical correlations</li></ul>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-024.html">← Episode 24</a><a href="index.html">সব পর্ব</a><a href="episode-026.html">Episode 26 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">Gray’s Anatomy: The Adi–Amrita Chronicles</a><a href="#s2">Episode 25 — The Secret Language of Glands</a><a href="#s3">১. একটি প্রশ্ন, যা পুরো ক্লাসকে থামিয়ে দিল</a><a href="#s4">২. Glandular epithelium: Secretion-এর জন্য cell-এর specialization</a><a href="#s5">৩. Glands-এর প্রধান classification</a><a href="#s6">Exocrine glands</a><a href="#s7">Endocrine glands</a><a href="#s8">Neurosecretory tissues</a><a href="#s9">Paracrine glandular cells</a><a href="#s10">৪. Exocrine glands: Secretion কীভাবে বাইরে যায়?</a><a href="#s11">A. Merocrine secretion</a><a href="#s12">Eccrine glands সম্পর্কে একটি গুরুত্বপূর্ণ সংশোধন</a><a href="#s13">B. Apocrine secretion</a><a href="#s14">C. Holocrine secretion</a><a href="#s15">৫. তিনটি secretion mechanism-এর পার্থক্য</a><a href="#s16">৬. Structural and functional classification of Exocrine glands</a><a href="#s17">A. Unicellular glands</a><a href="#s18">B. Multicellular glands</a><a href="#s19">Simple glands</a><a href="#s20">Compound glands</a><a href="#s21">Glands-এর secretion অনুযায়ী classification</a><a href="#s22">৭. Endocrine glands: Duct ছাড়া দূরে message পাঠানো</a><a href="#s23">Endocrine gland-এর structural organization</a><a href="#s24">৮. Diffuse neuroendocrine system</a><a href="#s25">৯. Control of glandular secretion: কে gland-কে নির্দেশ দেয়?</a><a href="#s26">A. Endocrine control</a><a href="#s27">B. Autonomic nervous system</a><a href="#s28">C. Myoepithelial cell-এর সাহায্যে secretion</a><a href="#s29">১০. Feedback loops and endocrine axes: শরীরের self-regulation</a><a href="#s30">Hypothalamus এবং adenohypophysis</a><a href="#s31">১১. Library discussion: Adi ও Amrita-র প্রথম বড় disagreement</a><a href="#s32">Episode 25 — আজকের Study Ledger</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

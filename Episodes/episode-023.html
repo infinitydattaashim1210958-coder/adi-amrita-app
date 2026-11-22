@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 023 · The Cells That Refused to Die</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 023">EPISODE 023</h1>
+  <div class="ttl">The Cells That Refused to Die</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">023</div></div>
+    <div class="face b"><div class="t2">The Cells That Refused to Die</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>Episode 23 — The Cells That Refused to Die</h3><div class="body">
+<p>Dhaka Medical College | Chapter 1: Basic Structure and Function of Cells</p>
+</div></section>
+<section class="sec r" id="s2"><h3>১. একটি অদ্ভুত প্রশ্ন</h3><div class="body">
+<p>ঢাকা মেডিকেল কলেজের Anatomy lecture gallery।</p>
+<p>সকাল ৯টা ১৫ মিনিট।</p>
+<p>গত কয়েক সপ্তাহ ধরে Adi আর Amrita-র দিন শুরু হয় প্রায় একইভাবে। কলেজে আসার আগে দুজনেরই একবার করে আগের দিনের পড়া revise করা চাই। ক্লাসে পাশাপাশি বসা এখন আর কাকতালীয় নয়। তাদের বন্ধুদের কাছে ব্যাপারটা অনেক আগেই পরিষ্কার হয়ে গেছে।</p>
+<p>আজকের lecture-এর topic আগের দিনের Specialized Intercellular Junctions-এর পরের অংশ।</p>
+<p>ডা. শারমিন ম্যাডাম বোর্ডে লিখলেন—</p>
+<p>AGEING, CELLULAR SENESCENCE, CANCER AND APOPTOSIS</p>
+<p>ম্যাডাম ক্লাসের দিকে তাকালেন।</p>
+<p>ডা. শারমিন: “তোমরা এতক্ষণ Cell Division, Cell Cycle, Mitosis—সব পড়েছ। তাহলে একটা প্রশ্ন করি। একটি cell যদি বারবার divide করতে পারে, তাহলে শরীরের সব cell সারাজীবন divide করে না কেন?”</p>
+<p>পেছন থেকে রাফি বলল—</p>
+<p>“সম্ভবত cell-এর বয়স হয়ে যায়, ম্যাডাম?”</p>
+<p>ম্যাডাম মৃদু হাসলেন।</p>
+<p>“ঠিক। কিন্তু বয়স হওয়া মানে কী? Cell কি মানুষের মতো জন্মদিন পালন করে?”</p>
+<p>ক্লাসে হাসির শব্দ উঠল।</p>
+<p>Adi খাতায় লিখল—</p>
+<p>Ageing ≠ merely passage of time.</p>
+<p>Amrita তার দিকে তাকিয়ে ফিসফিস করে বলল—</p>
+<p>“আজকে মনে হচ্ছে বেশ কঠিন একটা chapter শুরু হচ্ছে।”</p>
+<p>Adi বলল—</p>
+<p>“কঠিন বলেই তো একসঙ্গে পড়ব। আগে ম্যাডামের lecture শেষ হোক।”</p>
+</div></section>
+<section class="sec r" id="s3"><h3>২. Ageing: কোষের কার্যক্ষমতার ধীর অবনতি</h3><div class="body">
+<p>ডা. শারমিন বোর্ডে লিখলেন—</p>
+<p>Ageing</p>
+<p>Gray’s Anatomy-র আলোচনায় Ageing হলো biological organisms-এর একটি universal feature। সময়ের সঙ্গে সঙ্গে cell এবং tissue-এর function ধীরে ধীরে কমে যায়। এই functional decline অনেক ক্ষেত্রে individual-এর longevity কমিয়ে দেয়।</p>
+<p>ম্যাডাম বললেন—</p>
+<p>“এখানে একটা বিষয় মনে রাখবে। Ageing মানে শুধু শরীরের বাইরের পরিবর্তন নয়। এর গভীর ভিত্তি রয়েছে cellular এবং molecular level-এ।”</p>
+<p>তিনি বোর্ডে একটি flow লিখলেন:</p>
+<p>Ageing</p>
+<p>Cellular and tissue functional decline</p>
+<p>Loss of physiological integrity</p>
+<p>Reduced functional capacity</p>
+<p>“Ageing-এর hallmarks নিয়ে Gray’s Anatomy-তে López-Otín et al. (2013)-এর review উল্লেখ করা হয়েছে।”</p>
+<p>Amrita হাত তুলল।</p>
+<p>Amrita: “ম্যাডাম, তাহলে কি সব cell একই হারে age করে?”</p>
+<p>ডা. শারমিন: “না। বিভিন্ন cell type-এর proliferative capacity এবং biological behaviour এক নয়। আজকের আলোচনায় আমরা বিশেষভাবে cellular senescence বুঝব।”</p>
+</div></section>
+<section class="sec r" id="s4"><h3>৩. Cellular Senescence: Cell যখন স্থায়ীভাবে division বন্ধ করে দেয়</h3><div class="body">
+<p>ম্যাডাম বোর্ডে বড় করে লিখলেন—</p>
+<p>CELLULAR SENESCENCE</p>
+<p>“ধরো, একটি cell স্বাভাবিকভাবে divide করতে পারে। কিন্তু একসময় তার DNA damage হলো, বিশেষ করে telomere-এ। অথবা cell-এর mitogenic signalling কমে গেল। তখন cell কী করবে?”</p>
+<p>Adi উত্তর দিল—</p>
+<p>“Cell cycle arrest হতে পারে, ম্যাডাম।”</p>
+<p>“ঠিক। কিন্তু সব arrest একই রকম নয়।”</p>
+<p>ম্যাডাম লিখলেন:</p>
+<p>Cellular senescence = Irreversible arrest in cell proliferation.</p>
+<p>Cellular senescence হলো এমন একটি অবস্থা, যেখানে cell proliferation স্থায়ীভাবে বন্ধ হয়ে যায়। এটি ঘটে যখন cell telomere-এ DNA damage অনুভব করে এবং mitogenic signalling কমে যায়।</p>
+</div></section>
+<section class="sec r" id="s5"><h3>Quiescence বনাম Senescence</h3><div class="body">
+<p>ম্যাডাম এবার দুটি শব্দ পাশাপাশি লিখলেন—</p>
+<div class="tw"><table><thead><tr><th>Quiescence</th><th>Senescence</th></tr></thead><tbody><tr><td>Reversible growth arrest</td><td>Irreversible growth arrest</td></tr><tr><td>Cell G₀ phase-এ থাকতে পারে</td><td>Cell স্থায়ীভাবে proliferative arrest-এ যায়</td></tr><tr><td>উপযুক্ত stimulus পেলে cell cycle-এ ফিরতে পারে</td><td>পরিচিত physiological mechanism দিয়ে cell cycle-এ ফিরে আসতে পারে না</td></tr></tbody></table></div>
+<p>Feynman technique:</p>
+<p>Amrita বলল—</p>
+<p>“ম্যাডাম, সহজভাবে বললে Quiescence হলো এমন একজন ছাত্র, যে আপাতত পড়াশোনা বন্ধ রেখেছে—কিন্তু চাইলে আবার শুরু করতে পারে। আর Senescence হলো এমন একজন, যে স্থায়ীভাবে পড়াশোনা ছেড়ে দিয়েছে?”</p>
+<p>ম্যাডাম হাসলেন।</p>
+<p>“উপমাটা ভালো। তবে মনে রেখো, এটি শুধু বোঝার জন্য। Biological mechanism-এ দুটির পার্থক্য আরও নির্দিষ্ট।”</p>
+<p>Adi যোগ করল—</p>
+<p>“অর্থাৎ, Quiescent cell-এর proliferation capacity বজায় থাকতে পারে; কিন্তু senescent cell irreversible growth arrest-এ থাকে।”</p>
+<p>“Exactly!”</p>
+<p>ম্যাডাম এবার বোর্ডে লিখলেন—</p>
+<p>Senescent cells cannot be prompted to re-enter the cell cycle by physiological mechanisms.</p>
+</div></section>
+<section class="sec r" id="s6"><h3>৪. Senescent cells কি শুধু নিষ্ক্রিয়?</h3><div class="body">
+<p>ক্লাসের সবাই যখন ভাবছে senescent cell বুঝি একেবারেই নিষ্ক্রিয়, তখন ম্যাডাম বললেন—</p>
+<p>“এখানে একটা গুরুত্বপূর্ণ বিষয় আছে। Senescent cell division বন্ধ করলেও তার biological activity শেষ হয়ে যায় না।”</p>
+<p>তিনি লিখলেন—</p>
+<p>Senescence-Associated Secretory Phenotype (SASP)</p>
+<p>Senescent cells-এর gene expression পরিবর্তিত হয়। এর ফলে তারা বিভিন্ন substance secrete করে:</p>
+<ul><li>Proinflammatory cytokines</li><li>Growth factors</li><li>Proteases</li></ul>
+<p>এই সম্মিলিত secretory activity-কে বলা হয় Senescence-Associated Secretory Phenotype (SASP)।</p>
+<p>SASP-এর কার্যক্রমের মধ্যে রয়েছে:</p>
+<ul><li>Angiogenesis trigger করা।</li><li>Inflammatory responses সৃষ্টি বা প্রভাবিত করা।</li><li>Stem cell renewal এবং differentiation প্রভাবিত করা।</li><li>Cancer chemotherapy-র প্রতি resistance নির্ধারণে ভূমিকা রাখা।</li></ul>
+<p>রাফি বলল—</p>
+<p>“ম্যাডাম, তাহলে senescent cell নিজে divide না করলেও আশপাশের cell-কে প্রভাবিত করতে পারে?”</p>
+<p>“একদম। এটাই SASP-এর একটি গুরুত্বপূর্ণ দিক।”</p>
+<p>Adi তার খাতায় লিখল:</p>
+<p>Senescence is not equivalent to biological inactivity.</p>
+<p>Amrita তার খাতায় তাকিয়ে বলল—</p>
+<p>“তোর handwriting আগের চেয়ে ভালো হয়েছে।”</p>
+<p>“তুই Anatomy পড়তে এসেছিস, আমার handwriting পরীক্ষা করতে নয়।”</p>
+<p>“দুটোই গুরুত্বপূর্ণ।”</p>
+<p>পাশ থেকে নাবিলা ফিসফিস করে বলল—</p>
+<p>“আমাদের সামনে আর কতদিন এই দুজনের academic discussion চলবে?”</p>
+<p>রাফি বলল—</p>
+<p>“যতদিন না Anatomy-র সঙ্গে প্রেমেরও একটা chapter আসে!”</p>
+</div></section>
+<section class="sec r" id="s7"><h3>৫. Senescent cells শনাক্ত করা যায় কীভাবে?</h3><div class="body">
+<p>ডা. শারমিন ম্যাডাম আবার lecture-এ ফিরে এলেন।</p>
+<p>“Histologically বা histochemically senescent cell শনাক্ত করার জন্য Gray’s Anatomy দুটি marker উল্লেখ করেছে।”</p>
+<p>বোর্ডে লেখা হলো—</p>
+<p>1. Senescence-associated β-galactosidase</p>
+<p>এটি একটি lysosomal marker, যা senescent cells-এ overexpressed হয়।</p>
+<p>2. p16INK4a</p>
+<p>এটি একটি tumour suppressor protein। এটি senescence-associated chromatin formation-কে promote করে।</p>
+<p>Amrita প্রশ্ন করল—</p>
+<p>“ম্যাডাম, p16INK4a কি শুধু senescence marker, নাকি tumour suppression-এর সঙ্গেও সম্পর্কিত?”</p>
+<p>“দুটির সঙ্গেই সম্পর্ক রয়েছে। Senescence এবং tumour suppression-এর মধ্যে ঘনিষ্ঠ যোগসূত্র আছে। আমরা এখন সেটাই বুঝব।”</p>
+</div></section>
+<section class="sec r" id="s8"><h3>৬. Cellular Senescence কী কারণে হয়?</h3><div class="body">
+<p>ম্যাডাম বোর্ডে চারটি বিষয় লিখলেন—</p>
+<ul><li>Disruption of metabolic signalling pathways</li><li>Activation of tumour suppressors</li><li>Telomere shortening</li><li>Genomic damage</li></ul>
+<p>তিনি বললেন—</p>
+<p>“Mitogens এবং proliferation factors থেকে আসা signalling pathways-এর disruption, tumour suppressor activation, telomere shortening এবং genomic damage—এসব cellular senescence ঘটাতে পারে।”</p>
+<p>Adi বলল—</p>
+<p>“অর্থাৎ cell-এর proliferation machinery-তে সমস্যা হলে অথবা genome ক্ষতিগ্রস্ত হলে cell নিজেকে division থেকে সরিয়ে নিতে পারে?”</p>
+<p>“হ্যাঁ। বিশেষত damaged cell-এর uncontrolled proliferation ঠেকানোর জন্য এই ব্যবস্থা গুরুত্বপূর্ণ।”</p>
+</div></section>
+<section class="sec r" id="s9"><h3>৭. Senescence এবং Cancer: একই ব্যবস্থার দুই দিক</h3><div class="body">
+<p>এবার lecture আরও গুরুত্বপূর্ণ পর্যায়ে পৌঁছাল।</p>
+<p>ম্যাডাম বোর্ডে লিখলেন—</p>
+<p>Cellular senescence suppresses tumorigenesis.</p>
+<p>“Cancer development-এর জন্য cell proliferation প্রয়োজন। তাই কোনো damaged cell যদি senescence-এ চলে যায়, তাহলে তার uncontrolled proliferation বন্ধ হতে পারে। এভাবে cellular senescence tumorigenesis suppress করতে পারে।”</p>
+<p>Adi বলল—</p>
+<p>“অর্থাৎ senescence একটি protective mechanism?”</p>
+<p>“সাধারণভাবে, হ্যাঁ। কিন্তু বিষয়টি একমুখী নয়।”</p>
+<p>ম্যাডাম এবার লিখলেন—</p>
+<p>Paradox of senescence</p>
+<p>Senescent cells কখনও কখনও পাশের premalignant cells-এর proliferation এবং malignant progression stimulate করতে পারে। তারা senescence-inducing oncogenic stimuli release করে এই প্রভাব তৈরি করতে পারে।</p>
+<p>Amrita একটু অবাক হলো।</p>
+<p>“তাহলে যে mechanism cancer ঠেকাতে পারে, সেটাই আবার অন্য cell-এর malignant progression বাড়াতে পারে?”</p>
+<p>“ঠিক। Biology-তে অনেক mechanism context-dependent।”</p>
+</div></section>
+<section class="sec r" id="s10"><h3>Cancer cell কীভাবে senescence এড়িয়ে যায়?</h3><div class="body">
+<p>Cancer cells-কে telomere-dependent এবং oncogene-induced senescence এড়িয়ে যেতে হয়। Gray’s Anatomy এখানে দুটি গুরুত্বপূর্ণ tumour suppressor pathway উল্লেখ করেছে:</p>
+<ul><li>p53 pathway</li><li>p16–retinoblastoma protein (RB) pathway</li></ul>
+<p>এই pathway-গুলোর কার্যকারিতা নষ্ট করার মতো mutation cancer cell-কে senescence এড়িয়ে proliferation চালিয়ে যেতে সাহায্য করতে পারে।</p>
+<p>Adi বলল—</p>
+<p>“তাহলে p53 এবং p16–RB pathway-কে cell-এর proliferation control system-এর অংশ হিসেবে মনে রাখতে হবে।”</p>
+<p>ম্যাডাম বললেন—</p>
+<p>“হ্যাঁ। এই pathway-গুলো ক্ষতিগ্রস্ত হলে damaged cell-এর growth control দুর্বল হতে পারে।”</p>
+</div></section>
+<section class="sec r" id="s11"><h3>৮. Apoptosis: Cell-এর নিয়ন্ত্রিত আত্মবিনাশ</h3><div class="body">
+<p>দুপুরের বিরতির ঠিক আগে ম্যাডাম বোর্ডে নতুন শব্দ লিখলেন—</p>
+</div></section>
+<section class="sec r" id="s12"><h3>APOPTOSIS</h3><div class="body">
+<p>“এখন আমরা এমন একটি process পড়ব, যেখানে cell নিজেই একটি controlled death programme activate করে।”</p>
+<p>Gray’s Anatomy অনুযায়ী, cell মারা যেতে পারে প্রধানত দুটি প্রক্রিয়ায়:</p>
+<ul><li>Necrosis: Tissue injury-এর ফলে cell death।</li><li>Apoptosis: Cell-এর internal suicide programme activation-এর ফলে cell death।</li></ul>
+<p>Apoptosis হলো programmed cell death। এতে cellular constituents নিয়ন্ত্রিতভাবে ভেঙে ফেলা হয় এবং apoptotic cell fragments অন্য cell দ্বারা engulfed হয়, যাতে immune response এড়ানো যায়।</p>
+<p>Amrita বলল—</p>
+<p>“ম্যাডাম, তাহলে apoptosis হলো controlled demolition?”</p>
+<p>“হ্যাঁ। Gray’s Anatomy-র ভাষায় একে cellular constituents-এর controlled demolition বলা হয়েছে।”</p>
+<p>Adi বলল—</p>
+<p>“আর necrosis হলো uncontrolled damage-এর মতো?”</p>
+<p>“এটাকে বোঝার জন্য এমন উপমা ব্যবহার করতে পারো। তবে morphology এবং mechanism-এর পার্থক্যগুলো মনে রাখতে হবে।”</p>
+</div></section>
+<section class="sec r" id="s13"><h3>Apoptosis-এর biological importance</h3><div class="body">
+<p>Apoptosis শুধু damaged cell সরায় না; multicellular development-এও গুরুত্বপূর্ণ।</p>
+<p>Gray’s Anatomy-তে কয়েকটি উদাহরণ রয়েছে:</p>
+<p>১. Morphogenesis</p>
+<p>Developing digits-এর মাঝখানের tissue অপসারণে apoptosis ভূমিকা রাখে। এর মাধ্যমে আঙুলগুলো আলাদা হতে পারে।</p>
+<p>২. Nervous system development</p>
+<p>Developing nervous system-এ neurone-এর সংখ্যা নিয়ন্ত্রণে apoptosis গুরুত্বপূর্ণ। Development-এর সময় অধিকাংশ neurone মারা যায়।</p>
+<p>৩. Thymic T-cell selection</p>
+<p>Thymus-এ clonal selection-এর সময় inappropriate বা inefficient T cells apoptosis-এর মাধ্যমে eliminate হয়।</p>
+<p>ম্যাডাম বললেন—</p>
+<p>“তোমরা বুঝতে পারছ, apoptosis না থাকলে শুধু damaged cell জমত না; normal development-ও ব্যাহত হতে পারত।”</p>
+</div></section>
+<section class="sec r" id="s14"><h3>৯. Necrosis বনাম Apoptosis: Morphological difference</h3><div class="body">
+<p>ম্যাডাম বোর্ডে দুটি cell আঁকলেন।</p>
+<p>একটি ফুলে উঠেছে, অন্যটি ছোট হয়ে ভেঙে যাচ্ছে।</p>
+<p>“দুটি cell-এর মৃত্যুর morphology এক নয়।”</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Necrotic Cell Death | BioRender Science Templates</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/xQ7mAZklc6WzEF72Ew1c_yM3Idr_GVsUu9BxfnECNbtxnLiJVwseZa68Vc_P6GS251PXaFIUokZGnnhNHik-5kb-QB8MyEBwd28yKqnk83TEBy14EgGkyezRtiJBfXQEctQaE3ZiGrXPSRjKaLw1Wi3C88T6TmjhUSSfTuisS0vjiSseJfxqxLqBrafJPS0A?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Necrotic%20Cell%20Death%20%7C%20BioRender%20Science%20Templates">Image search ↗</a></figure>
+<p>Necrosis</p>
+<ul><li>Cell swelling</li><li>Plasma membrane rupture</li><li>Cellular debris</li><li>Inflammatory response হতে পারে</li></ul>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Frontiers | Novel insights into the crosstalk between non-coding RNA and apoptosis in rheumatoid arthritis: diagnostic functions and therapeutic applications</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/Fz_Rrr0llG4tE5GFAqOxv1AGFI89iUf0phPKUaq6FLcDJaoX_Hx9Xscibv0wbJ8_tqTZwUR5MWbBgvu6GApiYI85_ZfOT18WAMr9OvvKQqUkompJ7vuN8z58t8p292DjnssB7FGfu_2wRzdrWlCBssfpQTjmmRvGvBvnH-veJjy7Y-nBFMj4ogeDIQhAobD1?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Frontiers%20%7C%20Novel%20insights%20into%20the%20crosstalk%20between%20non-coding%20RNA%20and%20apoptosis%20in%20rheumatoid%20arthritis%3A%20diagnostic%20functions%20and%20therapeutic%20applications">Image search ↗</a></figure>
+<p>Apoptosis</p>
+<ul><li>Cell shrinkage</li><li>Nuclear and chromosome fragmentation</li><li>Apoptotic body formation</li><li>Phagocytosis</li></ul>
+<p>Necrosis-এ কী ঘটে?</p>
+<ul><li>Cell ফুলে যায়।</li><li>শেষ পর্যন্ত cell rupture হয়।</li><li>Cellular debris তৈরি হয়।</li><li>Cell-এর contents extracellular environment-এ ছড়িয়ে পড়ে।</li><li>Debris inflammatory response সৃষ্টি করতে পারে।</li></ul>
+<p>Apoptosis-এ কী ঘটে?</p>
+<ul><li>Cell shrink করে।</li><li>Nucleus এবং chromosomes fragment হয়।</li><li>Apoptotic bodies তৈরি হয়।</li><li>Plasma membrane-এ conformational changes হয়, যা local phagocytes-কে signal দেয়।</li><li>Dead cell দ্রুত remove হয়ে যায়।</li><li>Intracellular contents extracellular environment-এ ছড়িয়ে পড়ে না।</li><li>তাই inflammatory reaction এড়ানো সম্ভব হয়।</li><li>Apoptotic fragments macrophages-কে anti-inflammatory cytokines release করতেও stimulate করে।</li></ul>
+<p>Amrita বলল—</p>
+<p>“অর্থাৎ apoptosis-এ cell-এর contents বাইরে ছড়িয়ে না পড়ে ছোট ছোট apoptotic bodies-এর মধ্যে থাকে, যেগুলো phagocyte সরিয়ে দেয়?”</p>
+<p>“একদম ঠিক,” ম্যাডাম বললেন।</p>
+</div></section>
+<section class="sec r" id="s15"><h3>১০. Caspases: Apoptosis-এর execution machinery</h3><div class="body">
+<p>এবার Adi হাত তুলল।</p>
+<p>“ম্যাডাম, apoptosis-এর সময় cell-এর cytoskeleton এবং অন্যান্য cellular structure ভেঙে ফেলে কে?”</p>
+<p>“এই কাজের কেন্দ্রে রয়েছে caspases।”</p>
+<p>বোর্ডে লেখা হলো—</p>
+<p>Caspases = Cysteine aspartic acid-specific proteases</p>
+<p>Healthy cells-এ caspases সাধারণত inactive precursor enzymes বা zymogens হিসেবে থাকে।</p>
+<p>Apoptosis শুরু হলে initiator এবং effector protease-এর activation cascade তৈরি হয়।</p>
+<p>বিশেষ করে:</p>
+<ul><li>Caspase 3</li><li>Caspase 6</li><li>Caspase 7</li></ul>
+<p>এগুলো apoptosis-এর degradative process পরিচালনা করে।</p>
+<p>ম্যাডাম বোঝালেন—</p>
+<p>“ভাবো, একটি বিশাল ভবন ভাঙতে হবে। আগে demolition team-কে activate করতে হয়। তারপর তারা নির্দিষ্ট জায়গায় কাজ শুরু করে। Caspases-ও cell-এর বিভিন্ন constituent-কে নির্দিষ্টভাবে dismantle করে।”</p>
+<p>Caspase activation-এর ফলে:</p>
+<ul><li>Cytoskeletal components ভাঙে।</li><li>Membrane blebbing হয়।</li><li>Cytosolic এবং nuclear fragments তৈরি হয়।</li><li>Apoptotic bodies গঠিত হয়।</li><li>Cell-এর viability বজায় রাখে এমন অনেক system নিষ্ক্রিয় হয়।</li></ul>
+<p>Caspase cleavage কিছু damage-repair এবং cell-survival system-ও inactivate করে।</p>
+</div></section>
+<section class="sec r" id="s16"><h3>১১. Apoptosis trigger হয় কীভাবে?</h3><div class="body">
+<p>ম্যাডাম বললেন—</p>
+<p>“Apoptosis এবং cell proliferation একে অপরের সঙ্গে ঘনিষ্ঠভাবে সম্পর্কিত। Cell-cycle regulators-এর কিছু অংশ cell division এবং apoptosis—দুটিকেই প্রভাবিত করতে পারে।”</p>
+<p>Apoptosis trigger করতে পারে:</p>
+<ul><li>Withdrawal of survival factors</li><li>Inappropriate proliferative stimuli</li></ul>
+<p>Gray’s Anatomy তিনটি প্রধান route উল্লেখ করেছে:</p>
+<p>Three routes of apoptosis</p>
+<p>1. Granzyme B pathway</p>
+<p>Extrinsic pathway</p>
+<p>2. Fas ligand (FasL) pathway</p>
+<p>Extrinsic pathway</p>
+<p>3. Mitochondrial cytochrome c pathway</p>
+<p>Intrinsic pathway</p>
+<p>“এখন প্রত্যেকটি pathway আলাদা করে বুঝব,” ম্যাডাম বললেন।</p>
+</div></section>
+<section class="sec r" id="s17"><h3>১২. Granzyme B pathway: Cytotoxic cell-এর অস্ত্র</h3><div class="body">
+<p>ডা. শারমিন ম্যাডাম বোর্ডে লিখলেন—</p>
+<p>Granzyme B pathway — Extrinsic</p>
+<p>এই pathway cytotoxic T cells অথবা natural killer cells-এর মাধ্যমে target cell-এ protease granzyme B পৌঁছে দেওয়ার সঙ্গে সম্পর্কিত।</p>
+<p>ধাপগুলো:</p>
+<ul><li>Perforin plasma membrane-এ pore তৈরি করে।</li><li>এই pore দিয়ে granzyme B target cell-এ প্রবেশ করে।</li><li>Granzyme B caspase 8 এবং caspase 3 activate করতে পারে।</li><li>এর ফলে apoptosis-এর execution process শুরু হয়।</li></ul>
+<p>ম্যাডাম বললেন—</p>
+<p>“Perforin-কে দরজায় ছিদ্র তৈরি করার উপকরণ হিসেবে ভাবতে পারো। Granzyme B হলো সেই ছিদ্র দিয়ে প্রবেশ করা protease।”</p>
+<p>Adi খাতায় লিখল—</p>
+<p>Perforin facilitates entry; Granzyme B initiates the proteolytic death cascade.</p>
+</div></section>
+<section class="sec r" id="s18"><h3>১৩. Fas ligand pathway: Death receptor-এর মাধ্যমে সংকেত</h3><div class="body">
+<p>ম্যাডাম এবার লিখলেন—</p>
+<p>Fas ligand (FasL) pathway — Extrinsic</p>
+<p>এই pathway শুরু হয় যখন Fas ligand, plasma membrane-এর death receptor-এর সঙ্গে bind করে।</p>
+<p>ধাপে ধাপে:</p>
+<ul><li>FasL death receptor-এর সঙ্গে bind করে।</li><li>Death receptors cluster করে।</li><li>Receptor-এর intracellular domain adaptor proteins recruit করে।</li><li>গুরুত্বপূর্ণ adaptor protein হলো FADD (Fas-associated death-domain protein)।</li><li>FADD caspase 8 recruit করে।</li><li>Caspase 8 molecule recruit এবং aggregate হয়ে activate হয়।</li><li>Activated caspase 8, caspase 7 এবং caspase 3 activate করে।</li><li>এরপর apoptosis-এর execution cascade এগিয়ে যায়।</li></ul>
+<p>Amrita বলল—</p>
+<p>“ম্যাডাম, তাহলে FasL pathway-তে প্রথমে cell-এর বাইরের ligand signal দেয়, তারপর intracellular adaptor protein caspase 8 activate করে?”</p>
+<p>“হ্যাঁ। এজন্যই একে extrinsic pathway বলা হয়।”</p>
+</div></section>
+<section class="sec r" id="s19"><h3>১৪. Mitochondrial pathway: Intrinsic apoptosis</h3><div class="body">
+<p>এবার ম্যাডাম একটি mitochondrion-এর diagram আঁকলেন।</p>
+<p>“এটি intrinsic pathway। এখানে mitochondrion গুরুত্বপূর্ণ ভূমিকা পালন করে।”</p>
+<p>বোর্ডে লেখা হলো—</p>
+<p>Cytochrome c pathway — Intrinsic</p>
+<p>এই pathway-তে mitochondrion-এর inner এবং outer membrane-এর মধ্যবর্তী space থেকে cytochrome c cytosol-এ release হয়।</p>
+<p>Gray’s Anatomy-তে বর্ণিত sequence:</p>
+<ul><li>Granzyme B অথবা activated caspase 8, BIDD protein-কে proteolytically truncate করতে পারে।</li><li>BIDD-এর পূর্ণ নাম BH3-interacting domain death agonist।</li><li>এটি mitochondrion-এর outer membrane-এ থাকা BAX–BAK channels-এর মাধ্যমে কাজ করে।</li><li>BAX–BAK হলো BCL-2 associated X protein–BCL-2 antagonist killer channel proteins।</li><li>এর ফলে cytochrome c release হয়।</li><li>Cytochrome c apoptosome assembly-তে সাহায্য করে।</li></ul>
+<p>ম্যাডাম বোর্ডে লিখলেন—</p>
+<p>Apoptosome = 7 APAF1 molecules + 7 Caspase 9 molecules</p>
+<p>এখানে APAF1-এর পূর্ণ নাম:</p>
+<p>Apoptosis protease-activating factor-1</p>
+<p>Apoptosome এরপর:</p>
+<ul><li>Caspase 3 activate করে।</li><li>Caspase 7 activate করে।</li></ul>
+<p>পরবর্তীতে caspase 6, caspase 2, caspase 8 এবং caspase 10-এর proteolytic activation cascade cell deconstruction সম্পন্ন করে।</p>
+<p>Adi বলল—</p>
+<p>“অর্থাৎ intrinsic pathway-তে mitochondrial cytochrome c release হচ্ছে central event, আর সেটি apoptosome তৈরি করতে সাহায্য করে।”</p>
+<p>“ঠিক।”</p>
+<p>Amrita খাতায় pathway-টি এভাবে সাজিয়ে লিখল:</p>
+<p>Mitochondrial intrinsic pathway</p>
+<p>BIDD-mediated BAX–BAK channel involvement</p>
+<p>Cytochrome c release</p>
+<p>Apoptosome formation</p>
+<p>7 APAF1 + 7 Caspase 9</p>
+<p>Caspase 3 and Caspase 7 activation</p>
+<p>Cell deconstruction</p>
+</div></section>
+<section class="sec r" id="s20"><h3>১৫. Senescence বনাম Apoptosis: কেন দুটোই প্রয়োজন?</h3><div class="body">
+<p>Lecture শেষের দিকে ম্যাডাম আবার আগের আলোচনায় ফিরে এলেন।</p>
+<p>“একটি damaged cell-এর সামনে দুটি গুরুত্বপূর্ণ biological outcome থাকতে পারে—growth arrest অথবা cell death।”</p>
+<p>তিনি বোর্ডে লিখলেন:</p>
+<div class="tw"><table><thead><tr><th>Cellular senescence</th><th>Apoptosis</th></tr></thead><tbody><tr><td>Cell proliferation irreversibleভাবে বন্ধ</td><td>Cell controlledভাবে মারা যায়</td></tr><tr><td>Damaged বা stressed cell-এর growth block করে</td><td>Damaged cell দ্রুত remove করতে পারে</td></tr><tr><td>Cell জীবিত থাকে</td><td>Cell dismantled হয়</td></tr><tr><td>SASP থাকতে পারে</td><td>Apoptotic bodies তৈরি হয়</td></tr></tbody></table></div>
+<p>“Senescence damaged বা stressed cell-এর growth আটকে দেয়। Apoptosis সেই cell-কে দ্রুত সরিয়ে দিতে পারে। কিন্তু কিছু senescent cell cell-death signalling-এর বিরুদ্ধে resistant হয়ে যায়—এদের apoptosis-resistant বলা হয়।”</p>
+<p>Adi বলল—</p>
+<p>“তাহলে senescence এবং apoptosis দুটোই tissue homeostasis এবং cancer control-এর জন্য গুরুত্বপূর্ণ, কিন্তু তাদের কাজ আলাদা।”</p>
+<p>ম্যাডাম মাথা নাড়লেন।</p>
+<p>“ঠিক। তোমরা এই পার্থক্যটা পরিষ্কারভাবে বুঝে রাখবে।”</p>
+</div></section>
+<section class="sec r" id="s21"><h3>১৬. Library study: শেষ হয়নি, আরও গভীরে যেতে হবে</h3><div class="body">
+<p>বিকেল।</p>
+<p>DMC library-র একটি টেবিলে Adi, Amrita, Rafi, Nabila এবং Tuhin বসেছে।</p>
+<p>সবার সামনে Gray’s Anatomy-র notes। আজকের lecture-এর পর তারা একসঙ্গে পুরো বিষয়টা আবার সাজাচ্ছে।</p>
+<p>Rafi বলল—</p>
+<p>“আমার কাছে সবচেয়ে confusing লাগছে senescence আর apoptosis-এর relationship।”</p>
+<p>Adi বলল—</p>
+<p>“দুটোকে একই জিনিস ভাবলে ভুল হবে। Senescence-এ cell division বন্ধ হয়, কিন্তু cell জীবিত থাকে। Apoptosis-এ controlled cell death হয়।”</p>
+<p>Amrita বলল—</p>
+<p>“আর SASP-এর কারণে senescent cell আশপাশের cell-কে প্রভাবিত করতে পারে। তাই senescence সবসময় uncomplicated protective mechanism নয়।”</p>
+<p>Nabila বলল—</p>
+<p>“আমার কাছে mitochondrial pathway কঠিন লাগছে। BIDD, BAX–BAK, cytochrome c, apoptosome—সব একসঙ্গে মনে রাখা কঠিন।”</p>
+<p>Adi খাতাটা তার দিকে এগিয়ে দিল।</p>
+<p>“একটা chain হিসেবে মনে রাখ। BIDD-এর পর BAX–BAK channel, তারপর cytochrome c release, এরপর apoptosome, তারপর caspase activation।”</p>
+<p>Amrita বলল—</p>
+<p>“আর FasL pathway-তে FADD ভুলে যাস না। Death receptor থেকে adaptor protein FADD, তারপর caspase 8।”</p>
+<p>Tuhin মজা করে বলল—</p>
+<p>“তোরা দুজন মিলে আমাদের পুরো batch-এর private Anatomy coaching খুলে ফেল।”</p>
+<p>Adi হেসে বলল—</p>
+<p>“আগে নিজেরা ভালোভাবে শিখি। তারপর সবাইকে পড়াব।”</p>
+<p>Amrita জানালার বাইরে তাকাল। বিকেলের আলো ধীরে ধীরে কমে আসছে।</p>
+<p>“Adi, আমরা সত্যিই কি একদিন এমন doctor হতে পারব, যারা শুধু মুখস্থ করে না—প্রতিটি বিষয় বুঝে?”</p>
+<p>Adi কিছুক্ষণ চুপ করে রইল।</p>
+<p>তারপর বলল—</p>
+<p>“আমরা যদি প্রতিদিন একটু একটু করে শিখি, তাহলে পারব। আর একটা কথা—তুই পাশে থাকলে কঠিন জিনিসগুলোও সহজ লাগে।”</p>
+<p>Amrita তার দিকে তাকিয়ে মৃদু হাসল।</p>
+<p>“এটা কি Anatomy-র অংশ?”</p>
+<p>“না। এটা আমার নিজের observation।”</p>
+<p>“তাহলে সেটা আলাদা notebook-এ লিখে রাখ।”</p>
+<p>দুজনেই হেসে উঠল।</p>
+<p>কিন্তু তাদের পড়া তখনও শেষ হয়নি।</p>
+</div></section>
+<section class="sec r" id="s22"><h3>১৭. Telomere-initiated cellular senescence: পরবর্তী গভীরতা</h3><div class="body">
+<p>রাতের group study-তে Adi আবার Gray’s Anatomy খুলল। Page 70-এ নতুন একটি গুরুত্বপূর্ণ continuation।</p>
+<p>সে বলল—</p>
+<p>“আজকের বিষয় এখানেই শেষ নয়। Telomere shortening কীভাবে senescence-এর সঙ্গে যুক্ত, সেটা বুঝতে হবে।”</p>
+<p>Gray’s Anatomy অনুযায়ী, chromosome-এর শেষ প্রান্তের telomeres প্রতিবার DNA replication-এর সঙ্গে সঙ্গে ছোট এবং অধিক dysfunctional হয়ে যায়।</p>
+<p>Telomere shortening DNA damage response activate করতে পারে।</p>
+<p>এর ফলে:</p>
+<ul><li>Mitochondrial dysfunction হতে পারে।</li><li>ATP production কমে যেতে পারে।</li><li>Reactive oxygen species (ROS) বৃদ্ধি পেতে পারে।</li><li>p53 activate হতে পারে।</li></ul>
+<p>Activated p53 stem cells এবং progenitor cells-এর মধ্যে:</p>
+<ul><li>Growth arrest</li><li>Apoptosis</li><li>Senescence</li></ul>
+<p>induce করতে পারে।</p>
+</div></section>
+<section class="sec r" id="s23"><h3>p53 এবং longevity signalling</h3><div class="body">
+<p>p53 বিভিন্ন longevity-related metabolic signalling pathway-এর সঙ্গে interconnect করে। Gray’s Anatomy এখানে উল্লেখ করেছে:</p>
+<ul><li>Insulin pathway</li><li>Insulin-like growth factor I (IGF-I) pathway</li><li>Mammalian target of rapamycin (mTOR) pathway</li></ul>
+<p>এই pathway-গুলো stress resistance এবং energy balance-এ ভূমিকা রাখা gene-এর expression বাড়িয়ে lifespan regulate করতে পারে।</p>
+</div></section>
+<section class="sec r" id="s24"><h3>Dyskeratosis congenita</h3><div class="body">
+<p>Gray’s Anatomy-তে premature ageing syndrome dyskeratosis congenita-র সঙ্গে দুটি gene-এর mutation-এর সম্পর্ক উল্লেখ করা হয়েছে:</p>
+<ul><li>TERC: RNA component of telomerase</li><li>TERT: Catalytic component of telomerase</li></ul>
+<p>বর্ণিত clinical features:</p>
+<ul><li>Fingernails এবং toenails-এর poor growth</li><li>Skin pigmentation</li><li>Oral leukoplakia</li></ul>
+</div></section>
+<section class="sec r" id="s25"><h3>Cellular senescence-এর আরও দুটি contributor</h3><div class="body">
+<ul><li>Dysregulated autophagy</li><li>Ubiquitin–26S proteasome machinery-এর মাধ্যমে misfolded proteins যথাযথভাবে dispose করতে না পারা</li></ul>
+<p>এই প্রতিক্রিয়াগুলোকে একত্রে বলা হয়—</p>
+<p>Telomere-initiated cellular senescence.</p>
+<p>Amrita বলল—</p>
+<p>“তাহলে telomere shortening শুধু chromosome-এর শেষ প্রান্ত ছোট হওয়ার ঘটনা নয়। এটি DNA damage response, mitochondrial dysfunction এবং p53 activation-এর সঙ্গেও যুক্ত।”</p>
+<p>Adi বলল—</p>
+<p>“ঠিক। আর এই পুরো pathway-টাই আজকের পড়ার সবচেয়ে গুরুত্বপূর্ণ molecular connection।”</p>
+</div></section>
+<section class="sec r" id="s26"><h3>আজকের পড়ার অগ্রগতি</h3><div class="body">
+<p>Episode 23 — Completed</p>
+<p>Source checked</p>
+<p>আজ আলোচনা করা হয়েছে</p>
+<ul><li>Ageing এবং physiological decline</li><li>Cellular senescence ও irreversible growth arrest</li><li>Quiescence বনাম senescence</li><li>SASP এবং senescence markers</li><li>Senescence-এর causes</li><li>Tumour suppression এবং cancer progression-এর সঙ্গে সম্পর্ক</li><li>p53 ও p16–RB pathways</li><li>Apoptosis ও biological importance</li><li>Necrosis বনাম apoptosis</li><li>Caspases এবং activation cascade</li><li>Granzyme B pathway</li><li>FasL–FADD pathway</li><li>Intrinsic mitochondrial cytochrome c pathway</li><li>Apoptosome formation</li><li>Telomere-initiated cellular senescence</li><li>TERC, TERT এবং dyskeratosis congenita</li></ul>
+<p>Gray’s Anatomy progress ledger</p>
+
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-022.html">← Episode 22</a><a href="index.html">সব পর্ব</a><a href="episode-024.html">Episode 24 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">Episode 23 — The Cells That Refused to Die</a><a href="#s2">১. একটি অদ্ভুত প্রশ্ন</a><a href="#s3">২. Ageing: কোষের কার্যক্ষমতার ধীর অবনতি</a><a href="#s4">৩. Cellular Senescence: Cell যখন স্থায়ীভাবে division বন্ধ করে দেয়</a><a href="#s5">Quiescence বনাম Senescence</a><a href="#s6">৪. Senescent cells কি শুধু নিষ্ক্রিয়?</a><a href="#s7">৫. Senescent cells শনাক্ত করা যায় কীভাবে?</a><a href="#s8">৬. Cellular Senescence কী কারণে হয়?</a><a href="#s9">৭. Senescence এবং Cancer: একই ব্যবস্থার দুই দিক</a><a href="#s10">Cancer cell কীভাবে senescence এড়িয়ে যায়?</a><a href="#s11">৮. Apoptosis: Cell-এর নিয়ন্ত্রিত আত্মবিনাশ</a><a href="#s12">APOPTOSIS</a><a href="#s13">Apoptosis-এর biological importance</a><a href="#s14">৯. Necrosis বনাম Apoptosis: Morphological difference</a><a href="#s15">১০. Caspases: Apoptosis-এর execution machinery</a><a href="#s16">১১. Apoptosis trigger হয় কীভাবে?</a><a href="#s17">১২. Granzyme B pathway: Cytotoxic cell-এর অস্ত্র</a><a href="#s18">১৩. Fas ligand pathway: Death receptor-এর মাধ্যমে সংকেত</a><a href="#s19">১৪. Mitochondrial pathway: Intrinsic apoptosis</a><a href="#s20">১৫. Senescence বনাম Apoptosis: কেন দুটোই প্রয়োজন?</a><a href="#s21">১৬. Library study: শেষ হয়নি, আরও গভীরে যেতে হবে</a><a href="#s22">১৭. Telomere-initiated cellular senescence: পরবর্তী গভীরতা</a><a href="#s23">p53 এবং longevity signalling</a><a href="#s24">Dyskeratosis congenita</a><a href="#s25">Cellular senescence-এর আরও দুটি contributor</a><a href="#s26">আজকের পড়ার অগ্রগতি</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

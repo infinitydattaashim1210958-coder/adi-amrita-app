@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 002 · কোষের পরিচয়পত্র</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+code.bx{font-family:"Special Elite","Noto Serif Bengali",monospace;font-size:.88em;color:var(--teal);background:rgba(98,211,198,.07);border:1px solid #2c5a58;border-radius:7px;padding:1px 9px;margin:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 002">EPISODE 002</h1>
+  <div class="ttl">কোষের পরিচয়পত্র</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">002</div></div>
+    <div class="face b"><div class="t2">কোষের পরিচয়পত্র</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>পর্ব ২: কোষের পরিচয়পত্র</h3><div class="body">
+<p>আজকের Gray's Anatomy পাঠ: 41st Edition · Chapter 1 · Basic structure and function of cells · CELL STRUCTURE · পৃষ্ঠা ৩৫-এর নির্দিষ্ট অংশ</p>
+</div></section>
+<section class="sec r" id="s2"><h3>গল্প</h3><div class="body">
+</div></section>
+<section class="sec r" id="s3"><h3>১. বাইরের আবরণে কী লেখা থাকে?</h3><div class="body">
+<p>বিকেলের দিকে লাইব্রেরির জানালায় বৃষ্টির ফোঁটা জমেছে। টেবিলের ওপর খোলা বই, দুটো খাতা আর একটি অর্ধেক খাওয়া বিস্কুটের প্যাকেট।</p>
+<p>আদি পৃষ্ঠা ৩৪-এর শেষ লাইনটা আবার পড়ছিল। অমৃতা তার পাশে বসে আগের দিনের নোট গুছিয়ে নিচ্ছিল।</p>
+<p>— একটা জিনিস বুঝলাম না।</p>
+<p>— আবার কোনটা?</p>
+<p>— Cell-এর বাইরের membrane তো আগেই পড়লাম। তাহলে এর বাইরে আবার আলাদা coat কেন?</p>
+<p>অমৃতা পৃষ্ঠা ৩৫ খুলে তার সামনে রাখল।</p>
+<p>— এই যে, <code class="bx">Cell coat (glycocalyx)</code>। Plasma membrane-এর বাইরের surface আর internal membrane-এর surface একরকম নয়।</p>
+<p>— পার্থক্যটা কী?</p>
+<p>— বাইরের দিকে একটা fuzzy, carbohydrate-rich coat থাকে। এটাই glycocalyx।</p>
+<p>আদি খাতায় লিখতে গিয়ে থামল।</p>
+<p>— Fuzzy মানে দেখতে ঝাপসা?</p>
+<p>— এখানে বোঝানো হচ্ছে, এটি একটা diffusely filamentous layer-এর মতো। Lipoprotein surface থেকে বাইরে দিকে projection করে।</p>
+<p>— কতটা বাইরে?</p>
+<p>— ২–২০ nm বা তারও বেশি।</p>
+<p>আদি সংখ্যাটা লিখল। তারপর বলল,</p>
+<p>— তাহলে glycocalyx কি plasma membrane-এর সঙ্গে আলাদা করে লেগে থাকা একটা স্তর?</p>
+<p>— আলাদা করে ঝুলে থাকা কিছু নয়। এটি plasma membrane-এর integral part।</p>
+<p>— অর্থাৎ membrane-এর অংশ হিসেবেই ধরতে হবে?</p>
+<p>— হ্যাঁ। আর এর উপাদানগুলো কী, সেটা বলুন তো?</p>
+<p>আদি আগের পাতার কথা মনে করার চেষ্টা করল।</p>
+<p>— Carbohydrate… protein আর lipid-এর সঙ্গে যুক্ত থাকে। Glycoprotein এবং glycolipid?</p>
+<p>— একদম। Glycocalyx-এর carbohydrate অংশ আসে plasma membrane-এ embedded glycoproteins ও glycolipids থেকে।</p>
+<p>আদি এবার একটা ছোট diagram আঁকল। নিচে membrane-এর রেখা, তার ওপর protein ও lipid, আর বাইরে দিকে আঁকাবাঁকা carbohydrate chain।</p>
+<p>অমৃতা diagram-টা দেখে বলল,</p>
+<p>— একটা ভুল করবেন না। Glycocalyx-কে শুধু carbohydrate-এর একটা নাম ভেবে বসবেন না। এখানে membrane-এর glycoprotein ও glycolipid-এর carbohydrate portions মিলে cell coat তৈরি করছে।</p>
+<p>আদি diagram-এর পাশে লিখল:</p>
+<p><code class="bx">Glycocalyx = carbohydrate portions of membrane glycoproteins + glycolipids</code></p>
+<p>— এবার বুঝেছি। কিন্তু সব cell-এর glycocalyx কি একই রকম?</p>
+<p>— না। এর precise composition cell type অনুযায়ী পরিবর্তিত হয়।</p>
+</div></section>
+<section class="sec r" id="s4"><h3>২. Cell-এর পরিচয় কোথায়?</h3><div class="body">
+<p>আদি পেনটা নামিয়ে বলল,</p>
+<p>— Composition আলাদা হলে কাজেও পার্থক্য থাকবে?</p>
+<p>— অবশ্যই। বিভিন্ন tissue ও cell type-specific antigen এই coat-এ থাকতে পারে।</p>
+<p>— যেমন?</p>
+<p>অমৃতা দুটো নাম লিখল:</p>
+<ul><li>Major histocompatibility complex</li><li>Blood group antigens</li></ul>
+<p>— প্রথমটা immune system-এর সঙ্গে সম্পর্কিত। আর erythrocytes-এর ক্ষেত্রে blood group antigens glycocalyx-এ থাকে।</p>
+<p>আদি বলল,</p>
+<p>— তাহলে erythrocyte-এর blood group antigen cell-এর বাইরের coat-এর সঙ্গে সম্পর্কিত?</p>
+<p>— ঠিক। আর এই কারণেই glycocalyx-এর গুরুত্ব শুধু cell-এর আবরণে সীমাবদ্ধ নয়।</p>
+<p>— আরেকটা গুরুত্ব আছে?</p>
+<p>অমৃতা এবার তার দিকে তাকাল।</p>
+<p>— Organ transplant compatibility।</p>
+<p>আদি কিছুক্ষণ চুপ করে রইল।</p>
+<p>— অর্থাৎ transplant-এর ক্ষেত্রে donor ও recipient-এর tissue compatibility বিবেচনার সঙ্গে glycocalyx-এর antigen-গুলোর সম্পর্ক আছে?</p>
+<p>— হ্যাঁ। এই অংশে glycocalyx-এর সেই significant role-টাই উল্লেখ করা হয়েছে।</p>
+<p>আদি খাতায় লিখল:</p>
+<p><code class="bx">Glycocalyx → tissue/cell-specific antigens → transplant compatibility</code></p>
+<p>তারপর হঠাৎ বলল,</p>
+<p>— তাহলে cell-এর বাইরের আবরণ অনেকটা পরিচয়পত্রের মতো!</p>
+<p>অমৃতা হেসে ফেলল।</p>
+<p>— উপমাটা মনে রাখার জন্য ভালো। তবে পরিচয়পত্র বললেই যেন মনে না করেন glycocalyx-এর কাজ শুধু পরিচয় দেওয়া।</p>
+<p>— আচ্ছা, আর কী কাজ?</p>
+</div></section>
+<section class="sec r" id="s5"><h3>৩. অন্ত্রের ক্ষুদ্র ব্রাশ</h3><div class="body">
+<p>অমৃতা বইয়ের পরের অংশে আঙুল রাখল।</p>
+<p>— Enterocytes-এর apical microvilli-তে যে glycocalyx থাকে, সেখানে digestive process-এ অংশ নেওয়া enzymes রয়েছে।</p>
+<p>আদি বলল,</p>
+<p>— Enterocytes মানে intestine-এর lining epithelium তৈরি করা cell-গুলো?</p>
+<p>— হ্যাঁ। আর তাদের apical microvilli-র glycocalyx-এ digestive enzymes থাকে।</p>
+<p>— Microvilli-গুলো দেখতে কেমন?</p>
+<p>— Cylindrical projections। দৈর্ঘ্য ১–২ μm, আর diameter প্রায় ০.১ μm।</p>
+<p>আদি এবার একটা লম্বা সরু projection আঁকল।</p>
+<p>— এগুলো কি আলাদা আলাদা দাঁড়িয়ে থাকে?</p>
+<p>— Intestinal microvilli খুব ঘনভাবে পাশাপাশি সাজানো থাকে। এই closely packed layer-কে বলা হয় brush border।</p>
+<p>— Brush border নামটা কেন?</p>
+<p>— ঘন microvilli-গুলো একসঙ্গে থাকলে ব্রাশের মতো একটা layer তৈরি করে—নামটা সেখান থেকেই মনে রাখতে পারেন।</p>
+<p>আদি বলল,</p>
+<p>— আর এই layer enterocytes-এর absorptive function বাড়ায়?</p>
+<p>— ঠিক। তাই microvilli, brush border আর glycocalyx—এই তিনটা বিষয় একসঙ্গে মনে রাখতে হবে।</p>
+<p>আদি নিজের ভাষায় বোঝানোর চেষ্টা করল,</p>
+<p>— Enterocyte-এর apical surface-এ cylindrical microvilli থাকে। এগুলো ১–২ μm লম্বা এবং প্রায় ০.১ μm diameter-এর। ঘনভাবে সাজানো microvilli মিলে brush border তৈরি করে। এদের glycocalyx-এ digestive enzymes থাকে এবং brush border absorption-এ সাহায্য করে।</p>
+<p>অমৃতা মাথা নাড়ল।</p>
+<p>— ভালো। তবে মনে রাখবেন, enzyme-এর অবস্থান হলো apical microvilli-এর glycocalyx। শুধু microvilli বললে পুরো কথাটা বলা হয় না।</p>
+<p>আদি পাশে তারকা চিহ্ন দিল।</p>
+</div></section>
+<section class="sec r" id="s6"><h3>৪. Cytoplasm-এর ভেতরে কী আছে?</h3><div class="body">
+<p>অমৃতা এবার পরের heading-এ গেল।</p>
+<p><code class="bx">Cytoplasm</code></p>
+<p>আদি বলল,</p>
+<p>— আগের দিন আমরা cytoplasm-কে অনেকগুলো অংশের সমষ্টি হিসেবে লিখেছিলাম। এবার একটু বিস্তারিত পড়ি।</p>
+<p>— এখানে প্রথমেই cytosol-এর কথা আছে। Cytoplasm-এ cytosol থাকে, যা gel-like material।</p>
+<p>— এটা কি plasma membrane-এর ভেতরে থাকে?</p>
+<p>— হ্যাঁ। Cell বা plasma membrane-এর ভেতরে cytosol আবদ্ধ থাকে।</p>
+<p>আদি জিজ্ঞেস করল,</p>
+<p>— Cytosol-এর composition কী?</p>
+<p>— এতে colloidal proteins থাকে; যেমন enzymes। এছাড়া carbohydrates, small protein molecules, ribosomes এবং ribonucleic acids থাকে।</p>
+<p>আদি বলল,</p>
+<p>— তাহলে cytosol শুধু পানি বা তরল নয়। এর মধ্যে বিভিন্ন molecule ও structure ছড়িয়ে থাকে।</p>
+<p>— ঠিক। আর cytoplasm-এর মধ্যে দুইটি cytomembrane system আছে।</p>
+<p>— Endoplasmic reticulum এবং Golgi apparatus?</p>
+<p>— হ্যাঁ। এর পাশাপাশি membrane-bound organelles থাকে—lysosomes, peroxisomes এবং mitochondria।</p>
+<p>আদি তালিকা লিখতে লাগল।</p>
+<p>— আর membrane-free inclusions?</p>
+<p>— Lipid droplets, glycogen এবং pigments।</p>
+<p>— Cytoskeleton-ও থাকবে?</p>
+<p>— অবশ্যই।</p>
+<p>অমৃতা এবার খাতার পাতায় একটি বড় বাক্স আঁকল। তার ভেতরে কয়েকটি ভাগ:</p>
+<ul><li>Cytosol</li><li>Endoplasmic reticulum</li><li>Golgi apparatus</li><li>Lysosomes</li><li>Peroxisomes</li><li>Mitochondria</li><li>Lipid droplets</li><li>Glycogen</li><li>Pigments</li><li>Cytoskeleton</li></ul>
+<p>আদি বলল,</p>
+<p>— Nucleus-এর contents কি cytoplasm-এর মধ্যে পড়বে?</p>
+<p>অমৃতা মাথা নাড়ল।</p>
+<p>— না। Nuclear contents-কে nucleoplasm বলা হয়। Nuclear envelope nucleoplasm-কে cytoplasm থেকে পৃথক করে রাখে।</p>
+<p>আদি নিজের diagram-এ nucleus-এর চারপাশে আলাদা boundary আঁকল।</p>
+<p>— তাহলে cytoplasm আর nucleoplasm আলাদা compartment।</p>
+<p>— ঠিক।</p>
+</div></section>
+<section class="sec r" id="s7"><h3>৫. Endoplasmic reticulum: কোষের ভেতরের পথঘাট</h3><div class="body">
+<p>আদি পৃষ্ঠা উল্টে আবার থামল।</p>
+<p>— <code class="bx">Endoplasmic reticulum</code>। নামটা জানি, কিন্তু এর structure কল্পনা করতে পারি না।</p>
+<p>অমৃতা বলল,</p>
+<p>— Cytoplasm-এর মধ্যে interconnecting membrane-lined channels-এর একটা system কল্পনা করুন।</p>
+<p>— সব channel কি একই রকম?</p>
+<p>— না। এগুলো বিভিন্ন আকৃতি নিতে পারে। যেমন:</p>
+<ul><li>Cisternae — flattened sacs</li><li>Tubules</li><li>Vesicles</li></ul>
+<p>আদি বলল,</p>
+<p>— অর্থাৎ Endoplasmic reticulum কোনো একক থলি নয়। পরস্পর সংযুক্ত membrane-lined channel system।</p>
+<p>— হ্যাঁ। আর এর membrane cytoplasm-কে দুটি প্রধান compartment-এ ভাগ করে।</p>
+<p>— কোন দুটি?</p>
+<p>অমৃতা লিখল:</p>
+<p><code class="bx">Cytosol</code> <code class="bx">Intramembranous compartment / cisternal space</code></p>
+<p>— Cisternal space-এর কাজ কী?</p>
+<p>— Secretory products এখানে store হতে পারে, অথবা Golgi complex ও cell exterior-এর দিকে transport হতে পারে।</p>
+<p>আদি বলল,</p>
+<p>— অর্থাৎ কিছু secretory product এই space-এর মধ্যে থাকে বা এর মধ্য দিয়ে এগোয়।</p>
+<p>— ঠিক। আর একটা গুরুত্বপূর্ণ সম্পর্ক আছে।</p>
+<p>— কী?</p>
+<p>— Cisternal space, perinuclear space-এর সঙ্গে continuous।</p>
+<p>আদি তার diagram-এ nucleus-এর বাইরের দিকে একটা membrane channel যুক্ত করে দেখাল।</p>
+<p>— মানে nuclear envelope-এর সঙ্গে এর continuity আছে?</p>
+<p>— এখানে যে continuity-র কথা বলা হচ্ছে, সেটা perinuclear space ও cisternal space-এর মধ্যে।</p>
+<p>আদি বলল,</p>
+<p>— বুঝেছি। এবার RER আর SER?</p>
+</div></section>
+<section class="sec r" id="s8"><h3>৬. Rough আর Smooth—নামের পেছনের কারণ</h3><div class="body">
+<p>অমৃতা একটা ছোট diagram আঁকল। একটিতে membrane-এর বাইরের দিকে ছোট ছোট granule, অন্যটিতে কিছু নেই।</p>
+<p>— এই যে granule-গুলো, এগুলো ribosomes। যেটার cytosolic surface-এ ribosomes attached থাকে, সেটা rough বা granular endoplasmic reticulum (RER)।</p>
+<p>— আর যেটাতে ribosomes নেই?</p>
+<p>— Smooth বা agranular endoplasmic reticulum (SER)।</p>
+<p>আদি বলল,</p>
+<p>— নামের কারণ তাহলে surface-এর appearance।</p>
+<p>— হ্যাঁ। তবে কাজের পার্থক্যও গুরুত্বপূর্ণ।</p>
+<p>অমৃতা RER-এর পাশে লিখল:</p>
+<p><code class="bx">Protein synthesis, folding and transport</code></p>
+<p>SER-এর পাশে লিখল:</p>
+<p><code class="bx">Phospholipid and steroid synthesis; calcium storage and release</code></p>
+<p>আদি বলল,</p>
+<p>— Endoplasmic reticulum-এর function অনেকগুলো। Protein synthesis, folding, transport; phospholipid ও steroid synthesis এবং transport; cisternal space-এ calcium storage ও regulated release।</p>
+<p>— ঠিক। এবার কোন cell-এ কোনটা বেশি developed, সেটা দেখি।</p>
+</div></section>
+<section class="sec r" id="s9"><h3>৭. RER কোথায় বেশি?</h3><div class="body">
+<p>অমৃতা বলল,</p>
+<p>— RER সাধারণত সেই cell-গুলোতে বেশি developed, যেগুলো abundant protein produce করে।</p>
+<p>আদি বলল,</p>
+<p>— যেমন secretory cell?</p>
+<p>— হ্যাঁ। বিশেষ করে যেসব cell protein secretion-এর জন্য তৈরি, তাদের RER ভালোভাবে developed থাকে।</p>
+<p>আদি জিজ্ঞেস করল,</p>
+<p>— SER?</p>
+<p>— Steroid-producing cells এবং muscle cells-এ SER abundant।</p>
+<p>আদি একটু থেমে বলল,</p>
+<p>— Muscle cell-এ SER-এর বিশেষ নাম আছে?</p>
+<p>— আছে। Muscle cell-এ endoplasmic reticulum-এর একটি variant হলো sarcoplasmic reticulum।</p>
+<p>— এর কাজ?</p>
+<p>— Calcium storage এবং release। এই calcium muscle contraction-এর জন্য ব্যবহৃত হয়।</p>
+<p>আদি খাতায় লিখল:</p>
+<p><code class="bx">Sarcoplasmic reticulum → Ca²⁺ storage and release → muscle contraction</code></p>
+<p>অমৃতা বলল,</p>
+<p>— আর SER-এর metabolic কাজগুলো ভুলবেন না।</p>
+<p>— যেমন?</p>
+<p>— Carbohydrate metabolism, detoxification, lipid synthesis, cholesterol synthesis এবং steroid synthesis।</p>
+<p>আদি বলল,</p>
+<p>— Detoxification-এ কোন enzyme-এর কথা আছে?</p>
+<p>— Cytochrome P450।</p>
+<p>অমৃতা ব্যাখ্যা করল, SER-এর membrane অনেক enzyme system-এর attachment surface হিসেবে কাজ করে। Cytochrome P450 গুরুত্বপূর্ণ detoxification mechanism-এ অংশ নেয়। এর substrate সাধারণত lipophilic, তাই enzyme system-এর কাছে সেগুলো পৌঁছানো সম্ভব হয়।</p>
+<p>আদি বলল,</p>
+<p>— অর্থাৎ membrane শুধু একটা boundary নয়; enzyme system-এর কাজ করার surface-ও।</p>
+<p>— ঠিক। আর SER, RER এবং Golgi apparatus একসঙ্গে নতুন membrane তৈরিতেও কাজ করে।</p>
+<p>— Protein, carbohydrate আর lipid component কি একই জায়গায় যোগ হয়?</p>
+<p>— না। এগুলো বিভিন্ন structural compartment-এ যুক্ত হয়।</p>
+<p>আদি তার খাতায় লিখল:</p>
+<p><code class="bx">RER + SER + Golgi apparatus → new membrane synthesis</code></p>
+<p>তারপর নিচে ছোট করে লিখল, “components added in different compartments”।</p>
+<p>অমৃতা বলল,</p>
+<p>— Hepatocyte-এর SER-এর একটা নির্দিষ্ট enzyme-এর কথাও আছে।</p>
+<p>— কোনটা?</p>
+<p>— Glucose-6-phosphatase।</p>
+<p>— এর reaction?</p>
+<p>— এটি glucose-6-phosphate-কে glucose-এ রূপান্তর করে। এটি gluconeogenesis-এর একটি step।</p>
+<p>আদি বলল,</p>
+<p>— Hepatocyte-এর SER-এ glucose-6-phosphatase—এই association-টা মনে রাখব।</p>
+</div></section>
+<section class="sec r" id="s10"><h3>৮. Rough Endoplasmic Reticulum-এর ভেতরের কাজ</h3><div class="body">
+<p>আদি এবার RER-এর diagram-এর দিকে ফিরে গেল।</p>
+<p>— RER-এর cytosolic surface-এ ribosomes থাকে। তাহলে protein synthesis কি ওই surface-এই শুরু হয়?</p>
+<p>— হ্যাঁ। RER হলো protein synthesis-এর site।</p>
+<p>— সব ribosome কি সব সময় RER-এর সঙ্গে যুক্ত থাকে?</p>
+<p>— না। Ribosomes তখনই endoplasmic reticulum-এ bind করে, যখন secretion-এর জন্য নির্ধারিত protein synthesis শুরু হয়।</p>
+<p>আদি বলল,</p>
+<p>— অর্থাৎ protein-এর destination গুরুত্বপূর্ণ।</p>
+<p>— ঠিক। অধিকাংশ protein RER-এর membrane অতিক্রম করে এর cisternae-এর মধ্যে জমা হয়।</p>
+<p>— সব protein?</p>
+<p>— না। কিছু integral membrane protein, যেমন plasma membrane receptor, RER membrane-এর মধ্যে insert হয় এবং সেখানেই থেকে যায়।</p>
+<p>আদি diagram-এ দুই ধরনের পথ আঁকল:</p>
+<ul><li>Protein → RER membrane অতিক্রম → cisternae</li><li>Integral membrane protein → RER membrane-এ insert</li></ul>
+<p>অমৃতা বলল,</p>
+<p>— এরপর RER থেকে বের হওয়া protein-এর পরিণতি কী হতে পারে, বলুন তো?</p>
+<p>আদি আঙুল গুনল।</p>
+<p>— Lysosome-এর মতো membrane-bound cytoplasmic organelle-এ থাকতে পারে। নতুন plasma membrane-এর অংশ হতে পারে। অথবা cell থেকে secreted হতে পারে।</p>
+<p>— ভালো। আর carbohydrate?</p>
+<p>— RER-এ carbohydrate synthesis-ও হতে পারে?</p>
+<p>— কিছু carbohydrate RER-এর cavity-র ভেতরে থাকা enzyme-এর মাধ্যমে synthesize হয়। পরে সেগুলো newly formed protein-এর সঙ্গে যুক্ত হতে পারে। এই attachment-কে glycosylation বলা হয়।</p>
+<p>আদি বলল,</p>
+<p>— তাহলে RER শুধু protein তৈরি করে না; কিছু protein-এর সঙ্গে carbohydrate যুক্ত করার কাজও হয়।</p>
+<p>— হ্যাঁ। আর RER থেকে vesicles bud off করে Golgi-তে যায়। এটি cell-এর protein-targeting mechanism-এর অংশ।</p>
+<p>আদি বলল,</p>
+<p>— অর্থাৎ RER থেকে তৈরি হওয়া product-গুলোকে ঠিক জায়গায় পাঠানোর প্রক্রিয়ায় vesicle transport কাজ করে।</p>
+<p>অমৃতা মাথা নাড়ল।</p>
+</div></section>
+<section class="sec r" id="s11"><h3>৯. Ribosome—ছোট যন্ত্র, বড় কাজ</h3><div class="body">
+<p>আদি এবার পরের heading পড়ল:</p>
+<p><code class="bx">Ribosomes, polyribosomes and protein synthesis</code></p>
+<p>— Ribosome তো protein synthesis করে। কিন্তু এর subunit তৈরি হয় কোথায়?</p>
+<p>অমৃতা বলল,</p>
+<p>— Ribosome হলো macromolecular machine, যা amino acids থেকে protein synthesis catalyse করে।</p>
+<p>— আর ribosome-এর subunit assembly?</p>
+<p>— Nucleolus-এ।</p>
+<p>আদি বলল,</p>
+<p>— সেখানে কি rRNA আর protein একসঙ্গে যুক্ত হয়?</p>
+<p>— হ্যাঁ। Ribosomal RNA বা rRNA-এর সঙ্গে ribosomal proteins যুক্ত হয়ে subunit তৈরি করে। Ribosomal proteins cytoplasm-এ synthesize হয়, তারপর nucleolus-এ translocated হয়।</p>
+<p>— এরপর?</p>
+<p>— Individual subunit cytoplasm-এ transport হয়। Protein synthesis সক্রিয় না থাকলে দুই subunit আলাদা থাকে।</p>
+<p>আদি বলল,</p>
+<p>— অর্থাৎ ribosome-এর বড় ও ছোট subunit আগে থেকেই আলাদা অবস্থায় থাকতে পারে, আর active protein synthesis-এর সময় তারা একসঙ্গে কাজ করে।</p>
+<p>— ঠিক।</p>
+<p>অমৃতা এবার আকারের কথা বলল।</p>
+<p>— Ribosome প্রায় ২৫ nm diameter-এর granule।</p>
+<p>আদি লিখল।</p>
+<p>— rRNA ও protein দিয়ে তৈরি?</p>
+<p>— হ্যাঁ। দুইটি unequal subunit থাকে।</p>
+<p>— বড়টা 60S আর ছোটটা 40S?</p>
+<p>— ঠিক। Ultracentrifuge-এ sedimentation coefficient দিয়ে এদের আলাদা করা যায়।</p>
+<p>আদি বলল,</p>
+<p>— S মানে sedimentation coefficient। তাহলে 60S বড় subunit, 40S ছোট subunit।</p>
+<p>অমৃতা বলল,</p>
+<p>— মোট ৭৩টি different proteins এই দুই subunit-এর সঙ্গে associated থাকে।</p>
+<p>আদি দ্রুত লিখল।</p>
+<p>— বড় subunit-এ ৪০টি, ছোট subunit-এ ৩৩টি?</p>
+<p>— হ্যাঁ।</p>
+<p>অমৃতা আরও বলল,</p>
+<p>— বড় subunit-এ তিনটি ছোট, highly convoluted rRNA strand থাকে: 28S, 5.8S এবং 5S। ছোট subunit-এ থাকে একটি strand—18S rRNA।</p>
+<p>আদি খাতার পাশে চারটি rRNA নাম আলাদা করে লিখল।</p>
+<p>— 28S, 5.8S, 5S—large; 18S—small।</p>
+<p>— এই mnemonic-টা আপনার নিজের, কিন্তু তথ্যগুলো ঠিক রেখেছেন।</p>
+</div></section>
+<section class="sec r" id="s12"><h3>১০. Polyribosome: একই নির্দেশে অনেক ribosome</h3><div class="body">
+<p>আদি বলল,</p>
+<p>— একটা cell-এ কত ribosome থাকে?</p>
+<p>— Typical cell-এ millions of ribosomes থাকে।</p>
+<p>— সবগুলো কি আলাদা আলাদা কাজ করে?</p>
+<p>— না। অনেক সময় তারা group তৈরি করে। এই group-কে বলা হয় polyribosomes বা polysomes।</p>
+<p>অমৃতা খাতায় একটি দীর্ঘ mRNA strand আঁকল। তার ওপর অনেকগুলো ribosome বসিয়ে দিল।</p>
+<p>— Ribosome-গুলো messenger RNA বা mRNA-এর সঙ্গে যুক্ত থাকে। Protein synthesis-এর সময় তারা mRNA-কে translate করে।</p>
+<p>আদি বলল,</p>
+<p>— একই mRNA-তে একাধিক ribosome কাজ করতে পারে?</p>
+<p>— হ্যাঁ। Mature polyribosome-এ mRNA-এর সব attachment site ribosome দিয়ে occupied থাকে। Ribosome-গুলো mRNA বরাবর এগিয়ে যায় এবং nucleotide sequence অনুযায়ী protein synthesize করে।</p>
+<p>আদি বলল,</p>
+<p>— তাহলে ribosome-এর সংখ্যা আর তাদের মধ্যকার spacing দেখে mRNA-এর length সম্পর্কে ধারণা পাওয়া যায়?</p>
+<p>— হ্যাঁ। আর সেই length থেকে তৈরি হওয়া protein-এর size সম্পর্কেও ধারণা পাওয়া যায়।</p>
+<p>আদি এবার দুই subunit-এর কাজ জানতে চাইল।</p>
+<p>অমৃতা বলল,</p>
+<p>— 40S subunit হলো mRNA attachment ও translation-এর site।</p>
+<p>— আর 60S?</p>
+<p>— Newly formed protein release করার জন্য দায়ী। প্রয়োজন হলে intermediate docking protein-এর মাধ্যমে endoplasmic reticulum-এর সঙ্গে attachment-এ অংশ নেয়। এর ফলে newly synthesized protein membrane পেরিয়ে cisternal space-এ যেতে পারে।</p>
+<p>আদি এবার তার আঁকা diagram-এর নিচে লিখল:</p>
+<ul><li>40S → mRNA attachment and translation</li><li>60S → release of new protein; ER attachment through intermediate docking protein when appropriate</li></ul>
+<p>অমৃতা খাতার দিকে তাকিয়ে বলল,</p>
+<p>— এবার একটা প্রশ্ন করি। RER-এর সঙ্গে ribosome কখন bind করে?</p>
+<p>আদি উত্তর দিল,</p>
+<p>— যখন secretion-এর জন্য targeted protein-এর synthesis শুরু হয়।</p>
+<p>— আর free ribosome-এর তৈরি protein কি সব সময় cell-এর বাইরে যায়?</p>
+<p>— না। Cytosol ও cytoskeleton-এর enzyme বা protein-এর মতো product cell-এর ভেতরেও ব্যবহার হতে পারে।</p>
+<p>অমৃতা পেনের মাথা দিয়ে টেবিলে দুবার টোকা দিল।</p>
+<p>— এবার অন্তত RER আর free ribosome-কে এক করে ফেলবেন না।</p>
+<p>আদি হাসল।</p>
+<p>— আপনার কাছে viva দিলে হয়তো পাশ করব না, কিন্তু ভুলগুলো কমবে।</p>
+<p>বৃষ্টি ততক্ষণে থেমে গেছে। লাইব্রেরির জানালায় জমে থাকা পানির ফোঁটাগুলো নিচে গড়িয়ে পড়ছে। অমৃতা নিজের খাতাটা বন্ধ করল, কিন্তু আদি তখনো diagram-টা ঠিক করছিল।</p>
+<p>— চলবেন?</p>
+<p>— এক মিনিট। RER-এর diagram-এ vesicle-এর দিকটা ঠিক করিনি।</p>
+<p>অমৃতা ব্যাগ থেকে ছাতা বের করল।</p>
+<p>— ঠিক আছে। আমি বাইরে অপেক্ষা করছি।</p>
+<p>আদি diagram শেষ করে যখন বের হলো, অমৃতা ছাতাটা খুলে দাঁড়িয়ে। তার নিজের ব্যাগের এক পাশ ভিজে গেছে, কিন্তু আদি যে খাতাটা হাতে নিয়ে আসছে, সেটার ওপর সে নিজের ওড়নার কোণা দিয়ে বৃষ্টির পানি মুছে দিল।</p>
+<p>আদি কিছু বলল না। শুধু খাতাটা আরও শক্ত করে ধরে হাঁটতে লাগল।</p>
+<p>লাইব্রেরির সিঁড়ি পেরিয়ে যাওয়ার সময় অমৃতা হঠাৎ জিজ্ঞেস করল,</p>
+<p>— একটা কথা বলুন তো, যদি RER-এ তৈরি protein-এর একটা অংশ membrane-এ থেকে যায়, আর অন্য অংশ cisternal space-এ চলে যায়, তাহলে কোন সংকেত ঠিক করে দেবে কোন protein কোথায় যাবে?</p>
+</div></section>
+<section class="sec r" id="s13"><h3>আজকের খাতা</h3><div class="body">
+</div></section>
+<section class="sec r" id="s14"><h3>১. Cell coat (glycocalyx)</h3><div class="body">
+<ul><li>Plasma membrane-এর external surface-এ carbohydrate-rich, fuzzy coat থাকে।</li><li>এর নাম glycocalyx।</li><li>এটি plasma membrane-এর integral part।</li><li>Lipoprotein surface থেকে diffusely filamentous layer হিসেবে ২–২০ nm বা তারও বেশি বাইরে project করে।</li><li>Composed of carbohydrate portions of:<ul><li>Glycoproteins</li><li>Glycolipids</li></ul></li><li>Composition cell type অনুযায়ী পরিবর্তিত হয়।</li><li>Tissue ও cell type-specific antigen থাকতে পারে:<ul><li>Major histocompatibility complex</li><li>Erythrocyte blood group antigens</li></ul></li><li>Organ transplant compatibility-তে গুরুত্বপূর্ণ ভূমিকা।</li><li>Enterocyte-এর apical microvilli-এর glycocalyx-এ digestive enzymes থাকে।</li><li>Intestinal microvilli:<ul><li>Cylindrical projections</li><li>Length: ১–২ μm</li><li>Diameter: প্রায় ০.১ μm</li></ul></li><li>Closely packed microvilli-এর layer = brush border</li><li>Brush border enterocyte-এর absorptive function বাড়ায়।</li></ul>
+</div></section>
+<section class="sec r" id="s15"><h3>২. Cytoplasm</h3><div class="body">
+<ul><li>Cytoplasm-এ cytosol থাকে।</li><li>Cytosol হলো gel-like material।</li><li>এতে থাকে:<ul><li>Colloidal proteins, যেমন enzymes</li><li>Carbohydrates</li><li>Small protein molecules</li><li>Ribosomes</li><li>Ribonucleic acids</li></ul></li><li>Cytoplasm-এর cytomembrane systems:<ul><li>Endoplasmic reticulum</li><li>Golgi apparatus</li></ul></li><li>Membrane-bound organelles:<ul><li>Lysosomes</li><li>Peroxisomes</li><li>Mitochondria</li></ul></li><li>Membrane-free inclusions:<ul><li>Lipid droplets</li><li>Glycogen</li><li>Pigments</li></ul></li><li>এছাড়া cytoskeleton থাকে।</li><li>Nucleoplasm হলো nuclear contents; nuclear envelope এটিকে cytoplasm থেকে পৃথক করে।</li></ul>
+</div></section>
+<section class="sec r" id="s16"><h3>৩. Endoplasmic reticulum</h3><div class="body">
+<ul><li>Cytoplasm-এর মধ্যে interconnecting membrane-lined channels-এর system।</li><li>Structural forms:<ul><li>Cisternae — flattened sacs</li><li>Tubules</li><li>Vesicles</li></ul></li><li>Cytoplasm-কে দুটি প্রধান compartment-এ ভাগ করে:<ul><li>Cytosol</li><li>Intramembranous compartment / cisternal space</li></ul></li><li>Cisternal space-এ secretory products store বা transport হয়।</li><li>Cisternal space, perinuclear space-এর সঙ্গে continuous।</li><li>দুই ধরন:<ul><li>Rough / granular endoplasmic reticulum (RER)</li><li>Smooth / agranular endoplasmic reticulum (SER)</li></ul></li><li>প্রধান কাজ:<ul><li>Protein synthesis, folding ও transport</li><li>Phospholipid ও steroid synthesis এবং transport</li><li>Calcium storage ও regulated release</li></ul></li></ul>
+</div></section>
+<section class="sec r" id="s17"><h3>৪. Smooth endoplasmic reticulum</h3><div class="body">
+<ul><li>Ribosome থাকে না।</li><li>Carbohydrate metabolism-এ অংশ নেয়।</li><li>Detoxification-এ ভূমিকা রাখে।</li><li>Lipid, cholesterol ও steroid synthesis করে।</li><li>Membrane enzyme system-এর attachment surface হিসেবে কাজ করে।</li><li>Cytochrome P450 গুরুত্বপূর্ণ detoxification mechanism-এ অংশ নেয়।</li><li>এর substrate সাধারণত lipophilic।</li><li>RER ও Golgi apparatus-এর সঙ্গে নতুন membrane synthesis-এ অংশ নেয়।</li><li>Protein, carbohydrate ও lipid component বিভিন্ন structural compartment-এ যুক্ত হয়।</li><li>Hepatocyte-এর SER-এ glucose-6-phosphatase থাকে।</li><li>এটি glucose-6-phosphate-কে glucose-এ রূপান্তর করে; gluconeogenesis-এর একটি step।</li><li>Muscle cell-এ বিশেষ variant হলো sarcoplasmic reticulum।</li><li>Sarcoplasmic reticulum calcium store ও release করে, যা muscle contraction-এর জন্য প্রয়োজন।</li></ul>
+</div></section>
+<section class="sec r" id="s18"><h3>৫. Rough endoplasmic reticulum</h3><div class="body">
+<ul><li>Cytosolic surface-এ ribosomes থাকে।</li><li>Protein synthesis-এর site।</li><li>Protein secretion-এর জন্য targeted protein synthesis শুরু হলে ribosomes RER-এর সঙ্গে bind করে।</li><li>অধিকাংশ protein RER membrane অতিক্রম করে cisternae-তে জমা হয়।</li><li>কিছু integral membrane protein, যেমন plasma membrane receptor, RER membrane-এ insert হয়।</li><li>RER থেকে আসা protein:<ul><li>Lysosome-এর মতো membrane-bound organelle-এ থাকতে পারে</li><li>New plasma membrane-এ যুক্ত হতে পারে</li><li>Cell থেকে secreted হতে পারে</li></ul></li><li>কিছু carbohydrate RER cavity-র enzyme দ্বারা synthesize হয়।</li><li>Newly formed protein-এর সঙ্গে carbohydrate যুক্ত হওয়া = glycosylation।</li><li>RER থেকে vesicle bud off করে Golgi-তে যায়; এটি protein-targeting mechanism-এর অংশ।</li></ul>
+</div></section>
+<section class="sec r" id="s19"><h3>৬. Ribosomes, polyribosomes and protein synthesis</h3><div class="body">
+<ul><li>Ribosome হলো macromolecular machine; amino acids থেকে protein synthesis catalyse করে।</li><li>Ribosome-এর synthesis ও subunit assembly nucleolus-এ হয়।</li><li>rRNA-এর সঙ্গে cytoplasm-এ তৈরি ribosomal proteins যুক্ত হয়।</li><li>Individual subunit cytoplasm-এ transport হয়।</li><li>Active protein synthesis না হলে subunit দুটি আলাদা থাকে।</li><li>Ribosome:<ul><li>Diameter: প্রায় ২৫ nm</li><li>rRNA ও protein দিয়ে গঠিত</li><li>Unequal দুটি subunit:<ul><li>Large: 60S</li><li>Small: 40S</li></ul></li></ul></li><li>Associated proteins: মোট ৭৩টি<ul><li>Large subunit: ৪০টি</li><li>Small subunit: ৩৩টি</li></ul></li><li>Large subunit rRNA:<ul><li>28S</li><li>5.8S</li><li>5S</li></ul></li><li>Small subunit rRNA:<ul><li>18S</li></ul></li><li>Typical cell-এ millions of ribosomes থাকে।</li><li>Polyribosomes / polysomes হলো mRNA-এর সঙ্গে যুক্ত একাধিক ribosome-এর group।</li><li>Ribosome mRNA-এর nucleotide sequence translate করে protein তৈরি করে।</li><li>Mature polyribosome-এ mRNA-এর attachment site-গুলো occupied থাকে।</li><li>Ribosome-এর সংখ্যা ও spacing থেকে mRNA-এর length এবং তৈরি হওয়া protein-এর size সম্পর্কে ধারণা পাওয়া যায়।</li><li>40S subunit: mRNA attachment ও translation।</li><li>60S subunit: newly formed protein release; প্রয়োজন হলে intermediate docking protein-এর মাধ্যমে ER attachment এবং cisternal space-এ protein passage।</li></ul>
+</div></section>
+<section class="sec r" id="s20"><h3>অগ্রগতি-খাতা</h3><div class="body">
+<div class="tw"><table><thead><tr><th>বিষয়</th><th>অগ্রগতি</th></tr></thead><tbody><tr><td>পর্ব</td><td>২ — কোষের পরিচয়পত্র</td></tr><tr><td>Edition</td><td>Gray's Anatomy, 41st Edition</td></tr><tr><td>Chapter</td><td>1 — Basic structure and function of cells</td></tr><tr><td>সম্পন্ন অংশ</td><td>পৃষ্ঠা ৩৫-এর Cell coat (glycocalyx) থেকে Ribosomes, polyribosomes and protein synthesis পর্যন্ত</td></tr><tr><td>পরবর্তী শুরু</td><td>পৃষ্ঠা ৩৫ — Golgi apparatus (Golgi complex)</td></tr><tr><td>অগ্রগতি</td><td>৩টি সম্পূর্ণ পৃষ্ঠা + পৃষ্ঠা ৩৫-এর আংশিক অংশ</td></tr></tbody></table></div>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-001.html">← Episode 1</a><a href="index.html">সব পর্ব</a><a href="episode-003.html">Episode 3 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">পর্ব ২: কোষের পরিচয়পত্র</a><a href="#s2">গল্প</a><a href="#s3">১. বাইরের আবরণে কী লেখা থাকে?</a><a href="#s4">২. Cell-এর পরিচয় কোথায়?</a><a href="#s5">৩. অন্ত্রের ক্ষুদ্র ব্রাশ</a><a href="#s6">৪. Cytoplasm-এর ভেতরে কী আছে?</a><a href="#s7">৫. Endoplasmic reticulum: কোষের ভেতরের পথঘাট</a><a href="#s8">৬. Rough আর Smooth—নামের পেছনের কারণ</a><a href="#s9">৭. RER কোথায় বেশি?</a><a href="#s10">৮. Rough Endoplasmic Reticulum-এর ভেতরের কাজ</a><a href="#s11">৯. Ribosome—ছোট যন্ত্র, বড় কাজ</a><a href="#s12">১০. Polyribosome: একই নির্দেশে অনেক ribosome</a><a href="#s13">আজকের খাতা</a><a href="#s14">১. Cell coat (glycocalyx)</a><a href="#s15">২. Cytoplasm</a><a href="#s16">৩. Endoplasmic reticulum</a><a href="#s17">৪. Smooth endoplasmic reticulum</a><a href="#s18">৫. Rough endoplasmic reticulum</a><a href="#s19">৬. Ribosomes, polyribosomes and protein synthesis</a><a href="#s20">অগ্রগতি-খাতা</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

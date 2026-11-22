@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 007 · কোষের ভেতরে প্রোটিনের যাত্রাপথ</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 007">EPISODE 007</h1>
+  <div class="ttl">কোষের ভেতরে প্রোটিনের যাত্রাপথ</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">007</div></div>
+    <div class="face b"><div class="t2">কোষের ভেতরে প্রোটিনের যাত্রাপথ</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>Episode 7 — কোষের ভেতরে প্রোটিনের যাত্রাপথ</h3><div class="body">
+<p>Gray’s Anatomy, 41st Edition · Chapter 1: Basic Structure and Function of Cells · Section: Translocation of proteins across intracellular membranes</p>
+<p>ঢাকা মেডিকেল কলেজের লাইব্রেরিতে বিকেলের আলো ধীরে ধীরে জানালার কাচ বেয়ে পড়ছিল। আগের দিনের Mitochondria-র আলোচনা শেষ করে আদিত্য—আদির সামনে আজ নতুন একটি প্রশ্ন।</p>
+<p>আমৃতা বইয়ের নির্দিষ্ট অংশটি খুলে বলল, “আজকের বিষয়টি ছোট, কিন্তু কোষের ভেতরে protein-এর গন্তব্য বোঝার জন্য খুব গুরুত্বপূর্ণ। ভাবুন তো, একটি protein তৈরি হওয়ার পর কীভাবে বুঝবে তাকে কোথায় যেতে হবে?”</p>
+<p>আদি একটু হেসে বলল, “Protein-এর কি তাহলে নিজের ঠিকানা থাকে?”</p>
+<p>“অনেকটা সে রকমই,” আমৃতা বলল। “তবে সেই ঠিকানাটি বাইরে লেখা থাকে না; protein-এর amino acid sequence-এর মধ্যেই থাকে।”</p>
+</div></section>
+<section class="sec r" id="s2"><h3>১. Protein কোথায় তৈরি হয়?</h3><div class="body">
+<p>Protein সাধারণত তৈরি হয়—</p>
+<ul><li>Cytosol-এর ribosome-এ।</li><li>Rough endoplasmic reticulum (RER)-এর সঙ্গে যুক্ত ribosome-এ।</li></ul>
+<p>কিছু protein তৈরি হয় mitochondrial ribosome-এও।</p>
+<p>তবে protein তৈরি হওয়ার পর সব protein একই গন্তব্যে যায় না।</p>
+<ul><li>অনেক protein cytosol-এই থেকে যায় এবং সেখানেই নিজেদের কাজ সম্পন্ন করে।</li><li>অন্য কিছু protein—যেমন integral membrane protein এবং secretion-এর জন্য নির্ধারিত protein—কোষের অভ্যন্তরীণ membrane অতিক্রম করে।</li></ul>
+<p>আদি বলল, “অর্থাৎ protein তৈরি হওয়ার স্থান আর কাজ করার স্থান সব সময় এক নয়?”</p>
+<p>“ঠিক তাই। কিছু protein-কে তৈরি হওয়ার পর নির্দিষ্ট intracellular compartment-এ পৌঁছাতে হয়।”</p>
+</div></section>
+<section class="sec r" id="s3"><h3>২. কেন intracellular membrane অতিক্রম করতে হয়?</h3><div class="body">
+<p>কিছু protein-এর কাজ সম্পন্ন করার জন্য তাদের intracellular membrane-এর ওপারে যেতে হয়।</p>
+<p>বিশেষত—</p>
+<ul><li>Integral membrane proteins: এগুলো membrane-এর সঙ্গে যুক্ত থাকার জন্য নির্দিষ্ট membrane-এ পৌঁছায়।</li><li>Proteins for secretion: যেসব protein কোষ থেকে নিঃসৃত হবে, তাদেরও intracellular membrane অতিক্রম করতে হয়।</li></ul>
+<p>এই membrane অতিক্রম করার মাধ্যমে protein-গুলো—</p>
+<ul><li>Post-translational modification-এর সুযোগ পায়।</li><li>নিজেদের নির্দিষ্ট গন্তব্যে পৌঁছানোর জন্য target হতে পারে।</li></ul>
+<p>আদি খাতায় লিখল:</p>
+<p>Protein-এর যাত্রাপথ</p>
+<p>Protein synthesis</p>
+<p>Cytosolic ribosome / Rough ER ribosome</p>
+<p>Signal sequence recognition</p>
+<p>Intracellular membrane translocation</p>
+<p>Post-translational modification</p>
+<p>Targeting to destination</p>
+<p>উপরের flow diagram-টি source-এর বর্ণিত ধারণার সংক্ষিপ্ত উপস্থাপন; অতিরিক্ত কোনো molecular step যোগ করা হয়নি।</p>
+</div></section>
+<section class="sec r" id="s4"><h3>৩. Protein-এর ঠিকানা: Signal sequence</h3><div class="body">
+<p>আমৃতা বলল, “এবার আসল বিষয়টি বুঝুন। Protein-এর amino acid sequence-এর মধ্যেই একটি addressing system থাকে। একে বলা হয় signal sequence।”</p>
+<p>এই signal sequence-ই নির্ধারণে সাহায্য করে protein-টি কোন intracellular membrane compartment-এ যাবে।</p>
+<p>এটি কাজ করে কয়েকটি ধাপে:</p>
+<p>প্রথমত — Signal sequence</p>
+<p>Protein-এর amino acid sequence-এর মধ্যে একটি addressing system থাকে। এই signal sequence protein-এর নির্দিষ্ট গন্তব্য নির্দেশ করে।</p>
+<p>দ্বিতীয়ত — Recognition</p>
+<p>উপযুক্ত membrane-এর মধ্যে থাকা receptor অথবা translocator এই signal sequence-কে চিনতে পারে।</p>
+<p>তৃতীয়ত — Entry into the correct compartment</p>
+<p>Signal sequence শনাক্ত হওয়ার ফলে protein সঠিক intracellular membrane compartment-এ প্রবেশ করতে পারে।</p>
+</div></section>
+<section class="sec r" id="s5"><h3>৪. Signal sequence আর Signal patch</h3><div class="body">
+<p>আদি বলল, “তাহলে প্রতিটি protein-এর ঠিকানা কি amino acid sequence-এর একটানা অংশ?”</p>
+<p>আমৃতা উত্তর দিল, “সব সময় এমন নয়। এখানে একটি গুরুত্বপূর্ণ পার্থক্য আছে।”</p>
+<p>Protein-এর sorting হতে পারে—</p>
+<ul><li>Signal sequence: Protein-এর amino acid sequence-এর মধ্যে থাকা addressing information।</li><li>Signal patch: Protein তার tertiary configuration-এ fold করার পর একে অপরের কাছাকাছি চলে আসা কয়েকটি sequence-এর সমন্বয়ে তৈরি হওয়া signal।</li></ul>
+<p>অর্থাৎ signal patch তৈরি হতে পারে protein folding-এর ফলে spatially grouped sequence থেকে।</p>
+<p>এই signal sequence অথবা signal patch-কে উপযুক্ত membrane-এর receptor বা translocator চিনতে পারে। এর ফলে protein সঠিক intracellular membrane compartment-এ প্রবেশ করে।</p>
+<p>আদি নিজের খাতায় লিখল:</p>
+<p>দুটি গুরুত্বপূর্ণ ধারণার পার্থক্য</p>
+<p>Signal sequence</p>
+<p>Protein-এর amino acid sequence-এর মধ্যে থাকা addressing system।</p>
+<p>Signal patch</p>
+<p>Protein tertiary configuration-এ fold করার পর spatially grouped হয়ে যাওয়া sequence-এর সমন্বয়ে গঠিত signal।</p>
+<p>উভয়ের কাজ: সঠিক intracellular membrane compartment-এ protein-কে sort করতে সাহায্য করা।</p>
+<p>আদি বলল, “তাহলে কোষে শুধু protein তৈরি করলেই হয় না; সেটিকে সঠিক ঠিকানায় পৌঁছানোর ব্যবস্থাও থাকতে হয়।”</p>
+<p>আমৃতা মাথা নাড়ল। “হ্যাঁ। আর সেই ঠিকানা চিনতে পারে উপযুক্ত membrane-এর receptor বা translocator।”</p>
+<p>বিকেলের আলো তখন আরও ম্লান। আদি তার নোটের শেষ লাইনে লিখল—Protein sorting depends on signal information contained within the protein itself.</p>
+<p>আমৃতা বই বন্ধ করার আগে বলল, “আজ আমরা বুঝলাম protein কীভাবে নিজের গন্তব্যের সংকেত বহন করে। কিন্তু কোষের মধ্যে এক কোষ আরেক কোষকে কীভাবে খবর পাঠায়, আর সেই খবর পেয়ে কীভাবে নিজের আচরণ বদলায়?”</p>
+<p>তাহলে কোষের মধ্যে যোগাযোগের ভাষা কী—এবং একটি cell কীভাবে অন্য cell-এর পাঠানো signal শনাক্ত করে?</p>
+</div></section>
+<section class="sec r" id="s6"><h3>Revision notes — পরীক্ষার জন্য</h3><div class="body">
+<div class="tw"><table><thead><tr><th>বিষয়</th><th>গুরুত্বপূর্ণ তথ্য</th></tr></thead><tbody><tr><td>Protein synthesis</td><td>সাধারণত cytosol-এর ribosome অথবা RER-এর ribosome-এ</td></tr><tr><td>Mitochondrial protein synthesis</td><td>কিছু protein mitochondrial ribosome-এ তৈরি হয়</td></tr><tr><td>Cytosolic proteins</td><td>অনেক protein cytosol-এ থেকে কাজ করে</td></tr><tr><td>Translocated proteins</td><td>Integral membrane proteins ও proteins for secretion</td></tr><tr><td>Translocation-এর উদ্দেশ্য</td><td>Post-translational modification এবং targeting</td></tr><tr><td>Signal sequence</td><td>Protein-এর amino acid sequence-এর মধ্যে থাকা addressing system</td></tr><tr><td>Signal patch</td><td>Tertiary configuration-এ fold করার পর spatially grouped sequence</td></tr><tr><td>Recognition</td><td>Appropriate membrane-এর receptor বা translocator</td></tr></tbody></table></div>
+</div></section>
+<section class="sec r" id="s7"><h3>Self-test</h3><div class="body">
+<p>১. Protein সাধারণত কোথায় synthesized হয়?</p>
+<p>A. শুধু Golgi apparatus-এ B. Cytosol-এর ribosome অথবা RER-এর ribosome-এ C. শুধু Lysosome-এ D. শুধু Nucleus-এ</p>
+<p>২. Signal sequence কী?</p>
+<p>A. একটি membrane lipid B. Protein-এর amino acid sequence-এর মধ্যে থাকা addressing system C. একটি cytoskeletal filament D. একটি mitochondrial enzyme</p>
+<p>৩. Signal patch কীভাবে তৈরি হয়?</p>
+<p>A. Protein degradation-এর মাধ্যমে B. Protein-এর tertiary configuration-এ fold করার ফলে sequence-গুলো spatially grouped হলে C. Ribosome ভেঙে গেলে D. Lipid bilayer তৈরি হলে</p>
+<p>৪. Signal sequence বা signal patch কে recognize করে?</p>
+<p>A. Appropriate membrane-এর receptor বা translocator B. শুধু Cytosolic enzyme C. শুধু DNA polymerase D. শুধু Lysosome</p>
+<p>উত্তর: ১—B, ২—B, ৩—B, ৪—A</p>
+</div></section>
+<section class="sec r" id="s8"><h3>Source verification</h3><div class="body">
+<ul><li>Textbook: Gray’s Anatomy, 41st Edition</li><li>Chapter: 1 — Basic Structure and Function of Cells</li><li>Section: Translocation of proteins across intracellular membranes</li></ul>
+<p>এই episode-এ section-এর protein synthesis, signal sequence, signal patch, receptor/translocator recognition, post-translational modification এবং targeting-সংক্রান্ত বক্তব্য অন্তর্ভুক্ত করা হয়েছে। এই section-এ আলাদা কোনো figure caption পাওয়া যায়নি। এখানে অতিরিক্ত molecular mechanism যোগ করা হয়নি।</p>
+</div></section>
+<section class="sec r" id="s9"><h3>Progress tracker</h3><div class="body">
+<div class="tw"><table><thead><tr><th>Episode</th><th>বিষয়</th><th>অবস্থা</th></tr></thead><tbody><tr><td>1</td><td>General characteristics of cells, plasma membrane</td><td>সম্পন্ন</td></tr><tr><td>2</td><td>Glycocalyx, Cytoplasm, ER, Ribosomes</td><td>সম্পন্ন</td></tr><tr><td>3</td><td>Golgi apparatus, Exocytic pathway</td><td>সম্পন্ন</td></tr><tr><td>4</td><td>Endocytosis, Lysosomes, Proteasome</td><td>সম্পন্ন</td></tr><tr><td>5</td><td>Peroxisomes</td><td>সম্পন্ন</td></tr><tr><td>6</td><td>Mitochondria</td><td>সম্পন্ন</td></tr><tr><td>7</td><td>Translocation of proteins across intracellular membranes</td><td></td></tr></tbody></table></div>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-006.html">← Episode 6</a><a href="index.html">সব পর্ব</a><a href="episode-008.html">Episode 8 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">Episode 7 — কোষের ভেতরে প্রোটিনের যাত্রাপথ</a><a href="#s2">১. Protein কোথায় তৈরি হয়?</a><a href="#s3">২. কেন intracellular membrane অতিক্রম করতে হয়?</a><a href="#s4">৩. Protein-এর ঠিকানা: Signal sequence</a><a href="#s5">৪. Signal sequence আর Signal patch</a><a href="#s6">Revision notes — পরীক্ষার জন্য</a><a href="#s7">Self-test</a><a href="#s8">Source verification</a><a href="#s9">Progress tracker</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

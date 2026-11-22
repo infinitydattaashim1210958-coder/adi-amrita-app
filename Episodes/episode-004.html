@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 004 · কোষের প্রবেশদ্বার ও বর্জ্য ব্যবস্থাপনা</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 004">EPISODE 004</h1>
+  <div class="ttl">কোষের প্রবেশদ্বার ও বর্জ্য ব্যবস্থাপনা</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">004</div></div>
+    <div class="face b"><div class="t2">কোষের প্রবেশদ্বার ও বর্জ্য ব্যবস্থাপনা</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>Episode 4 — কোষের প্রবেশদ্বার ও বর্জ্য ব্যবস্থাপনা</h3><div class="body">
+<p>Gray’s Anatomy, 41st Edition · Chapter 1: Basic Structure and Function of Cells · পৃষ্ঠা ৩৮–৪১</p>
+</div></section>
+<section class="sec r" id="s2"><h3>১. Endocytic pathway: বাইরে থেকে কোষের ভেতরে</h3><div class="body">
+<p>ঢাকা মেডিকেল কলেজের লাইব্রেরি। আদির সামনে আগের দিনের আঁকা Golgi apparatus-এর diagram। আমৃতা এসে পাশে বসে বলল,</p>
+<p>— আজ একটা প্রশ্ন দিয়ে শুরু করি। কোষের বাইরে থেকে কোনো পদার্থ ভেতরে প্রবেশ করলে সেটি কোথায় যায়?</p>
+<p>আদি বলল,</p>
+<p>— Plasma membrane অতিক্রম করে cytoplasm-এ চলে আসে?</p>
+<p>— সব ক্ষেত্রে সরাসরি cytosol-এ যায় না। অনেক পদার্থ vesicle-এর মাধ্যমে প্রবেশ করে। এই প্রক্রিয়াটিই Endocytic pathway-এর অংশ।</p>
+</div></section>
+<section class="sec r" id="s3"><h3>Endocytic pathway-এর মূল ধারণা</h3><div class="body">
+<p>Endocytic pathway শুরু হয় plasma membrane থেকে এবং শেষ হয় lysosome-এ।</p>
+<p>এই pathway-তে বাইরে থেকে আসা পদার্থ বা endocytic cargo-কে lysosome-এ নিয়ে যাওয়া হয়। সেখানে lysosomal hydrolase enzyme-এর সাহায্যে cargo degradation ঘটে।</p>
+<p>সাধারণত পদার্থের যাত্রাপথ:</p>
+<p>Plasma membrane</p>
+<p>Endocytic vesicle তৈরি</p>
+<p>Early endosome</p>
+<p>Receptor ও ligand পৃথক হতে পারে</p>
+<p>Late endosome</p>
+<p>Lysosome-এর দিকে cargo পরিবহন</p>
+<p>Lysosome</p>
+<p>Enzymatic degradation</p>
+<p>আদি diagram-টি দেখে বলল,</p>
+<p>— তাহলে early endosome থেকে late endosome, তারপর lysosome—এটাই প্রধান ধারাবাহিকতা?</p>
+<p>— হ্যাঁ। তবে early endosome-এর একটি গুরুত্বপূর্ণ কাজ আছে।</p>
+</div></section>
+<section class="sec r" id="s4"><h3>Early endosome ও receptor recycling</h3><div class="body">
+<p>Early endosome তৈরি হয় endocytic vesicle থেকে।</p>
+<p>এই vesicle-এর উৎস হতে পারে:</p>
+<ul><li>Clathrin-coated vesicle</li><li>Caveolae</li></ul>
+<p>কোষের ভেতরে প্রবেশ করার পর endocytic vesicle তার adaptin এবং clathrin coat হারায়। এরপর vesicle-গুলো fusion করে early endosome তৈরি করে।</p>
+<p>Early endosome-এ receptor molecule তার সঙ্গে যুক্ত ligand-কে release করে।</p>
+<p>এরপর early endosome-এর membrane এবং receptor-গুলো আবার cell surface-এ ফেরত যেতে পারে। এগুলো exocytic vesicle হিসেবে cell surface-এ recycled হয়।</p>
+<p>আদি বলল,</p>
+<p>— অর্থাৎ receptor একবার ligand গ্রহণ করলেই যে তাকে ধ্বংস হতে হবে, তা নয়। তাকে আবার cell surface-এ ফিরিয়ে ব্যবহার করা যায়।</p>
+<p>— ঠিক। এটাই receptor recycling-এর ধারণা।</p>
+</div></section>
+<section class="sec r" id="s5"><h3>২. Endocytosis-এর বিশেষ ধরন</h3><div class="body">
+</div></section>
+<section class="sec r" id="s6"><h3>A. Clathrin-dependent endocytosis</h3><div class="body">
+<p>Plasma membrane-এর বিশেষ কিছু অংশে clathrin-dependent endocytosis ঘটে। এই বিশেষ অঞ্চলগুলোকে বলা হয় coated pits।</p>
+<p>Surface receptor molecule-এর সঙ্গে যুক্ত ligand-কে cell-এর ভেতরে নেওয়ার ক্ষেত্রেও এই পদ্ধতি ব্যবহৃত হয়।</p>
+<p>এই প্রক্রিয়াটিকে বলা হয়:</p>
+<p>Receptor-mediated endocytosis.</p>
+<p>আদি লিখল:</p>
+<p>Clathrin-dependent endocytosis → coated pits → receptor-bound ligand internalization.</p>
+</div></section>
+<section class="sec r" id="s7"><h3>B. Caveolae</h3><div class="body">
+<p>Caveolae শব্দটির অর্থ ছোট গুহা বা little caves।</p>
+<p>এগুলো structurally distinct pinocytotic vesicle।</p>
+<p>বিশেষত নিচের cell-গুলোতে caveolae বেশি ব্যবহৃত হয়:</p>
+<ul><li>Endothelial cells</li><li>Smooth muscle cells</li></ul>
+<p>এগুলো বিভিন্ন কাজে অংশ নেয়, যেমন:</p>
+<ul><li>Transcytosis</li><li>Signal transduction</li><li>সম্ভবত অন্যান্য cellular function।</li></ul>
+<p>আমৃতা বলল,</p>
+<p>— Clathrin-coated vesicle এবং caveolae-কে এক ধরনের vesicle ভাববেন না। এদের structural বৈশিষ্ট্য আলাদা।</p>
+<p>আদি দুটির পাশে আলাদা করে diagram আঁকল।</p>
+</div></section>
+<section class="sec r" id="s8"><h3>৩. Lysosome-এর সঙ্গে অন্যান্য vesicle-এর সম্পর্ক</h3><div class="body">
+<p>আমৃতা এবার আদি-কে জিজ্ঞেস করল,</p>
+<p>— Lysosome কি শুধু late endosome-এর সঙ্গেই fusion করে?</p>
+<p>— মনে হয় phagosome-এর সঙ্গেও?</p>
+<p>— ঠিক। আরও কয়েকটি গুরুত্বপূর্ণ সম্পর্ক আছে।</p>
+<p>Late endosome ছাড়াও lysosome নিচের গঠনগুলোর সঙ্গে fusion করতে পারে:</p>
+<ul><li>Phagosome</li><li>Autophagosome</li><li>Plasma membrane-এর কিছু patch, যা membrane repair-এ অংশ নেয়।</li></ul>
+<p>Lysosomal hydrolase বিভিন্ন ধরনের পদার্থ degrade করে।</p>
+<p>দুটি গুরুত্বপূর্ণ উৎস হলো:</p>
+<p>Exogenous material: কোষের বাইরে থেকে আসা পদার্থ। যেমন phagocytosis বা heterophagy-এর মাধ্যমে প্রবেশ করা material।</p>
+<p>Endogenous material: কোষের নিজের উপাদান। যেমন autophagy-এর মাধ্যমে degrade হওয়া material।</p>
+<p>আদি লিখল:</p>
+<p>Exogenous → Phagocytosis / Heterophagy.</p>
+<p>Endogenous → Autophagy.</p>
+</div></section>
+<section class="sec r" id="s9"><h3>৪. Phagocytosis: বড় পদার্থকে কোষের ভেতরে নেওয়া</h3><div class="body">
+<p>Phagocytosis হলো specialized cell-এর মাধ্যমে invading pathogen, apoptotic cell এবং অন্যান্য foreign material গ্রহণ করার প্রক্রিয়া।</p>
+<p>যেসব cell সক্রিয়ভাবে phagocytosis করে, তাদের মধ্যে lysosome প্রচুর পরিমাণে থাকে।</p>
+<p>উদাহরণ:</p>
+<ul><li>Macrophages</li><li>Neutrophil granulocytes</li></ul>
+<p>এই cell-গুলোতে lysosome-এর কাজ হলো phagocytosed particle ধ্বংস করা। উদাহরণ হিসেবে bacteria-এর কথা বলা যায়।</p>
+<p>Phagocytosis-এর সময় pathogen-সহ একটি vesicle তৈরি হয়, যার নাম phagosome।</p>
+<p>একটি phagosome-এ pathogenic microorganism থাকতে পারে।</p>
+<p>এই phagosome একাধিক lysosome-এর সঙ্গে fusion করতে পারে।</p>
+<p>ফলে lysosomal enzyme-এর মাধ্যমে ভেতরের pathogen ধ্বংস হয়।</p>
+<p>আদি বলল,</p>
+<p>— তাহলে macrophage-এর মতো cell-এ lysosome বেশি থাকার একটি কারণ হলো তাদের phagocytic activity।</p>
+<p>— হ্যাঁ। বিশেষ করে bacteria-এর মতো phagocytosed particle ধ্বংস করার জন্য।</p>
+</div></section>
+<section class="sec r" id="s10"><h3>৫. Autophagy: নিজের কোষের উপাদান পুনর্ব্যবহার</h3><div class="body">
+<p>আমৃতা এবার বলল,</p>
+<p>— এবার এমন একটি প্রক্রিয়া দেখুন, যেখানে cell নিজেরই কিছু উপাদান ভেঙে পুনর্ব্যবহার করে।</p>
+<p>Autophagy হলো cytoplasmic component-এর degradation এবং recycling।</p>
+<p>যেসব cellular component আর প্রয়োজন নেই, সেগুলো এই প্রক্রিয়ায় degrade হতে পারে। এর মধ্যে organelle-ও রয়েছে।</p>
+</div></section>
+<section class="sec r" id="s11"><h3>Autophagosome formation</h3><div class="body">
+<p>Autophagosome তৈরি হওয়ার সঙ্গে কয়েকটি protein যুক্ত থাকে।</p>
+<p>বিশেষভাবে উল্লেখযোগ্য:</p>
+<ul><li>Autophagy-related proteins বা Atg proteins</li><li>Hsc70 chaperone</li></ul>
+<p>এই protein-গুলো substrate-কে lysosome-এর দিকে translocate করতে ভূমিকা রাখে।</p>
+<p>Autophagosome cytoplasmic component-গুলোকে নিজের ভেতরে আবদ্ধ করে।</p>
+<p>এরপর autophagosome সরাসরি lysosome-এর সঙ্গে fusion করে।</p>
+<p>এখানে একটি গুরুত্বপূর্ণ বিষয় হলো:</p>
+<p>Autophagosome-এর সঙ্গে lysosome fusion হওয়ার জন্য late endosome-এর অংশগ্রহণ প্রয়োজন হয় না।</p>
+<p>আদি বলল,</p>
+<p>— অর্থাৎ Endocytic pathway-তে late endosome গুরুত্বপূর্ণ হলেও autophagy-তে autophagosome সরাসরি lysosome-এর সঙ্গে fusion করতে পারে?</p>
+<p>— ঠিক তাই।</p>
+</div></section>
+<section class="sec r" id="s12"><h3>Autophagy ও 26S proteasome-এর পার্থক্য</h3><div class="body">
+<p>Cellular degradation-এর ক্ষেত্রে 26S proteasome-ও গুরুত্বপূর্ণ।</p>
+<p>তবে autophagy বলতে বিশেষভাবে lysosomal degradation–recycling pathway-কে বোঝানো হয়।</p>
+<p>Autophagosome দেখা যায়:</p>
+<ul><li>Starvation-এর সময়।</li><li>Cell growth-এর সময়।</li></ul>
+<p>আদি লিখল:</p>
+<p>Autophagy → unnecessary cytoplasmic components and organelles → autophagosome → lysosome → degradation and recycling.</p>
+</div></section>
+<section class="sec r" id="s13"><h3>৬. Late endosome থেকে Secondary lysosome</h3><div class="body">
+<p>এবার আমৃতা একটি গুরুত্বপূর্ণ ধাপ বোঝাতে শুরু করল।</p>
+<p>Late endosome lysosomal enzyme গ্রহণ করে primary lysosome থেকে।</p>
+<p>এই primary lysosome Golgi apparatus থেকে তৈরি হয়।</p>
+<p>এরপর late endosome এবং lysosome-এর membrane-এর মধ্যে tethering ও fusion ঘটে।</p>
+<p>Lysosomal contents endosomal lumen-এ diffuse করে।</p>
+<p>ফলে একটি fused hybrid organelle তৈরি হয়, যাকে বলা হয়:</p>
+<p>Secondary lysosome</p>
+<p>এর ভেতরের pH কম—প্রায় 5.0।</p>
+<p>এই acidic environment lysosomal acid hydrolase-কে সক্রিয় করে। এরপর endosomal contents degrade হতে থাকে।</p>
+</div></section>
+<section class="sec r" id="s14"><h3>Degradation-এর পর কী হয়?</h3><div class="body">
+<p>Hydrolysis-এর মাধ্যমে তৈরি product-এর দুটি সম্ভাব্য পরিণতি:</p>
+<ul><li>Product membrane অতিক্রম করে cytosol-এ চলে যায়।</li><li>অথবা secondary lysosome-এর ভেতরেই থেকে যায়।</li></ul>
+<p>Secondary lysosome vesicle fusion-এর মাধ্যমে আকারে অনেক বড় হতে পারে।</p>
+<p>এভাবে multivesicular body তৈরি হতে পারে।</p>
+<p>এছাড়া enzyme concentration অনেক বেড়ে গিয়ে বড় lysosome তৈরি হতে পারে।</p>
+<p>আদি বলল,</p>
+<p>— তাহলে secondary lysosome শুধু digestion-এর স্থান নয়; এর আকার ও enzyme concentration-ও পরিবর্তিত হতে পারে।</p>
+<p>— ঠিক বলেছেন।</p>
+</div></section>
+<section class="sec r" id="s15"><h3>৭. Lysosome: গঠন ও enzyme</h3><div class="body">
+<p>লাইব্রেরির ঘড়িতে বিকেল গড়িয়ে গেছে। আমৃতা এবার lysosome-এর মূল বৈশিষ্ট্যগুলো লিখতে বলল।</p>
+<p>Lysosome হলো membrane-bound organelle।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Scientific Foundations</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/EZpEsBWwASirkUQG1d5QLOWGNh3_CshuE1QHKE6SnQXEmn56_K50jgIpev3d-PX4eC7oOk2pYWqS6OvXYBk9-PV4FvsBsfqtW0C9BKfJCr4HE665aUM9HJF_KvfUAZagsiBfUIiiSH_FvlASbASmbkkz2vuY7UfoI9Frcp8PQ2ANWL-frJGbIzRtqEs82zR-?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Scientific%20Foundations">Image search ↗</a></figure>
+<p>Lysosome-এর সাধারণ গঠন: membrane-bound organelle এবং তার ভেতরের digestive enzymes।</p>
+</div></section>
+<section class="sec r" id="s16"><h3>আকার</h3><div class="body">
+<p>Lysosome-এর diameter:</p>
+</div></section>
+<section class="sec r" id="s17"><h3>80–800 nm</h3><div class="body">
+<p>এগুলোর মধ্যে hydrolysis-এর মাধ্যমে degrade হতে থাকা material-এর complex inclusion থাকতে পারে। বিশেষত secondary lysosome-এ এমন inclusion দেখা যায়।</p>
+</div></section>
+<section class="sec r" id="s18"><h3>Lysosome-এর protein-এর শ্রেণি</h3><div class="body">
+<p>Lysosome-এর কাজের জন্য দুই ধরনের protein গুরুত্বপূর্ণ:</p>
+<p>1. Soluble acid hydrolases</p>
+<p>2. Integral lysosomal membrane proteins</p>
+</div></section>
+<section class="sec r" id="s19"><h3>Acid hydrolases</h3><div class="body">
+<p>পরিচিত acid hydrolase-এর সংখ্যা প্রায় ৫০টি।</p>
+<p>প্রতিটি acid hydrolase নির্দিষ্ট substrate degrade করে।</p>
+<p>এর মধ্যে রয়েছে:</p>
+<ul><li>Proteases</li><li>Lipases</li><li>Carbohydrases</li><li>Esterases</li><li>Nucleases</li></ul>
+</div></section>
+<section class="sec r" id="s20"><h3>Lysosomal membrane proteins</h3><div class="body">
+<p>প্রায় ২৫টি lysosomal membrane protein বিভিন্ন কাজে অংশ নেয়।</p>
+<p>যেমন:</p>
+<ul><li>Lysosomal lumen acidification</li><li>Cytosol থেকে protein import</li><li>Membrane fusion</li><li>Degradation product-কে cytoplasm-এ transport করা।</li></ul>
+<p>আদি বলল,</p>
+<p>— অর্থাৎ lysosome-এর ভেতরের enzyme যেমন digestion করে, membrane protein-ও তেমন গুরুত্বপূর্ণ। বিশেষ করে acidity বজায় রাখা এবং product বের করে আনার জন্য।</p>
+<p>— ঠিক।</p>
+</div></section>
+<section class="sec r" id="s21"><h3>৮. Residual body বা Tertiary lysosome</h3><div class="body">
+<p>Secondary lysosome-এর মধ্যে hydrolysis-এর মাধ্যমে পদার্থ degrade হওয়ার পর সব material সম্পূর্ণভাবে ভেঙে যায় না।</p>
+<p>কিছু debris অবশিষ্ট থাকতে পারে।</p>
+<p>এই debris-যুক্ত vesicle-কে বলা হয়:</p>
+<p>Residual body অথবা Tertiary lysosome.</p>
+<p>এর দুটি সম্ভাব্য পরিণতি রয়েছে:</p>
+<ul><li>এটি cell surface-এ গিয়ে exocytosis-এর মাধ্যমে বাইরে বের হয়ে যেতে পারে।</li><li>অথবা cell-এর ভেতরে inert residual body হিসেবে থেকে যেতে পারে।</li></ul>
+<p>Long-lived cell-এ প্রচুর residual body জমা হতে পারে।</p>
+<p>এগুলো অনেক সময় একত্রে fusion করে বড়, dense vacuole তৈরি করে। এর মধ্যে complex lamellar inclusion থাকতে পারে।</p>
+</div></section>
+<section class="sec r" id="s22"><h3>Lipofuscin এবং ageing brain</h3><div class="body">
+<p>Residual body-এর contents প্রায়ই darkly pigmented হয়।</p>
+<p>এ কারণে tissue-এর রং পরিবর্তিত হতে পারে।</p>
+<p>Neurone-এ lysosomal digestion-এর শেষ product হিসেবে উল্লেখ করা হয়েছে:</p>
+<p>Lipofuscin (neuromelanin or senility pigment).</p>
+<p>এটি ageing brain-কে brownish-yellow colouration দিতে পারে।</p>
+<p>আদি বলল,</p>
+<p>— তাহলে দীর্ঘদিন বেঁচে থাকা cell-এ residual material জমে tissue-এর রংও পরিবর্তন করতে পারে?</p>
+<p>— হ্যাঁ। এই বিষয়টি মনে রাখবেন।</p>
+</div></section>
+<section class="sec r" id="s23"><h3>৯. Lysosomal enzyme-এর extracellular কাজ</h3><div class="body">
+<p>Lysosomal enzyme সব সময় cell-এর ভেতরেই কাজ করে, এমন নয়।</p>
+<p>কিছু lysosomal enzyme secreted-ও হতে পারে।</p>
+<p>এটি extracellular matrix পরিবর্তনের প্রক্রিয়ায় ভূমিকা রাখতে পারে।</p>
+<p>উদাহরণ হিসেবে:</p>
+<p>Osteoclast-mediated erosion during bone resorption.</p>
+<p>অর্থাৎ bone resorption-এর সময় osteoclast-এর মাধ্যমে bone tissue ক্ষয় করার প্রক্রিয়ায় lysosomal enzyme-এর secretion-ও গুরুত্বপূর্ণ হতে পারে।</p>
+</div></section>
+<section class="sec r" id="s24"><h3>১০. Lysosomal dysfunction ও Lysosomal storage disease</h3><div class="body">
+<p>আমৃতা এবার বলল,</p>
+<p>— এবার ভাবুন, lysosome-এর enzyme ঠিকভাবে কাজ না করলে কী হবে?</p>
+<p>আদি উত্তর দিল,</p>
+<p>— তাহলে যে পদার্থগুলো degrade হওয়ার কথা, সেগুলো cell-এর মধ্যে জমতে থাকবে।</p>
+<p>— ঠিক। এই ধরনের সমস্যার একটি গুরুত্বপূর্ণ উদাহরণ হলো Lysosomal storage disease।</p>
+</div></section>
+<section class="sec r" id="s25"><h3>Lysosomal storage diseases (LSDs)</h3><div class="body">
+<p>Lysosomal dysfunction-এর ফলে Lysosomal storage diseases হতে পারে।</p>
+<p>প্রায় ৬০ ধরনের LSD শনাক্ত করা হয়েছে।</p>
+<p>কোষে কোন ধরনের material জমা হচ্ছে, তার ভিত্তিতে এগুলোকে বিভিন্নভাবে চিহ্নিত করা যায়।</p>
+<p>জমা হতে পারে:</p>
+<ul><li>Mucopolysaccharides</li><li>Sphingolipids</li><li>Glycoproteins</li><li>Glycogen</li><li>Lipofuscins</li></ul>
+<p>LSD-এর বৈশিষ্ট্যের মধ্যে রয়েছে:</p>
+<ul><li>Severe neurodegeneration</li><li>Mental decline</li><li>Cognitive abnormalities</li><li>Behavioural abnormalities</li></ul>
+</div></section>
+<section class="sec r" id="s26"><h3>Autophagy impairment ও neurodegeneration</h3><div class="body">
+<p>Lysosome এবং autophagosome-এর coupling-এ defect হলে autophagy impairment হতে পারে।</p>
+<p>এর ফলে বিভিন্ন substrate জমে একটি pathogenic cascade শুরু হতে পারে।</p>
+<p>এই প্রক্রিয়া বিভিন্ন neurodegenerative disorder-এর সঙ্গে সম্পর্কিত, যেমন:</p>
+<ul><li>Parkinson’s disease</li><li>Alzheimer’s disease</li><li>Huntington’s disease</li><li>Several tau-opathies</li></ul>
+</div></section>
+<section class="sec r" id="s27"><h3>Tay–Sachs disease</h3><div class="body">
+<p>Tay–Sachs disease হলো GM2 gangliosidosis-এর একটি উদাহরণ।</p>
+<p>এখানে β-hexosaminidase A enzyme defective হয়।</p>
+<p>ফলে neurone-এ glycosphingolipid GM2 ganglioside জমা হতে থাকে।</p>
+<p>এই রোগে childhood-এর মধ্যেই মৃত্যু হতে পারে।</p>
+</div></section>
+<section class="sec r" id="s28"><h3>Danon disease</h3><div class="body">
+<p>Danon disease-এ দেখা যেতে পারে:</p>
+<ul><li>Vacuolar skeletal myopathy</li><li>Cardiomyopathy</li><li>Neurodegeneration</li></ul>
+<p>বিশেষত hemizygous male-দের ক্ষেত্রে এটি বর্ণিত হয়েছে।</p>
+<p>এ রোগে lysosome autophagosome-এর সঙ্গে fusion করতে ব্যর্থ হয়।</p>
+<p>এর কারণ lysosomal membrane protein LAMP-2 (lysosomal associated membrane protein-2)-এর mutation।</p>
+<p>আদি বলল,</p>
+<p>— Tay–Sachs-এ enzyme defect, আর Danon disease-এ lysosomal membrane protein-এর mutation। দুটোতেই lysosomal function ক্ষতিগ্রস্ত হচ্ছে।</p>
+<p>— ঠিক। Mechanism আলাদা হলেও lysosomal dysfunction গুরুত্বপূর্ণ।</p>
+</div></section>
+<section class="sec r" id="s29"><h3>১১. TFEB: Lysosome-এর regulation</h3><div class="body">
+<p>আমৃতা পরবর্তী পৃষ্ঠার একটি অংশ দেখিয়ে বলল,</p>
+<p>— Lysosome তৈরি ও কাজ নিয়ন্ত্রণের ক্ষেত্রেও একটি transcription factor গুরুত্বপূর্ণ।</p>
+<p>এর নাম Transcription factor EB (TFEB)।</p>
+<p>TFEB-এর কাজের মধ্যে রয়েছে:</p>
+<ul><li>Lysosomal biogenesis নিয়ন্ত্রণ।</li><li>Lysosomal function নিয়ন্ত্রণ।</li><li>Lysosome-to-nucleus signalling।</li><li>Lipid catabolism নিয়ন্ত্রণ।</li></ul>
+<p>যদি নিচের যেকোনো একটি ব্যবস্থা ব্যর্থ হয়, lysosomal dysfunction তৈরি হতে পারে:</p>
+<ul><li>Lysosomal hydrolase-এর কাজ।</li><li>Lysosome acidification mechanism।</li><li>Lysosomal membrane protein-এর কাজ।</li></ul>
+<p>এর ফলে late endosome-এর মাধ্যমে lysosome-এ আসা extracellular substrate-এর degradation ও recycling এবং autophagy-এর মাধ্যমে আসা intracellular substrate-এর degradation ও recycling ব্যাহত হতে পারে।</p>
+<p>এভাবে বিভিন্ন tissue ও organ-এ progressive lysosomal dysfunction দেখা দিতে পারে।</p>
+</div></section>
+<section class="sec r" id="s30"><h3>TFEB নিয়ে experimental observation</h3><div class="body">
+<p>Experimental study-তে দেখা গেছে:</p>
+<ul><li>TFEB activation cellular model of Huntington’s disease-এ pathogenic protein-এর accumulation কমাতে পারে।</li><li>Murine model-এ Parkinson’s disease phenotype উন্নত করতে পারে।</li></ul>
+<p>আদি বলল,</p>
+<p>— অর্থাৎ lysosome-এর কাজ শুধু enzyme-এর ওপর নির্ভর করে না; এর biogenesis ও regulation-ও গুরুত্বপূর্ণ।</p>
+<p>— একদম।</p>
+</div></section>
+<section class="sec r" id="s31"><h3>১২. 26S proteasome: Lysosome-এর বাইরে আরেকটি degradation system</h3><div class="body">
+<p>এবার আমৃতা একটি নতুন diagram আঁকল।</p>
+<p>— সব cellular protein degradation কি lysosome দিয়েই হয়?</p>
+<p>— না, proteasome-এর কথাও তো পড়েছি।</p>
+<p>— এবার সেটি বিস্তারিত বুঝুন।</p>
+<p>একই protein বিভিন্ন mechanism-এর মাধ্যমে degrade হতে পারে। এটি cell type এবং pathological condition-এর ওপর নির্ভর করে।</p>
+<p>এমনকি একই substrate একাধিক proteolytic pathway-তেও অংশ নিতে পারে।</p>
+<p>Eukaryotic cell-এ non-functional cellular protein অপসারণের জন্য তিনটি প্রধান mechanism কাজ করে:</p>
+<ul><li>Autophagosome–lysosomal pathway</li><li>Apoptotic procaspase–caspase pathway</li><li>Ubiquitinated protein–26S proteasome pathway</li></ul>
+</div></section>
+<section class="sec r" id="s32"><h3>26S proteasome-এর অবস্থান ও কাজ</h3><div class="body">
+<p>26S proteasome হলো একটি multicatalytic protease।</p>
+<p>এটি পাওয়া যায়:</p>
+<ul><li>Cytosol</li><li>Nucleus</li></ul>
+<p>এটি intracellular protein degrade করে, যেগুলো enzymatic cascade-এর মাধ্যমে polyubiquitin chain-এর সঙ্গে conjugated হয়েছে।</p>
+</div></section>
+<section class="sec r" id="s33"><h3>26S proteasome-এর গঠন</h3><div class="body">
+<p>এর গঠনে রয়েছে:</p>
+<ul><li>দুটি 19S polar cap</li><li>একটি 20S central barrel-shaped structure</li></ul>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Checking your browser - reCAPTCHA</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/arXscnBa8cL2f0Cf5qQ7JY0Frn5p7f4Oi4LQJCKRRYmOxEvlAcoz495UrtyxFIIZx0pcdMpnYvgFD8OoMW1G8nsYh48sxIIPD4FUOo90dWkEKA7SNbG6knuNVPH0VOnSEDg8jK7j2OYI5YOF9TEukcceZMtoQVKdYl7ABukNGwZhsqnj7U0ZLOmvdZR8XFyg?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Checking%20your%20browser%20-%20reCAPTCHA">Image search ↗</a></figure>
+<p>19S polar caps</p>
+<p>এখানে protein recognition এবং ATP-dependent target processing ঘটে।</p>
+<p>20S central barrel</p>
+<p>এটি barrel-shaped structure এবং এর ভেতরে রয়েছে inner proteolytic chamber।</p>
+</div></section>
+<section class="sec r" id="s34"><h3>26S proteasome-এর কাজ</h3><div class="body">
+<p>এটি কয়েকটি গুরুত্বপূর্ণ cellular process-এ অংশ নেয়:</p>
+<ul><li>Misfolded protein অপসারণ।</li><li>Abnormally assembled protein অপসারণ।</li><li>Cell cycle নিয়ন্ত্রণে অংশ নেওয়া cyclin-এর degradation।</li><li>Transcription regulator-এর processing ও degradation।</li><li>Cell-mediated immune response।</li><li>Cell cycle arrest।</li><li>Apoptosis।</li></ul>
+<p>আদি নোটবুকের শেষ লাইনে লিখল:</p>
+<p>26S proteasome → ubiquitinated intracellular proteins → protein degradation.</p>
+<p>তারপর বলল,</p>
+<p>— এখন বুঝতে পারছি, lysosome এবং proteasome দুটোই degradation-এর সঙ্গে যুক্ত, কিন্তু তাদের substrate এবং pathway আলাদা।</p>
+<p>আমৃতা মাথা নাড়ল।</p>
+<p>— হ্যাঁ। Lysosome-এর ক্ষেত্রে vesicle ও autophagy-নির্ভর degradation গুরুত্বপূর্ণ; আর 26S proteasome polyubiquitin chain-যুক্ত intracellular protein degrade করে।</p>
+<p>লাইব্রেরি বন্ধ হওয়ার ঘোষণা শোনা গেল। আদি বই বন্ধ করল। আমৃতা তার নোটবুকের শেষ পৃষ্ঠায় আজকের তিনটি প্রধান শব্দ লিখে দিল:</p>
+<p>Endocytosis — Autophagy — Proteasome</p>
+<p>আদি প্রশ্ন করল,</p>
+<p>— তাহলে এখন আমরা কোষের ভেতরের আরেকটি organelle পড়ব?</p>
+<p>আমৃতা পৃষ্ঠা উল্টে নতুন heading দেখাল।</p>
+<p>Peroxisomes.</p>
+<p>তারপর প্রশ্ন করল,</p>
+<p>“যে organelle-এ ৫০টিরও বেশি enzyme থাকে এবং hydrogen peroxide-এর মতো পদার্থের metabolism-এ ভূমিকা রাখে, সেটি কীভাবে কোষকে oxidative damage থেকে রক্ষা করে?”</p>
+</div></section>
+<section class="sec r" id="s35"><h3>Revision notes — পরীক্ষার জন্য</h3><div class="body">
+</div></section>
+<section class="sec r" id="s36"><h3>১. Endocytic pathway</h3><div class="body">
+<div class="tw"><table><thead><tr><th>ধাপ</th><th>ঘটনা</th></tr></thead><tbody><tr><td>Plasma membrane</td><td>Endocytic vesicle তৈরি</td></tr><tr><td>Early endosome</td><td>Receptor ও ligand পৃথক হয়</td></tr><tr><td>Late endosome</td><td>Lysosome-এর দিকে cargo পরিবহন</td></tr><tr><td>Lysosome</td><td>Lysosomal hydrolase দিয়ে degradation</td></tr></tbody></table></div>
+<ul><li>Early endosome থেকে membrane ও receptor cell surface-এ recycle হতে পারে।</li><li>Clathrin-dependent endocytosis coated pits-এ ঘটে।</li><li>Receptor-mediated endocytosis-এ surface receptor-এর সঙ্গে ligand internalized হয়।</li><li>Caveolae endothelial ও smooth muscle cell-এ গুরুত্বপূর্ণ।</li></ul>
+</div></section>
+<section class="sec r" id="s37"><h3>২. Phagocytosis বনাম Autophagy</h3><div class="body">
+<div class="tw"><table><thead><tr><th>বৈশিষ্ট্য</th><th>Phagocytosis</th><th>Autophagy</th></tr></thead><tbody><tr><td>Material</td><td>Exogenous</td><td>Endogenous</td></tr><tr><td>কী গ্রহণ করে</td><td>Pathogen, apoptotic cell, foreign material</td><td>অপ্রয়োজনীয় cytoplasmic component ও organelle</td></tr><tr><td>গুরুত্বপূর্ণ vesicle</td><td>Phagosome</td><td>Autophagosome</td></tr><tr><td>পরবর্তী ধাপ</td><td>Lysosome-এর সঙ্গে fusion</td><td>Lysosome-এর সঙ্গে fusion</td></tr><tr><td>উদাহরণ</td><td>Macrophage, neutrophil granulocyte</td><td>Starvation ও cell growth-এর সময় autophagosome দেখা যায়</td></tr></tbody></table></div>
+</div></section>
+<section class="sec r" id="s38"><h3>৩. Lysosome-এর গুরুত্বপূর্ণ তথ্য</h3><div class="body">
+<div class="tw"><table><thead><tr><th>বিষয়</th><th>তথ্য</th></tr></thead><tbody><tr><td>Diameter</td><td>80–800 nm</td></tr><tr><td>Acid hydrolases</td><td>প্রায় ৫০টি</td></tr><tr><td>Lysosomal membrane proteins</td><td>প্রায় ২৫টি</td></tr><tr><td>Secondary lysosome-এর pH</td><td>প্রায় 5.0</td></tr><tr><td>Residual body-এর অন্য নাম</td><td>Tertiary lysosome</td></tr></tbody></table></div>
+</div></section>
+<section class="sec r" id="s39"><h3>৪. গুরুত্বপূর্ণ রোগ</h3><div class="body">
+<div class="tw"><table><thead><tr><th>Disease</th><th>প্রধান defect</th></tr></thead><tbody><tr><td>Tay–Sachs disease</td><td>Defective β-hexosaminidase A; GM2 ganglioside accumulation</td></tr><tr><td>Danon disease</td><td>LAMP-2 mutation; lysosome–autophagosome fusion ব্যর্থতা</td></tr><tr><td>LSDs</td><td>বিভিন্ন material-এর lysosomal accumulation</td></tr></tbody></table></div>
+</div></section>
+<section class="sec r" id="s40"><h3>৫. 26S proteasome</h3><div class="body">
+<ul><li>অবস্থান: Cytosol ও nucleus।</li><li>কাজ: Polyubiquitin chain-যুক্ত intracellular protein degradation।</li><li>গঠন: দুটি 19S polar cap এবং একটি 20S central barrel।</li><li>19S: Protein recognition ও ATP-dependent target processing।</li><li>20S: Inner proteolytic chamber।</li></ul>
+</div></section>
+<section class="sec r" id="s41"><h3>Source verification</h3><div class="body">
+<ul><li>Edition: Gray’s Anatomy, 41st Edition</li><li>Covered source range:<ul><li>Page 38: Endocytic pathway, clathrin-dependent endocytosis, caveolae, phagocytosis, autophagy, secondary lysosome।</li><li>Page 39: COPII/COPI, microtubule-based vesicle transport, clathrin budding at trans-Golgi network, antigen-presenting cells।</li><li>Page 40: Lysosome, residual body, lysosomal dysfunction, LSDs, 26S proteasome।</li><li>Page 41: TFEB ও lysosomal dysfunction-এর regulatory aspects।</li></ul></li></ul>
+<p>বিশেষভাবে: Page 39-এর antigen-presenting cell-সংক্রান্ত তথ্যও অন্তর্ভুক্ত করা হয়েছে: তারা endocytic pathway দিয়ে আসা antigen degrade করে, তার fragment cell exterior-এ প্রকাশ করে এবং helper T cell-প্রাথমিক immune response-এ অংশ নেয়।</p>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-003.html">← Episode 3</a><a href="index.html">সব পর্ব</a><a href="episode-005.html">Episode 5 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">Episode 4 — কোষের প্রবেশদ্বার ও বর্জ্য ব্যবস্থাপনা</a><a href="#s2">১. Endocytic pathway: বাইরে থেকে কোষের ভেতরে</a><a href="#s3">Endocytic pathway-এর মূল ধারণা</a><a href="#s4">Early endosome ও receptor recycling</a><a href="#s5">২. Endocytosis-এর বিশেষ ধরন</a><a href="#s6">A. Clathrin-dependent endocytosis</a><a href="#s7">B. Caveolae</a><a href="#s8">৩. Lysosome-এর সঙ্গে অন্যান্য vesicle-এর সম্পর্ক</a><a href="#s9">৪. Phagocytosis: বড় পদার্থকে কোষের ভেতরে নেওয়া</a><a href="#s10">৫. Autophagy: নিজের কোষের উপাদান পুনর্ব্যবহার</a><a href="#s11">Autophagosome formation</a><a href="#s12">Autophagy ও 26S proteasome-এর পার্থক্য</a><a href="#s13">৬. Late endosome থেকে Secondary lysosome</a><a href="#s14">Degradation-এর পর কী হয়?</a><a href="#s15">৭. Lysosome: গঠন ও enzyme</a><a href="#s16">আকার</a><a href="#s17">80–800 nm</a><a href="#s18">Lysosome-এর protein-এর শ্রেণি</a><a href="#s19">Acid hydrolases</a><a href="#s20">Lysosomal membrane proteins</a><a href="#s21">৮. Residual body বা Tertiary lysosome</a><a href="#s22">Lipofuscin এবং ageing brain</a><a href="#s23">৯. Lysosomal enzyme-এর extracellular কাজ</a><a href="#s24">১০. Lysosomal dysfunction ও Lysosomal storage disease</a><a href="#s25">Lysosomal storage diseases (LSDs)</a><a href="#s26">Autophagy impairment ও neurodegeneration</a><a href="#s27">Tay–Sachs disease</a><a href="#s28">Danon disease</a><a href="#s29">১১. TFEB: Lysosome-এর regulation</a><a href="#s30">TFEB নিয়ে experimental observation</a><a href="#s31">১২. 26S proteasome: Lysosome-এর বাইরে আরেকটি degradation system</a><a href="#s32">26S proteasome-এর অবস্থান ও কাজ</a><a href="#s33">26S proteasome-এর গঠন</a><a href="#s34">26S proteasome-এর কাজ</a><a href="#s35">Revision notes — পরীক্ষার জন্য</a><a href="#s36">১. Endocytic pathway</a><a href="#s37">২. Phagocytosis বনাম Autophagy</a><a href="#s38">৩. Lysosome-এর গুরুত্বপূর্ণ তথ্য</a><a href="#s39">৪. গুরুত্বপূর্ণ রোগ</a><a href="#s40">৫. 26S proteasome</a><a href="#s41">Source verification</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 011 · কোষের ভেতরে সংকেতের গোপন যোগাযোগ</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 011">EPISODE 011</h1>
+  <div class="ttl">কোষের ভেতরে সংকেতের গোপন যোগাযোগ</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">011</div></div>
+    <div class="face b"><div class="t2">কোষের ভেতরে সংকেতের গোপন যোগাযোগ</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>পর্ব ১১ — কোষের ভেতরে সংকেতের গোপন যোগাযোগ</h3><div class="body">
+<p>Gray’s Anatomy · Chapter 1: Basic Structure and Function of Cells · Page 44</p>
+<p>সকাল সাড়ে আটটা। ঢাকা মেডিকেল কলেজের Anatomy বিভাগের করিডোরে তখন বেশ ভিড়। কেউ ক্লাসে ঢুকছে, কেউ আগের দিনের লেকচার নিয়ে আলোচনা করছে, আবার কয়েকজন পরীক্ষার সম্ভাব্য প্রশ্ন নিয়ে তর্কে ব্যস্ত।</p>
+<p>আদিত্য লাইব্রেরির সামনে দাঁড়িয়ে নিজের নোটের কয়েকটি পৃষ্ঠা উল্টাচ্ছিল। পাশে রুদ্র।</p>
+<p>— দোস্ত, একটা কথা বল তো। Cell signalling পড়তে গিয়ে আমার মনে হচ্ছে কোষের ভেতরে আরেকটা আলাদা যোগাযোগব্যবস্থা আছে। বাইরে থেকে একটা signal আসে, তারপর সেটা ভেতরে কোথায় যেন পৌঁছে যায়।</p>
+<p>রুদ্র হেসে বলল,</p>
+<p>— তোর সমস্যা হচ্ছে, তুই প্রতিটা জিনিসের মধ্যে একটা শহর খুঁজে পাস। কোষকে শহর বানিয়ে ফেলেছিস, এবার তার ভেতরে ডাক বিভাগও বানাবি?</p>
+<p>— ডাক বিভাগ নয়। Communication network!</p>
+<p>ঠিক তখন নন্দিনী ও অমৃতা লাইব্রেরির দিকে এগিয়ে এল।</p>
+<p>নন্দিনী বলল,</p>
+<p>— আপনাদের আলোচনা শুনে মনে হচ্ছে আজও পড়ার চেয়ে তর্ক বেশি হবে।</p>
+<p>রুদ্র বলল,</p>
+<p>— আমরা আসলে intracellular signalling নিয়ে আলোচনা করছি। আদিত্য দাবি করছে, কোষের ভেতরে আলাদা যোগাযোগব্যবস্থা আছে।</p>
+<p>অমৃতা ব্যাগ থেকে Gray’s Anatomy বের করে বলল,</p>
+<p>— দাবিটা ভুল নয়। তবে বিষয়টা বুঝতে হলে আগের অংশের সঙ্গে সংযোগ করতে হবে। Plasma membrane-এর receptor থেকে শুরু করে nucleus পর্যন্ত signal কীভাবে পৌঁছায়, সেটাই এখানে মূল কথা।</p>
+<p>আদিত্য নোট বন্ধ করল।</p>
+<p>— তাহলে আজকের ক্লাসটা এখান থেকেই শুরু করা যাক।</p>
+</div></section>
+<section class="sec r" id="s2"><h3>১. কোষের ভেতরে দ্বিতীয় বার্তাবাহক কেন প্রয়োজন?</h3><div class="body">
+<p>অমৃতা বইয়ের পৃষ্ঠা ৪৪ খুলে বলল,</p>
+<p>— ধরুন, একটি signalling molecule কোষের বাইরে থেকে এসে plasma membrane-এর receptor-কে activate করল। কিন্তু signal-এর চূড়ান্ত লক্ষ্য যদি nucleus হয়, তাহলে বাইরের receptor থেকে nucleus পর্যন্ত বার্তা পৌঁছাবে কীভাবে?</p>
+<p>আদিত্য বলল,</p>
+<p>— Receptor নিজেই কি nucleus পর্যন্ত চলে যায়?</p>
+<p>— সব ক্ষেত্রে তা নয়। Gray’s এখানে intracellular signalling-এর কথা বলছে। কোষের ভেতরে অনেক ছোট ছোট molecule signal বহন করে। এদের বলা হয় second messengers।</p>
+<p>অমৃতা বইয়ের বাক্যটি দেখাল।</p>
+<p>Gray’s Anatomy অনুযায়ী, বিভিন্ন ক্ষুদ্র অণু কোষের ভেতরে signal বহন করে। এগুলো signal-এর উৎস—যেমন activated plasma membrane receptor—থেকে লক্ষ্যস্থল—যেমন nucleus—পর্যন্ত বার্তা পৌঁছে দেয়।</p>
+<p>আদিত্য নিজের খাতায় লিখল:</p>
+<p>Second messenger: A small molecule that carries signals within the cell from the signal source to its target.</p>
+<p>রুদ্র বলল,</p>
+<p>— তাহলে first messenger আর second messenger-এর পার্থক্য কী?</p>
+<p>অমৃতা উত্তর দিল,</p>
+<p>— এই অংশে Gray’s মূলত second messenger-এর কাজ ব্যাখ্যা করছে। বাইরের signal-এর উৎস হিসেবে activated plasma membrane receptor-এর উদাহরণ দিয়েছে। আর intracellular messenger সেই signal কোষের ভেতরে বহন করে।</p>
+<p>আদিত্য বলল,</p>
+<p>— অর্থাৎ বাইরের বার্তা ভেতরে পৌঁছে দেওয়ার জন্য কোষের নিজস্ব messenger system আছে।</p>
+<p>— ঠিক তাই।</p>
+</div></section>
+<section class="sec r" id="s3"><h3>২. Second messenger কীভাবে signal বহন করে?</h3><div class="body">
+<p>অমৃতা এবার বইয়ের পরের বাক্যে আঙুল রাখল।</p>
+<p>— এখানে একটি গুরুত্বপূর্ণ বিষয় আছে। Second messenger শুধু উপস্থিত থাকলেই signal বহন করে না। এদের local concentration-এর পরিবর্তনের মাধ্যমে signal প্রকাশ পায়।</p>
+<p>আদিত্য একটু থামল।</p>
+<p>— Local concentration-এর পরিবর্তন বলতে নির্দিষ্ট জায়গায় অণুর পরিমাণ বাড়া বা কমা?</p>
+<p>— হ্যাঁ। Gray’s বলছে, এই concentration-এর ওঠানামা নির্ভর করে messenger-এর synthesis এবং degradation-এর হারের ওপর।</p>
+<p>অর্থাৎ,</p>
+<ul><li>Messenger কত দ্রুত তৈরি হচ্ছে।</li><li>কত দ্রুত ভেঙে যাচ্ছে বা নষ্ট হচ্ছে।</li></ul>
+<p>এই দুই প্রক্রিয়ার ভারসাম্য intracellular concentration-কে প্রভাবিত করে।</p>
+<p>আদিত্য লিখল:</p>
+<p>Second messenger signalling depends on fluctuations in local concentration, determined by rates of synthesis and degradation.</p>
+<p>রুদ্র বলল,</p>
+<p>— তাহলে messenger তৈরি হওয়ার হার বেশি হলে concentration বাড়তে পারে, আর degradation বেশি হলে কমতে পারে?</p>
+<p>— ধারণাটা ঠিক, তবে মনে রাখতে হবে Gray’s এখানে নির্দিষ্ট কোনো pathway-এর ফলাফল নয়, concentration পরিবর্তনের সাধারণ নীতিটা ব্যাখ্যা করছে।</p>
+<p>অমৃতার এই সতর্কতাটা আদিত্যের ভালো লাগল। সে লক্ষ্য করল, অমৃতা কোনো তথ্যকে বইয়ের সীমার বাইরে নিয়ে গিয়ে নিশ্চিতভাবে বলতে চায় না।</p>
+</div></section>
+<section class="sec r" id="s4"><h3>৩. Cyclic nucleotides: cAMP ও cGMP</h3><div class="body">
+<p>অমৃতা বলল,</p>
+<p>— Gray’s দ্বিতীয় messenger-এর synthesis-এর উদাহরণ হিসেবে cyclic nucleotides-এর কথা বলেছে।</p>
+<p>দুটি গুরুত্বপূর্ণ নাম:</p>
+<ul><li>cAMP — Cyclic adenosine monophosphate</li><li>cGMP — Cyclic guanosine monophosphate</li></ul>
+<p>এগুলোর synthesis-এর সঙ্গে নির্দিষ্ট enzyme যুক্ত থাকে। Gray’s উদাহরণ দিয়েছে cyclases।</p>
+<p>আদিত্য বলল,</p>
+<p>— অর্থাৎ cyclases-এর মতো enzyme cyclic nucleotide তৈরি করার সঙ্গে যুক্ত, আর সেই messenger-এর synthesis ও degradation-এর হার তার local concentration পরিবর্তন করে?</p>
+<p>— একদম। বইয়ের বক্তব্য এটিই।</p>
+<p>নন্দিনী এতক্ষণ চুপচাপ শুনছিল। এবার বলল,</p>
+<p>— তোমরা দুজন এতক্ষণ ধরে একটা ছোট paragraph নিয়ে আলোচনা করছ!</p>
+<p>রুদ্র হেসে বলল,</p>
+<p>— ছোট paragraph বলেই তো সমস্যা। বইয়ে তিন লাইনে যা লেখা, বুঝতে আমাদের আধা ঘণ্টা লাগে।</p>
+<p>আদিত্য বলল,</p>
+<p>— কিন্তু একবার বুঝে গেলে মনে থাকে।</p>
+<p>অমৃতা বইয়ের দিকে তাকিয়ে বলল,</p>
+<p>— শুধু মনে রাখলেই হবে না। cAMP, cGMP এবং cyclases-এর সম্পর্কটা যেন গুলিয়ে না যায়।</p>
+</div></section>
+<section class="sec r" id="s5"><h3>৪. Calcium: দ্বিতীয় বার্তাবাহকের আরেকটি নিয়ন্ত্রণব্যবস্থা</h3><div class="body">
+<p>এবার অমৃতা পরের বাক্যটি পড়ল।</p>
+<p>Gray’s বলছে, calcium-এর ক্ষেত্রে intracellular signalling নির্ভর করে calcium channels এবং calcium pumps-এর কার্যকলাপের ওপর।</p>
+<p>আদিত্য বলল,</p>
+<p>— তাহলে cAMP ও cGMP-এর ক্ষেত্রে বই synthesis ও degradation-এর হার বলছে, আর calcium-এর ক্ষেত্রে channel ও pump-এর activity-র কথা বলছে?</p>
+<p>— হ্যাঁ। এই পার্থক্যটি গুরুত্বপূর্ণ।</p>
+<p>অমৃতা খাতায় পাশাপাশি দুটি বিষয় লিখল:</p>
+<div class="tw"><table><thead><tr><th>Second messenger</th><th>Gray’s-এ বর্ণিত concentration নিয়ন্ত্রণের ভিত্তি</th></tr></thead><tbody><tr><td>cAMP ও cGMP</td><td>Synthesis ও degradation-এর হার; cyclases synthesis-এ যুক্ত</td></tr><tr><td>Calcium</td><td>Calcium channels ও pumps-এর কার্যকলাপ</td></tr></tbody></table></div>
+<p>রুদ্র বলল,</p>
+<p>— তাহলে calcium-এর signal-ও concentration পরিবর্তনের মাধ্যমে প্রকাশ পায়?</p>
+<p>— Gray’s-এর বক্তব্য অনুযায়ী, calcium-এর ক্ষেত্রে messenger-এর কার্যকলাপ calcium channels ও pumps-এর activity-র সঙ্গে সম্পর্কিত। এই অংশের বাইরে গিয়ে এখনই অন্য কোনো mechanism যোগ করার দরকার নেই।</p>
+<p>আদিত্য মাথা নাড়ল।</p>
+<p>— বুঝেছি। একই second messenger ধারণা, কিন্তু concentration পরিবর্তনের নিয়ন্ত্রণের ভিত্তি এক নয়।</p>
+</div></section>
+<section class="sec r" id="s6"><h3>৫. Lipidic second messengers: Membrane থেকেই আরেক ধরনের বার্তা</h3><div class="body">
+<p>লাইব্রেরির বাইরে তখন ক্লাসের ঘণ্টা পড়েছে। কিন্তু চারজনের আলোচনা শেষ হয়নি।</p>
+<p>অমৃতা বলল,</p>
+<p>— এখন শেষ অংশটা দেখুন। Gray’s বলছে, কিছু second messenger হলো lipidic second messengers।</p>
+<p>আদিত্য বলল,</p>
+<p>— অর্থাৎ lipid-জাতীয় messenger?</p>
+<p>— ঠিক। বই এখানে phosphatidylinositol-এর উদাহরণ দিয়েছে।</p>
+<p>এগুলো membrane থেকে উৎপন্ন হয় এবং membrane-এর ভেতরেই কাজ করে downstream effects তৈরি করতে পারে।</p>
+<p>আদিত্য একটু ভেবে বলল,</p>
+<p>— তাহলে সব second messenger-কে cytoplasm-এর মধ্যে ছড়িয়ে থাকা ছোট molecule হিসেবে ভাবা ঠিক হবে না। কিছু lipidic messenger membrane থেকেই আসে এবং membrane-এর ভেতরেই downstream effect তৈরি করতে পারে।</p>
+<p>অমৃতা বলল,</p>
+<p>— ঠিক ধরেছেন।</p>
+<p>রুদ্র এবার বই বন্ধ করে বলল,</p>
+<p>— আজকের আলোচনার সারকথা তাহলে তিনটি:</p>
+<p>1. Second messenger signal-কে কোষের ভেতরে বহন করে।</p>
+<p>2. তাদের local concentration-এর ওঠানামা signal বহনের গুরুত্বপূর্ণ ভিত্তি।</p>
+<p>3. cAMP, cGMP, calcium এবং phosphatidylinositol—এখানে Gray’s যেসব উদাহরণ দিয়েছে, সেগুলোর নিয়ন্ত্রণ বা কাজের ধরন এক নয়।</p>
+<p>অমৃতা বলল,</p>
+<p>— ভালো। তবে phosphatidylinositol-এর ক্ষেত্রে মনে রাখবেন, বই বলছে এটি membrane থেকে আসে এবং membrane-এর ভেতরে downstream effects তৈরি করতে পারে।</p>
+<p>আদিত্য খাতায় শেষ লাইনটি লিখে কলম বন্ধ করল।</p>
+</div></section>
+<section class="sec r" id="s7"><h3>৬. নতুন বন্ধুত্ব, নতুন সম্বোধন</h3><div class="body">
+<p>ক্লাসে যাওয়ার পথে রুদ্র ও নন্দিনী সামনে এগিয়ে গেল। আদিত্য ও অমৃতা কিছুটা পিছনে রইল।</p>
+<p>আদিত্য বলল,</p>
+<p>— অমৃতা, একটা কথা বলব?</p>
+<p>— বলুন।</p>
+<p>— আমরা এতদিন একসঙ্গে পড়ছি। কিন্তু এখনও আপনি-আপনি করে কথা বলছি। ব্যাপারটা একটু আনুষ্ঠানিক হয়ে যাচ্ছে না?</p>
+<p>অমৃতা কয়েক মুহূর্ত চুপ থেকে বলল,</p>
+<p>— আমারও তাই মনে হয়। চাইলে এখন থেকে তুমি বলতে পারো।</p>
+<p>আদিত্য একটু হেসে বলল,</p>
+<p>— তাহলে তুমিও আমাকে তুমি বলবে।</p>
+<p>— ঠিক আছে।</p>
+<p>কথাটা খুব সাধারণ ছিল। কোনো নাটকীয়তা ছিল না। দুজনের কেউই বিষয়টিকে বড় করে দেখাল না। সামনে ক্লাস, পড়া এবং আরও অনেক কাজ অপেক্ষা করছে।</p>
+<p>কিন্তু সেই দিন থেকে তাদের কথাবার্তায় একটি ছোট পরিবর্তন এল।</p>
+<p>ক্লাসে ঢোকার আগে অমৃতা বলল,</p>
+<p>— আদিত্য, আজকের পড়াটা বাসায় গিয়ে আরেকবার দেখে নিও। Second messenger-এর উদাহরণগুলো যেন বাদ না পড়ে।</p>
+<p>— তুমিও দেখে নিও। কাল গ্রুপ স্টাডিতে আলোচনা করব।</p>
+<p>দুজনেই ক্লাসে ঢুকে গেল।</p>
+</div></section>
+<section class="sec r" id="s8"><h3>৭. Gray’s Anatomy থেকে আজকের শেখা</h3><div class="body">
+<p>Intracellular signalling</p>
+<ul><li>A wide variety of small molecules carry signals within cells.</li><li>They convey signals from the source, such as an activated plasma membrane receptor, to the target, such as the nucleus.</li><li>These molecules are called second messengers.</li><li>Second messengers convey signals through fluctuations in local concentration.</li><li>Their concentration depends on the rates of synthesis and degradation by specific enzymes.</li><li>Cyclases are involved in cyclic nucleotide synthesis, including cAMP and cGMP.</li><li>Calcium signalling depends on the activities of calcium channels and pumps.</li><li>Lipidic second messengers, such as phosphatidylinositol, derive from membranes.</li><li>These lipidic messengers may act within the membrane to generate downstream effects.</li></ul>
+<p>Further reading: Pollard and Earnshaw (2008), as cited in Gray’s Anatomy.</p>
+<p>Source verification</p>
+<ul><li>Verified section: Page 44 — Intracellular signalling</li></ul>
+<p>পরের দিন dissection hall-এ আদিত্য ও তার বন্ধুরা এমন একটি কাঠামোর মুখোমুখি হবে, যা কোষকে শুধু আকৃতি দিয়েই রাখে না—কোষের ভেতরে চলাচল, বিভাজন এবং বাইরের পরিবেশের সঙ্গে সম্পর্কও নিয়ন্ত্রণে সাহায্য করে; সেই Cytoskeleton আসলে কী দিয়ে তৈরি?</p>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-010.html">← Episode 10</a><a href="index.html">সব পর্ব</a><a href="episode-012.html">Episode 12 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">পর্ব ১১ — কোষের ভেতরে সংকেতের গোপন যোগাযোগ</a><a href="#s2">১. কোষের ভেতরে দ্বিতীয় বার্তাবাহক কেন প্রয়োজন?</a><a href="#s3">২. Second messenger কীভাবে signal বহন করে?</a><a href="#s4">৩. Cyclic nucleotides: cAMP ও cGMP</a><a href="#s5">৪. Calcium: দ্বিতীয় বার্তাবাহকের আরেকটি নিয়ন্ত্রণব্যবস্থা</a><a href="#s6">৫. Lipidic second messengers: Membrane থেকেই আরেক ধরনের বার্তা</a><a href="#s7">৬. নতুন বন্ধুত্ব, নতুন সম্বোধন</a><a href="#s8">৭. Gray’s Anatomy থেকে আজকের শেখা</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

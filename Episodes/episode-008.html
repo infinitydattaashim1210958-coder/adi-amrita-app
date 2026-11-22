@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 008 · কোষের সাইটোপ্লাজমের নীরব সঞ্চয়ভাণ্ডার</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+code.bx{font-family:"Special Elite","Noto Serif Bengali",monospace;font-size:.88em;color:var(--teal);background:rgba(98,211,198,.07);border:1px solid #2c5a58;border-radius:7px;padding:1px 9px;margin:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 008">EPISODE 008</h1>
+  <div class="ttl">কোষের সাইটোপ্লাজমের নীরব সঞ্চয়ভাণ্ডার</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">008</div></div>
+    <div class="face b"><div class="t2">কোষের সাইটোপ্লাজমের নীরব সঞ্চয়ভাণ্ডার</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>Episode 8 — কোষের সাইটোপ্লাজমের নীরব সঞ্চয়ভাণ্ডার</h3><div class="body">
+<p>Cytosolic inclusions · Gray’s Anatomy, 41st Edition · Chapter 1</p>
+</div></section>
+<section class="sec r" id="s2"><h3>গল্প: কোষের ভেতরে অঙ্গাণু ছাড়াও যা থাকে</h3><div class="body">
+<p>ঢাকা মেডিকেল কলেজের লাইব্রেরিতে আজও আদিত্য ও আমৃতার দেখা হলো। আগের আলোচনায় তারা protein কীভাবে intracellular membrane অতিক্রম করে, তা নিয়ে পড়েছিল।</p>
+<p>আদি বইয়ের পৃষ্ঠা উল্টে বলল, “আমৃতা, আমরা তো এতক্ষণ cell-এর organelles নিয়ে আলোচনা করলাম। কিন্তু cytoplasm-এর মধ্যে কি শুধু organelles-ই থাকে?”</p>
+<p>আমৃতা বলল, “না। Cytoplasm-এর মধ্যে membranous organelles ছাড়াও আরও কিছু non-membranous structure থাকে। এগুলোকে বুঝতে হলে আগে cytosol-এর কথা মনে করতে হবে।”</p>
+<p>আদি খাতায় লিখল:</p>
+<p>Cytosol: কোষের aqueous অংশ, যা membranous organelles-কে ঘিরে রাখে।</p>
+<p>আমৃতা বলল, “এই aqueous cytosol-এর মধ্যে বিভিন্ন non-membranous inclusions-ও থাকে।”</p>
+</div></section>
+<section class="sec r" id="s3"><h3>১. Cytosolic inclusions কী?</h3><div class="body">
+<p>Cytosol-এর মধ্যে থাকা বিভিন্ন non-membranous inclusions-এর মধ্যে রয়েছে:</p>
+<ul><li>Free ribosomes</li><li>Cytoskeleton-এর components</li><li>Storage granules</li><li>Pigments</li><li>Lipid droplets</li></ul>
+<p>আমৃতা উদাহরণ দিয়ে বোঝাল:</p>
+<p>Storage granules: যেমন glycogen।</p>
+<p>Pigments: যেমন lipofuscin granules। এগুলো suprarenal cortex-এ দেখা যায় এবং lipid oxidative mechanism-এর অবশিষ্টাংশের সঙ্গে সম্পর্কিত।</p>
+<p>আদি বলল, “অর্থাৎ cytosol শুধু organelles-এর চারপাশের তরল অংশ নয়; এর মধ্যে আরও বিভিন্ন ধরনের inclusion থাকে।”</p>
+<p>“ঠিক তাই। এবার lipid droplets নিয়ে একটু বিস্তারিত পড়ুন।”</p>
+</div></section>
+<section class="sec r" id="s4"><h3>২. Lipid droplets — কোষের lipid সঞ্চয়</h3><div class="body">
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Histology Of Connective Tissues Lab</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/M6hnRhM2gLzBC_wVDPFSPwIA9d7BZwtLnOUWl0abgvAC8wlSqvTZaKQ7TOz2o0KNIH6IsIrSNTWpRNsOdikMNC6UeoxU-JurJwgl2NzSiUj35Gga8Lsj7-qncSp6gVSFj9rbw2eEwc9xqvgRK0MZ86gXd16Ao-VpwLSkxPiQ6EGFNGeYKEYDPGuSj3MYjivf?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Histology%20Of%20Connective%20Tissues%20Lab">Image search ↗</a></figure>
+<p>Lipid droplets হলো বিভিন্ন আকারের spherical bodies, যা অনেক ধরনের cell-এর মধ্যে পাওয়া যায়।</p>
+<p>তবে এগুলো বিশেষভাবে prominent থাকে adipose connective tissue-এর adipocytes বা fat cells-এ।</p>
+<p>আদি বলল, “এগুলো কি Golgi apparatus-এর তৈরি কোনো vesicle?”</p>
+<p>আমৃতা বলল, “না। এটি একটি গুরুত্বপূর্ণ পার্থক্য। Lipid droplets, Golgi-related vacuolar system-এর অন্তর্ভুক্ত নয়।”</p>
+</div></section>
+<section class="sec r" id="s5"><h3>Lipid droplets-এর গঠন</h3><div class="body">
+<ul><li>এগুলো membrane-bound নয়।</li><li>Cytosol-এর মধ্যে suspended lipid droplets হিসেবে থাকে।</li><li>এগুলো perilipin proteins দ্বারা পরিবেষ্টিত।</li><li>Perilipin proteins lipid storage এবং lipolysis নিয়ন্ত্রণ করে।</li></ul>
+<p>আদি লিখল:</p>
+<p>Lipid droplet — Structure</p>
+</div></section>
+<section class="sec r" id="s6"><h3>Lipid</h3><div class="body">
+<p>Cytosol-এর মধ্যে spherical droplet</p>
+<p>Perilipin proteins দ্বারা পরিবেষ্টিত</p>
+<p>এটি membrane-bound organelle নয়। এটি Golgi-related vacuolar system-এর অংশও নয়।</p>
+<p>আমৃতা বলল, “Perilipin-এর কাজ মনে রাখবেন—lipid storage ও lipolysis নিয়ন্ত্রণ করা।”</p>
+</div></section>
+<section class="sec r" id="s7"><h3>৩. Lipid droplets-এর আকার</h3><div class="body">
+<p>Lipid storage-এর জন্য বিশেষায়িত cell-এ lipid droplet-এর vacuoles-এর diameter 80 μm বা তারও বেশি হতে পারে।</p>
+<p>আদি অবাক হয়ে বলল, “একটি lipid droplet-এর diameter 80 micrometre-এর বেশি হতে পারে!”</p>
+<p>“হ্যাঁ। বিশেষ করে lipid storage-এর জন্য specialized cell-এ এমন বড় vacuole দেখা যায়।”</p>
+</div></section>
+<section class="sec r" id="s8"><h3>৪. Lipid droplets-এর কাজ</h3><div class="body">
+<p>Adipocytes-এ lipid droplets-এর তিনটি গুরুত্বপূর্ণ ভূমিকা রয়েছে।</p>
+<ul><li>Store of chemical energy: রাসায়নিক শক্তির ভাণ্ডার হিসেবে কাজ করে।</li><li>Thermal insulation: তাপ নিরোধক হিসেবে কাজ করে।</li><li>Mechanical shock absorption: যান্ত্রিক আঘাত থেকে সুরক্ষা দিতে shock absorber-এর মতো কাজ করে।</li></ul>
+<p>তবে lipid droplets শুধু adipocytes-এই থাকে না।</p>
+<p>অন্যান্য cell-এও এগুলো দেখা যায় এবং সেখানে এগুলো অন্য metabolic pathway-এর end-product হিসেবে থাকতে পারে।</p>
+</div></section>
+<section class="sec r" id="s9"><h3>উদাহরণ</h3><div class="body">
+<p>Steroid-synthesizing cells:</p>
+<p>এ ধরনের cell-এ lipid droplets cytoplasm-এর একটি prominent feature।</p>
+<p>Lactating breast-এর alveolar epithelium:</p>
+<p>এখানে lipid droplets secreted-ও হতে পারে।</p>
+<p>আদি বলল, “তাহলে lipid droplet-এর ভূমিকা cell-এর ধরন অনুযায়ী আলাদা হতে পারে—কোথাও energy storage, কোথাও metabolic pathway-এর end-product, আবার কোথাও secretion-এর সঙ্গে সম্পর্কিত।”</p>
+<p>আমৃতা বলল, “ঠিক ধরেছেন।”</p>
+</div></section>
+<section class="sec r" id="s10"><h3>Revision notes</h3><div class="body">
+<div class="tw"><table><thead><tr><th>Topic</th><th>Gray’s Anatomy অনুযায়ী তথ্য</th></tr></thead><tbody><tr><td>Cytosol</td><td>Aqueous অংশ, যা membranous organelles-কে ঘিরে রাখে</td></tr><tr><td>Non-membranous inclusions</td><td>Free ribosomes, cytoskeleton components, storage granules, pigments ও lipid droplets</td></tr><tr><td>Storage granule example</td><td>Glycogen</td></tr><tr><td>Pigment example</td><td>Lipofuscin granules</td></tr><tr><td>Lipid droplets</td><td>Spherical bodies of various sizes</td></tr><tr><td>বিশেষভাবে prominent</td><td>Adipocytes of adipose connective tissue</td></tr><tr><td>Membrane</td><td>Membrane-bound নয়</td></tr><tr><td>Surrounding protein</td><td>Perilipin proteins</td></tr><tr><td>Perilipin function</td><td>Lipid storage ও lipolysis নিয়ন্ত্রণ</td></tr><tr><td>Diameter</td><td>Specialized lipid-storage cells-এ 80 μm বা তার বেশি</td></tr><tr><td>Functions</td><td>Chemical energy storage, thermal insulation, mechanical shock absorption</td></tr><tr><td>Steroid-synthesizing cells</td><td>Cytoplasm-এ prominent feature</td></tr><tr><td>Lactating breast</td><td>Alveolar epithelium-এ secreted হতে পারে</td></tr></tbody></table></div>
+</div></section>
+<section class="sec r" id="s11"><h3>Clinical / functional correlations</h3><div class="body">
+<p>এই section-এ সরাসরি কোনো নির্দিষ্ট disease-এর নাম দেওয়া হয়নি। তবে কয়েকটি গুরুত্বপূর্ণ functional association রয়েছে:</p>
+<ul><li>Perilipin proteins lipid storage ও lipolysis নিয়ন্ত্রণ করে।</li><li>Adipocytes-এ lipid droplets chemical energy store, thermal insulator ও mechanical shock absorber হিসেবে কাজ করে।</li><li>Steroid-synthesizing cells-এ lipid droplets cytoplasm-এর prominent feature।</li><li>Lactating breast-এর alveolar epithelium-এ lipid droplets secreted হতে পারে।</li></ul>
+</div></section>
+<section class="sec r" id="s12"><h3>Self-test</h3><div class="body">
+<p>১. Cytosol-এর মধ্যে কোনটি non-membranous inclusion?</p>
+<p>A. Lysosome B. Free ribosome C. Mitochondrion D. Golgi apparatus</p>
+<p>২. Lipid droplets কোন system-এর অংশ নয়?</p>
+<p>A. Golgi-related vacuolar system B. Cytosol C. Lipid storage system D. Metabolic pathway</p>
+<p>৩. Lipid droplets-এর চারপাশে কোন protein থাকে?</p>
+<p>A. Actin B. Perilipin C. Myosin D. Tubulin</p>
+<p>৪. Perilipin proteins-এর কাজ কী?</p>
+<p>A. Protein synthesis B. Lipid storage ও lipolysis নিয়ন্ত্রণ C. DNA replication D. ATP synthesis</p>
+<p>৫. Specialized lipid-storage cells-এ lipid vacuoles-এর diameter কত হতে পারে?</p>
+<p>A. 8 μm B. 20 μm C. 80 μm বা তার বেশি D. 800 nm</p>
+<p>উত্তর: ১—B, ২—A, ৩—B, ৪—B, ৫—C</p>
+</div></section>
+<section class="sec r" id="s13"><h3>Source verification</h3><div class="body">
+<ul><li>Book: Gray’s Anatomy, 41st Edition</li><li>Chapter: 1 — Basic Structure and Function of Cells</li><li>Section: Cytosolic inclusions</li><li>Subsection: Lipid droplets</li><li>পৃষ্ঠা: Markdown-এর page marker অনুযায়ী page 42-এর আশপাশের অংশ।</li></ul>
+<p>Source boundary: এখানে Cytosolic inclusions এবং Lipid droplets-এর বর্ণনা অন্তর্ভুক্ত হয়েছে। পরবর্তী heading <code class="bx">Transport across cell membranes</code>—সেটি এই episode-এ অন্তর্ভুক্ত করিনি।</p>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-007.html">← Episode 7</a><a href="index.html">সব পর্ব</a><a href="episode-009.html">Episode 9 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">Episode 8 — কোষের সাইটোপ্লাজমের নীরব সঞ্চয়ভাণ্ডার</a><a href="#s2">গল্প: কোষের ভেতরে অঙ্গাণু ছাড়াও যা থাকে</a><a href="#s3">১. Cytosolic inclusions কী?</a><a href="#s4">২. Lipid droplets — কোষের lipid সঞ্চয়</a><a href="#s5">Lipid droplets-এর গঠন</a><a href="#s6">Lipid</a><a href="#s7">৩. Lipid droplets-এর আকার</a><a href="#s8">৪. Lipid droplets-এর কাজ</a><a href="#s9">উদাহরণ</a><a href="#s10">Revision notes</a><a href="#s11">Clinical / functional correlations</a><a href="#s12">Self-test</a><a href="#s13">Source verification</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

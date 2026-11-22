@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 001 · অদৃশ্য শহরের প্রথম দরজা</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+code.bx{font-family:"Special Elite","Noto Serif Bengali",monospace;font-size:.88em;color:var(--teal);background:rgba(98,211,198,.07);border:1px solid #2c5a58;border-radius:7px;padding:1px 9px;margin:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 001">EPISODE 001</h1>
+  <div class="ttl">অদৃশ্য শহরের প্রথম দরজা</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">001</div></div>
+    <div class="face b"><div class="t2">অদৃশ্য শহরের প্রথম দরজা</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>পর্ব ১: অদৃশ্য শহরের প্রথম দরজা</h3><div class="body">
+<p>আজকের Gray's Anatomy পাঠ: 41st Edition · Chapter 1 · Basic structure and function of cells · পৃষ্ঠা ৩২–৩৪</p>
+</div></section>
+<section class="sec r" id="s2"><h3>গল্প</h3><div class="body">
+</div></section>
+<section class="sec r" id="s3"><h3>১. প্রথম পরিচয়</h3><div class="body">
+<p>ঢাকা মেডিকেল কলেজের প্রথম দিকের দিনগুলো।</p>
+<p>সকালের ক্লাস শেষ হয়েছে কিছুক্ষণ আগে। করিডোরে শিক্ষার্থীদের ভিড় ধীরে ধীরে কমছে। কেউ পরের ক্লাসের দিকে ছুটছে, কেউ বন্ধুদের সঙ্গে দাঁড়িয়ে গল্প করছে। কয়েকজন নতুন শিক্ষার্থী বইয়ের তালিকা নিয়ে ব্যস্ত।</p>
+<p>আদি একটা বই হাতে নিয়ে লাইব্রেরির দরজার কাছে দাঁড়িয়ে ছিল। বইটার প্রচ্ছদে বড় করে লেখা—</p>
+<p>GRAY'S ANATOMY</p>
+<p>সে বইটা খুলে সূচিপত্রের পাতা উল্টাতে উল্টাতে নিজের মনেই বলল,</p>
+<p>— এত বড় বই! Anatomy পড়তে পড়তে মনে হয় পুরো জীবনটাই শেষ হয়ে যাবে।</p>
+<p>পাশ থেকে একটা মেয়ের কণ্ঠ শোনা গেল।</p>
+<p>— আপনি কি Gray's Anatomy খুঁজছেন?</p>
+<p>আদি মুখ তুলে তাকাল।</p>
+<p>— জি। আপনি কি জানেন বইটা কোথায় পাওয়া যাবে?</p>
+<p>— এই যে আপনার হাতেই তো আছে!</p>
+<p>মেয়েটার ঠোঁটের কোণে হালকা হাসি। আদি বইটার দিকে তাকিয়ে একটু অপ্রস্তুত হয়ে গেল।</p>
+<p>— ও… হ্যাঁ। আসলে আমি Chapter 1 খুঁজছিলাম।</p>
+<p>— Basic structure and function of cells?</p>
+<p>— ঠিক তাই। আপনি পড়ছেন?</p>
+<p>— পড়ার চেষ্টা করছি। কিন্তু একটা সমস্যা হয়েছে।</p>
+<p>— কী সমস্যা?</p>
+<p>— বইয়ের প্রথম অধ্যায়ে ঢুকেই মনে হচ্ছে একটা cell-এর ভেতরে আরেকটা শহর আছে। কোথা থেকে শুরু করব বুঝতে পারছি না।</p>
+<p>আদি এবার বইটা একটু এগিয়ে ধরল।</p>
+<p>— তাহলে একসঙ্গে পড়লে কেমন হয়? আমি আদি।</p>
+<p>— অমৃতা।</p>
+<p>দুজনের মধ্যে প্রথম পরিচয় হলো। সম্বোধনটা তখনো আনুষ্ঠানিক—আপনি।</p>
+<p>অমৃতা বইয়ের পাতা খুলে পৃষ্ঠা ৩২-এ থামল।</p>
+<p>— দেখুন, এখানে প্রথমেই একটা বিষয় আছে—cell-এর shape। কিন্তু একটা cell-এর shape কেন একরকম হয় না?</p>
+<p>আদি চেয়ার টেনে বসতে বসতে বলল,</p>
+<p>— সম্ভবত cell কী কাজ করছে, তার ওপর নির্ভর করে?</p>
+<p>— শুধু কাজের ওপর?</p>
+<p>আদি একটু থামল।</p>
+<p>— Gray's-এ কী বলেছে, দেখি।</p>
+<p>অমৃতা পাতার ওপর আঙুল রাখল।</p>
+<p>— এখানে বলা হয়েছে, mammalian cells-এর shape অনেক রকম হতে পারে। সেটা নির্ভর করে তাদের একে অপরের সঙ্গে interaction, extracellular environment এবং internal structures-এর ওপর।</p>
+<p>আদি মাথা নাড়ল।</p>
+<p>— অর্থাৎ cell একা বসে নিজের ইচ্ছামতো shape বানায় না। তার চারপাশের পরিবেশ এবং অন্য cell-এর সঙ্গে সম্পর্কও গুরুত্বপূর্ণ।</p>
+<p>— হ্যাঁ। আর এখানে একটা মজার কথা আছে। যেসব cell-এর surface দিয়ে absorption বা transport হয়, তাদের surface অনেক সময় ভাঁজযুক্ত থাকে।</p>
+<p>— কেন?</p>
+<p>— কারণ ভাঁজ হলে surface area বাড়ে। বই এখানে apical microvilli এবং basolateral infoldings-এর কথা বলেছে।</p>
+<p>আদি খাতায় লিখল:</p>
+<p><code class="bx">Cell shape ↔ interaction + environment + internal structures</code></p>
+<p>তারপর নিচে লিখল:</p>
+<p><code class="bx">Absorption / transport → increased surface area</code></p>
+<p>অমৃতা বলল,</p>
+<p>— আপনি কি মনে করেন, শুধু surface area বাড়ালেই সব সমস্যার সমাধান?</p>
+<p>— না। Cell-এর ভেতরে বা বাইরে material চলাচলের জন্য diffusion-ও গুরুত্বপূর্ণ।</p>
+<p>অমৃতা এবার পৃষ্ঠা থেকে চোখ তুলল।</p>
+<p>— ঠিক ধরেছেন। বই বলছে, cell size সীমিত হয় diffusion-এর rate দ্বারা। অর্থাৎ material cell-এর ভেতরে ঢুকবে, বাইরে বের হবে, কিংবা cell-এর ভেতরেই এক স্থান থেকে অন্য স্থানে যাবে—এসবের জন্য diffusion কত দ্রুত হচ্ছে, তা গুরুত্বপূর্ণ।</p>
+<p>আদি বলল,</p>
+<p>— তাহলে cell বড় হতে থাকলে ভেতরের সব জায়গায় material পৌঁছানো কঠিন হতে পারে?</p>
+<p>— ধারণাটা সেই দিকেই যাচ্ছে। তবে বইয়ের বক্তব্যের বাইরে গিয়ে নতুন কোনো নিয়ম বানাবেন না।</p>
+<p>আদি হেসে ফেলল।</p>
+<p>— প্রথম দিনেই examiner পেয়ে গেলাম দেখছি!</p>
+<p>অমৃতা কোনো উত্তর দিল না। শুধু পেনের ঢাকনাটা খুলে পৃষ্ঠার পাশে একটা ছোট দাগ টেনে দিল।</p>
+</div></section>
+<section class="sec r" id="s4"><h3>২. Cell কত বড় হতে পারে?</h3><div class="body">
+<p>আদি এবার একটা প্রশ্ন করল।</p>
+<p>— Cell-এর size-এর কোনো নির্দিষ্ট range আছে?</p>
+<p>অমৃতা পৃষ্ঠা ৩২-এর পরের লাইনগুলো দেখাল।</p>
+<p>— বেশিরভাগ cell-এর diameter প্রায় ৫–৫০ μm।</p>
+<p>— বেশিরভাগ মানে সব নয়?</p>
+<p>— না। বই নিজেই কয়েকটা উদাহরণ দিয়েছে।</p>
+<p>সে খাতায় লিখল:</p>
+<ul><li>Resting lymphocyte: প্রায় ৬ μm</li><li>Red blood cell: প্রায় ৭.৫ μm</li><li>Columnar epithelial cell: প্রায় ২০ μm tall × ১০ μm wide</li></ul>
+<p>আদি বলল,</p>
+<p>— RBC-এর diameter ৭.৫ μm। এটা মনে থাকবে।</p>
+<p>— কিন্তু শুধু ছোট cell-এর উদাহরণ জানলে হবে না। কিছু cell অনেক বড়ও হয়।</p>
+<p>— যেমন?</p>
+<p>— Bone marrow-এর megakaryocytes এবং remodelling bone-এর osteoclasts—এদের diameter ২০০ μm-এর বেশি হতে পারে।</p>
+<p>আদি চোখ বড় করল।</p>
+<p>— ২০০ μm-এর বেশি! তাহলে ৫–৫০ μm-ই universal size নয়।</p>
+<p>— একদম। আর neurones ও skeletal muscle cells-এর shape অনেকটা extended। কিছু neurone-এর দৈর্ঘ্য ১ মিটারেরও বেশি হতে পারে।</p>
+<p>আদি খাতার ওপর পেন থামিয়ে বলল,</p>
+<p>— তাহলে cell-এর size আর shape দুটোই বেশ variable।</p>
+<p>— হ্যাঁ। আর বইয়ের এই উদাহরণগুলো মনে রাখবেন। সব cell-কে একই মাপে কল্পনা করলে ভুল হবে।</p>
+<p>আদি খাতার পাশে একটা ছোট বাক্স আঁকল। তার ভেতরে লিখল:</p>
+<p>Most cells: 5–50 μm</p>
+<p>তারপর নিচে লিখল:</p>
+<p>Exceptions: very large cells / very long cells</p>
+<p>অমৃতা খাতাটা একটু নিজের দিকে টেনে নিয়ে বলল,</p>
+<p>— একটা কথা বলি? আপনি সংখ্যাগুলো ঠিক লিখেছেন, কিন্তু columnar epithelial cell-এর ক্ষেত্রে height আর width গুলিয়ে ফেলবেন না।</p>
+<p>— ২০ μm tall, ১০ μm wide।</p>
+<p>— ঠিক।</p>
+<p>আদি খাতাটা ফেরত নিল। অমৃতার আঙুলের কাছে পেনের কালির ছোট দাগ লেগে ছিল। সে নিজের পকেট থেকে tissue বের করে টেবিলের ওপর রাখল।</p>
+<p>— আপনার হাতে কালি লেগেছে।</p>
+<p>অমৃতা tissue-টা তুলে নিল।</p>
+<p>— ধন্যবাদ।</p>
+<p>আদি আবার বইয়ের দিকে তাকাল। কিন্তু খাতার পাশে tissue-টা পড়ে রইল।</p>
+</div></section>
+<section class="sec r" id="s5"><h3>৩. Cell কি স্থির?</h3><div class="body">
+<p>লাইব্রেরির জানালার বাইরে কয়েকজন শিক্ষার্থী দ্রুত হেঁটে যাচ্ছিল। আদি তাদের দিকে তাকিয়ে বলল,</p>
+<p>— Cell-এর কথা শুনলে আমার মনে হয় একটা স্থির ছোট্ট গোল জিনিস। কিন্তু এখানে তো movement-এর কথা বলা হচ্ছে।</p>
+<p>অমৃতা বলল,</p>
+<p>— Gray's বলছে, motility বেশিরভাগ cell-এর একটি বৈশিষ্ট্য।</p>
+<p>— Motility মানে cell নড়াচড়া করে?</p>
+<p>— শুধু পুরো cell এক জায়গা থেকে অন্য জায়গায় যাওয়া নয়। Cytoplasm বা নির্দিষ্ট organelle-এর cell-এর এক অংশ থেকে অন্য অংশে movement-ও এর মধ্যে পড়ে।</p>
+<p>আদি বলল,</p>
+<p>— তাহলে cell-এর ভেতরের movement-ও গুরুত্বপূর্ণ।</p>
+<p>— হ্যাঁ। আর cell surface-এর কিছু অংশও প্রসারিত হতে পারে।</p>
+<p>সে বইয়ের পাশে কয়েকটি নাম লিখল:</p>
+<p><code class="bx">Pseudopodia</code> <code class="bx">Lamellipodia</code> <code class="bx">Filopodia</code> <code class="bx">Microvilli</code></p>
+<p>আদি নামগুলো পড়ে বলল,</p>
+<p>— এগুলো সব কি একই ধরনের projection?</p>
+<p>— নামগুলো আলাদা। বই এখানে এগুলোকে cell surface-এর অংশ প্রসারিত হওয়ার উদাহরণ হিসেবে দিয়েছে। এগুলোকে এক নামে চালিয়ে দেওয়া ঠিক হবে না।</p>
+<p>— আর locomotion?</p>
+<p>— Tissue macrophages-এর amoeboid migration তার উদাহরণ।</p>
+<p>আদি বলল,</p>
+<p>— অর্থাৎ macrophage-এর চলাচল।</p>
+<p>— ঠিক। আবার flagella বা cilia-র beating-এর কথাও আছে।</p>
+<p>— Spermatozoa-তে flagella?</p>
+<p>— হ্যাঁ। আর respiratory epithelium-এ cilia-র movement-এর মাধ্যমে তার ওপরের fluid চলতে পারে।</p>
+<p>আদি এবার একটা দাগ টেনে লিখল:</p>
+<p><code class="bx">Cell motility</code></p>
+<p>তার নিচে চারটি ভাগ করল:</p>
+<ul><li>Cytoplasm ও organelle-এর movement</li><li>Cell surface projection-এর extension</li><li>Whole-cell locomotion</li><li>Cilia বা flagella-র beating</li></ul>
+<p>অমৃতা বলল,</p>
+<p>— আরেকটা বিষয় বাদ পড়েছে।</p>
+<p>— কী?</p>
+<p>— Cell division এবং muscle contraction-ও বইয়ের এই আলোচনায় আছে।</p>
+<p>আদি নিজের লেখা দেখে মাথা চুলকাল।</p>
+<p>— আচ্ছা, এগুলোও যোগ করছি।</p>
+<p>অমৃতা বলল,</p>
+<p>— Cell movement-এর সঙ্গে material uptake ও release-ও সম্পর্কিত। Cell তার environment থেকে material গ্রহণ করতে পারে endocytosis বা phagocytosis-এর মাধ্যমে। আবার বড় molecular complex cell-এর বাইরে পাঠানোর ক্ষেত্রে exocytosis বা secretion জড়িত।</p>
+<p>আদি বলল,</p>
+<p>— Endocytosis মানে cell-এর ভেতরে নেওয়া, আর exocytosis মানে বাইরে পাঠানো—এভাবে মনে রাখব?</p>
+<p>— এই পর্যায়ে মনে রাখার জন্য ঠিক আছে। তবে phagocytosis-কে endocytosis-এর আলোচনার মধ্যে আলাদা করে উল্লেখ করা হয়েছে—দুটো শব্দকে এক করে ফেলবেন না।</p>
+<p>আদি এবার খাতায় লিখল:</p>
+<ul><li>Endocytosis / phagocytosis: environment থেকে material uptake</li><li>Exocytosis / secretion: large molecular complexes cell-এর বাইরে passage</li></ul>
+<p>তারপর বলল,</p>
+<p>— Cell তাহলে একটা স্থির ঘর নয়। এর ভেতরে, বাইরে, surface-এ—সব জায়গায় movement চলছে।</p>
+<p>অমৃতা বইয়ের পাতা উল্টাল।</p>
+<p>— এখন cell-এর organization দেখি। এই movement-গুলো কোথায় হচ্ছে, সেটা বুঝতে হবে।</p>
+</div></section>
+<section class="sec r" id="s6"><h3>৪. Cell-এর ভেতরের মানচিত্র</h3><div class="body">
+<p>পৃষ্ঠা ৩২-এর মাঝামাঝি থেকে নতুন আলোচনা।</p>
+<p>অমৃতা আঙুল দিয়ে লাইন দেখাল।</p>
+<p>— প্রতিটি cell-এর চারপাশে একটি limiting plasma membrane থাকে। এর ভেতরে থাকে cytoplasm।</p>
+<p>আদি বলল,</p>
+<p>— আর nucleus?</p>
+<p>— বই বলছে, mature red blood cells ছাড়া সব cell-এ nucleus থাকে। সেটি ঘিরে থাকে nuclear membrane বা nuclear envelope।</p>
+<p>আদি নিজের খাতায় একটা গোল cell আঁকল। বাইরের রেখার নাম দিল plasma membrane। ভেতরে আরেকটি গোল অংশ আঁকল—nucleus।</p>
+<p>— Nucleus-এর ভেতরে কী কী থাকে?</p>
+<p>— Genome, যা chromosomes-এর মধ্যে থাকে; nucleolus; এবং অন্যান্য subnuclear structures।</p>
+<p>— আর cytoplasm-এর ভেতরে?</p>
+<p>— Cytomembranes, membrane-bound organelles এবং আরও কিছু structure।</p>
+<p>অমৃতা বলল,</p>
+<p>— একটা বিষয় খেয়াল করুন। সব structure-কে organelle বলা হচ্ছে না।</p>
+<p>আদি থেমে গেল।</p>
+<p>— কেন?</p>
+<p>— কারণ cytoplasm-এ membrane-bound organelles ছাড়াও non-membranous structures এবং inclusions আছে। বই এগুলো আলাদা করে ব্যাখ্যা করেছে।</p>
+<p>আদি বলল,</p>
+<p>— তাহলে একটা তালিকা করি।</p>
+<p>অমৃতা তার খাতায় লিখল:</p>
+<p>Cytomembrane systems</p>
+<ul><li>Rough endoplasmic reticulum</li><li>Smooth endoplasmic reticulum</li><li>Golgi apparatus</li><li>এগুলো থেকে উৎপন্ন vesicles</li></ul>
+<p>Membrane-bound organelles</p>
+<ul><li>Lysosomes</li><li>Peroxisomes</li><li>Mitochondria</li></ul>
+<p>Non-membranous structures / inclusions</p>
+<ul><li>Lipid droplets</li><li>Glycogen aggregates</li><li>Pigments, যেমন lipofuscin</li><li>Ribosomes</li><li>Cytoskeleton</li></ul>
+<p>আদি বলল,</p>
+<p>— Nucleus আর mitochondria কি একই ধরনের membrane দিয়ে ঘেরা?</p>
+<p>— বইয়ের বক্তব্য অনুযায়ী, nucleus এবং mitochondria—দুটিই double-membrane system দিয়ে আবৃত। Lysosomes ও peroxisomes-এর bounding membrane একটি।</p>
+<p>আদি আবার তার আঁকা cell-এর দিকে তাকাল।</p>
+<p>— আর cytoskeleton কোথায়?</p>
+<p>— Cytosol-এর মধ্যে। এটি কয়েক ধরনের filamentous protein network-এর সমষ্টি।</p>
+<p>— কাজ?</p>
+<p>— Cell-এর general shape নির্ধারণে সাহায্য করে, cell surface-এর specialized extensions-কে support দেয়, নির্দিষ্ট structure—যেমন centrioles—গঠনে অংশ নেয় এবং cytoplasm-এর মধ্যে cargo transport নিয়ন্ত্রণ করে।</p>
+<p>আদি বলল,</p>
+<p>— তাহলে cytoskeleton-কে cell-এর ভেতরের support framework ভাবতে পারি?</p>
+<p>— হ্যাঁ, analogy হিসেবে। কিন্তু মনে রাখবেন, এর কাজ শুধু support নয়। বই transport এবং structure assembly-র কথাও বলেছে।</p>
+<p>অমৃতা এবার শেষ লাইনটা দেখাল।</p>
+<p>— আর cytosol-এ soluble proteins, ions এবং metabolites থাকে।</p>
+<p>আদি লিখল:</p>
+<p><code class="bx">Cytoplasm = cytosol + cytomembranes + organelles + inclusions + cytoskeleton</code></p>
+<p>তারপর একটু থেমে বলল,</p>
+<p>— এই সমীকরণটা কি বইয়ের exact equation?</p>
+<p>— না। এটা আমাদের revision-এর জন্য তৈরি করা summary। বইয়ের বর্ণনাকে সংক্ষেপে সাজানো হয়েছে।</p>
+<p>আদি হাসল।</p>
+<p>— ভালো। নিজের বানানো জিনিসকে বইয়ের নামে চালিয়ে দেওয়া যাবে না।</p>
+</div></section>
+<section class="sec r" id="s7"><h3>৫. Plasma membrane: কোষের সীমানা</h3><div class="body">
+<p>পৃষ্ঠা ৩৩-এ এসে অমৃতা বলল,</p>
+<p>— এবার সবচেয়ে গুরুত্বপূর্ণ অংশ। Plasma membrane।</p>
+<p>আদি পেনটা হাতে নিল।</p>
+<p>— Cell-এর boundary?</p>
+<p>— হ্যাঁ, তবে শুধু boundary বললে এর কাজ বোঝা যায় না। বই বলছে, plasma membrane cytoplasm-কে ঘিরে রাখে এবং cytomembrane system-এর সঙ্গে সম্পর্কিত।</p>
+<p>— Membrane কী দিয়ে তৈরি?</p>
+<p>— মূলত lipids এবং proteins। Lipids-এর মধ্যে আছে phospholipids, cholesterol এবং glycolipids।</p>
+<p>আদি বলল,</p>
+<p>— Lipid আর protein কি সমান পরিমাণে থাকে?</p>
+<p>— Gray's বলছে, প্রায় সমান অনুপাতে।</p>
+<p>অমৃতা খাতায় একটা দ্বিস্তর আঁকল।</p>
+<p>— Plasma membrane-এর lipid অংশটি lipid bilayer তৈরি করে। অর্থাৎ দুই অণু-পুরু একটি স্তর।</p>
+<p>আদি আঁকাটার দিকে তাকিয়ে বলল,</p>
+<p>— দুই স্তরের lipid?</p>
+<p>— ঠিক। প্রতিটি lipid molecule-এর hydrophobic অংশ membrane-এর ভেতরের দিকে মুখ করে থাকে। আর hydrophilic অংশ বাইরের দিকে।</p>
+<p>আদি একটু ভেবে বলল,</p>
+<p>— অর্থাৎ membrane-এর দুই পৃষ্ঠের দিকে hydrophilic অংশ, আর মাঝখানে hydrophobic অংশ।</p>
+<p>— হ্যাঁ। এই orientation-টাই মনে রাখতে হবে।</p>
+<p>অমৃতা এবার আঁকার ওপর কয়েকটি protein বসাল।</p>
+<p>— অধিকাংশ protein lipid bilayer-এর মধ্যে embedded থাকে, অথবা এর মধ্যে চলাচল করতে পারে। এ কারণেই membrane-কে fluid mosaic বলা হয়।</p>
+<p>— সব protein কি পুরো membrane পার হয়ে যায়?</p>
+<p>— না। কিছু protein তাদের polypeptide chain-এর hydrophobic region-এর কারণে membrane-এর পুরো thickness অতিক্রম করে। এদের বলা হয় transmembrane proteins।</p>
+<p>— আর অন্যগুলো?</p>
+<p>— কিছু protein lipid group-এর মাধ্যমে bilayer-এর সঙ্গে যুক্ত থাকে। এগুলোও বইয়ের বর্ণনায় integral বা intrinsic membrane proteins-এর মধ্যে পড়েছে।</p>
+<p>আদি বলল,</p>
+<p>— তাহলে intrinsic আর extrinsic-এর পার্থক্য?</p>
+<p>অমৃতা এবার দুটো কলাম করল।</p>
+<div class="tw"><table><thead><tr><th>Intrinsic / integral proteins</th><th>Extrinsic / peripheral proteins</th></tr></thead><tbody><tr><td>Bilayer-এর মধ্যে embedded থাকতে পারে</td><td>অন্য protein-এর সঙ্গে association-এর মাধ্যমে membrane-এ যুক্ত</td></tr><tr><td>Transmembrane হতে পারে</td><td>Membrane-bound হয় অন্য protein-এর সঙ্গে সম্পর্কের মাধ্যমে</td></tr></tbody></table></div>
+<p>— মনে রাখবেন, membrane-এর protein-গুলো শুধু decoration নয়।</p>
+<p>— কাজ কী?</p>
+<p>— বইতে diffusion বা transport channel complex, receptor protein এবং adhesion molecule-এর কথা আছে।</p>
+<p>আদি বলল,</p>
+<p>— অর্থাৎ membrane-এর মধ্যে communication এবং transport-এর ব্যবস্থাও থাকে।</p>
+<p>অমৃতা মাথা নাড়ল।</p>
+</div></section>
+<section class="sec r" id="s8"><h3>৬. Membrane-এর দুই পিঠ</h3><div class="body">
+<p>আদি figure 1.3-এর দিকে তাকিয়ে ছিল।</p>
+<p>— এখানে carbohydrate-ও দেখা যাচ্ছে। এগুলো কোথায় থাকে?</p>
+<p>অমৃতা বলল,</p>
+<p>— Oligosaccharides এবং polysaccharides protein-এর সঙ্গে যুক্ত হয়ে glycoproteins, অথবা lipid-এর সঙ্গে যুক্ত হয়ে glycolipids তৈরি করে। এগুলো প্রধানত extracellular domain-এর দিকে projecting করে।</p>
+<p>আদি বলল,</p>
+<p>— অর্থাৎ membrane-এর বাইরের দিকে carbohydrate residue থাকতে পারে।</p>
+<p>— ঠিক।</p>
+<p>অমৃতা এবার electron microscope-এর আলোচনায় গেল।</p>
+<p>— Electron microscope-এ heavy metal দিয়ে fix ও contrast করা membrane section-এ দুটি densely stained layer দেখা যায়। মাঝখানে থাকে electron-translucent zone। এই চেহারাকে বলা হয় unit membrane।</p>
+<p>— Thickness কত?</p>
+<p>— বইতে প্রতিটি stained layer-এর মোট thickness প্রায় ৭.৫ nm বলা হয়েছে। Plasma membrane-এর overall thickness সাধারণত ১৫ nm।</p>
+<p>আদি সংখ্যাগুলো লিখে নিল।</p>
+<p>— এবার freeze-fracture?</p>
+<p>অমৃতা বলল,</p>
+<p>— এই technique-এ cleavage plane সাধারণত bilayer-এর hydrophobic অংশ দিয়ে যায়, যেখানে phospholipid-এর hydrophobic tail-গুলো মুখোমুখি থাকে। ফলে bilayer দুটি leaflet-এ বিভক্ত হয়।</p>
+<p>আদি বলল,</p>
+<p>— তাহলে দুই leaflet-এর আলাদা surface ও face থাকে?</p>
+<p>— হ্যাঁ। বইতে extracellular surface-কে ES, আর intracellular বা protoplasmic surface-কে PS বলা হয়েছে। Membrane split করার পরে তৈরি হওয়া face-গুলোর নাম EF এবং PF।</p>
+<p>আদি আবার গুলিয়ে ফেলল।</p>
+<p>— ES আর EF একই?</p>
+<p>— না। একটাকে surface বলা হচ্ছে, আর অন্যটি fracture-এর পরে তৈরি face। নামগুলো কাছাকাছি বলে গুলিয়ে ফেলবেন না।</p>
+<p>অমৃতা খাতায় লিখে দিল:</p>
+<ul><li>ES: extracellular surface</li><li>PS: intracellular / protoplasmic surface</li><li>EF: extracellular face</li><li>PF: protoplasmic face</li></ul>
+<p>আদি বলল,</p>
+<p>— এই চারটা আলাদা করে মনে রাখব।</p>
+</div></section>
+<section class="sec r" id="s9"><h3>৭. Intramembranous particles</h3><div class="body">
+<p>অমৃতা figure 1.3-এর পাশে লেখা অংশটা পড়তে বলল।</p>
+<p>আদি পড়ল,</p>
+<p>— Freeze-fracture technique-এ bilayer-এর মধ্যে embedded particles দেখা যায়…</p>
+<p>— এগুলো কী বোঝায়?</p>
+<p>— বেশিরভাগ ক্ষেত্রে বড় transmembrane protein molecule বা protein complex।</p>
+<p>— ঠিক। আর এগুলো দুই leaflet-এ সমানভাবে থাকে না।</p>
+<p>আদি বলল,</p>
+<p>— কোন দিকে বেশি?</p>
+<p>— Plasma membrane-এ intracellular leaflet-এর PF-এ বেশিরভাগ particle দেখা যায়।</p>
+<p>আদি আবার লিখল:</p>
+<p><code class="bx">Plasma membrane → more particles on PF</code></p>
+<p>অমৃতা বলল,</p>
+<p>— আর adjacent cell-এর মধ্যে gap junction-এর cluster-এ এই particles সাধারণত ion বা molecule-এর transmembrane passage-এর channel হিসেবে কাজ করে।</p>
+<p>আদি বলল,</p>
+<p>— অর্থাৎ freeze-fracture শুধু membrane-এর আকৃতি দেখায় না; membrane-এর ভেতরে protein complex-এর অবস্থান সম্পর্কেও ধারণা দেয়।</p>
+<p>অমৃতা পেনটা নামিয়ে রাখল।</p>
+<p>— হ্যাঁ। তবে সব intramembranous particle-কে gap junction বলা যাবে না। বই বলছে, যেখানে এগুলো শনাক্ত করা হয়েছে, সেখানে clusters সাধারণত gap junction-এর channel-এর প্রতিনিধিত্ব করে।</p>
+<p>আদি মাথা নাড়ল।</p>
+</div></section>
+<section class="sec r" id="s10"><h3>৮. Fluid mosaic model—কেন fluid?</h3><div class="body">
+<p>জানালার বাইরে হঠাৎ বৃষ্টি শুরু হয়েছে। অমৃতা বইয়ের পৃষ্ঠা ধরে রাখল, যাতে বাতাসে পাতা উল্টে না যায়।</p>
+<p>আদি বলল,</p>
+<p>— Fluid mosaic নামের fluid অংশটা এবার বুঝতে হবে।</p>
+<p>অমৃতা বলল,</p>
+<p>— Biophysical measurement দেখিয়েছে, lipid bilayer খুব fluid। তাই membrane-এর plane বরাবর diffusion হতে পারে।</p>
+<p>— তাহলে protein-ও membrane-এর মধ্যে চলতে পারে?</p>
+<p>— হ্যাঁ। যদি cell-এর ভেতরের কোনো structure দিয়ে anchor করা না থাকে, তাহলে protein-গুলো membrane-এর plane বরাবর স্বাধীনভাবে চলাচল করতে পারে।</p>
+<p>আদি বলল,</p>
+<p>— আর যেগুলো cytoskeleton-এর সঙ্গে tethered, তাদের movement সীমিত হতে পারে।</p>
+<p>— ঠিক। বই এই কথাটাই বলছে।</p>
+<p>আদি এবার নিজের ভাষায় ব্যাখ্যা করার চেষ্টা করল।</p>
+<p>— Membrane-কে একটা স্থির দেয়াল ভাবলে ভুল হবে। এর lipid bilayer fluid, আর তার মধ্যে অনেক protein থাকে। কিছু protein নড়তে পারে, কিছু protein cell-এর ভেতরের cytoskeleton-এর সঙ্গে যুক্ত থাকায় তাদের movement সীমিত।</p>
+<p>অমৃতা বলল,</p>
+<p>— এবার ঠিক আছে।</p>
+<p>আদি একটু হেসে বলল,</p>
+<p>— এতক্ষণে একটা উত্তর ঠিক হলো!</p>
+</div></section>
+<section class="sec r" id="s11"><h3>৯. Membrane-এর selective boundary</h3><div class="body">
+<p>অমৃতা এবার বইয়ের পরের অনুচ্ছেদে আঙুল রাখল।</p>
+<p>— Membrane-এর সবচেয়ে গুরুত্বপূর্ণ বৈশিষ্ট্যগুলোর একটি হলো এটি diffusion-কে selectively limit করে এবং physiologically distinct compartment তৈরি করে।</p>
+<p>আদি বলল,</p>
+<p>— সব substance কি membrane দিয়ে যেতে পারে?</p>
+<p>— না। Lipid bilayer hydrophilic solute এবং ion-এর জন্য impermeable। তাই ion ও ছোট organic molecule, যেমন nutrient, membrane transport protein-এর activity-র মাধ্যমে পার হয়।</p>
+<p>— আর lipid-soluble substance?</p>
+<p>— সেগুলো সরাসরি membrane পার হতে পারে। বইয়ের উদাহরণ steroid hormones। এগুলো cytoplasm-এ প্রবেশ করে। এদের receptor protein cell surface-এ না থেকে cytosolic বা nuclear হতে পারে।</p>
+<p>আদি বলল,</p>
+<p>— তাহলে steroid hormone-এর receptor খুঁজতে plasma membrane-এর বাইরে তাকালেই হবে না।</p>
+<p>অমৃতা বলল,</p>
+<p>— হ্যাঁ, Gray's এখানে receptor-এর অবস্থান সম্পর্কে সেটাই বলছে।</p>
+<p>আদি নিজের ভাষায় বলল,</p>
+<p>— Hydrophilic solute এবং ion-এর passage নিয়ন্ত্রণে transport protein দরকার। Lipid-soluble substance bilayer-এর মধ্য দিয়ে সরাসরি যেতে পারে।</p>
+<p>— ঠিক। এবার membrane-এর আরেকটি কাজ বলুন।</p>
+<p>আদি পাতা দেখে বলল,</p>
+<p>— Selective ion transport-এর মাধ্যমে electrochemical gradient এবং potential difference তৈরি করতে পারে।</p>
+<p>— আর?</p>
+<p>— Energy-dependent process ব্যবহার করে small molecule actively uptake বা export করতে পারে।</p>
+<p>অমৃতা বলল,</p>
+<p>— আরও আছে। Membrane enzyme attachment-এর surface দেয়, external signal—যেমন hormone ও ligand—এর receptor-এর site দেয় এবং অন্য cell-এর recognition ও attachment-এ সাহায্য করে।</p>
+<p>আদি বলল,</p>
+<p>— Cell-এর ভেতরের structure-এর attachment point হিসেবেও কাজ করে?</p>
+<p>— হ্যাঁ। বিশেষ করে cell motility এবং cytoskeletal function-এর সঙ্গে যুক্ত intracellular structure-গুলোর জন্য।</p>
+<p>আদি খাতার ওপর একটা বড় শিরোনাম লিখল:</p>
+<p>Plasma membrane: boundary + selective transport + signalling + attachment</p>
+<p>অমৃতা সেটা দেখে বলল,</p>
+<p>— এই summary-টা ভালো। তবে মনে রাখবেন, এটা আপনার revision note; বইয়ের বাক্য নয়।</p>
+</div></section>
+<section class="sec r" id="s12"><h3>১০. Lipid raft: membrane-এর ভেতরে ছোট অঞ্চল</h3><div class="body">
+<p>পৃষ্ঠা ৩৪-এ আলোচনা সংক্ষিপ্ত, কিন্তু গুরুত্বপূর্ণ।</p>
+<p>আদি বলল,</p>
+<p>— এখানে lipid distribution-এর কথা আছে।</p>
+<p>অমৃতা পড়ে শোনাল,</p>
+<p>— Membrane-এর lipid সব জায়গায় সমানভাবে ছড়ানো থাকে না। কিছু lipid bilayer-এর মধ্যে ছোট microdomain তৈরি করে।</p>
+<p>— এদের নাম?</p>
+<p>— Detergent-resistant membranes, অথবা lipid rafts।</p>
+<p>আদি বলল,</p>
+<p>— এগুলোর মধ্যে কোন lipid বেশি?</p>
+<p>— Sphingomyelin এবং cholesterol সমৃদ্ধ।</p>
+<p>— Protein-ও কি এসব অঞ্চলে আলাদা করে জমা হতে পারে?</p>
+<p>— বই বলছে, নির্দিষ্ট subset of proteins বিভিন্ন lipid microdomain-এ partition করতে পারে। এর ফলে তাদের function-এ গুরুত্বপূর্ণ প্রভাব পড়ে।</p>
+<p>আদি উদাহরণ জানতে চাইল।</p>
+<p>অমৃতা বলল,</p>
+<p>— T-cell receptor signalling এবং cell–cell signalling।</p>
+<p>আদি বলল,</p>
+<p>— তাহলে lipid raft শুধু membrane-এর একটা patch নয়। এখানে signalling, trafficking এবং membrane fusion-এর জন্য সংগঠিত পরিবেশ তৈরি হতে পারে।</p>
+<p>অমৃতা বই বন্ধ করল।</p>
+<p>— হ্যাঁ। এই পৃষ্ঠার শেষ বক্তব্য সেটাই।</p>
+<p>বৃষ্টির শব্দ একটু বেড়েছে। লাইব্রেরির টেবিলে বইয়ের পাশে দুটো খাতা পাশাপাশি খোলা। আদি নিজের খাতার শেষ লাইনটা অমৃতার দিকে ঘুরিয়ে দিল।</p>
+<p><code class="bx">Lipid rafts → sphingomyelin + cholesterol-rich microdomains</code></p>
+<p>অমৃতা দেখে বলল,</p>
+<p>— ভালো। তবে পরের দিন এখান থেকেই শুরু করবেন না। পৃষ্ঠা ৩৫-এ নতুন heading শুরু হয়েছে।</p>
+<p>— <code class="bx">Cell coat (glycocalyx)</code>?</p>
+<p>— হ্যাঁ।</p>
+<p>আদি বইটা বন্ধ করতে গিয়ে খেয়াল করল, অমৃতা তার নিজের খাতার পেছনের পাতায় পৃষ্ঠা ৩৫ লিখে রেখেছে। তার নিচে ছোট করে—</p>
+<p><code class="bx">Next: glycocalyx</code></p>
+<p>— আপনি আমার জন্যও লিখেছেন?</p>
+<p>অমৃতা পেনের ঢাকনা লাগাতে লাগাতে বলল,</p>
+<p>— আপনি তো পৃষ্ঠা নম্বর ভুলে যান। তাই লিখে দিলাম।</p>
+<p>আদি আর কিছু বলল না। শুধু নিজের খাতার শেষ পাতায় একই পৃষ্ঠা নম্বর লিখে রাখল।</p>
+</div></section>
+<section class="sec r" id="s13"><h3>আজকের খাতা</h3><div class="body">
+</div></section>
+<section class="sec r" id="s14"><h3>১. General characteristics of cells</h3><div class="body">
+<ul><li>Mammalian cell-এর shape নির্ভর করে:<ul><li>Interaction with other cells</li><li>Extracellular environment</li><li>Internal structures</li></ul></li><li>Absorptive বা transport function-এর ক্ষেত্রে surface folding দেখা যায়।</li><li>Apical microvilli এবং basolateral infoldings surface area বাড়ায়।</li><li>Cell size সীমিত হয় diffusion-এর rate দ্বারা।</li><li>বেশিরভাগ cell-এর diameter: ৫–৫০ μm।</li><li>উদাহরণ:<ul><li>Resting lymphocyte: ৬ μm</li><li>Red blood cell: ৭.৫ μm</li><li>Columnar epithelial cell: ২০ μm tall × ১০ μm wide</li><li>Megakaryocytes ও osteoclasts: ২০০ μm-এর বেশি</li><li>কিছু neurone: ১ মিটারের বেশি দৈর্ঘ্য</li></ul></li></ul>
+</div></section>
+<section class="sec r" id="s15"><h3>২. Cell motility</h3><div class="body">
+<ul><li>Cytoplasm ও organelle-এর movement</li><li>Cell surface extension: pseudopodia, lamellipodia, filopodia, microvilli</li><li>Whole-cell locomotion: tissue macrophage-এর amoeboid migration</li><li>Cilia ও flagella-র beating:<ul><li>Spermatozoa-তে flagella</li><li>Respiratory epithelium-এ cilia</li></ul></li><li>Cell division ও muscle contraction</li><li>Material uptake: endocytosis, phagocytosis</li><li>Material release: exocytosis, secretion</li></ul>
+</div></section>
+<section class="sec r" id="s16"><h3>৩. Cellular organization</h3><div class="body">
+<ul><li>Cell-এর বাইরের limiting membrane: plasma membrane</li><li>Plasma membrane-এর ভেতরে: cytoplasm</li><li>Mature red blood cells ছাড়া সব cell-এ nucleus থাকার কথা এই অংশে উল্লেখ করা হয়েছে।</li><li>Nucleus-এ:<ul><li>Genome / chromosomes</li><li>Nucleolus</li><li>Other subnuclear structures</li></ul></li><li>Cytoplasm-এ:<ul><li>Cytomembranes</li><li>Organelles</li><li>Inclusions</li><li>Ribosomes</li><li>Cytoskeleton</li></ul></li><li>Double membrane: nucleus ও mitochondria</li><li>Single bounding membrane: lysosomes ও peroxisomes</li><li>Cytoskeleton:<ul><li>Cell shape নির্ধারণে ভূমিকা</li><li>Surface extension support</li><li>Centriole assembly</li><li>Cytoplasmic cargo transport</li></ul></li></ul>
+</div></section>
+<section class="sec r" id="s17"><h3>৪. Plasma membrane</h3><div class="body">
+<ul><li>প্রধান উপাদান: lipids ও proteins, প্রায় সমান অনুপাতে।</li><li>Lipids:<ul><li>Phospholipids</li><li>Cholesterol</li><li>Glycolipids</li></ul></li><li>Lipid bilayer দুই অণু-পুরু।</li><li>Hydrophobic অংশ membrane-এর ভেতরের দিকে; hydrophilic অংশ বাইরের দিকে।</li><li>Fluid mosaic model-এ membrane protein-এর অবস্থান ও চলাচল ব্যাখ্যা করা হয়।</li><li>Integral / intrinsic proteins:<ul><li>Transmembrane proteins</li><li>Transport বা diffusion channel complexes</li><li>Receptor proteins</li><li>Adhesion molecules</li></ul></li><li>Peripheral / extrinsic proteins অন্য protein-এর সঙ্গে association-এর মাধ্যমে membrane-এ যুক্ত থাকে।</li><li>Carbohydrate:<ul><li>Protein-এর সঙ্গে → glycoprotein</li><li>Lipid-এর সঙ্গে → glycolipid</li></ul></li><li>Unit membrane:<ul><li>দুটি densely stained layer</li><li>মাঝখানে electron-translucent zone</li><li>প্রতিটি dense layer প্রায় ৭.৫ nm</li><li>Plasma membrane-এর overall thickness প্রায় ১৫ nm</li></ul></li></ul>
+</div></section>
+<section class="sec r" id="s18"><h3>৫. Freeze-fracture ও membrane faces</h3><div class="body">
+<ul><li>Cleavage plane সাধারণত lipid bilayer-এর hydrophobic অংশ দিয়ে যায়।</li><li>Bilayer দুটি leaflet-এ বিভক্ত হয়।</li><li>ES = extracellular surface</li><li>PS = intracellular / protoplasmic surface</li><li>EF = extracellular face</li><li>PF = protoplasmic face</li><li>Plasma membrane-এ intracellular leaflet-এর PF-এ অধিকাংশ intramembranous particles দেখা যায়।</li><li>Gap junction-এর particle cluster সাধারণত adjacent cell-এর মধ্যে ion ও molecule passage-এর channel নির্দেশ করে।</li></ul>
+</div></section>
+<section class="sec r" id="s19"><h3>৬. Membrane function</h3><div class="body">
+<ul><li>Selective diffusion barrier</li><li>Physiologically distinct compartment তৈরি</li><li>Hydrophilic solute ও ion-এর passage নিয়ন্ত্রণ</li><li>Transport proteins-এর মাধ্যমে nutrient ও ion transport</li><li>Lipid-soluble substance-এর সরাসরি passage</li><li>Steroid hormone-এর cytosolic বা nuclear receptor</li><li>Electrochemical gradient ও potential difference তৈরি</li><li>Energy-dependent uptake ও export</li><li>Enzyme attachment, receptor function, cell recognition ও adhesion</li><li>Cytoskeletal structure-এর attachment</li></ul>
+</div></section>
+<section class="sec r" id="s20"><h3>৭. Lipid rafts</h3><div class="body">
+<ul><li>Membrane-এর lipid distribution homogeneous নয়।</li><li>কিছু lipid microdomain তৈরি করে।</li><li>Lipid rafts / detergent-resistant membranes:<ul><li>Sphingomyelin-rich</li><li>Cholesterol-rich</li></ul></li><li>T-cell receptor signalling ও cell–cell signalling-এ ভূমিকা।</li><li>Signalling, trafficking ও membrane fusion-এর জন্য organized environment তৈরি করে।</li></ul>
+</div></section>
+<section class="sec r" id="s21"><h3>অগ্রগতি-খাতা</h3><div class="body">
+<ul><li>পর্ব: ১ — অদৃশ্য শহরের প্রথম দরজা</li><li>Chapter: 1 — Basic structure and function of cells</li><li>Section: CELL STRUCTURE</li><li>সম্পন্ন: পৃষ্ঠা ৩২ থেকে ৩৪ পর্যন্ত সম্পন্ন</li><li>পরবর্তী পাঠ শুরু হবে: পৃষ্ঠা ৩৫ — <code class="bx">Cell coat (glycocalyx)</code></li></ul>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="index.html">সব পর্ব</a><a href="episode-002.html">Episode 2 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">পর্ব ১: অদৃশ্য শহরের প্রথম দরজা</a><a href="#s2">গল্প</a><a href="#s3">১. প্রথম পরিচয়</a><a href="#s4">২. Cell কত বড় হতে পারে?</a><a href="#s5">৩. Cell কি স্থির?</a><a href="#s6">৪. Cell-এর ভেতরের মানচিত্র</a><a href="#s7">৫. Plasma membrane: কোষের সীমানা</a><a href="#s8">৬. Membrane-এর দুই পিঠ</a><a href="#s9">৭. Intramembranous particles</a><a href="#s10">৮. Fluid mosaic model—কেন fluid?</a><a href="#s11">৯. Membrane-এর selective boundary</a><a href="#s12">১০. Lipid raft: membrane-এর ভেতরে ছোট অঞ্চল</a><a href="#s13">আজকের খাতা</a><a href="#s14">১. General characteristics of cells</a><a href="#s15">২. Cell motility</a><a href="#s16">৩. Cellular organization</a><a href="#s17">৪. Plasma membrane</a><a href="#s18">৫. Freeze-fracture ও membrane faces</a><a href="#s19">৬. Membrane function</a><a href="#s20">৭. Lipid rafts</a><a href="#s21">অগ্রগতি-খাতা</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

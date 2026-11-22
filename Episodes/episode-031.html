@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 031 · “লাল কলমের নিরীক্ষা: Chapter 1 ও Chapter 2-এর যে Lines খাতায় ওঠেনি”</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 031">EPISODE 031</h1>
+  <div class="ttl">“লাল কলমের নিরীক্ষা: Chapter 1 ও Chapter 2-এর যে Lines খাতায় ওঠেনি”</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">031</div></div>
+    <div class="face b"><div class="t2">“লাল কলমের নিরীক্ষা: Chapter 1 ও Chapter 2-এর যে Lines খাতায় ওঠেনি”</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>Gray’s Anatomy — Episode 31</h3><div class="body">
+</div></section>
+<section class="sec r" id="s2"><h3>“লাল কলমের নিরীক্ষা: Chapter 1 ও Chapter 2-এর যে Lines খাতায় ওঠেনি”</h3><div class="body">
+<p>Dhaka Medical College — Department of Anatomy</p>
+</div></section>
+<section class="sec r" id="s3"><h3>Scene 1: সকাল ৮টা ১০ — Anatomy Department-এর বারান্দা</h3><div class="body">
+<p>সকালের রোদ তখনও বারান্দার রেলিংয়ে পুরোপুরি এসে পৌঁছায়নি। Amrita ব্যাগ থেকে একটা নতুন লাল কলম বের করে খাতার ওপর রাখল।</p>
+<p>Adi দূর থেকে দেখেই বলল,</p>
+<p>— “আজ কার খাতা লাল হবে?”</p>
+<p>— “আমাদের নিজেদের।”</p>
+<p>Rafi সিঁড়ি বেয়ে উঠছিল, তার পেছনে Mou। দুজনেই থেমে গেল।</p>
+<p>Amrita বলল,</p>
+<p>— “কাল রাতে Chapter 1 আর Chapter 2-এর সব notes পাশাপাশি রেখে বসেছিলাম। হঠাৎ মনে হলো, আমরা কি সত্যিই প্রতিটা line ধরেছি? নাকি শুধু বড় বড় heading-গুলো?”</p>
+<p>Mou ভুরু কুঁচকে বলল,</p>
+<p>— “আমরা তো দুই chapter-ই শেষ করেছি।”</p>
+<p>— “শেষ করা আর ঠিকভাবে শেষ করা এক জিনিস না।”</p>
+<p>Adi হেসে ফেলল।</p>
+<p>— “তুই কবে থেকে আমার মতো করে ভাবতে শুরু করলি?”</p>
+<p>— “তোর মতো না। আমার মতো। শুধু দেখতে একই রকম লাগে।”</p>
+<p>Rafi দুজনের মাঝখানে হাত তুলে বলল,</p>
+<p>— “থামো থামো। সকাল সকাল এই তর্ক শুনলে আমার চা-ও ঠান্ডা হয়ে যায়।”</p>
+<p>ঠিক তখনই করিডোরের মাথায় Dr. Sharmin-কে দেখা গেল। হাতে Gray’s Anatomy-র ভারী বইটা।</p>
+<p>Amrita একটু এগিয়ে গিয়ে বলল,</p>
+<p>— “নমস্কার, Madam।”</p>
+<p>— “নমস্কার। এত সকালে সবাই এখানে?”</p>
+<p>Amrita সংক্ষেপে নিজের পরিকল্পনা বলল। Dr. Sharmin কিছুক্ষণ চুপ করে শুনলেন।</p>
+<p>— “Audit মানে কিন্তু আবার প্রথম থেকে শেষ পর্যন্ত পড়া না। পাতা ধরে ধরে বইয়ের প্রতিটা অংশ নিজের notes-এর সঙ্গে মেলাবে। বিশেষ করে figure legend, ছোট paragraph আর শেষের reference note। যেটা notes-এ নেই, শুধু সেটাই লাল কলমে লিখবে।”</p>
+<p>Adi জিজ্ঞেস করল,</p>
+<p>— “Madam, figure legend-ও?”</p>
+<p>— “অবশ্যই। Figure legend-এর ভেতরে অনেক সময় এমন তথ্য থাকে, যা main text-এ আলাদা করে আসে না। আর একটা কথা মনে রেখো, যা পরে ধরা পড়ে সেটা লজ্জার না, কাজের।”</p>
+<p>Mou ফিসফিস করে Rafi-কে বলল,</p>
+<p>— “আজ আমাদের ছুটির দিনটাও গেল।”</p>
+<p>Amrita শুনতে পেয়ে বলল,</p>
+<p>— “ছুটি হবে। আগে audit।”</p>
+</div></section>
+<section class="sec r" id="s4"><h3>Scene 2: সকাল ৯টা ৪০ — Library: Page 33, Plasma membrane-এর “heavy metal”</h3><div class="body">
+<p>লাইব্রেরির কোণের টেবিলে চারজন বসল। Amrita খাতা খুলে বলল,</p>
+<p>— “আমাদের notes-এ লেখা আছে: Electron microscope-এ heavy metal দিয়ে fix ও contrast করা membrane-এ দুটি dense layer দেখা যায়। Heavy metal-টা কোনটা, আমরা লিখিনি।”</p>
+<p>Adi বইয়ের পাতা খুলে আঙুল রাখল।</p>
+<p>— “এই যে। Osmium tetroxide।”</p>
+<p>Amrita লাল কলমে লিখল:</p>
+<p>Osmium tetroxide</p>
+<p>Mou জিজ্ঞেস করল,</p>
+<p>— “শুধু নামটার জন্য এত কিছু?”</p>
+<p>— “নাম না জানলে ‘heavy metal’ শব্দটা পরীক্ষায় আধখানা উত্তর হয়ে থাকে।”</p>
+<p>Rafi বলল,</p>
+<p>— “আচ্ছা, Feynman technique-এ বলো তো। আমি যেন প্রথম শুনছি।”</p>
+<p>Adi নিজের খাতায় একটা ছোট ছবি আঁকল। মাঝখানে ফাঁকা, দুই পাশে দুটো গাঢ় দাগ।</p>
+<p>— “Membrane-কে osmium tetroxide-এর মতো heavy metal দিয়ে fix আর contrast করে electron microscope-এ section হিসেবে দেখলে দুটো ঘন করে রং ধরা layer দেখা যায়। মাঝখানে থাকে একটা electron-translucent zone, অর্থাৎ যেখানে electron সহজে পার হয়ে যায়। এই পুরো চেহারাটাকেই বলে classic unit membrane।”</p>
+<p>Amrita যোগ করল,</p>
+<p>— “বইয়ের সংখ্যাও আছে। প্রতিটা layer-এর total thickness প্রায় 7.5 nm। আর plasma membrane-এর overall thickness সাধারণত 15 nm।”</p>
+<p>Mou মাথা নেড়ে বলল,</p>
+<p>— “দুই layer আর মাঝখানের ফাঁকা অংশ মিলিয়ে 15 nm। এবার মনে থাকবে।”</p>
+</div></section>
+<section class="sec r" id="s5"><h3>Scene 3: দুপুর ১২টা ১৫ — Page 42–43, Mitochondria কোথায় থাকে এবং কোথা থেকে এল</h3><div class="body">
+<p>Amrita নিজের notes-এর পাশে লিখল: Mitochondria — ATP, cristae, matrix, maternal inheritance।</p>
+<p>— “এই পাতায় আমাদের তিনটা জিনিস বাদ গেছে।”</p>
+<p>Rafi খাতার ওপর ঝুঁকে পড়ল।</p>
+<p>— “প্রথমটা কী?”</p>
+<p>— “Mitochondria সব জায়গায় সমানভাবে ছড়ানো থাকে না। Cell-এর যেখানে energy বেশি লাগে, সেখানে বেশি থাকে।”</p>
+<p>Adi বইয়ের লাইন পড়ে শোনাল। Gray’s Anatomy-তে তিনটি উদাহরণ দেওয়া আছে:</p>
+<ul><li>Ciliated epithelia-তে cilia-র গোড়ার কাছে।</li><li>Renal cortex-এর proximal convoluted tubule-এর cells-এর basal domain-এ, যেখানে considerable active transport হয়।</li><li>Spermatozoa-র flagellum-এর proximal segment, যার নাম middle piece, তার চারপাশে।</li></ul>
+<p>Mou বলল,</p>
+<p>— “মানে যেখানে কাজ, সেখানে power station।”</p>
+<p>— “ঠিক। আর দ্বিতীয় জিনিসটা হলো, mitochondria কিছু tissue-specific metabolic reaction-এও জড়িত থাকতে পারে। বইয়ে উদাহরণ আছে, liver cell-এর mitochondria-তে various urea-forming enzymes পাওয়া যায়।”</p>
+<p>Rafi খাতায় লিখল:</p>
+<p>Liver cell mitochondria → urea-forming enzymes</p>
+<p>— “আর তৃতীয়টা?”</p>
+<p>Amrita পাতা উল্টে Page 43 খুলল।</p>
+<p>— “এটাই সবচেয়ে মজার। বইয়ে বলা আছে, mitochondrial ribosomes cell-এর বাকি অংশের ribosomes-এর তুলনায় ছোট এবং আলাদা। আর এই ribosomes ও mitochondrial nucleic acids দেখতে bacteria-র মতো।”</p>
+<p>Adi বলল,</p>
+<p>— “এই মিল থেকেই একটা theory এসেছে।”</p>
+<p>— “হ্যাঁ। Theory-টা হলো, mitochondria-র পূর্বপুরুষ ছিল oxygen-utilizing bacteria। তারা এমন eukaryotic cells-এর সঙ্গে symbiotic relationship-এ থাকত, যারা early plants-এর তৈরি oxygen metabolize করতে পারত না।”</p>
+<p>Mou চোখ বড় বড় করে বলল,</p>
+<p>— “তাহলে আমাদের cell-এর ভেতরে একসময়ের বাইরের কেউ থাকে?”</p>
+<p>— “বইয়ে ‘theory’ বলা আছে। আমরা ‘প্রমাণিত সত্য’ বলব না।”</p>
+<p>Amrita আরও লিখল,</p>
+<p>— “আর শেষ বাক্যটা আরও সুন্দর। Mitochondria তৈরি হয় শুধু আগে থেকে থাকা mitochondria থেকেই। তাই শরীরের সব mitochondria নেমে এসেছে fertilized ovum-এর cytoplasm-এর mitochondria থেকে।”</p>
+<p>Adi মনে করিয়ে দিল,</p>
+<p>— “আর আগের page-এ ছিল, spermatozoa-র mitochondria সাধারণত ovum-এ ঢোকে না। তাই mitochondria ও তার genetic variation আর mutation শুধু female line দিয়েই যায়।”</p>
+<p>Rafi খাতা বন্ধ করে বলল,</p>
+<p>— “এই তিনটা জিনিস না জানলে আমি ভাবতাম mitochondria শুধু ATP বানানোর কারখানা।”</p>
+</div></section>
+<section class="sec r" id="s6"><h3>Scene 4: দুপুর ২টা — Page 44, Signalling ligand-এর পরিচয়</h3><div class="body">
+<p>ক্যান্টিন থেকে চা এনে Mou বলল,</p>
+<p>— “Cell signalling-এ আমাদের কী বাদ গেছে?”</p>
+<p>Amrita Page 44 খুলে লাইনটা মার্ক করল।</p>
+<p>— “এই লাইন: Ligands are mainly proteins, usually glycoproteins, polypeptides or highly charged biogenic amines।”</p>
+<p>Adi বলল,</p>
+<p>— “আমরা protein, polypeptide আর hormone নিয়ে লিখেছি। কিন্তু highly charged biogenic amines লিখিনি।”</p>
+<p>— “হ্যাঁ। আর ঠিক এই বাক্যের আগে বইয়ে বলা আছে, বেশিরভাগ ligand hydrophilic, তাই recipient cell-এর plasma membrane পার হয়ে ভেতরে পরিবর্তন ঘটাতে পারে না, যতক্ষণ না আগে plasma membrane receptor protein-এ bind করে।”</p>
+<p>Rafi জিজ্ঞেস করল,</p>
+<p>— “বাকিগুলো?”</p>
+<p>Amrita লিখল:</p>
+<ul><li>Classic peptide hormones of the endocrine system।</li><li>Cytokines — mainly haemopoietic cell origin, inflammatory responses ও tissue remodelling-এ যুক্ত। উদাহরণ: interferons, interleukins, tumour necrosis factor, leukaemia inhibitory factor।</li><li>Polypeptide growth factors — epidermal growth factor superfamily, nerve growth factor, platelet-derived growth factor, fibroblast growth factor family, transforming growth factor beta ও insulin-like growth factors।</li></ul>
+<p>Mou লাল কলমটা চেয়ে নিয়ে শুধু একটা শব্দ ঘিরে দিল।</p>
+<p>— “Biogenic amines।”</p>
+</div></section>
+<section class="sec r" id="s7"><h3>Scene 5: বিকেল ৩টা ৩০ — Page 45–46, Actin-এর বাদ পড়া সংখ্যা ও Arrowhead</h3><div class="body">
+<p>Adi খাতায় একটা লম্বা সুতো আঁকল। সুতোর গায়ে ছোট ছোট গোলক।</p>
+<p>— “Actin filament, string of beads।”</p>
+<p>Amrita হেসে বলল,</p>
+<p>— “এটা আমরা লিখেছি। কিন্তু Page 45-এর এই লাইনগুলো দেখ।”</p>
+<p>সে পড়ে শোনাল।</p>
+<ul><li>Actin filaments flexible, 7 nm thick।</li><li>Most cell types-এ actin হলো সবচেয়ে abundant protein।</li><li>কিছু motile cell-এ এর concentration 200 μM-ও ছাড়িয়ে যেতে পারে, অর্থাৎ cytoplasm-এর প্রতি ml-এ 10 mg protein।</li></ul>
+<p>Rafi মাথা চুলকে বলল,</p>
+<p>— “আর filopodia?”</p>
+<p>— “সেটা আরও ছোট। বইয়ে বন্ধনীতে মাপ দেওয়া আছে। Filopodia হলো thin finger-like protrusion, মাপ 0.1–0.3 μm। আর lamellipodia-র মাপ 0.1–0.2 μm।”</p>
+<p>Adi বলল,</p>
+<p>— “Filopodia-তে parallel bundles of actin filaments থাকে। কাজ কী?”</p>
+<p>— “Cell migration, wound healing ও neurite growth। আর lamellipodia thin ও broad, motile cell-এর leading edge-এ থাকে এবং এর ভেতরে actin filaments-এর branched network।”</p>
+<p>Mou বলল,</p>
+<p>— “Neurite growth, এই শব্দটা আমরা আগে লিখিনি।”</p>
+<p>— “এখন লিখলাম।”</p>
+<p>Amrita এবার Page 46 খুলল।</p>
+<p>— “আর এই জায়গাটা আরও মজার। Actin filament-এর polarity দেখা যায় কীভাবে?”</p>
+<p>Adi একটু ভেবে বলল,</p>
+<p>— “Plus end আর minus end আছে। কিন্তু চোখে দেখা...?”</p>
+<p>— “Negatively stained image-এ F-actin-কে myosin-এর active head region-সহ fragments-এর সঙ্গে বিক্রিয়া করতে দেওয়া হয়। Myosin filament-এর সঙ্গে একটা কোণে bind করে, ফলে এক সারি arrowhead-এর মতো চেহারা তৈরি হয়। Arrowhead-গুলোর ডগা minus end-এর দিকে, আর barbs plus end-এর দিকে।”</p>
+<p>Adi কাগজে একটা ছোট ছবি আঁকল। সারি সারি তীরের মাথা, সবগুলো বাঁ দিকে।</p>
+<p>— “তাহলে minus end বাঁ দিকে, plus end ডান দিকে।”</p>
+<p>Amrita ছবির দিকে ঝুঁকে এল। দুজনের কাঁধ প্রায় ছুঁয়ে গেল। কেউ সরে বসল না।</p>
+<p>Rafi গলা খাঁকারি দিল।</p>
+<p>— “আমরা এখানেই আছি।”</p>
+<p>Amrita চোখ না তুলেই বলল,</p>
+<p>— “আপনি এখন চুপ করে থাকুন।”</p>
+<p>Adi হাসি চেপে বলল,</p>
+<p>— “আজকে আবার ‘আপনি’?”</p>
+<p>— “শুধু আজকের জন্য।”</p>
+</div></section>
+<section class="sec r" id="s8"><h3>Scene 6: সন্ধ্যা ৫টা — Page 51, Cilia ও BBSome</h3><div class="body">
+<p>Mou চোখ ঘষতে ঘষতে বলল,</p>
+<p>— “Cilia আর IFT তো আমরা অনেক পড়েছি। এখানে আবার কী বাকি?”</p>
+<p>Amrita বলল,</p>
+<p>— “Ciliopathy-র নাম। আমরা শুধু retinal degeneration আর polycystic kidney disease লিখেছিলাম। বইয়ের পুরো তালিকাটা এ রকম:”</p>
+<ul><li>Retinal degeneration।</li><li>Polycystic kidney disease।</li><li>Bardet–Biedl syndrome।</li><li>Jeune asphyxiating thoracic dystrophy।</li><li>Respiratory disease।</li><li>Defective determination of the left–right axis।</li></ul>
+<p>Adi জিজ্ঞেস করল,</p>
+<p>— “শুরুটা কী ছিল?”</p>
+<p>— “Mutations in IFT proteins lead to the absence of cilia, এবং এগুলো embryogenesis-এ lethal। আর বইয়ে বলা আছে, ciliopathy-র অনেকগুলোই cilia-র defective sensory বা mechanical function-এর সঙ্গে সম্পর্কিত।”</p>
+<p>Rafi বলল,</p>
+<p>— “আর BBSome? এটা কি আমরা লিখেছি?”</p>
+<p>Amrita খাতা উল্টে দেখে বলল,</p>
+<p>— “শুধু নামটা। বিস্তারিত না।”</p>
+<p>সে পড়ল:</p>
+<ul><li>BBSome হলো seven-protein complex।</li><li>নামটা এসেছে Bardet–Biedl syndrome থেকে, যেটা একটি obesity/retinopathy ciliopathy।</li><li>এটি basal body-র একটি component।</li><li>Primary cilium তৈরিতে এটি অংশ নেয় ciliary proteins-এর export এবং/অথবা import নিয়ন্ত্রণ করে।</li><li>Cilia-র ভেতরে BBSome-এর transport হয় anterograde IFT-B এবং retrograde IFT-A particles-এর সঙ্গে।</li></ul>
+<p>Mou বলল,</p>
+<p>— “তাহলে IFT-A আর IFT-B আসলে শুধু cargo বহন করে না, BBSome-কেও নিয়ে যায়।”</p>
+<p>— “বইয়ে ‘in association with’ বলা আছে। আমরা ‘বহন করে’ লিখব না, ‘সঙ্গে সঙ্গে transport হয়’ লিখব।”</p>
+</div></section>
+<section class="sec r" id="s9"><h3>Scene 7: রাত ৭টা — Page 54, ৫ সেন্টিমিটার থেকে ৫ মাইক্রোমিটার</h3><div class="body">
+<p>বাইরে অন্ধকার নেমেছে। লাইব্রেরির আলো জ্বলে উঠল।</p>
+<p>Adi খাতায় একটা সংখ্যা লিখল: 5 cm.</p>
+<p>— “Mitotic chromosome-এর DNA-এর কথা মনে আছে?”</p>
+<p>Amrita বলল,</p>
+<p>— “Condensins stabilize করে condensed chromosomes। এটা আমরা লিখেছি। কিন্তু সংখ্যাটা লিখিনি।”</p>
+<p>সে বইয়ের লাইনটা পড়ল।</p>
+<p>— “Progressive folding of the chromosomal DNA by interactions with specific proteins can reduce 5 cm of chromosomal DNA by 10,000-fold, to a length of 5 μm in the mitotic chromosome।”</p>
+<p>Rafi বলল,</p>
+<p>— “এটা Feynman-এ বোঝানো কঠিন।”</p>
+<p>Adi বলল,</p>
+<p>— “সহজ। 5 cm মানে 50,000 μm। সেটাকে 10,000 গুণ কমালে হয় 5 μm।”</p>
+<p>Amrita মাথা নেড়ে লিখল:</p>
+<p>5 cm → 50,000 μm → ÷ 10,000 → 5 μm</p>
+<p>Mou অবাক হয়ে বলল,</p>
+<p>— “একটা chromosome-এর DNA এতটা ভাঁজ হয়ে এত ছোট জায়গায় ঢোকে?”</p>
+<p>— “সেটা করে specific proteins-এর সঙ্গে progressive folding।”</p>
+</div></section>
+<section class="sec r" id="s10"><h3>Scene 8: পরদিন সকাল ১০টা — Histology Lab, Chapter 2-এর Figure Legend (Epithelium)</h3><div class="body">
+<p>Dr. Sharmin টেবিলের ওপর বই খুলে রাখলেন।</p>
+<p>— “গতকাল তোমরা text-এর ফাঁক খুঁজেছ। আজ figure legend।”</p>
+<p>Amrita বলল,</p>
+<p>— “Madam, আমরা epithelium-এর classification পড়েছি। কিন্তু প্রতিটা type কোন organ-এ কোন stain-এ দেখা যায়, সেটা সব notes-এ নেই।”</p>
+<p>— “তাহলে legend পড়ো। এই পাতার legend-ই তোমাদের micrograph চিনতে শেখাবে।”</p>
+<p>Adi পড়ে শোনাল, Amrita টেবিল আঁকল।</p>
+</div></section>
+<section class="sec r" id="s11"><h3>Fig. 2.2 — Simple epithelia</h3><div class="body">
+<div class="tw"><table><thead><tr><th>Panel</th><th>Tissue / Site</th><th>বিশেষ বর্ণনা</th></tr></thead><tbody><tr><td>A</td><td>Simple squamous epithelium, outer parietal layer of Bowman’s capsule</td><td>Renal corpuscle (RC); Martius Scarlet Blue (MSB) trichrome; oval epithelial nuclei urinary space (U)-এ project করে; cytoplasm highly attenuated</td></tr><tr><td>B</td><td>Simple cuboidal epithelium, collecting ducts (longitudinal section)</td><td>Renal medulla; basement membranes PAS reagent-এ magenta</td></tr><tr><td>C</td><td>Simple columnar epithelium, villus tip in ileum</td><td>Tall columnar absorptive cells; oval, vertically orientated nuclei; microvilli-র striated border (deeper-stained apical fringe); interspersed goblet cells-এর apical cytoplasm pale ও mucinogen secretory granules-এ ভরা, nuclei dark, flattened ও basally situated</td></tr><tr><td>D</td><td>Ciliated columnar pseudostratified epithelium, respiratory tract</td><td>Interspersed goblet cells; pale, mucinogen granule-filled apical cytoplasm</td></tr></tbody></table></div>
+<p>Rafi বলল,</p>
+<p>— “সব human tissue?”</p>
+<p>Dr. Sharmin মাথা নাড়লেন।</p>
+<p>— “বইয়ে লেখা: All human tissues।”</p>
+</div></section>
+<section class="sec r" id="s12"><h3>Fig. 2.3 ও Fig. 2.4 — Myoepithelial cells</h3><div class="body">
+<p>Mou জিজ্ঞেস করল,</p>
+<p>— “Myoepithelial cell কীভাবে দেখা যায়?”</p>
+<p>Amrita পড়ল:</p>
+<ul><li>Fig. 2.3: Lactating mouse mammary gland-এ secretory acini-কে জড়িয়ে থাকা stellate myoepithelial cells (M)। Scanning electron microscope-এ, enzymatic depletion of extracellular matrix-এর পর। Blood capillaries (C) ও fibroblasts (F)-ও দেখা যায়।</li><li>Fig. 2.4: Human breast duct-এ myoepithelial cells (brown)। Antibody to smooth muscle actin দিয়ে immunohistochemically দেখানো।</li></ul>
+<p>Adi মন্তব্য করল,</p>
+<p>— “তাহলে একই cell-কে একবার shape দিয়ে (stellate), আরেকবার actin দিয়ে চেনা যায়।”</p>
+<p>Dr. Sharmin হাসলেন।</p>
+<p>— “এভাবেই ভাবো।”</p>
+</div></section>
+<section class="sec r" id="s13"><h3>Fig. 2.5 — Stratified epithelia</h3><div class="body">
+<div class="tw"><table><thead><tr><th>Panel</th><th>Tissue / Site</th><th>বিশেষ বর্ণনা</th></tr></thead><tbody><tr><td>A</td><td>Keratinized stratified squamous epithelium, thin skin</td><td>Basal layer-এ pigmented melanocytes; prickle cell layer-এর কিছু keratinocytes-এ melanin granules; dead keratinized layer (K)-এ nuclei নেই</td></tr><tr><td>B</td><td>Non-keratinized stratified squamous epithelium, uterine ectocervix</td><td>PAS stain; basement membrane ও superficial squames PAS-positive; squames nuclei ধরে রাখে; surface থেকে squames sloughing off হচ্ছে</td></tr><tr><td>C</td><td>Stratified low columnar epithelium</td><td>Sublingual salivary gland-এর interlobular excretory duct</td></tr><tr><td>D</td><td>Urothelium (transitional epithelium), relaxed urinary bladder</td><td>সবচেয়ে superficial cells-এর plasma membrane thickened, কারণ intramembranous plaques; luminal surface eosinophilic দেখায়</td></tr></tbody></table></div>
+<p>Amrita লিখল:</p>
+<p>Fig. 2.5B → squames nuclei ধরে রাখে (non-keratinized), Fig. 2.5A → dead keratinized layer-এ nuclei নেই।</p>
+<p>Rafi বলল,</p>
+<p>— “এক নজরে পার্থক্য: nuclei আছে কি নেই।”</p>
+</div></section>
+<section class="sec r" id="s14"><h3>Scene 9: সকাল ১১টা ৩০ — Gland ও Connective Tissue-এর Figure Legend</h3><div class="body">
+<p>Dr. Sharmin পাতা উল্টে বললেন,</p>
+<p>— “এবার গ্রন্থি আর connective tissue।”</p>
+<p>Mou পড়ল, Adi লিখল।</p>
+<div class="tw"><table><thead><tr><th>Figure</th><th>Legend-এর সারকথা</th></tr></thead><tbody><tr><td>Fig. 2.7</td><td>Electron micrograph: colon-এর দুটি absorptive cell-এর মাঝে neuroendocrine cell (rat tissue)। Basal cytoplasm-এ dense neurosecretory granules, যেগুলো basal lamina-র গায়ে লেগে আছে</td></tr><tr><td>Fig. 2.8</td><td>Human skin-এর basal epithelial layer-এর নিচে basal lamina (electron micrograph)। Finely fibrillar dense layer = lamina densa; subjacent connective tissue-এ fine collagen fibrils (*), যেগুলো carbohydrate-rich structure-এর stain করা light microscope preparation-এ basement membrane-এর চেহারায় অবদান রাখে; upper field-এ দুটি basal keratinocytes (K) desmosomes দিয়ে যুক্ত</td></tr><tr><td>Fig. 2.9</td><td>Human general loose connective tissue: amorphous ground substance-এ collagen fibres-এর bundles (C); neurovascular bundle (blood vessels BV, lymphatics ও nerves) এর মধ্য দিয়ে যাচ্ছে; একটি ছোট autonomic ganglion তীর চিহ্ন দিয়ে দেখানো</td></tr><tr><td>Fig. 2.10</td><td>Human connective tissue-এর fibroblast-এর electron micrograph; চারপাশে finely banded collagen fibrils-এর bundles (insert-এ high magnification), যেগুলো fibroblast নিজেই secrete করে</td></tr><tr><td>Fig. 2.12</td><td>Chronically inflamed human connective tissue-এ macrophages (M), যাদের cytoplasm-এ prominent pigmented, haemosiderin-containing granules, যেগুলো ingested erythrocytes থেকে এসেছে; অনেক macrophage multinucleate। সঙ্গে plasma cells (P), small lymphocytes (L) ও অন্যান্য haemopoietic cells</td></tr><tr><td>Fig. 2.14</td><td>Human liver-এ reticular fibres (type III collagen; reticulin, silver-staining দিয়ে দেখানো): space of Disse-এর মধ্যে delicate meshwork, যা hepatocytes (H), plasma membranes ও sinusoidal endothelia (S)-এর মাঝে</td></tr></tbody></table></div>
+<p>Rafi আঙুল রেখে বলল,</p>
+<p>— “Fig. 2.12 আমাদের একদম বাদ গিয়েছিল। ‘Haemosiderin’ শব্দটাই খাতায় ছিল না।”</p>
+<p>Amrita বলল,</p>
+<p>— “Legend বলছে, pigmented haemosiderin-containing granules এসেছে ingested erythrocytes থেকে।”</p>
+<p>Dr. Sharmin মাথা নাড়লেন।</p>
+<p>— “ঠিক। Legend যেটুকু বলেছে, সেটুকুই লেখো। নিজের মতো করে কারণ বানিও না।”</p>
+</div></section>
+<section class="sec r" id="s15"><h3>Scene 10: দুপুর ১২টা ৪৫ — Chapter 2-এর Text থেকে বাদ পড়া চারটি লাইন</h3><div class="body">
+<p>Adi নিজের খাতার ওপর লাল কলম ঘোরাল।</p>
+<p>— “Text-এও চারটা জিনিস বাদ গেছে।”</p>
+<ul><li>Adipocyte: Page 81 বলছে, cell-এর peripheral rim of cytoplasm-এর ভেতরে nucleus embedded থাকে, আর মাঝখানে থাকে একটিমাত্র বড় central globule of fat, যা glycerol esters of oleic, palmitic ও stearic acids দিয়ে তৈরি।</li><li>Mast cell vesicles: Page 82 অনুযায়ী এদের glycosaminoglycans-এর পরিমাণ বেশি এবং PAS stain-এ strongly positive। এগুলো membrane-bound, size ও shape-এ বিভিন্ন, mean diameter 0.5 μm। ভেতরে heterogeneous dense, lipid-containing material থাকে, যা finely granular, lamellar বা membranous whorls আকারের হতে পারে।</li><li>MMP: Tissue remodelling-এ extracellular matrix ধীরে ধীরে degrade হয় secreted MMPs দিয়ে, যেগুলোকে নিয়ন্ত্রণ করে specific inhibitors। বইয়ে উদাহরণ আছে, postpartum uterus-এর involution এবং menstrual-এর সময় endometrium-এর lysis ও shedding। Matrix degradation-এর সময় bioactive peptides মুক্ত হয়, যেগুলো growth factors, cytokines ও অন্য signalling molecules হিসেবে আশেপাশের cells-এর behaviour বদলে দেয়।</li><li>Collagen fibril: Page 83 বলছে, thick fibrils আসলে uniform thin fibrils-এর composite, যাদের diameter 8–12 nm।</li></ul>
+<p>Mou জিজ্ঞেস করল,</p>
+<p>— “Mast cell-এর vesicle-এর ‘whorls’ মানে কী?”</p>
+<p>Adi বলল,</p>
+<p>— “Whorl মানে পাক খাওয়া ঘূর্ণি-ধরনের আকার। বইয়ে শুধু বলা আছে, কিছু vesicle-এর ভেতরের material membranous whorls রূপে থাকতে পারে। এর বেশি লেখা নেই।”</p>
+<p>Amrita লাল কলমে তলায় দাগ টানল:</p>
+<p>“বইয়ে যা আছে তাই লিখব, তার বেশি না।”</p>
+</div></section>
+<section class="sec r" id="s16"><h3>Scene 11: বিকেল ৪টা — Key References: বইয়ের শেষে লুকানো পাঠ-তালিকা</h3><div class="body">
+<p>Dr. Sharmin বই বন্ধ করার আগে বললেন,</p>
+<p>— “আরেকটা অংশ প্রায় কেউ পড়ে না। প্রতিটা chapter-এর শেষে Key references আছে। প্রত্যেকটার নিচে এক-দুই লাইনের annotation, মানে ‘এই সূত্রটা কী কাজে লাগবে’ তার সংক্ষিপ্ত বিবরণ।”</p>
+<p>Amrita বলল,</p>
+<p>— “এগুলোও notes-এ রাখতে হবে?”</p>
+<p>— “পরীক্ষার জন্য না। কিন্তু Gray’s Anatomy-কে সম্পূর্ণ পড়া মানে পাঠ-তালিকার নির্দেশও জানা। কোথায় আরও গভীরে যাওয়া যায়, সেটা জানা থাকলে প্রশ্ন জমে গেলে হাতের কাছে উত্তর থাকে।”</p>
+<p>তিনজন মিলে টেবিলে তুলল।</p>
+</div></section>
+<section class="sec r" id="s17"><h3>Chapter 1 — Key references (Page 71)</h3><div class="body">
+<div class="tw"><table><thead><tr><th>Reference</th><th>Annotation-এর সারকথা</th></tr></thead><tbody><tr><td>Bray D 2001 Cell Movements. New York: Garland</td><td>Cytoskeleton-এর structural ও molecular features, সঙ্গে living cells-এ cell ও organelle movement-এ এর properties ও behaviour-এর বিস্তারিত উপস্থাপনা</td></tr><tr><td>Burke B, Stewart CL 2013 The nuclear lamins: flexibility in function. Nat Rev Mol Cell Biol 14:13–24</td><td>Nuclear lamina ও তার প্রধান উপাদান lamins (intermediate filament protein family-র সদস্য)-এর up-to-date, বিস্তারিত বিবরণ</td></tr><tr><td>Chinnery PF, Hudson G 2013 Mitochondrial genetics. Br Med Bull 106:135–59</td><td>Human disease-এ mtDNA defects-এর ভূমিকা; বিশেষ করে mtDNA inheritance নিয়ন্ত্রণের mechanism</td></tr><tr><td>Girard JP, Moussion C, Förster R 2012 HEVs, lymphatics and homeostatic immune cell trafficking in lymph nodes. Nat Rev Immunol 12:762–73</td><td>Cell adhesion molecules ব্যবহার করে vascular endothelium পার হয়ে immune cells-এর continuous trafficking (homing)-এর বিস্তারিত বিবরণ</td></tr><tr><td>Kierszenbaum AL, Tres LL 2012 Histology and Cell Biology: An Introduction to Pathology. Philadelphia: Elsevier, Saunders</td><td>Histology, cell biology ও basic pathology-র integrated visual view, structure ও function-এর ওপর জোর, human pathological examples সহ</td></tr><tr><td>López-Otín C, Blasco MA, Partridge L et al 2013 The hallmarks of aging. Cell 153:1194–217</td><td>Ageing-এর pathogenesis-এর সাম্প্রতিক অগ্রগতির review, যেখানে ageing-কে physiological integrity-র ধীরে ধীরে ক্ষয় হিসেবে সংজ্ঞায়িত করা হয়েছে; genomic instability, telomerase attrition, epigenetic alterations, loss of proteolysis ও mitochondrial dysfunction আলোচিত</td></tr><tr><td>Pollard TD, Earnshaw WC 2008 Cell Biology. Philadelphia: Elsevier, Saunders</td><td>Cell biology-র structural ও molecular দিক এবং human disease-সম্পর্কিত abnormalities-এর বিস্তারিত ও ব্যাপক বিবরণ</td></tr><tr><td>Porter RM, Lane EB 2003 Phenotypes, genotypes and their contribution to understanding keratin function. Trends Genet 19:278–85</td><td>Human epithelial pathological conditions-এর সঙ্গে mouse mutant studies-এর সম্পর্ক, keratin diversity-র ওপর মনোযোগ</td></tr><tr><td>Saftig P, Klumperman J 2009 Lysosome biogenesis and lysosomal membrane proteins: trafficking meets function. Nat Rev Mol Cell Biol 10:623–35</td><td>Endocytosis দিয়ে ঢোকা extracellular material-এর degradation-এ lysosomes-এর ভূমিকা ও lysosomal sorting pathways, defective lysosomal biogenesis থেকে হওয়া human diseases-এর প্রেক্ষাপটে</td></tr><tr><td>Scholey JM 2008 Intraflagellar transport motors in cilia: moving along the cell’s antenna. J Cell Biol 180:23–9</td><td>Motile ও sensory cilia-র axoneme-এর defective assembly, maintenance ও function থেকে হওয়া ciliopathies, IFT proteins ও molecular motors-এর কাঠামোয়</td></tr></tbody></table></div>
+</div></section>
+<section class="sec r" id="s18"><h3>Chapter 2 — Key references (Pages 86–87)</h3><div class="body">
+<div class="tw"><table><thead><tr><th>Reference</th><th>Annotation-এর সারকথা</th></tr></thead><tbody><tr><td>Collington SJ, Williams TJ, Weller CL 2011 Innate immune cell trafficking: mechanisms underlying the localisation of mast cells in tissues. Trends Immunol 32:478–85</td><td>Tissue-তে mast cells-এর recruitment বোঝার সাম্প্রতিক অগ্রগতির আলোচনা</td></tr><tr><td>Duffield JS 2012 The elusive source of myofibroblasts: problem solved? Nat Med 18:1178–80</td><td>বিভিন্ন disease state-এ myofibroblasts ও fibrotic tissue-এর perivascular cell (pericyte) উৎসের সাম্প্রতিক প্রমাণের review</td></tr><tr><td>Frenzel L, Hermine O 2013 Mast cells and inflammation. Joint Bone Spine 80:141–5</td><td>Inflammatory process-এ mast cells-এর ভূমিকা এবং inflammatory diseases-এ therapeutic intervention-এর সম্ভাবনা</td></tr><tr><td>Hassan M, Latif N, Yacoub M 2012 Adipose tissue: friend or foe? Nature Rev Cardiol 9:689–702</td><td>Adipose tissue-এর অবস্থা, structural ও functional variations এবং স্বাস্থ্য ও রোগে এর ভূমিকার review</td></tr><tr><td>Hinz B, Phan SH, Thannickal VJ et al 2012 Recent developments in myofibroblast biology. Am J Path 180:1340–55</td><td>Myofibroblasts, তাদের উৎস, precursor cells থেকে differentiation-এর molecular regulation এবং organ-specific fibrotic disease-এ ভূমিকার সাম্প্রতিক review</td></tr><tr><td>McAnulty RJ 2007 Fibroblasts and myofibroblasts: their source, function and role in disease. Int J Biochem Cell Biol 39:666–71</td><td>Connective tissue fibroblasts ও সম্পর্কিত mesenchymal cells-এর biology-র review</td></tr><tr><td>Pan X, Hobbs RP, Coulombe PA 2012 The expanding significance of keratin intermediate filaments in normal and diseased epithelia. Curr Opin Cell Biol 25:1–10</td><td>Epithelia-র নির্দিষ্ট keratin intermediate filament family-র বর্তমান বোঝাপড়া, epithelial functions ও নির্বাচিত diseases-এ keratins-এর ভূমিকা</td></tr><tr><td>Pollard TD, Earnshaw WC, Lippincott-Schwartz J 2008 Cell Biology, 2nd ed. Philadelphia: Elsevier, Saunders; Ch. 29 Extracellular matrix molecules, pp. 531–52</td><td>Matrix molecules-এর molecular structure ও function নিয়ে comprehensive text</td></tr><tr><td>Thiery JP, Acloque H, Huang RYJ et al 2009 Epithelial–mesenchymal transitions in development and disease. Cell 139:871–90</td><td>Normal development-এ এই প্রক্রিয়াগুলোর বিবরণ এবং carcinoma progression ও metastasis-এ epithelial–mesenchymal transitions-এর ভূমিকা</td></tr><tr><td>Wolf K, Friedl P 2011 Extracellular matrix determinants of proteolytic and non-proteolytic cell migration. Trends Cell Biol 21:736–44</td><td>Wound healing ও pathological process-এ extracellular matrix-এর মধ্য দিয়ে cell migration, proteolytic ও অন্য mechanism ব্যবহার করে</td></tr></tbody></table></div>
+<p>Mou বলল,</p>
+<p>— “এগুলো তো সবই paper আর বই। শুধু নাম মনে রেখে কী লাভ?”</p>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “নাম মুখস্থ করতে বলছি না। শুধু জানো, নির্দিষ্ট বিষয় আরও গভীরে পড়তে হলে বই নিজেই তোমাকে কোথায় পাঠাচ্ছে।”</p>
+</div></section>
+<section class="sec r" id="s19"><h3>Scene 12: রাত ৮টা ১৫ — Library-তে শেষ আলোচনা</h3><div class="body">
+<p>Rafi আর Mou আগেই চলে গিয়েছিল। লাইব্রেরির টেবিলে শুধু Adi আর Amrita।</p>
+<p>Adi লাল কলমের ঢাকনাটা হাতে নিয়ে ঘোরাচ্ছিল।</p>
+<p>— “আজকের তালিকা বেশ লম্বা।”</p>
+<p>— “লম্বা না। দরকারি।”</p>
+<p>Amrita খাতা টেনে নিল।</p>
+<p>— “চল, Feynman technique-এ একবার বলি।”</p>
+<p>সে লিখল:</p>
+<ul><li>Osmium tetroxide: Membrane contrast করতে ব্যবহৃত heavy metal-এর নাম।</li><li>Mitochondria: যেখানে energy বেশি লাগে সেখানে বেশি; bacteria-র সঙ্গে মিল থেকে theory; সব mitochondria এসেছে fertilized ovum থেকে।</li><li>Biogenic amines: Plasma membrane receptor-এ bind করা ligand-এর একটি শ্রেণি।</li><li>Filopodia, lamellipodia, arrowhead: মাপ, কাজ ও actin polarity দেখার উপায়।</li><li>BBSome: Seven-protein complex; primary cilium-এর গঠনে অংশ নেয়।</li><li>5 cm → 5 μm: Mitotic chromosome-এ DNA-র 10,000-fold ভাঁজ।</li><li>Figure legends: কোন tissue কোন organ-এ, কোন stain-এ।</li><li>Mast cell vesicles ও MMP: Granule-এর গঠন; matrix remodelling-এর উদাহরণ।</li><li>Key references: কোথায় আরও গভীরে যাওয়া যায়।</li></ul>
+<p>Adi কিছুক্ষণ চুপ করে থেকে বলল,</p>
+<p>— “তুই না থাকলে এই audit কখনো হতো না।”</p>
+<p>— “আমি না থাকলে তুই লাল কলম কিনতিস না।”</p>
+<p>— “কলম না কিনলে তুই আমার খাতাতেই লিখতি।”</p>
+<p>Amrita থমকে গেল।</p>
+<p>— “সেটা আবার কে বলল?”</p>
+<p>— “গত সপ্তাহে। আমার খাতার শেষ পাতায় তোর হাতের লেখা।”</p>
+<p>Amrita দ্রুত অন্য দিকে তাকাল।</p>
+<p>— “ওটা শুধু একটা reminder ছিল।”</p>
+<p>Adi হাসল। কিছু বলল না।</p>
+<p>Amrita কলমটা তুলে নিয়ে নিজের ব্যাগে রাখতে গিয়েও রাখল না। তারপর কলমটা Adi-র দিকে এগিয়ে দিল।</p>
+<p>— “রাখ। কাল Chapter 3 শুরু। লাল কলম লাগবে।”</p>
+<p>Adi কলমটা নিল। আঙুলে আঙুল ছুঁয়ে গেল, কেউ সেটা নিয়ে কিছু বলল না।</p>
+</div></section>
+<section class="sec r" id="s20"><h3>Episode 31 — Study Ledger</h3><div class="body">
+<p>আজকের নিরীক্ষা সম্পন্ন</p>
+<p>আজ Chapter 1 ও Chapter 2-এর আগের পর্বগুলোতে যে অংশগুলো ধরা পড়েনি, সেগুলো বইয়ের পাতা ধরে আবার মিলিয়ে সংযোজন করা হয়েছে।</p>
+<div class="tw"><table><thead><tr><th>Page</th><th>বাদ পড়া অংশ, যা এই পর্বে যোগ হলো</th></tr></thead><tbody><tr><td>33</td><td>Membrane contrast-এর heavy metal হিসেবে osmium tetroxide</td></tr><tr><td>42</td><td>Mitochondria-র regional distribution (cilia-র গোড়া, proximal convoluted tubule-এর basal domain, spermatozoa-র middle piece); liver cell mitochondria-তে urea-forming enzymes</td></tr><tr><td>43</td><td>Mitochondrial ribosomes ও nucleic acids-এর bacteria-র সঙ্গে মিল; oxygen-utilizing bacteria নিয়ে theory; mitochondria শুধু আগের mitochondria থেকে তৈরি হয়</td></tr><tr><td>44</td><td>Ligands: proteins (usually glycoproteins), polypeptides ও highly charged biogenic amines</td></tr><tr><td>45</td><td>Actin filament 7 nm; concentration 200 μM-এর বেশি (10 mg protein per ml cytoplasm); filopodia (0.1–0.3 μm) ও lamellipodia (0.1–0.2 μm); filopodia-র ভূমিকায় neurite growth</td></tr><tr><td>46</td><td>Myosin head fragments দিয়ে actin polarity-র arrowhead pattern</td></tr><tr><td>51</td><td>Ciliopathy-র পূর্ণ তালিকা (Bardet–Biedl syndrome, Jeune asphyxiating thoracic dystrophy সহ); BBSome</td></tr><tr><td>54</td><td>5 cm DNA-র 10,000-fold folding, 5 μm mitotic chromosome</td></tr><tr><td>71</td><td>Chapter 1 Key references ও তাদের annotation</td></tr><tr><td>75–76</td><td>Fig. 2.2, 2.3, 2.4, 2.5-এর legend-এর তথ্য</td></tr><tr><td>79</td><td>Fig. 2.7 ও Fig. 2.8-এর legend</td></tr><tr><td>80</td><td>Fig. 2.9 ও Fig. 2.10-এর legend</td></tr><tr><td>81</td><td>Adipocyte lipid-এর composition; Fig. 2.12 (haemosiderin-containing macrophages)</td></tr><tr><td>82</td><td>Mast cell vesicle-এর গঠন; MMP-এর নিয়ন্ত্রিত degradation-এর উদাহরণ; matrix degradation-এ bioactive peptides</td></tr><tr><td>83</td><td>Thick collagen fibrils-এর 8–12 nm thin fibril composite; Fig. 2.14</td></tr><tr><td>86–87</td><td>Chapter 2 Key references ও তাদের annotation</td></tr></tbody></table></div>
+<p>আজকের Gray’s Anatomy coverage</p>
+</div></section>
+<section class="sec r" id="s21"><h3>পৃষ্ঠা 33, 42–46, 51, 54, 71 (Chapter 1) এবং 75–76, 79–83, 86–87 (Chapter 2)</h3><div class="body">
+<p>Chapter 1 ও Chapter 2 — আবার সম্পূর্ণভাবে মিলিয়ে দেখা হয়েছে</p>
+<p>পরবর্তী পর্ব Chapter 3 থেকে শুরু হবে।</p>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-030.html">← Episode 30</a><a href="index.html">সব পর্ব</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">Gray’s Anatomy — Episode 31</a><a href="#s2">“লাল কলমের নিরীক্ষা: Chapter 1 ও Chapter 2-এর যে Lines খাতায় ওঠেনি”</a><a href="#s3">Scene 1: সকাল ৮টা ১০ — Anatomy Department-এর বারান্দা</a><a href="#s4">Scene 2: সকাল ৯টা ৪০ — Library: Page 33, Plasma membrane-এর “heavy metal”</a><a href="#s5">Scene 3: দুপুর ১২টা ১৫ — Page 42–43, Mitochondria কোথায় থাকে এবং কোথা থেকে এল</a><a href="#s6">Scene 4: দুপুর ২টা — Page 44, Signalling ligand-এর পরিচয়</a><a href="#s7">Scene 5: বিকেল ৩টা ৩০ — Page 45–46, Actin-এর বাদ পড়া সংখ্যা ও Arrowhead</a><a href="#s8">Scene 6: সন্ধ্যা ৫টা — Page 51, Cilia ও BBSome</a><a href="#s9">Scene 7: রাত ৭টা — Page 54, ৫ সেন্টিমিটার থেকে ৫ মাইক্রোমিটার</a><a href="#s10">Scene 8: পরদিন সকাল ১০টা — Histology Lab, Chapter 2-এর Figure Legend (Epithelium)</a><a href="#s11">Fig. 2.2 — Simple epithelia</a><a href="#s12">Fig. 2.3 ও Fig. 2.4 — Myoepithelial cells</a><a href="#s13">Fig. 2.5 — Stratified epithelia</a><a href="#s14">Scene 9: সকাল ১১টা ৩০ — Gland ও Connective Tissue-এর Figure Legend</a><a href="#s15">Scene 10: দুপুর ১২টা ৪৫ — Chapter 2-এর Text থেকে বাদ পড়া চারটি লাইন</a><a href="#s16">Scene 11: বিকেল ৪টা — Key References: বইয়ের শেষে লুকানো পাঠ-তালিকা</a><a href="#s17">Chapter 1 — Key references (Page 71)</a><a href="#s18">Chapter 2 — Key references (Pages 86–87)</a><a href="#s19">Scene 12: রাত ৮টা ১৫ — Library-তে শেষ আলোচনা</a><a href="#s20">Episode 31 — Study Ledger</a><a href="#s21">পৃষ্ঠা 33, 42–46, 51, 54, 71 (Chapter 1) এবং 75–76, 79–83, 86–87 (Chapter 2)</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

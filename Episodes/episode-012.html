@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 012 · কোষের অদৃশ্য কঙ্কাল: যে জাল ধরে রাখে পুরো কোষকে</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 012">EPISODE 012</h1>
+  <div class="ttl">কোষের অদৃশ্য কঙ্কাল: যে জাল ধরে রাখে পুরো কোষকে</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">012</div></div>
+    <div class="face b"><div class="t2">কোষের অদৃশ্য কঙ্কাল: যে জাল ধরে রাখে পুরো কোষকে</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>পর্ব ১২ — কোষের অদৃশ্য কঙ্কাল: যে জাল ধরে রাখে পুরো কোষকে</h3><div class="body">
+<p>Gray’s Anatomy · Chapter 1: Basic Structure and Function of Cells · Pages 45–47</p>
+</div></section>
+<section class="sec r" id="s2"><h3>১. Anatomy বিভাগের নতুন সকাল</h3><div class="body">
+<p>ঢাকা মেডিকেল কলেজের Anatomy বিভাগের সামনে সকাল থেকেই বেশ ব্যস্ততা।</p>
+<p>আদিত্য, রুদ্র, সায়ন ও নন্দিনী আজ একসঙ্গে লাইব্রেরিতে বসেছে। সামনে Gray’s Anatomy, পাশে কয়েকটি খাতা, আর টেবিলের এক কোণে চায়ের কাপ।</p>
+<p>সায়ন বইয়ের পৃষ্ঠা উল্টাতে উল্টাতে বলল,</p>
+<p>— আজকের টপিকটা কী?</p>
+<p>আদিত্য বলল,</p>
+<p>— Cytoskeleton। নাম শুনে মনে হচ্ছে কোষের নিজের একটা skeleton আছে।</p>
+<p>রুদ্র সঙ্গে সঙ্গে বলল,</p>
+<p>— তাহলে কোষের হাড়, পেশি, জয়েন্ট সবই আছে নাকি?</p>
+<p>নন্দিনী হেসে বলল,</p>
+<p>— আগে পড়াটা শেষ করো। তারপর কোষের Orthopaedics বিভাগ খুলে বসো।</p>
+<p>অমৃতা তখনই টেবিলে এসে বসল। তার হাতে নিজের বই ও কিছু নোট।</p>
+<p>— আজকের বিষয়টা মজার। Cytoskeleton শুধু কোষকে আকৃতি দিয়ে রাখে না; কোষের ভেতরে বিভিন্ন অঙ্গাণুর অবস্থান, পরিবহন, কোষের চলাচল, এমনকি cell division-এর সময় chromosome movement-এর সঙ্গেও যুক্ত।</p>
+<p>আদিত্য বলল,</p>
+<p>— তাহলে নামটা শুধু কাঠামোগত support বোঝায় না। এর কাজ আরও অনেক বেশি।</p>
+<p>— ঠিক। চলুন শুরু করি।</p>
+</div></section>
+<section class="sec r" id="s3"><h3>২. Cytoskeleton আসলে কী?</h3><div class="body">
+<p>অমৃতা বইয়ের পৃষ্ঠা ৪৫ খুলে পড়তে শুরু করল।</p>
+<p>Gray’s Anatomy অনুযায়ী, Cytoskeleton হলো cytoplasm জুড়ে বিস্তৃত বিভিন্ন আকৃতি, আকার ও গঠনের filamentous intracellular protein দিয়ে তৈরি একটি three-dimensional network।</p>
+<p>অর্থাৎ এটি কোনো একক দণ্ড বা সরল কাঠামো নয়। কোষের ভেতরে ছড়িয়ে থাকা filamentous protein-এর একটি ত্রিমাত্রিক নেটওয়ার্ক।</p>
+<p>এর কাজগুলো একে একে দেখা যাক।</p>
+<p>ক. Mechanical support এবং cell shape বজায় রাখা</p>
+<p>Cytoskeleton কোষকে mechanical support দেয় এবং cell shape ও rigidity বজায় রাখে। এর সাহায্যে কোষ অত্যন্ত অসমমিত (highly asymmetric) অথবা অনিয়মিত (irregular) আকৃতিও ধারণ করতে পারে।</p>
+<p>খ. Structural polarity প্রতিষ্ঠা</p>
+<p>কোষের বিভিন্ন অংশের গঠন ও কাজ একরকম নয়। Cytoskeleton কোষের structural polarity প্রতিষ্ঠা এবং ভিন্ন functional domain তৈরি করতে গুরুত্বপূর্ণ ভূমিকা রাখে।</p>
+<p>গ. Cell surface projection-কে support দেওয়া</p>
+<p>কোষের পৃষ্ঠে স্থায়ী projection যেমন:</p>
+<ul><li>Microvilli</li><li>Cilia</li></ul>
+<p>এবং অস্থায়ী projection যেমন:</p>
+<ul><li>Filopodia</li><li>Lamellipodia</li></ul>
+<p>এগুলোর কাঠামোগত support-এর সঙ্গে Cytoskeleton যুক্ত।</p>
+<p>ঘ. Intracellular transport</p>
+<p>Cytoskeleton কোষের ভেতরে পরিবহনের জন্য track তৈরি করে। বিভিন্ন vesicle ও macromolecule এক স্থান থেকে অন্য স্থানে যায়। এভাবে পরিবাহিত বস্তুগুলোকে বলা হয় cargoes।</p>
+<p>ঙ. Chromosome movement</p>
+<p>Cell division-এর সময় mitosis ও meiosis-এ chromosome-এর চলাচলের সঙ্গেও Cytoskeleton যুক্ত।</p>
+<p>চ. Cell movement</p>
+<p>Embryonic morphogenesis-এর সময় পুরো কোষের চলাচল এবং leukocyte-এর chemotactic extravascular migration during homing—এসব ক্ষেত্রেও এর ভূমিকা রয়েছে।</p>
+<p>ছ. বিশেষায়িত কাজ</p>
+<p>Gray’s দুটি গুরুত্বপূর্ণ উদাহরণ দিয়েছে:</p>
+<ul><li>Striated muscle cell-এ sarcomere-এর contraction।</li><li>Cilia ও flagella-র axoneme-এর bending।</li></ul>
+<p>আদিত্য বলল,</p>
+<p>— তাহলে Cytoskeleton-কে শুধু কোষের কাঠামো ভাবলে ভুল হবে। এটি কোষের ভেতরের পরিবহনব্যবস্থা ও চলাচলের সঙ্গেও যুক্ত।</p>
+<p>অমৃতা বলল,</p>
+<p>— হ্যাঁ। এই কারণেই এটিকে একটি dynamic structural network হিসেবে বুঝতে হবে।</p>
+</div></section>
+<section class="sec r" id="s4"><h3>৩. Cytoskeleton-এর প্রধান filamentous components</h3><div class="body">
+<p>Gray’s Anatomy বলছে, non-muscle cell-এ প্রধান filamentous structures তিন ধরনের।</p>
+</div></section>
+<section class="sec r" id="s5"><h3>তিনটি প্রধান filament</h3><div class="body">
+<p>Microfilaments</p>
+</div></section>
+<section class="sec r" id="s6"><h3>7 nm</h3><div class="body">
+<p>Actin filaments</p>
+<p>Intermediate filaments</p>
+</div></section>
+<section class="sec r" id="s7"><h3>10 nm</h3><div class="body">
+<p>Intermediate filament proteins</p>
+<p>Microtubules</p>
+</div></section>
+<section class="sec r" id="s8"><h3>25 nm</h3><div class="body">
+<p>Tubulin-based structures</p>
+<p>এছাড়াও রয়েছে filament-এর সঙ্গে যুক্ত বিভিন্ন protein, যেগুলো filament তৈরি বা ভাঙা, stability নিয়ন্ত্রণ কিংবা movement সৃষ্টি করতে সাহায্য করে।</p>
+<p>উদাহরণ:</p>
+<ul><li>Actin-binding proteins, যেমন myosin।</li><li>Microtubule-associated proteins।</li></ul>
+<p>কিছু কোষে myosin একত্রিত হয়ে thick filament তৈরি করতে পারে।</p>
+</div></section>
+<section class="sec r" id="s9"><h3>Cytoskeleton-এর অস্বাভাবিকতার সঙ্গে সম্পর্কিত রোগ</h3><div class="body">
+<p>Gray’s এখানে তিনটি গুরুত্বপূর্ণ pathological association উল্লেখ করেছে।</p>
+<p>1. Ciliopathies: Centrioles, basal bodies এবং cilia-এর abnormal assembly ও function-এর কারণে।</p>
+<p>2. Neurodegenerative diseases: Axon-এর microtubules বরাবর neurotransmitter-এর defective anterograde transport-এর সঙ্গে সম্পর্কিত।</p>
+<p>3. Sterility: Axoneme-এ microtubule-associated dynein defective বা absent হলে। উদাহরণ হিসেবে বই উল্লেখ করেছে Kartagener’s syndrome।</p>
+<p>রুদ্র বলল,</p>
+<p>— Cytoskeleton-এর defect থেকে এত ভিন্ন ধরনের সমস্যা হতে পারে!</p>
+<p>অমৃতা বলল,</p>
+<p>— কারণ এর কাজও অনেক ধরনের। একই structural network কোষের বিভিন্ন গুরুত্বপূর্ণ কাজের সঙ্গে যুক্ত।</p>
+</div></section>
+<section class="sec r" id="s10"><h3>৪. Actin filaments — কোষের নমনীয় কাঠামো</h3><div class="body">
+<p>এবার অমৃতা পৃষ্ঠা ৪৫-এর পরের অংশে গেল।</p>
+<p>— তিন ধরনের filament-এর মধ্যে প্রথমে আলোচনা করা হয়েছে Actin filaments বা microfilaments।</p>
+<p>Actin filaments হলো নমনীয় filament, যার পুরুত্ব 7 nm।</p>
+<p>Gray’s অনুযায়ী:</p>
+<ul><li>অধিকাংশ cell type-এ Actin হলো সবচেয়ে বেশি পরিমাণে থাকা protein।</li><li>কিছু motile cell-এ এর concentration 200 μM-এর বেশি হতে পারে।</li><li>বই এই concentration-কে প্রায় 10 mg protein per ml cytoplasm-এর সমতুল্য বলেছে।</li></ul>
+<p>সায়ন বলল,</p>
+<p>— তাহলে motile cell-এ Actin-এর পরিমাণ অনেক বেশি হতে পারে?</p>
+<p>— হ্যাঁ। Gray’s-এর উল্লেখিত তথ্য সেটিই দেখায়।</p>
+</div></section>
+<section class="sec r" id="s11"><h3>৪.১ Actin কীভাবে filament তৈরি করে?</h3><div class="body">
+<p>Actin filament তৈরি হয় actin monomer-এর ATP-dependent polymerization-এর মাধ্যমে।</p>
+<p>এখানে কয়েকটি তথ্য গুরুত্বপূর্ণ:</p>
+<ul><li>Actin monomer-এর molecular mass: 43 kDa।</li><li>Monomer-গুলো ATP-dependent polymerization-এর মাধ্যমে যুক্ত হয়।</li><li>Subunit-গুলো একটি linear tight helix-এ সাজানো থাকে।</li><li>Helical arrangement-এ প্রতি turn-এ 13টি subunit থাকে।</li></ul>
+<p>Actin-এর দুটি রূপ:</p>
+<div class="tw"><table><thead><tr><th>রূপ</th><th>পূর্ণ নাম</th><th>বৈশিষ্ট্য</th></tr></thead><tbody><tr><td>G-actin</td><td>Globular actin</td><td>Unpolymerized monomeric form</td></tr><tr><td>F-actin</td><td>Fibrillar actin</td><td>Polymerized filamentous form</td></tr></tbody></table></div>
+<p>আদিত্য বলল,</p>
+<p>— অর্থাৎ G-actin হলো একক monomer, আর অনেক monomer যুক্ত হয়ে F-actin তৈরি করে?</p>
+<p>— ঠিক।</p>
+</div></section>
+<section class="sec r" id="s12"><h3>৪.২ Actin filament-এর polarity</h3><div class="body">
+<p>এবার অমৃতা বলল,</p>
+<p>— Actin monomer-এর structure asymmetric। যখন monomer-গুলো polymerize করে filament তৈরি করে, তখন filament-এর মধ্যে নির্দিষ্ট polarity তৈরি হয়।</p>
+<p>এর দুটি প্রান্ত:</p>
+<p>Plus end বা Barbed end</p>
+<ul><li>এখানে monomer addition বেশি অনুকূল।</li><li>এটি filament-এর fast-growing end হিসেবে বর্ণিত।</li></ul>
+<p>Minus end বা Pointed end</p>
+<ul><li>এখানে monomer dissociation বেশি অনুকূল।</li><li>এটি slow-growing end হিসেবে বর্ণিত।</li></ul>
+<p>অমৃতা খাতায় লিখল:</p>
+<p>Actin filament polarity</p>
+<p>Plus / Barbed endMinus / Pointed end</p>
+<p>Monomer addition favoured</p>
+<p>Monomer dissociation favoured</p>
+</div></section>
+<section class="sec r" id="s13"><h3>৪.৩ Treadmilling</h3><div class="body">
+<p>আদিত্য বলল,</p>
+<p>— তাহলে plus end-এ monomer যুক্ত হচ্ছে আর minus end-এ monomer বের হচ্ছে—এমন হলে filament-এর দৈর্ঘ্য কি ক্রমাগত বাড়বে?</p>
+<p>অমৃতা বলল,</p>
+<p>— সবসময় নয়। এই ঘটনাটির একটি বিশেষ নাম আছে—Treadmilling।</p>
+<p>Gray’s অনুযায়ী, Actin filament-এর এক প্রান্তে একই সঙ্গে polymerization এবং অন্য প্রান্তে depolymerization চলতে পারে। এর ফলে filament-এর দৈর্ঘ্য অপরিবর্তিত থাকে।</p>
+<p>এটিই Treadmilling।</p>
+<p>আদিত্য লিখল:</p>
+<p>Treadmilling: Simultaneous polymerization at one end and depolymerization at the opposite end of an actin filament, maintaining its constant length.</p>
+</div></section>
+<section class="sec r" id="s14"><h3>৫. Actin polymerization-এর তিনটি ধাপ</h3><div class="body">
+<p>পরের দিন পরীক্ষার আগে রুদ্রকে এই তিনটি ধাপ মনে রাখতে হবে বলে অমৃতা বিষয়টি আবার ব্যাখ্যা করল।</p>
+<p>Gray’s অনুযায়ী, in vitro actin polymerization মূলত তিনটি ধাপে ঘটে।</p>
+<p>১. Nucleation</p>
+<p>G-actin monomer একত্রিত হয়ে ৩–৪টি monomer-এর একটি aggregate তৈরি করে।</p>
+<p>২. Elongation</p>
+<p>এরপর aggregate-এর সঙ্গে নতুন G-actin monomer যুক্ত হতে থাকে।</p>
+<p>৩. Dynamic steady state</p>
+<p>শেষে একটি dynamic steady state তৈরি হয়, যা treadmilling-এর সঙ্গে সম্পর্কিত।</p>
+<p>আদিত্য বলল,</p>
+<p>— Nucleation-এ ছোট aggregate তৈরি, elongation-এ সেটি বড় হয়, তারপর dynamic steady state।</p>
+<p>— ঠিক। তিনটি ধাপের নাম ও ক্রম মনে রাখবে।</p>
+</div></section>
+<section class="sec r" id="s15"><h3>৫.১ Actin-এর ওপর কাজ করা কিছু toxin</h3><div class="body">
+<p>Gray’s কয়েকটি নির্দিষ্ট toxin-এর উদাহরণ দিয়েছে, যেগুলো Actin-এর সঙ্গে bind করে polymerization-কে প্রভাবিত করে।</p>
+<div class="tw"><table><thead><tr><th>Toxin</th><th>Gray’s-এ বর্ণিত প্রভাব</th></tr></thead><tbody><tr><td>Cytochalasin D</td><td>F-actin-এর barbed end-এ নতুন G-actin monomer যুক্ত হওয়া বন্ধ করে</td></tr><tr><td>Phalloidin</td><td>F-actin-এর G-actin monomer-গুলোর মধ্যবর্তী interface-এ bind করে; depolymerization প্রতিরোধ করে</td></tr><tr><td>Latrunculin</td><td>G-actin monomer-এর সঙ্গে bind করে; filament-এ monomer যুক্ত হওয়া বাধাগ্রস্ত করে</td></tr></tbody></table></div>
+<p>আদিত্য বলল,</p>
+<p>— তিনটির কাজ এক নয়। Cytochalasin D barbed end-এ addition বন্ধ করে, Phalloidin depolymerization ঠেকায়, আর Latrunculin monomer-কে bind করে।</p>
+<p>অমৃতা বলল,</p>
+<p>— একদম। এই পার্থক্যটা গুরুত্বপূর্ণ।</p>
+</div></section>
+<section class="sec r" id="s16"><h3>৬. Actin-binding proteins — Actin-কে নিয়ন্ত্রণ করে যারা</h3><div class="body">
+<p>Actin filament একা কাজ করে না। এর সঙ্গে অনেক ধরনের actin-binding protein যুক্ত থাকে।</p>
+<p>Gray’s অনুযায়ী, এসব protein Actin-এর cellular form নিয়ন্ত্রণ করতে পারে এবং cell-এর organization ও shape বজায় রাখতে গুরুত্বপূর্ণ ভূমিকা রাখে।</p>
+<p>Actin-binding protein-এর কয়েকটি কাজ:</p>
+<ul><li>G-actin monomer-এর সঙ্গে binding।</li><li>F-actin-এর প্রান্তে capping।</li><li>Filament-কে cross-link করা।</li><li>Filament severing বা কেটে দেওয়া।</li></ul>
+<p>একটি protein একাধিক কাজও করতে পারে।</p>
+</div></section>
+<section class="sec r" id="s17"><h3>৬.১ Capping proteins</h3><div class="body">
+<p>Capping protein actin filament-এর প্রান্তে bind করে।</p>
+<p>এদের কাজ হতে পারে:</p>
+<ul><li>Filament স্থিতিশীল করা।</li><li>Filament-এর disassembly উৎসাহিত করা।</li></ul>
+</div></section>
+<section class="sec r" id="s18"><h3>৬.২ Cross-linking এবং bundling proteins</h3><div class="body">
+<p>এরা actin filament-গুলোকে একসঙ্গে যুক্ত করে bundle, cable অথবা core structure তৈরি করে।</p>
+<p>Microvilli এবং filopodia-তে tightly packed parallel actin filament থাকে। এগুলোকে দৃঢ় bundle হিসেবে ধরে রাখতে actin-bundling protein গুরুত্বপূর্ণ।</p>
+<p>Gray’s বিশেষভাবে দুটি protein-এর নাম উল্লেখ করেছে:</p>
+<ul><li>Fimbrin</li><li>Villin</li></ul>
+<p>অন্য কিছু protein অপেক্ষাকৃত ঢিলেঢালা bundle তৈরি করে, যেখানে filament-গুলো plus ও minus end-এর দিক বিবেচনায় antiparallel বিন্যাসে থাকতে পারে।</p>
+<p>এ ধরনের protein-এর মধ্যে রয়েছে Myosin II।</p>
+<p>Myosin II ATP-dependent motor activity ব্যবহার করে পাশাপাশি থাকা actin filament-কে একে অপরের ওপর slide করাতে পারে।</p>
+</div></section>
+<section class="sec r" id="s19"><h3>৬.৩ Filamin</h3><div class="body">
+<p>Filamin পরস্পর সংলগ্ন actin filament-কে যুক্ত করে loose filamentous gel-like network তৈরি করে।</p>
+<p>এই network-এ F-actin বিভিন্ন দিকে orientated থাকে।</p>
+</div></section>
+<section class="sec r" id="s20"><h3>৬.৪ Arp2/3 complex</h3><div class="body">
+<p>Actin filament branching-এর ক্ষেত্রে একটি গুরুত্বপূর্ণ complex হলো:</p>
+<p>Arp2/3 — Actin-related proteins 2/3 complex</p>
+<p>এটি সাতটি actin-related protein নিয়ে গঠিত একটি complex।</p>
+<p>Gray’s বলছে, এর গঠন actin-এর barbed end-এর মতো।</p>
+<p>Arp2/3 complex-এর মাধ্যমে তৈরি branched actin network পাওয়া যায়:</p>
+<ul><li>Migrating cell-এর leading edge-এ।</li><li>Lamellipodia-তে।</li><li>Phagosome-এ।</li></ul>
+<p>Phagosome-এর ক্ষেত্রে এটি immune cell-এর endocytosis ও phagocytosis-এর মাধ্যমে particle এবং foreign pathogen capture-এর সঙ্গে সম্পর্কিত।</p>
+</div></section>
+<section class="sec r" id="s21"><h3>৬.৫ Formin</h3><div class="body">
+<p>Formin-এর কাজ হলো আগে থেকে থাকা actin filament-কে দীর্ঘায়িত করা।</p>
+<p>এটি barbed end থেকে capping protein সরিয়ে দিয়ে filament elongation-এ সাহায্য করে।</p>
+<p>নন্দিনী বলল,</p>
+<p>— তাহলে Arp2/3 branching-এর সঙ্গে যুক্ত, আর Formin existing filament elongation-এ সাহায্য করে?</p>
+<p>অমৃতা বলল,</p>
+<p>— ঠিক। দুটিকে এক করে ফেলবে না।</p>
+</div></section>
+<section class="sec r" id="s22"><h3>৭. Actin cytoskeleton এবং plasma membrane</h3><div class="body">
+<p>Actin cytoskeleton শুধু filament তৈরি করে না; এটি plasma membrane-এর সঙ্গেও সংযুক্ত হতে পারে।</p>
+<p>কিছু actin-binding protein সরাসরি membrane-এর সঙ্গে অথবা membrane-associated protein-এর মাধ্যমে পরোক্ষভাবে যুক্ত হয়।</p>
+<p>কিছু ক্ষেত্রে transmembrane protein-এর মাধ্যমে extracellular matrix-এর সঙ্গেও সংযোগ তৈরি হয়।</p>
+<p>Gray’s বিশেষভাবে উল্লেখ করেছে Spectrin-like molecules-এর পরিবারকে।</p>
+<p>এরা:</p>
+<ul><li>Actin-এর সঙ্গে bind করতে পারে।</li><li>পরস্পরের সঙ্গেও যুক্ত হতে পারে।</li><li>বিভিন্ন membrane-associated protein-এর সঙ্গে সংযোগ তৈরি করতে পারে।</li><li>Plasma membrane-এর নিচে supportive network তৈরি করে।</li></ul>
+</div></section>
+<section class="sec r" id="s23"><h3>Erythrocyte-এ Spectrin</h3><div class="body">
+<p>Gray’s অনুযায়ী, erythrocyte-এর plasma membrane-এর intracellular side-এ spectrin-এর α ও β chain-এর tetramer সাজানো থাকে।</p>
+<p>এই tetramer-গুলো উভয় প্রান্তে ছোট actin filament-এর সঙ্গে যুক্ত হয়ে erythrocyte-এর structural integrity বজায় রাখতে সাহায্য করে।</p>
+<p>আদিত্য বলল,</p>
+<p>— অর্থাৎ erythrocyte-এর membrane-এর ভেতরের দিকে spectrin ও actin মিলে একটি supportive network তৈরি করে।</p>
+<p>— হ্যাঁ। এই অংশটি মনে রাখবে।</p>
+</div></section>
+<section class="sec r" id="s24"><h3>৮. Myosin — Actin-এর সঙ্গে চলাচলকারী motor protein</h3><div class="body">
+<p>এবার অমৃতা বইয়ের পরের অংশে গেল।</p>
+<p>Myosin-কে Gray’s একটি গুরুত্বপূর্ণ motor protein family হিসেবে আলোচনা করেছে।</p>
+<p>Myosin protein-এর একটি globular head region থাকে, যাতে heavy chain ও light chain রয়েছে।</p>
+<p>এর heavy chain-এর সঙ্গে বিভিন্ন দৈর্ঘ্যের α-helical tail যুক্ত থাকে।</p>
+<p>Myosin head-এর দুটি গুরুত্বপূর্ণ বৈশিষ্ট্য:</p>
+<ul><li>ATPase activity রয়েছে।</li><li>Actin filament-এর সঙ্গে bind করতে এবং তার ওপর দিয়ে চলতে পারে।</li></ul>
+<p>এই বৈশিষ্ট্যই Myosin-কে motor protein হিসেবে কাজ করতে সাহায্য করে।</p>
+</div></section>
+<section class="sec r" id="s25"><h3>৮.১ Myosin II</h3><div class="body">
+<p>Myosin II সবচেয়ে পরিচিত class-গুলোর একটি।</p>
+<p>এটি পাওয়া যায়:</p>
+<ul><li>Muscle cell-এ।</li><li>অনেক non-muscle cell-এ।</li></ul>
+<p>এর molecule-এ দুটি head ও দুটি tail থাকে। Tail-গুলো পরস্পরের সঙ্গে পেঁচিয়ে লম্বা rod তৈরি করে।</p>
+<p>এই rod-গুলো পরস্পরের সঙ্গে যুক্ত হয়ে long, thick filament তৈরি করতে পারে।</p>
+<p>Gray’s উদাহরণ দিয়েছে:</p>
+<ul><li>Striated muscle fibre।</li><li>Smooth muscle fibre।</li><li>Myoepithelial cell।</li></ul>
+<p>Myosin II molecule ছোট group, বিশেষত dimer হিসেবেও assemble করতে পারে। এগুলো individual actin microfilament-কে cross-link করে stress fibre এবং অন্যান্য F-actin array তৈরি করতে পারে।</p>
+</div></section>
+<section class="sec r" id="s26"><h3>৮.২ Myosin ও muscle contraction</h3><div class="body">
+<p>Myosin-এর ATP-dependent sliding on actin-এর মাধ্যমে muscle contraction-এর ভিত্তি তৈরি হয়।</p>
+<p>এটি শুধু muscle contraction-এই সীমাবদ্ধ নয়।</p>
+<p>Gray’s আরও উল্লেখ করেছে:</p>
+<ul><li>Cellular motility-তে microfilament bundle-এর extension।</li><li>Dividing cell-এর cleavage furrow-এ actin ও myosin-এর ring contraction।</li></ul>
+<p>অর্থাৎ cell division-এর সময় cleavage furrow-এর চারপাশে actin–myosin ring-এর contraction-ও এই ব্যবস্থার সঙ্গে যুক্ত।</p>
+</div></section>
+<section class="sec r" id="s27"><h3>৮.৩ Skeletal ও smooth muscle-এ Myosin II-এর arrangement</h3><div class="body">
+<p>Gray’s দুই ধরনের muscle-এ Myosin II-এর বিন্যাসের পার্থক্য উল্লেখ করেছে।</p>
+<p>Skeletal muscle</p>
+<ul><li>Myosin molecule bipolar filament তৈরি করে।</li><li>Filament-এর পুরুত্ব 15 nm।</li><li>Subunit-গুলো symmetric antiparallel arrangement-এ থাকে।</li><li>Filament-এর midpoint-এ head region থাকে না।</li></ul>
+<p>Smooth muscle</p>
+<ul><li>Myosin molecule আরও পুরু, flattened bundle তৈরি করে।</li><li>Bundle-এর দুই পাশে molecule-গুলো বিভিন্ন দিকে orientated থাকে।</li></ul>
+<p>এই arrangement-গুলোর কারণে বিভিন্ন ধরনের muscle cell-এর contractile force characteristics-এ পার্থক্য দেখা যায়।</p>
+</div></section>
+<section class="sec r" id="s28"><h3>৮.৪ Myosin I</h3><div class="body">
+<p>Myosin I হলো single-headed molecule-এর subfamily।</p>
+<p>এর tail বিভিন্ন দৈর্ঘ্যের হতে পারে।</p>
+<p>Gray’s Myosin I-এর কাজ হিসেবে উল্লেখ করেছে:</p>
+<ul><li>Endocytosis-এ membrane movement।</li><li>Neuronal growth cone-এ filopodial formation।</li><li>Actin–actin sliding।</li><li>Microvilli-তে actin-এর সঙ্গে membrane attachment।</li></ul>
+</div></section>
+<section class="sec r" id="s29"><h3>৮.৫ Myosin V</h3><div class="body">
+<p>Myosin V family-এর motor protein actin filament বরাবর cargo transport-এ যুক্ত।</p>
+<p>উদাহরণ হিসেবে Gray’s উল্লেখ করেছে Myosin Va।</p>
+<p>এটি F-actin track বরাবর vesicle পরিবহন করে।</p>
+<p>এখানে Gray’s তুলনা করেছে kinesin এবং cytoplasmic dynein-এর সঙ্গে, যারা microtubule বরাবর cargo transport-এর সঙ্গে যুক্ত।</p>
+<p>বই আরও বলছে, cargo trafficking-এর সময় বিভিন্ন motor protein সমন্বিতভাবে কাজ করতে পারে।</p>
+</div></section>
+<section class="sec r" id="s30"><h3>৯. Other thin filaments — Titin ও Nebulin</h3><div class="body">
+<p>পৃষ্ঠা ৪৭-এর শেষের দিকে Gray’s আরও একটি filamentous structure-এর কথা বলেছে।</p>
+<p>এগুলো heterogeneous group-এর filamentous structure, যাদের diameter:</p>
+<p>2–4 nm</p>
+<p>এদের মধ্যে সবচেয়ে বেশি আলোচিত দুটি হলো:</p>
+<ul><li>Titin</li><li>Nebulin</li></ul>
+<p>Gray’s অনুযায়ী:</p>
+<ul><li>এগুলো skeletal muscle-এর মোট protein-এর প্রায় 13% গঠন করে।</li><li>এগুলো অত্যন্ত বড় molecule-এর মধ্যে পড়ে।</li><li>এদের subunit weight প্রায় ।</li><li>Native molecule-এর দৈর্ঘ্য প্রায় 1 μm।</li><li>Repetitive bead-like structure থাকার কারণে এদের elastic properties রয়েছে।</li></ul>
+<p>এই elastic properties muscle-এর কার্যকর functioning-এর জন্য গুরুত্বপূর্ণ। Gray’s উল্লেখ করেছে, সম্ভবত অন্যান্য cell-এর ক্ষেত্রেও এদের ভূমিকা থাকতে পারে।</p>
+<p>আদিত্য বলল,</p>
+<p>— তাহলে Actin, Myosin, Titin আর Nebulin—সবগুলোকে একই ধরনের filament ভাবলে ভুল হবে।</p>
+<p>অমৃতা বলল,</p>
+<p>— অবশ্যই। তাদের গঠন, আকার ও ভূমিকা আলাদা। বইয়ের প্রতিটি heading আলাদা করে পড়তে হবে।</p>
+</div></section>
+<section class="sec r" id="s31"><h3>১০. দিনের শেষে — পড়াশোনা, বন্ধুত্ব ও ছোট্ট প্রতিযোগিতা</h3><div class="body">
+<p>বিকেলের দিকে লাইব্রেরিতে ভিড় কমে এসেছে।</p>
+<p>রুদ্র নিজের খাতা বন্ধ করে বলল,</p>
+<p>— আজকে বুঝলাম, Cytoskeleton পড়তে গিয়ে শুধু তিনটা diameter মুখস্থ করলে হবে না। Actin-এর polarity, polymerization, binding protein, myosin—সব আলাদা করে বুঝতে হবে।</p>
+<p>সায়ন বলল,</p>
+<p>— আগামীকাল আমরা একটা group discussion করব। আমি microtubules-এর অংশটা পড়ব। আদিত্য, তুমি Actin-এর অংশটা আরেকবার বুঝিয়ে দেবে?</p>
+<p>আদিত্য বলল,</p>
+<p>— ঠিক আছে। তবে তুমি আমাকে microtubules-এর transport অংশটা বুঝিয়ে দেবে।</p>
+<p>নন্দিনী অমৃতার দিকে তাকিয়ে বলল,</p>
+<p>— তোমাদের এই গ্রুপ স্টাডি ভালোই চলছে। তবে পরীক্ষার আগে যেন সবাই নিজের নিজের পড়াটাও শেষ করে।</p>
+<p>অমৃতা বই ব্যাগে রাখতে রাখতে বলল,</p>
+<p>— সেটাই তো আসল কথা। গ্রুপ স্টাডি তখনই কাজে লাগে, যখন সবাই আগে নিজে পড়ে আসে।</p>
+<p>আদিত্য বলল,</p>
+<p>— তুমি ঠিকই বলেছ। কাল আমি Actin-এর পুরো অংশটা আবার পড়ব।</p>
+<p>অমৃতা বলল,</p>
+<p>— শুধু পড়বে না, F-actin আর G-actin-এর পার্থক্যও নিজের ভাষায় লিখে আনবে।</p>
+<p>রুদ্র পাশ থেকে বলে উঠল,</p>
+<p>— বুঝলাম, এই গ্রুপে এখন থেকে homework-ও দেওয়া হবে!</p>
+<p>সবাই হেসে উঠল।</p>
+<p>কলেজের গেটের দিকে হাঁটতে হাঁটতে আদিত্য বুঝল, মেডিকেলের পড়াশোনা একা একা শেষ করার বিষয় নয়। বন্ধুদের সঙ্গে আলোচনা, ভুল ধরা, একে অপরকে বোঝানো—এসবও শেখার অংশ।</p>
+<p>আর অমৃতার সঙ্গে তার বন্ধুত্বটাও এখন আগের চেয়ে অনেক স্বাভাবিক। তাদের মধ্যে ভালো লাগা থাকলেও কেউই সেটাকে পড়াশোনার ওপর প্রাধান্য দিচ্ছে না।</p>
+</div></section>
+<section class="sec r" id="s32"><h3>১১. Gray’s Anatomy — আজকের Revision Notes</h3><div class="body">
+<div class="tw"><table><thead><tr><th>বিষয়</th><th>গুরুত্বপূর্ণ তথ্য</th></tr></thead><tbody><tr><td>Cytoskeleton</td><td>Three-dimensional filamentous intracellular protein network</td></tr><tr><td>Microfilament</td><td>7 nm</td></tr><tr><td>Intermediate filament</td><td>10 nm</td></tr><tr><td>Microtubule</td><td>25 nm</td></tr><tr><td>Actin monomer</td><td>43 kDa</td></tr><tr><td>Actin concentration</td><td>Some motile cells: &gt;200 μM</td></tr><tr><td>F-actin</td><td>Polymerized filamentous form</td></tr><tr><td>G-actin</td><td>Unpolymerized monomeric form</td></tr><tr><td>Helical arrangement</td><td>13 subunits per turn</td></tr><tr><td>Nucleation</td><td>3–4 monomer aggregate</td></tr><tr><td>Skeletal muscle Myosin II filament</td><td>15 nm</td></tr><tr><td>Other thin filaments</td><td>2–4 nm</td></tr><tr><td>Titin ও Nebulin</td><td>Skeletal muscle protein-এর প্রায় 13%</td></tr></tbody></table></div>
+</div></section>
+<section class="sec r" id="s33"><h3>Source coverage </h3><div class="body">
+<p>Covered: Cytoskeleton overview, Actin filaments, Actin-binding proteins, Myosins এবং Other thin filaments-এর প্রাথমিক আলোচনা।</p>
+<p>Source: Gray’s Anatomy, Chapter 1, pages 45–47।</p>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-011.html">← Episode 11</a><a href="index.html">সব পর্ব</a><a href="episode-013.html">Episode 13 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">পর্ব ১২ — কোষের অদৃশ্য কঙ্কাল: যে জাল ধরে রাখে পুরো কোষকে</a><a href="#s2">১. Anatomy বিভাগের নতুন সকাল</a><a href="#s3">২. Cytoskeleton আসলে কী?</a><a href="#s4">৩. Cytoskeleton-এর প্রধান filamentous components</a><a href="#s5">তিনটি প্রধান filament</a><a href="#s6">7 nm</a><a href="#s7">10 nm</a><a href="#s8">25 nm</a><a href="#s9">Cytoskeleton-এর অস্বাভাবিকতার সঙ্গে সম্পর্কিত রোগ</a><a href="#s10">৪. Actin filaments — কোষের নমনীয় কাঠামো</a><a href="#s11">৪.১ Actin কীভাবে filament তৈরি করে?</a><a href="#s12">৪.২ Actin filament-এর polarity</a><a href="#s13">৪.৩ Treadmilling</a><a href="#s14">৫. Actin polymerization-এর তিনটি ধাপ</a><a href="#s15">৫.১ Actin-এর ওপর কাজ করা কিছু toxin</a><a href="#s16">৬. Actin-binding proteins — Actin-কে নিয়ন্ত্রণ করে যারা</a><a href="#s17">৬.১ Capping proteins</a><a href="#s18">৬.২ Cross-linking এবং bundling proteins</a><a href="#s19">৬.৩ Filamin</a><a href="#s20">৬.৪ Arp2/3 complex</a><a href="#s21">৬.৫ Formin</a><a href="#s22">৭. Actin cytoskeleton এবং plasma membrane</a><a href="#s23">Erythrocyte-এ Spectrin</a><a href="#s24">৮. Myosin — Actin-এর সঙ্গে চলাচলকারী motor protein</a><a href="#s25">৮.১ Myosin II</a><a href="#s26">৮.২ Myosin ও muscle contraction</a><a href="#s27">৮.৩ Skeletal ও smooth muscle-এ Myosin II-এর arrangement</a><a href="#s28">৮.৪ Myosin I</a><a href="#s29">৮.৫ Myosin V</a><a href="#s30">৯. Other thin filaments — Titin ও Nebulin</a><a href="#s31">১০. দিনের শেষে — পড়াশোনা, বন্ধুত্ব ও ছোট্ট প্রতিযোগিতা</a><a href="#s32">১১. Gray’s Anatomy — আজকের Revision Notes</a><a href="#s33">Source coverage </a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

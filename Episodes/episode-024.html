@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 024 · The Architecture of Life</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 024">EPISODE 024</h1>
+  <div class="ttl">The Architecture of Life</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">024</div></div>
+    <div class="face b"><div class="t2">The Architecture of Life</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>Gray’s Anatomy: The Adi–Amrita Chronicles</h3><div class="body">
+</div></section>
+<section class="sec r" id="s2"><h3>Episode 24 — The Architecture of Life</h3><div class="body">
+<p>Dhaka Medical College | Chapter 2: Integrating Cells into Tissues | Page 73–77</p>
+</div></section>
+<section class="sec r" id="s3"><h3>১. নতুন অধ্যায়, নতুন প্রশ্ন</h3><div class="body">
+<p>ঢাকা মেডিকেল কলেজের Anatomy lecture gallery।</p>
+<p>সকাল ৮টা ৫০ মিনিট।</p>
+<p>আজ Adi একটু আগেই এসেছে। সামনের বেঞ্চে বসে Chapter 2-এর প্রথম পৃষ্ঠা খুলে রেখেছে। কিছুক্ষণ পর Amrita এসে তার পাশের আসনে বসল।</p>
+<p>Amrita: “কী রে, আজ এত সকালে?”</p>
+<p>Adi: “নতুন chapter শুরু। Cells থেকে এবার tissues।”</p>
+<p>Amrita: “মানে এতদিন আমরা individual cell-এর structure পড়েছি। এখন দেখব কীভাবে অনেকগুলো cell মিলে tissue তৈরি করে?”</p>
+<p>Adi: “ঠিক তাই।”</p>
+<p>পেছন থেকে Rafi বলে উঠল—</p>
+<p>“তোদের কথাবার্তা শুনে মনে হচ্ছে Anatomy department-এর নতুন lecturer এসে গেছে!”</p>
+<p>Nabila হেসে বলল—</p>
+<p>“ওদের disturb করিস না। আজকে tissue formation-এর সঙ্গে relationship formation-ও revise হচ্ছে!”</p>
+<p>ঠিক তখনই ডা. শারমিন ম্যাডাম ক্লাসে প্রবেশ করলেন।</p>
+<p>তিনি বোর্ডে লিখলেন—</p>
+<p>CHAPTER 2: INTEGRATING CELLS INTO TISSUES</p>
+<p>ডা. শারমিন: “আজকের প্রশ্ন খুব সাধারণ—একটি multicellular organism কীভাবে তৈরি হলো? Single cell থেকে tissue, tissue থেকে organ—এই organization কীভাবে সম্ভব?”</p>
+</div></section>
+<section class="sec r" id="s4"><h3>২. From single cells to multicellular organisms</h3><div class="body">
+<p>ম্যাডাম বোর্ডে একটি ছোট diagram আঁকলেন।</p>
+<p>Single, free-living cells</p>
+<p>Specialization during development</p>
+<p>Multicellular communities</p>
+<p>Specialized tissues and organs</p>
+<p>Gray’s Anatomy-র আলোচনার মূল ধারণা হলো—Cells বিবর্তনের শুরুতে single, free-living organisms হিসেবে ছিল। Natural selection এমন complex communities-কে favour করেছে, যেখানে development-এর সময় বিভিন্ন cell group বিশেষ কাজের জন্য specialize করেছে।</p>
+<p>এর ফলে তৈরি হয়েছে multicellular organisms।</p>
+<p>এই organization-এর সুবিধা:</p>
+<ul><li>Body-এর internal environment-এর ওপর অধিক control।</li><li>Different cell populations-এর মধ্যে division of labour।</li><li>Highly specialized structures-এর উদ্ভব, যেমন brain।</li></ul>
+<p>ম্যাডাম বললেন—</p>
+<p>“মানুষের শরীরে ২০০-এরও বেশি different cell types রয়েছে। তাদের genome একই হলেও gene expression pattern আলাদা।”</p>
+<p>Adi হাত তুলল।</p>
+<p>Adi: “ম্যাডাম, একই genome থাকা সত্ত্বেও cell type আলাদা হয় কেন?”</p>
+<p>ডা. শারমিন: “কারণ সব cell-এ সব gene একইভাবে express হয় না। কোন cell-এ কোন gene active, তার ওপর cell-এর structure এবং function নির্ভর করে।”</p>
+<p>Amrita যোগ করল—</p>
+<p>“অর্থাৎ genome একই হলেও gene expression-এর pattern আলাদা হওয়ায় cell specialization তৈরি হয়।”</p>
+<p>“Exactly.”</p>
+</div></section>
+<section class="sec r" id="s5"><h3>৩. Tissue কী?</h3><div class="body">
+<p>ম্যাডাম এবার লিখলেন—</p>
+<p>Tissue = Cellular aggregates performing coordinated functions.</p>
+<p>শরীরের কিছু cell migratory। কিন্তু অধিকাংশ cell aggregate বা group হিসেবে থাকে। এই aggregate-এর individual cells একই ধরনের বা closely related function coordinatedভাবে সম্পাদন করে।</p>
+<p>এই organized cellular aggregates-কে বলা হয় Tissues।</p>
+<p>Gray’s Anatomy structure, function এবং molecular properties-এর ভিত্তিতে tissue-কে প্রধানত চারটি broad category-তে ভাগ করেছে।</p>
+<p>Four major tissue types</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Covering and Lining Epithelia</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/GgEehIq0oIIbmHmnMvi-iv6z4LpOJiOGeEIqkdqpMkqOobziKlDu33G7Gzg_Y9bsGyHy-5553Gw0aqkIsKi1wdlWmh5BPE1ntq9OYJd9IvLsDXiuMWOZvD8zuZKFDQt520a3BW-YAywGPNGndrEvWai3dOAdLMKBN4m1CI-620LN2MPAJbkYypSVQ3t6CrRa?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Covering%20and%20Lining%20Epithelia">Image search ↗</a></figure>
+<p>1. Epithelia</p>
+<p>Surface cover করে অথবা cavities line করে।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>4.3: Connective Tissue - Medicine LibreTexts</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/N7jUSqfiwPGrpkAsvHD5e4U8GW8zaWzTsfu9Yf3wRn1CNOOKD6KkUavJHlIAyTvTxQxXn1dloaHurL_zRfUeLLhkozF7Ikvs7LGpyFOLmVYTXDs27uvt56KssLJOWutTsfVKOMunCJsFy4Elklsx8WMvFXHgp1aF2F7gGRpT6pzmKhzoUB3Ht0qZQEJmoZEz?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=4.3%3A%20Connective%20Tissue%20-%20Medicine%20LibreTexts">Image search ↗</a></figure>
+<p>2. Connective or supporting tissue</p>
+<p>Cells extracellular matrix-এর মধ্যে embedded থাকে।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>a single SKELETAL MUSCLE FIBER (or muscle cell) in longitudinal section showing STRIATIONS, 250x</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/JagFO_vBsBm2kWeilQCXNCuLli8XuExcULoEOlgGEI7zAE4px6QrhLf3Pwds6MF_MpebEpprcK_YIaQ-UOR7qVAYkRl82gnqI-LvxXJku0mWHF_3n2N1qvm8vAPxPRv6_e7cEa_0QmxZ8X4rcR7cePgGmSRq8tGAPZUQyz3NOfnc1mLzOMyQqTaVOEQhO7xL?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=a%20single%20SKELETAL%20MUSCLE%20FIBER%20%28or%20muscle%20cell%29%20in%20longitudinal%20section%20showing%20STRIATIONS%2C%20250x">Image search ↗</a></figure>
+<p>3. Muscle</p>
+<p>প্রধানত specialized contractile cells দিয়ে গঠিত।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Dictionary - Normal: Cerebral cortex | Cerebral cortex, Basic anatomy and physiology, Studying medicine</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/BcKdiBb3DsahHOYBv1YTwpgGK_tnEQu2-P4EdJbp5qRc_p1wzDbi7n5IwtyMefgZngzPAFk-zkslde-tAGCdHu92boJwrpilIEjxD24aqk8T8QVNYD4rRKndLUOBqWQ0ZmVCHu-i6rGOeOE8C2Qo9u4Pvr8SnceyX5rOwIdsvrqfygYf6oTTLeYMconZCLYS?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Dictionary%20-%20Normal%3A%20Cerebral%20cortex%20%7C%20Cerebral%20cortex%2C%20Basic%20anatomy%20and%20physiology%2C%20Studying%20medicine">Image search ↗</a></figure>
+<p>4. Nervous tissue</p>
+<p>Electrical ও chemical signals conduct এবং transmit করে; supporting cells-ও থাকে।</p>
+<p>Feynman technique — সহজ উদাহরণ</p>
+<p>ম্যাডাম বললেন—</p>
+<p>“ধরো, একটি বাড়ি তৈরি হচ্ছে। দেয়ালের covering, supporting framework, movement-এর জন্য mechanism এবং communication network—সবকিছুর কাজ আলাদা। Body-তেও tissue-গুলোর কাজ আলাদা, কিন্তু তারা একসঙ্গে কাজ করে।”</p>
+<p>Rafi বলল—</p>
+<p>“তাহলে epithelial tissue হলো covering, connective tissue support, muscle movement আর nervous tissue communication?”</p>
+<p>“প্রাথমিকভাবে বোঝার জন্য যথেষ্ট ভালো,” ম্যাডাম বললেন।</p>
+</div></section>
+<section class="sec r" id="s6"><h3>৪. Molecular evidence: Tissue classification-এর ভিত্তি</h3><div class="body">
+<p>ম্যাডাম বললেন—</p>
+<p>“এই চার ধরনের tissue classification শুধু দেখতে কেমন তার ওপর নির্ভর করে না। Molecular evidence-ও এই classification-কে support করে।”</p>
+<p>তিনি বোর্ডে intermediate filament proteins-এর তালিকা লিখলেন।</p>
+<div class="tw"><table><thead><tr><th>Tissue</th><th>Characteristic intermediate filament</th></tr></thead><tbody><tr><td>Epithelia</td><td>Keratins</td></tr><tr><td>Connective tissue</td><td>Vimentins</td></tr><tr><td>Muscle</td><td>Desmins</td></tr><tr><td>Nervous tissue</td><td>Neurofilaments ও glial fibrillary acidic proteins</td></tr></tbody></table></div>
+<p>Amrita: “ম্যাডাম, তাহলে intermediate filament protein দেখে cell-এর tissue lineage সম্পর্কে ধারণা পাওয়া যায়?”</p>
+<p>ডা. শারমিন: “হ্যাঁ, molecular characteristics tissue classification-এ সহায়তা করে। তবে কিছু cell একাধিক tissue type-এর বৈশিষ্ট্য দেখায়।”</p>
+<p>Gray’s Anatomy-তে উদাহরণ হিসেবে উল্লেখ রয়েছে:</p>
+<ul><li>Myofibroblasts</li><li>Neuroepithelial sensory receptors</li><li>Central nervous system-এর ependymal cells</li></ul>
+<p>তাই classification-এর কিছু anomaly থাকলেও এটি descriptive purpose-এর জন্য অত্যন্ত কার্যকর।</p>
+<p>ম্যাডাম আরও বললেন—</p>
+<p>“এই Chapter-এ মূলত দুটি major category বিস্তারিত পড়ব—Epithelia এবং General connective and supporting tissues। Specialized skeletal connective tissues, cartilage, bone এবং skeletal muscle Chapter 5-এ; smooth ও cardiac muscle Chapter 6-এ; nervous tissue Chapter 3-এ; blood, lymphoid tissue এবং haemopoiesis Chapter 4-এ আলোচনা করা হবে।”</p>
+<p>Adi লিখে নিল—এটি পরবর্তী অধ্যায়গুলোর roadmap।</p>
+</div></section>
+<section class="sec r" id="s7"><h3>৫. Epithelial tissue: শরীরের protective এবং selective interface</h3><div class="body">
+<p>ম্যাডাম বোর্ডে লিখলেন—</p>
+<p>EPITHELIA</p>
+<p>“Epithelium বলতে সেই cell layer বা cell layers-কে বোঝায়, যা body surface cover করে অথবা body cavities line করে, যেগুলো body surface-এর সঙ্গে open।”</p>
+<p>Epithelia সাধারণত selective barriers হিসেবে কাজ করে। তারা কোনো substance-এর passage facilitate অথবা inhibit করতে পারে।</p>
+<p>তাদের প্রধান কাজ:</p>
+<ul><li>Underlying tissue-কে dehydration থেকে রক্ষা করা।</li><li>Chemical damage থেকে protection দেওয়া।</li><li>Mechanical damage থেকে protection দেওয়া।</li><li>Lining space-এ products synthesize ও secrete করা।</li><li>Sensory surface হিসেবে কাজ করা।</li></ul>
+<p>ম্যাডাম বললেন—</p>
+<p>“এখানে মনে রাখবে, nervous tissue-এর কিছু বৈশিষ্ট্যকে modified epithelium হিসেবে বিবেচনা করা যায়। Gray’s Anatomy বলছে, nervous tissue এবং epithelium-এর embryonic ectodermal origin-এর মধ্যে সম্পর্ক রয়েছে।”</p>
+</div></section>
+<section class="sec r" id="s8"><h3>Epithelia-র structural characteristics</h3><div class="body">
+<ul><li>Epithelia predominantly cellular।</li><li>Extracellular material খুব কম; প্রধানত basal lamina-তে সীমাবদ্ধ।</li><li>Intercellular junctions সাধারণত প্রচুর থাকে।</li><li>Junctions epithelial sheet-এর mechanical cohesion এবং barrier function বজায় রাখে।</li><li>Basal surface একটি thin filamentous protein ও proteoglycan layer-এর সঙ্গে যুক্ত, যার নাম basal lamina।</li></ul>
+<p>Amrita বলল—</p>
+<p>“ম্যাডাম, epithelial tissue-তে blood vessels থাকে?”</p>
+<p>“Typical epithelia-র ভেতর দিয়ে blood vessels প্রবেশ করে না। পাশের connective tissue-এর capillaries থেকে diffusion-এর মাধ্যমে epithelial cells nutrition পায়।”</p>
+<p>এই arrangement-এর কারণে living epithelial cell layer-এর maximum thickness সীমিত থাকে।</p>
+<p>Feynman explanation:</p>
+<p>Adi বলল—</p>
+<p>“অর্থাৎ epithelial cell-গুলোকে পাশের capillary থেকে diffusion-এর মাধ্যমে খাবার পেতে হয়। তাই capillary থেকে খুব বেশি দূরে থাকা cell-এর পক্ষে nutrient পাওয়া কঠিন।”</p>
+<p>“ঠিক,” ম্যাডাম বললেন।</p>
+<p>আরেকটি গুরুত্বপূর্ণ বিষয়—Epithelia এবং supporting connective tissue অনেক সময় একসঙ্গে surgically remove করা যায়। এই combined layer-কে membrane বলা হয়।</p>
+<ul><li>Mucous glands দ্বারা moistened membrane = Mucous membrane বা mucosa</li><li>Mesothelium দ্বারা covered connective tissue layer = Serous membrane বা serosa</li></ul>
+</div></section>
+<section class="sec r" id="s9"><h3>৬. Epithelial classification: Unilaminar ও Multilaminar</h3><div class="body">
+<p>ম্যাডাম এবার বড় একটি classification chart আঁকলেন।</p>
+<p>Epithelia</p>
+<p>Unilaminar (Simple)</p>
+<ul><li>Squamous</li><li>Cuboidal</li><li>Columnar</li><li>Pseudostratified</li></ul>
+<p>Multilaminar (Stratified)</p>
+<ul><li>Stratified squamous<ul><li>Keratinizing</li><li>Non-keratinizing</li></ul></li><li>Stratified cuboidal/columnar</li><li>Urothelium (transitional)</li><li>Specialized seminiferous epithelium</li></ul>
+<p>Unilaminar epithelium হলো single-layered epithelium, যেখানে একটি cell layer basal lamina-র ওপর থাকে।</p>
+<p>Multilaminar epithelium হলো একাধিক cell layer-যুক্ত epithelium।</p>
+<p>এর মধ্যে রয়েছে:</p>
+<ul><li>Stratified squamous epithelium</li><li>Urothelium বা transitional epithelium</li><li>অন্যান্য multilaminar epithelia, যেমন কিছু exocrine gland-এর largest ducts-এর lining</li><li>Seminiferous epithelium—testis-এর specialized multilaminar tissue</li></ul>
+</div></section>
+<section class="sec r" id="s10"><h3>৭. Unilaminar epithelium: Cell shape কেন গুরুত্বপূর্ণ?</h3><div class="body">
+<p>ম্যাডাম বললেন—</p>
+<p>“Simple epithelium-কে cell shape অনুযায়ী আরও ভাগ করা যায়।”</p>
+<ul><li>Squamous</li><li>Cuboidal</li><li>Columnar</li><li>Pseudostratified</li></ul>
+<p>Cell shape অনেক ক্ষেত্রে cell volume-এর সঙ্গে সম্পর্কিত।</p>
+<p>যেসব cell-এ cytoplasm কম থাকে, তাদের সাধারণত:</p>
+<ul><li>Organelle কম থাকে।</li><li>Metabolic activity কম থাকে।</li><li>Shape squamous অথবা low cuboidal হতে পারে।</li></ul>
+<p>অন্যদিকে highly active secretory epithelial cells-এ:</p>
+<ul><li>Mitochondria প্রচুর থাকে।</li><li>Endoplasmic reticulum প্রচুর থাকে।</li><li>Cell সাধারণত tall cuboidal অথবা columnar হয়।</li></ul>
+<p>Adi: “ম্যাডাম, তাহলে cell যত বেশি secretory activity করবে, তার organelle requirement তত বেশি হতে পারে?”</p>
+<p>ডা. শারমিন: “হ্যাঁ। Structure এবং function-এর মধ্যে এই সম্পর্কটাই histology-র অন্যতম ভিত্তি।”</p>
+<p>Unilaminar epithelium-এর surface specialization-ও থাকতে পারে:</p>
+<ul><li>Cilia</li><li>Numerous microvilli</li><li>Secretory vacuoles</li><li>Sensory features</li></ul>
+<p>এছাড়া glandular structures-এর সঙ্গে myoepithelial cells থাকতে পারে, যেগুলো contractile।</p>
+</div></section>
+<section class="sec r" id="s11"><h3>৮. Simple squamous epithelium: যেখানে thin barrier দরকার</h3><div class="body">
+<p>ম্যাডাম বোর্ডে একটি flattened cell-এর diagram আঁকলেন।</p>
+<p>Simple squamous epithelium</p>
+<p>এটি flattened, tightly apposed, polygonal cells দিয়ে তৈরি। এই flattened cells-কে squames বলা হয়।</p>
+<p>কিছু ক্ষেত্রে cell-গুলোর border complex এবং interlocking হয়; straight boundary না থেকে এই ধরনের arrangement-কে tessellated বলা হয়।</p>
+<p>এর বৈশিষ্ট্য:</p>
+<ul><li>Cytoplasm অত্যন্ত পাতলা হতে পারে—কিছু জায়গায় মাত্র 0.1 μm।</li><li>Nucleus সাধারণত bulge করে ওপরের space-এর দিকে উঠে থাকে।</li><li>Rapid diffusion-এর জন্য উপযোগী।</li></ul>
+<p>Location:</p>
+<ul><li>Lung alveoli</li><li>Renal corpuscle-এর outer capsular wall</li><li>Renal tubules-এর thin segments</li><li>Inner ear-এর বিভিন্ন অংশ</li></ul>
+<p>ম্যাডাম বললেন—</p>
+<p>“Alveoli-তে gas exchange-এর জন্য thin epithelial barrier অত্যন্ত গুরুত্বপূর্ণ। একইভাবে renal corpuscle-এর outer capsular wall-এও simple squamous epithelium পাওয়া যায়।”</p>
+<p>Simple squamous epithelium-এর পাতলা structure-এর কারণে:</p>
+<ul><li>Gas diffusion সহজ হয়।</li><li>Water diffusion সহজ হয়।</li><li>কিছু ক্ষেত্রে active transport-ও হতে পারে।</li></ul>
+<p>এদের মধ্যে numerous endocytic vesicles পাওয়া যেতে পারে।</p>
+<p>Amrita: “ম্যাডাম, tight junction-এর কারণে কি substance-গুলো cell-এর মাঝখান দিয়ে না গিয়ে cell-এর ভেতর দিয়ে যেতে বাধ্য হয়?”</p>
+<p>ডা. শারমিন: “ঠিক। Adjacent cells-এর tight junctions material-কে প্রধানত cell-এর মধ্য দিয়ে passage করতে সাহায্য করে, cell-এর মাঝখান দিয়ে নয়।”</p>
+</div></section>
+<section class="sec r" id="s12"><h3>৯. Cuboidal ও Columnar epithelium</h3><div class="body">
+<p>ম্যাডাম পাশাপাশি দুটি diagram আঁকলেন।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Simple cuboidal epithelium - MEDizzy</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/y-my3F-VGtHVpI1CPANcYRbDfRtDNTBDg3jiIbKrxL0K7b2nnA2YRo2ML1ZcL0TTrmzLoR_3PfbSH0aX3m5BZPH5PQfkKbGH38Q5fCKlzTlg6wTPBcKY4n5OshuO9NyriXaFst4mDlvXO8SjAGG9-GVQsoXQG59Y2Wsr2XEQJQaNsmry_Yt8RC9iFIcGthx-?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Simple%20cuboidal%20epithelium%20-%20MEDizzy">Image search ↗</a></figure>
+<p>Simple cuboidal</p>
+<p>Vertical section-এ cell প্রায় square-shaped।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Simple columnar epithelium</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/17xZIefvwIqOTJzh51xLAs3S3kVjYPxEn5hT9S9e7STiH7OYqxwJ-u_Llcfj7FWGdMVUmwJCMrtAwqUexs_wRC3IHpJf26Z8YntrYdgTYuARKlWn7ogttE_wmPyqU-h7Jf11inl6FuCP7nkvF0F37LOFOzfQS-oRLZOvvyJECaRBwN-nLxRE8HzvTUzKpdiK?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Simple%20columnar%20epithelium">Image search ↗</a></figure>
+<p>Simple columnar</p>
+<p>Cell-এর height তার diameter-এর চেয়ে বেশি।</p>
+<p>দুটিই সাধারণত regular rows of cylindrical cells হিসেবে সাজানো থাকে। Horizontal section-এ তাদের polygonal profile দেখা যেতে পারে।</p>
+</div></section>
+<section class="sec r" id="s13"><h3>Microvilli-যুক্ত epithelium</h3><div class="body">
+<p>এদের free surface-এ microvilli থাকতে পারে, যা absorptive surface area অনেক বাড়িয়ে দেয়।</p>
+<p>Gray’s Anatomy-তে উদাহরণ:</p>
+<div class="tw"><table><thead><tr><th>Location</th><th>Surface specialization</th></tr></thead><tbody><tr><td>Small intestine</td><td>Columnar cells with striated border</td></tr><tr><td>Gallbladder</td><td>Columnar cells with brush border</td></tr><tr><td>Kidney PCT</td><td>Large cuboidal to low columnar cells with brush border</td></tr><tr><td>Epididymis</td><td>Extremely long microvilli, traditionally termed stereocilia</td></tr></tbody></table></div>
+<p>ম্যাডাম বললেন—</p>
+<p>“মনে রেখো, epididymis-এর এই দীর্ঘ microvilli-কে stereocilia বলা হলেও এগুলো প্রকৃত cilia নয়।”</p>
+</div></section>
+<section class="sec r" id="s14"><h3>Ciliated columnar epithelium</h3><div class="body">
+<p>Ciliated columnar epithelium পাওয়া যায়:</p>
+<ul><li>Respiratory tract-এর অধিকাংশ অংশে, lower pharynx এবং vocal folds বাদে।</li><li>Larger bronchioles পর্যন্ত pseudostratified arrangement-এ।</li><li>Tympanic cavity এবং auditory tube-তে।</li><li>Uterine tube-এ।</li><li>Testis-এর efferent ductules-এ।</li></ul>
+<p>Respiratory tract-এ submucosal mucous glands এবং goblet cells mucus secrete করে।</p>
+<p>Cilia mucus-এর সঙ্গে আটকে থাকা dust particles-কে pharynx-এর দিকে সরিয়ে দেয়।</p>
+<p>এই process-কে বলা হয় mucociliary rejection current।</p>
+<p>Uterine tube-এর cilia oocyte এবং fertilized ovum-কে uterus-এর দিকে এগিয়ে যেতে সাহায্য করে।</p>
+</div></section>
+<section class="sec r" id="s15"><h3>১০. Pseudostratified epithelium: এক স্তর, কিন্তু দেখতে অনেক স্তর</h3><div class="body">
+<p>Rafi হাত তুলল।</p>
+<p>“ম্যাডাম, pseudostratified epithelium-এ nuclei বিভিন্ন level-এ থাকে। তাহলে এটা কি আসলে stratified?”</p>
+<p>ম্যাডাম বললেন—</p>
+<p>“এটাই নামের মধ্যে pseudo থাকার কারণ।”</p>
+<p>Pseudostratified epithelium আসলে single-layered columnar epithelium।</p>
+<p>এর বৈশিষ্ট্য:</p>
+<ul><li>Nuclei vertical section-এ বিভিন্ন level-এ থাকে।</li><li>সব cell সারাজীবন basal lamina-র সঙ্গে contact বজায় রাখে।</li><li>কিন্তু সব cell epithelial thickness-এর সম্পূর্ণ অংশ অতিক্রম করে না।</li><li>কিছু ছোট immature basal cells থাকে।</li><li>Basal cells-এর অনেকগুলো mitotic এবং damaged mature cells replace করতে সক্ষম।</li></ul>
+<p>Migrating lymphocytes এবং mast cells-ও nuclei-কে বিভিন্ন depth-এ রেখে pseudostratified appearance তৈরি করতে পারে।</p>
+<p>Location:</p>
+<ul><li>Respiratory tract-এর বড় অংশের ciliated lining</li><li>Olfactory area-এর sensory epithelium</li></ul>
+<p>Feynman technique</p>
+<p>Amrita বলল—</p>
+<p>“একটি ক্লাসে সবাই মেঝেতে দাঁড়িয়ে আছে, কিন্তু কারও মাথা লম্বা, কারও ছোট। দূর থেকে দেখলে কয়েকটি row মনে হতে পারে। কিন্তু বাস্তবে সবাই একই floor-এর সঙ্গে যুক্ত। Pseudostratified epithelium-ও এমন।”</p>
+<p>ম্যাডাম হাসলেন।</p>
+<p>“খুব ভালো analogy।”</p>
+</div></section>
+<section class="sec r" id="s16"><h3>১১. Sensory epithelia: Epithelium যখন sensation-এর অংশ</h3><div class="body">
+<p>Gray’s Anatomy অনুযায়ী sensory epithelia পাওয়া যায় special sense organs-এর:</p>
+<ul><li>Olfactory receptor system</li><li>Gustatory receptor system</li><li>Vestibulocochlear receptor system</li></ul>
+<p>এই epithelia-তে থাকে:</p>
+<ul><li>Sensory cells</li><li>Supportive non-receptor cells</li></ul>
+<p>এদের মধ্যে একটি গুরুত্বপূর্ণ পার্থক্য রয়েছে।</p>
+<p>Olfactory receptors হলো modified neurones। তাদের axons সরাসরি brain-এর দিকে যায়।</p>
+<p>অন্যদিকে gustatory এবং vestibulocochlear systems-এর sensory cells specialized epithelial cells, যারা afferent nerve fibres-এর terminals-এর সঙ্গে synapse করে। কিছু ক্ষেত্রে efferent nerve fibres-এর সঙ্গেও synapse হতে পারে।</p>
+<p>Adi বলল—</p>
+<p>“অর্থাৎ olfactory receptor cell নিজেই modified neurone, কিন্তু অন্য কয়েকটি sensory system-এ receptor cell epithelial origin-এর specialized cell।”</p>
+<p>“ঠিক,” ম্যাডাম বললেন।</p>
+</div></section>
+<section class="sec r" id="s17"><h3>১২. Myoepithelial cells: Epithelium-এর ভেতরে contractile cell</h3><div class="body">
+<p>ম্যাডাম এবার লিখলেন—</p>
+<p>Myoepithelial cells = Basket cells</p>
+<p>এগুলো fusiform অথবা stellate-shaped হতে পারে।</p>
+<p>তাদের মধ্যে থাকে:</p>
+<ul><li>Actin filaments</li><li>Myosin filaments</li></ul>
+<p>Nervous অথবা endocrine signals দ্বারা stimulate হলে তারা contract করে।</p>
+<p>Location:</p>
+<ul><li>Mammary glands</li><li>Lacrimal glands</li><li>Salivary glands</li><li>Sweat glands</li></ul>
+<p>এগুলো gland-এর secretory portions এবং ducts-কে surround করে।</p>
+<p>বিশেষভাবে এদের অবস্থান:</p>
+<p>Basal lamina এবং glandular/ductal epithelium-এর মাঝখানে।</p>
+<p>তাদের contraction secretion-কে larger conduits-এর দিকে প্রবাহিত করতে সাহায্য করে।</p>
+<p>ম্যাডাম বললেন—</p>
+<p>“Ultrastructurally myoepithelial cells smooth muscle cells-এর মতো actin ও myosin arrangement দেখায়। কিন্তু তাদের embryonic origin আলাদা—তারা glandular cells-এর মতো ectoderm অথবা endoderm থেকে originate করে।”</p>
+<p>তাদের immunohistochemical identification-এর জন্য দুটি বিষয় গুরুত্বপূর্ণ:</p>
+<ul><li>Myofilament proteins — contractile function নির্দেশ করে।</li><li>Keratin intermediate filaments — epithelial lineage নির্দেশ করে।</li></ul>
+<p>Nabila বলল—</p>
+<p>“অর্থাৎ myoepithelial cell দেখতে ও কাজের দিক থেকে কিছুটা muscle-এর মতো হলেও lineage epithelial।”</p>
+<p>“একদম।”</p>
+</div></section>
+<section class="sec r" id="s18"><h3>১৩. Multilaminar epithelium: Mechanical protection-এর জন্য বহু স্তর</h3><div class="body">
+<p>ম্যাডাম বোর্ডে লিখলেন—</p>
+<p>MULTILAMINAR (STRATIFIED) EPITHELIA</p>
+<p>এগুলো সাধারণত এমন surface-এ থাকে, যেগুলো mechanical damage অথবা harmful conditions-এর সম্মুখীন হয়।</p>
+<p>এদের দুটি broad group:</p>
+<ul><li>Stratified squamous epithelia — deeper layers থেকে surface cells ক্রমাগত replace হয়।</li><li>Other multilaminar epithelia — স্বাভাবিক অবস্থায় replacement অত্যন্ত ধীর; injury হলে দ্রুত হতে পারে।</li></ul>
+</div></section>
+<section class="sec r" id="s19"><h3>Stratified squamous epithelium</h3><div class="body">
+<p>এটি multilayered tissue। এখানে:</p>
+<ul><li>Formation</li><li>Maturation</li><li>Loss of cells</li></ul>
+<p>ক্রমাগত চলতে থাকে।</p>
+<p>নতুন cell তৈরি হয় সবচেয়ে basal layer-এ।</p>
+<p>এখানে থাকে:</p>
+<ul><li>Stem cells</li><li>Transit বা transient amplifying cells</li></ul>
+<p>Stem cell division-এর মাধ্যমে daughter cells তৈরি হয়। এরপর তারা ধীরে ধীরে superficial direction-এ move করে এবং cuboidal shape থেকে flattened squame-এ পরিবর্তিত হয়।</p>
+<p>Numerous desmosomes cell-গুলোকে tightly connected রাখে। ফলে strong cellular sheet তৈরি হয়, যা underlying tissue-কে protect করে।</p>
+<p>Stratified squamous epithelium প্রধানত দুই ধরনের:</p>
+<ul><li>Keratinized</li><li>Non-keratinized</li></ul>
+</div></section>
+<section class="sec r" id="s20"><h3>১৪. Keratinized stratified squamous epithelium</h3><div class="body">
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Glossary. Atlas of Plant and Animal Hystology</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/26lLyolujmSaMfCKEp5-FbZrH4gb6ZtJDvY1Vhv9vsz_neryY0IUVkJgoJxk5AY7vZ1sxKkmfQh5gE_NcUsI3iWFGx159wpOTMpG3hDD2Oj3Dhxyj-8AiJhqXD2ZOSku3FlJxJn2v6w6JqW3ZUecclSXqB4YEs_jTtDZ2IE3gCB6ca_OkEAawNO7F6TAU6v4?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Glossary.%20Atlas%20of%20Plant%20and%20Animal%20Hystology">Image search ↗</a></figure>
+<p>এই epithelium এমন surface-এ থাকে, যেগুলো:</p>
+<ul><li>Drying-এর সম্মুখীন হয়।</li><li>Mechanical stress পায়।</li><li>High abrasion-এর সম্মুখীন হয়।</li></ul>
+<p>Location:</p>
+<ul><li>Entire epidermis</li><li>Lips-এর mucocutaneous junction</li><li>Nostrils</li><li>Distal anal canal</li><li>Tympanic membrane-এর outer surface</li><li>Oral lining-এর কিছু অংশ, যেমন gingivae, hard palate এবং tongue-এর anterior dorsal surface-এর filiform papillae</li></ul>
+<p>এখানকার epithelial cells হলো keratinocytes।</p>
+<p>Superficial layer-কে বলা হয় stratum corneum।</p>
+<p>এর বৈশিষ্ট্য:</p>
+<ul><li>Superficial cells dead।</li><li>Flattened squames।</li><li>Nucleus থাকে না—anucleate।</li><li>Cells eventually surface থেকে flake off করে।</li><li>Keratin intermediate filaments matrix protein-এর মধ্যে firmly embedded থাকে।</li></ul>
+<p>এই arrangement-এর কারণে living cell layers-এর সঙ্গে inert, mechanically robust protein complexes এবং water-resistant lipid মিলে শক্তিশালী protective barrier তৈরি করে।</p>
+<p>এই barrier প্রতিরোধ করে:</p>
+<ul><li>Mechanical injury</li><li>Microbial invasion</li><li>Water loss</li></ul>
+</div></section>
+<section class="sec r" id="s21"><h3>১৫. Non-keratinized stratified squamous epithelium</h3><div class="body">
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>PPT - Human Tissues PowerPoint Presentation, free download - ID:3034103</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/KV2q8ZNy6l3AfL93BFRuzaxT9DkOGLsJLcmZ_6wQoXoZ12AmMrUjzI813QA98Jilfr4ilhZXEupyw_Ce-sz2XV4TOKWy-wHG1pdtGSaf2vXulbG5CppDrh9G5TgBQ3rrXRBfd5tVsB8D_lr4ujRhV7TQlaN6EC-ZOm7QjGxTOkF7KIq7uQ59TR7iNahn-R-4?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=PPT%20-%20Human%20Tissues%20PowerPoint%20Presentation%2C%20free%20download%20-%20ID%3A3034103">Image search ↗</a></figure>
+<p>এটি এমন surface-এ থাকে, যেখানে abrasion হয় কিন্তু drying থেকে protection পাওয়া যায়।</p>
+<p>Gray’s Anatomy-তে উল্লেখিত locations:</p>
+<ul><li>Buccal cavity — নির্দিষ্ট keratinized areas বাদে</li><li>Oropharynx</li><li>Laryngopharynx</li><li>Oesophagus</li><li>Anal canal-এর অংশ</li><li>Vagina</li><li>Distal uterine cervix</li><li>Distal urethra</li><li>Cornea</li><li>Inner surfaces of eyelids</li><li>Nasal cavities-এর vestibule</li></ul>
+<p>এই epithelium-এর cells keratinized epithelium-এর মতোই basal থেকে superficial direction-এ mature হয়।</p>
+<p>তবে পার্থক্য:</p>
+<ul><li>Cells সম্পূর্ণ keratin দিয়ে fill হয় না।</li><li>Glycolipid secrete করে না।</li><li>Surface পর্যন্ত পৌঁছেও nuclei retain করে।</li><li>Desquamation-এর সময় nucleus-সহ shed হয়।</li></ul>
+<p>কিছু জায়গায় abrasion বেশি হলে epithelium আংশিক keratinized হতে পারে।</p>
+<p>একে বলা হয় Parakeratinized epithelium।</p>
+<p>এর বিপরীতে fully keratinized epithelium-কে বলা হয় Orthokeratinized epithelium।</p>
+<p>Gray’s Anatomy আরও উল্লেখ করেছে:</p>
+<ul><li>Vitamin A deficiency এই ধরনের epithelium-এ keratinization induce করতে পারে।</li><li>Excessive doses of vitamin A এর transformation into mucus-secreting epithelium ঘটাতে পারে।</li></ul>
+</div></section>
+<section class="sec r" id="s22"><h3>১৬. Stratified cuboidal এবং stratified columnar epithelium</h3><div class="body">
+<p>এগুলোতে দুই বা তার বেশি layer of cuboidal অথবা low columnar cells থাকে।</p>
+<p>Location:</p>
+<ul><li>Pancreas-এর larger exocrine gland ducts</li><li>Salivary glands-এর larger ducts</li><li>Sweat glands-এর ducts</li><li>Male urethra-এর কিছু অংশ</li></ul>
+<p>একটি single cell layer-এর তুলনায় এই multilayer arrangement বেশি strength প্রদান করে বলে ধারণা করা হয়।</p>
+<p>এদের basal mitosis দ্বারা surface cells-এর continuous replacement ঘটে না এবং base-to-surface progressive maturation-ও থাকে না।</p>
+<p>তবে damage হলে repair করতে পারে।</p>
+</div></section>
+<section class="sec r" id="s23"><h3>১৭. Urothelium: Urinary tract-এর stretchable protective lining</h3><div class="body">
+<p>ক্লাসের শেষের দিকে ম্যাডাম বললেন—</p>
+<p>“এবার এমন একটি epithelium পড়ব, যেটা urinary tract-এর জন্য বিশেষভাবে adapted।”</p>
+<p>বোর্ডে লেখা হলো—</p>
+<p>UROTHELIUM = Transitional epithelium</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>transitional epithelium Diagram | Quizlet</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/WWhSh9NSTvWNGYlxZS2MLuKj25m3BUZx-45iGoPkyI0wGRuecq341w7GMLwUl3b0vmfrqXMuWO1KaKBoIjX45hrrm_pFAPvNOzyC5L_060pj6XhqOqDR6T-5cQ9GoEo1oNvdPhd_G-wNoAPNrtbzObZ72GGlxHDgk4izz39wh6J6BvEs3O4UOaVf21TkUWcr?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=transitional%20epithelium%20Diagram%20%7C%20Quizlet">Image search ↗</a></figure>
+<p>Urothelium urinary tract-এর বড় অংশ line করে।</p>
+<p>এর প্রধান কাজ হলো urinary tract-এর potentially toxic contents থেকে surrounding structures-কে protect করা।</p>
+<p>Extent:</p>
+<ul><li>Kidney-এর collecting ducts-এর শেষ অংশ থেকে</li><li>Ureters</li><li>Urinary bladder</li><li>Urethra-এর proximal portion পর্যন্ত</li></ul>
+<p>Male urethra-তে এটি ejaculatory ducts পর্যন্ত line করে; এরপর intermittent হয় এবং membranous urethra-তে stratified columnar epithelium দ্বারা replaced হয়।</p>
+<p>Female urethra-তে এটি urogenital membrane পর্যন্ত extend করে।</p>
+</div></section>
+<section class="sec r" id="s24"><h3>Urothelium কেন transitional?</h3><div class="body">
+<p>এটি এমন organ-এ থাকে, যেগুলো considerable distension এবং contraction-এর সম্মুখীন হয়।</p>
+<p>যেমন urinary bladder-এ urine জমলে wall stretch হয়।</p>
+<p>Gray’s Anatomy অনুযায়ী:</p>
+<ul><li>Relaxed অবস্থায় epithelium প্রায় 4–6 cells thick।</li><li>Stretch হলে এটি প্রায় 2–3 cells thick দেখাতে পারে।</li><li>Cells নিজেদের relative position পরিবর্তন না করেই flatten হয়।</li><li>Numerous desmosomes cell-গুলোকে firmly connected রাখে।</li></ul>
+<p>এ কারণেই একে transitional epithelium বলা হয়—stretching-এর সময় এর appearance stratified cuboidal থেকে stratified squamous-এর মতো হয়ে যায়।</p>
+</div></section>
+<section class="sec r" id="s25"><h3>Urothelial cells-এর layer</h3><div class="body">
+<p>Basal cells</p>
+<ul><li>Basophilic।</li><li>Numerous ribosomes থাকে।</li><li>Uninucleate এবং diploid।</li><li>Relaxed অবস্থায় cuboidal।</li></ul>
+<p>Intermediate cells</p>
+<ul><li>বড় হতে পারে।</li><li>প্রায়ই polyploid।</li><li>কিছু ক্ষেত্রে binucleate।</li></ul>
+<p>Superficial cells</p>
+<ul><li>সবচেয়ে বড়।</li><li>কখনও octoploid হতে পারে।</li><li>Relaxed অবস্থায় lumen-এর দিকে dome-shaped bulge তৈরি করে।</li><li>Thickened, eosinophilic glycocalyx বা cell coat থাকে।</li></ul>
+<p>Superficial cells-এর luminal surface-এ specialized plasma membrane থাকে। এতে intramembranous glycoprotein particles-এর plaques embedded থাকে, যা membrane-কে stiff করে।</p>
+<p>Relaxed অবস্থায় cell surface area কমে যায় এবং flexible interplaque regions-এর hinge-like action-এর মাধ্যমে plaques আংশিকভাবে internalize হয়।</p>
+<p>Stretch হলে plaques আবার surface-এ ফিরে আসে।</p>
+<p>Feynman technique</p>
+<p>Amrita বলল—</p>
+<p>“ম্যাডাম, একটা balloon-এর কথা ভাবা যায়? Balloon ছোট থাকলে surface-এ ভাঁজ থাকে, কিন্তু ফুললে surface প্রসারিত হয়। Urothelium-ও bladder distension-এর সময় cell flatten করে এবং membrane plaques surface-এ প্রকাশ পায়?”</p>
+<p>ম্যাডাম বললেন—</p>
+<p>“উপমাটা ভালো। তবে urothelium-এর ক্ষেত্রে cell-গুলোর relative position বজায় থাকে এবং specialized membrane architecture barrier function ধরে রাখতে সাহায্য করে।”</p>
+<p>আরেকটি গুরুত্বপূর্ণ বিষয়—Urothelium-এ normal cell turnover খুব ধীর। Cell division infrequent এবং basal layer-এ restricted। কিন্তু injury হলে এটি দ্রুত regenerate করতে পারে।</p>
+</div></section>
+<section class="sec r" id="s26"><h3>১৮. Seminiferous epithelium: একটি বিশেষ multilaminar tissue</h3><div class="body">
+<p>ম্যাডাম বোর্ডে লিখলেন—</p>
+<p>SEMINIFEROUS EPITHELIUM</p>
+<p>এটি testis-এ পাওয়া যায় এবং অত্যন্ত specialized, complex stratified epithelium।</p>
+<p>এতে থাকে:</p>
+<p>Germ cell lineage:</p>
+<ul><li>Spermatogonia</li><li>Spermatocytes</li><li>Spermatids</li></ul>
+<p>Supporting cells:</p>
+<ul><li>Sertoli cells</li></ul>
+<p>এই germ cell population spermatozoa-এর lineage গঠন করে।</p>
+<p>ম্যাডাম বললেন—</p>
+<p>“এটি সাধারণ stratified epithelium-এর মতো নয়। এখানে germ cell development এবং supporting cell population একসঙ্গে কাজ করে। Gray’s Anatomy-তে এর বিস্তারিত আলোচনা Page 1275-এ রয়েছে।”</p>
+<p>Adi নোট করল—এই বিষয়টি পরে reproductive system-এর সঙ্গে আবার বিস্তারিত পড়তে হবে।</p>
+</div></section>
+<section class="sec r" id="s27"><h3>১৯. দিনের শেষে: Anatomy শুধু মুখস্থ নয়</h3><div class="body">
+<p>বিকেল।</p>
+<p>DMC library-তে Adi, Amrita, Rafi এবং Nabila বসে আছে।</p>
+<p>Rafi বলল—</p>
+<p>“আজকে বুঝলাম epithelial tissue কত রকম। কিন্তু সবচেয়ে interesting লাগল urothelium।”</p>
+<p>Amrita বলল—</p>
+<p>“আমার কাছে simple squamous আর stratified squamous-এর difference বেশি গুরুত্বপূর্ণ মনে হয়েছে। একটিতে diffusion-এর সুবিধা, অন্যটিতে protection।”</p>
+<p>Adi বলল—</p>
+<p>“আর pseudostratified দেখতে বহু layer-এর মতো হলেও আসলে single layer। সব cell basal lamina-র সঙ্গে contact রাখে।”</p>
+<p>Nabila বলল—</p>
+<p>“তাহলে tissue classification-এ শুধু cell-এর shape দেখলেই হবে না; layer, function, surface specialization—সব দেখতে হবে।”</p>
+<p>Adi মাথা নাড়ল।</p>
+<p>“ঠিক। আর molecular marker-ও মনে রাখতে হবে—Keratin, Vimentin, Desmin, Neurofilament।”</p>
+<p>Amrita বই বন্ধ করে বলল—</p>
+<p>“আজকে অনেক কিছু শিখলাম। কিন্তু একটা জিনিস বুঝেছি—Gray’s Anatomy শুধু structures-এর তালিকা নয়। প্রতিটি structure কেন এমন, সেটাও জানতে হয়।”</p>
+<p>Adi একটু হেসে বলল—</p>
+<p>“তুই যখন এভাবে বুঝতে শুরু করেছিস, তখন আমাদের doctor হওয়ার স্বপ্নটা একটু একটু করে বাস্তব হচ্ছে।”</p>
+<p>Amrita তার দিকে তাকাল।</p>
+<p>“আমাদের স্বপ্ন। শুধু তোর নয়।”</p>
+<p>Adi কিছু বলল না। শুধু তার পাশে রাখা বইটি নিজের দিকে টেনে নিয়ে পরের পৃষ্ঠাটি খুলল।</p>
+<p>বাইরে সন্ধ্যা নেমেছে। কিন্তু তাদের পড়া শেষ হয়নি।</p>
+</div></section>
+<section class="sec r" id="s28"><h3>Episode 24 — Study Progress Ledger</h3><div class="body">
+<p>Chapter 2: Integrating Cells into Tissues</p>
+<p>আজ সম্পন্ন করা বিষয়</p>
+<ul><li>Single-cell organisms থেকে multicellular organization</li><li>Tissue-এর definition ও four major tissue categories</li><li>Tissue-specific intermediate filament proteins</li><li>Epithelial tissue-এর definition, function ও structure</li><li>Basal lamina এবং epithelial avascularity</li><li>Mucosa ও serosa</li><li>Unilaminar ও multilaminar classification</li><li>Simple squamous epithelium</li><li>Cuboidal ও columnar epithelium</li><li>Pseudostratified epithelium</li><li>Sensory epithelia</li><li>Myoepithelial cells</li><li>Stratified squamous epithelium</li><li>Keratinized ও non-keratinized epithelium</li><li>Parakeratinized ও orthokeratinized epithelium</li><li>Stratified cuboidal ও columnar epithelium</li><li>Urothelium</li><li>Seminiferous epithelium-এর introductory description</li></ul>
+<p>আজকের পৃষ্ঠা: 73–77-</p>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-023.html">← Episode 23</a><a href="index.html">সব পর্ব</a><a href="episode-025.html">Episode 25 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">Gray’s Anatomy: The Adi–Amrita Chronicles</a><a href="#s2">Episode 24 — The Architecture of Life</a><a href="#s3">১. নতুন অধ্যায়, নতুন প্রশ্ন</a><a href="#s4">২. From single cells to multicellular organisms</a><a href="#s5">৩. Tissue কী?</a><a href="#s6">৪. Molecular evidence: Tissue classification-এর ভিত্তি</a><a href="#s7">৫. Epithelial tissue: শরীরের protective এবং selective interface</a><a href="#s8">Epithelia-র structural characteristics</a><a href="#s9">৬. Epithelial classification: Unilaminar ও Multilaminar</a><a href="#s10">৭. Unilaminar epithelium: Cell shape কেন গুরুত্বপূর্ণ?</a><a href="#s11">৮. Simple squamous epithelium: যেখানে thin barrier দরকার</a><a href="#s12">৯. Cuboidal ও Columnar epithelium</a><a href="#s13">Microvilli-যুক্ত epithelium</a><a href="#s14">Ciliated columnar epithelium</a><a href="#s15">১০. Pseudostratified epithelium: এক স্তর, কিন্তু দেখতে অনেক স্তর</a><a href="#s16">১১. Sensory epithelia: Epithelium যখন sensation-এর অংশ</a><a href="#s17">১২. Myoepithelial cells: Epithelium-এর ভেতরে contractile cell</a><a href="#s18">১৩. Multilaminar epithelium: Mechanical protection-এর জন্য বহু স্তর</a><a href="#s19">Stratified squamous epithelium</a><a href="#s20">১৪. Keratinized stratified squamous epithelium</a><a href="#s21">১৫. Non-keratinized stratified squamous epithelium</a><a href="#s22">১৬. Stratified cuboidal এবং stratified columnar epithelium</a><a href="#s23">১৭. Urothelium: Urinary tract-এর stretchable protective lining</a><a href="#s24">Urothelium কেন transitional?</a><a href="#s25">Urothelial cells-এর layer</a><a href="#s26">১৮. Seminiferous epithelium: একটি বিশেষ multilaminar tissue</a><a href="#s27">১৯. দিনের শেষে: Anatomy শুধু মুখস্থ নয়</a><a href="#s28">Episode 24 — Study Progress Ledger</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

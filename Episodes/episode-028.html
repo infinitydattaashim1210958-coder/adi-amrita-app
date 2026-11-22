@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 028 · “শরীরের নীরব ভাণ্ডার: Adipocytes, Stem Cells ও Connective Tissue-এর প্রতিরক্ষা বাহিনী”</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+code.bx{font-family:"Special Elite","Noto Serif Bengali",monospace;font-size:.88em;color:var(--teal);background:rgba(98,211,198,.07);border:1px solid #2c5a58;border-radius:7px;padding:1px 9px;margin:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 028">EPISODE 028</h1>
+  <div class="ttl">“শরীরের নীরব ভাণ্ডার: Adipocytes, Stem Cells ও Connective Tissue-এর প্রতিরক্ষা বাহিনী”</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">028</div></div>
+    <div class="face b"><div class="t2">“শরীরের নীরব ভাণ্ডার: Adipocytes, Stem Cells ও Connective Tissue-এর প্রতিরক্ষা বাহিনী”</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>Gray’s Anatomy — Episode 28</h3><div class="body">
+</div></section>
+<section class="sec r" id="s2"><h3>“শরীরের নীরব ভাণ্ডার: Adipocytes, Stem Cells ও Connective Tissue-এর প্রতিরক্ষা বাহিনী”</h3><div class="body">
+<p>Dhaka Medical College | Anatomy Department | Chapter 2: Integrating Cells into Tissues</p>
+<p>সকাল ৮টা ১০ মিনিট।</p>
+<p>Anatomy lecture theatre-এর দরজার সামনে দাঁড়িয়ে Adi বইয়ের পাতা উল্টাচ্ছিল। Amrita এসে পাশে দাঁড়াল।</p>
+<p>— “কী রে, আজও এত সকালে?”</p>
+<p>Adi বই থেকে চোখ না তুলেই বলল,</p>
+<p>— “গত ক্লাসে Fibroblast শেষ করেছিলাম। আজ Adipocytes থেকে শুরু করার কথা। তুই তো জানিস, একটা topic অসম্পূর্ণ রেখে পরেরটায় যেতে আমার ভালো লাগে না।”</p>
+<p>Amrita হেসে বলল,</p>
+<p>— “তোর এই স্বভাবটাই একদিন তোকে ভালো anatomist বানাবে।”</p>
+<p>পেছন থেকে Rafi বলে উঠল,</p>
+<p>— “তোমাদের দুজনের Anatomy পড়া দেখে মনে হয়, বিয়ের পরেও honeymoon-এ Gray’s Anatomy নিয়ে যাবে!”</p>
+<p>Mou হেসে ফেলল। Adi বিরক্তির ভান করল।</p>
+<p>— “তোরা আগে নিজেরা পড়া শেষ কর। তারপর আমাদের honeymoon-এর syllabus ঠিক করিস।”</p>
+<p>ঠিক তখনই Dr. Sharmin lecture theatre-এ প্রবেশ করলেন।</p>
+<p>— “আজ আমরা Connective Tissue-এর কয়েকটি অত্যন্ত গুরুত্বপূর্ণ cell population পড়ব। শুরু করব Adipocytes দিয়ে। মনে রাখবে, connective tissue শুধু শরীরের ফাঁকা জায়গা পূরণ করে না; এটি energy storage, defence, repair এবং mechanical support—সবকিছুর সঙ্গে যুক্ত।”</p>
+<p>Adi ও Amrita সামনের সারিতে বসে পড়ল।</p>
+</div></section>
+<section class="sec r" id="s3"><h3>Scene 1: Adipocytes — শরীরের Energy Reservoir</h3><div class="body">
+<p>Dr. Sharmin বোর্ডে লিখলেন:</p>
+<p>Adipocytes (Lipocytes, Fat Cells)</p>
+<p>— “Adipocytes কোথায় পাওয়া যায়?”</p>
+<p>Amrita হাত তুলল।</p>
+<p>— “Madam, adipocytes বিভিন্ন connective tissue-তে এককভাবে বা ছোট group আকারে থাকতে পারে। তবে adipose tissue-তে এদের সংখ্যা অনেক বেশি।”</p>
+<p>— “Excellent. এবার বলো, একটি typical adipocyte-এর গঠন কেমন?”</p>
+<p>Adi উত্তর দিল,</p>
+<p>— “একটি সাধারণ adipocyte সাধারণত oval বা spherical হয়। কিন্তু পাশাপাশি অনেকগুলো cell জমাট বেঁধে থাকলে চাপের কারণে polygonal shape ধারণ করতে পারে।”</p>
+<p>Dr. Sharmin মাথা নাড়লেন।</p>
+<p>— “ঠিক। বইয়ের বর্ণনা অনুযায়ী, এদের গড় diameter প্রায় 50 μm।”</p>
+<p>তিনি বোর্ডে একটি বড় গোলাকার cell আঁকলেন। তার ভেতরে একটি বিশাল lipid droplet।</p>
+<p>— “এবার cell-এর ভিতরের arrangement ব্যাখ্যা করো।”</p>
+<p>Amrita বলল,</p>
+<p>— “Typical white adipocyte-এ একটি বড় central lipid globule থাকে। এর চারপাশে খুব অল্প cytoplasm থাকে। Nucleus সাধারণত cell-এর periphery-তে চাপা পড়ে থাকে।”</p>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “এই বৈশিষ্ট্যটির জন্যই adipocyte-কে অনেক সময় signet-ring appearance-এর মতো দেখায়।”</p>
+<p>Adi খাতায় লিখল:</p>
+<ul><li>One large central lipid droplet</li><li>Thin peripheral rim of cytoplasm</li><li>Flattened, peripheral nucleus</li><li>Golgi complex ও কিছু organelles nucleus-এর কাছাকাছি cytoplasm-এ অবস্থান করে</li></ul>
+<p>Dr. Sharmin আবার বললেন,</p>
+<p>— “Lipid droplet কি membrane-bound?”</p>
+<p>Adi একটু ভেবে বলল,</p>
+<p>— “না Madam। Gray’s-এর বর্ণনা অনুযায়ী, lipid droplet সরাসরি surrounding cytoplasm-এর সংস্পর্শে থাকে; এটি আলাদা membrane দিয়ে আবৃত নয়।”</p>
+<p>— “ভালো। এবার একটি histological প্রশ্ন। Routine tissue processing-এর সময় adipocyte-এর lipid-এর কী হয়?”</p>
+<p>Amrita উত্তর দিল,</p>
+<p>— “Routine preparation-এ ব্যবহৃত solvent lipid-কে dissolve করে ফেলে। ফলে microscope-এ central empty space দেখা যায়। শুধু peripheral cytoplasm ও nucleus দৃশ্যমান থাকতে পারে।”</p>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “একদম। তাই adipose tissue section-এ অনেক সময় কোষগুলোকে ফাঁপা বা empty দেখায়। কিন্তু মনে রাখবে, জীবিত অবস্থায় ওই জায়গাটি lipid দিয়ে পূর্ণ ছিল।”</p>
+</div></section>
+<section class="sec r" id="s4"><h3>Feynman Pause</h3><div class="body">
+<p>Adi Amrita-কে আস্তে করে বলল,</p>
+<p>— “ভাব, একটা ঘরে বিশাল একটা আলমারি রাখা আছে। আলমারিটাই ঘরের প্রায় পুরো জায়গা দখল করে রেখেছে। ফলে ঘরের মালিকের দাঁড়ানোর জায়গা খুব কম। Adipocyte-এ lipid droplet হলো সেই আলমারি, আর cytoplasm ও nucleus থাকে প্রান্তে।”</p>
+<p>Amrita হেসে বলল,</p>
+<p>— “তোর analogy ভালো। কিন্তু পরীক্ষায় আলমারির কথা লিখব না!”</p>
+</div></section>
+<section class="sec r" id="s5"><h3>Scene 2: White Fat বনাম Brown Fat</h3><div class="body">
+<p>Dr. Sharmin বোর্ডে দুটি cell আঁকলেন।</p>
+<p>একটিতে একটি বড় lipid droplet, অন্যটিতে অনেকগুলো ছোট ছোট droplet।</p>
+<p>— “এই দুই ধরনের adipose tissue-এর পার্থক্য কী?”</p>
+<p>Adi বলল,</p>
+<p>— “প্রথমটি unilocular adipose tissue বা white fat। দ্বিতীয়টি multilocular adipose tissue বা brown fat।”</p>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “চলো, এবার brown fat-এর বৈশিষ্ট্যগুলো বুঝি।”</p>
+</div></section>
+<section class="sec r" id="s6"><h3>1. White adipose tissue</h3><div class="body">
+<p>White adipose tissue-এর adipocyte-এ থাকে:</p>
+<ul><li>একটি বড় lipid droplet</li><li>Peripheral cytoplasm</li><li>Peripheral nucleus</li></ul>
+<p>এর প্রধান কাজ হলো chemical energy storage।</p>
+<p>অর্থাৎ, শরীরের অতিরিক্ত chemical energy lipid হিসেবে জমা রাখে।</p>
+</div></section>
+<section class="sec r" id="s7"><h3>2. Brown adipose tissue (BAT)</h3><div class="body">
+<p>Brown adipose tissue-এর adipocyte-এ থাকে:</p>
+<ul><li>একাধিক পৃথক lipid droplet</li><li>অর্থাৎ multilocular arrangement</li><li>Mitochondria-র সংখ্যা ও গঠনগত বৈশিষ্ট্য বেশি</li><li>Mitochondrial cristae unusually large and numerous</li></ul>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Brown fat-এর প্রধান physiological role কী?”</p>
+<p>Rafi উত্তর দিল,</p>
+<p>— “Heat production, Madam।”</p>
+<p>— “কীভাবে?”</p>
+<p>Amrita বলল,</p>
+<p>— “Brown adipose tissue fatty acids metabolize করে এবং mitochondrial uncoupling protein UCP1-এর মাধ্যমে cellular respiration uncouple করে heat উৎপন্ন করে।”</p>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “সঠিক। এই প্রক্রিয়াকে adaptive thermogenesis-এর সঙ্গে সম্পর্কিত করে বোঝা যায়।”</p>
+<p>Adi এবার Feynman technique প্রয়োগ করল।</p>
+<p>— “আমরা সাধারণত mitochondria-কে ATP উৎপাদনের power station হিসেবে চিন্তা করি। কিন্তু brown fat-এর mitochondria-তে UCP1 থাকার কারণে energy conversion-এর একটি অংশ ATP উৎপাদনের বদলে heat হিসেবে বেরিয়ে আসে। তাই brown fat শরীর গরম রাখতে সাহায্য করে।”</p>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “এটি ভালো conceptual explanation। তবে মনে রাখবে, UCP1 mitochondrial respiration uncouple করে—এটাই মূল anatomical-physiological concept।”</p>
+</div></section>
+<section class="sec r" id="s8"><h3>Brown fat কোথায় পাওয়া যায়?</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Gray’s-এর বর্ণনা অনুযায়ী, neonates-এ brown fat বিশেষভাবে interscapular region-এ পাওয়া যায়।”</p>
+<p>Rafi প্রশ্ন করল,</p>
+<p>— “Madam, adult মানুষের কি brown fat থাকে না?”</p>
+<p>— “আগে ধারণা ছিল postnatal growth-এর সময় brown fat প্রায় অদৃশ্য হয়ে যায়। কিন্তু PET scanning-এ adults-এর মধ্যেও UCP1-positive fat deposits শনাক্ত হয়েছে। এগুলো প্রধানত supraclavicular region, neck এবং spine বরাবর পাওয়া যায়।”</p>
+<p>Amrita যোগ করল,</p>
+<p>— “তবে adult মানুষের এই UCP1-positive cell-গুলো classic brown fat নাও হতে পারে। এগুলোকে beige fat বলা হয়।”</p>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Exactly. Gray’s-এ উল্লেখিত evidence অনুযায়ী, beige fat cell white fat-এর precursor cell থেকে উৎপন্ন হতে পারে। এটি adaptive thermogenesis-এর একটি সম্ভাব্য mechanism।”</p>
+<p>Adi খাতায় তিনটি শব্দ পাশাপাশি লিখল:</p>
+<p>White — Unilocular — Energy storage</p>
+<p>Brown — Multilocular — Heat production</p>
+<p>Beige — Thermogenic fat cell — White fat precursor-এর সঙ্গে সম্পর্কিত</p>
+</div></section>
+<section class="sec r" id="s9"><h3>Scene 3: Adipose Tissue শুধু Fat Store নয়</h3><div class="body">
+<p>Lecture theatre-এ একটু নীরবতা নেমে এল।</p>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “এবার একটা গুরুত্বপূর্ণ প্রশ্ন। Adipose tissue কি শুধু energy storage-এর জন্য?”</p>
+<p>Mou উত্তর দিল,</p>
+<p>— “না Madam। এটি endocrine organ হিসেবেও কাজ করতে পারে।”</p>
+<p>— “কী নিঃসরণ করে?”</p>
+<p>— “Adipokines।”</p>
+<p>Dr. Sharmin বোর্ডে লিখলেন:</p>
+<p>Adipose tissue → Adipokines</p>
+<p>— “Adipokines হলো adipose tissue থেকে secreted peptide molecules। এগুলো capillaries অথবা lymph-এর মাধ্যমে circulation-এ প্রবেশ করতে পারে।”</p>
+<p>Adi প্রশ্ন করল,</p>
+<p>— “Madam, তাহলে adipose tissue শরীরের energy balance এবং lipid homeostasis নিয়ন্ত্রণেও ভূমিকা রাখে?”</p>
+<p>— “হ্যাঁ। Gray’s-এ adipose tissue-এর endocrine ভূমিকা, energy balance এবং lipid homeostasis-এর সঙ্গে সম্পর্ক উল্লেখ করা হয়েছে।”</p>
+</div></section>
+<section class="sec r" id="s10"><h3>Fat mobilization-এর control</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Fat mobilization-এর control কীসের মাধ্যমে হয়?”</p>
+<p>Amrita উত্তর দিল,</p>
+<p>— “Nervous বা hormonal control-এর মাধ্যমে।”</p>
+<p>— “বিশেষ করে sympathetic nerve ending থেকে noradrenaline বা norepinephrine release হওয়া এই regulation-এর সঙ্গে সম্পর্কিত।”</p>
+<p>Adi লিখে নিল:</p>
+<ul><li>Adipose tissue = Energy store</li><li>Adipose tissue = Source of metabolic lipids</li><li>Adipose tissue = Thermal insulation</li><li>Adipose tissue = Mechanical shock absorber</li><li>Adipose tissue = Endocrine organ</li></ul>
+</div></section>
+<section class="sec r" id="s11"><h3>Adipose tissue কোথায় থাকে?</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “তোমরা adipose tissue-এর distribution মনে রাখবে। Gray’s-এ কয়েকটি গুরুত্বপূর্ণ location দেওয়া হয়েছে।”</p>
+<ul><li>Subcutaneous tissue</li><li>Mesenteries and omenta</li><li>Female breast</li><li>Bone marrow</li><li>Retro-orbital fat</li><li>Around the kidneys</li><li>Deep to plantar skin of the foot</li><li>Localized pads in synovial membranes</li></ul>
+<p>তিনি আরও বললেন,</p>
+<p>— “Subcutaneous fat thermal insulation দেয়। আর soles of feet, palms, gluteal region ও synovial membrane-এর fat mechanical shock absorption-এ সাহায্য করে।”</p>
+<p>Rafi বলল,</p>
+<p>— “তাহলে পায়ের তলায় fat না থাকলে হাঁটতে গেলেই শরীরের ওপর mechanical stress অনেক বেড়ে যেত!”</p>
+<p>— “ঠিক। তবে মনে রাখবে, এটি adipose tissue-এর একটি structural-functional role।”</p>
+</div></section>
+<section class="sec r" id="s12"><h3>Obesity ও weight loss</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “আরেকটি বিষয়। Gray’s-এ বলা হয়েছে, immediate postnatal period-এর পর নতুন adipose tissue তৈরি হয় না—এমন একটি প্রচলিত ধারণা ছিল। Body fat accumulation-এর ক্ষেত্রে existing adipocytes-এ lipid জমে কোষগুলো বড় হয়ে যায়। Weight loss হলে stored lipid mobilize ও metabolize হয়, ফলে adipocytes ছোট হয়।”</p>
+<p>তিনি সতর্ক করে যোগ করলেন,</p>
+<p>— “এটি বইয়ের আলোচ্য ঐতিহাসিক ধারণা হিসেবে মনে রাখবে; adipocyte development নিয়ে গবেষণা আরও বিস্তৃত হয়েছে।”</p>
+</div></section>
+<section class="sec r" id="s13"><h3>Scene 4: Mesenchymal Stem Cells — Tissue Repair-এর সম্ভাব্য উৎস</h3><div class="body">
+<p>Lecture শেষ হওয়ার আগে Dr. Sharmin বোর্ডে লিখলেন:</p>
+<p>Mesenchymal Stem Cells</p>
+<p>— “এবার বলো, connective tissue-তে নতুন cell কীভাবে তৈরি হতে পারে?”</p>
+<p>Adi বলল,</p>
+<p>— “Mesenchymal stem cells থেকে।”</p>
+<p>Dr. Sharmin ব্যাখ্যা করলেন,</p>
+<p>— “এগুলো connective tissue-তে সাধারণত inconspicuous cell। Embryonic mesenchyme থেকে উৎপন্ন হয় এবং বিভিন্ন connective tissue cell-এ differentiate করতে পারে।”</p>
+<p>তিনি তিনটি গুরুত্বপূর্ণ সময় উল্লেখ করলেন:</p>
+<ul><li>Normal growth and development</li><li>Throughout-life cell turnover</li><li>Damaged tissue repair ও wound healing</li></ul>
+<p>Amrita প্রশ্ন করল,</p>
+<p>— “Madam, mature tissue-তেও কি mesenchymal stem cell-এর differentiation capacity থাকে?”</p>
+<p>— “Gray’s-এ emerging evidence-এর কথা বলা হয়েছে যে mature tissue-তেও mesenchymal stem cells pluripotent থাকতে পারে এবং local signals ও cues-এর প্রতিক্রিয়ায় connective tissue-এর resident cells তৈরি করতে পারে।”</p>
+<p>Adi বলল,</p>
+<p>— “অর্থাৎ, local environment cell-কে কোন দিকে differentiate করবে, সেটি নির্ধারণে ভূমিকা রাখতে পারে?”</p>
+<p>— “হ্যাঁ। তবে মনে রাখবে, এটি একটি evolving research field। Gray’s-এর বক্তব্য অনুযায়ী, damaged tissue repair-এ এদের সম্ভাব্য ভূমিকা গুরুত্বপূর্ণ।”</p>
+</div></section>
+<section class="sec r" id="s14"><h3>Scene 5: Migrant Cells — Connective Tissue-এর প্রতিরক্ষা বাহিনী</h3><div class="body">
+<p>দুপুরের ক্লাসে Dr. Sharmin আবার বোর্ডের সামনে দাঁড়ালেন।</p>
+<p>— “Connective tissue-তে resident cell ছাড়াও migrant cell থাকে। এরা সাধারণত circulation থেকে tissue-তে প্রবেশ করে এবং defensive function পালন করে।”</p>
+<p>তিনি লিখলেন:</p>
+<p>Migrant cells</p>
+<ul><li>Macrophages</li><li>Lymphocytes</li><li>Mast cells</li><li>Neutrophils</li><li>Eosinophils</li></ul>
+<p>— “আজ আমরা প্রত্যেকটির বৈশিষ্ট্য ও কাজ বুঝব।”</p>
+</div></section>
+<section class="sec r" id="s15"><h3>1. Macrophages</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Macrophage শব্দটি শুনলে প্রথমে কী মনে আসে?”</p>
+<p>Rafi বলল,</p>
+<p>— “Phagocytosis!”</p>
+<p>— “ঠিক। Macrophages connective tissue-তে গুরুত্বপূর্ণ phagocytic cell। এরা bacteria, particulate organic material এবং dead বা damaged cell engulf ও digest করতে পারে।”</p>
+<p>তিনি একটি cell-এর ছবি দেখালেন।</p>
+<p>— “Macrophage সাধারণত 15–20 μm diameter-এর বড় cell। এদের indented, relatively heterochromatic nucleus থাকে এবং prominent nucleolus দেখা যায়।”</p>
+<p>Adi বলল,</p>
+<p>— “Cytoplasm-এ lysosome বেশি থাকে, তাই phagocytic activity-এর সঙ্গে সম্পর্কিত?”</p>
+<p>— “হ্যাঁ। Cytoplasm সামান্য basophilic এবং light microscope-এ foamy appearance থাকতে পারে।”</p>
+<p>Macrophage-এর প্রধান বৈশিষ্ট্য:</p>
+<ul><li>Large cell: প্রায় 15–20 μm</li><li>Indented, relatively heterochromatic nucleus</li><li>Prominent nucleolus</li><li>Numerous lysosomes</li><li>Phagocytic activity</li><li>Cytokine secretion</li></ul>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Macrophage শুধু জীবাণু ধ্বংস করে না। এরা cytokines নিঃসরণ করে, যা আশপাশের বহু cell-এর কার্যক্রমকে প্রভাবিত করে।”</p>
+</div></section>
+<section class="sec r" id="s16"><h3>Macrophage-এর origin</h3><div class="body">
+<p>Amrita প্রশ্ন করল,</p>
+<p>— “Madam, macrophage কি fibroblast-এর মতো local connective tissue cell থেকে তৈরি হয়?”</p>
+<p>— “না। Gray’s অনুযায়ী, connective tissue macrophage সীমিত মাত্রায় local proliferation করতে পারে; তবে এদের প্রধান উৎস haemopoietic stem cells in bone marrow। সেখান থেকে monocytes রক্তে আসে, পরে vessel wall অতিক্রম করে tissue-তে প্রবেশ করে এবং macrophage-এ differentiate করে।”</p>
+<p>Adi বোর্ডের দিকে তাকিয়ে বলল,</p>
+<p>— “তাহলে pathway হলো:</p>
+<p>Bone marrow haemopoietic stem cell → Monocyte in blood → Migration through vessel wall → Tissue macrophage।”</p>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “খুব ভালো।”</p>
+</div></section>
+<section class="sec r" id="s17"><h3>Macrophage-এর বিভিন্ন tissue-specific form</h3><div class="body">
+<p>Dr. Sharmin এবার কয়েকটি নাম লিখলেন।</p>
+<div class="tw"><table><thead><tr><th>Location</th><th>Macrophage-related cell</th></tr></thead><tbody><tr><td>Lung alveoli</td><td>Alveolar macrophages</td></tr><tr><td>Liver sinusoids</td><td>Kupffer cells</td></tr><tr><td>CNS</td><td>Microglial cells</td></tr><tr><td>Lymph nodes, spleen, bone marrow</td><td>Phagocytic cells</td></tr></tbody></table></div>
+<p>— “এগুলো মনে রাখবে। একই broad phagocytic system-এর সঙ্গে সম্পর্কিত cell বিভিন্ন tissue-তে ভিন্ন নামে পরিচিত।”</p>
+<p>Rafi ফিসফিস করে বলল,</p>
+<p>— “Microglia-র নামটা শুনলেই মনে হয় brain-এর security guard!”</p>
+<p>Adi বলল,</p>
+<p>— “Analogy হিসেবে ভালো। তবে পরীক্ষায় লিখবি, microglial cells are the macrophage-related phagocytic cells of the central nervous system।”</p>
+</div></section>
+<section class="sec r" id="s18"><h3>2. Lymphocytes</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Normal general connective tissue-তে lymphocytes সাধারণত অল্প সংখ্যায় থাকে। Pathological state-এ এদের সংখ্যা বেড়ে যেতে পারে।”</p>
+<p>তিনি বোর্ডে লিখলেন:</p>
+<p>Lymphocytes: 6–8 μm</p>
+<p>— “এদের nucleus highly heterochromatic। Stimulation পেলে cell বড় হতে পারে।”</p>
+<p>তারপর তিনি দুইটি প্রধান class লিখলেন:</p>
+<ul><li>B lymphocytes</li><li>T lymphocytes</li></ul>
+</div></section>
+<section class="sec r" id="s19"><h3>B lymphocytes</h3><div class="body">
+<p>Amrita বলল,</p>
+<p>— “B lymphocytes bone marrow-তে originate করে। এরপর বিভিন্ন lymphoid tissue-তে migrate করে এবং সেখানে proliferate করতে পারে।”</p>
+<p>Dr. Sharmin যোগ করলেন,</p>
+<p>— “Antigenic stimulation-এর পর B lymphocytes আরও mitotic division করে এবং mature plasma cell তৈরি করতে পারে।”</p>
+<p>Adi প্রশ্ন করল,</p>
+<p>— “Plasma cell-এর প্রধান কাজ antibody secretion, তাই তো Madam?”</p>
+<p>— “হ্যাঁ। Plasma cells immunoglobulins synthesize ও secrete করে।”</p>
+<p>Plasma cell-এর morphology:</p>
+<ul><li>Rounded বা ovoid</li><li>প্রায় 15 μm পর্যন্ত হতে পারে</li><li>Extensive rough endoplasmic reticulum</li><li>Eccentric nucleus</li><li>Clock-face arrangement of heterochromatin</li><li>Prominent Golgi complex</li><li>Deeply basophilic cytoplasm</li><li>Mature plasma cells divide করে না</li></ul>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Clock-face appearance-টি বিশেষভাবে মনে রাখবে। Nucleus-এর peripheral clumps of heterochromatin এমনভাবে সাজানো থাকে যে ঘড়ির কাঁটার মতো দেখায়।”</p>
+<p>Adi বলল,</p>
+<p>— “Rough ER বেশি থাকার কারণ antibody protein synthesis-এর সঙ্গে সম্পর্কিত।”</p>
+<p>— “সঠিক। আর Golgi complex antibody processing ও secretion-এর সঙ্গে সম্পর্কিত।”</p>
+</div></section>
+<section class="sec r" id="s20"><h3>T lymphocytes</h3><div class="body">
+<p>Dr. Sharmin এবার লিখলেন:</p>
+<p>Bone marrow precursor → Thymus → Peripheral lymphoid system</p>
+<p>— “T lymphocytes-এর precursor bone marrow haemopoietic tissue-তে তৈরি হয়। এরপর thymus-এ গিয়ে T-cell identity অর্জন করে।”</p>
+<p>Mou প্রশ্ন করল,</p>
+<p>— “Madam, antigenically stimulated হলে T cell কী করে?”</p>
+<p>— “T cells বড় হয় এবং cytoplasm-এ free polysome clusters দেখা যায়।”</p>
+<p>তারপর Dr. Sharmin T lymphocytes-এর কয়েকটি কাজ বললেন:</p>
+<ul><li>Virus-infected cells চিনতে ও ধ্বংস করতে পারে।</li><li>Tissue ও organ graft-এর বিরুদ্ধে immune response-এ অংশ নেয়।</li><li>B lymphocytes এবং অন্যান্য defensive cell-এর সঙ্গে interaction করে।</li></ul>
+<p>Adi খাতায় লিখল:</p>
+<p>B cell → Plasma cell → Antibody</p>
+<p>T cell → Cell-mediated immune functions</p>
+</div></section>
+<section class="sec r" id="s21"><h3>3. Mast Cells — Inflammation-এর গুরুত্বপূর্ণ নিয়ন্ত্রক</h3><div class="body">
+<p>Dr. Sharmin এবার একটি ছবি দেখালেন। ছবিতে connective tissue-র মধ্যে বড় বড় granule-সমৃদ্ধ cell দেখা যাচ্ছে।</p>
+<p>— “এগুলো Mast cells। কোথায় বেশি পাওয়া যায়?”</p>
+<p>Amrita বলল,</p>
+<p>— “Loose connective tissue-তে এবং কিছু organ-এর fibrous capsule-এ। Blood vessel-এর আশপাশেও এরা প্রচুর থাকে।”</p>
+<p>— “ভালো। এবার morphology।”</p>
+<p>Mast cell-এর বৈশিষ্ট্য:</p>
+<ul><li>Round বা oval</li><li>প্রায় 20 μm diameter</li><li>Surface-এ filopodia</li><li>Centrally placed, relatively small nucleus</li><li>Numerous prominent cytoplasmic vesicles</li><li>Well-developed Golgi apparatus</li><li>Scant endoplasmic reticulum</li></ul>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “এদের vesicles বা granules-এর মধ্যে বিভিন্ন biologically active substance থাকে।”</p>
+<p>Adi জিজ্ঞেস করল,</p>
+<p>— “সবচেয়ে গুরুত্বপূর্ণ granule components কী কী?”</p>
+<p>Dr. Sharmin বোর্ডে লিখলেন:</p>
+<ul><li>Heparin</li><li>Histamine</li><li>Tryptase</li><li>Superoxide dismutase</li><li>Aryl sulphatase</li><li>β-hexosaminidase</li><li>Chymase — connective tissue mast cells-এ উল্লেখযোগ্য; mucosal mast cells-এ নয়</li><li>Chemotactic factors for neutrophils and eosinophils</li></ul>
+<p>Amrita বলল,</p>
+<p>— “Heparin একটি proteoglycan component, আর histamine inflammation-এর সঙ্গে সম্পর্কিত।”</p>
+<p>— “ঠিক। Mast cell granule-এর অনেক উপাদান inflammation-এ অংশ নেয়।”</p>
+</div></section>
+<section class="sec r" id="s22"><h3>Mast cell degranulation</h3><div class="body">
+<p>Dr. Sharmin এবার একটু থামলেন।</p>
+<p>— “ধরো, কোনো tissue-তে mast cell degranulation হলো। কী কী ফল হতে পারে?”</p>
+<p>Adi বলল,</p>
+<p>— “Capillary permeability বেড়ে যেতে পারে।”</p>
+<p>Amrita যোগ করল,</p>
+<p>— “Smooth muscle contraction হতে পারে এবং defensive cells-এর activation ও recruitment ঘটতে পারে।”</p>
+<p>— “সঠিক।”</p>
+<p>তিনি বোর্ডে লিখলেন:</p>
+<p>Mast cell degranulation → Histamine release and other mediators →</p>
+<ul><li>Increased capillary permeability</li><li>Smooth muscle contraction</li><li>Activation and attraction of defensive cells</li></ul>
+</div></section>
+<section class="sec r" id="s23"><h3>Clinical correlation: Urticaria ও Anaphylactic shock</h3><div class="body">
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Mast cell degranulation-এর response localized হতে পারে। যেমন urticaria। আবার কখনো প্রচুর histamine circulation-এ release হলে generalized reaction হতে পারে, যার একটি গুরুতর উদাহরণ anaphylactic shock।”</p>
+<p>Mou একটু চিন্তিত হয়ে বলল,</p>
+<p>— “তাহলে mast cell-এর response শুধু local inflammation নয়, systemic effect-ও তৈরি করতে পারে?”</p>
+<p>— “ঠিক তাই।”</p>
+</div></section>
+<section class="sec r" id="s24"><h3>Mast cell-এর origin</h3><div class="body">
+<p>Rafi প্রশ্ন করল,</p>
+<p>— “Madam, Mast cell আর basophil কি একই cell?”</p>
+<p>— “এদের দেখতে ও কিছু functional property-তে মিল আছে। তবে Gray’s-এর বর্ণনা অনুযায়ী mast cells distinct descendants of an earlier myeloid lineage precursor হিসেবে বিবেচিত। Bone marrow-তে উৎপন্ন immature basophil-like cells circulation দিয়ে tissue-তে যায় এবং সেখানে mature হয়।”</p>
+<p>Adi বলল,</p>
+<p>— “অর্থাৎ, similarity থাকলেও mast cell-কে circulating basophil-এর সঙ্গে এক করে দেখা যাবে না।”</p>
+<p>— “Exactly।”</p>
+</div></section>
+<section class="sec r" id="s25"><h3>4. Granulocytes — Neutrophils ও Eosinophils</h3><div class="body">
+<p>Dr. Sharmin বোর্ডে লিখলেন:</p>
+<p>Granulocytes (Polymorphonuclear leukocytes)</p>
+<p>— “Connective tissue-তে Neutrophil ও Eosinophil granulocytes সাধারণত migrant cell হিসেবে আসে।”</p>
+<p>তিনি ব্যাখ্যা করলেন,</p>
+<p>— “Normal connective tissue-তে এদের সংখ্যা তুলনামূলকভাবে কম। কিন্তু infected tissue-তে এদের সংখ্যা নাটকীয়ভাবে বেড়ে যেতে পারে।”</p>
+<p>Neutrophils</p>
+<ul><li>Circulating migrant cells</li><li>Highly phagocytic</li><li>বিশেষ করে bacteria-এর বিরুদ্ধে গুরুত্বপূর্ণ</li></ul>
+<p>Eosinophils</p>
+<ul><li>Migrant granulocytes</li><li>Connective tissue-তে infection বা inflammatory context-এ সংখ্যা বাড়তে পারে</li><li>তাদের functions তুলনামূলকভাবে কম well understood—Gray’s-এ এভাবেই উল্লেখ আছে</li></ul>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “এই অধ্যায়ের জন্য এতটুকু মনে রাখবে। এদের বিস্তারিত আলোচনা Chapter 4-এ রয়েছে।”</p>
+</div></section>
+<section class="sec r" id="s26"><h3>Scene 6: Cells of Specialized Connective Tissues</h3><div class="body">
+<p>ক্লাসের শেষদিকে Dr. Sharmin বললেন,</p>
+<p>— “General connective tissue-এর পর specialized connective tissue-এর ধারণা বুঝতে হবে।”</p>
+<p>তিনি বোর্ডে লিখলেন:</p>
+<p>Skeletal tissues:</p>
+<ul><li>Cartilage</li><li>Bone</li></ul>
+<p>— “এই দুই tissue connective tissue-এর অন্তর্ভুক্ত হলেও structure ও function অত্যন্ত specialized। এদের extracellular matrix-ই প্রধান বৈশিষ্ট্য নির্ধারণ করে।”</p>
+<p>Adi বলল,</p>
+<p>— “Cartilage-এ chondroblasts matrix synthesize করে, আর mature chondrocytes matrix-এর মধ্যে থাকে।”</p>
+<p>— “ঠিক।”</p>
+<p>Amrita যোগ করল,</p>
+<p>— “Bone-এ osteoblast matrix তৈরি করে। তাদের mature progeny osteocytes matrix-এর মধ্যে থাকে এবং matrix maintain ও turnover-এ ভূমিকা রাখে।”</p>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “আর Osteoclast?”</p>
+<p>Rafi উত্তর দিল,</p>
+<p>— “এরা haemopoietic tissue থেকে উৎপন্ন ভিন্ন lineage-এর cell। Osteoblast-এর সঙ্গে সহযোগিতায় bone degradation ও remodelling করে।”</p>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “Excellent। এই বিষয়ে বিস্তারিত আলোচনা Chapter 5-এ আছে। আমরা এখন Chapter 2-এর ধারাবাহিকতা বজায় রাখব।”</p>
+</div></section>
+<section class="sec r" id="s27"><h3>Scene 7: Extracellular Matrix — কোষের বাইরের জগৎ</h3><div class="body">
+<p>ক্লাস শেষ হওয়ার পরও Adi ও Amrita নিজেদের জায়গায় বসে রইল। Dr. Sharmin বোর্ডে নতুন heading লিখলেন:</p>
+</div></section>
+<section class="sec r" id="s28"><h3>EXTRACELLULAR MATRIX (ECM)</h3><div class="body">
+<p>— “এখন থেকে Connective Tissue-এর সবচেয়ে গুরুত্বপূর্ণ বিষয়গুলোর একটি শুরু হবে।”</p>
+<p>Adi বলল,</p>
+<p>— “Madam, ECM বলতে কি শুধু collagen fibres বোঝায়?”</p>
+<p>— “না। এটি একটি collective term। Connective ও supporting tissues-এর extracellular components-কে একসঙ্গে Extracellular Matrix বলা হয়।”</p>
+<p>Dr. Sharmin বোর্ডে তিনটি প্রধান component লিখলেন:</p>
+<ul><li>Insoluble protein fibres</li><li>Adhesive glycoproteins</li><li>Proteoglycans and glycosaminoglycans</li></ul>
+<p>— “এই components কী করে?”</p>
+<p>Amrita বলল,</p>
+<p>— “ECM tissue-কে mechanical support দেয় এবং cell-এর জন্য structural environment তৈরি করে।”</p>
+<p>Dr. Sharmin বললেন,</p>
+<p>— “আরও গুরুত্বপূর্ণ বিষয় হলো, ECM-এর মধ্য দিয়ে metabolites, gases ও nutrients blood vessels থেকে cells-এ diffuse করতে পারে।”</p>
+<p>তিনি বোঝালেন,</p>
+<p>— “Connective tissue cells ECM-এর সঙ্গে ক্রমাগত interaction করে। তারা matrix synthesize, secrete, modify এবং degrade করে। আবার matrix-এর সঙ্গে contact cell metabolism, proliferation ও motility নিয়ন্ত্রণে ভূমিকা রাখে।”</p>
+<p>Adi বলল,</p>
+<p>— “তাহলে ECM শুধু cell-এর চারপাশে থাকা inert material নয়। এটি cell-এর behaviour-ও নিয়ন্ত্রণ করে।”</p>
+<p>— “একদম। এই ধারণাটি খুব গুরুত্বপূর্ণ।”</p>
+</div></section>
+<section class="sec r" id="s29"><h3>ECM degradation ও tissue remodelling</h3><div class="body">
+<p>Dr. Sharmin লিখলেন:</p>
+<p>Matrix degradation → Tissue remodelling</p>
+<p>— “Embryonic development, morphogenesis, angiogenesis, tissue repair এবং remodelling—এসব প্রক্রিয়ায় ECM-এর controlled degradation গুরুত্বপূর্ণ।”</p>
+<p>তিনি কয়েকটি enzyme family-এর নাম লিখলেন:</p>
+<ul><li>Matrix metalloproteinases (MMPs)</li><li>ADAMs</li><li>ADAMTS</li></ul>
+<p>— “এগুলো ECM degradation-এ অংশ নেয়। তবে degradation অবশ্যই নিয়ন্ত্রিত হতে হবে। অতিরিক্ত বা dysregulated degradation বিভিন্ন রোগের সঙ্গে সম্পর্কিত।”</p>
+<p>Gray’s-এর আলোচনায় উদাহরণ হিসেবে রয়েছে:</p>
+<ul><li>Atherosclerosis</li><li>Emphysema</li><li>Osteoarthritis</li><li>Diabetic vascular complications</li></ul>
+<p>Adi বলল,</p>
+<p>— “অর্থাৎ ECM ভাঙা সবসময় ক্ষতিকর নয়। Development ও repair-এর জন্য এটি দরকার, কিন্তু regulation নষ্ট হলে রোগ হতে পারে।”</p>
+<p>Dr. Sharmin মৃদু হেসে বললেন,</p>
+<p>— “তুমি আজকের সবচেয়ে গুরুত্বপূর্ণ ধারণাগুলোর একটি বুঝেছ।”</p>
+</div></section>
+<section class="sec r" id="s30"><h3>Scene 8: Library — Adi ও Amrita-র Feynman Revision</h3><div class="body">
+<p>সন্ধ্যা ৬টা।</p>
+<p>Library-র জানালার পাশে বসে Adi একটি সাদা কাগজ বের করল।</p>
+<p>— “আজকের পড়া তো অনেক। এবার দেখি, আমরা সত্যিই বুঝেছি কি না।”</p>
+<p>Amrita বলল,</p>
+<p>— “আমি প্রশ্ন করব, তুই উত্তর দিবি। তারপর তুই আমাকে প্রশ্ন করবি।”</p>
+<p>Adi শুরু করল।</p>
+<p>Adi: “White adipocyte-এর প্রধান structural feature কী?”</p>
+<p>Amrita: “একটি বড় central lipid droplet, peripheral cytoplasm এবং peripherally displaced nucleus।”</p>
+<p>Adi: “Brown fat-এর প্রধান কাজ?”</p>
+<p>Amrita: “UCP1-mediated uncoupling-এর মাধ্যমে heat production।”</p>
+<p>Amrita: “Macrophage কোথা থেকে আসে?”</p>
+<p>Adi: “Bone marrow haemopoietic stem cell থেকে monocyte তৈরি হয়। Monocyte circulation-এ থাকে, পরে vessel wall অতিক্রম করে connective tissue-তে গিয়ে macrophage-এ differentiate করে।”</p>
+<p>Amrita: “B lymphocyte ও T lymphocyte-এর developmental route-এর প্রধান পার্থক্য?”</p>
+<p>Adi: “B lymphocyte bone marrow-তে originate করে এবং lymphoid tissue-তে যায়। T-cell precursor bone marrow থেকে thymus-এ গিয়ে T-cell identity অর্জন করে, তারপর peripheral lymphoid system-এ যায়।”</p>
+<p>Adi: “Mast cell degranulation-এর দুটি গুরুত্বপূর্ণ vascular বা smooth muscle effect বল।”</p>
+<p>Amrita: “Increased capillary permeability এবং smooth muscle contraction।”</p>
+<p>Amrita এবার একটু কাছে ঝুঁকে বলল,</p>
+<p>— “এবার শেষ প্রশ্ন। ECM কি শুধু support দেয়?”</p>
+<p>Adi মুচকি হেসে বলল,</p>
+<p>— “না। ECM structural support দেয়, mechanical stress distribute করে, diffusion-এর environment তৈরি করে এবং cell-এর metabolism, proliferation, motility ও tissue remodelling-এ প্রভাব ফেলে।”</p>
+<p>Amrita তার খাতাটা বন্ধ করল।</p>
+<p>— “আজকের পড়া শেষ?”</p>
+<p>Adi বলল,</p>
+<p>— “আজকের অংশ শেষ। কিন্তু Chapter 2 এখনো অনেক বাকি।”</p>
+<p>— “জানি। তবে একটা কথা বলি?”</p>
+<p>— “বল।”</p>
+<p>— “তোর সঙ্গে এভাবে পড়তে ভালো লাগে। কঠিন জিনিসগুলোও একটু সহজ মনে হয়।”</p>
+<p>Adi কিছুক্ষণ চুপ করে রইল।</p>
+<p>— “আমারও। তুই পাশে থাকলে কঠিন chapter-ও শেষ করা যায়।”</p>
+<p>বাইরে সন্ধ্যা ঘনিয়ে এসেছে। Library-র আলোয় দুজনের খোলা বইয়ের ওপর একই heading দেখা যাচ্ছে—</p>
+<p>EXTRACELLULAR MATRIX</p>
+<p>আর তাদের সামনে অপেক্ষা করছে Gray’s Anatomy-র আরও অসংখ্য অজানা অধ্যায়।</p>
+</div></section>
+<section class="sec r" id="s31"><h3>Episode 28 — Study Ledger</h3><div class="body">
+<p>আজকের  coverage পৃষ্ঠা ৮১–৮২</p>
+</div></section>
+<section class="sec r" id="s32"><h3>Episode 29 — কোথা থেকে শুরু হবে?</h3><div class="body">
+<p><code class="bx">EXTRACELLULAR MATRIX</code> — Page 83</p>
+<ul><li>Interfibrillar matrix (ground substance)</li><li>Adhesive glycoproteins</li><li>Fibrillar matrix</li><li>Collagen family<div class="ct">Elastin, Glycosaminoglycans, Hyaluronan, Proteoglycans, Fibronectin, Laminin, Tenascin এবং Connective Tissue Classification-এ এগোব।</div></li></ul>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-027.html">← Episode 27</a><a href="index.html">সব পর্ব</a><a href="episode-029.html">Episode 29 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">Gray’s Anatomy — Episode 28</a><a href="#s2">“শরীরের নীরব ভাণ্ডার: Adipocytes, Stem Cells ও Connective Tissue-এর প্রতিরক্ষা বাহিনী”</a><a href="#s3">Scene 1: Adipocytes — শরীরের Energy Reservoir</a><a href="#s4">Feynman Pause</a><a href="#s5">Scene 2: White Fat বনাম Brown Fat</a><a href="#s6">1. White adipose tissue</a><a href="#s7">2. Brown adipose tissue (BAT)</a><a href="#s8">Brown fat কোথায় পাওয়া যায়?</a><a href="#s9">Scene 3: Adipose Tissue শুধু Fat Store নয়</a><a href="#s10">Fat mobilization-এর control</a><a href="#s11">Adipose tissue কোথায় থাকে?</a><a href="#s12">Obesity ও weight loss</a><a href="#s13">Scene 4: Mesenchymal Stem Cells — Tissue Repair-এর সম্ভাব্য উৎস</a><a href="#s14">Scene 5: Migrant Cells — Connective Tissue-এর প্রতিরক্ষা বাহিনী</a><a href="#s15">1. Macrophages</a><a href="#s16">Macrophage-এর origin</a><a href="#s17">Macrophage-এর বিভিন্ন tissue-specific form</a><a href="#s18">2. Lymphocytes</a><a href="#s19">B lymphocytes</a><a href="#s20">T lymphocytes</a><a href="#s21">3. Mast Cells — Inflammation-এর গুরুত্বপূর্ণ নিয়ন্ত্রক</a><a href="#s22">Mast cell degranulation</a><a href="#s23">Clinical correlation: Urticaria ও Anaphylactic shock</a><a href="#s24">Mast cell-এর origin</a><a href="#s25">4. Granulocytes — Neutrophils ও Eosinophils</a><a href="#s26">Scene 6: Cells of Specialized Connective Tissues</a><a href="#s27">Scene 7: Extracellular Matrix — কোষের বাইরের জগৎ</a><a href="#s28">EXTRACELLULAR MATRIX (ECM)</a><a href="#s29">ECM degradation ও tissue remodelling</a><a href="#s30">Scene 8: Library — Adi ও Amrita-র Feynman Revision</a><a href="#s31">Episode 28 — Study Ledger</a><a href="#s32">Episode 29 — কোথা থেকে শুরু হবে?</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

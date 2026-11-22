@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 026 · The Invisible Boundary</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+code.bx{font-family:"Special Elite","Noto Serif Bengali",monospace;font-size:.88em;color:var(--teal);background:rgba(98,211,198,.07);border:1px solid #2c5a58;border-radius:7px;padding:1px 9px;margin:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 026">EPISODE 026</h1>
+  <div class="ttl">The Invisible Boundary</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">026</div></div>
+    <div class="face b"><div class="t2">The Invisible Boundary</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>Gray’s Anatomy: The Adi–Amrita Chronicles</h3><div class="body">
+</div></section>
+<section class="sec r" id="s2"><h3>Episode 26 — The Invisible Boundary</h3><div class="body">
+<p>Dhaka Medical College | Chapter 2: Integrating Cells into Tissues | Page 79–80</p>
+</div></section>
+<section class="sec r" id="s3"><h3>১. যে দেয়াল দেখা যায় না, কিন্তু tissue-কে ধরে রাখে</h3><div class="body">
+<p>ঢাকা মেডিকেল কলেজের Anatomy Department।</p>
+<p>সকাল ৮টা ৪৫।</p>
+<p>গতকাল Glands-এর আলোচনা শেষ হওয়ার পর Adi ও Amrita আজ একটু আগেই Anatomy lecture gallery-তে এসেছে। Adi-র হাতে Gray’s Anatomy, আর Amrita-র হাতে আগের দিনের তৈরি করা gland classification-এর নোট।</p>
+<p>Mou এসে পাশে বসল।</p>
+<p>Mou: “তোরা কি আজও ক্লাস শুরুর আগে পড়া শুরু করে দিয়েছিস?”</p>
+<p>Adi: “আজকের topic একটু interesting। Basement membrane আর basal lamina।”</p>
+<p>Mou: “দুটো কি একই জিনিস?”</p>
+<p>Amrita: “এই প্রশ্নটাই আজকের ক্লাসের সবচেয়ে গুরুত্বপূর্ণ প্রশ্ন হতে পারে।”</p>
+<p>ঠিক তখনই ডা. শারমিন ম্যাডাম প্রবেশ করলেন।</p>
+<p>বোর্ডে লিখলেন:</p>
+<p>BASEMENT MEMBRANE AND BASAL LAMINA</p>
+<p>ডা. শারমিন: “গত ক্লাসে আমরা দেখেছি, epithelial cells একটি continuous sheet তৈরি করে। কিন্তু একটি প্রশ্ন রয়ে গেছে—এই epithelial sheet underlying connective tissue-এর সঙ্গে কীভাবে যুক্ত থাকে?”</p>
+<p>তিনি বোর্ডে একটি সরল diagram আঁকলেন।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Features of Epithelial Tissues – Integrated Human Anatomy and Physiology</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/bCTv_OKfoKeCTZErDx5razmUDSKKnd7BKWW33-f3r9dndU7egg0FmrkYvwsA883nPd8P3E0sl_IjmlFa5anbslxL08Xj7ebv8enLwJVweLTeP4drMIVlfnXbfk13YOzSCjryT1TFlDrvHwFJaLqs0Xh4w6ULGxNMglJU36vJN-_6Q70Ho-pMk6JcnPKoxQu-?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Features%20of%20Epithelial%20Tissues%20%E2%80%93%20Integrated%20Human%20Anatomy%20and%20Physiology">Image search ↗</a></figure>
+<p>ডা. শারমিন: “Epithelial tissue এবং তার নিচের connective tissue-এর interface-এ extracellular matrix-এর একটি সরু layer থাকে। এটি carbohydrate-rich structures-এর জন্য histological staining-এ strongly stain করে।”</p>
+<p>“Early histological texts-এ এই layer-কে বলা হতো Basement membrane।”</p>
+<p>Adi হাত তুলল।</p>
+<p>Adi: “ম্যাডাম, তাহলে Basement membrane কি epithelial cell নিজে তৈরি করে?”</p>
+<p>ডা. শারমিন: “Basement membrane-এর প্রায় সব component epithelial অথবা সংশ্লিষ্ট tissue-এর cell দ্বারা synthesized হয়। Adjacent connective tissue-ই সব component তৈরি করে—এমন ধারণা সঠিক নয়।”</p>
+</div></section>
+<section class="sec r" id="s4"><h3>২. Basement membrane বনাম Basal lamina</h3><div class="body">
+<p>ম্যাডাম এবার বোর্ডে দুটি শব্দ পাশাপাশি লিখলেন।</p>
+<p>Basement membrane</p>
+<p>Light microscopy-তে দেখা carbohydrate-rich extracellular layer-এর ঐতিহাসিক নাম।</p>
+<p>Basal lamina</p>
+<p>Electron microscopy-তে চিহ্নিত basement membrane-এর সূক্ষ্ম fibrillar component।</p>
+<p>ডা. শারমিন: “Electron microscopy ব্যবহারের ফলে বোঝা যায়, basement membrane আসলে দুটি distinct component নিয়ে গঠিত।”</p>
+<ul><li>Basal lamina</li><li>Reticular lamina</li></ul>
+<p>Amrita: “অর্থাৎ Basement membrane একটি broader structure, আর Basal lamina তার একটি অংশ?”</p>
+<p>ডা. শারমিন: “ঠিক। তবে মনে রাখবে, কিছু tissue-তে reticular lamina খুব কম থাকে অথবা প্রায় অনুপস্থিত। তাই সব জায়গায় একই রকম appearance আশা করা যাবে না।”</p>
+<p>Feynman technique — সহজ করে বোঝা</p>
+<p>Adi একটি খাতা টেবিলে রেখে বলল—</p>
+<p>“একটি বাড়ির মেঝের নিচে যদি একটি পাতলা, বিশেষভাবে তৈরি foundation থাকে, তাহলে সেটি উপরের structure-কে support দেবে। কিন্তু foundation-এর নিচে আরও supporting material থাকতে পারে। Basement membrane-কে পুরো supporting interface এবং basal lamina-কে তার বিশেষ organized layer হিসেবে কল্পনা করা যায়।”</p>
+<p>Amrita বলল—</p>
+<p>“তবে analogy-তে basement membrane-এর molecular structure বোঝা যাবে না। সেটা আলাদা করে শিখতে হবে।”</p>
+<p>ম্যাডাম হেসে বললেন—</p>
+<p>“তোমরা দুজনেই ঠিক বলেছ।”</p>
+</div></section>
+<section class="sec r" id="s5"><h3>৩. Basal lamina: Ultrastructure-এর গভীরে</h3><div class="body">
+<p>ম্যাডাম বোর্ডে একটি বড় electron microscopic schematic আঁকলেন।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>PPT - Epithelial Tissue: Classification &amp; Specializations PowerPoint Presentation - ID:9376137</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/CkHDzR9cWXSQBPcYhaUal15PVMknuT4h5PoxrPp3L4d0UjMFIogI0uWBp73FrNrsUkwqMSHcwBRXeTbMzzgb0pdC1J_uS4Nb3GaCRLaMICA4FtR81uZA7nSQN05EUSA4RQ8rbSdTb7YZ7OGTbrZIQ-5YCUD215yarvSnkYAAwD0M_Dqcnyxn-kQMkBoGIwWq?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=PPT%20-%20Epithelial%20Tissue%3A%20Classification%20%26%20Specializations%20PowerPoint%20Presentation%20-%20ID%3A9376137">Image search ↗</a></figure>
+<p>Basal lamina সাধারণত প্রায় 80 nm পুরু।</p>
+<p>তবে tissue অনুযায়ী এর thickness পরিবর্তিত হয়:</p>
+<ul><li>প্রায় 40 nm থেকে 120 nm।</li></ul>
+<p>এটি একটি sheet-like fibrillar layer।</p>
+<p>এর দুটি প্রধান ultrastructural region রয়েছে:</p>
+<ul><li>Lamina densa</li><li>Lamina lucida</li></ul>
+</div></section>
+<section class="sec r" id="s6"><h3>A. Lamina densa</h3><div class="body">
+<p>এটি basal lamina-এর dense, finely fibrillar layer।</p>
+<p>এর thickness প্রায়:</p>
+<p>20–50 nm</p>
+<p>Electron microscopy-তে এটি relatively electron-dense হিসেবে দেখা যায়।</p>
+</div></section>
+<section class="sec r" id="s7"><h3>B. Lamina lucida</h3><div class="body">
+<p>এটি lamina densa এবং supporting cell-এর plasma membrane-এর মাঝখানে অবস্থিত একটি narrow electron-lucent zone।</p>
+<p>এটি electron microscopy-তে তুলনামূলকভাবে less dense দেখা যায়।</p>
+<p>তবে এখানে একটি গুরুত্বপূর্ণ বিষয় রয়েছে।</p>
+<p>Gray’s Anatomy-তে উল্লেখ করা হয়েছে, rapidly frozen tissue-তে lamina lucida অনুপস্থিত থাকতে পারে। তাই এটি tissue preparation-এর artefact-ও হতে পারে।</p>
+<p>Mou: “ম্যাডাম, তাহলে Lamina lucida কি সবসময় একটি সত্যিকারের anatomical layer?”</p>
+<p>ডা. শারমিন: “সব preparation-এ একইভাবে দেখা যায় না। Rapid freezing-এ এটি অনুপস্থিত থাকার বিষয়টি মনে রাখবে। তাই electron microscopic appearance ব্যাখ্যা করার সময় preparation method গুরুত্বপূর্ণ।”</p>
+</div></section>
+<section class="sec r" id="s8"><h3>Integral plasma membrane proteins-এর সংযোগ</h3><div class="body">
+<p>অনেক tissue-তে lamina lucida অঞ্চলের মধ্য দিয়ে integral plasma membrane proteins অতিক্রম করে এবং cell-কে basal lamina-এর সঙ্গে যুক্ত করে।</p>
+<p>একটি গুরুত্বপূর্ণ উদাহরণ:</p>
+<p>Keratinocyte hemidesmosomes</p>
+<p>Epidermis-এর keratinocyte-গুলোর hemidesmosomes basal lamina-এর lamina densa-র সঙ্গে anchorage তৈরি করে।</p>
+<p>এখানে hemidesmosome ও basal lamina-এর সম্পর্ক মনে রাখতে হবে।</p>
+</div></section>
+<section class="sec r" id="s9"><h3>৪. Basal lamina-এর molecular architecture</h3><div class="body">
+<p>এবার ম্যাডাম লিখলেন:</p>
+<p>Two major glycoprotein polymers</p>
+<ul><li>Laminin</li><li>Type IV collagen</li></ul>
+<p>Basal lamina মূলত এই দুটি glycoprotein polymer দিয়ে গঠিত।</p>
+<p>এরা নিজে নিজে assemble হয়ে two-dimensional sheets তৈরি করে। এই sheets পরস্পরের সঙ্গে interwoven থাকে।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>The cell</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/vkgv2sJenm3kGZFdtooYjt57s3h-BAPS2z-6YPc-f25uREhjff3Lb3sQN5Insl5XktcewJ4YeWWeAIzLlAWpIsLH6aVKZOa9yho32RB977vn2DmZr-LJ3ingeAerrlj4mcPUxWhEzURtCvvgk3ZNNXCNijq3dSlDSU78IVUlRf0I51Ac8RRMzhqha72ggU-o?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=The%20cell">Image search ↗</a></figure>
+<p>Adi: “ম্যাডাম, Laminin আর Type IV collagen কি একই কাজ করে?”</p>
+<p>ডা. শারমিন: “দুটিই network formation-এ অংশ নেয়, কিন্তু molecular structure ও organization এক নয়। এই দুটি polymer-এর network basal lamina-এর মূল scaffold তৈরি করে।”</p>
+</div></section>
+<section class="sec r" id="s10"><h3>Laminin</h3><div class="body">
+<p>Laminin হলো একটি major glycoprotein polymer।</p>
+<p>এটি basal lamina-এর structural organization-এর গুরুত্বপূর্ণ অংশ।</p>
+</div></section>
+<section class="sec r" id="s11"><h3>Type IV collagen</h3><div class="body">
+<p>Type IV collagen-ও basal lamina-এর প্রধান glycoprotein polymer।</p>
+<p>এটি একটি network তৈরি করে এবং Laminin network-এর সঙ্গে interweave করে।</p>
+</div></section>
+<section class="sec r" id="s12"><h3>Entactin (Nidogen) এবং Perlecan</h3><div class="body">
+<p>দুটি অতিরিক্ত molecule এই network-কে cross-link ও stabilize করে:</p>
+<ul><li>Entactin (Nidogen)</li><li>Perlecan — একটি large heparan sulphate proteoglycan।</li></ul>
+<p>তাহলে basal lamina-এর molecular organization-কে এভাবে মনে রাখা যায়:</p>
+<p>Basal lamina — molecular components</p>
+<p>Laminin polymer</p>
+<p>Type IV collagen polymer</p>
+<p>দুটি network interwoven হয়ে basal lamina-এর প্রধান scaffold তৈরি করে</p>
+<p>Entactin (Nidogen) + Perlecan</p>
+<p>Cross-linking and stabilization</p>
+<p>Feynman explanation</p>
+<p>Amrita বলল—</p>
+<p>“দুটো বড় জালের কথা ভাব। Laminin-এর একটি জাল, Type IV collagen-এর আরেকটি জাল। দুটো একসঙ্গে জড়িয়ে একটি organized network তৈরি করছে। Entactin আর Perlecan সেই network-কে cross-link ও stabilize করতে সাহায্য করছে।”</p>
+<p>ম্যাডাম বললেন—</p>
+<p>“খুব ভালো। তবে মনে রেখো, এটি molecular architecture বোঝার উপমা; বাস্তবে প্রতিটি molecule-এর নিজস্ব molecular interactions রয়েছে।”</p>
+</div></section>
+<section class="sec r" id="s13"><h3>৫. Embryonic basal lamina: শুরুটা কীভাবে?</h3><div class="body">
+<p>ডা. শারমিন: “এখন একটি developmental point।”</p>
+<p>Early embryonic basal lamina প্রথমে শুধু Laminin polymer দিয়ে গঠিত হয়।</p>
+<p>অর্থাৎ embryonic development-এর প্রাথমিক পর্যায়ে basal lamina-এর molecular composition পরিণত tissue-এর মতো সম্পূর্ণ থাকে না।</p>
+<p>Adi লিখল:</p>
+<p>Early embryonic basal lamina → Laminin polymer only.</p>
+<p>Mou বলল—</p>
+<p>“তাহলে development-এর সঙ্গে basal lamina-এর molecular complexity-ও বাড়তে পারে?”</p>
+<p>ম্যাডাম বললেন—</p>
+<p>“এই অংশে আমাদের source যে তথ্য দিয়েছে, সেটুকুই নিশ্চিতভাবে লিখবে—early embryonic basal lamina is formed only of the laminin polymer।”</p>
+</div></section>
+<section class="sec r" id="s14"><h3>৬. Tissue-specific variation: একই basal lamina, কিন্তু সব জায়গায় এক নয়</h3><div class="body">
+<p>এবার ক্লাসের সবচেয়ে গুরুত্বপূর্ণ discussion শুরু হলো।</p>
+<p>Amrita: “ম্যাডাম, সব basal lamina-তে Laminin ও Type IV collagen থাকলে কি সব tissue-তে তাদের composition একই?”</p>
+<p>ডা. শারমিন: “না। Basal lamina-র basic form একই রকম হলেও thickness এবং precise molecular composition tissue অনুযায়ী পরিবর্তিত হয়। এমনকি একই tissue-এর মধ্যেও variation থাকতে পারে।”</p>
+<p>উদাহরণ হিসেবে Gray’s Anatomy-তে small intestine-এর crypts এবং villi-এর মধ্যে variation উল্লেখ করা হয়েছে।</p>
+</div></section>
+<section class="sec r" id="s15"><h3>Laminin isoforms</h3><div class="body">
+<p>বিভিন্ন tissue-তে Laminin-এর আলাদা isoform প্রকাশিত হয়।</p>
+<p>উদাহরণ:</p>
+<ul><li>Schwann cells</li><li>Muscle cells</li></ul>
+<p>এরা Laminin-2 (Merosin) প্রকাশ করে, prototypical Laminin-1 নয়।</p>
+</div></section>
+<section class="sec r" id="s16"><h3>Laminin-5-এর বিশেষ ভূমিকা</h3><div class="body">
+<p>এখানে একটি গুরুত্বপূর্ণ distinction রয়েছে।</p>
+<p>Laminin-5 নিজে basal lamina component নয়।</p>
+<p>কিন্তু epidermis-এর basal hemidesmosomes-এ এটি পাওয়া যায় এবং basal lamina-কে epidermal transmembrane proteins-এর সঙ্গে link করে।</p>
+<p>এই সংযোগে রয়েছে:</p>
+<ul><li>Integrin α6β4</li><li>Collagen type XVII (BPAG2)</li></ul>
+<p>Collagen type XVII-এর অন্য নাম:</p>
+<p>Bullous pemphigoid antigen 2 (BPAG2)</p>
+<p>এটি autoimmune blistering skin disease Bullous pemphigoid-এর একটি target।</p>
+<p>Adi: “তাহলে Laminin-5 basal lamina-এর main network-এর component না হলেও basal lamina আর epidermal cell-এর connection-এ গুরুত্বপূর্ণ?”</p>
+<p>ডা. শারমিন: “ঠিক। এই পার্থক্যটা পরীক্ষায় এবং tissue organization বোঝার ক্ষেত্রে খুব গুরুত্বপূর্ণ।”</p>
+</div></section>
+<section class="sec r" id="s17"><h3>৭. Clinical correlation: Basal lamina-এর collagen-এ সমস্যা হলে</h3><div class="body">
+<p>ম্যাডাম এবার বোর্ডে দুটি disease-এর নাম লিখলেন।</p>
+<p>Alport’s syndrome</p>
+<p>Renal clinical correlation</p>
+<ul><li>কিছু tissue-তে Type IV collagen-এর isoform ভিন্ন হয়।</li><li>Muscle এবং kidney glomeruli-তে প্রকাশিত collagen-এর mutation Alport’s syndrome সৃষ্টি করতে পারে।</li><li>এটি renal failure-এর সঙ্গে সম্পর্কিত।</li></ul>
+<p>Goodpasture’s syndrome</p>
+<p>Autoimmune clinical correlation</p>
+<ul><li>এখানে renal basal lamina-এর collagen autoantibodies দ্বারা targeted হয়।</li><li>এর ফলেও renal failure হতে পারে।</li></ul>
+<p>Mou: “দুটি রোগেই kidney involvement আছে, কিন্তু mechanism আলাদা?”</p>
+<p>ডা. শারমিন: “ঠিক। Alport’s syndrome-এ collagen mutation; Goodpasture’s syndrome-এ renal basal lamina collagen-এর বিরুদ্ধে autoantibody response।”</p>
+<p>এখানে disease দুটির mechanism গুলিয়ে ফেলা যাবে না।</p>
+</div></section>
+<section class="sec r" id="s18"><h3>Corneal Descemet’s membrane</h3><div class="body">
+<p>ম্যাডাম আরেকটি উদাহরণ দিলেন।</p>
+<p>Cornea-র Descemet’s membrane-এ:</p>
+<ul><li>Type IV collagen-এর পরিবর্তে Type VIII collagen থাকে।</li><li>এটি endothelial basal lamina-এর একটি বিশেষভাবে thickened form।</li><li>বয়সের সঙ্গে এর thickness বাড়তে পারে।</li><li>এটি প্রায় 10 μm পর্যন্ত পুরু হতে পারে।</li></ul>
+</div></section>
+<section class="sec r" id="s19"><h3>Neuromuscular junction</h3><div class="body">
+<p>Neuromuscular junction-এর basal lamina-তে Agrin থাকে।</p>
+<p>Agrin হলো একটি heparan sulphate proteoglycan।</p>
+<p>এটি neuromuscular junction-এ muscle plasma membrane-এর মধ্যে acetylcholine receptors-এর clustering-এ ভূমিকা রাখে।</p>
+<p>Adi বলল—</p>
+<p>“অর্থাৎ basal lamina শুধু mechanical support দেয় না; receptor organization-এর মতো specialized function-ও থাকতে পারে।”</p>
+<p>“একদম,” ম্যাডাম বললেন।</p>
+</div></section>
+<section class="sec r" id="s20"><h3>৮. Reticular lamina: Basal lamina-এর নিচের supporting network</h3><div class="body">
+<p>ক্লাসের শেষ অংশে ম্যাডাম নতুন heading লিখলেন:</p>
+<p>RETICULAR LAMINA</p>
+<p>Reticular lamina হলো dense extracellular matrix, যাতে collagen থাকে।</p>
+<p>এটি basal lamina-এর নিচে অবস্থিত এবং connective tissue-এর সঙ্গে continuous।</p>
+<p>Skin-এ reticular lamina-তে থাকে:</p>
+<p>Type VII collagen fibrils</p>
+<p>এগুলোকে বলা হয় Anchoring fibrils।</p>
+<p>Anchoring fibrils-এর কাজ হলো:</p>
+<ul><li>Lamina densa-কে adjacent connective tissue-এর সঙ্গে bind করা।</li></ul>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>app tegumentario</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/FXW6hzNGBeW-bRle8F9b2TH676naQR9JCJTj_D-Pw7o3MDU-duCE89OAG4YJef6Xxzgt-_1heXYgmI-VhOEcc6U3BjH3zno0738zQljgENZwsPU37gVpUo8X0RJi0RxDku4alF530VLrUtywL07Mjj9nM8uBMIja09NJi4nI8gtHyjI-tyuimegBn3vFqXP7?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=app%20tegumentario">Image search ↗</a></figure>
+<p>Reticular lamina-তে proteoglycans-এর concentration বেশি।</p>
+<p>এই উচ্চ proteoglycan concentration-এর কারণেই basement membrane-এর পুরো structure carbohydrate-sensitive histological stains-এ positive reaction দিতে পারে।</p>
+<p>Feynman technique</p>
+<p>Amrita বলল—</p>
+<p>“Basal lamina হলো epithelial cell-এর নিচের specialized molecular network। আর reticular lamina হলো তার নিচে থাকা collagen-rich supporting matrix, যা connective tissue-এর সঙ্গে connection তৈরি করে।”</p>
+<p>Adi যোগ করল—</p>
+<p>“Skin-এ Type VII collagen-এর anchoring fibrils এই দুই অংশকে একসঙ্গে ধরে রাখতে সাহায্য করে।”</p>
+<p>ম্যাডাম বললেন—</p>
+<p>“এবার তোমরা structure-টা বুঝেছ।”</p>
+</div></section>
+<section class="sec r" id="s21"><h3>৯. Basement membrane ও basal lamina কোথায় বিশেষভাবে গুরুত্বপূর্ণ?</h3><div class="body">
+<p>ম্যাডাম আগের আলোচনা থেকে কয়েকটি tissue-এর উদাহরণ আবার তুলে ধরলেন।</p>
+<p>Kidney glomerular filter</p>
+<p>এখানে basal lamina অত্যন্ত গুরুত্বপূর্ণ filtration barrier-এর অংশ।</p>
+<p>Lung interalveolar septa</p>
+<p>এখানে blood ও air-এর মধ্যে gas exchange-এর জন্য basal lamina বিশেষভাবে গুরুত্বপূর্ণ।</p>
+<p>কিছু tissue-তে basal lamina দুটি cell layer-কে পৃথক করে, যেখানে মাঝখানে typical connective tissue elements থাকে না।</p>
+<p>এটি দেখায় যে basal lamina সবসময় একই ধরনের epithelial–connective tissue interface তৈরি করে না।</p>
+<p>ম্যাডাম বললেন—</p>
+<p>“এই দুই উদাহরণ মনে রাখবে। একই basal lamina ভিন্ন tissue-তে ভিন্ন structural context-এ কাজ করতে পারে।”</p>
+</div></section>
+<section class="sec r" id="s22"><h3>১০. Library: দুই বন্ধুর revision</h3><div class="body">
+<p>বিকেল ৪টা ২০।</p>
+<p>Anatomy library-র একটি টেবিলে Adi, Amrita, Mou এবং Rafi বসেছে।</p>
+<p>Adi একটি সাদা কাগজে নিচের diagram আঁকল।</p>
+<p>Basement membrane — simplified structural map</p>
+<p>Basal epithelial cell</p>
+<p>Lamina lucida</p>
+<p>Electron-lucent zone</p>
+<p>Lamina densa</p>
+<p>20–50 nm; fibrillar dense layer</p>
+<p>Reticular lamina</p>
+<p>Collagen-rich extracellular matrix</p>
+<p>Underlying connective tissue</p>
+<p>Rafi: “একটা জিনিস বুঝেছি—Basal lamina আর Reticular lamina-কে এক করে ফেললে structure ভুল হয়ে যাবে।”</p>
+<p>Mou: “আর Laminin-5 basal lamina component নয়—এটাও আলাদা করে মনে রাখতে হবে।”</p>
+<p>Amrita বলল—</p>
+<p>“আর Type VII collagen anchoring fibrils reticular lamina-র সঙ্গে সম্পর্কিত। Type IV collagen basal lamina-এর প্রধান network-এর অংশ।”</p>
+<p>Adi তাকিয়ে বলল—</p>
+<p>“তুই এত সুন্দরভাবে বুঝিয়ে দিস কীভাবে?”</p>
+<p>Amrita একটু থেমে বলল—</p>
+<p>“তুই মন দিয়ে শুনিস বলেই হয়তো।”</p>
+<p>Rafi পাশ থেকে বলল—</p>
+<p>“আমরা কি এখানে Anatomy পড়ছি, নাকি anatomy-র সঙ্গে প্রেমের foundation তৈরি হচ্ছে?”</p>
+<p>Amrita এবার রাগ দেখানোর ভান করল।</p>
+<p>“Rafi, তোর আজকের পড়া শেষ?”</p>
+<p>“না, কিন্তু তোদের দেখে মনে হচ্ছে আমারও basal lamina লাগবে—যাতে friendship আর romance আলাদা থাকে!”</p>
+<p>সবাই হেসে উঠল।</p>
+<p>Adi কিছু বলল না। শুধু খাতার নিচে লিখল—</p>
+<p>Some connections are stronger when they are built layer by layer.</p>
+<p>Amrita লেখাটা দেখে ফেলল, কিন্তু কিছু বলল না।</p>
+</div></section>
+<section class="sec r" id="s23"><h3>Episode 26 — Study Ledger</h3><div class="body">
+<p>Chapter 2 — Integrating Cells into Tissues</p>
+<p>আজ সম্পন্ন করা বিষয়</p>
+<ul><li>Basement membrane-এর historical concept</li><li>Electron microscopy-তে basement membrane-এর দুই component</li><li>Basal lamina ও reticular lamina-এর পার্থক্য</li><li>Basal lamina-এর thickness</li><li>Lamina densa ও lamina lucida</li><li>Rapid freezing-এ lamina lucida-এর অনুপস্থিতি ও সম্ভাব্য artefact</li><li>Laminin ও Type IV collagen polymer networks</li><li>Entactin (Nidogen) ও Perlecan</li><li>Early embryonic basal lamina</li><li>Tissue-specific laminin ও collagen IV isoforms</li><li>Laminin-2 (Merosin)</li><li>Laminin-5, Integrin α6β4 ও Collagen XVII (BPAG2)</li><li>Alport’s syndrome</li><li>Goodpasture’s syndrome</li><li>Descemet’s membrane ও Type VIII collagen</li><li>Neuromuscular junction-এ Agrin</li><li>Reticular lamina ও Type VII collagen anchoring fibrils</li><li>Glomerular filter ও lung interalveolar septa-তে basal lamina<div class="ct">Page coverage: Page 79-এর <code class="bx">BASEMENT MEMBRANE AND BASAL LAMINA</code> থেকে Page 80-এর <code class="bx">RETICULAR LAMINA</code>-সংক্রান্ত অংশ পর্যন্ত।</div></li></ul>
+</div></section>
+<section class="sec r" id="s24"><h3>Episode 27 — পরবর্তী অধ্যায়ের সঠিক শুরু</h3><div class="body">
+<p>Next starting point</p>
+<p>Page 80 — <code class="bx">FUNCTIONS OF BASAL LAMINA</code></p>
+<ul><li>Selectively permeable barriers</li><li>Tissue anchorage and orientation</li><li>Effects on tissue polarity, cell division and survival</li><li>Regulation of angiogenesis</li><li>Cell migration and pathfinding</li><li>Tissue repair এবং pathological changes</li></ul>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-025.html">← Episode 25</a><a href="index.html">সব পর্ব</a><a href="episode-027.html">Episode 27 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">Gray’s Anatomy: The Adi–Amrita Chronicles</a><a href="#s2">Episode 26 — The Invisible Boundary</a><a href="#s3">১. যে দেয়াল দেখা যায় না, কিন্তু tissue-কে ধরে রাখে</a><a href="#s4">২. Basement membrane বনাম Basal lamina</a><a href="#s5">৩. Basal lamina: Ultrastructure-এর গভীরে</a><a href="#s6">A. Lamina densa</a><a href="#s7">B. Lamina lucida</a><a href="#s8">Integral plasma membrane proteins-এর সংযোগ</a><a href="#s9">৪. Basal lamina-এর molecular architecture</a><a href="#s10">Laminin</a><a href="#s11">Type IV collagen</a><a href="#s12">Entactin (Nidogen) এবং Perlecan</a><a href="#s13">৫. Embryonic basal lamina: শুরুটা কীভাবে?</a><a href="#s14">৬. Tissue-specific variation: একই basal lamina, কিন্তু সব জায়গায় এক নয়</a><a href="#s15">Laminin isoforms</a><a href="#s16">Laminin-5-এর বিশেষ ভূমিকা</a><a href="#s17">৭. Clinical correlation: Basal lamina-এর collagen-এ সমস্যা হলে</a><a href="#s18">Corneal Descemet’s membrane</a><a href="#s19">Neuromuscular junction</a><a href="#s20">৮. Reticular lamina: Basal lamina-এর নিচের supporting network</a><a href="#s21">৯. Basement membrane ও basal lamina কোথায় বিশেষভাবে গুরুত্বপূর্ণ?</a><a href="#s22">১০. Library: দুই বন্ধুর revision</a><a href="#s23">Episode 26 — Study Ledger</a><a href="#s24">Episode 27 — পরবর্তী অধ্যায়ের সঠিক শুরু</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

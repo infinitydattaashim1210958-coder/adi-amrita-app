@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 013 · কোষের পরিবহন নেটওয়ার্ক: Microtubules-এর অদৃশ্য রেলপথ</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 013">EPISODE 013</h1>
+  <div class="ttl">কোষের পরিবহন নেটওয়ার্ক: Microtubules-এর অদৃশ্য রেলপথ</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">013</div></div>
+    <div class="face b"><div class="t2">কোষের পরিবহন নেটওয়ার্ক: Microtubules-এর অদৃশ্য রেলপথ</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>পর্ব ১৩ — কোষের পরিবহন নেটওয়ার্ক: Microtubules-এর অদৃশ্য রেলপথ</h3><div class="body">
+<p>Gray’s Anatomy · Chapter 1: Basic Structure and Function of Cells · Pages 48–50</p>
+</div></section>
+<section class="sec r" id="s2"><h3>১. নতুন দিনের ক্লাস, নতুন প্রতিযোগিতা</h3><div class="body">
+<p>ঢাকা মেডিকেল কলেজের Anatomy lecture gallery।</p>
+<p>সকাল ৯টা। ক্লাস শুরু হওয়ার আগেই প্রথম সারির কয়েকটি আসন প্রায় পূর্ণ। আদিত্য, অমৃতা, রুদ্র, নন্দিনী ও সায়ন একসঙ্গে বসেছে।</p>
+<p>রুদ্র বই খুলে ফিসফিস করে বলল,</p>
+<p>— আজকের টপিক Microtubules, তাই না?</p>
+<p>আদিত্য বলল,</p>
+<p>— হ্যাঁ। তবে গতকাল Actin-এর কিছু অংশ বাদ পড়েছিল। আজ আগে সেটা শেষ করতে হবে।</p>
+<p>সায়ন বলল,</p>
+<p>— তোমরা দুজন তো এখন Gray’s-এর walking index হয়ে গেছ!</p>
+<p>নন্দিনী হেসে বলল,</p>
+<p>— walking index হলেও পরীক্ষায় নম্বর না পেলে লাভ নেই।</p>
+<p>ঠিক তখনই Anatomy বিভাগের শিক্ষক ক্লাসে প্রবেশ করলেন।</p>
+<p>শিক্ষক: Good morning, everyone. আজ আমরা Cytoskeleton-এর পরবর্তী অংশ পড়ব। তবে Microtubules শুরু করার আগে Actin-binding proteins-এর কয়েকটি গুরুত্বপূর্ণ বিষয় মনে করিয়ে দিতে চাই।</p>
+<p>আদিত্য খাতা খুলল। অমৃতা বইয়ের Page 48-এ আঙুল রাখল।</p>
+</div></section>
+<section class="sec r" id="s3"><h3>২. Actin-এর অসমাপ্ত আলোচনা: আরও কিছু গুরুত্বপূর্ণ protein</h3><div class="body">
+<p>শিক্ষক বললেন,</p>
+<p>— Actin filament-এর polymerization ও organization নিয়ন্ত্রণে একাধিক protein কাজ করে। এগুলোকে একসঙ্গে না বুঝলে Cytoskeleton-এর কাজ বোঝা কঠিন।</p>
+</div></section>
+<section class="sec r" id="s4"><h3>২.১ Profilin</h3><div class="body">
+<p>Gray’s Anatomy অনুযায়ী, Profilin হলো G-actin-binding protein।</p>
+<p>এটি ATP-bound G-actin-এর সঙ্গে bind করে।</p>
+<p>এর কাজগুলো:</p>
+<ul><li>F-actin-এর slow-growing pointed end-এ G-actin যুক্ত হওয়া বাধা দেয়।</li><li>Fast-growing barbed end-এ filament-এর growth দ্রুততর হতে সাহায্য করে।</li><li>এরপর Profilin actin filament থেকে dissociate করে।</li><li>ADP-কে ATP-তে রূপান্তরের মাধ্যমে ADP-bound actin-কে পুনরায় ATP–G-actin form-এ ফিরিয়ে আনতেও অংশ নেয়।</li></ul>
+<p>আদিত্য বলল,</p>
+<p>— তাহলে Profilin শুধু monomer ধরে রাখে না; কোন প্রান্তে actin যোগ হবে, সেটাও প্রভাবিত করে?</p>
+<p>শিক্ষক বললেন,</p>
+<p>— ঠিক। তবে বইয়ের বর্ণিত কাজগুলো আলাদা করে মনে রাখবে।</p>
+</div></section>
+<section class="sec r" id="s5"><h3>২.২ Thymosin β4</h3><div class="body">
+<p>আরেকটি G-actin-binding protein হলো Thymosin β4।</p>
+<p>এটি ATP–G-actin-এর সঙ্গে bind করে।</p>
+<p>এর ফলে ATP–G-actin একটি reserve pool-এ sequestered থাকে এবং polymerization প্রতিরোধ হয়।</p>
+<p>অমৃতা খাতায় লিখল:</p>
+<ul><li>Profilin: ATP–G-actin-এর সঙ্গে bind করে; barbed end growth-কে সহায়তা করে।</li><li>Thymosin β4: ATP–G-actin-কে reserve pool-এ আটকে রেখে polymerization প্রতিরোধ করে।</li></ul>
+<p>রুদ্র বলল,</p>
+<p>— দুটোই G-actin-এর সঙ্গে bind করে, কিন্তু কাজ আলাদা।</p>
+<p>— একদম, অমৃতা বলল।</p>
+</div></section>
+<section class="sec r" id="s6"><h3>২.৩ F-actin capping protein</h3><div class="body">
+<p>Gray’s বলছে, F-actin capping protein family-এর সদস্যরা heterodimer।</p>
+<p>এদের দুটি subunit:</p>
+<ul><li>α subunit — CPα</li><li>β subunit — CPβ</li></ul>
+<p>এরা eukaryotic cell-এ actin filament-এর barbed end cap করে।</p>
+</div></section>
+<section class="sec r" id="s7"><h3>২.৪ Gelsolin</h3><div class="body">
+<p>Gelsolin-এর দুটি গুরুত্বপূর্ণ কাজ রয়েছে:</p>
+<ul><li>F-actin severing বা কেটে দেওয়া।</li><li>নতুন তৈরি হওয়া barbed end cap করে দেওয়া।</li></ul>
+<p>এর ফলে filament-এর আরও elongation বাধাগ্রস্ত হয়।</p>
+</div></section>
+<section class="sec r" id="s8"><h3>২.৫ Fascin ও Villin</h3><div class="body">
+<ul><li>Fascin: একটি অতিরিক্ত cross-linking protein।</li><li>Villin: Actin filament severing করতে পারে।</li></ul>
+<p>Villin-এর মাধ্যমে actin filament disassembly হতে পারে এবং microvillus collapse করতে পারে।</p>
+<p>শিক্ষক বললেন,</p>
+<p>— মনে রাখবে, Actin-binding protein-এর কাজ শুধু filament তৈরি করা নয়; filament-কে সংগঠিত করা, ভাঙা, স্থিতিশীল রাখা এবং পুনর্গঠন করাও এদের কাজের অংশ।</p>
+</div></section>
+<section class="sec r" id="s9"><h3>৩. Actin network কীভাবে extracellular matrix-এর সঙ্গে যুক্ত হয়?</h3><div class="body">
+<p>অমৃতা এবার বইয়ের পরের paragraph দেখাল।</p>
+<p>Gray’s অনুযায়ী, spectrin-related molecules শুধু erythrocyte-এ নয়, অন্যান্য কোষেও পাওয়া যায়।</p>
+<p>উদাহরণ:</p>
+<ul><li>Fodrin: Neurones-এ পাওয়া যায়।</li><li>Dystrophin: Muscle cell-এ পাওয়া যায়।</li></ul>
+<p>Dystrophin contractile apparatus-কে integral membrane protein-এর মাধ্যমে extracellular matrix-এর সঙ্গে যুক্ত করে।</p>
+<p>আরও কিছু protein এই সংযোগ তৈরিতে ভূমিকা রাখে:</p>
+<ul><li>Ankyrin</li><li>Vinculin</li><li>Talin</li><li>Zyxin</li><li>Paxillin</li></ul>
+<p>এরা actin-binding protein-কে integral plasma membrane protein—যেমন Integrins—এর সঙ্গে সরাসরি বা পরোক্ষভাবে যুক্ত করে।</p>
+<p>এরপর সংযোগ পৌঁছায় Focal adhesions-এ।</p>
+<p>Focal adhesions হলো এমন সংযোগস্থল, যেখানে actin filament-এর bundle plasma membrane-এর একটি অংশের সঙ্গে যুক্ত থাকে এবং সেই membrane অংশ extracellular matrix-এর সঙ্গে সংযুক্ত।</p>
+<p>আদিত্য বলল,</p>
+<p>— তাহলে Actin cytoskeleton শুধু কোষের ভেতরের কাঠামো নয়; membrane এবং extracellular matrix-এর সঙ্গেও structural connection তৈরি করে।</p>
+<p>শিক্ষক বললেন,</p>
+<p>— ভালো। এই সংযোগের কথা মনে রাখবে।</p>
+</div></section>
+<section class="sec r" id="s10"><h3>৪. Arp2/3 complex: Branching actin network-এর বিস্তারিত</h3><div class="body">
+<p>শিক্ষক এবার বোর্ডে লিখলেন:</p>
+<p>WASP / WAVE → Arp2/3 → Branched actin filament</p>
+<p>Gray’s Anatomy-এর Page 48-এ বলা হয়েছে, activated nucleation-promoting factor-এর উপস্থিতিতে Arp2/3 complex existing actin filament-এর পাশে bind করে।</p>
+<p>এখানে দুটি গুরুত্বপূর্ণ protein family:</p>
+<ul><li>Wiskott–Aldrich syndrome protein (WASP)</li><li>WASP family verprolin-homologous protein (WAVE), যা SCAR নামেও পরিচিত।</li></ul>
+<p>Activated WASP বা WAVE-এর মতো nucleation-promoting factor-এর উপস্থিতিতে:</p>
+<ul><li>Arp2/3 complex একটি existing actin filament-এর পাশে bind করে।</li><li>Existing filament-টি mother filament হিসেবে কাজ করে।</li><li>Arp2/3 complex নতুন daughter filament-এর branching শুরু করে।</li><li>Daughter filament mother filament-এর সঙ্গে প্রায় 70° angle তৈরি করে।</li></ul>
+<p>সায়ন বলল,</p>
+<p>— অর্থাৎ Arp2/3 শুধু filament তৈরি করে না; আগে থেকে থাকা filament থেকে নতুন branch তৈরি করে।</p>
+<p>— ঠিক, শিক্ষক বললেন।</p>
+<p>অমৃতা নোটে লিখল:</p>
+<p>Arp2/3-mediated branching: Formation of a daughter actin filament at approximately 70° to an existing mother filament.</p>
+</div></section>
+<section class="sec r" id="s11"><h3>৫. এবার Microtubules: কোষের ভেতরের নলাকার কাঠামো</h3><div class="body">
+<p>ক্লাসের পর শিক্ষক সবাইকে বললেন,</p>
+<p>— এবার নতুন heading শুরু করি। Microtubules।</p>
+<p>আদিত্য বইয়ের Page 49 খুলল।</p>
+<p>Gray’s Anatomy অনুযায়ী:</p>
+<p>Microtubules হলো tubulin-এর polymer, যা ফাঁপা (hollow), অপেক্ষাকৃত দৃঢ় (relatively rigid) cylinder তৈরি করে।</p>
+</div></section>
+<section class="sec r" id="s12"><h3>Microtubules — মূল বৈশিষ্ট্য</h3><div class="body">
+</div></section>
+<section class="sec r" id="s13"><h3>25 nm</h3><div class="body">
+<p>Diameter</p>
+</div></section>
+<section class="sec r" id="s14"><h3>70 μm</h3><div class="body">
+<p>Spermatozoan flagella-তে সর্বোচ্চ দৈর্ঘ্য পর্যন্ত</p>
+<p>কোথায় পাওয়া যায়?</p>
+<ul><li>অধিকাংশ cell type-এ।</li><li>বিশেষভাবে neurones-এ।</li><li>Leukocytes-এ।</li><li>Blood platelets-এ।</li></ul>
+<p>Microtubules হলো:</p>
+<ul><li>Dividing cell-এর mitotic spindle-এর প্রধান উপাদান।</li><li>Cilia ও flagella-এর axoneme-এর অংশ।</li><li>Centrioles-এর কাঠামোগত উপাদান।</li></ul>
+<p>রুদ্র বলল,</p>
+<p>— তাহলে Microtubules শুধু cell-এর ভেতরে transport-এর জন্য নয়; cell division এবং cilia-flagella-র movement-এর সঙ্গেও যুক্ত।</p>
+<p>শিক্ষক বললেন,</p>
+<p>— সঠিক।</p>
+</div></section>
+<section class="sec r" id="s15"><h3>৬. Tubulin dimer: Microtubules-এর গঠনমূলক একক</h3><div class="body">
+<p>Microtubules গঠিত হয় Tubulin dimers এবং Microtubule-associated proteins দিয়ে।</p>
+<p>Tubulin-এর দুটি প্রধান class:</p>
+<ul><li>α-tubulin</li><li>β-tubulin</li></ul>
+<p>Microtubule assembly-এর আগে α ও β tubulin একসঙ্গে dimer তৈরি করে।</p>
+<p>Tubulin dimer</p>
+<p>α-tubulin</p>
+</div></section>
+<section class="sec r" id="s16"><h3>50 kDa</h3><div class="body">
+<p>β-tubulin</p>
+</div></section>
+<section class="sec r" id="s17"><h3>50 kDa</h3><div class="body">
+<p>Combined molecular mass</p>
+</div></section>
+<section class="sec r" id="s18"><h3>100 kDa</h3><div class="body">
+<p>প্রতিটি protein subunit প্রায় 5 nm across।</p>
+<p>প্রতিটি α ও β tubulin subunit লম্বা অক্ষ বরাবর সাজানো থাকে। তারা পর্যায়ক্রমে একটির পর একটি যুক্ত হয়ে তৈরি করে Protofilament।</p>
+<p>সাধারণত ১৩টি protofilament একসঙ্গে একটি ring তৈরি করে। এই ring-ই hollow cylindrical microtubule-এর wall গঠন করে।</p>
+<p>তবে Gray’s বলছে, protofilament-এর সংখ্যা ১১ থেকে ১৬ পর্যন্ত পরিবর্তিত হতে পারে।</p>
+</div></section>
+<section class="sec r" id="s19"><h3>৬.১ Protofilament-এর arrangement</h3><div class="body">
+<p>প্রতিটি longitudinal row-তে α ও β tubulin পর্যায়ক্রমে সাজানো থাকে।</p>
+<p>পাশাপাশি থাকা row-গুলোর alignment সামান্য পরিবর্তিত হওয়ায় microtubule-কে পাশ থেকে দেখলে alternating α ও β subunit-এর spiral pattern দেখা যায়।</p>
+<p>আদিত্য বলল,</p>
+<p>— তাহলে microtubule-এর wall তৈরি হয় অনেকগুলো protofilament দিয়ে, আর প্রতিটি protofilament তৈরি হয় alternating α ও β tubulin দিয়ে।</p>
+<p>শিক্ষক বললেন,</p>
+<p>— একদম। এটাই basic structural organization।</p>
+</div></section>
+<section class="sec r" id="s20"><h3>৭. Microtubule polarity এবং Dynamic instability</h3><div class="body">
+<p>এবার ক্লাসের সবচেয়ে গুরুত্বপূর্ণ অংশ।</p>
+<p>Tubulin dimer-এর asymmetry microtubule-এ polarity তৈরি করে।</p>
+<p>Gray’s অনুযায়ী:</p>
+<ul><li>α-tubulin সবসময় minus end-এর দিকে orientated থাকে।</li><li>β-tubulin plus end-এর দিকে orientated থাকে।</li></ul>
+<p>Tubulin preferentially plus end-এ যুক্ত হয়।</p>
+<p>তাই:</p>
+<ul><li>Plus end তুলনামূলক দ্রুত বৃদ্ধি পায়।</li><li>Minus end তুলনামূলক ধীরে বৃদ্ধি পায়।</li></ul>
+<p>কিন্তু microtubules-এর একটি বিশেষ বৈশিষ্ট্য আছে।</p>
+<p>এরা দ্রুত grow এবং shrink করতে পারে।</p>
+<p>এই ঘটনাকে বলা হয়:</p>
+<p>Dynamic instability</p>
+<p>Dynamic instability: Microtubule-এর দ্রুত growth এবং shrinkage-এর মধ্যে পরিবর্তনশীল অবস্থা।</p>
+<p>কখনো একটি growing microtubule হঠাৎ করে net growth বন্ধ করে দ্রুত shrink করতে শুরু করে। এই আকস্মিক পরিবর্তনকে বলা হয় Catastrophe।</p>
+</div></section>
+<section class="sec r" id="s21"><h3>৭.১ GTP hydrolysis-এর ভূমিকা</h3><div class="body">
+<p>Gray’s বলছে, Microtubule grow করবে নাকি shrink করবে, তার প্রধান নিয়ামক হলো GTP hydrolysis-এর rate।</p>
+<p>Tubulin হলো GTP-binding protein।</p>
+<p>Microtubule growth-এর সঙ্গে GTP hydrolysis ঘটে। এই hydrolysis microtubule-এর dynamic behaviour নিয়ন্ত্রণ করতে পারে।</p>
+<p>আদিত্য বলল,</p>
+<p>— তাহলে Microtubule-এর স্থিতিশীলতা শুধু tubulin যুক্ত হওয়ার ওপর নির্ভর করে না; GTP hydrolysis-ও গুরুত্বপূর্ণ।</p>
+<p>শিক্ষক বললেন,</p>
+<p>— হ্যাঁ। এই অংশটি ভালো করে বুঝবে।</p>
+</div></section>
+<section class="sec r" id="s22"><h3>৮. Microtubule কোথা থেকে তৈরি হয়? Microtubule-organizing centres</h3><div class="body">
+<p>Microtubule growth নির্দিষ্ট স্থান থেকে শুরু হয়।</p>
+<p>এই স্থানগুলোকে বলা হয় Microtubule-organizing centres (MTOCs)।</p>
+<p>Gray’s প্রধানত দুটি উদাহরণ দিয়েছে:</p>
+<ul><li>Centrosomes</li><li>Centriole-derived basal bodies</li></ul>
+</div></section>
+<section class="sec r" id="s23"><h3>৮.১ Centrosome</h3><div class="body">
+<p>Centrosome হলো cell-এর centre-এর কাছাকাছি থাকা densely filamentous cytoplasmic region।</p>
+<p>বেশিরভাগ cell-এ এটি প্রধান microtubule-organizing centre।</p>
+<p>এখান থেকেই অধিকাংশ cellular microtubule polymerize করে।</p>
+<p>এছাড়া cell division-এর সময় mitotic spindle-ও centrosome থেকে সংগঠিত হয়।</p>
+</div></section>
+<section class="sec r" id="s24"><h3>৮.২ Basal bodies</h3><div class="body">
+<p>Basal bodies cilia-এর গোড়ায় থাকে।</p>
+<p>এগুলো microtubule-organizing centre হিসেবে কাজ করে, যেখান থেকে cilia grow করে।</p>
+<p>শিক্ষক বললেন,</p>
+<p>— Centrosome এবং basal body—দুটোই microtubule organization-এর সঙ্গে যুক্ত, তবে অবস্থান ও কাজের প্রেক্ষাপট আলাদা।</p>
+</div></section>
+<section class="sec r" id="s25"><h3>৮.৩ γ-tubulin</h3><div class="body">
+<p>Microtubule-organizing centre-এ একটি বিশেষ tubulin isoform থাকে:</p>
+<p>γ-tubulin</p>
+<p>এটি microtubule nucleation-এর জন্য essential।</p>
+<p>অর্থাৎ নতুন microtubule growth শুরু করার ক্ষেত্রে γ-tubulin গুরুত্বপূর্ণ ভূমিকা রাখে।</p>
+</div></section>
+<section class="sec r" id="s26"><h3>৯. Microtubules-এর ওপর কাজ করা ওষুধ</h3><div class="body">
+<p>Gray’s Anatomy কিছু drug-এর উদাহরণ দিয়েছে, যেগুলো microtubule-এর assembly ও disassembly প্রভাবিত করে।</p>
+</div></section>
+<section class="sec r" id="s27"><h3>৯.১ Microtubule depolymerization ঘটায়</h3><div class="body">
+<ul><li>Colcemid</li><li>Vinblastine</li><li>Griseofulvin</li><li>Nocodazole</li></ul>
+<p>এগুলো soluble tubulin dimer-এর সঙ্গে bind করে।</p>
+<p>ফলে equilibrium unpolymerized state-এর দিকে সরে যায় এবং microtubule depolymerization ঘটে।</p>
+<p>Microtubule disassembly-এর ফলে বিভিন্ন cellular effect হতে পারে। এর মধ্যে একটি হলো mitotic spindle নষ্ট হওয়ার কারণে cell division বাধাগ্রস্ত হওয়া।</p>
+</div></section>
+<section class="sec r" id="s28"><h3>৯.২ Paclitaxel (Taxol)</h3><div class="body">
+<p>অন্যদিকে Paclitaxel (Taxol) microtubule depolymerization inhibitor।</p>
+<p>এটি microtubule stabilize করে এবং abnormal microtubule assembly বাড়ায়।</p>
+<p>Gray’s উল্লেখ করেছে:</p>
+<ul><li>Paclitaxel peripheral neuropathy ঘটাতে পারে।</li><li>এটি breast cancer ও ovarian cancer-এর চিকিৎসায় কার্যকর chemotherapeutic agent হিসেবে ব্যবহৃত হয়।</li></ul>
+<p>রুদ্র বলল,</p>
+<p>— অর্থাৎ একদল drug microtubule ভেঙে দেয়, আর Paclitaxel microtubule stabilize করে?</p>
+<p>শিক্ষক বললেন,</p>
+<p>— ঠিক। mechanism-এর এই পার্থক্য মনে রাখবে।</p>
+</div></section>
+<section class="sec r" id="s29"><h3>১০. Microtubule-associated proteins (MAPs)</h3><div class="body">
+<p>Microtubule-এর সঙ্গে বিভিন্ন protein যুক্ত থাকে। এদের বলা হয় Microtubule-associated proteins বা MAPs।</p>
+<p>কিছু MAP structural properties-এর সঙ্গে যুক্ত, আবার কিছু motility-তে ভূমিকা রাখে।</p>
+<p>Gray’s একটি গুরুত্বপূর্ণ class-এর কথা বলেছে, যারা microtubule-এর plus end-এর সঙ্গে associate করে।</p>
+<p>এরা:</p>
+<ul><li>Dynamic instability নিয়ন্ত্রণ করে।</li><li>অন্যান্য cellular substructure-এর সঙ্গে interaction নিয়ন্ত্রণ করে।</li></ul>
+</div></section>
+<section class="sec r" id="s30"><h3>১০.১ Structural MAPs</h3><div class="body">
+<p>Structural MAPs:</p>
+<ul><li>Adjacent microtubule-এর মধ্যে cross-bridge তৈরি করে।</li><li>Microtubule-কে intermediate filament-এর সঙ্গে যুক্ত করতে পারে।</li><li>Mitochondria ও plasma membrane-এর মতো structure-এর সঙ্গেও সংযোগ তৈরি করতে পারে।</li></ul>
+<p>Neurone-এ পাওয়া কিছু MAP:</p>
+<div class="tw"><table><thead><tr><th>MAP</th><th>কোথায় পাওয়া যায়</th></tr></thead><tbody><tr><td>MAP 1A ও MAP 1B</td><td>Neuronal dendrites এবং axons</td></tr><tr><td>MAP 2A ও MAP 2B</td><td>প্রধানত dendrites</td></tr><tr><td>Tau</td><td>শুধু axons</td></tr></tbody></table></div>
+<p>অন্য অনেক cell type-এ MAP 4 হলো প্রধান microtubule-associated protein।</p>
+<p>Structural MAPs microtubule-এর formation, maintenance এবং disassembly-এর সঙ্গে যুক্ত।</p>
+<p>তাই cell morphogenesis, mitotic division এবং cell shape বজায় রাখার ক্ষেত্রে এদের গুরুত্ব রয়েছে।</p>
+</div></section>
+<section class="sec r" id="s31"><h3>১১. Transport-associated MAPs ও motor proteins</h3><div class="body">
+<p>এবার অমৃতা বলল,</p>
+<p>— এই অংশটা আমাদের আগের vesicle transport-এর আলোচনার সঙ্গে যুক্ত।</p>
+<p>Transport-associated MAPs এমন জায়গায় পাওয়া যায়, যেখানে microtubule-এর ওপর দিয়ে movement হয়।</p>
+<p>উদাহরণ:</p>
+<ul><li>Cargo transport।</li><li>Cilia ও flagella-এর bending।</li><li>কিছু mitotic spindle movement।</li></ul>
+<p>এদের মধ্যে সবচেয়ে পরিচিত motor protein family:</p>
+<ul><li>Dyneins</li><li>Kinesins</li></ul>
+<p>এছাড়া:</p>
+<ul><li>Dynamin: Endocytosis-এর সঙ্গে যুক্ত।</li><li>Kinetochore proteins: Mitosis ও meiosis-এর সময় chromosome-এর centromere-এ assemble হয়।</li></ul>
+<p>Kinetochore protein chromosome-কে spindle microtubule-এর সঙ্গে attach করে।</p>
+<p>এদের কিছু protein mitotic ও meiotic anaphase-এ chromosome movement-এর জন্য দায়ী।</p>
+</div></section>
+<section class="sec r" id="s32"><h3>১১.১ Kinesin ও Dynein</h3><div class="body">
+<p>Gray’s বলছে, Kinesin এবং Dynein microtubule-এর সঙ্গে bind করে।</p>
+<p>তারা:</p>
+<ul><li>Microtubule-এর surface বরাবর active sliding করতে পারে।</li><li>Microtubule assembly বাড়াতে পারে।</li><li>Microtubule disassembly ঘটাতে পারে।</li></ul>
+<p>Cargo transport-এর ক্ষেত্রে Kinesin ও Dynein বিশেষ গুরুত্বপূর্ণ।</p>
+<p>Kinesin-dependent movement: সাধারণত microtubule-এর plus end-এর দিকে।</p>
+<p>উদাহরণ: Neurone-এর cell body থেকে axon terminal-এর দিকে movement।</p>
+<p>অন্যান্য cell-এ centrosome থেকে দূরের দিকে movement-ও এর উদাহরণ।</p>
+<p>Dynein-related movement: Microtubule-এর বিপরীত দিকে, অর্থাৎ minus end-এর দিকে।</p>
+<p>আদিত্য বলল,</p>
+<p>— তাহলে Kinesin সাধারণত plus end-এর দিকে আর Dynein minus end-এর দিকে cargo নিয়ে যায়।</p>
+<p>অমৃতা বলল,</p>
+<p>— হ্যাঁ। তবে motor protein-এর সব subtype একই কাজ করে না। Gray’s বলছে, Kinesin family-এর কিছু সদস্য cargo transport করে, কিছু microtubule disassembly ঘটায়, আবার কিছু mitotic spindle microtubule cross-link করে centriolar pole-গুলোকে আলাদা করতে সাহায্য করে।</p>
+</div></section>
+<section class="sec r" id="s33"><h3>১২. Cilia ও Flagella-এর bending: Dynein-এর আরেক কাজ</h3><div class="body">
+<p>Gray’s এখানে Dynein-এর আরও একটি বিশেষ ভূমিকা ব্যাখ্যা করেছে।</p>
+<p>Cilia ও flagella-এর axoneme-এ peripheral microtubule থাকে।</p>
+<p>Dynein এদের arm হিসেবে কাজ করে এবং adjacent microtubule pair-এর সঙ্গে dynamic cross-bridge তৈরি করে।</p>
+<p>যখন এই tethered dynein চলতে চেষ্টা করে, তখন shearing force তৈরি হয়।</p>
+<p>এই shearing force axonemal microtubule array-কে bend করে।</p>
+<p>ফলে তৈরি হয়:</p>
+<ul><li>Ciliary beating</li><li>Flagellar movement</li></ul>
+<p>সায়ন বলল,</p>
+<p>— তাহলে cilia ও flagella-এর movement-এর পেছনেও microtubule এবং dynein-এর interaction কাজ করে।</p>
+<p>শিক্ষক বললেন,</p>
+<p>— ঠিক। Microtubule শুধু স্থির কাঠামো নয়; এটি movement-এর machinery-রও অংশ।</p>
+</div></section>
+<section class="sec r" id="s34"><h3>১৩. Centrioles, Centrosomes ও Basal bodies</h3><div class="body">
+<p>এবার Gray’s-এর নতুন heading।</p>
+<p>Centrioles are microtubular cylinders.</p>
+<p>Gray’s অনুযায়ী:</p>
+</div></section>
+<section class="sec r" id="s35"><h3>Centriole-এর মাত্রা</h3><div class="body">
+</div></section>
+<section class="sec r" id="s36"><h3>0.2 μm</h3><div class="body">
+<p>Diameter</p>
+</div></section>
+<section class="sec r" id="s37"><h3>0.4 μm</h3><div class="body">
+<p>Length</p>
+<p>গঠন: Microtubule triplet-এর একটি ring, যা অন্যান্য protein দ্বারা সংযুক্ত।</p>
+</div></section>
+<section class="sec r" id="s38"><h3>১৩.১ Centriole কোথায় পাওয়া যায়?</h3><div class="body">
+<p>Gray’s বলছে, যেসব animal cell mitotic division করতে সক্ষম, সেগুলোতে অন্তত দুটি centriole থাকে।</p>
+<p>উদাহরণ:</p>
+<ul><li>Animal cells capable of mitotic division-এ সাধারণত অন্তত দুটি centriole থাকে।</li><li>Eggs, যেগুলো mitosis-এর পরিবর্তে meiosis-এর মধ্য দিয়ে যায়, সেগুলোতে centriole থাকে না—Gray’s-এর এই অংশে এমনটাই বলা হয়েছে।</li></ul>
+<p>দুটি centriole সাধারণত পরস্পরের কাছাকাছি থাকে।</p>
+<p>তাদের অবস্থান হতে পারে:</p>
+<ul><li>Right angle-এ।</li><li>সাধারণত oblique angle-এ।</li></ul>
+<p>এই arrangement-কে বলা হয় Diplosome।</p>
+<p>এগুলো centrosome-এর মধ্যে থাকে।</p>
+</div></section>
+<section class="sec r" id="s39"><h3>১৩.২ Centriole biogenesis</h3><div class="body">
+<p>Centriole তৈরির প্রক্রিয়া জটিল।</p>
+<p>Cell cycle-এর S phase-এর শুরুতে—যখন DNA replication ঘটে—প্রতিটি পৃথক maternal centriole-এর সঙ্গে প্রায় right angle-এ একটি নতুন daughter centriole তৈরি হয়।</p>
+<p>প্রতিটি mother–daughter pair পরবর্তী mitotic spindle-এর একটি pole গঠন করে।</p>
+<p>Daughter centriole সম্পূর্ণ mature হয় তখন, যখন progeny cell পরবর্তী mitosis-এ প্রবেশের কাছাকাছি আসে।</p>
+</div></section>
+<section class="sec r" id="s40"><h3>১৩.৩ Centrosome এবং microtubule network</h3><div class="body">
+<p>Centrosome হলো অধিকাংশ cell-এর প্রধান microtubule-organizing centre।</p>
+<p>এখানে:</p>
+<ul><li>নতুন microtubule তৈরি হয়।</li><li>Cell division-এর সময় mitotic spindle গঠিত হয়।</li></ul>
+<p>Centrosome থেকে তৈরি microtubule-এর minus end সাধারণত centrosome-এর কাছাকাছি থাকে।</p>
+<p>অর্থাৎ centrosome একটি microtubule network-এর কেন্দ্র হিসেবে কাজ করে।</p>
+</div></section>
+<section class="sec r" id="s41"><h3>১৩.৪ Basal bodies</h3><div class="body">
+<p>Basal body হলো centriole-এর সঙ্গে ঘনিষ্ঠভাবে সম্পর্কিত microtubule-organizing centre।</p>
+<p>Gray’s বলছে, basal body সম্ভবত centriole থেকেই উৎপন্ন।</p>
+<p>এগুলো cilia ও flagella-এর গোড়ায় থাকে এবং cilia ও flagella-কে cell surface-এর সঙ্গে anchor করে।</p>
+<p>Axoneme-এর outer microtubule doublet basal body-এর প্রতিটি triplet-এর দুটি microtubule থেকে উৎপন্ন হয়।</p>
+</div></section>
+<section class="sec r" id="s42"><h3>১৪. Microtubule-based cargo transport</h3><div class="body">
+<p>এবার দিনের শেষ heading।</p>
+<p>Gray’s অনুযায়ী, Kinesin এবং cytoplasmic Dynein-এর মাধ্যমে microtubule বরাবর cargo transport হলো neurone-এর axon দিয়ে neurotransmitter neuronal synapse-এ পৌঁছে দেওয়ার একটি ব্যবস্থা।</p>
+<p>এছাড়া বিভিন্ন vesicle ও organelle-ও microtubule বরাবর পরিবাহিত হয়।</p>
+<p>এখানে গুরুত্বপূর্ণ বিষয় হলো—Kinesin ও Dynein-এর movement direction এক নয়।</p>
+<div class="tw"><table><thead><tr><th>Motor protein</th><th>সাধারণ movement direction</th></tr></thead><tbody><tr><td>Kinesin</td><td>Plus end-এর দিকে</td></tr><tr><td>Cytoplasmic Dynein</td><td>Minus end-এর দিকে</td></tr></tbody></table></div>
+<p>এই transport-এর ফলে cell-এর বিভিন্ন অংশে নির্দিষ্ট material পৌঁছানো সম্ভব হয়।</p>
+<p>Gray’s আরও একটি গুরুত্বপূর্ণ তথ্য দিয়েছে:</p>
+<p>Membrane vesicle-এর সঙ্গে Dynein motor যুক্ত থাকার কারণে কিছু cytomembrane—যেমন Golgi apparatus—centrosome-এর কাছে জমা হতে পারে।</p>
+<p>এটি সুবিধাজনক, কারণ microtubules Golgi vesicular product-কে cell-এর বিভিন্ন অংশে পৌঁছে দেওয়ার জন্য track হিসেবে কাজ করে।</p>
+</div></section>
+<section class="sec r" id="s43"><h3>১৫. ক্লাসের শেষে: বন্ধুত্বের ছোট্ট পরীক্ষা</h3><div class="body">
+<p>ক্লাস শেষ হওয়ার পর সবাই বাইরে বের হলো।</p>
+<p>সায়ন বলল,</p>
+<p>— আজকের ক্লাসে Microtubule-এর structure থেকে শুরু করে cargo transport পর্যন্ত এত কিছু পড়লাম। কাল একটা discussion না করলে কিছুই মনে থাকবে না।</p>
+<p>রুদ্র বলল,</p>
+<p>— ঠিক আছে। কাল library-তে সবাই বসব। তবে আজকের discussion-এর জন্য চা আমার পক্ষ থেকে।</p>
+<p>নন্দিনী বলল,</p>
+<p>— চা দিয়ে পড়ার ঘাটতি পূরণ হবে না।</p>
+<p>আদিত্য অমৃতার দিকে তাকিয়ে বলল,</p>
+<p>— তুই কাল আসবি তো?</p>
+<p>অমৃতা বলল,</p>
+<p>— আসব। তবে একটা শর্ত আছে।</p>
+<p>— কী?</p>
+<p>— আজকের Microtubule structure তুই নিজে একটা সহজ ভাষায় বুঝিয়ে লিখে আনবি। শুধু বইয়ের ভাষা কপি করলে হবে না।</p>
+<p>আদিত্য হাসল।</p>
+<p>— ঠিক আছে। আর তুই Kinesin আর Dynein-এর পার্থক্যটা আমাকে আবার বুঝিয়ে দিবি।</p>
+<p>অমৃতা বলল,</p>
+<p>— Deal.</p>
+<p>রুদ্র দূর থেকে বলে উঠল,</p>
+<p>— এই যে, তোদের group study শেষ হবে তো? আমাদেরও কিন্তু পড়তে হবে!</p>
+<p>সবাই হেসে উঠল।</p>
+<p>সেদিন সন্ধ্যায় আদিত্য লাইব্রেরিতে বসে নিজের নোট গুছিয়ে নিল। অমৃতা পাশে বসে নিজের বই পড়ছিল। দুজনের মধ্যে এখন আর আগের মতো আনুষ্ঠানিকতা নেই। বন্ধুত্বের জায়গাটা বেশ স্বাভাবিক হয়ে এসেছে।</p>
+<p>তবে তাদের দুজনেরই একটা লক্ষ্য পরিষ্কার—শুধু পরীক্ষায় পাস করা নয়, নিজেদের বিষয়ে সত্যিকার অর্থে দক্ষ চিকিৎসক হয়ে ওঠা।</p>
+</div></section>
+<section class="sec r" id="s44"><h3>আজকের Gray’s Anatomy Revision</h3><div class="body">
+<div class="tw"><table><thead><tr><th>বিষয়</th><th>Source-derived তথ্য</th></tr></thead><tbody><tr><td>Profilin</td><td>ATP–G-actin bind করে; barbed end growth-এ সহায়তা করে</td></tr><tr><td>Thymosin β4</td><td>ATP–G-actin reserve pool-এ sequester করে</td></tr><tr><td>Capping protein</td><td>CPα ও CPβ heterodimer</td></tr><tr><td>Gelsolin</td><td>F-actin severing ও newly formed barbed end capping</td></tr><tr><td>Villin</td><td>Severing protein; microvillus collapse ঘটাতে পারে</td></tr><tr><td>Arp2/3</td><td>Mother filament থেকে প্রায় 70° angle-এ daughter filament তৈরি</td></tr><tr><td>Microtubule diameter</td><td>25 nm</td></tr><tr><td>Microtubule length</td><td>Sperm flagella-তে সর্বোচ্চ 70 μm পর্যন্ত</td></tr><tr><td>Tubulin dimer</td><td>α + β tubulin</td></tr><tr><td>Molecular mass</td><td>100 kDa</td></tr><tr><td>Protofilaments</td><td>সাধারণত 13; range 11–16</td></tr><tr><td>Dynamic instability</td><td>Rapid growth ও shrinkage</td></tr><tr><td>Catastrophe</td><td>Growth থেকে abrupt shrinkage-এ পরিবর্তন</td></tr><tr><td>γ-tubulin</td><td>Microtubule nucleation-এর জন্য essential</td></tr><tr><td>Kinesin</td><td>সাধারণত plus-end-directed movement</td></tr><tr><td>Dynein</td><td>Minus-end-directed movement</td></tr><tr><td>Centriole diameter</td><td>0.2 μm</td></tr><tr><td>Centriole length</td><td>0.4 μm</td></tr><tr><td>Centriole arrangement</td><td>Diplosome</td></tr><tr><td>Centriole structure</td><td>Nine microtubule triplets</td></tr></tbody></table></div>
+</div></section>
+<section class="sec r" id="s45"><h3>Series State</h3><div class="body">
+<p>Episode 13</p>
+<ul><li>Page 48: Actin-binding proteins-এর অবশিষ্ট আলোচনা।</li><li>Page 49: Microtubules, tubulin, polarity, dynamic instability, drugs, MAPs, motor proteins, centrioles ও basal bodies।</li><li>Page 50: Microtubule-based cargo transport এবং Golgi apparatus-এর অবস্থান।</li></ul>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-012.html">← Episode 12</a><a href="index.html">সব পর্ব</a><a href="episode-014.html">Episode 14 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">পর্ব ১৩ — কোষের পরিবহন নেটওয়ার্ক: Microtubules-এর অদৃশ্য রেলপথ</a><a href="#s2">১. নতুন দিনের ক্লাস, নতুন প্রতিযোগিতা</a><a href="#s3">২. Actin-এর অসমাপ্ত আলোচনা: আরও কিছু গুরুত্বপূর্ণ protein</a><a href="#s4">২.১ Profilin</a><a href="#s5">২.২ Thymosin β4</a><a href="#s6">২.৩ F-actin capping protein</a><a href="#s7">২.৪ Gelsolin</a><a href="#s8">২.৫ Fascin ও Villin</a><a href="#s9">৩. Actin network কীভাবে extracellular matrix-এর সঙ্গে যুক্ত হয়?</a><a href="#s10">৪. Arp2/3 complex: Branching actin network-এর বিস্তারিত</a><a href="#s11">৫. এবার Microtubules: কোষের ভেতরের নলাকার কাঠামো</a><a href="#s12">Microtubules — মূল বৈশিষ্ট্য</a><a href="#s13">25 nm</a><a href="#s14">70 μm</a><a href="#s15">৬. Tubulin dimer: Microtubules-এর গঠনমূলক একক</a><a href="#s16">50 kDa</a><a href="#s17">50 kDa</a><a href="#s18">100 kDa</a><a href="#s19">৬.১ Protofilament-এর arrangement</a><a href="#s20">৭. Microtubule polarity এবং Dynamic instability</a><a href="#s21">৭.১ GTP hydrolysis-এর ভূমিকা</a><a href="#s22">৮. Microtubule কোথা থেকে তৈরি হয়? Microtubule-organizing centres</a><a href="#s23">৮.১ Centrosome</a><a href="#s24">৮.২ Basal bodies</a><a href="#s25">৮.৩ γ-tubulin</a><a href="#s26">৯. Microtubules-এর ওপর কাজ করা ওষুধ</a><a href="#s27">৯.১ Microtubule depolymerization ঘটায়</a><a href="#s28">৯.২ Paclitaxel (Taxol)</a><a href="#s29">১০. Microtubule-associated proteins (MAPs)</a><a href="#s30">১০.১ Structural MAPs</a><a href="#s31">১১. Transport-associated MAPs ও motor proteins</a><a href="#s32">১১.১ Kinesin ও Dynein</a><a href="#s33">১২. Cilia ও Flagella-এর bending: Dynein-এর আরেক কাজ</a><a href="#s34">১৩. Centrioles, Centrosomes ও Basal bodies</a><a href="#s35">Centriole-এর মাত্রা</a><a href="#s36">0.2 μm</a><a href="#s37">0.4 μm</a><a href="#s38">১৩.১ Centriole কোথায় পাওয়া যায়?</a><a href="#s39">১৩.২ Centriole biogenesis</a><a href="#s40">১৩.৩ Centrosome এবং microtubule network</a><a href="#s41">১৩.৪ Basal bodies</a><a href="#s42">১৪. Microtubule-based cargo transport</a><a href="#s43">১৫. ক্লাসের শেষে: বন্ধুত্বের ছোট্ট পরীক্ষা</a><a href="#s44">আজকের Gray’s Anatomy Revision</a><a href="#s45">Series State</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

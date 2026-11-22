@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 021 · The Language of Cellular Attachment</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 021">EPISODE 021</h1>
+  <div class="ttl">The Language of Cellular Attachment</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">021</div></div>
+    <div class="face b"><div class="t2">The Language of Cellular Attachment</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>Episode 21 — The Language of Cellular Attachment</h3><div class="body">
+<p>যে বন্ধন চোখে দেখা যায় না, অথচ একটি tissue-কে একসঙ্গে ধরে রাখে</p>
+<p>Dhaka Medical College | Anatomy Department | Chapter 1: Basic Structure and Function of Cells</p>
+</div></section>
+<section class="sec r" id="s2"><h3>Scene 1 — Anatomy Department-এর নতুন ক্লাস</h3><div class="body">
+<p>সকাল ৯টা ১০।</p>
+<p>Dhaka Medical College-এর Anatomy lecture theatre-এ আজ একটু বেশি ভিড়। Professor board-এ লিখেছেন—</p>
+<p>INTERCELLULAR JUNCTIONS</p>
+<p>Adi, Amrita, Rafi, Nabila এবং Samin একসঙ্গে বসেছে। আগের দিনের group study-তে তারা Cell Polarity এবং Apical Differentiations শেষ করেছে।</p>
+<p>Professor ঢুকেই প্রশ্ন করলেন,</p>
+<p>“তোমরা জানো, epithelial cells একে অপরের সঙ্গে যুক্ত থাকে। কিন্তু প্রশ্ন হলো—কী দিয়ে যুক্ত থাকে?”</p>
+<p>Rafi বলল,</p>
+<p>“Sir, cell membrane-এর protein দিয়ে?”</p>
+<p>“ঠিক। কিন্তু সব protein একই কাজ করে না। কিছু protein cell-কে cell-এর সঙ্গে যুক্ত করে, কিছু cell-কে extracellular matrix-এর সঙ্গে যুক্ত করে, আবার কিছু cell-এর মধ্যে সরাসরি communication তৈরি করে।”</p>
+<p>Professor board-এ লিখলেন—</p>
+<p>Cell Adhesion Molecules (CAMs)</p>
+<p>“এগুলো transmembrane অথবা membrane-anchored glycoproteins। এরা adjacent cells-এর মধ্যবর্তী space অতিক্রম করে adhesive contact তৈরি করতে পারে।”</p>
+<p>Amrita জিজ্ঞেস করল,</p>
+<p>“Sir, সব CAM কি calcium-এর ওপর নির্ভরশীল?”</p>
+<p>“না। এই classification-টাই আজকের প্রথম বিষয়।”</p>
+<p>Professor board-এ দুটি column তৈরি করলেন।</p>
+<div class="tw"><table><thead><tr><th>Calcium-dependent</th><th>Calcium-independent</th></tr></thead><tbody><tr><td>Cadherins</td><td>Ig-CAMs</td></tr><tr><td>Selectins</td><td>Nectins</td></tr><tr><td></td><td>Integrins</td></tr></tbody></table></div>
+<p>Adi খাতায় লিখল—</p>
+<p>Calcium dependence is a major basis of CAM classification.</p>
+<p>Professor বললেন,</p>
+<p>“মনে রাখবে, এই classification শুধু নাম মুখস্থ করার জন্য নয়। Molecular interaction কীভাবে হয়, সেটি বোঝার জন্য।”</p>
+</div></section>
+<section class="sec r" id="s3"><h3>Scene 2 — Cadherins: একই পরিচয়ের দুই কোষ</h3><div class="body">
+<p>Professor একটি diagram দেখালেন।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Integration of Cadherin Adhesion and Cytoskeleton at Adherens Junctions</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/CM7dpns1g19AfOIFDMJl8DVBu0c5LUawlPHtpnYPLRGdPPa4hJIt3gW0QVGDgv9SbqBB_Rdqvs23L_gvGPZMYGJlhWMV2kk0HaxMNHI8PyE8vBCkJppQxpZtapgmnZVFwqYWkgeFYO5y1tKLT2eLAjw6FeZKdCPjRuPa2bqiCcS-OiTWCwb_DvVzQPnA4ibK?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Integration%20of%20Cadherin%20Adhesion%20and%20Cytoskeleton%20at%20Adherens%20Junctions">Image search ↗</a></figure>
+<p>“প্রথমে Cadherins।”</p>
+<p>Cadherins হলো single-pass transmembrane glycoproteins।</p>
+<p>তাদের প্রধান বৈশিষ্ট্য:</p>
+<ul><li>Extracellular অংশে পাঁচটি heavily glycosylated calcium-binding domains থাকে।</li><li>Cytoplasmic অংশে একটি catenin-binding tail থাকে।</li><li>Calcium-dependent cell adhesion-এ অংশ নেয়।</li><li>Adjacent cells-এর মধ্যে homophilic interaction তৈরি করতে পারে।</li></ul>
+<p>Professor দুটি পাশাপাশি cell আঁকলেন।</p>
+<p>“ধরো, Cell A এবং Cell B—দুটির membrane-এ একই ধরনের cadherin আছে। Cell A-এর cadherin Cell B-এর একই cadherin-এর সঙ্গে যুক্ত হলো। এটিই homophilic trans-interaction।”</p>
+<p>Nabila বলল,</p>
+<p>“Sir, trans-interaction মানে দুইটি আলাদা cell-এর cadherin-এর মধ্যে binding?”</p>
+<p>“একদম।”</p>
+<p>Professor এবার একই membrane-এর ওপর কয়েকটি cadherin পাশাপাশি সাজালেন।</p>
+<p>“Binding হওয়ার পর cadherins lateralভাবে cluster করতে পারে। একই membrane-এর মধ্যে এই interaction-কে বলা হয় cis-interaction। ফলে cell–cell junction-এ zipper-like adhesive structure তৈরি হয়।”</p>
+<p>Adi বলল,</p>
+<p>“অর্থাৎ trans হলো এক cell থেকে অন্য cell, আর cis হলো একই cell membrane-এর মধ্যে clustering?”</p>
+<p>“খুব ভালো।”</p>
+<p>Cadherin-এর সঙ্গে Catenin-এর সম্পর্ক</p>
+<p>Professor board-এ লিখলেন:</p>
+<p>Cadherin → Catenin complex → F-actin</p>
+<p>“Cadherin-এর cytoplasmic tail-এর সঙ্গে catenin যুক্ত হয়। Catenin cadherin-কে cytoskeleton-এর সঙ্গে সংযুক্ত করতে সাহায্য করে।”</p>
+<p>তিনি কয়েকটি নাম বললেন:</p>
+<ul><li>β-catenin</li><li>α-catenin</li><li>p120-catenin</li></ul>
+<p>“β-catenin প্রথমে cadherin-এর cytoplasmic tail-এর সঙ্গে যুক্ত হয়। এরপর α-catenin recruit হয়। α-catenin F-actin-এর সঙ্গে সরাসরি interaction করতে পারে এবং actin-associated proteins-এর কাজ সমন্বয় করে।”</p>
+<p>“p120-catenin cadherin-এর cytoplasmic tail-এর সঙ্গে যুক্ত হয়ে cadherin function-এর positive regulator হিসেবে কাজ করে।”</p>
+<p>Amrita বলল,</p>
+<p>“তাহলে cadherin বাইরে থেকে cell-কে ধরে, আর catenin ভিতরে cytoskeleton-এর সঙ্গে সংযোগ তৈরি করে?”</p>
+<p>Professor বললেন,</p>
+<p>“এই ধারণাটি মনে রাখবে। এটি cadherin-mediated adhesion বোঝার সহজ উপায়।”</p>
+<p>Different tissues, different cadherins</p>
+<p>Professor তিনটি উদাহরণ লিখলেন:</p>
+<div class="tw"><table><thead><tr><th>Cadherin</th><th>প্রধান অবস্থান</th></tr></thead><tbody><tr><td>N-cadherin</td><td>Nervous tissue</td></tr><tr><td>E-cadherin</td><td>Epithelia</td></tr><tr><td>P-cadherin</td><td>Placenta</td></tr></tbody></table></div>
+<p>“Cadherin family-এর আরও দুটি গুরুত্বপূর্ণ সদস্য হলো—Desmogleins এবং Desmocollins।”</p>
+<p>“এরা desmosomal adhesion-এর সঙ্গে সম্পর্কিত।”</p>
+<p>তিনি সতর্ক করলেন,</p>
+<p>“Cadherins macula adherens বা desmosomes-এ থাকে। কিন্তু Gray’s Anatomy অনুযায়ী এগুলো tight junction বা hemidesmosome-এর adhesion molecules নয়।”</p>
+<p>Adi লিখল—</p>
+<p>Clinical relevance: Epidermis-এ cadherin expression-এর পরিবর্তনের সঙ্গে blistering এবং ulceration-এর মতো pathological condition সম্পর্কিত হতে পারে।</p>
+</div></section>
+<section class="sec r" id="s4"><h3>Scene 3 — Selectins: রক্তের ভেতরে চলমান কোষকে থামানো</h3><div class="body">
+<p>Professor এবার leukocyte-এর ছবি দেখালেন।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Biokemi: Cellmembranet Flashcards | Quizlet</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/yVlgK_BaYzroLI-4vJrEyckvGwUTQLT4fT1Hl5paeSoWybGDzylR-DIXnY93fGss5J80OqK4b2O0QwcyLERnJQKDm0_arRS0LaWHP-oEYuXckl5dDszPpM-pUZXw3Kc8MnMmDplubtyp8qhCWEs22YgL2VtxOA3HPgbLJXxDcb26UYwmvat2CZIR6D-tBXFh?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Biokemi%3A%20Cellmembranet%20Flashcards%20%7C%20Quizlet">Image search ↗</a></figure>
+<p>“এবার Selectins। Cadherins-এর মতো Selectins-ও calcium-dependent। কিন্তু এদের binding mechanism আলাদা।”</p>
+<p>Selectins:</p>
+<ul><li>Calcium-dependent cell adhesion molecules।</li><li>Carbohydrates-এর সঙ্গে bind করে।</li><li>Lectin group-এর অন্তর্ভুক্ত।</li><li>Homophilic cadherin-like interaction করে না।</li></ul>
+<p>Professor বললেন,</p>
+<p>“প্রতিটি selectin-এর extracellular অংশে একটি Carbohydrate Recognition Domain (CRD) থাকে। এটি নির্দিষ্ট oligosaccharide চিনে bind করে।”</p>
+<p>“এই binding affinity এবং molecular configuration calcium-dependent।”</p>
+<p>Rafi জিজ্ঞেস করল,</p>
+<p>“Sir, selectins-এর কাজ কোথায় সবচেয়ে গুরুত্বপূর্ণ?”</p>
+<p>“Leukocyte homing-এ।”</p>
+<p>Professor বোর্ডে একটি blood vessel আঁকলেন। ভেতরে কয়েকটি leukocyte এবং vessel wall-এর endothelial cells দেখালেন।</p>
+<p>“Leukocyte-কে blood থেকে tissue-তে যেতে হলে প্রথমে endothelial surface-এর সঙ্গে interaction করতে হয়। Selectins এই প্রক্রিয়ার প্রথম ধাপে গুরুত্বপূর্ণ।”</p>
+<p>তিনটি প্রধান Selectin:</p>
+<ul><li>L-selectin: Lymphocytes-এর সঙ্গে সম্পর্কিত।</li><li>E-selectin: Endothelial cells-এ পাওয়া যায়।</li><li>P-selectin: Platelets-এর সঙ্গে সম্পর্কিত।</li></ul>
+<p>Professor বললেন,</p>
+<p>“এখানে selectin-এর কাজকে শুধু cell attachment হিসেবে মনে রাখবে না। এটি circulating leukocytes-কে tissue-র দিকে নির্দেশিত homing process-এর অংশ।”</p>
+<p>Amrita প্রশ্ন করল,</p>
+<p>“Sir, leukocyte কি selectin দিয়েই endothelial wall পার হয়ে যায়?”</p>
+<p>“না। Selectin প্রথম ধাপে সাহায্য করে। পরের ধাপে Integrins গুরুত্বপূর্ণ হয়ে ওঠে। একটু পরেই সেটা দেখব।”</p>
+</div></section>
+<section class="sec r" id="s5"><h3>Scene 4 — Ig-CAMs: Immunoglobulin-like Adhesion Molecules</h3><div class="body">
+<p>Professor board-এ লিখলেন—</p>
+<p>Calcium-independent cell adhesion molecules</p>
+<p>“এবার Ig-CAMs।”</p>
+<p>Ig-CAMs হলো cell-surface glycoproteins, যাদের extracellular domain-এ variable সংখ্যক immunoglobulin-like loops থাকে।</p>
+<ul><li>অধিকাংশের transmembrane domain থাকে।</li><li>কিছু cell surface-এ GPI anchor-এর মাধ্যমে যুক্ত থাকে।</li><li>Calcium ছাড়াও adhesion করতে পারে।</li><li>Homophilic interaction-এর মাধ্যমে cell–cell adhesion-এ অংশ নেয়।</li><li>Cytoplasmic tail F-actin, ankyrins এবং spectrin-এর মতো cytoskeletal components-এর সঙ্গে interaction করতে পারে।</li></ul>
+<p>Adi বলল,</p>
+<p>“Sir, cadherin-ও homophilic, Ig-CAM-ও homophilic। তাহলে পার্থক্য কী?”</p>
+<p>Professor বললেন,</p>
+<p>“দুটিই homophilic interaction করতে পারে। কিন্তু cadherin-এর জন্য calcium গুরুত্বপূর্ণ, Ig-CAM-এর ক্ষেত্রে এই adhesion calcium-independent।”</p>
+<p>গুরুত্বপূর্ণ Ig-CAM examples</p>
+<p>1. N-CAM (Neural Cell Adhesion Molecule)</p>
+<ul><li>বিভিন্ন cell type-এ পাওয়া যায়।</li><li>Neural cells-এ ব্যাপকভাবে প্রকাশিত।</li></ul>
+<p>2. ICAM (Intercellular Adhesion Molecule)</p>
+<ul><li>Vascular endothelial cells-এ প্রকাশিত।</li></ul>
+<p>3. VCAM (Vascular Cell Adhesion Molecule)</p>
+<ul><li>Heterophilic interaction-এর উদাহরণ।</li><li>Integrins-এর সঙ্গে bind করতে পারে।</li></ul>
+<p>Professor বললেন,</p>
+<p>“এখানে একটি গুরুত্বপূর্ণ পার্থক্য আছে। Adhesion molecule-গুলোর binding সবসময় homophilic হয় না। কিছু heterophilic interaction-ও তৈরি করে।”</p>
+<p>Nabila বলল,</p>
+<p>“Sir, heterophilic মানে ভিন্ন ধরনের molecule-এর মধ্যে binding?”</p>
+<p>“হ্যাঁ। যেমন VCAM এবং integrin-এর interaction।”</p>
+</div></section>
+<section class="sec r" id="s6"><h3>Scene 5 — Nectins ও Necls: Adhesion-এর সূচনা</h3><div class="body">
+<p>Professor এবার Ig-CAM superfamily-এর আরেকটি অংশ দেখালেন।</p>
+<p>Nectins and Nectin-like molecules (Necls)</p>
+<p>“এরা Ig-CAM superfamily-এর সদস্য।”</p>
+<p>Gray’s Anatomy-তে উল্লেখিত বৈশিষ্ট্য:</p>
+<ul><li>Nectins এবং Necls-এর extracellular domain-এ Ig-like loops থাকে।</li><li>Nectins homophilic বা heterophilic—দুই ধরনের interaction করতে পারে।</li><li>Nectin-এর intracellular domain, adaptor protein Afadin-এর সঙ্গে যুক্ত হয়।</li><li>Afadin actin cytoskeleton-এর সঙ্গে সংযোগ তৈরি করে।</li></ul>
+<p>Professor একটি diagram আঁকলেন:</p>
+<p>Nectin → Afadin → Actin</p>
+<p>“এখানে Nectin–Afadin complex গুরুত্বপূর্ণ। এটি zonula adherens formation-এর সূচনা করতে পারে। Adjacent cells-এর contact তৈরি হলে cadherins সেই contact site-এ recruit হয়।”</p>
+<p>Amrita বলল,</p>
+<p>“তাহলে nectin প্রথমে contact তৈরি করতে সাহায্য করে, তারপর cadherin এসে adhesion আরও শক্তিশালী করে?”</p>
+<p>“Cultured cells-এ এমন initiation sequence দেখা যায়—Gray’s Anatomy এই বিষয়টি উল্লেখ করেছে।”</p>
+<p>Professor আরও বললেন,</p>
+<p>“Necls-এর কাজ শুধু adhesion নয়। Axon–glial interaction, Schwann cell differentiation এবং myelination-এর মতো cellular function-এর সঙ্গেও এদের সম্পর্ক রয়েছে।”</p>
+<p>Adi খাতায় লিখল—</p>
+<p>Necl → Neural and glial interactions.</p>
+</div></section>
+<section class="sec r" id="s7"><h3>Scene 6 — Integrins: Cell এবং Extracellular Matrix-এর সেতু</h3><div class="body">
+<p>এবার Professor board-এর মাঝখানে বড় করে লিখলেন—</p>
+<p>INTEGRINS</p>
+<p>“এবার আজকের সবচেয়ে গুরুত্বপূর্ণ adhesion molecule family-গুলোর একটি।”</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption></figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/DSnhA3atGx4ukjtGiAN4UAQQRFZVFmaZ8upeHF3HJ-lNFFoH7BgjcRgFC1W5HKJUj6QlV2odj8NeLgsm-WwkDpF_z1KOyn5-x33eK4ht284uodia7ji9SHw4u7X3Ge77ECIKL9ld1mcNILPY641q_dFk68W2YJGnDggFFjn6Uo4RMCiDSYfrq5WAhht5o8Ic?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=">Image search ↗</a></figure>
+<p>“Integrins cell–extracellular matrix interaction এবং cell–cell interaction—দুটিতেই ভূমিকা রাখে। একই সঙ্গে extracellular signals-কে cytoskeleton এবং intracellular signalling pathway-এর সঙ্গে যুক্ত করে।”</p>
+<p>Structure</p>
+<p>Integrins হলো α এবং β subunits দিয়ে তৈরি transmembrane heterodimers।</p>
+<ul><li>একটি α-subunit</li><li>একটি β-subunit</li><li>Non-covalent interaction-এর মাধ্যমে যুক্ত থাকে।</li></ul>
+<p>Gray’s Anatomy-তে মানুষের ক্ষেত্রে উল্লেখ আছে:</p>
+<ul><li>প্রায় ১৮টি α-subunit subtype</li><li>প্রায় ৮টি β-subunit subtype</li><li>এদের combination থেকে ২৪টি integrin heterodimer</li></ul>
+<p>Professor বললেন,</p>
+<p>“প্রতিটি integrin heterodimer-এর extracellular ligand-binding head থাকে। এর সঙ্গে multidomain segments, transmembrane segments এবং cytoplasmic tails যুক্ত থাকে।”</p>
+<p>Rafi জিজ্ঞেস করল,</p>
+<p>“Sir, Integrin কীভাবে extracellular matrix-কে cell-এর ভিতরের cytoskeleton-এর সঙ্গে যুক্ত করে?”</p>
+<p>Professor উত্তর দিলেন,</p>
+<p>“Integrin-এর extracellular অংশ matrix ligand-এর সঙ্গে bind করে। Intracellular অংশ cytoskeletal adaptor proteins-এর সঙ্গে interaction করে।”</p>
+<p>RGD motif</p>
+<p>Professor board-এ লিখলেন:</p>
+<p>RGD</p>
+<p>Arginine – Glycine – Aspartic acid</p>
+<p>“এই amino-acid sequence-কে RGD motif বলা হয়। Fibronectin, laminin এবং অন্যান্য extracellular matrix proteins-এর মতো target ligand-এ এই motif থাকতে পারে। Integrins-এর extracellular binding head এই motif-কে চিনতে পারে।”</p>
+<p>Adi বলল,</p>
+<p>“তাহলে RGD motif হলো integrin-এর জন্য একটি recognition sequence?”</p>
+<p>“হ্যাঁ, নির্দিষ্ট integrin–ligand interaction-এর ক্ষেত্রে।”</p>
+<p>Integrin activation</p>
+<p>“Extracellular ligand-এর সঙ্গে binding হলে integrin-এর conformation পরিবর্তিত হতে পারে। একে বলা হয় integrin activation।”</p>
+<p>এরপর cytoplasmic side-এ কয়েকটি protein recruit হয়:</p>
+<ul><li>Talin</li><li>Vinculin</li><li>α-actinin</li><li>Kindlins</li></ul>
+<p>Professor বললেন,</p>
+<p>“Talin integrin β-subunit-এর cytoplasmic domain-এর সঙ্গে bind করে এবং integrin activation-এ সাহায্য করে। Vinculin talin-এর সঙ্গে interaction করে। α-actinin actin filaments cross-link করতে পারে। Kindlins-ও talin-এর সঙ্গে কাজ করে integrin activation-এ অংশ নেয়।”</p>
+<p>Adi বলল,</p>
+<p>“তাহলে integrin বাইরের matrix থেকে signal নিয়ে ভিতরের actin cytoskeleton-এ পৌঁছে দিতে পারে?”</p>
+<p>“ঠিক তাই।”</p>
+<p>Bidirectional signalling</p>
+<p>Professor এবার দুটি arrow আঁকলেন।</p>
+<ul><li>Outside-in signalling: Extracellular environment থেকে cell-এর ভিতরে signal।</li><li>Inside-out signalling: Intracellular environment থেকে integrin-এর activity নিয়ন্ত্রণ।</li></ul>
+<p>“Integrins bidirectional signalling করতে পারে। এই signal transduction cell migration, proliferation, survival এবং gene expression-এর মতো cellular activity-কে প্রভাবিত করে।”</p>
+<p>এই protein complex-এর সঙ্গে Focal Adhesion Kinase (FAK)-এর মতো protein kinase-ও যুক্ত হতে পারে।</p>
+<p>Amrita বলল,</p>
+<p>“Sir, তাহলে integrin শুধু mechanical attachment নয়; signalling-এরও অংশ?”</p>
+<p>Professor বললেন,</p>
+<p>“একদম। এটাই integrin-এর বিশেষ গুরুত্ব।”</p>
+</div></section>
+<section class="sec r" id="s8"><h3>Scene 7 — Leukocyte Homing: Selectin থেকে Integrin</h3><div class="body">
+<p>Professor আবার আগের blood vessel diagram-এ ফিরে গেলেন।</p>
+<p>“এখন Selectin এবং Integrin-এর কাজ একসঙ্গে বোঝা যাক।”</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>ステロイドやCushing症候群で白血球が増加する理由 - Things in the closet</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/a2Gx3s_z-OtFT59grTTnpLHR1abWtj9scNER9iGHA24fdz4Wi7Le385c5oElH0Wdu8AP_U57jCBYm84azyX_qi_hM2VcvuyUYsWTHc0J01FgxvZ8JECxOrA8YrIhYWFMRfStFRGCyv9frFvuWhsri56Ce1JPGaf0E8j3q8aTKHs5wJp3qgVVxKM_LAIQD6Xv?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=%E3%82%B9%E3%83%86%E3%83%AD%E3%82%A4%E3%83%89%E3%82%84Cushing%E7%97%87%E5%80%99%E7%BE%A4%E3%81%A7%E7%99%BD%E8%A1%80%E7%90%83%E3%81%8C%E5%A2%97%E5%8A%A0%E3%81%99%E3%82%8B%E7%90%86%E7%94%B1%20-%20Things%20in%20the%20closet">Image search ↗</a></figure>
+<p>Leukocyte homing-এর দুটি পর্যায়:</p>
+<p>প্রথম পর্যায় — Selectin phase</p>
+<ul><li>Leukocyte-এর surface-এ carbohydrate ligands থাকে।</li><li>এগুলো endothelial cells-এর selectins-এর সঙ্গে interaction করে।</li><li>Adhesion তুলনামূলকভাবে loose থাকে।</li></ul>
+<p>দ্বিতীয় পর্যায় — Integrin phase</p>
+<ul><li>Integrin-mediated adhesion শক্তিশালী হয়।</li><li>Leukocyte endothelial surface-এর সঙ্গে firm adhesion তৈরি করতে পারে।</li><li>এরপর transendothelial migration-এর মাধ্যমে extravascular space-এ প্রবেশ করতে পারে।</li><li>Ig-CAM superfamily-এর adhesion molecules-ও এই প্রক্রিয়ায় সহযোগিতা করে।</li></ul>
+<p>Professor বললেন,</p>
+<p>“এই প্রক্রিয়াকে মনে রাখবে—প্রথমে selectin-mediated interaction, তারপর integrin-mediated stronger adhesion।”</p>
+<p>Samin বলল,</p>
+<p>“Sir, thymus-derived T cells lymph nodes-এ পৌঁছানোর ক্ষেত্রেও homing গুরুত্বপূর্ণ?”</p>
+<p>“হ্যাঁ। Gray’s Anatomy-তে lymph node homing-এর প্রসঙ্গেও এই প্রক্রিয়া উল্লেখ করা হয়েছে।”</p>
+<p>Adi খাতায় লিখল—</p>
+<p>Selectin = Initial loose adhesion</p>
+<p>Integrin = Strong adhesion and migration support</p>
+<p>Professor বললেন,</p>
+<p>“এখন তোমরা বুঝতে পারছ, adhesion molecules শুধু tissue-কে একত্রে ধরে রাখে না। Immune cells কোথায় যাবে, কীভাবে যাবে—সেটিও নিয়ন্ত্রণে অংশ নেয়।”</p>
+</div></section>
+<section class="sec r" id="s9"><h3>Scene 8 — Integrin-এর Clinical Connection</h3><div class="body">
+<p>Professor শেষ slide-এ কয়েকটি disease-এর নাম দেখালেন।</p>
+<p>Integrin বা integrin regulator-এর mutation-এর সঙ্গে সম্পর্কিত কিছু disorder:</p>
+<ul><li>Glanzmann’s thrombasthenia: Integrin β3 subunit-এর mutation-এর সঙ্গে সম্পর্কিত।</li><li>Leukocyte adhesion deficiency type I: Integrin β2 subunit-এর mutation-এর সঙ্গে সম্পর্কিত।</li><li>Leukocyte adhesion deficiency type III: Kindlin-3-এর mutation-এর সঙ্গে সম্পর্কিত।</li><li>কিছু skin disease: Kindlin-1 এবং integrin α2, α6 ও β3 subunit-এর mutation-এর সঙ্গে সম্পর্কিত।</li></ul>
+<p>Professor বললেন,</p>
+<p>“Integrins leukocyte homing-এর পাশাপাশি tumour progression এবং metastasis-এর সঙ্গেও সম্পর্কিত।”</p>
+<p>Amrita বলল,</p>
+<p>“Sir, adhesion molecule-এর mutation হলে tissue integrity বা cell migration—দুটিই প্রভাবিত হতে পারে?”</p>
+<p>“হ্যাঁ। কোন molecule এবং কোন tissue আক্রান্ত হয়েছে, তার ওপর clinical manifestation নির্ভর করবে।”</p>
+</div></section>
+<section class="sec r" id="s10"><h3>Scene 9 — Library Group Study: পাঁচটি পরিবারের পার্থক্য</h3><div class="body">
+<p>বিকেল ৫টা ২০।</p>
+<p>Library-তে group study চলছে।</p>
+<p>Nabila বলল,</p>
+<p>“আজকের topic-এ এতগুলো নাম! Cadherin, Selectin, Ig-CAM, Nectin, Integrin—সব গুলিয়ে যাচ্ছে।”</p>
+<p>Adi একটি কাগজে summary table তৈরি করল।</p>
+<div class="tw"><table><thead><tr><th>Molecule</th><th>Calcium dependence</th><th>প্রধান কাজ/বৈশিষ্ট্য</th></tr></thead><tbody><tr><td>Cadherins</td><td>Dependent</td><td>Homophilic cell–cell adhesion</td></tr><tr><td>Selectins</td><td>Dependent</td><td>Carbohydrate binding; leukocyte homing</td></tr><tr><td>Ig-CAMs</td><td>Independent</td><td>Cell adhesion; homophilic বা heterophilic interaction</td></tr><tr><td>Nectins</td><td>Independent</td><td>Adhesion; Afadin-এর মাধ্যমে actin linkage</td></tr><tr><td>Integrins</td><td>Independent</td><td>Cell–ECM interaction; bidirectional signalling</td></tr></tbody></table></div>
+<p>Rafi বলল,</p>
+<p>“Cadherin-এর trans আর cis interaction আবার বল তো।”</p>
+<p>Amrita উত্তর দিল,</p>
+<p>“Trans—দুইটি adjacent cell-এর cadherin-এর মধ্যে interaction। Cis—একই cell membrane-এর মধ্যে cadherin clustering।”</p>
+<p>Samin জিজ্ঞেস করল,</p>
+<p>“RGD motif?”</p>
+<p>Adi বলল,</p>
+<p>“Arginine–Glycine–Aspartic acid। Fibronectin এবং laminin-এর মতো ECM ligand-এ পাওয়া যেতে পারে।”</p>
+<p>Nabila বলল,</p>
+<p>“Leukocyte homing?”</p>
+<p>Amrita উত্তর দিল,</p>
+<p>“প্রথমে selectin phase—loose adhesion। পরে integrin phase—strong adhesion এবং transendothelial migration।”</p>
+<p>Rafi এবার হেসে বলল,</p>
+<p>“তোমরা দুজন মিলে পড়লে আমাদের আর বই খুলতে হবে না মনে হচ্ছে!”</p>
+<p>Adi বলল,</p>
+<p>“বই খুলতেই হবে। না খুললে তো Gray’s Anatomy শেষ হবে না।”</p>
+<p>Amrita মৃদু হেসে বলল,</p>
+<p>“আর আমরা শেষ না করে উঠবও না।”</p>
+<p>Adi একটু থেমে তার দিকে তাকাল।</p>
+<p>“একসঙ্গে?”</p>
+<p>Amrita এবার আর চোখ সরাল না।</p>
+<p>“হ্যাঁ। একসঙ্গে।”</p>
+</div></section>
+<section class="sec r" id="s11"><h3>Scene 10 — Anatomy শেষ হয় না, সন্ধ্যাও থামে না</h3><div class="body">
+<p>লাইব্রেরি থেকে বেরোতে বেরোতে সন্ধ্যা হয়ে গেছে।</p>
+<p>Medical College-এর রাস্তার পাশে কৃষ্ণচূড়া গাছের নিচে Adi আর Amrita একটু ধীরে হাঁটছিল। বাকিরা সামনে চলে গেছে।</p>
+<p>Amrita বলল,</p>
+<p>“জানিস, আজকের topic-টা আমার ভালো লেগেছে।”</p>
+<p>“কোনটা? Cadherin?”</p>
+<p>“না রে। Integrin। বাইরে থেকে signal আসে, আবার ভিতর থেকেও response যায়। একটা connection দুই দিকেই কাজ করতে পারে।”</p>
+<p>Adi হেসে বলল,</p>
+<p>“তুই anatomy পড়তে পড়তেও philosophy খুঁজে পাস!”</p>
+<p>“সবকিছুর মধ্যে meaning থাকে। শুধু বুঝতে জানতে হয়।”</p>
+<p>কিছুক্ষণ নীরবতা।</p>
+<p>তারপর Amrita বলল,</p>
+<p>“আমরা যদি কোনোদিন খুব বড় doctor হই, তুই কী হতে চাস?”</p>
+<p>Adi একটু ভেবে বলল,</p>
+<p>“এমন doctor, যার কাছে রোগী শুধু একটা diagnosis নয়। আর এমন মানুষ, যে নিজের শেখা জিনিস অন্যকে বুঝিয়ে দিতে পারে।”</p>
+<p>“আর আমি চাই, আমরা যেন কখনো একে অপরকে ছোট করে না দেখি। ভুল করলে ধরিয়ে দেবি, কিন্তু ছেড়ে যাবি না।”</p>
+<p>Adi তার দিকে তাকাল।</p>
+<p>“তুই ভুল করলে ধরিয়ে দেব। কিন্তু ছেড়ে যাওয়ার কথা বলছিস কেন?”</p>
+<p>Amrita কিছু বলল না। শুধু হাঁটার গতি একটু কমিয়ে দিল।</p>
+<p>সেদিন তারা দুজনেই জানত—তাদের সম্পর্কের নাম এখনো নির্দিষ্ট নয়। কিন্তু Anatomy-র প্রতিটি নতুন অধ্যায়ের সঙ্গে তাদের বন্ধুত্বও যেন আরও দৃঢ় হচ্ছে।</p>
+<p>পরের দিন তাদের অপেক্ষায় থাকবে আরও কঠিন একটি বিষয়—</p>
+<p>Specialized Intercellular Junctions.</p>
+<p>এবার শুধু cell-কে cell-এর সঙ্গে যুক্ত করা নয়; কোন junction কীভাবে barrier তৈরি করে, mechanical strength দেয়, basement membrane-এর সঙ্গে cell-কে anchor করে, অথবা adjacent cells-এর মধ্যে communication ঘটায়—সব জানতে হবে।</p>
+</div></section>
+<section class="sec r" id="s12"><h3>Episode 21 — Learning Check</h3><div class="body">
+<p>বন্ধু, নিজের বোঝাপড়া যাচাই করো:</p>
+<ul><li>Cadherin-এর trans-interaction এবং cis-interaction-এর পার্থক্য কী?</li><li>Selectin-এর Carbohydrate Recognition Domain (CRD) কী চিনে bind করে?</li><li>Integrin-এর RGD-binding motif-এর পূর্ণরূপ কী?</li><li>Leukocyte homing-এ Selectin phase-এর পর কোন phase আসে?</li><li>Nectin-এর intracellular adaptor protein-এর নাম কী?</li></ul>
+<p>উত্তর:</p>
+<ul><li>Trans = adjacent cells-এর cadherin-এর interaction; cis = একই membrane-এ cadherin clustering।</li><li>নির্দিষ্ট oligosaccharide।</li><li>Arginine–Glycine–Aspartic acid।</li><li>Integrin phase।</li><li>Afadin।</li></ul>
+</div></section>
+<section class="sec r" id="s13"><h3>Source verification ও progress ledger</h3><div class="body">
+<p>আজকের পড়া শেষ হয়েছে:</p>
+<ul><li>Page 63–64: Cell Adhesion Molecules ও Cadherins</li><li>Page 63–64: Selectins</li><li>Page 65–66: Ig-CAMs, Nectins ও Necls</li><li>Page 65–67: Integrins, integrin activation, bidirectional signalling এবং leukocyte homing</li><li>Page 67: Integrin-related clinical correlations</li></ul>
+<p>পরবর্তী পর্বে: Tight junctions, Zonula adherens, Desmosomes, Hemidesmosomes, Focal adhesion plaques এবং Gap junctions—প্রতিটির molecular structure, cytoskeletal attachment, function ও clinical significance</p>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-020.html">← Episode 20</a><a href="index.html">সব পর্ব</a><a href="episode-022.html">Episode 22 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">Episode 21 — The Language of Cellular Attachment</a><a href="#s2">Scene 1 — Anatomy Department-এর নতুন ক্লাস</a><a href="#s3">Scene 2 — Cadherins: একই পরিচয়ের দুই কোষ</a><a href="#s4">Scene 3 — Selectins: রক্তের ভেতরে চলমান কোষকে থামানো</a><a href="#s5">Scene 4 — Ig-CAMs: Immunoglobulin-like Adhesion Molecules</a><a href="#s6">Scene 5 — Nectins ও Necls: Adhesion-এর সূচনা</a><a href="#s7">Scene 6 — Integrins: Cell এবং Extracellular Matrix-এর সেতু</a><a href="#s8">Scene 7 — Leukocyte Homing: Selectin থেকে Integrin</a><a href="#s9">Scene 8 — Integrin-এর Clinical Connection</a><a href="#s10">Scene 9 — Library Group Study: পাঁচটি পরিবারের পার্থক্য</a><a href="#s11">Scene 10 — Anatomy শেষ হয় না, সন্ধ্যাও থামে না</a><a href="#s12">Episode 21 — Learning Check</a><a href="#s13">Source verification ও progress ledger</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

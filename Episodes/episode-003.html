@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 003 · কোষের ডাকঘর ও গন্তব্যের ঠিকানা</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 003">EPISODE 003</h1>
+  <div class="ttl">কোষের ডাকঘর ও গন্তব্যের ঠিকানা</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">003</div></div>
+    <div class="face b"><div class="t2">কোষের ডাকঘর ও গন্তব্যের ঠিকানা</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>Episode 3 — কোষের ডাকঘর ও গন্তব্যের ঠিকানা</h3><div class="body">
+<p>Gray’s Anatomy, 41st Edition · Chapter 1: Basic Structure and Function of Cells · পৃষ্ঠা ৩৬–৩৮</p>
+</div></section>
+<section class="sec r" id="s2"><h3>১. আগের আলোচনার অসমাপ্ত সূত্র</h3><div class="body">
+<p>ঢাকা মেডিকেল কলেজের লাইব্রেরি। বৃষ্টির পর জানালার কাচে ছোট ছোট জলবিন্দু জমে আছে। আদির সামনে খোলা নোটবুক, আর পাশে রাখা Gray’s Anatomy।</p>
+<p>আমৃতা এসে বসতেই আদি বলল,</p>
+<p>— নমস্কার। আজকে কি সরাসরি Golgi apparatus শুরু করা যাবে?</p>
+<p>— শুরু করা যাবে। তবে তার আগে আগের আলোচনার সঙ্গে সম্পর্কিত দুটি বিষয় বাকি আছে। সেগুলো বাদ দিলে কোষের কাজের কয়েকটি গুরুত্বপূর্ণ দিক অসম্পূর্ণ থেকে যাবে।</p>
+<p>আদি কলম হাতে নিল।</p>
+<p>— ঠিক আছে। আজ আর কোনো অংশ পালাতে পারবে না।</p>
+<p>আমৃতা পৃষ্ঠা ৩৬ খুলে বলল,</p>
+<p>— প্রথম বিষয়টি Glycocalyx-এর কাজ নিয়ে।</p>
+</div></section>
+<section class="sec r" id="s3"><h3>Glycocalyx: শুধু পরিচয় নয়, সুরক্ষাও</h3><div class="body">
+<p>Glycocalyx শুধু কোষের পরিচয় বহন করে না; tissue-এর structural integrity বজায় রাখতেও গুরুত্বপূর্ণ ভূমিকা রাখে। এটি বিভিন্ন dynamic cellular process-এ অংশ নেয়।</p>
+<p>উদাহরণ হিসেবে:</p>
+<ul><li>এটি vascular permeability barrier হিসেবে কাজ করতে পারে।</li><li>এটি fluid shear stress-কে endothelial cell-এর cytoskeleton-এ পৌঁছে দিতে পারে। এই প্রক্রিয়াকে mechanotransduction-এর সঙ্গে সম্পর্কিত করে দেখা যায়।</li></ul>
+<p>বড় রক্তনালির endothelial surface-এর glycocalyx নষ্ট হয়ে গেলে inflammation শুরু হওয়ার আগেই তার পরিবর্তন দেখা দিতে পারে। এই inflammation atheromatosis-এর একটি conditioning factor।</p>
+<p>Atheromatosis বলতে vascular wall-এ cholesterol-এর মতো পদার্থ জমে এমন অবস্থা তৈরি হওয়াকে বোঝায়, যার ফলে vascular lumen আংশিক অথবা সম্পূর্ণভাবে obstructed হতে পারে।</p>
+<p>আদি লিখল:</p>
+<p>Glycocalyx → vascular permeability barrier + fluid shear stress transmission + tissue integrity.</p>
+<p>— অর্থাৎ glycocalyx নষ্ট হওয়া শুধু কোষের বাইরের আবরণ হারানো নয়; vascular function-এর জন্যও গুরুত্বপূর্ণ?</p>
+<p>— ঠিক তাই। এবার দ্বিতীয় বিষয়টি দেখুন।</p>
+</div></section>
+<section class="sec r" id="s4"><h3>siRNA: Protein synthesis বন্ধ করার সংকেত</h3><div class="body">
+<p>কোষে protein synthesis নিয়ন্ত্রণ করার একটি পদ্ধতি হলো small interfering RNA বা silencing RNA—সংক্ষেপে siRNA।</p>
+<p>এই RNA molecule সাধারণত ২০–২৫টি nucleotide দীর্ঘ হয়।</p>
+<p>এরা protein-এর সঙ্গে complex তৈরি করে নির্দিষ্ট mRNA molecule-এর সঙ্গে যুক্ত হয়। এই সংযোগ ঘটে complementary nucleotide sequence-এর মাধ্যমে।</p>
+<p>এরপর দুটি সম্ভাব্য ঘটনা ঘটতে পারে:</p>
+<ul><li>Enzymatic destruction-এর মাধ্যমে সংশ্লিষ্ট mRNA ধ্বংস হয়ে যায়।</li><li>অথবা ribosome-এর mRNA বরাবর চলাচল বাধাগ্রস্ত হয়।</li></ul>
+<p>ফলে ওই mRNA-তে encoded protein আর তৈরি হতে পারে না।</p>
+<p>siRNA-এর স্বাভাবিক কাজের মধ্যে antiviral অথবা অন্যান্য protective effect থাকতে পারে। পাশাপাশি disease-related gene-এর expression বন্ধ করার জন্য artificial siRNA-কে therapeutic tool হিসেবে ব্যবহারের সম্ভাবনাও রয়েছে।</p>
+<p>আদি একটু থেমে বলল,</p>
+<p>— তাহলে mRNA-তে তথ্য থাকলেও siRNA সেই তথ্য অনুযায়ী protein তৈরি হতে বাধা দিতে পারে?</p>
+<p>— হ্যাঁ। মনে রাখবেন, protein synthesis-এর জন্য শুধু mRNA থাকলেই হবে না; ribosome-কে সেটি translate করার সুযোগও থাকতে হবে।</p>
+<p>আদি নোটে লিখল:</p>
+<p>siRNA: 20–25 nucleotides → complementary mRNA binding → mRNA destruction অথবা ribosome movement inhibition → protein synthesis suppression.</p>
+</div></section>
+<section class="sec r" id="s5"><h3>২. Golgi apparatus: কোষের ভেতরের সাজানো ব্যবস্থা</h3><div class="body">
+<p>আমৃতা এবার পরের heading-এ আঙুল রাখল।</p>
+<p>Golgi apparatus (Golgi complex)</p>
+<p>— এবার বলুন তো, RER-এ তৈরি protein কোথায় যায়?</p>
+<p>আদি বলল,</p>
+<p>— Golgi apparatus-এ। সেখানে protein-গুলো modify হয়, তারপর নির্দিষ্ট জায়গায় পাঠানো হয়।</p>
+<p>— ভালো। কিন্তু Golgi-কে শুধু protein পাঠানোর জায়গা ভাবলে ভুল হবে। এর গঠন এবং কাজ দুটোই বুঝতে হবে।</p>
+</div></section>
+<section class="sec r" id="s6"><h3>অবস্থান ও উপস্থিতি</h3><div class="body">
+<p>Golgi apparatus হলো একটি স্বতন্ত্র cytomembrane system। এটি সাধারণত nucleus এবং centrosome-এর কাছাকাছি অবস্থান করে।</p>
+<p>Secretory cell-এ এটি বিশেষভাবে prominent বা সুগঠিত থাকে।</p>
+<p>Silver অথবা অন্যান্য metallic salt দিয়ে stain করলে Golgi apparatus-কে দৃশ্যমান করা যায়।</p>
+<p>আদি নিজের খাতায় nucleus-এর পাশে কয়েকটি বাঁকানো থলির মতো গঠন আঁকল।</p>
+<p>— দেখতে তো কয়েকটি flattened sac একটার ওপর একটা সাজানো মনে হচ্ছে।</p>
+<p>— সেটাই এর ultrastructural organization-এর একটি গুরুত্বপূর্ণ বৈশিষ্ট্য।</p>
+</div></section>
+<section class="sec r" id="s7"><h3>Golgi apparatus-এর গঠন</h3><div class="body">
+<p>Electron microscope-এ Golgi apparatus-কে একটি continuous ribbon-like structure হিসেবে দেখা যায়।</p>
+<p>এর মধ্যে থাকে:</p>
+<ul><li>কয়েকটি flattened membranous cisternae-এর stack।</li><li>Cisternae-এর চারপাশে vesicle-এর cluster।</li><li>বিভিন্ন cisterna-তে ভিন্ন enzymatic content এবং activity।</li></ul>
+<p>Golgi stack-এর দুটি গুরুত্বপূর্ণ face রয়েছে:</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>The Golgi Apparatus: MCAT Breakdown of Structure &amp; Function — King of the Curve</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/bwOi982CwS-5ULDk6sF-LZBiyVzLfFGFBA3Td45vdvrmgo-VhEdyVWrElQayYW2J-8fshZ5UdBn0EZ9RyLg-woTIwbxWHhYwag5w_5jFiQpNt5anWzv5Gaiof9hK0fAj9_vCe7YsMzYbr9FIfvSimFUVEWUTDdhu_DG_fLBEnSMq3bwIt3kcJ6v3XDNtRwQt?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=The%20Golgi%20Apparatus%3A%20MCAT%20Breakdown%20of%20Structure%20%26%20Function%20%E2%80%94%20King%20of%20the%20Curve">Image search ↗</a></figure>
+<p>cis-face — Entry or forming surface</p>
+<p>এটি Golgi stack-এর convex surface। Rough endoplasmic reticulum থেকে আসা ছোট transport vesicle এখানে এসে যুক্ত হয়।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Vector Illustration of Golgi apparatus structure</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/cwNNIWOrxxaGAMmOCKj07k5-Pnb7taK5KqXvZbkDfoWD73jMtR8LkZwnewwN8XCctUmqVuqoN5IFRE8amLn5h8A27PN3Nb26JRwugRrMfmwTqlMSP2JyzL4DkqBEYjyvsN17uEPVB-DqtWVVKQ-lwa9XivBNAwGeFsGq3Ad__g2eNjbvild8QF1TcWcKPcm9?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Vector%20Illustration%20of%20Golgi%20apparatus%20structure">Image search ↗</a></figure>
+<p>trans-face — Exit or condensing surface</p>
+<p>এটি Golgi stack-এর concave surface। এখান থেকে তুলনামূলক বড় vesicle তৈরি হয়ে কোষের অন্যান্য স্থানে যায়।</p>
+<p>আদি বলল,</p>
+<p>— তাহলে RER থেকে আসা vesicle প্রথমে cis-face-এ প্রবেশ করে, তারপর একের পর এক cisterna অতিক্রম করে trans-face-এ পৌঁছায়?</p>
+<p>— একদম। এবার ধাপগুলো ভালো করে লিখুন।</p>
+</div></section>
+<section class="sec r" id="s8"><h3>Golgi stack-এর মধ্য দিয়ে protein-এর যাত্রা</h3><div class="body">
+<p>1. Rough endoplasmic reticulum থেকে ছোট transport vesicle তৈরি হয়।</p>
+<p>2. এই vesicle Golgi stack-এর convex cis-face-এ পৌঁছায়।</p>
+<p>3. Vesicle-এর membrane Golgi-এর প্রথম cisterna-র membrane-এর সঙ্গে fusion করে।</p>
+<p>4. Protein প্রথম cisterna-তে প্রবেশ করে।</p>
+<p>5. প্রথম cisterna-র প্রান্ত থেকে vesicular budding-এর মাধ্যমে protein পরবর্তী cisterna-তে যায়।</p>
+<p>6. নতুন vesicle পরবর্তী cisterna-র সঙ্গে fusion করে।</p>
+<p>7. একই প্রক্রিয়া medial cisternae অতিক্রম করে চলতে থাকে।</p>
+<p>8. শেষ পর্যন্ত protein concave trans-face-এ পৌঁছায়।</p>
+<p>9. trans-face থেকে বড় vesicle তৈরি হয়, যা cell-এর অন্যান্য অংশে protein পৌঁছে দেয়।</p>
+<p>— অর্থাৎ Golgi-এর cisterna-গুলো একে অপরের মতো নয়। প্রতিটির enzyme এবং activity আলাদা হতে পারে।</p>
+<p>— ঠিক বলেছেন। এই পার্থক্যই protein-এর sequential processing-এ গুরুত্বপূর্ণ।</p>
+</div></section>
+<section class="sec r" id="s9"><h3>৩. cis-Golgi network ও trans-Golgi network</h3><div class="body">
+<p>আমৃতা এবার Golgi stack-এর দুই পাশের network ব্যাখ্যা করতে শুরু করল।</p>
+</div></section>
+<section class="sec r" id="s10"><h3>cis-Golgi network</h3><div class="body">
+<p>cis-Golgi network হলো complex membranous channel-এর একটি অঞ্চল।</p>
+<p>এটি rough endoplasmic reticulum এবং Golgi-এর cis-face-এর মাঝখানে অবস্থান করে।</p>
+<p>এর কাজ হলো:</p>
+<ul><li>Vesicle গ্রহণ করা।</li><li>Vesicle আবার অন্যদিকে পাঠানো।</li><li>RER-এ তৈরি protein-এর মধ্যে উপযুক্ত protein নির্বাচন করা।</li><li>নির্বাচিত protein-কে vesicle-এর মাধ্যমে Golgi stack-এ পাঠানো।</li><li>অনুপযুক্ত protein-কে RER-এ ফিরিয়ে দেওয়া।</li></ul>
+<p>আদি বলল,</p>
+<p>— অর্থাৎ RER থেকে আসা সব protein-ই যে Golgi stack-এ ঢুকবে, তা নয়?</p>
+<p>— ঠিক। cis-Golgi network একটি selection point হিসেবেও কাজ করে।</p>
+</div></section>
+<section class="sec r" id="s11"><h3>trans-Golgi network</h3><div class="body">
+<p>Golgi stack-এর বিপরীত পাশে থাকে trans-Golgi network।</p>
+<p>এটিও interconnected membrane channel-এর একটি অঞ্চল।</p>
+<p>এখানে Golgi cisternae-তে modified হওয়া protein-গুলোকে বাছাই করে vesicle-এর মধ্যে package করা হয়।</p>
+<p>তারপর সেগুলো cell-এর বিভিন্ন স্থানে পাঠানো হয়।</p>
+<p>Protein sorting-এর ক্ষেত্রে trans-Golgi network নির্দিষ্ট amino-acid signal sequence শনাক্ত করে।</p>
+<p>এই signal sequence-এর ভিত্তিতে protein-গুলো উপযুক্ত membrane composition-সহ vesicle-এর মধ্যে আবদ্ধ হয়।</p>
+<p>Vesicle-এর ভেতরের উপাদান পরবর্তী সময়ে আরও পরিবর্তিত হতে পারে। যেমন:</p>
+<ul><li>Exocytosis pathway-তে প্রবেশ করা vesicle থেকে পানি বের করে তার contents আরও concentrated করা যেতে পারে।</li><li>Intracellular sorting pathway-তে lysosome-এর জন্য নির্ধারিত vesicle-এ proton প্রবেশ করিয়ে contents acidified করা যেতে পারে।</li></ul>
+<p>আদি লিখল:</p>
+<p>cis-Golgi network → selection and RER return.</p>
+<p>trans-Golgi network → sorting, packaging and dispatch.</p>
+</div></section>
+<section class="sec r" id="s12"><h3>৪. Golgi apparatus-এর রাসায়নিক পরিবর্তন</h3><div class="body">
+<p>— Protein Golgi-এর ভেতর দিয়ে যাওয়ার সময় কী কী পরিবর্তনের মধ্য দিয়ে যায়?</p>
+<p>আমৃতা বলল,</p>
+<p>— Golgi stack-এর মধ্যে থাকা resident enzyme-গুলো এই কাজ করে। এগুলো RER-এ synthesized হয়।</p>
+<p>Protein-এর ওপর ধারাবাহিকভাবে বিভিন্ন chemical modification ঘটে।</p>
+<p>প্রধান পরিবর্তনগুলো হলো:</p>
+<p>১. Glycosylation</p>
+<p>Glycosyl group-এর পরিবর্তন ঘটে। উদাহরণ:</p>
+<ul><li>Mannose অপসারণ।</li><li>N-acetylglucosamine সংযোজন।</li><li>Sialic acid সংযোজন।</li></ul>
+<p>২. Sulphation</p>
+<p>Glycosaminoglycan-এর সঙ্গে sulphate group যুক্ত হয়।</p>
+<p>৩. Phosphorylation</p>
+<p>Protein-এর সঙ্গে phosphate group যুক্ত হয়।</p>
+<p>এই পরিবর্তনগুলোর কিছু protein এবং lipid-কে cell-এর নির্দিষ্ট গন্তব্যে পাঠানোর signal হিসেবে কাজ করে।</p>
+<p>যেমন:</p>
+<ul><li>Lysosome</li><li>Plasma membrane</li></ul>
+<p>Endoplasmic reticulum-এ তৈরি lipid-ও vesicle-এর মাধ্যমে নির্দিষ্ট স্থানে পৌঁছায় এবং বিভিন্ন vesicle-এর মধ্যে incorporated হয়।</p>
+<p>আদি বলল,</p>
+<p>— তাহলে Golgi শুধু protein-এর ওপর কাজ করে না; lipid-এর transport ও sorting-এর সঙ্গেও যুক্ত?</p>
+<p>— হ্যাঁ। আর এ কারণেই Golgi apparatus-কে একটি গুরুত্বপূর্ণ cytomembrane system বলা হয়।</p>
+</div></section>
+<section class="sec r" id="s13"><h3>Golgi-এর Golgins</h3><div class="body">
+<p>Golgi apparatus-এর চারপাশে একটি fibrillar matrix থাকে, যা Golgi structure-কে স্থিতিশীল রাখতে সাহায্য করে।</p>
+<p>এই matrix তৈরিতে ভূমিকা রাখে Golgins।</p>
+<p>Golgins হলো দীর্ঘ coiled-coil protein, যা cisternal membrane-এর cytoplasmic surface-এর সঙ্গে যুক্ত থাকে।</p>
+<p>এদের কাজ:</p>
+<ul><li>Golgi apparatus-কে ঘিরে fibrillar matrix তৈরি করা।</li><li>Golgi apparatus-কে stabilize করা।</li><li>Vesicle trafficking-এ ভূমিকা রাখা।</li></ul>
+</div></section>
+<section class="sec r" id="s14"><h3>Golgi apparatus-এর সামগ্রিক কাজ</h3><div class="body">
+<p>আমৃতা আদিকে দিয়ে তিনটি বিষয় একসঙ্গে লিখিয়ে নিল:</p>
+<ul><li>Secretory pathway-তে anterograde এবং retrograde protein ও lipid flow-এর মধ্যে সংযোগ স্থাপন।</li><li>Protein ও lipid glycosylation-এর স্থান হিসেবে কাজ করা।</li><li>Signalling ও sorting protein-এর binding-এর জন্য membrane platform প্রদান করা।</li></ul>
+<p>— এই তিনটি কাজ মনে রাখবেন। শুধু protein modification লিখলে Golgi-এর সম্পূর্ণ ভূমিকা বোঝানো হবে না।</p>
+</div></section>
+<section class="sec r" id="s15"><h3>৫. RER ও Golgi-এর মধ্যে vesicle traffic</h3><div class="body">
+<p>আদি বলল,</p>
+<p>— RER থেকে Golgi-তে protein যায়। কিন্তু এই যাত্রা কি শুধু একদিকেই হয়?</p>
+<p>— না। Endoplasmic reticulum এবং Golgi apparatus-এর মধ্যে traffic bidirectional।</p>
+<p>অর্থাৎ vesicle-এর মাধ্যমে দুই দিকেই পদার্থ চলাচল করতে পারে।</p>
+<p>Vesicle donor site থেকে bud করে, target site-এ tether করে এবং শেষে fusion করে।</p>
+<p>এই প্রক্রিয়ার সঙ্গে Golgi apparatus-এর আরও একটি গুরুত্বপূর্ণ বিষয় যুক্ত—vesicle trafficking-এর regulation।</p>
+<p>আদি বলল,</p>
+<p>— তাহলে Golgi-কে শুধু receiving station বললে ভুল হবে। এটি receiving, processing এবং dispatch—তিনটিই করে।</p>
+<p>আমৃতা মৃদু হেসে বলল,</p>
+<p>— এবার আপনার আঁকা ছবিটা দেখলে মনে হচ্ছে আপনি বিষয়টা বুঝেছেন।</p>
+<p>আদি নিজের আঁকা diagram-এর নিচে লিখল:</p>
+<p>RER ↔ Golgi apparatus: bidirectional vesicular traffic.</p>
+</div></section>
+<section class="sec r" id="s16"><h3>৬. Exocytic pathway: কোষের বাইরে পণ্য পাঠানো</h3><div class="body">
+<p>এবার আমৃতা পরবর্তী অংশে গেল।</p>
+<p>Exocytic (secretory) pathway</p>
+<p>— Golgi-এর trans-face থেকে vesicle তৈরি হওয়ার পর কী হয়, সেটা এবার বুঝি।</p>
+<p>যেসব পদার্থ cell থেকে বাইরে পাঠানো হবে, সেগুলো ছোট vesicle-এর মাধ্যমে plasma membrane-এ পৌঁছায়।</p>
+<p>এই পদার্থগুলোর মধ্যে রয়েছে:</p>
+<ul><li>Secreted proteins</li><li>Lipids</li><li>Glycoproteins</li><li>Amines-এর মতো small molecules</li><li>অন্যান্য cellular products</li></ul>
+<p>এই vesicle-গুলো Golgi apparatus-এর trans-face থেকে বের হয়।</p>
+<p>Exocytic pathway প্রধানত দুই ধরনের হতে পারে।</p>
+</div></section>
+<section class="sec r" id="s17"><h3>A. Constitutive secretion</h3><div class="body">
+<p>এই pathway-তে transport ও secretion প্রায় অবিরাম চলতে থাকে।</p>
+<p>উদাহরণ হিসেবে plasma cell দ্বারা তৈরি immunoglobulins-এর secretion উল্লেখ করা যায়।</p>
+</div></section>
+<section class="sec r" id="s18"><h3>B. Regulated secretion</h3><div class="body">
+<p>এই pathway-তে secretion external signal দ্বারা নিয়ন্ত্রিত হয়।</p>
+<p>উদাহরণ: autonomic neural stimulation-এর মাধ্যমে salivary secretion নিয়ন্ত্রণ।</p>
+<p>Regulated secretion-এর ক্ষেত্রে secretory product সাময়িকভাবে membrane-bound secretory granule অথবা vesicle-এর মধ্যে জমা থাকে।</p>
+<p>নির্দিষ্ট signal পাওয়ার পর secretion ঘটে।</p>
+</div></section>
+<section class="sec r" id="s19"><h3>Exocytosis কীভাবে হয়?</h3><div class="body">
+<p>Exocytosis-এর সময় secretory vesicle-এর membrane plasma membrane-এর সঙ্গে fusion করে।</p>
+<p>এর ফলে vesicle-এর contents extracellular domain-এ release হয়।</p>
+<p>আদি বলল,</p>
+<p>— অর্থাৎ vesicle-এর membrane plasma membrane-এর অংশ হয়ে যায়, আর ভেতরের পদার্থ বাইরে বেরিয়ে যায়?</p>
+<p>— হ্যাঁ। এবার polarized cell-এর বিষয়টি দেখুন।</p>
+</div></section>
+<section class="sec r" id="s20"><h3>Polarized cell-এ secretion</h3><div class="body">
+<p>Polarized cell-এর উদাহরণ হলো অধিকাংশ epithelial cell।</p>
+<p>এ ধরনের cell-এ exocytosis নির্দিষ্ট plasma membrane domain-এ ঘটে। অনেক ক্ষেত্রে এটি apical plasma membrane দিয়ে হয়।</p>
+<p>তবে বিভিন্ন cell-এ secretion-এর স্থান আলাদা হতে পারে।</p>
+<p>Glandular epithelial cell</p>
+<ul><li>Pancreas-এর মতো ক্ষেত্রে duct lumen-এ secretion হয়।</li><li>Stomach-এর lining-এর মতো ক্ষেত্রে free surface-এ secretion হতে পারে।</li></ul>
+<p>Hepatocyte</p>
+<p>Hepatocyte-এর ক্ষেত্রে secretion-এর দুটি গুরুত্বপূর্ণ দিক রয়েছে।</p>
+<p>1. Bile secretion: Plasma membrane-এর একটি খুব ছোট অঞ্চল bile canaliculus-এর wall তৈরি করে। এই অঞ্চলটি apical plasma membrane এবং এখানে exocrine secretion ঘটে।</p>
+<p>2. Plasma protein secretion: Hepatocyte-এর plasma protein blood stream-এ secreted হয়। এই secretion basolateral surface দিয়ে হয়, যা sinusoids-এর দিকে মুখ করে থাকে।</p>
+<p>আদি এবার diagram-এ একটি hepatocyte আঁকল। একদিকে bile canaliculus, অন্যদিকে sinusoid।</p>
+<p>— তাহলে একই cell-এর secretory product অনুযায়ী secretion-এর দিকও আলাদা হতে পারে?</p>
+<p>— ঠিক তাই। Secretory product-গুলোকে উপযুক্ত vesicle-এ package করার কাজ trans-Golgi network-এ হয়।</p>
+<p>Secretory vesicle যেন সঠিক plasma membrane domain-এ পৌঁছায়, তা নিশ্চিত করতে vesicular membrane protein-এর cytoplasmic tail-এ থাকা sorting sequence ভূমিকা রাখে।</p>
+<p>আদি নোটবুক বন্ধ করতে করতে বলল,</p>
+<p>— আজকে বুঝলাম, RER protein তৈরি করে, Golgi সেটিকে modify ও sort করে, তারপর vesicle নির্দিষ্ট গন্তব্যে পৌঁছে দেয়। কিন্তু এই একই কোষে বাইরে থেকে আসা পদার্থগুলো কীভাবে ভেতরে ঢোকে এবং কোথায় যায়?</p>
+<p>আমৃতা পরের heading-এর দিকে তাকাল।</p>
+<p>Endocytic (internalization) pathway.</p>
+<p>তারপর আদির নোটবুকের পাশে একটি ছোট কাগজ রেখে দিল। সেখানে লেখা:</p>
+<p>Next: Endocytosis — Cell-এর ভেতরে প্রবেশের পথ।</p>
+<p>আদি কাগজটি তুলে রেখে জিজ্ঞেস করল,</p>
+<p>“যে vesicle কোষের বাইরে পদার্থ পাঠায়, তার বিপরীত পথে plasma membrane থেকে প্রবেশ করা পদার্থ কীভাবে lysosome পর্যন্ত পৌঁছায়?”</p>
+</div></section>
+<section class="sec r" id="s21"><h3>Revision notes — পরীক্ষার জন্য</h3><div class="body">
+</div></section>
+<section class="sec r" id="s22"><h3>১. Golgi apparatus-এর গুরুত্বপূর্ণ অংশ</h3><div class="body">
+<div class="tw"><table><thead><tr><th>অংশ</th><th>প্রধান বৈশিষ্ট্য</th></tr></thead><tbody><tr><td>cis-face</td><td>Convex; entry/forming surface</td></tr><tr><td>Medial cisternae</td><td>Sequential processing</td></tr><tr><td>trans-face</td><td>Concave; exit/condensing surface</td></tr><tr><td>cis-Golgi network</td><td>RER থেকে vesicle গ্রহণ, protein selection ও return</td></tr><tr><td>trans-Golgi network</td><td>Protein sorting, packaging ও dispatch</td></tr><tr><td>Golgins</td><td>Golgi stabilization ও vesicle trafficking</td></tr></tbody></table></div>
+</div></section>
+<section class="sec r" id="s23"><h3>২. Golgi-তে chemical modification</h3><div class="body">
+<ul><li>Glycosylation — mannose removal, N-acetylglucosamine ও sialic acid addition।</li><li>Sulphation — glycosaminoglycan-এ sulphate group addition।</li><li>Phosphorylation — phosphate group addition।</li></ul>
+</div></section>
+<section class="sec r" id="s24"><h3>৩. Exocytic pathway</h3><div class="body">
+<div class="tw"><table><thead><tr><th>বৈশিষ্ট্য</th><th>Constitutive</th><th>Regulated</th></tr></thead><tbody><tr><td>Secretion</td><td>প্রায় অবিরাম</td><td>External signal-নির্ভর</td></tr><tr><td>Storage</td><td>সাময়িক storage অপরিহার্য নয়</td><td>Secretory granule/vesicle-এ storage</td></tr><tr><td>উদাহরণ</td><td>Plasma cell-এর immunoglobulin</td><td>Autonomic stimulation-এ salivary secretion</td></tr></tbody></table></div>
+</div></section>
+<section class="sec r" id="s25"><h3>৪. গুরুত্বপূর্ণ সংখ্যাগুলো</h3><div class="body">
+<ul><li>Glycocalyx-এর vascular function আলোচনায় fluid shear stress transmission উল্লেখযোগ্য।</li><li>siRNA: সাধারণত ২০–২৫ nucleotides।</li><li>এই পর্বের source coverage:<ul><li>Page 36: Glycocalyx-এর অতিরিক্ত function এবং siRNA।</li><li>Page 35–38: Golgi apparatus, cis/trans-Golgi networks, Golgins, chemical modifications এবং Exocytic pathway।</li></ul></li><li>Figure 1.5-এর Golgi-related caption-এ থাকা panel A–E, pancreatic β-cell-এর Golgi reconstruction, proinsulin granules এবং সংশ্লিষ্ট tissue-image attribution-ও source-এ পাওয়া গেছে। মূল narrative-এ diagram-এর প্রতিটি visual detail আলাদাভাবে আঁকা হয়নি।</li></ul>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-002.html">← Episode 2</a><a href="index.html">সব পর্ব</a><a href="episode-004.html">Episode 4 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">Episode 3 — কোষের ডাকঘর ও গন্তব্যের ঠিকানা</a><a href="#s2">১. আগের আলোচনার অসমাপ্ত সূত্র</a><a href="#s3">Glycocalyx: শুধু পরিচয় নয়, সুরক্ষাও</a><a href="#s4">siRNA: Protein synthesis বন্ধ করার সংকেত</a><a href="#s5">২. Golgi apparatus: কোষের ভেতরের সাজানো ব্যবস্থা</a><a href="#s6">অবস্থান ও উপস্থিতি</a><a href="#s7">Golgi apparatus-এর গঠন</a><a href="#s8">Golgi stack-এর মধ্য দিয়ে protein-এর যাত্রা</a><a href="#s9">৩. cis-Golgi network ও trans-Golgi network</a><a href="#s10">cis-Golgi network</a><a href="#s11">trans-Golgi network</a><a href="#s12">৪. Golgi apparatus-এর রাসায়নিক পরিবর্তন</a><a href="#s13">Golgi-এর Golgins</a><a href="#s14">Golgi apparatus-এর সামগ্রিক কাজ</a><a href="#s15">৫. RER ও Golgi-এর মধ্যে vesicle traffic</a><a href="#s16">৬. Exocytic pathway: কোষের বাইরে পণ্য পাঠানো</a><a href="#s17">A. Constitutive secretion</a><a href="#s18">B. Regulated secretion</a><a href="#s19">Exocytosis কীভাবে হয়?</a><a href="#s20">Polarized cell-এ secretion</a><a href="#s21">Revision notes — পরীক্ষার জন্য</a><a href="#s22">১. Golgi apparatus-এর গুরুত্বপূর্ণ অংশ</a><a href="#s23">২. Golgi-তে chemical modification</a><a href="#s24">৩. Exocytic pathway</a><a href="#s25">৪. গুরুত্বপূর্ণ সংখ্যাগুলো</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 027 · The Invisible Pathways</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+code.bx{font-family:"Special Elite","Noto Serif Bengali",monospace;font-size:.88em;color:var(--teal);background:rgba(98,211,198,.07);border:1px solid #2c5a58;border-radius:7px;padding:1px 9px;margin:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 027">EPISODE 027</h1>
+  <div class="ttl">The Invisible Pathways</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">027</div></div>
+    <div class="face b"><div class="t2">The Invisible Pathways</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>Gray’s Anatomy: The Adi–Amrita Chronicles</h3><div class="body">
+</div></section>
+<section class="sec r" id="s2"><h3>Episode 27 — The Invisible Pathways</h3><div class="body">
+<p>Dhaka Medical College · Chapter 2: Integrating Cells into Tissues · Page 80–81</p>
+</div></section>
+<section class="sec r" id="s3"><h3>১. সকালের ক্লাস: একটি microscopic layer-এর অসাধারণ ক্ষমতা</h3><div class="body">
+<p>সকাল ৮টা ৩০। Dhaka Medical College-এর Anatomy lecture gallery।</p>
+<p>গতকালের library discussion-এর পর Adi, Amrita, Mou আর Rafi আজ একসঙ্গে বসেছে। Adi-র খাতায় আগের দিনের আঁকা Basement membrane-এর diagram। Amrita সেটার পাশে লিখেছে—Structure determines function.</p>
+<p>ডা. শারমিন ম্যাডাম বোর্ডে লিখলেন:</p>
+<p>FUNCTIONS OF BASAL LAMINA</p>
+<p>ডা. শারমিন: “গতকাল তোমরা Basal lamina-এর molecular architecture পড়েছ। আজ আমরা জানব, এই microscopic structure tissue-এর জন্য কী কী কাজ করে।”</p>
+<p>Adi: “ম্যাডাম, এটি কি শুধু epithelial cells-কে support করে?”</p>
+<p>ডা. শারমিন: “না। এটি একটি structural support-এর চেয়ে অনেক বেশি কিছু। Basal lamina selectively permeable barrier তৈরি করতে পারে, tissue layer-কে anchor ও orientate করে, adjacent tissue-এর polarity ও cell division-কে প্রভাবিত করে, angiogenesis নিয়ন্ত্রণে ভূমিকা রাখে এবং migrating cell processes-এর পথনির্দেশক হতে পারে।”</p>
+<p>ম্যাডাম বোর্ডে পাঁচটি function লিখলেন:</p>
+<ul><li>Selectively permeable barriers</li><li>Anchorage and orientation of tissue layers</li><li>Regulation of tissue polarity, cell division and survival</li><li>Regulation of angiogenesis</li><li>Pathways for cell migration and pathfinding</li></ul>
+<p>Amrita: “ম্যাডাম, তাহলে Basal lamina একই সঙ্গে barrier, anchor এবং signalling environment হিসেবেও কাজ করে?”</p>
+<p>ডা. শারমিন: “খুব ভালোভাবে ধরেছ।”</p>
+</div></section>
+<section class="sec r" id="s4"><h3>২. Selectively permeable barrier: সবকিছুকে যেতে দেওয়া হয় না</h3><div class="body">
+<p>ম্যাডাম kidney-এর একটি diagram দেখালেন।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>PPT - Kidney - External Macro Anatomy PowerPoint Presentation, free download - ID:4207985</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/1FEueaBEl7uUeZCY4HOhEt3SNvC4UK6uzYw0ZXduc0ebjehaUDHmqe_YodE7fu7YDROCTsXoznIKiqZBfDzRbbPV3NgHFQYI6JZKS0iYrwas7P3Upxn7HVE0a95zlQ4pW6PkdALz02Nx6Xj-W9nUr32dGrw-orkrz0iwSef1i9V-Acaokmso7Oy7HnTyPtjy?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=PPT%20-%20Kidney%20-%20External%20Macro%20Anatomy%20PowerPoint%20Presentation%2C%20free%20download%20-%20ID%3A4207985">Image search ↗</a></figure>
+<p>ডা. শারমিন: “Kidney-এর glomerular filter-এ Basal lamina একটি গুরুত্বপূর্ণ selectively permeable barrier।”</p>
+<p>এখানে একটি শব্দ মনে রাখতে হবে:</p>
+<p>Anionic filter</p>
+<p>Basal lamina-এর molecular properties এমন যে এটি filtration barrier-এর selective permeability-তে অংশ নেয়।</p>
+<p>Mou: “অর্থাৎ এটি শুধু একটা physical wall নয়; কোন পদার্থ কতটা সহজে অতিক্রম করবে, সেটার ক্ষেত্রেও ভূমিকা আছে?”</p>
+<p>ডা. শারমিন: “ঠিক। তবে মনে রেখো, glomerular filtration barrier একাধিক উপাদানের সমন্বয়ে গঠিত। Basal lamina তার একটি গুরুত্বপূর্ণ অংশ।”</p>
+<p>Feynman technique</p>
+<p>Adi বলল—</p>
+<p>“একটা ছাঁকনি কল্পনা কর। ছাঁকনির ছিদ্র দিয়ে সবকিছু একইভাবে যেতে পারে না। Basal lamina-র selective barrier function-ও এমনভাবে বোঝা যায়—তবে এটি সাধারণ ছাঁকনি নয়, molecular properties-নির্ভর biological barrier।”</p>
+<p>ম্যাডাম মাথা নাড়লেন।</p>
+<p>“উপমাটি ভালো। কিন্তু filtration-এর সব বৈশিষ্ট্যকে শুধু ছিদ্রের আকার দিয়ে ব্যাখ্যা করবে না।”</p>
+</div></section>
+<section class="sec r" id="s5"><h3>৩. Anchorage and orientation: tissue-কে স্থির ও সঠিকভাবে সাজানো</h3><div class="body">
+<p>ডা. শারমিন: “Basal lamina adjacent tissue layers-কে anchor করে এবং তাদের orientation স্থিতিশীল রাখতে সাহায্য করে।”</p>
+<p>এখানে orientation কথাটির অর্থ শুধু কোনো cell কোন দিকে মুখ করে আছে, তা নয়। Tissue-এর বিভিন্ন অংশের মধ্যে spatial organization বজায় রাখাও এর অন্তর্ভুক্ত।</p>
+<p>Rafi: “ম্যাডাম, তাহলে Basement membrane না থাকলে epithelial sheet-এর organization নষ্ট হতে পারে?”</p>
+<p>ডা. শারমিন: “Basal lamina tissue architecture বজায় রাখতে গুরুত্বপূর্ণ। তবে কোনো একটি structure-এর অনুপস্থিতিতে ঠিক কী পরিবর্তন হবে, তা নির্দিষ্ট tissue ও context-এর ওপর নির্ভর করবে।”</p>
+</div></section>
+<section class="sec r" id="s6"><h3>৪. Adjacent tissue-এর polarity, cell division ও survival</h3><div class="body">
+<p>ম্যাডাম এবার লিখলেন:</p>
+<p>Instructive effects on adjacent tissues</p>
+<p>Basal lamina adjacent tissue-এর ওপর instructive effects প্রয়োগ করতে পারে। এর মাধ্যমে প্রভাবিত হতে পারে:</p>
+<ul><li>Tissue polarity</li><li>Rate of cell division</li><li>Cell survival</li></ul>
+<p>Amrita: “ম্যাডাম, Instructive effect বলতে কি Basal lamina cell-কে কোনো নির্দেশ দেয়?”</p>
+<p>ডা. শারমিন: “এখানে ‘নির্দেশ’ শব্দটি molecular signalling-এর অর্থে ব্যবহার করবে। Basal lamina-এর extracellular matrix components cell-এর behaviour-কে প্রভাবিত করতে পারে। ফলে tissue organization, proliferation এবং survival নিয়ন্ত্রিত হতে পারে।”</p>
+<p>Feynman technique</p>
+<p>Amrita বলল—</p>
+<p>“ধরুন, একটি building-এর floor plan শুধু দেয়াল ধরে রাখে না; কোন ঘর কোথায় থাকবে, চলাচলের পথ কী হবে—সেটাও নির্ধারণ করে। Basal lamina-ও tissue-এর cell-গুলোকে তাদের অবস্থান ও পরিবেশ অনুযায়ী আচরণ করতে সাহায্য করে।”</p>
+<p>ডা. শারমিন: “ভালো analogy। তবে biological instruction chemical ও molecular interaction-এর মাধ্যমে হয়।”</p>
+</div></section>
+<section class="sec r" id="s7"><h3>৫. Angiogenesis: নতুন blood vessel তৈরির নিয়ন্ত্রণ</h3><div class="body">
+<p>ডা. শারমিন: “Basal lamina angiogenesis-ও regulate করতে পারে।”</p>
+<p>Angiogenesis অর্থ নতুন blood vessel গঠনের প্রক্রিয়া।</p>
+<p>ম্যাডাম বোর্ডে একটি সরল চিত্র আঁকলেন।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Endothelial Cell Markers | Antibodies.com</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/OVZsu3nCtRAnFYvZtcZ9kqLI5-F1lbAcpLsl9U9JJxGpF35qv5YeMH1kyVZiyM0OJcfSmYigkpHvEU_dRatlzDiBlIwjofFU6C8EQHwGm9pJHXUf5HuaguxLrSVcWxhHi2FVXasNMPbGtturSaooOxV6mXzXjkoW9O2t-9xCYMympPg43utLrd39y7kmDBqy?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Endothelial%20Cell%20Markers%20%7C%20Antibodies.com">Image search ↗</a></figure>
+<p>Rafi: “ম্যাডাম, blood vessel তৈরি হওয়ার সময় Basal lamina-এর ভূমিকা কী?”</p>
+<p>ডা. শারমিন: “Basal lamina surrounding tissue-এর molecular environment-এর অংশ। এটি angiogenesis-কে প্রভাবিত করতে পারে। তবে মনে রাখবে, angiogenesis শুধু Basal lamina-এর কাজ নয়; বহু cellular ও molecular factor একসঙ্গে কাজ করে।”</p>
+</div></section>
+<section class="sec r" id="s8"><h3>৬. Cell migration এবং pathfinding: চলার পথ দেখানো</h3><div class="body">
+<p>ম্যাডাম এবার peripheral nerve injury-এর একটি diagram দেখালেন।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Frontiers | The Role of c-Jun and Autocrine Signaling Loops in the Control of Repair Schwann Cells and Regeneration</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/k0BYLWpkXGFYYBPyhLML-D2JkXATJpdc2xBp8Yer8ag6zTg39fRy6QmoIae4ikK9m3oifiSwgyu0PFcn20xfHf-eO_61zprvoGtrt9pQJ_YEni6fWdqjY2qmqXAjIdvxmtdg60Gh_q8VbhE-oS4EVMydq9I-rfhS-8cMCwIDxmyHMjDCX8tUqH8SDodrHDNh?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Frontiers%20%7C%20The%20Role%20of%20c-Jun%20and%20Autocrine%20Signaling%20Loops%20in%20the%20Control%20of%20Repair%20Schwann%20Cells%20and%20Regeneration">Image search ↗</a></figure>
+<p>ডা. শারমিন: “Development এবং tissue repair—দুই ক্ষেত্রেই Basal lamina migrating cell processes-এর pathway হিসেবে কাজ করতে পারে।”</p>
+<p>বিশেষ উদাহরণ:</p>
+<ul><li>Growing cell processes-এর migration ও pathfinding</li><li>Development-এর সময় axon-এর outgrowth</li><li>Peripheral nervous system-এ injury-এর পর neuromuscular junction পুনঃপ্রতিষ্ঠা</li></ul>
+<p>Adi: “অর্থাৎ nerve injury-এর পর regenerating axon-কে সঠিক পথে এগোতে সাহায্য করতে পারে?”</p>
+<p>ডা. শারমিন: “হ্যাঁ। Gray’s Anatomy এখানে বিশেষভাবে axon outgrowth এবং neuromuscular junction-এর re-establishment-এর কথা উল্লেখ করেছে।”</p>
+<p>Feynman technique</p>
+<p>Amrita বলল—</p>
+<p>“একটি অন্ধকার ঘরে কাউকে হাঁটতে দিলে সে পথ হারাতে পারে। কিন্তু মেঝেতে যদি নির্দিষ্ট পথের চিহ্ন থাকে, সে সেই পথ ধরে এগোতে পারে। Basal lamina-ও growing cell processes-এর জন্য এমন একটি biological pathway তৈরি করতে পারে।”</p>
+</div></section>
+<section class="sec r" id="s9"><h3>৭. Clinical correlation: Basal lamina-এর thickness পরিবর্তিত হলে</h3><div class="body">
+<p>ম্যাডাম বোর্ডে দুটি condition লিখলেন:</p>
+<ul><li>Glomerulonephritis</li><li>Diabetes</li></ul>
+<p>এই pathological conditions-এ glomerular basal lamina thickening দেখা যেতে পারে।</p>
+<p>Mou: “তাহলে Basal lamina-এর thickness পরিবর্তনও disease-এর সঙ্গে সম্পর্কিত?”</p>
+<p>ডা. শারমিন: “ঠিক। Basal lamina-এর পরিবর্তন tissue pathology-র একটি গুরুত্বপূর্ণ অংশ হতে পারে। তবে শুধু thickening দেখেই কোনো নির্দিষ্ট রোগের diagnosis করা যাবে না।”</p>
+<p>ম্যাডাম আজকের প্রথম অংশ শেষ করলেন।</p>
+<p>“এবার তোমরা Basal lamina-এর structural function থেকে বেরিয়ে আসবে। আমরা শুরু করব এমন একটি tissue group, যার প্রধান বৈশিষ্ট্যই হলো extracellular matrix।”</p>
+</div></section>
+<section class="sec r" id="s10"><h3>৮. নতুন অধ্যায়: Connective and Supporting Tissues</h3><div class="body">
+<p>দুপুর ১১টা ১৫।</p>
+<p>বোর্ডে নতুন heading:</p>
+</div></section>
+<section class="sec r" id="s11"><h3>CONNECTIVE AND SUPPORTING TISSUES</h3><div class="body">
+<p>ডা. শারমিন: “এখন পর্যন্ত আমরা দেখেছি epithelial cells কীভাবে organized sheet তৈরি করে। কিন্তু শরীরের এমন কিছু tissue আছে, যেখানে cells একে অপরের খুব কাছাকাছি থাকে না। বরং তাদের মাঝখানে প্রচুর extracellular material থাকে।”</p>
+<p>তিনি লিখলেন:</p>
+<p>Connective tissues are composed predominantly of extracellular matrix.</p>
+</div></section>
+<section class="sec r" id="s12"><h3>Connective tissue-এর সংজ্ঞা</h3><div class="body">
+<p>Connective tissues হলো সেই tissue, যেগুলো প্রধানত intercellular material বা extracellular matrix (ECM) দিয়ে গঠিত। এই matrix মূলত connective tissue cells দ্বারা secreted হয়।</p>
+<p>এখানে দুটি গুরুত্বপূর্ণ component:</p>
+<ul><li>Fibrous proteins</li><li>Relatively amorphous ground substance</li></ul>
+<p>Connective tissue-এর cells সাধারণত matrix দ্বারা একে অপরের থেকে widely separated থাকে।</p>
+<p>Adi: “ম্যাডাম, তাহলে epithelial tissue-এর সঙ্গে মূল পার্থক্য হলো—epithelium-এ cells closely packed, আর connective tissue-এ cells-এর মাঝে abundant extracellular matrix থাকে?”</p>
+<p>ডা. শারমিন: “এটাই সবচেয়ে সহজ structural distinction। তবে tissue classification করতে গেলে আরও বৈশিষ্ট্য বিবেচনা করতে হবে।”</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>What Is The Makeup Of The Matrix In Connective Tissues - Mugeek Vidalondon</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/lV2OC6Oigy1AwqV6AA22xaOjn8tCqCSXP6fBfRlXF2CZmQOJnewlsXOXAeEZ12WnOd23bUu1HJus-lJpAKRiD3tNBfImxkCeiHTYdkECwTEJObDuAXJX40ppVl_jzkdyAptfdsVI-dul0UTkJzY8tiLnht0wwSjoT4ykCgze44uXTVNiJL8DekJIY98IUFKS?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=What%20Is%20The%20Makeup%20Of%20The%20Matrix%20In%20Connective%20Tissues%20-%20Mugeek%20Vidalondon">Image search ↗</a></figure>
+</div></section>
+<section class="sec r" id="s13"><h3>৯. Extracellular matrix কেন এত গুরুত্বপূর্ণ?</h3><div class="body">
+<p>Connective tissue-এর বিশেষ বৈশিষ্ট্য অনেকাংশে নির্ভর করে তার extracellular matrix-এর composition-এর ওপর।</p>
+<p>Matrix-এর বৈশিষ্ট্যই tissue-এর classification নির্ধারণে গুরুত্বপূর্ণ ভূমিকা রাখে।</p>
+<p>Gray’s Anatomy একটি গুরুত্বপূর্ণ উদাহরণ দিয়েছে:</p>
+<p>Adipose tissue</p>
+<p>কিছু connective tissue-তে শুরুতে matrix : cell ratio বেশি থাকতে পারে, কিন্তু পরবর্তীতে cellular component tissue-তে dominant হয়ে ওঠে। Adipose tissue তার উদাহরণ।</p>
+<p>Mou: “তাহলে সব connective tissue-তে matrix সবসময় cell-এর তুলনায় বেশি থাকবে—এমন নয়?”</p>
+<p>ডা. শারমিন: “ঠিক। Connective tissue-এর defining feature হলো extracellular matrix-এর predominance in its organization, কিন্তু প্রতিটি mature tissue-তে matrix এবং cell-এর অনুপাত এক থাকবে না।”</p>
+</div></section>
+<section class="sec r" id="s14"><h3>১০. Connective tissue-এর embryological origin</h3><div class="body">
+<p>Connective tissues প্রধানত embryonic mesenchyme থেকে তৈরি হয়।</p>
+<p>তবে head region-এ অনেক connective tissue-এর origin হলো:</p>
+<p>Neural crest</p>
+<p>Rafi: “ম্যাডাম, তাহলে head-এর connective tissue-কে সবসময় mesoderm-derived ধরে নেওয়া যাবে না?”</p>
+<p>ডা. শারমিন: “না। Gray’s Anatomy এখানে বিশেষভাবে উল্লেখ করেছে যে head region-এর connective tissue-এর একটি বড় অংশ neural crest থেকে আসে।”</p>
+</div></section>
+<section class="sec r" id="s15"><h3>১১. Connective tissue-এর কাজ: Structural, defensive, trophic ও morphogenetic</h3><div class="body">
+<p>ম্যাডাম চারটি শব্দ লিখলেন।</p>
+<div class="tw"><table><thead><tr><th>Function</th><th>মূল ধারণা</th></tr></thead><tbody><tr><td>Structural</td><td>Mechanical support ও tissue architecture</td></tr><tr><td>Defensive</td><td>Cellular components-এর মাধ্যমে protection</td></tr><tr><td>Trophic</td><td>আশপাশের tissue-এর growth ও maintenance-এ প্রভাব</td></tr><tr><td>Morphogenetic</td><td>Surrounding tissue-এর growth ও differentiation সংগঠিত করা</td></tr></tbody></table></div>
+<p>Structural role</p>
+<p>Extracellular matrix-এর mechanical properties-এর মাধ্যমে connective tissue শরীরের বিভিন্ন অংশকে support করে।</p>
+<p>Defensive role</p>
+<p>এখানে cellular component গুরুত্বপূর্ণ। বিভিন্ন defensive cell tissue-তে প্রবেশ করে, pathogen বা damaged material-এর বিরুদ্ধে কাজ করে।</p>
+<p>Trophic ও morphogenetic role</p>
+<p>Connective tissue surrounding tissue-এর growth ও differentiation-কে প্রভাবিত করে।</p>
+<p>Gray’s Anatomy-এর উদাহরণ:</p>
+<p>একটি epithelial surface থেকে gland development-এর সময় connective tissue গুরুত্বপূর্ণ organizing influence দেয়।</p>
+<p>Amrita: “অর্থাৎ gland তৈরি হওয়ার সময় শুধু epithelial cells নিজেদের মধ্যে পরিবর্তিত হয় না; আশপাশের connective tissue-ও তাদের development-এ ভূমিকা রাখে?”</p>
+<p>ডা. শারমিন: “হ্যাঁ। Tissue development-এ epithelial–mesenchymal interaction অত্যন্ত গুরুত্বপূর্ণ ধারণা।”</p>
+</div></section>
+<section class="sec r" id="s16"><h3>১২. Connective tissue-এর classification</h3><div class="body">
+<p>ম্যাডাম এবার তিনটি category লিখলেন।</p>
+<p>Connective and supporting tissues</p>
+<p>1. Ordinary (General) connective tissues</p>
+<p>শরীরের বিভিন্ন জায়গায় widely distributed।</p>
+<p>2. Special skeletal connective tissues</p>
+<ul><li>Cartilage</li><li>Bone</li></ul>
+<p>এগুলো Chapter 5-এ বিস্তারিত আলোচনা করা হবে।</p>
+<p>3. Haemolymphoid tissues</p>
+<ul><li>Peripheral blood cells</li><li>Lymphoid tissues</li><li>Their precursors</li></ul>
+<p>এগুলো Chapter 4-এ বিস্তারিত আলোচনা করা হবে।</p>
+<p>Haemolymphoid tissues-কে connective tissue group-এর সঙ্গে রাখা হয় তাদের similar mesenchymal origin এবং blood-এর defensive cells typical connective tissue cell population-এর অংশ হওয়ায়।</p>
+<p>এই defensive cells blood circulation-এর মাধ্যমে connective tissue-তে পৌঁছায় এবং vessel-এর endothelial wall অতিক্রম করে tissue-তে migrate করে।</p>
+<p>Adi: “ম্যাডাম, তাহলে blood-এর defensive cells tissue-তে এসে resident population-এর সঙ্গে কাজ করে?”</p>
+<p>ডা. শারমিন: “হ্যাঁ। আর এটাই আমাদের পরবর্তী topic-এর ভিত্তি।”</p>
+</div></section>
+<section class="sec r" id="s17"><h3>১৩. Cells of General Connective Tissues: Resident বনাম Migrant</h3><div class="body">
+<p>ক্লাসের শেষের দিকে ম্যাডাম বোর্ডে লিখলেন:</p>
+<p>CELLS OF GENERAL CONNECTIVE TISSUES</p>
+<p>Connective tissue-এর cells-কে broadly দুটি population-এ ভাগ করা যায়।</p>
+<p>Resident cells</p>
+<p>Tissue-তে বসবাসকারী population</p>
+<ul><li>Fibroblasts</li><li>Adipocytes</li><li>Mesenchymal stem cells</li><li>অন্যান্য resident cells</li></ul>
+<p>Migrant cells</p>
+<p>Defensive function-সম্পন্ন population</p>
+<ul><li>Macrophages</li><li>Lymphocytes</li><li>Mast cells</li><li>Neutrophils</li><li>Eosinophils</li></ul>
+<p>Migrant cell-এর সংখ্যা ও activity tissue-এর প্রয়োজন অনুযায়ী পরিবর্তিত হতে পারে।</p>
+<p>Mou: “অর্থাৎ Resident cells মূলত tissue-এর নিজস্ব maintenance ও matrix-related কাজের সঙ্গে যুক্ত, আর Migrant cells-এর মধ্যে অনেকগুলো defensive function পালন করে?”</p>
+<p>ডা. শারমিন: “হ্যাঁ, তবে প্রতিটি cell-এর নিজস্ব function আলাদাভাবে বুঝতে হবে। আজ আমরা প্রথমে সবচেয়ে গুরুত্বপূর্ণ resident cell—Fibroblast—নিয়ে আলোচনা করব।”</p>
+</div></section>
+<section class="sec r" id="s18"><h3>১৪. Fibroblast: Connective tissue-এর matrix architect</h3><div class="body">
+<p>পরদিনের lecture-এর শুরুতেই ডা. শারমিন ম্যাডাম একটি histology slide দেখালেন।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>4.3: Connective Tissue - Medicine LibreTexts</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/N7jUSqfiwPGrpkAsvHD5e4U8GW8zaWzTsfu9Yf3wRn1CNOOKD6KkUavJHlIAyTvTxQxXn1dloaHurL_zRfUeLLhkozF7Ikvs7LGpyFOLmVYTXDs27uvt56KssLJOWutTsfVKOMunCJsFy4Elklsx8WMvFXHgp1aF2F7gGRpT6pzmKhzoUB3Ht0qZQEJmoZEz?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=4.3%3A%20Connective%20Tissue%20-%20Medicine%20LibreTexts">Image search ↗</a></figure>
+<p>ডা. শারমিন: “General connective tissue-এর resident cells-এর মধ্যে সাধারণত সবচেয়ে বেশি থাকে Fibroblasts।”</p>
+</div></section>
+<section class="sec r" id="s19"><h3>Shape ও morphology</h3><div class="body">
+<p>Fibroblasts সাধারণত:</p>
+<ul><li>Flattened এবং irregular outline-যুক্ত।</li><li>Extended cellular processes থাকে।</li><li>Profile-এ fusiform বা spindle-shaped দেখায়।</li></ul>
+<p>এদের প্রধান কাজ:</p>
+<p>Connective tissue-এর অধিকাংশ extracellular matrix synthesize করা।</p>
+<p>সুতরাং Fibroblast হলো connective tissue-এর matrix-producing cell।</p>
+</div></section>
+<section class="sec r" id="s20"><h3>Active fibroblast-এর বৈশিষ্ট্য</h3><div class="body">
+<p>যেহেতু fibroblast প্রচুর protein synthesize ও secrete করে, তাই এর মধ্যে protein-synthesizing cell-এর বৈশিষ্ট্য দেখা যায়।</p>
+<ul><li>Relatively large, euchromatic nucleus</li><li>Prominent nucleoli</li><li>Abundant cytoplasm</li><li>Basophilic cytoplasm</li><li>Abundant rough endoplasmic reticulum</li><li>Numerous mitochondria</li><li>Several sets of Golgi apparatus</li></ul>
+<p>Adi: “ম্যাডাম, Active fibroblast-এর cytoplasm basophilic কেন?”</p>
+<p>ডা. শারমিন: “কারণ এতে rough endoplasmic reticulum প্রচুর থাকে। Rough ER-এর ribosomal RNA basophilic staining-এর জন্য দায়ী।”</p>
+<p>Feynman technique</p>
+<p>Amrita বলল—</p>
+<p>“একজন construction worker যদি অনেক building material তৈরি করে, তাহলে তার factory-তে machinery বেশি থাকবে। Fibroblast-ও matrix protein তৈরি করে। তাই তার protein synthesis machinery—বিশেষ করে rough ER এবং Golgi apparatus—উন্নত।”</p>
+<p>ম্যাডাম বললেন—</p>
+<p>“Excellent. এই analogy দিয়ে active fibroblast-এর morphology মনে রাখতে পারবে।”</p>
+</div></section>
+<section class="sec r" id="s21"><h3>Fibroblast বনাম Fibrocyte</h3><div class="body">
+<p>এবার ম্যাডাম বোর্ডে লিখলেন:</p>
+<p>Active fibroblast → Inactive fibrocyte</p>
+<p>বয়স বাড়লে অথবা cell relatively inactive হলে:</p>
+<ul><li>Cytoplasmic volume কমে যায়।</li><li>Endoplasmic reticulum sparse হয়।</li><li>Nucleus flattened ও heterochromatic হয়।</li></ul>
+<p>অর্থাৎ active fibroblast-এর তুলনায় inactive fibrocyte-এর synthetic activity কম।</p>
+<p>Rafi: “তাহলে Fibroblast আর Fibrocyte কি একেবারে আলাদা cell lineage?”</p>
+<p>ডা. শারমিন: “এই আলোচনায় Fibrocyte বলতে old বা relatively inactive fibroblast-কে বোঝানো হচ্ছে। তাদের morphology ও activity-র পার্থক্য মনে রাখবে।”</p>
+</div></section>
+<section class="sec r" id="s22"><h3>Fibroblast ও matrix fibre</h3><div class="body">
+<p>Fibroblasts সাধারণত তাদের তৈরি করা matrix-এর collagen ও elastin fibres-এর সঙ্গে adherent থাকে।</p>
+<p>কিছু highly cellular organ-এ—যেমন:</p>
+<ul><li>Liver</li><li>Kidney</li><li>Spleen</li><li>Most lymphoid tissue</li></ul>
+<p>Fibroblasts এবং delicate Type III collagen fibres মিলে fibrocellular network তৈরি করে।</p>
+<p>Type III collagen fibres-কে বলা হয়:</p>
+<p>Reticular fibres</p>
+<p>এই network-কে বলা হয়:</p>
+<p>Reticular tissue</p>
+<p>এ ধরনের network তৈরিতে অংশ নেওয়া fibroblasts-কে বলা হতে পারে:</p>
+<p>Reticular cells বা reticulocytes</p>
+</div></section>
+<section class="sec r" id="s23"><h3>Wound repair: Fibroblast-এর সবচেয়ে গুরুত্বপূর্ণ clinical role</h3><div class="body">
+<p>ম্যাডাম এবার একটি wound-healing diagram দেখালেন।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Wound Healing | Concise Medical Knowledge</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/F_wqus7w6yLeV_MvQPFwt3MFujJ_iVHsuSVxImVuXyhSelrojMxatlzfSW77vRAXSzkREeWouuzIXAaRNPdtJ1CopJwdMRjJPBj6DGfXD8pa5ilPsLLmAWl6lxSmi_d2te6TXgeEXizTOgdTvnexj0rdI4XvaQs44S-Fxu6hlMJmhuy0kSmvEGJE4qoWbA8z?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Wound%20Healing%20%7C%20Concise%20Medical%20Knowledge">Image search ↗</a></figure>
+<p>ডা. শারমিন: “Traumatic injury বা inflammation-এর কারণে tissue mass নষ্ট হলে Fibroblasts বিশেষভাবে active হয়ে ওঠে।”</p>
+<p>তারা:</p>
+<ul><li>Proliferate করে।</li><li>Fibrous extracellular matrix তৈরি করে।</li><li>সেই matrix-এ numerous blood vessels প্রবেশ করে।</li><li>এর ফলে Granulation tissue তৈরি হয়।</li></ul>
+<p>Amrita: “ম্যাডাম, Granulation tissue-তে Fibroblast-এর পাশাপাশি blood vessel-ও থাকে?”</p>
+<p>ডা. শারমিন: “হ্যাঁ। Gray’s Anatomy-তে fibroblast-produced fibrous matrix-এর মধ্যে numerous blood vessels প্রবেশ করার কথা বলা হয়েছে।”</p>
+</div></section>
+<section class="sec r" id="s24"><h3>Myofibroblast ও wound contraction</h3><div class="body">
+<p>Wound contraction-এর একটি অংশ ঘটে:</p>
+<p>Myofibroblast-এর shortening-এর মাধ্যমে।</p>
+<p>Myofibroblast হলো specialized contractile fibroblast-like cell, যার properties smooth muscle cell-এর মতো।</p>
+<p>আগে ধারণা করা হতো Myofibroblasts granulation tissue-এর fibroblasts অথবা তাদের progenitor mesenchymal stem cells থেকে differentiate করে।</p>
+<p>কিন্তু পরবর্তী evidence অনুযায়ী wound healing এবং অনেক fibrotic disease process-এ Myofibroblast-এর precursor হতে পারে:</p>
+<p>Vascular pericyte অথবা closely related cell।</p>
+<p>এটি গুরুত্বপূর্ণ, কারণ সব Myofibroblast-কে সরলভাবে fibroblast থেকে উৎপন্ন বলা যাবে না।</p>
+</div></section>
+<section class="sec r" id="s25"><h3>Scar formation</h3><div class="body">
+<p>কিছু tissue-এর specialized cells ক্ষতিগ্রস্ত হলে তারা বিভাজিত হয়ে functional tissue পুনরুদ্ধার করতে পারে না।</p>
+<p>Gray’s Anatomy-এর উদাহরণ:</p>
+<p>Cardiac muscle cells after infarction</p>
+<p>যখন damaged region-এর specialized cells functional tissue হিসেবে regenerate করতে পারে না, তখন connective tissue fibroblasts এবং তাদের extracellular matrix সেই void পূরণ করে:</p>
+<p>Scar formation</p>
+<p>তবে একটি exception আছে:</p>
+<p>Central nervous system</p>
+<p>এখানে injury-র পরে glial scars তৈরি হয়।</p>
+</div></section>
+<section class="sec r" id="s26"><h3>Fibroblast activity-কে কী কী প্রভাবিত করে?</h3><div class="body">
+<p>Gray’s Anatomy অনুযায়ী fibroblast activity প্রভাবিত হয়:</p>
+<ul><li>Steroid hormone concentration</li><li>Dietary content</li><li>Prevalent mechanical stresses</li></ul>
+<p>আর একটি গুরুত্বপূর্ণ clinical point:</p>
+<p>Vitamin C deficiency → Impaired collagen formation</p>
+<p>ম্যাডাম বললেন—</p>
+<p>“এটি মনে রাখবে। Fibroblast collagen তৈরি করে, আর Vitamin C deficiency collagen formation-কে impair করে।”</p>
+<p>Adi নোট করল:</p>
+<p>Fibroblast → ECM synthesis → Collagen formation → Wound repair and scar formation.</p>
+</div></section>
+<section class="sec r" id="s27"><h3>১৫. Library study: আজকের পড়া গুছিয়ে নেওয়া</h3><div class="body">
+<p>বিকেল ৫টা।</p>
+<p>চারজন DMC library-তে বসেছে। Mou আজকের lecture-এর বিষয়গুলো একটি flowchart-এ সাজিয়েছে।</p>
+<p>আজকের study map</p>
+<p>Basal lamina</p>
+<ul><li>Selective barrier</li><li>Anchorage and orientation</li><li>Tissue polarity, division and survival</li><li>Angiogenesis</li><li>Migration and pathfinding</li></ul>
+<p>Connective and supporting tissues</p>
+<ul><li>ECM-rich tissue</li><li>Mesenchymal origin; head region largely neural crest</li><li>Structural, defensive, trophic and morphogenetic roles</li><li>General, skeletal and haemolymphoid groups</li></ul>
+<p>General connective tissue cells</p>
+<ul><li>Resident cells</li><li>Migrant cells</li><li>Fibroblast: morphology, ECM synthesis, wound repair</li></ul>
+<p>Rafi: “আমার কাছে আজকের সবচেয়ে interesting বিষয় হলো Fibroblast শুধু collagen বানায় না, wound repair-এও central role রাখে।”</p>
+<p>Mou: “আর Myofibroblast wound contraction-এ অংশ নেয়।”</p>
+<p>Adi: “কিন্তু সব Myofibroblast fibroblast থেকে আসে—এটা বলা যাবে না। Vascular pericyte-ও precursor হতে পারে।”</p>
+<p>Amrita তার খাতার পাশে একটি ছোট তারকা চিহ্ন দিল।</p>
+<p>“এই distinction-টাই মনে রাখিস। বইয়ের একটা বাক্য মুখস্থ করার চেয়ে mechanism বুঝলে ভুল কম হবে।”</p>
+<p>Adi তার দিকে তাকাল।</p>
+<p>“তুই থাকলে পড়াটা অনেক সহজ লাগে।”</p>
+<p>“তুইও তো আমার সবচেয়ে ভালো study partner।”</p>
+<p>Rafi সঙ্গে সঙ্গে বলল—</p>
+<p>“Study partner? তোদের দেখে মনে হয় দুজনেরই permanent attachment হয়ে গেছে!”</p>
+<p>Amrita এবার হেসে ফেলল। Adi কিছু বলল না, কিন্তু তার খাতায় আজকের শেষ লাইনটি লিখল:</p>
+<p>The best connections are built through understanding, patience and time.</p>
+</div></section>
+<section class="sec r" id="s28"><h3>Episode 27 — Study Ledger</h3><div class="body">
+<p>Chapter 2: Integrating Cells into Tissues</p>
+<p>আজ সম্পন্ন</p>
+<ul><li>Page 80: Functions of Basal Lamina</li><li>Selectively permeable barriers (anionic filters)</li><li>Anchorage and orientation of tissue layers</li><li>Instructive effects on tissue polarity, cell division and survival</li><li>Regulation of angiogenesis</li><li>Migration and pathfinding; axon outgrowth and neuromuscular junction regeneration</li><li>Basal lamina thickening in glomerulonephritis and diabetes</li><li>Page 80: Connective and Supporting Tissues — introduction</li><li>Extracellular matrix, fibrous proteins and ground substance</li><li>Embryonic mesenchyme and neural crest origin</li><li>Structural, defensive, trophic and morphogenetic roles</li><li>Ordinary/general, skeletal and haemolymphoid connective tissue groups</li><li>Resident and migrant cell populations</li><li>Fibroblast morphology and active/inactive forms</li><li>Reticular tissue, Type III collagen and reticular cells</li><li>Fibroblasts in granulation tissue, wound contraction and scar formation</li><li>Myofibroblasts and vascular pericyte precursor concept</li><li>Vitamin C deficiency and impaired collagen formation</li></ul>
+<p>আজকের Page coverage: Page 80-এর <code class="bx">FUNCTIONS OF BASAL LAMINA</code> সম্পূর্ণ এবং <code class="bx">CONNECTIVE AND SUPPORTING TISSUES</code>-এর introduction থেকে <code class="bx">Fibroblasts</code>-এর আলোচনা পর্যন্ত।</p>
+</div></section>
+<section class="sec r" id="s29"><h3>Episode 28 — পরবর্তী অংশে শুরু হবে:</h3><div class="body">
+<p><code class="bx">Adipocytes (lipocytes, fat cells)</code></p>
+<ul><li>White adipose tissue-এর morphology</li><li>Unilocular adipocytes</li><li>Brown adipose tissue ও multilocular adipocytes</li><li>UCP1 এবং thermogenesis</li><li>Beige fat cells</li><li>Adipose tissue-এর endocrine role ও adipokines</li><li>Mesenchymal stem cells</li><li>Migrant cells: Macrophages, lymphocytes, mast cells, granulocytes</li></ul>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-026.html">← Episode 26</a><a href="index.html">সব পর্ব</a><a href="episode-028.html">Episode 28 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">Gray’s Anatomy: The Adi–Amrita Chronicles</a><a href="#s2">Episode 27 — The Invisible Pathways</a><a href="#s3">১. সকালের ক্লাস: একটি microscopic layer-এর অসাধারণ ক্ষমতা</a><a href="#s4">২. Selectively permeable barrier: সবকিছুকে যেতে দেওয়া হয় না</a><a href="#s5">৩. Anchorage and orientation: tissue-কে স্থির ও সঠিকভাবে সাজানো</a><a href="#s6">৪. Adjacent tissue-এর polarity, cell division ও survival</a><a href="#s7">৫. Angiogenesis: নতুন blood vessel তৈরির নিয়ন্ত্রণ</a><a href="#s8">৬. Cell migration এবং pathfinding: চলার পথ দেখানো</a><a href="#s9">৭. Clinical correlation: Basal lamina-এর thickness পরিবর্তিত হলে</a><a href="#s10">৮. নতুন অধ্যায়: Connective and Supporting Tissues</a><a href="#s11">CONNECTIVE AND SUPPORTING TISSUES</a><a href="#s12">Connective tissue-এর সংজ্ঞা</a><a href="#s13">৯. Extracellular matrix কেন এত গুরুত্বপূর্ণ?</a><a href="#s14">১০. Connective tissue-এর embryological origin</a><a href="#s15">১১. Connective tissue-এর কাজ: Structural, defensive, trophic ও morphogenetic</a><a href="#s16">১২. Connective tissue-এর classification</a><a href="#s17">১৩. Cells of General Connective Tissues: Resident বনাম Migrant</a><a href="#s18">১৪. Fibroblast: Connective tissue-এর matrix architect</a><a href="#s19">Shape ও morphology</a><a href="#s20">Active fibroblast-এর বৈশিষ্ট্য</a><a href="#s21">Fibroblast বনাম Fibrocyte</a><a href="#s22">Fibroblast ও matrix fibre</a><a href="#s23">Wound repair: Fibroblast-এর সবচেয়ে গুরুত্বপূর্ণ clinical role</a><a href="#s24">Myofibroblast ও wound contraction</a><a href="#s25">Scar formation</a><a href="#s26">Fibroblast activity-কে কী কী প্রভাবিত করে?</a><a href="#s27">১৫. Library study: আজকের পড়া গুছিয়ে নেওয়া</a><a href="#s28">Episode 27 — Study Ledger</a><a href="#s29">Episode 28 — পরবর্তী অংশে শুরু হবে:</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

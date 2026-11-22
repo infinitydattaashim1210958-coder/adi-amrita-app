@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 020 · The Cell's Secret Architecture</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 020">EPISODE 020</h1>
+  <div class="ttl">The Cell's Secret Architecture</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">020</div></div>
+    <div class="face b"><div class="t2">The Cell's Secret Architecture</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>Episode 20</h3><div class="body">
+</div></section>
+<section class="sec r" id="s2"><h3>The Cell's Secret Architecture</h3><div class="body">
+<p>যে কোষের দুটি মুখ, আর যার নীরব চুলকণার মতো গঠন নিয়ন্ত্রণ করে জীবনের প্রবাহ</p>
+<p>Dhaka Medical College | Anatomy Department | Gray’s Anatomy Series</p>
+</div></section>
+<section class="sec r" id="s3"><h3>Scene 1 — একটি অদ্ভুত প্রশ্ন</h3><div class="body">
+<p>সকাল ৮টা ৪৫।</p>
+<p>Dhaka Medical College-এর Anatomy lecture theatre।</p>
+<p>Adi শেষ বেঞ্চে বসে Gray’s Anatomy খুলে রেখেছে। Amrita তার পাশের আসনে। সামনে Whiteboard-এ বড় করে লেখা—</p>
+<p>CELL POLARITY AND DOMAINS</p>
+<p>Professor বোর্ডের দিকে তাকিয়ে প্রশ্ন করলেন,</p>
+<p>“একটি epithelial cell-এর সবগুলো surface কি একই রকম?”</p>
+<p>ক্লাসে নীরবতা।</p>
+<p>Professor আবার বললেন,</p>
+<p>“ধরো, তোমরা একটি intestinal epithelial cell দেখছ। একদিকে intestinal lumen, অন্যদিকে blood supply। কোষটি কীভাবে বুঝবে কোন দিক থেকে nutrient গ্রহণ করতে হবে এবং কোন দিকে পাঠাতে হবে?”</p>
+<p>Adi হাত তুলল।</p>
+<p>“Sir, cell-এর membrane-এর বিভিন্ন অংশে different transport proteins থাকতে পারে। তাই একেক surface-এর function আলাদা হতে পারে।”</p>
+<p>Professor হাসলেন।</p>
+<p>“Excellent. কিন্তু শুধু different proteins থাকলেই হবে না। কোষকে তার surface-গুলোর identity বজায় রাখতে হবে। এটাই cell polarity-র একটি গুরুত্বপূর্ণ দিক।”</p>
+<p>Amrita খাতায় লিখল—</p>
+<p>Same cell, different surfaces, different functions.</p>
+<p>Adi নিচু স্বরে বলল,</p>
+<p>“তাহলে একটা cell-এরও নিজের orientation থাকে?”</p>
+<p>Amrita তাকিয়ে বলল,</p>
+<p>“হ্যাঁ। তোর মতোই। তুই সবসময় একদিকে তাকিয়ে থাকিস, কিন্তু কাজ করিস কয়েকদিকে।”</p>
+<p>Adi হেসে ফেলল।</p>
+<p>“আমি কি এতটাই predictable?”</p>
+<p>“Anatomy-তে তোকে predictable হতে হবে। কিন্তু আমার কাছে না।”</p>
+</div></section>
+<section class="sec r" id="s4"><h3>Scene 2 — Cell Polarity: কোষের দিকনির্দেশনা</h3><div class="body">
+<p>Professor বোর্ডে একটি epithelial cell আঁকলেন।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>EPITHELIUM - Clinical GateClinical Gate</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/yN0cDOWJWtR4KQh29uoiILx244eVDkH5yQm0QeMmwQncNH6U60UBPgCmAKhKHlbwlxdCwbB-MrA0M4CuftMWz_6Ke1ynmyuHBwp_7oKPJJ2RBvt7J47nMNNKrSAKU7vC74jFZIvIH14LzIeSduFobHwZqQkPHr5uai08Nv5qrA66y4azSmaOh6u00S1C0MPA?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=EPITHELIUM%20-%20Clinical%20GateClinical%20Gate">Image search ↗</a></figure>
+<p>“প্রথমে মনে রাখবে, epithelial cells সাধারণত sheet বা gland তৈরি করে। এদের দুই পাশে ভিন্ন পরিবেশ থাকতে পারে। সেই পরিবেশের সঙ্গে কাজ করার জন্য cell-এর বিভিন্ন surface আলাদা বৈশিষ্ট্য অর্জন করে।”</p>
+<p>Professor তিনটি অংশ চিহ্নিত করলেন:</p>
+<ul><li>Apical domain</li><li>Basolateral domain<ul><li>Basal surface</li><li>Lateral surfaces</li></ul></li></ul>
+<p>“এই arrangement-কে বলা হয় epithelial cell polarity।”</p>
+<p>Adi বলল,</p>
+<p>“Sir, apical আর basal-এর মধ্যে পার্থক্যটা সহজভাবে বুঝিয়ে দেবেন?”</p>
+<p>Professor বোর্ডে একটি intestinal epithelial cell-এর ছবি আঁকলেন।</p>
+<p>“ধরো, একটি বাড়ির দুটি দরজা আছে। একটি দরজা রাস্তার দিকে, অন্যটি বাড়ির ভেতরের দিকে। দুই দরজা দিয়ে একই ধরনের যাতায়াত হয় না। ঠিক তেমনই epithelial cell-এর apical এবং basolateral surface-এর কাজ আলাদা।”</p>
+<p>1. Apical domain</p>
+<ul><li>Apical surface intestinal lumen, airway lumen অথবা বাইরের পরিবেশের দিকে মুখ করে থাকে।</li><li>এটি নির্দিষ্ট body compartment-এর সঙ্গে cell-এর interface তৈরি করে।</li><li>এটি একটি barrier হিসেবে কাজ করে।</li><li>Selective absorption এবং secretion-এ অংশ নেয়।</li><li>Active transport ও endocytosis-এর মাধ্যমে পদার্থ cell-এর ভেতরে আসতে পারে।</li><li>Exocytosis ও secretion-এর মাধ্যমে পদার্থ cell থেকে বাইরে যেতে পারে।</li><li>Apical surface-এ microvilli থাকতে পারে, যা surface area বৃদ্ধি করে।</li></ul>
+<p>2. Basal surface</p>
+<ul><li>Apical surface-এর বিপরীত দিকে থাকে।</li><li>Single-layered epithelium-এ basal surface, basal lamina-এর দিকে মুখ করে থাকে।</li><li>এর সঙ্গে basolateral cell domain-এর সম্পর্ক রয়েছে।</li></ul>
+<p>3. Lateral surfaces</p>
+<ul><li>পাশাপাশি থাকা epithelial cells-এর মধ্যবর্তী surface।</li><li>অনেক ক্ষেত্রে lateral ও basal surfaces একই ধরনের কাজ করে।</li><li>তাই এদের একসঙ্গে basolateral domain বলা হয়।</li></ul>
+<p>Professor বললেন,</p>
+<p>“এবার intestinal epithelial cell-এর উদাহরণে ফিরে যাও।”</p>
+<p>তিনি বোর্ডে একটি arrow আঁকলেন।</p>
+<p>Intestinal lumen → Epithelial cell → Connective tissue → Blood capillary</p>
+<p>“Digested nutrients intestinal lumen থেকে cell-এর apical surface দিয়ে প্রবেশ করে। এরপর cell সেগুলো basal বা basolateral surface দিয়ে নিচের connective tissue এবং blood capillaries-এ পাঠাতে পারে।”</p>
+<p>Amrita বলল,</p>
+<p>“Sir, oxygen আর carbon dioxide-ও কি একইভাবে transport হয়?”</p>
+<p>“ভালো প্রশ্ন। Gray’s Anatomy এখানে একটি গুরুত্বপূর্ণ পার্থক্য উল্লেখ করেছে। Dissolved non-polar gases, যেমন oxygen এবং carbon dioxide, basolateral surface দিয়ে freely diffuse করতে পারে।”</p>
+<p>Adi লিখল—</p>
+<p>Remember: Nutrients may require active transport, whereas non-polar gases can diffuse freely.</p>
+<p>Professor এবার বোর্ডে দুইটি epithelial cell-এর মাঝখানে একটি seal আঁকলেন।</p>
+<p>“Apical এবং basolateral domain-এর মধ্যে boundary বজায় রাখতে tight intercellular seal প্রয়োজন।”</p>
+<p>তিনি লিখলেন—</p>
+<p>Tight junction — Occluding junction — Zonula occludens</p>
+<p>“এই junction adjacent cells-এর মধ্যবর্তী space দিয়ে ছোট ions-এর passage-ও বাধা দেয়। ফলে epithelium-এর দুই পাশের পরিবেশ আলাদা থাকে।”</p>
+<p>Adi হাত তুলল।</p>
+<p>“Sir, তাহলে tight junction না থাকলে lumen-এর পদার্থ cell-এর মাঝখান দিয়ে চলে যেতে পারে?”</p>
+<p>“ঠিক তাই। এটি epithelial barrier function-এর একটি মৌলিক অংশ।”</p>
+<p>Amrita ফিসফিস করে বলল,</p>
+<p>“দেখেছিস? একটা cell-এরও privacy দরকার।”</p>
+<p>Adi বলল,</p>
+<p>“তাহলে tight junction হচ্ছে cell-এর privacy wall?”</p>
+<p>“একদম। তবে মনে রাখবি, এটা শুধু privacy wall নয়—এটা cell polarity বজায় রাখারও গুরুত্বপূর্ণ ব্যবস্থা।”</p>
+</div></section>
+<section class="sec r" id="s5"><h3>Scene 3 — Cell Surface Apical Differentiations</h3><div class="body">
+<p>পরের স্লাইডে Professor তিনটি structure দেখালেন।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>11.3: Functional Anatomy of the Respiratory Tract - Medicine LibreTexts</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/rUbdqLIDJJKsIJHBgxWcUDWc68A6i870unNUT0n9xir889J5YCH2TpqG67YeEm6YhJZbEV2BvwajM7AB2gcl4fCQf8ns3lmqWu8UF0z79hqYvR1rnPwyuU1KbWJJmvclGSLTYws6OPLgycXzEEvEX3lKGNaOSUnNpajXdJzBQlCgrOPCbsapgNCHRmDcNVIN?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=11.3%3A%20Functional%20Anatomy%20of%20the%20Respiratory%20Tract%20-%20Medicine%20LibreTexts">Image search ↗</a></figure>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Microvilli Of The Small Intestine by Dennis Kunkel Microscopy / Science Photo Library</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/oFOeN2STJs83__QdP2wQq6i6QAsa5iYlxOwAimMIzZbdOzq3JBWUEqcZ23rZzav2a5YkkobJOkWBGKZ1ETnYV2ZykwQILeM5CrGLdyyZXto9W4O8khFmxsvb5fJYj2puSDbiHq-u_cTIXXCes0DoSDniF4RIA8ZsD8yBROOh3Ccsp0pboS6petEaxqGLKy0B?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Microvilli%20Of%20The%20Small%20Intestine%20by%20Dennis%20Kunkel%20Microscopy%20/%20Science%20Photo%20Library">Image search ↗</a></figure>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Frontiers | Pathogenic gene variants in CCDC39, CCDC40, RSPH1, RSPH9, HYDIN, and SPEF2 cause defects of sperm flagella composition and male infertility</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/2Afqce9mmhXu6rH8FdVpgT8vD0PIvRfP-sENvmyokwicO8bna3ex7hTNtwxm6KbQ-LAIUBVRi3AZ2FCsA2o7IIsz-A_movFg2-eyC1DAqEJ33dKbDsqOA3SFNW52z7zf0p_iocAH0VF313mbHPzuFOH0dI-2KN-Qy86S_jNGZfXH5jF2-Hd2Zk4qYHQF1XwM?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Frontiers%20%7C%20Pathogenic%20gene%20variants%20in%20CCDC39%2C%20CCDC40%2C%20RSPH1%2C%20RSPH9%2C%20HYDIN%2C%20and%20SPEF2%20cause%20defects%20of%20sperm%20flagella%20composition%20and%20male%20infertility">Image search ↗</a></figure>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Cell adhesion junctional structures the epithelial cell Prof</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/K3hE4a8lwhpoTz2IzaWyswp501Zdi23rc-AziS9qRrL5UT4Lfucbr86ZcZWt2JNZ4QACYkz4-Oehmd-gEAAmN9Kl_u25A-OyAzLaPwJsGcznCmUfmNU7NolsE4d_SxY0M-a4w4OOHSlJNEfs1zE-BOcqhlsY7iBU5cBq6LDrExB3MACMfRBAbJO7aLjD7a5T?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Cell%20adhesion%20junctional%20structures%20the%20epithelial%20cell%20Prof">Image search ↗</a></figure>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>BỘ NỘI VỤ - MINISTRY OF HOME AFFAIRS OF THE SOCIALIST REPUBLIC OF VIETNAM</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/wYUDjUmBI_X-zIIuteLwow_t2EebiZb5oVWO5fPX7xnn6_Uw581wKh3-T8VtHc0nfOpowTFSeyGG7YghloMKj3_dXCdXNHt8nffAPqBUHwiosu-bwDEsmXO49gL6dxfufTFaBWIUh_L-HO79rYYUNG5ztZvYX3Lk5qNXenzAB-ebJfGRqq1EnAQjOIJOmLpY?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=B%E1%BB%98%20N%E1%BB%98I%20V%E1%BB%A4%20-%20MINISTRY%20OF%20HOME%20AFFAIRS%20OF%20THE%20SOCIALIST%20REPUBLIC%20OF%20VIETNAM">Image search ↗</a></figure>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>PPT - Definitions PowerPoint Presentation, free download - ID:707121</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/A6XN23db5nOI3Go0Au_IjLraaHDyoda8W-Kr5bIrlXX6GQfVMoZHa1rNW9MG3WYJUf1BLJMNE8A5UbxdnMbdG7n3pUMNb_BL4ritc4mnWtfn5Wn0B8me9vF8UEKwWfQzP2148tt-3p0YiopjY9fbqJuK97dII1XLtWKYsaA_MBqfp4FN7J4sllGX_-XiSIba?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=PPT%20-%20Definitions%20PowerPoint%20Presentation%2C%20free%20download%20-%20ID%3A707121">Image search ↗</a></figure>
+<p>“কোষের surface সব জায়গায় একই রকম থাকে না। বিশেষ কাজের জন্য surface থেকে বিভিন্ন projection তৈরি হতে পারে।”</p>
+<p>তিনি তিনটি নাম লিখলেন:</p>
+<ul><li>Cilia</li><li>Flagella</li><li>Microvilli</li></ul>
+<p>“এদের function এক নয়।”</p>
+<div class="tw"><table><thead><tr><th>Structure</th><th>প্রধান কাজ</th></tr></thead><tbody><tr><td>Cilia</td><td>Fluid movement across cell surface</td></tr><tr><td>Flagella</td><td>Cell locomotion</td></tr><tr><td>Microvilli</td><td>Surface area বৃদ্ধি করে absorption</td></tr></tbody></table></div>
+<p>“এ ছাড়া basolateral plasma membrane-এর infoldings-ও surface area বৃদ্ধি করতে পারে, যা transport-এর জন্য গুরুত্বপূর্ণ।”</p>
+<p>Adi বলল,</p>
+<p>“Sir, primary cilium-ও কি motile cilia-এর মতো কাজ করে?”</p>
+<p>Professor উত্তর দিলেন,</p>
+<p>“না। Gray’s Anatomy এখানে primary cilium-কে আলাদা করে দেখিয়েছে।”</p>
+<p>Primary cilium:</p>
+<ul><li>সাধারণত non-dividing epithelial cell-এ পাওয়া যায়।</li><li>Centriole-derived basal body থেকে তৈরি হয়।</li><li>সাধারণত non-motile।</li><li>Mechanosensory এবং biochemical sensory role পালন করে।</li></ul>
+<p>Motile cilia:</p>
+<ul><li>একাধিক সংখ্যায় থাকতে পারে।</li><li>বিশেষত upper respiratory tract এবং oviduct-এর apical epithelial surface-এ দেখা যায়।</li><li>Wave-like movement তৈরি করে।</li><li>Surrounding fluid সরাতে সাহায্য করে।</li></ul>
+<p>Amrita বলল,</p>
+<p>“অর্থাৎ primary cilium মূলত sensing-এর সঙ্গে যুক্ত, আর motile cilia movement তৈরি করে?”</p>
+<p>“Exactly,” Professor বললেন।</p>
+</div></section>
+<section class="sec r" id="s6"><h3>Scene 4 — Cilia and Flagella: নড়াচড়ার গোপন যন্ত্র</h3><div class="body">
+<p>Professor বোর্ডে একটি cilium-এর longitudinal section আঁকলেন।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Recent advances in primary ciliary dyskinesia genetics | Journal of Medical Genetics</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/ntMmtrSFY5P4foT9F4GYIKCi0ImybwNpc1gvkXXwt7LPSU6DtAlkqQiLb13ZmzuPClhYovo9I0TlQlh2-1XcykUcKaDWQxoI0VoMGpnVZ3tRVkGDleXe_54SXhpPbNpVuSjYfbkLEeQN3D6_SGQ5dUkV8QEG8-pmegkFlmpfv7Wf3JaE7eFCW9wUZ83MTZ-W?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Recent%20advances%20in%20primary%20ciliary%20dyskinesia%20genetics%20%7C%20Journal%20of%20Medical%20Genetics">Image search ↗</a></figure>
+<p>“Cilia এবং flagella হলো hair-like projections। এরা surrounding fluid-এর মধ্যে current তৈরি করতে পারে অথবা যে cell-এর সঙ্গে যুক্ত, সেই cell-এর locomotion-এ সাহায্য করতে পারে।”</p>
+<p>Professor এবার structure ব্যাখ্যা করলেন।</p>
+<p>Cilium বা flagellum-এর প্রধান অংশ:</p>
+<ul><li>Shaft</li><li>Tapering tip</li><li>Basal body</li><li>Shaft-এর diameter প্রায় 0.25 μm।</li><li>পুরো structure-এর অধিকাংশ দৈর্ঘ্য shaft দিয়ে গঠিত।</li><li>Basal body cell-এর surface cytoplasm-এর মধ্যে অবস্থান করে।</li><li>Base ছাড়া structure-এর প্রায় পুরো অংশ plasma membrane দ্বারা আবৃত।</li></ul>
+<p>Axoneme</p>
+<p>Cilium-এর central core-কে বলা হয় axoneme।</p>
+<p>এর characteristic arrangement:</p>
+<p>9 + 2 arrangement</p>
+<ul><li>Peripheral region-এ 9টি microtubule doublet।</li><li>কেন্দ্রে 2টি single microtubule।</li><li>অর্থাৎ 9 peripheral doublets + 2 central singlets।</li></ul>
+<p>Adi বলল,</p>
+<p>“Sir, 9 + 2 কি সব cilia-তেই থাকে?”</p>
+<p>Professor উত্তর দিলেন,</p>
+<p>“এখানে আমরা motile cilia এবং flagella-এর typical axonemal arrangement আলোচনা করছি। Primary cilia সাধারণত 9 + 0 arrangement-এর সঙ্গে সম্পর্কিত—তবে এই পর্বে আমাদের মূল আলোচ্য motile cilia-এর 9 + 2 architecture।”</p>
+<p>Professor আবার diagram-এর দিকে ফিরে গেলেন।</p>
+<p>Axoneme-এর associated structures:</p>
+<ul><li>Radial spokes: outer doublets থেকে central pair-এর দিকে প্রসারিত হয়।</li><li>Inner sheath: central pair-কে ঘিরে থাকে।</li><li>Dynein arms: outer doublet microtubules-এর সঙ্গে যুক্ত।</li><li>Nexin filaments: adjacent doublets-কে সংযুক্ত করে।</li><li>Tektins: axonemal microtubules বরাবর scaffolding support দেয়।</li></ul>
+<p>“Peripheral doublet-এর প্রতিটিতে A এবং B subfibre থাকে।”</p>
+<p>তিনি বোর্ডে লিখলেন:</p>
+<ul><li>A subfibre: complete, 13 protofilaments।</li><li>B subfibre: incomplete, 10–11 protofilaments।</li></ul>
+<p>“Dynein arms complete A subfibre-এর সঙ্গে যুক্ত থাকে এবং adjacent doublet-এর B subfibre-এর দিকে নির্দেশ করে।”</p>
+<p>Adi একটু থেমে বলল,</p>
+<p>“Sir, তাহলে dynein কীভাবে cilium-কে বাঁকায়?”</p>
+<p>Professor এবার একটি সহজ analogy দিলেন।</p>
+<p>“ধরো, পাশাপাশি রাখা দুটি লম্বা রড আছে। তুমি যদি একটিকে অন্যটির তুলনায় slide করাতে চাও, কিন্তু তাদের গোড়া ও অন্যান্য অংশ সংযুক্ত থাকে, তাহলে তারা স্বাধীনভাবে সরে যেতে পারবে না। সেই sliding force বাঁকানোর movement তৈরি করতে পারে।”</p>
+<p>তিনি বোর্ডে লিখলেন:</p>
+<p>Dynein + ATP → Sliding force between microtubule doublets → Bending</p>
+<p>“অর্থাৎ microtubules-এর দৈর্ঘ্য ছোট-বড় হয় না। বরং adjacent doublets একে অপরের তুলনায় slide করে। Structural linkages সেই sliding-কে bending-এ রূপান্তর করে।”</p>
+<p>Amrita বলল,</p>
+<p>“তাহলে cilium-এর movement-এর মূল কথা হলো sliding, কিন্তু ফলাফল bending?”</p>
+<p>“একদম ঠিক।”</p>
+</div></section>
+<section class="sec r" id="s7"><h3>Scene 5 — Ciliary Beat: Effective Stroke এবং Recovery Stroke</h3><div class="body">
+<p>Professor একটি moving animation দেখালেন।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Nonrespiratory functions of the lung - Clinical Tree</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/65tE0_YaMy1c2YyS1gQTpszERNDl5vo8CElfJ0MDdmMS2giY3-QtgsBqYip-6GNQLU76_w_ykQFwyB4I9KtQpbn_N-gM6JyyrB2GH-A1teUDl6xLXSlBsFKwz4zLkhbA_Ph2kmg0OuBvJDWVaHPeeE6MnkWKZ3h0y_fsbC-r3NLsx1jwkCgRTkX0l8hT2feo?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Nonrespiratory%20functions%20of%20the%20lung%20-%20Clinical%20Tree">Image search ↗</a></figure>
+<p>“Cilia-এর movement planar কিন্তু asymmetric।”</p>
+<p>তিনি দুটি phase দেখালেন।</p>
+<p>1. Effective stroke</p>
+<ul><li>Cilium অধিকাংশ অংশে stiff থাকে।</li><li>Base-এর কাছে bend তৈরি হয়।</li><li>এটি oar-এর মতো stroke তৈরি করে।</li><li>Surrounding fluid-কে নির্দিষ্ট দিকে সরায়।</li></ul>
+<p>2. Recovery stroke</p>
+<ul><li>Bend base থেকে tip-এর দিকে অগ্রসর হয়।</li><li>Cilium তার initial position-এ ফিরে আসে।</li><li>পরবর্তী effective stroke-এর জন্য প্রস্তুত হয়।</li></ul>
+<p>“একটি cilium একা কাজ করলে সীমিত fluid movement তৈরি করবে। কিন্তু tissue surface-এ অনেক cilia একসঙ্গে coordinatedভাবে কাজ করে।”</p>
+<p>এই coordination-কে বলা হয়—</p>
+<p>Metachronal synchrony</p>
+<p>একটি cilium-এর bending-এর পর পাশের cilium-এর bending শুরু হয়। ফলে tissue surface জুড়ে travelling wave তৈরি হয়।</p>
+<p>Adi বলল,</p>
+<p>“Sir, respiratory tract-এ mucus clearance-এর জন্য এই coordination প্রয়োজন?”</p>
+<p>“হ্যাঁ। Ciliary motion-এর কয়েকটি গুরুত্বপূর্ণ physiological function হলো—”</p>
+<ul><li>Airway থেকে mucus পরিষ্কার করা।</li><li>Oviduct দিয়ে egg transport-এ সাহায্য করা।</li><li>Brain ventricles-এ cerebrospinal fluid circulation-এ সাহায্য করা।</li><li>Developing embryo-র node-এ left–right visceral asymmetry নির্ধারণে ভূমিকা রাখা।</li></ul>
+<p>Amrita বলল,</p>
+<p>“Primary cilia কি শুধু mechanical sensing করে?”</p>
+<p>“না। Ciliary membrane-এ receptor এবং channel proteins থাকতে পারে। তাই cilia sensory function-ও পালন করে।”</p>
+<p>Professor কয়েকটি উদাহরণ দিলেন:</p>
+<ul><li>Collecting ducts-এর primary cilia urine flow sense করতে পারে।</li><li>Duct morphogenesis নিয়ন্ত্রণে ভূমিকা রাখে।</li><li>Hedgehog signalling pathway-এর জন্য cilia গুরুত্বপূর্ণ।</li><li>এই signalling body plan organization, organogenesis এবং tumorigenesis-এর সঙ্গে সম্পর্কিত।</li></ul>
+<p>Adi এবার বলল,</p>
+<p>“তাহলে cilium শুধু একটা hair-like structure নয়। এটা movement, sensing এবং signalling—তিন ক্ষেত্রেই গুরুত্বপূর্ণ।”</p>
+<p>Professor মাথা নেড়ে সম্মতি দিলেন।</p>
+</div></section>
+<section class="sec r" id="s8"><h3>Scene 6 — Clinical Correlation: যখন Cilia কাজ বন্ধ করে দেয়</h3><div class="body">
+<p>Professor আলো কমিয়ে একটি clinical slide দেখালেন।</p>
+<p>“এবার তোমাদের একটি রোগের সঙ্গে পরিচয় করিয়ে দিই।”</p>
+<p>Kartagener’s immotile cilia syndrome</p>
+<p>Gray’s Anatomy অনুযায়ী, ciliary movement-এর defect হতে পারে dynein arms-এর deficient function অথবা absence-এর কারণে।</p>
+<p>এর ফলাফল:</p>
+<ul><li>Ciliary beating কার্যকর হয় না।</li><li>Airway mucus clearance ব্যাহত হয়।</li><li>Chronic sinusitis এবং bronchiectasis হতে পারে।</li><li>Spermatozoan motility কমে যায় বা নষ্ট হয়।</li><li>Male sterility হতে পারে।</li><li>প্রায় অর্ধেক affected individuals-এর ক্ষেত্রে situs inversus দেখা যায়।</li></ul>
+<p>Amrita প্রশ্ন করল,</p>
+<p>“Sir, situs inversus কেন হয়?”</p>
+<p>Professor উত্তর দিলেন,</p>
+<p>“Developing embryo-র node-এ cilium-driven flow left–right visceral asymmetry নির্ধারণে ভূমিকা রাখে। সেই ciliary motility ব্যাহত হলে স্বাভাবিক left–right patterning বিঘ্নিত হতে পারে।”</p>
+<p>Adi বলল,</p>
+<p>“তাহলে respiratory problem, infertility এবং situs inversus—তিনটির পেছনে একই ciliary defect থাকতে পারে!”</p>
+<p>“ঠিক। তবে সব রোগীর মধ্যে সব manifestation একইভাবে থাকবে, এমন নয়।”</p>
+<p>Professor আরও বললেন,</p>
+<p>“Defects in sensory cilia-এর সঙ্গে polycystic kidney disease, anosmia এবং retinal degeneration-এর সম্পর্কও Gray’s Anatomy-তে উল্লেখ করা হয়েছে।”</p>
+</div></section>
+<section class="sec r" id="s9"><h3>Scene 7 — Flagella: Sperm-এর যাত্রা</h3><div class="body">
+<p>Professor এবার spermatozoon-এর diagram দেখালেন।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Что гигантские сперматозоиды дрозофил могут рассказать о мужском бесплодии?</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/JglxKKF4NFXtTrS52oQk5yAXPV2ieNUZKfoaaVM6aFI0Kh5go45pQSysf3scn2fxHflBafvAM4Dax6hgLoHIEVFOLUGmVtgJu40zuzDlOvSwTiEoYAs6rSMHL1BteJsIDWV9yf9pNXsdy9xB0N98uPYAS14vE0TBmpmDUPVk90NG3r7D7tOZTFp8rPvtifRe?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=%D0%A7%D1%82%D0%BE%20%D0%B3%D0%B8%D0%B3%D0%B0%D0%BD%D1%82%D1%81%D0%BA%D0%B8%D0%B5%20%D1%81%D0%BF%D0%B5%D1%80%D0%BC%D0%B0%D1%82%D0%BE%D0%B7%D0%BE%D0%B8%D0%B4%D1%8B%20%D0%B4%D1%80%D0%BE%D0%B7%D0%BE%D1%84%D0%B8%D0%BB%20%D0%BC%D0%BE%D0%B3%D1%83%D1%82%20%D1%80%D0%B0%D1%81%D1%81%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D0%BE%20%D0%BC%D1%83%D0%B6%D1%81%D0%BA%D0%BE%D0%BC%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%BE%D0%B4%D0%B8%D0%B8%3F">Image search ↗</a></figure>
+<p>“Flagella-এর প্রধান কাজ cell locomotion।”</p>
+<p>মানুষের spermatozoon-এ একটি flagellum থাকে, যার দৈর্ঘ্য প্রায় 70 μm।</p>
+<p>Sperm flagellum-এর axoneme-এর বাইরে আরও দুটি গুরুত্বপূর্ণ structural component রয়েছে:</p>
+<ul><li>Outer dense fibres</li><li>Fibrous sheath</li></ul>
+<p>“Flagella-এর movement এবং ciliary movement broadly similar হলেও কিছু পার্থক্য আছে।”</p>
+<p>Flagellar movement:</p>
+<ul><li>Rapid undulation-এর মাধ্যমে হয়।</li><li>Movement attached end থেকে free end-এর দিকে অগ্রসর হয়।</li><li>Human spermatozoa-তে এই movement-এর সঙ্গে অতিরিক্ত helical component থাকে।</li></ul>
+<p>Adi বলল,</p>
+<p>“Sir, তাহলে cilia oar-এর মতো আর flagella wave-এর মতো?”</p>
+<p>Professor হেসে বললেন,</p>
+<p>“এই analogy দিয়ে basic difference মনে রাখতে পারো। তবে structural mechanism দুটির মধ্যে অনেক মিল রয়েছে।”</p>
+</div></section>
+<section class="sec r" id="s10"><h3>Scene 8 — Microvilli: Absorption-এর জন্য Surface Area বৃদ্ধি</h3><div class="body">
+<p>Lecture theatre-এর screen-এ এবার intestinal absorptive cell-এর ছবি।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Cytoskeleton III Chapter 16 Actin binds to many</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/DmHBq7VWDEvimYhNq_plwhCB8OHvNlo06qikZ9o65bY7ie44eueVPXJNb9-YBoUC0m06jlDvn4wosswW0z5LLffMMI5ilJbxDIQ0XsB_GEV1971fDQQJLg5UvyIEaNWewfFVmrO-skNFJ8dfLDQnV7GJRTV_F9jr0Y6YODY1IqPgr1s6c6zITe9ztN4XPAaY?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Cytoskeleton%20III%20Chapter%2016%20Actin%20binds%20to%20many">Image search ↗</a></figure>
+<p>Professor বললেন,</p>
+<p>“এবার এমন একটি structure দেখব, যা cilia-এর মতো দেখতে হলেও কাজ সম্পূর্ণ আলাদা।”</p>
+<p>Microvilli</p>
+<p>Microvilli হলো finger-like cell surface extensions।</p>
+<p>Gray’s Anatomy অনুযায়ী:</p>
+<ul><li>সাধারণত diameter প্রায় 0.1 μm।</li><li>Length সর্বোচ্চ প্রায় 2 μm।</li><li>Plasma membrane দ্বারা আবৃত।</li><li>Internal support তৈরি হয় closely packed actin filament bundles দিয়ে।</li></ul>
+<p>Professor একটি microvillus-এর diagram আঁকলেন।</p>
+<p>Microvillus-এর cytoskeletal organization</p>
+<ul><li>Actin filaments — central core তৈরি করে।</li><li>Fascin এবং fimbrin — actin filament bundles-এর cross-bridging-এ সাহায্য করে।</li><li>Myosin I এবং calmodulin — filament bundles-কে plasma membrane-এর সঙ্গে যুক্ত করে।</li><li>Villin — microvillus tip-এর dense mass-এর অংশ।</li><li>Spectrin — terminal web-এর transverse actin network স্থিতিশীল করতে সাহায্য করে।</li><li>Keratin intermediate filaments — terminal web-এর নিচে থাকে।</li></ul>
+<p>“Microvilli-এর actin filament bundles apical cytoplasm-এ প্রবেশ করে এবং terminal web-এর সঙ্গে সম্পর্কিত থাকে।”</p>
+<p>Adi বলল,</p>
+<p>“Sir, terminal web কী?”</p>
+<p>Professor উত্তর দিলেন,</p>
+<p>“এটি apical cytoplasm-এর একটি filamentous network। Microvilli-এর actin bundles এর মধ্যে প্রবেশ করে। এটি tight junction এবং zonula adherens-এর সঙ্গে laterally anchored থাকে।”</p>
+<p>“এখানে myosin II এবং tropomyosin-ও পাওয়া যায়। এগুলো terminal web-এর contractile activity ব্যাখ্যা করতে সাহায্য করতে পারে।”</p>
+<p>Amrita বলল,</p>
+<p>“তাহলে microvilli-এর ভিতরে microtubules নয়, actin থাকে?”</p>
+<p>“সঠিক।”</p>
+<p>Professor এবার সবচেয়ে গুরুত্বপূর্ণ functional point-টি লিখলেন:</p>
+<p>Up to 40 times</p>
+<p>Microvilli cell surface area প্রায় 40 গুণ পর্যন্ত বাড়াতে পারে।</p>
+<p>“বিশেষ করে active absorption-এর স্থানে microvilli খুব গুরুত্বপূর্ণ।”</p>
+<p>উদাহরণ:</p>
+<ul><li>Small intestine-এর absorptive epithelial cells।</li><li>Kidney nephron-এর proximal convoluted tubule (PCT)।</li></ul>
+<p>এগুলোতে microvilli নিয়মিত parallel arrangement তৈরি করলে light microscope-এ brush-এর মতো fuzzy appearance দেখা যায়।</p>
+<p>একে বলা হয়:</p>
+<ul><li>Brush border</li><li>Striated border</li></ul>
+<p>Adi বলল,</p>
+<p>“তাহলে PCT-এর brush border থাকার কারণ হলো reabsorption-এর জন্য surface area বাড়ানো?”</p>
+<p>Professor বললেন,</p>
+<p>“হ্যাঁ। মনে রাখবে, microvilli absorption-এর efficiency বাড়াতে surface area বৃদ্ধি করে।”</p>
+</div></section>
+<section class="sec r" id="s11"><h3>Scene 9 — Stereocilia: নামের মধ্যে Cilia, কিন্তু কাজ আলাদা</h3><div class="body">
+<p>Professor এবার একটি cochlear receptor cell-এর ছবি দেখালেন।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Ototoxicity: The Radical Drum Beat and Rhythm of Cochlear Hair Cell Life and Death - David V. Gauvin, Joshua Yoder, Zachary J. Zimmermann, Rachel Tapp, 2018</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/Tj9zPBz9h6kwuvtR-Gm22jBL6VWdMTfxaM3a7sYB8EkoMy4Bb3IajPTarkqGUYxrhrGpiIoB08Fnk60f0X9UO2s6-o8J0H0iaOw5sLaLMcoM4rvi5TSc_fD6s8cO40BJhR_Im4z0lxGb_jrWwtVznzz9lnCZbhhE23mxbv-gXl42IetSuTg3IPzbekx__4Dj?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Ototoxicity%3A%20The%20Radical%20Drum%20Beat%20and%20Rhythm%20of%20Cochlear%20Hair%20Cell%20Life%20and%20Death%20-%20David%20V.%20Gauvin%2C%20Joshua%20Yoder%2C%20Zachary%20J.%20Zimmermann%2C%20Rachel%20Tapp%2C%202018">Image search ↗</a></figure>
+<p>“এবার একটি গুরুত্বপূর্ণ terminology trap।”</p>
+<p>Stereocilia নাম শুনে মনে হতে পারে এগুলো motile cilia। কিন্তু তা নয়।</p>
+<p>Gray’s Anatomy অনুযায়ী:</p>
+<ul><li>এগুলো long এবং branching microvilli।</li><li>এগুলো motile নয়।</li><li>এগুলোতে microtubules থাকে না।</li><li>এগুলো actin-based structure।</li></ul>
+<p>তাই অধিক উপযুক্ত নাম—</p>
+<p>Stereovilli</p>
+<p>এগুলো পাওয়া যায়:</p>
+<ul><li>Cochlear receptor cells।</li><li>Vestibular receptor cells।</li><li>Epididymis-এর absorptive epithelium।</li></ul>
+<p>Inner ear-এর receptor cells-এ stereovilli sensory transduction-এ অংশ নেয়।</p>
+<p>Amrita বলল,</p>
+<p>“তাহলে তিনটি structure মনে রাখব—cilia movement, microvilli absorption, stereovilli sensory transduction?”</p>
+<p>Adi বলল,</p>
+<p>“হ্যাঁ, কিন্তু stereovilli-কে microvilli-এর modified form হিসেবে মনে রাখবি।”</p>
+<p>Professor তাদের আলোচনা শুনে বললেন,</p>
+<p>“Good. Anatomy-তে নাম দেখে সিদ্ধান্ত নেওয়া যাবে না। Structure এবং function বুঝতে হবে।”</p>
+</div></section>
+<section class="sec r" id="s12"><h3>Scene 10 — Library: তিনটি Structure-এর বিচার</h3><div class="body">
+<p>বিকেল ৫টা।</p>
+<p>Medical College Library।</p>
+<p>Adi, Amrita এবং তাদের group-এর আরও তিনজন—Rafi, Nabila ও Samin—একটি টেবিলে বসেছে।</p>
+<p>Rafi বলল,</p>
+<p>“আজকের lecture-এর সবচেয়ে confusing বিষয় কোনটা?”</p>
+<p>Nabila উত্তর দিল,</p>
+<p>“Cilia, flagella আর microvilli। দেখতে কাছাকাছি মনে হয়, কিন্তু structure ও function আলাদা।”</p>
+<p>Adi বোর্ডে একটি comparison table লিখল।</p>
+<div class="tw"><table><thead><tr><th>Feature</th><th>Cilia</th><th>Flagella</th><th>Microvilli</th></tr></thead><tbody><tr><td>Basic role</td><td>Fluid movement</td><td>Cell locomotion</td><td>Surface area increase</td></tr><tr><td>Core</td><td>Microtubules</td><td>Microtubules</td><td>Actin filaments</td></tr><tr><td>Typical arrangement</td><td>9 + 2 in motile cilia</td><td>9 + 2 axoneme</td><td>Actin bundle</td></tr><tr><td>Movement</td><td>Beating</td><td>Undulation</td><td>Non-motile</td></tr><tr><td>Example</td><td>Respiratory epithelium</td><td>Sperm</td><td>Intestine, PCT</td></tr></tbody></table></div>
+<p>Amrita বলল,</p>
+<p>“এবার আমাকে বল—situs inversus-এর সঙ্গে কোন structure-এর সম্পর্ক?”</p>
+<p>Adi উত্তর দিল,</p>
+<p>“Embryonic node-এর motile cilia।”</p>
+<p>“Brush border?”</p>
+<p>“Microvilli।”</p>
+<p>“Male infertility?”</p>
+<p>“Defective sperm flagellar motility, বিশেষ করে immotile cilia syndrome-এর ক্ষেত্রে।”</p>
+<p>“Anosmia?”</p>
+<p>“Sensory cilia defect-এর সঙ্গে সম্পর্কিত হতে পারে।”</p>
+<p>Amrita মাথা নেড়ে বলল,</p>
+<p>“ভালো। এবার বুঝতে পারছি তুই সত্যিই পড়েছিস।”</p>
+<p>Adi মৃদু হাসল।</p>
+<p>“তুই প্রশ্ন করলে পড়া মনে থাকে।”</p>
+<p>Nabila পাশ থেকে বলে উঠল,</p>
+<p>“আমাদেরও প্রশ্ন করতে দে! তোমাদের দুজনের anatomy class কি আলাদা করে চালাতে হবে?”</p>
+<p>সবাই হেসে উঠল।</p>
+</div></section>
+<section class="sec r" id="s13"><h3>Episode 20 — Final Learning Check</h3><div class="body">
+<p>Episode 20 — SBA Challenge</p>
+<p class="cnt" data-qz="1" data-n="5" data-a="1">0/5 answered</p>
+<div class="q" data-qz="1"><p class="qt">1. An epithelial cell-এর apical domain সাধারণত কোন দিকে মুখ করে?</p><button type="button" class="opt">A. Basal lamina-এর দিকে</button><button type="button" class="opt">B. Lumen বা বাইরের পরিবেশের দিকে</button><button type="button" class="opt">C. Adjacent cell-এর nucleus-এর দিকে</button><button type="button" class="opt">D. Blood capillary-এর দিকে</button></div>
+<div class="q" data-qz="1"><p class="qt">2. Motile cilia-এর typical axonemal arrangement কোনটি?</p><button type="button" class="opt">A. 9 + 0</button><button type="button" class="opt">B. 9 + 2</button><button type="button" class="opt">C. 8 + 2</button><button type="button" class="opt">D. 13 + 2</button></div>
+<div class="q" data-qz="1"><p class="qt">3. Microvilli-এর core প্রধানত কী দিয়ে তৈরি?</p><button type="button" class="opt">A. Microtubules</button><button type="button" class="opt">B. Intermediate filaments</button><button type="button" class="opt">C. Actin filaments</button><button type="button" class="opt">D. Collagen fibres</button></div>
+<div class="q" data-qz="1"><p class="qt">4. Kartagener’s syndrome-এ ciliary dysfunction-এর সঙ্গে কোনটি সম্পর্কিত?</p><button type="button" class="opt">A. Situs inversus</button><button type="button" class="opt">B. Hyperthyroidism</button><button type="button" class="opt">C. Osteoporosis</button><button type="button" class="opt">D. Cataract</button></div>
+<div class="q" data-qz="1"><p class="qt">5. Stereocilia সম্পর্কে সঠিক বক্তব্য কোনটি?</p><button type="button" class="opt">A. এগুলো motile এবং microtubule-based</button><button type="button" class="opt">B. এগুলো actin-based এবং non-motile</button><button type="button" class="opt">C. এগুলোতে 9 + 2 arrangement থাকে</button><button type="button" class="opt">D. এগুলো শুধু respiratory tract-এ থাকে</button></div>
+<p class="sub2">Submit answers</p>
+</div></section>
+<section class="sec r" id="s14"><h3>Episode 20 </h3><div class="body">
+<p>এই পর্বে সম্পন্ন:</p>
+<ul><li>Page 60: Cell Polarity and Domains</li><li>Page 61–62: Cell Surface Apical Differentiations; Cilia and Flagella</li><li>Page 63–64: Ciliary functions, clinical correlations, Microvilli and Stereocilia</li></ul>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-019b.html">← Episode 19 · Version B</a><a href="index.html">সব পর্ব</a><a href="episode-021.html">Episode 21 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">Episode 20</a><a href="#s2">The Cell's Secret Architecture</a><a href="#s3">Scene 1 — একটি অদ্ভুত প্রশ্ন</a><a href="#s4">Scene 2 — Cell Polarity: কোষের দিকনির্দেশনা</a><a href="#s5">Scene 3 — Cell Surface Apical Differentiations</a><a href="#s6">Scene 4 — Cilia and Flagella: নড়াচড়ার গোপন যন্ত্র</a><a href="#s7">Scene 5 — Ciliary Beat: Effective Stroke এবং Recovery Stroke</a><a href="#s8">Scene 6 — Clinical Correlation: যখন Cilia কাজ বন্ধ করে দেয়</a><a href="#s9">Scene 7 — Flagella: Sperm-এর যাত্রা</a><a href="#s10">Scene 8 — Microvilli: Absorption-এর জন্য Surface Area বৃদ্ধি</a><a href="#s11">Scene 9 — Stereocilia: নামের মধ্যে Cilia, কিন্তু কাজ আলাদা</a><a href="#s12">Scene 10 — Library: তিনটি Structure-এর বিচার</a><a href="#s13">Episode 20 — Final Learning Check</a><a href="#s14">Episode 20 </a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

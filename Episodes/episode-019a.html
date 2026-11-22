@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 019 A · Mitosis and Meiosis — জীবনের উত্তরাধিকার, Chromosome-এর বিচ্ছেদ ও নতুন জীবনের রহস্য</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+.fx{font-family:"Special Elite","Noto Serif Bengali",monospace;color:var(--teal);background:rgba(98,211,198,.05);border:1px dashed #2c3f4b;border-radius:10px;padding:10px 14px;margin:.7em 0;overflow-x:auto}
+.fx p{margin:0!important}.fxr{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}.fxb p+p{margin-top:.3em!important}
+.fx .ar{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 .45em;line-height:1.25}.fx .ar i{font-style:normal;font-size:.68em;color:var(--amber)}.fx .ar b{font-weight:400}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 019">EPISODE 019</h1>
+  <div class="ttl">Mitosis and Meiosis — জীবনের উত্তরাধিকার, Chromosome-এর বিচ্ছেদ ও নতুন জীবনের রহস্য</div><div class="chip">VERSION A</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">019</div></div>
+    <div class="face b"><div class="t2">Mitosis and Meiosis — জীবনের উত্তরাধিকার, Chromosome-এর বিচ্ছেদ ও নতুন জীবনের রহস্য</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><div class="body">
+<p>আজকের অধ্যায় Mitosis and Meiosis।</p>
+<p>এবার বিশেষভাবে তিনটি বিষয় বুঝতে হবে:</p>
+<ul><li>কীভাবে একটি Diploid cell নিজের সম্পূর্ণ genome দুটি Daughter cells-এর মধ্যে সমানভাবে বণ্টন করে?</li><li>কীভাবে Meiosis-এ chromosome number অর্ধেক হয় এবং Genetic variation তৈরি হয়?</li><li>Chromosome segregation-এ ভুল হলে কীভাবে Aneuploidy, fetal loss এবং Down syndrome-এর মতো clinical consequence তৈরি হতে পারে?</li></ul>
+</div></section>
+<section class="sec r" id="s2"><h3>Episode 19: Mitosis and Meiosis — জীবনের উত্তরাধিকার, Chromosome-এর বিচ্ছেদ ও নতুন জীবনের রহস্য</h3><div class="body">
+<p>Adi &amp; Amrita | Dhaka Medical College | Gray’s Anatomy Study Sessions</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>24 Hour Gym | Swindon Wiltshire</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/8MTB31nqJUERY5fV0iyuvJ-7MLecZ-ybFMvNkmuHYOrzRTu8JJVDrEgMZK42ko0V05PLDsoFBWwVdXeOk-Gs_nsgy4ShNx_933eNpOYtiKA3B5cXRTwMawMjhXxFgMfB-ilPeAwRkMZeESYFCAJFEMw4_tU13L3_7TCUzLT246wV2LgNAIGUCv_YE0BNjSGJ?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=24%20Hour%20Gym%20%7C%20Swindon%20Wiltshire">Image search ↗</a></figure>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>11.1 The Process of Meiosis - Biology 2e | OpenStax</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/9BxtfY0-xwDvwpr-W_Pm_lkO8t-A_biW34Trsyt03BNfGwj1SAKcTrS21ac9PMDQjE1x1v6ua4vL-MdsRBaUv5vFC2cCm_f3hyh8zRzESknKRmcRxtwwpdgxWApOFmhM7D9B8HcRP1r0WOLdieeCLMBdCI5p9Y9BfLp9BzEzQbUsR60l2_d3h6IvwA-PjXs8?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=11.1%20The%20Process%20of%20Meiosis%20-%20Biology%202e%20%7C%20OpenStax">Image search ↗</a></figure>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Biology - Ch. 6 - Inquizitive EC Flashcards | Quizlet</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/Fs-jjJMe-HZeXY5Rc3nudnrjJ43D6J7oJsqEMfbHpOMjqSQlbFFaQgmKVEZeLvfhvIifya0SiOrut4TekYvhJwlmHFb24Nf-Db56Sjk34xwwryEbcmCowoSFzyBw7ZSuukd_iEkp7EH2dAcmBIDLwR2TnPvN3ddyjnhOkxAzwq71_N1QTcMndM0qCdpEYrdo?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Biology%20-%20Ch.%206%20-%20Inquizitive%20EC%20Flashcards%20%7C%20Quizlet">Image search ↗</a></figure>
+</div></section>
+<section class="sec r" id="s3"><h3>১. নতুন ক্লাস, নতুন প্রশ্ন</h3><div class="body">
+<p>ঢাকা মেডিকেল কলেজের Anatomy lecture theatre।</p>
+<p>সকাল ৯টা।</p>
+<p>Professor Rahman আজ বোর্ডে বড় করে লিখলেন:</p>
+<p>MITOSIS AND MEIOSIS</p>
+<p>গত ক্লাসে Cell Cycle, Cyclins, Cdks, Checkpoints এবং p53 নিয়ে বিস্তারিত আলোচনা হয়েছে।</p>
+<p>Professor বললেন,</p>
+<p>"গত ক্লাসে আমরা জেনেছি, একটি কোষ কীভাবে M phase-এ প্রবেশ করে। আজ জানব, M phase-এ প্রবেশ করার পর আসলে কী ঘটে।"</p>
+<p>Adi সামনের সারিতে বসে খাতা খুলল।</p>
+<p>Amrita তার পাশের আসনে।</p>
+<p>Professor প্রশ্ন করলেন,</p>
+<p>"তোমরা বলো, Mitosis এবং Meiosis-এর মধ্যে মৌলিক পার্থক্য কী?"</p>
+<p>Rudra বলল, "Mitosis-এ দুটি Daughter cells তৈরি হয়, আর Meiosis-এ চারটি।"</p>
+<p>Professor বললেন,</p>
+<p>"উত্তরটি আংশিক সঠিক। কিন্তু শুধু Daughter cell-এর সংখ্যা দিয়ে এই দুটি process-এর পার্থক্য বোঝা যায় না। সবচেয়ে গুরুত্বপূর্ণ হলো chromosome-এর behaviour এবং genetic information-এর distribution।"</p>
+<p>তিনি বোর্ডে লিখলেন:</p>
+<p>Mitosis</p>
+<ul><li>Parent cell-এর genome-এর identical copies দুটি Daughter somatic cells-এ বণ্টিত হয়।</li><li>Chromosome number বজায় থাকে।</li></ul>
+<p>Meiosis</p>
+<ul><li>Gamete তৈরির আগে পরপর দুটি cell division ঘটে।</li><li>Chromosome number অর্ধেক হয়ে haploid number-এ নেমে আসে।</li><li>Homologous chromosomes-এর মধ্যে genetic material exchange হয়।</li><li>ফলে Daughter cells-এর genetic sequence Parent cell-এর থেকে আলাদা হয়।</li></ul>
+<p>Amrita বলল,</p>
+<p>"Sir, তাহলে Mitosis মূলত genetic information সংরক্ষণ করে, আর Meiosis genetic information পুনর্বিন্যাস করে chromosome number অর্ধেক করে?"</p>
+<p>Professor মৃদু হাসলেন।</p>
+<p>"Excellent. আজকের পুরো অধ্যায় এই দুটি ধারণার ওপর দাঁড়িয়ে আছে।"</p>
+</div></section>
+<section class="sec r" id="s4"><h3>২. Mitosis শুরু হওয়ার আগে Chromosome-এর অবস্থা</h3><div class="body">
+<p>Professor বোর্ডে একটি Diploid cell আঁকলেন।</p>
+<p>"মনে করো, একটি Diploid cell S phase সম্পন্ন করেছে। এখন সেটি Mitosis-এ প্রবেশ করতে যাচ্ছে।"</p>
+<p>তিনি প্রশ্ন করলেন,</p>
+<p>"DNA replication হলে কি Chromosome number দ্বিগুণ হয়ে যায়?"</p>
+<p>Adi উত্তর দিল,</p>
+<p>"No, Sir. DNA content doubles, but chromosome number remains diploid."</p>
+<p>"ঠিক। এবার বিষয়টি বুঝিয়ে বলো।"</p>
+<p>Adi বোর্ডে লিখল:</p>
+<p class="fx">2n, 2C → 2n, 4C</p>
+<p>Professor বললেন,</p>
+<p>"এখানে n হলো chromosome set-এর সংখ্যা এবং C হলো DNA content-এর পরিমাণ বোঝানোর একটি প্রচলিত একক।"</p>
+</div></section>
+<section class="sec r" id="s5"><h3>Feynman Technique: Chromosome ও Chromatid</h3><div class="body">
+<p>Professor একটি উদাহরণ দিলেন।</p>
+<p>"তোমাদের কাছে একটি বই আছে। বইটির দুটি সম্পূর্ণ identical copy তৈরি করলে বইয়ের সংখ্যা বাড়বে, কিন্তু মূল বইয়ের তথ্য পরিবর্তিত হবে না।"</p>
+<p>একইভাবে:</p>
+<ul><li>S phase-এর আগে একটি Chromosome-এ একটি chromatid থাকে।</li><li>S phase-এ DNA replication হয়।</li><li>Replication-এর পরে প্রতিটি replicated chromosome-এ দুটি Sister chromatids থাকে।</li><li>Sister chromatids Centromere অঞ্চলে যুক্ত থাকে।</li><li>কিন্তু Centromere এখনো বিভক্ত না হওয়ায় chromosome number আগের মতোই থাকে।</li></ul>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>PPT - About Science Prof Online PowerPoint Resources PowerPoint Presentation - ID:2436387</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/JuW-RiZ4tJtiMqmyt_jkRctqE9v3pwbjE-scRp2KZMNqu0nDtcXFau4prq2EpqGHQRHD4YladJ_DYK2u4vy8XeP7aABzs0CZUTRVkbGDLaYDk8QDcb44PqEl4O5U5UodETYlNkK4p6wRRFIb2L2o1dUY4upn9LGwEuc3VZRymiGSA4gT4uwk9Va8vREpwWgn?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=PPT%20-%20About%20Science%20Prof%20Online%20PowerPoint%20Resources%20PowerPoint%20Presentation%20-%20ID%3A2436387">Image search ↗</a></figure>
+<p>Professor বললেন,</p>
+<p>"তাহলে Mitosis-এর শুরুতে DNA content দ্বিগুণ হলেও chromosome number diploid থাকে। Mitosis-এর শেষে এই DNA content দুটি Daughter cells-এর মধ্যে ভাগ হয়ে যায়।"</p>
+<p>Amrita লিখল:</p>
+<p>Before Mitosis: 2n, 4C</p>
+<p>After Mitosis: Each daughter cell = 2n, 2C</p>
+<p>Professor বললেন, "এই পার্থক্যটি কখনো ভুলবে না।"</p>
+</div></section>
+<section class="sec r" id="s6"><h3>৩. Mitosis-এর চারটি প্রধান Phase</h3><div class="body">
+<p>Gray’s Anatomy অনুযায়ী Mitosis-এর cellular changes-কে চারটি প্রধান Phase-এ ভাগ করা হয়:</p>
+<ul><li>Prophase</li><li>Metaphase</li><li>Anaphase</li><li>Telophase</li></ul>
+<p>তবে Metaphase-এর আগে Prometaphase নামে একটি গুরুত্বপূর্ণ পর্যায় রয়েছে।</p>
+<p>আজ আমরা সেটিও আলাদাভাবে বুঝব।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Cell Division: Cycle, Mitosis, Cytokinesis, Meiosis, Variation, Regulation</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/DZsy8u9nmHiiGlYcvZebc4xsnIsczNenEW6EvDrikGeR8CyHrzVhijYrQGRp7Ai5ZTVdE6KtSS4vpAl4a5RMxDfBm9Kagq6yXzTQrTUFoMfJZpnzdg75EwLCLhXhrwgCUyDxUFPCbO5m4qeZ3ET_nTF-FFZr_sEe8S4Cm_I5WMf4d33WDm1gjxS__DcLYwDu?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Cell%20Division%3A%20Cycle%2C%20Mitosis%2C%20Cytokinesis%2C%20Meiosis%2C%20Variation%2C%20Regulation">Image search ↗</a></figure>
+</div></section>
+<section class="sec r" id="s7"><h3>৩.১ Prophase — Chromosome-এর দৃশ্যমান রূপান্তর</h3><div class="body">
+<p>Professor বললেন,</p>
+<p>"Interphase-এ Chromatin অত্যন্ত extended অবস্থায় থাকে। কিন্তু Mitosis শুরু হলে এই Chromatin ধীরে ধীরে compact হতে থাকে।"</p>
+<p>বোর্ডে লিখলেন:</p>
+<p>Prophase: Chromatin condensation</p>
+<p>এই পর্যায়ে:</p>
+<p>১. Chromatin condensation</p>
+<ul><li>Interphase-এর extended chromatin strands ছোট ও মোটা হতে শুরু করে।</li><li>Chromatin condense হয়ে recognizable Chromosomes তৈরি করে।</li><li>প্রতিটি chromosome-এ দুটি duplicate Sister chromatids থাকে।</li><li>Sister chromatids Centromere-এ যুক্ত থাকে।</li></ul>
+<p>২. Centrosome separation</p>
+<p>কোষের Nucleus-এর বাইরে দুটি centriole pair বা Centrosome আলাদা হতে শুরু করে।</p>
+<p>তারা কোষের বিপরীত দুই প্রান্তের দিকে অগ্রসর হয়।</p>
+<p>৩. Mitotic spindle formation</p>
+<p>Professor বোর্ডে দুটি বিপরীত মেরু আঁকলেন।</p>
+<p>"এই দুটি মেরুর মধ্যে Parallel microtubules তৈরি হয়। এগুলো Mitotic spindle গঠন করে।"</p>
+<p>এ ছাড়া কিছু Microtubules বাইরের দিকে Radiate করে।</p>
+<p>এগুলো তৈরি করে:</p>
+<p>Microtubule asters</p>
+<p>এবং এগুলো পরবর্তীতে Spindle poles বা Mitotic centres গঠনে ভূমিকা রাখে।</p>
+<p>৪. Nucleolus disappearance</p>
+<p>Prophase এগিয়ে যাওয়ার সঙ্গে সঙ্গে Nucleoli অদৃশ্য হয়ে যায়।</p>
+<p>৫. Nuclear envelope breakdown</p>
+<p>Professor বললেন,</p>
+<p>"Gray’s Anatomy-র বর্ণনায় Nuclear envelope-এর হঠাৎ disintegration-কে Prophase-এর শেষ চিহ্ন হিসেবে উল্লেখ করা হয়েছে।"</p>
+<p>এখানে একটি গুরুত্বপূর্ণ বিষয়:</p>
+<p>এই textbook-এর classification-এ Nuclear envelope breakdown Prophase-এর শেষ নির্দেশ করে। অন্য কিছু প্রচলিত classification-এ এটিকে Prometaphase-এর শুরু হিসেবে দেখানো হয়।</p>
+<p>Adi সঙ্গে সঙ্গে নোট করল।</p>
+</div></section>
+<section class="sec r" id="s8"><h3>৩.২ Prometaphase — Spindle ও Chromosome-এর প্রথম সংযোগ</h3><div class="body">
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>PPT - Cell Division and Mitosis PowerPoint Presentation, free download - ID:804966</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/5I5pXI9HY9csyAYqsaElMOz73U-vKiUb3oCDs1RAyrr9z09XUiQFAhVlIYy62rUPvwpwpu3shIjhgaKXrrsrKMAfz5Glpt37UOHqAMn7tpcHvy5wsascS13Hb-_cMuFV7POKhVr_uukJUbUyq1YvOSbwJWek0Ev5qvrPc9oq0Foc0Ez-OLGQTXQT8g0QimcB?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=PPT%20-%20Cell%20Division%20and%20Mitosis%20PowerPoint%20Presentation%2C%20free%20download%20-%20ID%3A804966">Image search ↗</a></figure>
+<p>Professor বললেন,</p>
+<p>"এবার Nuclear envelope ভেঙে যাওয়ার ফলে Spindle microtubules Nucleus-এর কেন্দ্রীয় অঞ্চলে প্রবেশ করতে পারে।"</p>
+<p>এই পর্যায়ে:</p>
+<ul><li>Spindle microtubules Chromosomes-এর সঙ্গে attach করে।</li><li>Chromosomes ধীরে ধীরে Spindle-এর Equator-এর দিকে যেতে থাকে।</li></ul>
+<p>কিন্তু Microtubules কোথায় attach করে?</p>
+<p>Professor বোর্ডে লিখলেন:</p>
+<p>Kinetochore</p>
+<p>"Kinetochore হলো Centromeric DNA region-এ assembled একটি multiprotein structure।"</p>
+<p>এটি Chromosome এবং Spindle microtubules-এর মধ্যে সংযোগ স্থাপন করে।</p>
+</div></section>
+<section class="sec r" id="s9"><h3>Spindle microtubules-এর দুই ধরনের গুরুত্বপূর্ণ অংশ</h3><div class="body">
+<p>Professor এবার দুটি নাম লিখলেন।</p>
+<p>A. Kinetochore microtubules</p>
+<ul><li>এগুলো Kinetochore-এর সঙ্গে attach করে।</li><li>Chromosome movement ও segregation-এ ভূমিকা রাখে।</li></ul>
+<p>B. Polar microtubules</p>
+<ul><li>এগুলো সরাসরি Chromosomes-এর সঙ্গে attach করে না।</li><li>বরং কোষের কেন্দ্রীয় অঞ্চলে একে অপরের সঙ্গে overlap করে।</li></ul>
+<p>Rudra প্রশ্ন করল,</p>
+<p>"Sir, তাহলে সব Spindle microtubules কি Chromosome ধরে রাখে?"</p>
+<p>Professor বললেন,</p>
+<p>"না। এটাই গুরুত্বপূর্ণ পার্থক্য। Kinetochore microtubules Chromosome-এর সঙ্গে যুক্ত হয়, কিন্তু Polar microtubules একে অপরের সঙ্গে overlap করে।"</p>
+</div></section>
+<section class="sec r" id="s10"><h3>৩.৩ Metaphase — Equatorial plate-এ Chromosome-এর বিন্যাস</h3><div class="body">
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>houghton biology site</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/n96Z9vCNTGEhXZRFjUt8K1CAayZBlVEQ2LouOw9eef-7Qjjym_mGSidVBsOC8z2SnpA8MWlFwuMUtE9ZSXeSbA3x8vrlr-sd45Lp8Nv2iAapMYZg9aNeD-9sxC8JrvMzPCj3hA_y5smBKKAIOif_SLyaWu44Pfqqni6SrEqsY_8r3YUrgmvjlAT5cAjIB-Dq?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=houghton%20biology%20site">Image search ↗</a></figure>
+<p>Professor বললেন,</p>
+<p>"Prometaphase-এ Chromosomes Equator-এর দিকে যায়। যখন তারা Spindle-এর Equator-এ সাজানো হয়, তখন সেই বিন্যাসকে Metaphase বা Equatorial plate বলা হয়।"</p>
+<p>এখানে একটি চমৎকার anatomical observation রয়েছে।</p>
+<p>Chromosomes-কে দুইভাবে দেখা যায়:</p>
+<ul><li>কোষের দুই মেরুর যেকোনো একটি থেকে দেখলে Chromosomes একটি Ring-এর মতো সাজানো মনে হয়।</li><li>ওপর থেকে দেখলে এগুলো Equatorial plane বরাবর Linear arrangement তৈরি করে।</li></ul>
+<p>Professor আরও বললেন,</p>
+<p>"Late metaphase-এ Cytoplasmic movements-এর মাধ্যমে Mitochondria এবং অন্যান্য cell structures কোষের Peripheral region-এ প্রায় সমানভাবে বণ্টিত হতে থাকে।"</p>
+</div></section>
+<section class="sec r" id="s11"><h3>Metaphase-এর শেষ মুহূর্ত</h3><div class="body">
+<p>এবার Professor বললেন,</p>
+<p>"Anaphase শুরু হওয়ার ঠিক আগে প্রতিটি Chromosome-এর দুটি Sister chromatids বিপরীত Spindle poles-এর সঙ্গে যুক্ত থাকে।"</p>
+<p>অর্থাৎ:</p>
+<ul><li>প্রতিটি Chromosome-এ দুটি Sister chromatids।</li><li>তাদের Centromeric region-এ Cohesin complex রয়েছে।</li><li>Kinetochore microtubules তাদের বিপরীত মেরুর দিকে সংযুক্ত রাখে।</li></ul>
+<p>Amrita বলল,</p>
+<p>"Sir, Sister chromatids আলাদা হতে পারছে না কেন?"</p>
+<p>Professor উত্তর দিলেন,</p>
+<p>"Cohesins তাদের একসঙ্গে ধরে রাখে। Anaphase-এ এই cohesion ভেঙে যাবে।"</p>
+</div></section>
+<section class="sec r" id="s12"><h3>৩.৪ Anaphase — Sister Chromatids-এর বিচ্ছেদ</h3><div class="body">
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>PPT - The Cell Cycle PowerPoint Presentation, free download - ID:6681761</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/K6omLqWxd7MBJbvE5jn5t4g1x3y_FZmC0MUA5uCUmH15oPQh4EAz860tpevCkGLYTkahzLARw3YGTv73b-gQ_wCCVDRSocIwRGVh0xb7Z0d7sTOY34OwVb0oBaMNQ4AbqCfX6Bfogtk_MPA9OARGgKdJTUIrrZRBmnCh3c0f1JhflNtEvCmoVfh2IS_2ARlo?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=PPT%20-%20The%20Cell%20Cycle%20PowerPoint%20Presentation%2C%20free%20download%20-%20ID%3A6681761">Image search ↗</a></figure>
+<p>Professor বললেন,</p>
+<p>"এবার আসছে Mitosis-এর অত্যন্ত গুরুত্বপূর্ণ একটি ঘটনা।"</p>
+<p>বোর্ডে লিখলেন:</p>
+<p>Separase → Cohesin cleavage → Sister chromatid separation</p>
+<p>Metaphase-এর শেষে Sister chromatids-কে ধরে রাখা Cohesin protein complexes থাকে।</p>
+<p>Anaphase শুরু হয় Separase enzyme-এর মাধ্যমে Cohesin-এর একটি গুরুত্বপূর্ণ subunit-এর proteolytic cleavage-এর মাধ্যমে।</p>
+<p>এর ফলে:</p>
+<ul><li>Sister chromatids-এর মধ্যে cohesion নষ্ট হয়।</li><li>Chromatids পৃথক হয়ে যায়।</li><li>প্রতিটি Chromatid বিপরীত Spindle pole-এর দিকে অগ্রসর হয়।</li><li>Kinetochore-এর সঙ্গে যুক্ত Microtubule bundles ছোট হতে থাকে।</li><li>Microtubule-dependent pulling forces Chromatids-কে বিপরীত মেরুর দিকে নিয়ে যায়।</li></ul>
+<p>Professor বললেন,</p>
+<p>"Anaphase-এর শেষে দুটি বিপরীত প্রান্তে Chromatids-এর দুটি পৃথক cluster তৈরি হয়। প্রতিটি cluster-এ diploid chromosome number থাকে।"</p>
+<p>Adi বলল,</p>
+<p>"মানে Sister chromatids আলাদা হওয়ার পর প্রত্যেকটি নিজস্ব Daughter chromosome হিসেবে গণ্য হয়?"</p>
+<p>Professor বললেন,</p>
+<p>"Exactly!"</p>
+</div></section>
+<section class="sec r" id="s13"><h3>Clinical connection: Non-disjunction</h3><div class="body">
+<p>Professor এবার একটু গম্ভীর হলেন।</p>
+<p>"কিন্তু সবসময় এই বিচ্ছেদ সঠিকভাবে ঘটে না।"</p>
+<p>কখনো Sister chromatids সঠিকভাবে পৃথক না হয়ে একই Pole-এর দিকে চলে যেতে পারে।</p>
+<p>এটিকে বলা হয়:</p>
+<p>Non-disjunction</p>
+<p>এর ফলে:</p>
+<ul><li>একটি নতুন কোষে Diploid number-এর চেয়ে বেশি Chromosomes থাকতে পারে।</li><li>অন্য কোষে Diploid number-এর চেয়ে কম Chromosomes থাকতে পারে।</li></ul>
+<p>Gray’s Anatomy অনুযায়ী Ionizing radiation Non-disjunction-কে promote করতে পারে।</p>
+<p>এ ছাড়া Chromosomal damage-এর মাধ্যমে Radiation Mitosis সম্পূর্ণভাবে inhibit-ও করতে পারে।</p>
+<p>Amrita জিজ্ঞেস করল,</p>
+<p>"Sir, তাহলে Ionizing radiation-এর কারণে rapidly dividing tissue বেশি ক্ষতিগ্রস্ত হতে পারে?"</p>
+<p>Professor বললেন,</p>
+<p>"ঠিক। Radiation exposure-এর একটি characteristic symptom হলো rapidly dividing epithelia হারিয়ে যাওয়া কোষগুলোকে যথাযথভাবে replace করতে না পারা। এর ফলে Skin ও Mucous membranes-এ ulceration হতে পারে।"</p>
+</div></section>
+<section class="sec r" id="s14"><h3>Mitosis-এ ব্যবহৃত কিছু Chemical agents</h3><div class="body">
+<p>Gray’s Anatomy বিশেষভাবে উল্লেখ করেছে:</p>
+<ul><li>Vinblastine</li><li>Paclitaxel (Taxol)</li><li>এদের derivatives</li></ul>
+<p>এগুলো Spindle microtubules-এর ওপর কাজ করে।</p>
+<p>কিছু compound Spindle microtubules disassemble করে, আবার কিছু তাদের dynamics-এ বাধা দেয়।</p>
+<p>এর ফলে:</p>
+<p>Mitosis metaphase-এ arrest হতে পারে।</p>
+<p>Rudra বলল,</p>
+<p>"Sir, তাহলে Spindle ঠিকমতো কাজ না করলে Chromosome segregation সম্ভব হবে না?"</p>
+<p>Professor বললেন,</p>
+<p>"ঠিক। Chromosome segregation-এর জন্য Functional mitotic spindle অত্যন্ত গুরুত্বপূর্ণ।"</p>
+</div></section>
+<section class="sec r" id="s15"><h3>৩.৫ Telophase — নতুন দুটি Nucleus-এর জন্ম</h3><div class="body">
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>YouTube</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/oW3hlkqyf47All23tR96EItXQwtk-FWQ7R0Yv_ArOl3HGPyOKSkvdeiTl8K2qOqhiMkK5jdtaDQJ7Gqo6rgtOw2Kj3gkFmDMW2hCamwsFVYwqRFEwMA5-RedapkDPdYBgYnpdUQsKhh7qPVXoZjBGK0BiCHGEdgrN7dMqFOudgo5xMR3ipkDJJORuDPFuN7H?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=YouTube">Image search ↗</a></figure>
+<p>Professor বললেন,</p>
+<p>"Anaphase-এ Chromatids বিপরীত মেরুতে পৌঁছায়। এবার প্রতিটি Chromosome cluster-কে ঘিরে নতুন Nuclear envelope তৈরি হবে।"</p>
+<p>Telophase-এ:</p>
+<p>১. Nuclear envelope reformation</p>
+<ul><li>Membranous vesicles Chromosomes-এর surface-এর সঙ্গে associate করে।</li><li>পরবর্তীতে Vesicles fuse করে।</li><li>নতুন Nuclear envelope তৈরি হয়।</li></ul>
+<p>২. Chromosome decondensation</p>
+<ul><li>Chromosomes আবার Decondense হতে শুরু করে।</li><li>Chromatin-এর অপেক্ষাকৃত extended structure ফিরে আসে।</li></ul>
+<p>৩. Nucleolus reformation</p>
+<ul><li>নতুন Nucleus-এ Nucleoli পুনরায় তৈরি হয়।</li></ul>
+<p>৪. Spindle remnant disintegration</p>
+<ul><li>অবশিষ্ট Spindle structure ভেঙে যায়।</li></ul>
+<p>Professor এবার বোর্ডে লিখলেন:</p>
+<p>Cytokinesis</p>
+<p>"Telophase-এর সঙ্গে সঙ্গে Cytoplasmic division সম্পন্ন হওয়ার বিষয়টিও বুঝতে হবে।"</p>
+<p>Gray’s Anatomy অনুযায়ী Cytoplasmic division সাধারণত Early anaphase-এ শুরু হয় এবং Telophase চলাকালীন অব্যাহত থাকে।</p>
+</div></section>
+<section class="sec r" id="s16"><h3>Cleavage furrow formation</h3><div class="body">
+<p>কোষের Equator-এ একটি Infolding তৈরি হয়।</p>
+<p>এটি ধীরে ধীরে গভীর হয়ে:</p>
+<p>Cleavage furrow</p>
+<p>তৈরি করে।</p>
+<p>এই constricting zone-এ Peripheral band বা belt তৈরি হয়, যার মধ্যে রয়েছে:</p>
+<ul><li>Actin</li><li>Myosin</li></ul>
+<p>এই Actin–myosin belt সংকুচিত হওয়ার ফলে Cleavage furrow তৈরি হয় এবং কোষ দুটি পৃথক হয়ে যায়।</p>
+<p>শেষ পর্যন্ত দুটি নতুন Daughter cells তৈরি হয়।</p>
+<p>Professor বললেন,</p>
+<p>"মনে রাখবে, Mitosis হলো Nuclear division, আর Cytokinesis হলো Cytoplasmic division। এরা সম্পর্কিত হলেও এক জিনিস নয়।"</p>
+</div></section>
+<section class="sec r" id="s17"><h3>৪. Mitosis-এর ভুল হলে কী হতে পারে?</h3><div class="body">
+<p>ক্লাসের শেষের দিকে Professor একটি গুরুত্বপূর্ণ Clinical question করলেন।</p>
+<p>"Non-disjunction-এর কারণে Chromosome number-এর পরিবর্তন ঘটতে পারে। কিন্তু তার পরিণতি কী?"</p>
+<p>Gray’s Anatomy-তে উল্লেখ রয়েছে:</p>
+<ul><li>Sister chromatids সঠিকভাবে পৃথক না হলে Aneuploid cells তৈরি হতে পারে।</li><li>Ionizing radiation Non-disjunction promote করতে পারে।</li><li>Chromosomal damage Mitosis বাধাগ্রস্ত করতে পারে।</li><li>Rapidly dividing epithelium-এর replacement ব্যর্থ হলে ulceration হতে পারে।</li></ul>
+<p>Adi বলল,</p>
+<p>"Sir, তাহলে Cell division-এর fidelity বজায় রাখা শুধু স্বাভাবিক growth নয়, tissue integrity-এর জন্যও গুরুত্বপূর্ণ।"</p>
+<p>Professor বললেন,</p>
+<p>"একদম।"</p>
+</div></section>
+<section class="sec r" id="s18"><h3>৫. Meiosis — একটি নতুন জীবনের জন্য Chromosome-এর প্রস্তুতি</h3><div class="body">
+<p>ক্লাসের দ্বিতীয় অংশ।</p>
+<p>Professor এবার বোর্ডে লিখলেন:</p>
+<p>MEIOSIS</p>
+<p>"এতক্ষণ আমরা Somatic cell division বা Mitosis নিয়ে আলোচনা করেছি। এবার আসব Gamete production-এর সঙ্গে সম্পর্কিত Meiosis-এ।"</p>
+<p>তিনি বললেন,</p>
+<p>"Meiosis-এ দুটি consecutive cell division ঘটে।"</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Drawing Meiosis | BioNinja</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/VmwppXw3oj6GfBnScLm6sTMCLb0KMW9PoPNclPTx2zqo9PgJ08z0Vkm8UUo6zV1hgBRnwAtHsnveDLEP9UY0xAByUTNDK0wc-gPEJZ3lm0HsgagL6Vgf7xv1zzwU_RwhaWkTqfiLJoQicvp3dobchHDiy2hAA7gkfwL0zq0a59WiTTg6s-l3gN7c0PzZPQc5?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Drawing%20Meiosis%20%7C%20BioNinja">Image search ↗</a></figure>
+</div></section>
+<section class="sec r" id="s19"><h3>Meiosis-এর দুটি Division</h3><div class="body">
+<p>Meiosis I</p>
+<ul><li>Homologous chromosomes পৃথক হয়।</li><li>Chromosome number অর্ধেক হয়ে যায়।</li><li>এটি Mitosis থেকে মৌলিকভাবে আলাদা।</li></ul>
+<p>Meiosis II</p>
+<ul><li>Sister chromatids পৃথক হয়।</li><li>এটি অনেকটা Mitosis-এর মতো।</li></ul>
+<p>Professor বিশেষভাবে বললেন,</p>
+<p>"Meiosis I এবং Meiosis II-এর মাঝখানে কোনো নতুন S phase হয় না।"</p>
+<p>অর্থাৎ:</p>
+<p>Premeiotic S phase → Meiosis I → Meiosis II</p>
+<p>এখানে Meiosis I ও II-এর মাঝখানে DNA replication হয় না।</p>
+</div></section>
+<section class="sec r" id="s20"><h3>Meiosis-এর বিশেষ বৈশিষ্ট্য</h3><div class="body">
+<p>Mitosis ও Meiosis-এর মধ্যে সবচেয়ে গুরুত্বপূর্ণ পার্থক্য হলো Early stages-এ Chromosomal behaviour।</p>
+<p>Meiosis-এ:</p>
+<ul><li>Homologous chromosomes Pairing করে।</li><li>Genetic recombination ঘটে।</li><li>Genetic material exchange হয়।</li><li>Daughter cells-এর genetic sequence পরিবর্তিত হয়।</li><li>শেষ পর্যন্ত Haploid cells তৈরি হয়।</li></ul>
+<p>Amrita বলল,</p>
+<p>"তাহলে Meiosis শুধু Chromosome number কমায় না, genetic diversity তৈরিতেও ভূমিকা রাখে?"</p>
+<p>Professor বললেন,</p>
+<p>"সঠিক।"</p>
+</div></section>
+<section class="sec r" id="s21"><h3>৬. Meiosis I-এর আগে কী ঘটে?</h3><div class="body">
+<p>Professor এবার একটি Diploid cell আঁকলেন।</p>
+<p>"Meiosis শুরু হওয়ার আগে Premeiotic S phase-এ DNA replication ঘটে।"</p>
+<p>এর ফলে প্রতিটি Homologous chromosome-এর দুটি Sister chromatids তৈরি হয়।</p>
+<p>এবার দুটি Homologous chromosomes-এর মধ্যে pairing শুরু হবে।</p>
+<p>একটি এসেছে Paternal origin থেকে, অন্যটি Maternal origin থেকে।</p>
+<p>এদের বলা হয়:</p>
+<p>Homologous chromosomes</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>The Cell Cycle – Integrated Human Anatomy and Physiology</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/d_gJixaYWqiHDipytkYJbv6UdJl9jMhfU479bfe-giO3NhHb252pVfDJovA5n7CXganlVYmaKlZai94EXLcpaolreDPTD1OajBA_LqIVu56uHBzHRehQQNbqbBoE-4h2aeUzoKpoHdfRRPxpeH0sTgVLEe0Qvr3OZItkNKK610XzQSgQcEFjAfrcdyOJNo-U?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=The%20Cell%20Cycle%20%E2%80%93%20Integrated%20Human%20Anatomy%20and%20Physiology">Image search ↗</a></figure>
+<p>Professor বললেন,</p>
+<p>"Homologous chromosomes একই ধরনের genetic information বহন করে, কিন্তু তাদের alleles একরকম নাও হতে পারে।"</p>
+<p>এই দুটি chromosome একে অপরের সঙ্গে Pairing করে।</p>
+<p>এই Pairing-কে বলা হয়:</p>
+<p>Synapsis</p>
+<p>আর Pairing-এর ফলে তৈরি হওয়া structure-কে বলা হয়:</p>
+<p>Bivalent</p>
+<p>একটি Bivalent-এ থাকে দুটি Homologous chromosomes, অর্থাৎ মোট চারটি chromatids।</p>
+</div></section>
+<section class="sec r" id="s22"><h3>৭. Prophase I — Meiosis-এর সবচেয়ে গুরুত্বপূর্ণ পর্যায়</h3><div class="body">
+<p>Professor এবার বোর্ডে পাঁচটি নাম লিখলেন।</p>
+<ul><li>Leptotene</li><li>Zygotene</li><li>Pachytene</li><li>Diplotene</li><li>Diakinesis</li></ul>
+<p>"Prophase I একটি দীর্ঘ এবং জটিল পর্যায়। Mitosis-এর Prophase-এর তুলনায় এর বৈশিষ্ট্য অনেক বেশি।"</p>
+<p>চলো, প্রতিটি ধাপ বুঝি।</p>
+</div></section>
+<section class="sec r" id="s23"><h3>৭.১ Leptotene — Homologous chromosomes-এর সন্ধান</h3><div class="body">
+<p>Professor বললেন,</p>
+<p>"Leptotene-এ Homologous chromosomes একে অপরকে শনাক্ত করতে শুরু করে।"</p>
+<p>এ পর্যায়ে:</p>
+<ul><li>Maternal ও Paternal homologous chromosomes পূর্ববর্তী S phase-এ replicate হয়ে থাকে।</li><li>প্রতিটি chromosome-এ দুটি Sister chromatids থাকে।</li><li>Chromosomes condense হতে শুরু করে।</li><li>Chromosomes আলাদা thread-এর মতো দেখা যায়।</li><li>Telomeres-এর মাধ্যমে Nuclear envelope-এর সঙ্গে সংযুক্ত থাকতে পারে।</li><li>Genetic recombination-এর প্রক্রিয়া শুরু হয়।</li></ul>
+<p>Professor বললেন,</p>
+<p>"এখানে Chromosome condensation এবং Homologous chromosome recognition দুটোই গুরুত্বপূর্ণ।"</p>
+</div></section>
+<section class="sec r" id="s24"><h3>৭.২ Zygotene — Synapsis শুরু</h3><div class="body">
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>DevBio 11e</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/03iU9EaShftAT08sDRP_wxYK5a4OAhWRYnCSjQNLpcg_8wLYPGei4NXWaEiW8TifqjTvZY8yinSipJDgscJP3OZrmXf5xVVrL4j6qy5FGkj2AgVTwzbMfn_OVGkFcQFDN9g2aEPqAA-v1kH0ht0bnQuwX1zwdtffFlLgJUMd_8uYhaSBy3_N8Qn52BvWf08I?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=DevBio%2011e">Image search ↗</a></figure>
+<p>এবার Professor বললেন,</p>
+<p>"Zygotene-এ Homologous chromosomes একে অপরের সঙ্গে Pairing শুরু করে।"</p>
+<p>এই Pairing-কে বলা হয়:</p>
+<p>Synapsis</p>
+<p>এখানে দুটি Homologous chromosome ঘনিষ্ঠভাবে পাশাপাশি অবস্থান করে।</p>
+<p>অনেক ক্ষেত্রে Synapsis Telomere-এর কাছাকাছি শুরু হতে পারে।</p>
+<p>Telomeres Nuclear membrane-এর এক পাশে cluster তৈরি করতে পারে।</p>
+<p>এই arrangement-কে বলা হয়:</p>
+<p>Bouquet stage</p>
+<p>কারণ Chromosomes দেখতে অনেকটা ফুলের তোড়ার মতো মনে হয়।</p>
+</div></section>
+<section class="sec r" id="s25"><h3>Synaptonemal complex</h3><div class="body">
+<p>এটি Meiosis-এর অন্যতম গুরুত্বপূর্ণ structure।</p>
+<p>Professor বোর্ডে তিনটি অংশ আঁকলেন।</p>
+<p>Synaptonemal complex-এর রয়েছে:</p>
+<ul><li>দুটি Lateral dense elements</li><li>একটি Central less-dense linear element</li></ul>
+<p>এটি Homologous chromosomes-কে পাশাপাশি ধরে রাখতে সাহায্য করে।</p>
+<p>Adi বলল,</p>
+<p>"Sir, তাহলে Synaptonemal complex হলো Homologous chromosomes-এর মধ্যে একটি structural connection?"</p>
+<p>Professor বললেন,</p>
+<p>"ঠিক। এটি Synapsis স্থিতিশীল রাখতে গুরুত্বপূর্ণ।"</p>
+</div></section>
+<section class="sec r" id="s26"><h3>Male meiosis-এ XY chromosome</h3><div class="body">
+<p>Gray’s Anatomy এখানে একটি বিশেষ বৈশিষ্ট্য উল্লেখ করেছে।</p>
+<p>Male-এর X ও Y chromosomes সম্পূর্ণ Homologous নয়।</p>
+<p>তাদের মধ্যে একটি Shared DNA sequence region রয়েছে।</p>
+<p>এটিকে বলা হয়:</p>
+<p>Pseudoautosomal region</p>
+<p>এই অঞ্চলের মাধ্যমে X ও Y chromosome-এর মধ্যে Synapsis ঘটে।</p>
+<p>তারা একটি বিশেষ condensed structure তৈরি করে:</p>
+<p>Sex vesicle</p>
+<p>পরবর্তী Pachytene পর্যায়ে এটি Autosomal bivalents থেকে আসা Migratory nucleolar masses-এর সঙ্গে associated হয়।</p>
+</div></section>
+<section class="sec r" id="s27"><h3>৭.৩ Pachytene — Genetic recombination সম্পন্ন হওয়া</h3><div class="body">
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>In a cell cycle crossing over occurs at a Single strand class 11 biology CBSE</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/96Xo6l79F_xUACyCQE33UL-hGp5JYHkxKY4V8YvJmYUWowW6dHrAOnxJwAkyy8Cw1vl0n3tszXMTVG2WfHYASokkXjfUmgCTTbdN1_qyq9W7qO9ZQTbcjHjCtMlvxOmA_OsUnSjREJ8MJiH2yIUFt9OJRJ1BxhqyuOC-4MzsB0jYlk8lG5ncBQstVPQQvwhP?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=In%20a%20cell%20cycle%20crossing%20over%20occurs%20at%20a%20Single%20strand%20class%2011%20biology%20CBSE">Image search ↗</a></figure>
+<p>Professor বললেন,</p>
+<p>"সব Chromosomes-এর Synapsis সম্পন্ন হলে কোষ Pachytene পর্যায়ে প্রবেশ করে।"</p>
+<p>এই পর্যায়ে:</p>
+<ul><li>প্রতিটি Bivalent একটি মোটা structure-এর মতো দেখায়।</li><li>কিন্তু বাস্তবে এতে দুটি Homologous chromosomes থাকে।</li><li>প্রতিটি chromosome-এ দুটি Sister chromatids থাকে।</li><li>ফলে একটি Bivalent-এ মোট চারটি Chromatids থাকে।</li></ul>
+<p>এবার সবচেয়ে গুরুত্বপূর্ণ ঘটনা:</p>
+<p>Genetic recombination</p>
+<p>এটি ঘটে Non-sister chromatids-এর মধ্যে।</p>
+<p>অর্থাৎ একই Bivalent-এর দুটি Homologous chromosomes-এর Sister chromatids নয়, বরং ভিন্ন Homologous chromosomes-এর Chromatids-এর মধ্যে genetic material exchange হয়।</p>
+<p>Professor বললেন,</p>
+<p>"এই exchange-এর ফলে Maternal এবং Paternal genetic sequences-এর নতুন combination তৈরি হয়।"</p>
+</div></section>
+<section class="sec r" id="s28"><h3>Recombination nodules</h3><div class="body">
+<p>Gray’s Anatomy অনুযায়ী:</p>
+<ul><li>Genetic recombination Pachytene পর্যায়ে সম্পন্ন হয়।</li><li>যেখানে recombination ঘটে, সেখানে Synaptonemal complex-এর কেন্দ্রে Recombination nodules দেখা যায়।</li><li>সাধারণত প্রতি Chromosome arm-এ প্রায় একটি করে site দেখা যায়।</li></ul>
+<p>Amrita বলল,</p>
+<p>"Sir, তাহলে Crossing over-এর মাধ্যমে একটি নতুন genetic combination তৈরি হয়?"</p>
+<p>Professor বললেন,</p>
+<p>"হ্যাঁ। আর এটাই Meiosis-এর genetic variation-এর একটি গুরুত্বপূর্ণ ভিত্তি।"</p>
+</div></section>
+<section class="sec r" id="s29"><h3>৭.৪ Diplotene — Chiasmata দৃশ্যমান হওয়া</h3><div class="body">
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Meiose: Prophase</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/pkygJrBRY10o7_GcLtoGOevwkDP-DlQKeya0HFxu_NQwxfPfo78OJ_DSngvitM8uP49ZoJ5odUfYD7osCripgaC3hPeTt-sF85o5lTbheEKmDhGg2JHUGrJXaJkMso7hx7PXSCSa99O9_wG0CRdXAmst0zUU2sAHxMcgio3t2NvDvmQRUwQp7qpFCeIpdTCa?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Meiose%3A%20Prophase">Image search ↗</a></figure>
+<p>Professor বললেন,</p>
+<p>"Pachytene-এ Synapsis সম্পূর্ণ হয়েছিল। এবার Diplotene-এ Synaptonemal complex disassemble হতে শুরু করে।"</p>
+<p>এ পর্যায়ে:</p>
+<ul><li>Homologous chromosomes পরস্পর থেকে পৃথক হতে শুরু করে।</li><li>Chromosomes আরও ছোট ও compact হয়।</li><li>কিন্তু যেখানে Crossing over হয়েছিল, সেখানে তারা যুক্ত থাকে।</li></ul>
+<p>এই সংযোগস্থলকে বলা হয়:</p>
+<p>Chiasmata</p>
+<p>Chiasmata হলো Homologous chromosomes-এর মধ্যে Crossing-over-এর দৃশ্যমান সংযোগস্থল।</p>
+<p>Gray’s Anatomy অনুযায়ী:</p>
+<ul><li>প্রতিটি Homologous pair-এর মধ্যে অন্তত একটি Chiasma তৈরি হয়।</li><li>সর্বোচ্চ পাঁচটি পর্যন্ত Chiasmata পর্যবেক্ষণ করা হয়েছে।</li></ul>
+</div></section>
+<section class="sec r" id="s30"><h3>Female oocyte-এর বিশেষ বৈশিষ্ট্য</h3><div class="body">
+<p>এখানে Professor একটি অত্যন্ত গুরুত্বপূর্ণ Clinical এবং Developmental বিষয় তুলে ধরলেন।</p>
+<p>"Female-এর Meiosis-এর সময়কাল Male-এর তুলনায় ভিন্ন।"</p>
+<p>Gray’s Anatomy অনুযায়ী:</p>
+<ul><li>Ovary-তে Primary oocytes fetal life-এর সময় Diplotene পর্যায়ে প্রবেশ করে।</li><li>পঞ্চম মাসের মধ্যে Primary oocytes Diplotene-এ পৌঁছে যায়।</li><li>এরপর তারা দীর্ঘ সময় এই পর্যায়ে arrested থাকে।</li><li>Ovulation-এর আগের সময় পর্যন্ত এই arrest বজায় থাকতে পারে, যা সর্বোচ্চ প্রায় ৫০ বছর পর্যন্ত দীর্ঘ হতে পারে।</li></ul>
+<p>Amrita অবাক হয়ে বলল,</p>
+<p>"Sir! তাহলে একজন নারীর Primary oocyte fetal life-এই তৈরি হয়ে দীর্ঘ সময় ধরে Diplotene-এ arrested থাকতে পারে?"</p>
+<p>Professor বললেন,</p>
+<p>"হ্যাঁ। এটি Female reproductive biology-এর একটি অত্যন্ত গুরুত্বপূর্ণ বৈশিষ্ট্য।"</p>
+</div></section>
+<section class="sec r" id="s31"><h3>৭.৫ Diakinesis — Meiosis I-এর Spindle-এর প্রস্তুতি</h3><div class="body">
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Meiosis - Biology</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/5_ZivT1TYb6T4pL9EYPfqg1-BzsH7UW4OAiCO-VmTHB3dtkYTvZK0syFDRXdXNJ5irsbNycSsEwECsaQn6JbBrR4rYkPe2wceBx4drLDnT2J02SSNVoGGQKBC3YdViaYGfDOywTT_2K0Zr0YdiUhutwUSN0TZSqSnsMfcpWjWIPX5fYHMzMh7cku4cIV1gTb?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Meiosis%20-%20Biology">Image search ↗</a></figure>
+<p>Professor বললেন,</p>
+<p>"Diakinesis হলো প্রথম Meiotic division-এর Prometaphase-এর সমতুল্য পর্যায়।"</p>
+<p>এ পর্যায়ে:</p>
+<ul><li>Chromosomes আরও ছোট ও মোটা হয়।</li><li>তারা এখনো Bivalent অবস্থায় থাকে।</li><li>ধীরে ধীরে Spindle-এর সঙ্গে যুক্ত হয়।</li><li>Metaphase plate-এর দিকে বিন্যস্ত হতে থাকে।</li></ul>
+</div></section>
+<section class="sec r" id="s32"><h3>Female egg-এর Spindle</h3><div class="body">
+<p>Gray’s Anatomy একটি বিশেষ বিষয় উল্লেখ করেছে:</p>
+<p>Egg cell-এ Spindle formation Centrosomes ছাড়াও হতে পারে।</p>
+<p>এখানে:</p>
+<ul><li>Chromosomes-এর কাছাকাছি Microtubules nucleate হয়।</li><li>এগুলো প্রথমে Stabilized হয়।</li><li>বিভিন্ন Motor molecules-এর কার্যক্রমের মাধ্যমে Microtubules সাজানো হয়ে Bipolar spindle তৈরি করে।</li></ul>
+<p>Professor বললেন,</p>
+<p>"অর্থাৎ Centrosome ছাড়াও কার্যকর Bipolar spindle তৈরি হতে পারে।"</p>
+</div></section>
+<section class="sec r" id="s33"><h3>৮. Meiosis I — Homologous chromosomes-এর পৃথকীকরণ</h3><div class="body">
+<p>এবার Professor বোর্ডে লিখলেন:</p>
+<p>MEIOSIS I</p>
+<p>"এখানে Mitosis থেকে Meiosis-এর সবচেয়ে গুরুত্বপূর্ণ পার্থক্যটি দেখা যায়।"</p>
+</div></section>
+<section class="sec r" id="s34"><h3>৮.১ Metaphase I</h3><div class="body">
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Cell cycle and Cell Division | PPTX</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/IBLTV5iIE_lWntLN-x5piX_XeHzvf8KhpzS0epEb1zWVgSIcGsboPHlM_omwW9_9zNuPrNeMknsQ6OSzawIC8dDEK2yIvj722lqPhfkuyHbc8XMs83PuwQ5R2zm-OhIJsvvqaEW5l2InEOk9szSxcnk3eZjzb1IrAB6RREzx5_Y9agEKMFp0YQ-TGFWWf6ND?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Cell%20cycle%20and%20Cell%20Division%20%7C%20PPTX">Image search ↗</a></figure>
+<p>Metaphase I-এ:</p>
+<ul><li>Bivalents Spindle-এর Equatorial plate-এ সাজানো হয়।</li><li>Spindle microtubules Homologous chromosome pairs-এর সঙ্গে যুক্ত হয়।</li><li>প্রতিটি pair এমনভাবে বিন্যস্ত হয়, যাতে একটি Homologue একটি Pole-এর দিকে এবং অন্যটি বিপরীত Pole-এর দিকে orient হয়।</li></ul>
+<p>Mitosis-এর Metaphase-এর সঙ্গে পার্থক্য:</p>
+<p>Mitosis: পৃথক replicated Chromosomes Equatorial plate-এ সাজানো হয়।</p>
+<p>Meiosis I: Homologous chromosome pairs বা Bivalents সাজানো হয়।</p>
+<p>আরও একটি গুরুত্বপূর্ণ বিষয়:</p>
+<p>Meiosis I-এ প্রতিটি Sister chromatid pair-এর Centromeres একটি unit হিসেবে কাজ করে এবং একই Spindle pole-এর দিকে orient হয়।</p>
+</div></section>
+<section class="sec r" id="s35"><h3>৮.২ Anaphase I — Homologous chromosomes পৃথক হয়</h3><div class="body">
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Meiosis cell division Imágenes Vectoriales, Gráfico Vectorial de Meiosis cell division | DepositPhotos</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/9wJ-8op8Gb5ZMKFLAyb5anO5H5i9_kJa1zp63NrjQ4qqIXJMNHrL0tTUvnDBuzXk7qYqpR_nWiezpZXetQ1_LYJ4KQoPCZ38IkLJ2CzLSb4YYtm7HfH5GcxQ-BeacnhE2sGsLrIHc7h8QDVM6XrWLdWCWDEC971ouA0fnFZTA5RE-7ALEeZwHCB5ZbE9YPt9?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Meiosis%20cell%20division%20Im%C3%A1genes%20Vectoriales%2C%20Gr%C3%A1fico%20Vectorial%20de%20Meiosis%20cell%20division%20%7C%20DepositPhotos">Image search ↗</a></figure>
+<p>Professor বললেন,</p>
+<p>"এবার Homologous chromosomes বিপরীত মেরুর দিকে চলে যায়।"</p>
+<p>এখানে:</p>
+<ul><li>Homologous chromosomes আলাদা হয়।</li><li>Sister chromatids একসঙ্গে যুক্ত থাকে।</li><li>Chiasmata তাদের pairing বজায় রাখতে সাহায্য করে, যতক্ষণ না separation সম্পন্ন হয়।</li></ul>
+<p>সবচেয়ে গুরুত্বপূর্ণ বিষয়:</p>
+<p>Anaphase I-এ Sister chromatids পৃথক হয় না।</p>
+<p>তারা Centromere অঞ্চলে একসঙ্গে থাকে।</p>
+<p>Amrita বলল,</p>
+<p>"Sir, তাহলে Mitosis-এর Anaphase এবং Meiosis I-এর Anaphase-এর মধ্যে মূল পার্থক্য হলো Mitosis-এ Sister chromatids আলাদা হয়, কিন্তু Meiosis I-এ Homologous chromosomes আলাদা হয়?"</p>
+<p>Professor বললেন,</p>
+<p>"একদম সঠিক!"</p>
+</div></section>
+<section class="sec r" id="s36"><h3>৮.৩ Random assortment — Maternal ও Paternal chromosomes-এর বণ্টন</h3><div class="body">
+<p>Professor এবার বোর্ডে দুটি Bivalent আঁকলেন।</p>
+<p>"Metaphase I-এ Homologous pairs-এর অবস্থান Random হয়।"</p>
+<p>এর ফলে:</p>
+<ul><li>Maternal chromosomes এবং Paternal chromosomes-এর বণ্টন Random হয়।</li><li>প্রতিটি Daughter nucleus-এ বিভিন্ন combination তৈরি হতে পারে।</li><li>Genetic variation বৃদ্ধি পায়।</li></ul>
+<p>এটি Crossing over-এর পাশাপাশি Meiosis-এর Genetic diversity তৈরির আরেকটি গুরুত্বপূর্ণ ভিত্তি।</p>
+</div></section>
+<section class="sec r" id="s37"><h3>৮.৪ Meiosis I-এর Cytoplasmic division</h3><div class="body">
+<p>Gray’s Anatomy অনুযায়ী Male ও Female lineage-এ Cytoplasmic division ভিন্ন হয়।</p>
+<p>Female:</p>
+<ul><li>Division অত্যন্ত asymmetric।</li><li>একটি Egg তৈরি হয়।</li><li>পাশাপাশি একটি ক্ষুদ্র Polar body তৈরি হয়।</li></ul>
+<p>Male:</p>
+<ul><li>Cytoplasmic division-এর মাধ্যমে Spermatocytes তৈরি হয়।</li><li>এরা ছোট Cytoplasmic bridges-এর মাধ্যমে পরস্পরের সঙ্গে যুক্ত থাকে।</li></ul>
+</div></section>
+<section class="sec r" id="s38"><h3>৯. Meiosis II — Sister chromatids-এর পৃথকীকরণ</h3><div class="body">
+<p>Professor এবার লিখলেন:</p>
+<p>MEIOSIS II</p>
+<p>"Meiosis I শেষ হওয়ার পর খুব অল্প সময়ের ব্যবধানের মধ্যে Meiosis II শুরু হয়।"</p>
+<p>এখানে গুরুত্বপূর্ণ:</p>
+<p>No intervening S phase</p>
+<p>অর্থাৎ DNA replication ছাড়াই দ্বিতীয় Division শুরু হয়।</p>
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Meiosis Diagram Generator: Labeled Phases &amp; Stages | SciDraw AI</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/-beXLcvGKbZMwtLyOlVdD2XCsw3eLiJXcTEWicBuguG1NSnfht4uOAgTyQtAryTnvwWuQ1nvV3RrgP723EykkqxK_Z-TtamjnCEQte2XmBFcOJLMsQgeHy6dRGXUcD7AbvxzwHbRwBhYIf8Xgt-5voHM57N8o14k4KC4lRaMYsCevRYi1N7at9q38sPtHKbC?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Meiosis%20Diagram%20Generator%3A%20Labeled%20Phases%20%26%20Stages%20%7C%20SciDraw%20AI">Image search ↗</a></figure>
+</div></section>
+<section class="sec r" id="s39"><h3>৯.১ Prophase II</h3><div class="body">
+<p>Meiosis I-এর পরে থাকা Chromosomes নিয়ে দ্বিতীয় Division-এর Spindle apparatus গঠিত হয়।</p>
+<p>এখানে Meiosis II-এর প্রস্তুতি সম্পন্ন হয়।</p>
+</div></section>
+<section class="sec r" id="s40"><h3>৯.২ Metaphase II</h3><div class="body">
+<p>এ পর্যায়ে:</p>
+<ul><li>Chromosomes Equatorial plane-এ সাজানো হয়।</li><li>প্রতিটি Sister chromatid-এর Centromere এমনভাবে orient হয়, যাতে দুটি Sister chromatids বিপরীত Spindle poles-এর দিকে যেতে পারে।</li></ul>
+<p>Gray’s Anatomy বিশেষভাবে উল্লেখ করেছে যে Meiosis II শুরু হওয়ার আগে Sister chromatids-এর Centromeres একসঙ্গে থাকে, কিন্তু এমনভাবে rotate করে যাতে প্রত্যেকটি বিপরীত Spindle pole-এর দিকে face করে।</p>
+</div></section>
+<section class="sec r" id="s41"><h3>৯.৩ Anaphase II</h3><div class="body">
+<p>এবার Centromeres-এর মধ্যকার Cohesion নষ্ট হয়।</p>
+<p>এর ফলে:</p>
+<ul><li>Sister chromatids পৃথক হয়।</li><li>তারা বিপরীত Spindle poles-এর দিকে চলে যায়।</li><li>প্রতিটি Chromatid পৃথক Chromosome হিসেবে গণ্য হয়।</li></ul>
+<p>Professor বললেন,</p>
+<p>"এই পর্যায়টি Mitosis-এর Anaphase-এর মতো। কিন্তু একটি মৌলিক পার্থক্য আছে।"</p>
+<p>"Meiosis II-এ পৃথক হওয়া Chromatids genetic recombination-এর কারণে একে অপরের থেকে genetically different।"</p>
+</div></section>
+<section class="sec r" id="s42"><h3>৯.৪ Telophase II এবং Cytoplasmic division</h3><div class="body">
+<p>শেষ পর্যায়ে:</p>
+<ul><li>Chromosomes বিপরীত মেরুতে পৌঁছায়।</li><li>নতুন Nuclear organization তৈরি হয়।</li><li>Cytoplasmic division সম্পন্ন হয়।</li></ul>
+<p>Male lineage-এ:</p>
+<p>চারটি Haploid cells তৈরি হয়।</p>
+<p>এগুলো Cytoplasmic bridges-এর মাধ্যমে পরস্পরের সঙ্গে যুক্ত থাকতে পারে।</p>
+</div></section>
+<section class="sec r" id="s43"><h3>১০. Meiosis-এর ভুল হলে কী হতে পারে?</h3><div class="body">
+<p>এবার Professor বললেন,</p>
+<p>"এতক্ষণ আমরা দেখেছি Meiosis কত সুন্দরভাবে Chromosomes-কে সাজায়, বিন্যস্ত করে এবং পৃথক করে। কিন্তু এই প্রক্রিয়ায় ভুল হলে কী ঘটে?"</p>
+</div></section>
+<section class="sec r" id="s44"><h3>Aneuploidy</h3><div class="body">
+<p>Chromosome segregation-এর ভুলের ফলে তৈরি হতে পারে:</p>
+<p>Aneuploidy</p>
+<p>অর্থাৎ কোষে স্বাভাবিক Haploid বা Diploid complement-এর তুলনায় Chromosome number অস্বাভাবিক হয়ে যায়।</p>
+<p>Gray’s Anatomy অনুযায়ী:</p>
+<ul><li>Chromosome segregation-এর ভুল Non-disjunction ঘটাতে পারে।</li><li>Aneuploid embryos-এর অধিকাংশই Viable নয়।</li><li>Human fetal loss বা Spontaneous abortion-এর একটি প্রধান কারণ হলো Aneuploidy।</li><li>বিশেষ করে Pregnancy-এর প্রথম Trimester-এ এর গুরুত্ব অনেক।</li></ul>
+</div></section>
+<section class="sec r" id="s45"><h3>Down syndrome</h3><div class="body">
+<p>Professor বোর্ডে লিখলেন:</p>
+<p>Trisomy 21 — Down syndrome</p>
+<p>Gray’s Anatomy অনুযায়ী মানুষের ক্ষেত্রে Viable aneuploid progeny-এর সবচেয়ে সাধারণ রূপ হলো Down syndrome।</p>
+<p>এতে Chromosome 21-এর তিনটি copy থাকে।</p>
+<p>এ ছাড়া:</p>
+<p>Maternal age বাড়ার সঙ্গে Down syndrome-এর frequency উল্লেখযোগ্যভাবে বৃদ্ধি পায়।</p>
+<p>Amrita বলল,</p>
+<p>"Sir, তাহলে Meiosis-এর সময় Chromosome segregation-এর ভুল ভবিষ্যৎ সন্তানের Chromosome number-এ প্রভাব ফেলতে পারে?"</p>
+<p>Professor বললেন,</p>
+<p>"হ্যাঁ। এজন্য Meiosis-এর প্রতিটি ধাপ বোঝা অত্যন্ত গুরুত্বপূর্ণ।"</p>
+</div></section>
+<section class="sec r" id="s46"><h3>১১. Adi ও Amrita-র Library Feynman Challenge</h3><div class="body">
+<figure class="img"><span class="ic ui" aria-hidden="true">◉</span><figcaption>Surviving Your First Year of Medical School: Plastic Surg...</figcaption><a class="ui" target="_blank" rel="noopener" href="https://images.openai.com/static-rsc-4/z4IMKtK7Gnvl6GNVSkh0_kgIZ35elJnhfy-P5SWkfNlvwUaKPur9Rv1GSyrqG2lenOdeBjARaMxe-lPSY2ftax8-1bkTaTdSB8UzrSVmtLbn-E_npYcxqwxCPquPyIi2cjAw8TkwDHvWOKQoDDel2g_7Z5f0mNZPwcgh_QZ2mjUzqNaq_5uviLMmfdX6bsmG?purpose=fullsize">ছবি দেখুন ↗</a><a class="ui" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&amp;q=Surviving%20Your%20First%20Year%20of%20Medical%20School%3A%20Plastic%20Surg...">Image search ↗</a></figure>
+<p>বিকেল ৫টা।</p>
+<p>Anatomy library।</p>
+<p>Adi, Amrita, Rudra, Sayan এবং Nandini একসঙ্গে বসেছে।</p>
+<p>আজ তাদের নিজেদের মধ্যে একটি নিয়ম হয়েছে।</p>
+<p>কেউ কোনো বিষয় মুখস্থ বলবে না। প্রত্যেককে অন্যদের এমনভাবে বোঝাতে হবে, যেন শ্রোতা প্রথমবার বিষয়টি শিখছে।</p>
+<p>Amrita বলল,</p>
+<p>"Adi, তুই Mitosis আর Meiosis-এর পার্থক্যটা বোঝা।"</p>
+<p>Adi খাতা বন্ধ করল।</p>
+<p>"ঠিক আছে। ধর, আমাদের শরীরের একটি Somatic cell আছে। এটি S phase-এ DNA replicate করে। কিন্তু Chromosome number একই থাকে। এরপর Mitosis-এ Sister chromatids আলাদা হয়ে দুটি Diploid Daughter cells তৈরি করে।"</p>
+<p>"আর Meiosis?"</p>
+<p>"Meiosis-এ প্রথমে Homologous chromosomes Pairing করে। Prophase I-এ Crossing over হয়। Meiosis I-এ Homologous chromosomes আলাদা হয়। তারপর DNA replication ছাড়াই Meiosis II হয়, যেখানে Sister chromatids আলাদা হয়। শেষ পর্যন্ত Haploid cells তৈরি হয়।"</p>
+<p>Amrita মাথা নাড়ল।</p>
+<p>"ভালো। এবার বল, Pachytene আর Diplotene-এর পার্থক্য কী?"</p>
+<p>Adi একটু ভেবে বলল,</p>
+<p>"Pachytene-এ Synapsis সম্পূর্ণ হয় এবং Genetic recombination ঘটে। Diplotene-এ Synaptonemal complex disassemble হয়, Homologous chromosomes আলাদা হতে শুরু করে, কিন্তু Chiasmata-তে যুক্ত থাকে।"</p>
+<p>Amrita হাসল।</p>
+<p>"এবার ঠিক বলেছিস!"</p>
+<p>Rudra পাশ থেকে বলল,</p>
+<p>"তোমাদের দুজনের Anatomy viva হলে examiner-এর চেয়ে তোমরা একে অপরকে বেশি প্রশ্ন করবে!"</p>
+<p>Sayan বলল,</p>
+<p>"আমি শুধু একটা জিনিস বুঝেছি। ওদের Group study-তে আমাদের পড়ার চেয়ে ওদের chemistry বেশি তৈরি হচ্ছে!"</p>
+<p>Nandini হেসে উঠল।</p>
+<p>Amrita বলল,</p>
+<p>"তোরা পড়তে এসেছিস, নাকি আমাদের বিরক্ত করতে?"</p>
+<p>Adi হেসে বলল,</p>
+<p>"ওদের বাদ দে। তুই প্রশ্ন কর।"</p>
+<p>Amrita একটু চুপ করে রইল।</p>
+<p>তারপর বলল,</p>
+<p>"একটা কথা বলি? তুই যখন কোনো কঠিন বিষয় না বুঝে ছাড়িস না, তখন আমারও মনে হয় আমাকেও আরও ভালোভাবে শিখতে হবে।"</p>
+<p>Adi তার দিকে তাকাল।</p>
+<p>"তুইও তো আমাকে একইভাবে challenge করিস।"</p>
+<p>কিছুক্ষণ দুজনেই চুপ।</p>
+<p>তারপর Adi বলল,</p>
+<p>"একটা কথা মনে রাখিস। আমরা শুধু পরীক্ষায় ভালো করার জন্য একসঙ্গে পড়ছি না। আমি চাই, একদিন আমরা দুজনেই এমন ডাক্তার হই, যাদের কাছে রোগীরা সত্যিই ভরসা পাবে।"</p>
+<p>Amrita মৃদু হেসে বলল,</p>
+<p>"তাহলে একটা শর্ত। কোনোদিন পড়া না বুঝে ঘুমাতে যাওয়া যাবে না।"</p>
+<p>"Deal."</p>
+</div></section>
+<section class="sec r" id="s47"><h3>১২. আজকের Gray’s Anatomy Master Learning Record</h3><div class="body">
+</div></section>
+<section class="sec r" id="s48"><h3>A. Mitosis</h3><div class="body">
+<div class="tw"><table><thead><tr><th>Phase</th><th>প্রধান ঘটনা</th></tr></thead><tbody><tr><td>Prophase</td><td>Chromatin condensation, Centrosome separation, Spindle formation, Nucleolus disappearance</td></tr><tr><td>Prometaphase</td><td>Nuclear envelope breakdown-এর পর Spindle microtubules-এর Chromosome attachment</td></tr><tr><td>Metaphase</td><td>Equatorial plate-এ Chromosome arrangement</td></tr><tr><td>Anaphase</td><td>Separase-mediated Cohesin cleavage ও Sister chromatid separation</td></tr><tr><td>Telophase</td><td>Nuclear envelope reformation, Chromosome decondensation, Nucleolus reformation</td></tr><tr><td>Cytokinesis</td><td>Actin–myosin belt-এর contraction ও Cleavage furrow formation</td></tr></tbody></table></div>
+<p>বিশেষ তথ্য:</p>
+<ul><li>DNA replication S phase-এ ঘটে।</li><li>DNA content দ্বিগুণ হলেও Chromosome number diploid থাকে।</li><li>Kinetochore microtubules Chromosomes-এর সঙ্গে attach করে।</li><li>Polar microtubules একে অপরের সঙ্গে overlap করে।</li><li>Separase Cohesin-এর একটি গুরুত্বপূর্ণ subunit cleave করে।</li><li>Cytokinesis সাধারণত Early anaphase-এ শুরু হয়।</li><li>Ionizing radiation Non-disjunction promote করতে পারে।</li><li>Vinblastine ও Paclitaxel Spindle dynamics ব্যাহত করে Mitosis arrest করতে পারে।</li></ul>
+</div></section>
+<section class="sec r" id="s49"><h3>B. Meiosis</h3><div class="body">
+<div class="tw"><table><thead><tr><th>বৈশিষ্ট্য</th><th>Meiosis I</th><th>Meiosis II</th></tr></thead><tbody><tr><td>প্রধান ঘটনা</td><td>Homologous chromosome separation</td><td>Sister chromatid separation</td></tr><tr><td>DNA replication</td><td>Premeiotic S phase-এর পরে</td><td>Intervening S phase নেই</td></tr><tr><td>Chromosome number</td><td>Diploid থেকে Haploid</td><td>Haploid থাকে</td></tr><tr><td>Mitosis-এর সঙ্গে সাদৃশ্য</td><td>মৌলিকভাবে আলাদা</td><td>অনেকটা সাদৃশ্যপূর্ণ</td></tr></tbody></table></div>
+</div></section>
+<section class="sec r" id="s50"><h3>C. Prophase I-এর পাঁচটি Substage</h3><div class="body">
+<div class="tw"><table><thead><tr><th>Stage</th><th>প্রধান বৈশিষ্ট্য</th></tr></thead><tbody><tr><td>Leptotene</td><td>Chromosome condensation ও Homologue recognition</td></tr><tr><td>Zygotene</td><td>Synapsis ও Synaptonemal complex formation</td></tr><tr><td>Pachytene</td><td>Genetic recombination</td></tr><tr><td>Diplotene</td><td>Synaptonemal complex disassembly ও Chiasmata দৃশ্যমান</td></tr><tr><td>Diakinesis</td><td>Chromosome condensation ও Spindle attachment-এর প্রস্তুতি</td></tr></tbody></table></div>
+</div></section>
+<section class="sec r" id="s51"><h3>D. Clinical correlations</h3><div class="body">
+<ul><li>Non-disjunction → Aneuploidy</li><li>Aneuploidy → অনেক ক্ষেত্রে embryonic non-viability</li><li>Aneuploidy → Spontaneous abortion-এর গুরুত্বপূর্ণ কারণ</li><li>Trisomy 21 → Down syndrome</li><li>Increased maternal age → Down syndrome-এর frequency বৃদ্ধি</li></ul>
+</div></section>
+<section class="sec r" id="s52"><h3>১৩. আজকের অধ্যায়ের Self-Test</h3><div class="body">
+<p>Adi ও Amrita নিজেদের জন্য ১০টি প্রশ্ন তৈরি করল।</p>
+<p>বন্ধু, তুমিও উত্তর দেওয়ার চেষ্টা করো।</p>
+<p>Episode 19 Knowledge Test</p>
+<p class="cnt" data-qz="1" data-n="10" data-a="1">0/10 answered</p>
+<div class="q" data-qz="1"><p class="qt">1. S phase-এ DNA replication হওয়ার পর Diploid cell-এর chromosome number ও DNA content কী হয়?</p><button type="button" class="opt">4n, 4C</button><button type="button" class="opt">2n, 4C</button><button type="button" class="opt">2n, 2C</button><button type="button" class="opt">n, 4C</button></div>
+<div class="q" data-qz="1"><p class="qt">2. Kinetochore কোথায় assembled হয়?</p><button type="button" class="opt">Telomere</button><button type="button" class="opt">Nucleolus</button><button type="button" class="opt">Centromeric DNA region</button><button type="button" class="opt">Nuclear envelope</button></div>
+<div class="q" data-qz="1"><p class="qt">3. Anaphase-এ Sister chromatids-এর cohesion ভাঙতে কোন enzyme গুরুত্বপূর্ণ?</p><button type="button" class="opt">Separase</button><button type="button" class="opt">DNA polymerase</button><button type="button" class="opt">Helicase</button><button type="button" class="opt">Ligase</button></div>
+<div class="q" data-qz="1"><p class="qt">4. Cytokinesis-এর cleavage furrow contraction-এ কোন দুটি protein প্রধান?</p><button type="button" class="opt">Actin ও Myosin</button><button type="button" class="opt">Tubulin ও Keratin</button><button type="button" class="opt">Collagen ও Elastin</button><button type="button" class="opt">Dynein ও Kinesin</button></div>
+<div class="q" data-qz="1"><p class="qt">5. Meiosis I-এর কোন পর্যায়ে Synapsis সম্পূর্ণ হয়?</p><button type="button" class="opt">Leptotene</button><button type="button" class="opt">Zygotene</button><button type="button" class="opt">Pachytene</button><button type="button" class="opt">Diplotene</button></div>
+<div class="q" data-qz="1"><p class="qt">6. Crossing over প্রধানত কোন chromatids-এর মধ্যে ঘটে?</p><button type="button" class="opt">Sister chromatids</button><button type="button" class="opt">Non-sister chromatids of homologous chromosomes</button><button type="button" class="opt">দুটি unrelated chromosomes</button><button type="button" class="opt">দুটি centromeres</button></div>
+<div class="q" data-qz="1"><p class="qt">7. Chiasmata কোন পর্যায়ে দৃশ্যমান হয়?</p><button type="button" class="opt">Leptotene</button><button type="button" class="opt">Zygotene</button><button type="button" class="opt">Pachytene</button><button type="button" class="opt">Diplotene</button></div>
+<div class="q" data-qz="1"><p class="qt">8. Meiosis I-এ কোন দুটি structure পৃথক হয়?</p><button type="button" class="opt">Sister chromatids</button><button type="button" class="opt">Homologous chromosomes</button><button type="button" class="opt">Centromeres</button><button type="button" class="opt">Nucleoli</button></div>
+<div class="q" data-qz="1"><p class="qt">9. Meiosis I ও Meiosis II-এর মধ্যে কী ঘটে?</p><button type="button" class="opt">নতুন S phase</button><button type="button" class="opt">DNA replication</button><button type="button" class="opt">কোনো intervening S phase হয় না</button><button type="button" class="opt">আরেকটি Meiosis I</button></div>
+<div class="q" data-qz="1"><p class="qt">10. Down syndrome-এর সঙ্গে কোন Chromosomal abnormality যুক্ত?</p><button type="button" class="opt">Trisomy 13</button><button type="button" class="opt">Trisomy 18</button><button type="button" class="opt">Trisomy 21</button><button type="button" class="opt">Monosomy X</button></div>
+<p class="sub2">Submit answers</p>
+</div></section>
+<section class="sec r" id="s53"><h3>Gray’s Anatomy Source Verification Record</h3><div class="body">
+<p>আজকের coverage:</p>
+<ul><li>Page 58 — Mitosis and meiosis-এর সূচনা</li><li>Page 59 — Mitosis-এর phases, Telophase, Non-disjunction এবং Meiosis-এর introduction</li><li>Page 60 — Meiosis I, Prophase I-এর পাঁচটি stage, Meiosis II এবং Aneuploidy-related discussion</li></ul>
+<p>Pages 58–60 covered</p>
+<p>শেষ দৃশ্য</p>
+<p>লাইব্রেরি থেকে বের হওয়ার সময় সন্ধ্যা নেমে এসেছে।</p>
+<p>Amrita বলল,</p>
+<p>"আগামীকাল Cell Polarity পড়ব, তাই তো?"</p>
+<p>Adi বলল,</p>
+<p>"হ্যাঁ। তবে আজ একটা কথা বুঝেছি।"</p>
+<p>"কী?"</p>
+<p>"একটা কোষ কীভাবে নিজের ভেতরের প্রতিটি structure এত নিখুঁতভাবে সাজিয়ে রাখে, সেটা যত পড়ছি তত অবাক হচ্ছি।"</p>
+<p>Amrita হেসে বলল,</p>
+<p>"তাহলে আগামীকাল আরও অবাক হওয়ার প্রস্তুতি নে।"</p>
+<p>Adi বলল,</p>
+<p>"তুই পাশে থাকলে কঠিন কিছুই অসম্ভব মনে হয় না।"</p>
+<p>Amrita কিছু বলল না। শুধু হাঁটার গতি একটু কমিয়ে দিল, যেন লাইব্রেরি থেকে কলেজের গেট পর্যন্ত পথটা আজ একটু বেশি দীর্ঘ হয়।</p>
+<p>পরবর্তী পর্ব: Episode 20 — Cell Polarity and Domains: কোষের অদৃশ্য সীমানা, Apical-Basal organization এবং Epithelial architecture।</p>
+<p>সেখানে শুরু হবে কোষের ভেতরের Spatial organization-এর নতুন অধ্যায়।</p>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-018.html">← Episode 18</a><a href="index.html">সব পর্ব</a><a href="episode-019b.html">Episode 19 · Version B →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s2">Episode 19: Mitosis and Meiosis — জীবনের উত্তরাধিকার, Chromosome-এর বিচ্ছেদ ও নতুন জীবনের রহস্য</a><a href="#s3">১. নতুন ক্লাস, নতুন প্রশ্ন</a><a href="#s4">২. Mitosis শুরু হওয়ার আগে Chromosome-এর অবস্থা</a><a href="#s5">Feynman Technique: Chromosome ও Chromatid</a><a href="#s6">৩. Mitosis-এর চারটি প্রধান Phase</a><a href="#s7">৩.১ Prophase — Chromosome-এর দৃশ্যমান রূপান্তর</a><a href="#s8">৩.২ Prometaphase — Spindle ও Chromosome-এর প্রথম সংযোগ</a><a href="#s9">Spindle microtubules-এর দুই ধরনের গুরুত্বপূর্ণ অংশ</a><a href="#s10">৩.৩ Metaphase — Equatorial plate-এ Chromosome-এর বিন্যাস</a><a href="#s11">Metaphase-এর শেষ মুহূর্ত</a><a href="#s12">৩.৪ Anaphase — Sister Chromatids-এর বিচ্ছেদ</a><a href="#s13">Clinical connection: Non-disjunction</a><a href="#s14">Mitosis-এ ব্যবহৃত কিছু Chemical agents</a><a href="#s15">৩.৫ Telophase — নতুন দুটি Nucleus-এর জন্ম</a><a href="#s16">Cleavage furrow formation</a><a href="#s17">৪. Mitosis-এর ভুল হলে কী হতে পারে?</a><a href="#s18">৫. Meiosis — একটি নতুন জীবনের জন্য Chromosome-এর প্রস্তুতি</a><a href="#s19">Meiosis-এর দুটি Division</a><a href="#s20">Meiosis-এর বিশেষ বৈশিষ্ট্য</a><a href="#s21">৬. Meiosis I-এর আগে কী ঘটে?</a><a href="#s22">৭. Prophase I — Meiosis-এর সবচেয়ে গুরুত্বপূর্ণ পর্যায়</a><a href="#s23">৭.১ Leptotene — Homologous chromosomes-এর সন্ধান</a><a href="#s24">৭.২ Zygotene — Synapsis শুরু</a><a href="#s25">Synaptonemal complex</a><a href="#s26">Male meiosis-এ XY chromosome</a><a href="#s27">৭.৩ Pachytene — Genetic recombination সম্পন্ন হওয়া</a><a href="#s28">Recombination nodules</a><a href="#s29">৭.৪ Diplotene — Chiasmata দৃশ্যমান হওয়া</a><a href="#s30">Female oocyte-এর বিশেষ বৈশিষ্ট্য</a><a href="#s31">৭.৫ Diakinesis — Meiosis I-এর Spindle-এর প্রস্তুতি</a><a href="#s32">Female egg-এর Spindle</a><a href="#s33">৮. Meiosis I — Homologous chromosomes-এর পৃথকীকরণ</a><a href="#s34">৮.১ Metaphase I</a><a href="#s35">৮.২ Anaphase I — Homologous chromosomes পৃথক হয়</a><a href="#s36">৮.৩ Random assortment — Maternal ও Paternal chromosomes-এর বণ্টন</a><a href="#s37">৮.৪ Meiosis I-এর Cytoplasmic division</a><a href="#s38">৯. Meiosis II — Sister chromatids-এর পৃথকীকরণ</a><a href="#s39">৯.১ Prophase II</a><a href="#s40">৯.২ Metaphase II</a><a href="#s41">৯.৩ Anaphase II</a><a href="#s42">৯.৪ Telophase II এবং Cytoplasmic division</a><a href="#s43">১০. Meiosis-এর ভুল হলে কী হতে পারে?</a><a href="#s44">Aneuploidy</a><a href="#s45">Down syndrome</a><a href="#s46">১১. Adi ও Amrita-র Library Feynman Challenge</a><a href="#s47">১২. আজকের Gray’s Anatomy Master Learning Record</a><a href="#s48">A. Mitosis</a><a href="#s49">B. Meiosis</a><a href="#s50">C. Prophase I-এর পাঁচটি Substage</a><a href="#s51">D. Clinical correlations</a><a href="#s52">১৩. আজকের অধ্যায়ের Self-Test</a><a href="#s53">Gray’s Anatomy Source Verification Record</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

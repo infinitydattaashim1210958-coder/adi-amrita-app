@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 017 · Nucleolus — নিউক্লিয়াসের ভেতরের Ribosome কারখানা</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+.fx{font-family:"Special Elite","Noto Serif Bengali",monospace;color:var(--teal);background:rgba(98,211,198,.05);border:1px dashed #2c3f4b;border-radius:10px;padding:10px 14px;margin:.7em 0;overflow-x:auto}
+.fx p{margin:0!important}.fxr{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}.fxb p+p{margin-top:.3em!important}
+.fx .ar{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 .45em;line-height:1.25}.fx .ar i{font-style:normal;font-size:.68em;color:var(--amber)}.fx .ar b{font-weight:400}
+.bxc{margin:.8em 0;padding:12px 18px;border:1px solid #2c5a58;border-radius:12px;background:rgba(98,211,198,.04)}
+.bxc .bxt{font-weight:700;color:var(--amber);margin:0 0 2px!important}.bxc ul{margin:.3em 0 .1em}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 017">EPISODE 017</h1>
+  <div class="ttl">Nucleolus — নিউক্লিয়াসের ভেতরের Ribosome কারখানা</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">017</div></div>
+    <div class="face b"><div class="t2">Nucleolus — নিউক্লিয়াসের ভেতরের Ribosome কারখানা</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>Episode 17: Nucleolus — নিউক্লিয়াসের ভেতরের Ribosome কারখানা</h3><div class="body">
+<p>Adi &amp; Amrita | Gray’s Anatomy Study Sessions | Chapter 1</p>
+<p>ঢাকা মেডিকেল কলেজের Anatomy Lecture Theatre।</p>
+<p>সকালের ক্লাস শুরু হওয়ার কয়েক মিনিট বাকি। Adi সামনের সারিতে বসে Gray’s Anatomy খুলে রেখেছে। পাশে Amrita। পেছনে Rudra, Sayan আর Nandini নিজেদের মধ্যে আলোচনা করছে।</p>
+<p>Rudra বলল, “আজকে আবার কী? Chromosome শেষ, এবার নিশ্চয়ই Cell Division?”</p>
+<p>Sayan বইয়ের সূচির দিকে তাকিয়ে বলল, “তার আগে Nucleolus আছে।”</p>
+<p>Nandini হেসে বলল, “তাহলে আজকে নিউক্লিয়াসের ভেতরে আরেকটা কারখানায় ঢুকতে হবে!”</p>
+<p>Amrita Adi-র দিকে তাকাল।</p>
+<p>— “তুই Nucleolus নিয়ে আগে পড়েছিস?”</p>
+<p>— “নামটা জানি। কিন্তু এটা যে Ribosome তৈরি করে, সেটার পুরো প্রক্রিয়াটা পরিষ্কার না।”</p>
+<p>— “তাহলে আজকে একটা কাজ করবি। শুধু কী তৈরি হয় সেটা না, কোথায় তৈরি হয়, কোন RNA polymerase কাজ করে, কোন rRNA কোথা থেকে আসে—সব বুঝে নিবি।”</p>
+<p>ঠিক তখনই Anatomy Professor ক্লাসে প্রবেশ করলেন।</p>
+</div></section>
+<section class="sec r" id="s2"><h3>১. Nucleolus: নিউক্লিয়াসের ভেতরের বিশেষ অঞ্চল</h3><div class="body">
+<p>Professor বোর্ডে লিখলেন:</p>
+<p>Nucleolus</p>
+<p>“তোমরা জানো, Nucleus হলো কোষের একটি গুরুত্বপূর্ণ intracellular structure। কিন্তু Nucleus-এর ভেতরে এমন একটি prominent structure রয়েছে, যেটি interphase-এ বিশেষভাবে দৃশ্যমান। সেটিই Nucleolus।”</p>
+<p>তিনি বললেন, “Gray’s Anatomy অনুযায়ী Nucleoli হলো interphase nucleus-এর একটি prominent feature।”</p>
+<p>Adi লিখল:</p>
+<ul><li>Nucleoli are prominent features of an interphase nucleus.</li><li>They are the site of most ribosomal RNA (rRNA) synthesis.</li><li>They are also the site of assembly of ribosome subunits.</li><li>Nucleoli organize at the end of mitosis.</li></ul>
+<p>Amrita নিচু স্বরে বলল, “মানে Nucleolus শুধু RNA তৈরি করে না, Ribosome-এর subunit assembly-ও করে।”</p>
+<p>Professor শুনে বললেন, “Exactly. এই দুটো কাজ আলাদা করে মনে রাখবে।”</p>
+<p>Nucleolus-এর প্রধান কাজ:</p>
+<ul><li>অধিকাংশ ribosomal RNA (rRNA) synthesis।</li><li>Ribosome subunits assembly।</li><li>Mitosis-এর শেষে Nucleolus পুনর্গঠিত হওয়া।</li></ul>
+<p>Rudra ফিসফিস করে বলল, “তাহলে Nucleolus হলো Ribosome factory!”</p>
+<p>Amrita বলল, “হ্যাঁ, তবে factory বললেই হবে না। Factory-তে raw material কী, production line কী, final product কী—সেটাও জানতে হবে।”</p>
+<p>Professor বোর্ডের দিকে ফিরে বললেন, “এবার আমরা সেই production line-টাই দেখব।”</p>
+</div></section>
+<section class="sec r" id="s3"><h3>২. Nucleolus-এর ভিতরে কী থাকে?</h3><div class="body">
+<p>Professor লিখলেন:</p>
+<p>rDNA genes + Processing molecules</p>
+<p>Nucleolus-এর মধ্যে থাকে:</p>
+<ul><li>Repeated clusters of ribosomal DNA (rDNA) genes।</li><li>Ribosome subunits উৎপাদনের জন্য প্রয়োজনীয় processing molecules।</li></ul>
+<p>Professor ব্যাখ্যা করলেন:</p>
+<p>“Ribosome তৈরির জন্য প্রথমে প্রয়োজন rRNA। আর rRNA তৈরি করার নির্দেশনা থাকে rDNA genes-এর মধ্যে। এই genes-এর transcription এবং পরবর্তী processing-এর মাধ্যমেই Ribosome-এর বিভিন্ন RNA component তৈরি হয়।”</p>
+<p>Adi প্রশ্ন করল, “Sir, rDNA genes কি এক জায়গায় থাকে, নাকি আলাদা আলাদা chromosome-এ?”</p>
+<p>Professor বললেন, “খুব ভালো প্রশ্ন। Gray’s Anatomy-তে বলা হয়েছে, rDNA genes tandem repeats আকারে সাজানো থাকে। এই repeated regions-কে বলা হয় Nucleolar Organizing Regions বা NORs।”</p>
+<p>বোর্ডে লেখা হলো:</p>
+<p>Nucleolar Organizing Regions (NORs)</p>
+<ul><li>rDNA genes-এর tandem repeats।</li><li>Acrocentric chromosomes-এ অবস্থিত।</li><li>মানুষের ক্ষেত্রে পাঁচ জোড়া acrocentric chromosomes-এ এই NORs থাকে।</li></ul>
+<p>Sayan বলল, “Sir, পাঁচ জোড়া acrocentric chromosome মানে দশটি chromosome?”</p>
+<p>Professor বললেন, “ঠিক তাই। এখানে source-এ five pairs বলা হয়েছে।”</p>
+<p>Amrita Adi-কে বলল, “Tandem repeats মানে একই ধরনের sequence পাশাপাশি বারবার সাজানো—এই ধারণাটা মাথায় রাখিস।”</p>
+<p>Adi মাথা নাড়ল।</p>
+</div></section>
+<section class="sec r" id="s4"><h3>৩. Ribosome তৈরির প্রথম ধাপ: RNA Polymerase I</h3><div class="body">
+<p>Professor বোর্ডে বড় করে লিখলেন:</p>
+<p>RNA Polymerase I → rDNA transcription</p>
+<p>“Ribosome subunit assembly-এর প্রাথমিক ধাপ শুরু হয় rDNA genes-এর transcription দিয়ে। আর এই transcription সম্পন্ন করে RNA Polymerase I।”</p>
+<p>এবার Professor একটি গুরুত্বপূর্ণ প্রশ্ন করলেন:</p>
+<p>“তোমরা বলো, RNA Polymerase I কী তৈরি করে?”</p>
+<p>ক্লাসের কয়েকজন উত্তর দিল।</p>
+<p>Professor বললেন:</p>
+<p>“প্রাথমিকভাবে তৈরি হয় একটি 47S rRNA precursor transcript।”</p>
+<p>Adi দ্রুত লিখল:</p>
+<p class="fx">rDNA <span class="ar"><i>RNA Polymerase I</i> <b>→</b></span> 47S rRNA</p>
+<p>Amrita বলল, “মানে 47S হলো precursor, final rRNA নয়?”</p>
+<p>— “একদম। এরপর এই 47S precursor cleave হয়ে mature rRNA তৈরি করে।”</p>
+<p>Professor বোর্ডে লিখলেন:</p>
+<div class="fx fxr"><p>47S rRNA</p><p>→</p><p>28S + 18S + 5.8S rRNA</p></div>
+<p>“এই তিনটি mature rRNA-ই পরবর্তী Ribosome subunit formation-এ অংশ নেয়।”</p>
+<p>Nandini বলল, “তাহলে 47S থেকে তিন ধরনের rRNA তৈরি হচ্ছে?”</p>
+<p>Professor বললেন, “হ্যাঁ। তবে Ribosome তৈরির জন্য আরও একটি RNA প্রয়োজন—5S rRNA।”</p>
+</div></section>
+<section class="sec r" id="s5"><h3>৪. 5S rRNA: একটি গুরুত্বপূর্ণ ব্যতিক্রম</h3><div class="body">
+<p>Professor এবার 5S rRNA-র নিচে দাগ দিলেন।</p>
+<p>“এখানে একটি গুরুত্বপূর্ণ পার্থক্য রয়েছে। 28S, 18S ও 5.8S rRNA-এর মতো 5S rRNA, RNA Polymerase I দিয়ে তৈরি হয় না।”</p>
+<p>তিনি লিখলেন:</p>
+<p>5S rRNA → RNA Polymerase III</p>
+<p>আরও গুরুত্বপূর্ণ বিষয়:</p>
+<ul><li>5S rRNA synthesis হয় outside the nucleolus।</li><li>এটি synthesized হয় RNA Polymerase III দ্বারা।</li></ul>
+<p>Sayan বলল, “Sir, তাহলে 5S rRNA তৈরি হয় Nucleolus-এর বাইরে, কিন্তু পরে Ribosome assembly-তে অংশ নেয়?”</p>
+<p>Professor বললেন, “ঠিক তাই।”</p>
+<p>Amrita Adi-কে বলল, “এই জায়গাটা পরীক্ষায় গুলিয়ে ফেলিস না। 47S precursor-এর processing থেকে 28S, 18S, 5.8S। আর 5S তৈরি হয় RNA Polymerase III দিয়ে, Nucleolus-এর বাইরে।”</p>
+<p>Adi নিজের খাতায় আলাদা করে লিখল:</p>
+<div class="tw"><table><thead><tr><th>rRNA</th><th>উৎপত্তি</th></tr></thead><tbody><tr><td>28S</td><td>47S precursor processing</td></tr><tr><td>18S</td><td>47S precursor processing</td></tr><tr><td>5.8S</td><td>47S precursor processing</td></tr><tr><td>5S</td><td>RNA Polymerase III; outside nucleolus</td></tr></tbody></table></div>
+<p>Professor বললেন, “এই চারটি rRNA-র ভূমিকা বুঝতে পারলে পরবর্তী assembly সহজ হবে।”</p>
+</div></section>
+<section class="sec r" id="s6"><h3>৫. 60S ও 40S: Ribosome-এর দুইটি subunit</h3><div class="body">
+<p>Professor এবার বোর্ডে দুটি আলাদা বাক্স আঁকলেন।</p>
+<p>প্রথম বাক্সে লিখলেন:</p>
+<div class="bxc"><p class="bxt">60S preribosome subunit</p><ul><li>28S rRNA</li><li>5.8S rRNA</li><li>5S rRNA</li></ul></div>
+<p>দ্বিতীয় বাক্সে লিখলেন:</p>
+<div class="bxc"><p class="bxt">40S preribosome subunit</p><ul><li>18S rRNA</li></ul></div>
+<p>তিনি ব্যাখ্যা করলেন:</p>
+<p>“এই rRNA-গুলো small nucleolar ribonucleoproteins এবং অন্যান্য non-ribosomal proteins-এর সঙ্গে যুক্ত হয়ে preribosome subunits তৈরি করে।”</p>
+<p>অর্থাৎ, শুধু RNA একা থাকলেই subunit তৈরি হয় না। RNA-এর সঙ্গে বিভিন্ন protein ও ribonucleoprotein complex যুক্ত হয়।</p>
+<div class="fx fxb"><p>60S: 28S + 5.8S + 5S</p><p>40S: 18S</p></div>
+<p>Professor বললেন, “এখানে মনে রাখবে, Gray’s Anatomy এই পর্যায়ে এগুলোকে preribosome subunits হিসেবে উল্লেখ করেছে।”</p>
+<p>Rudra বলল, “Sir, তাহলে 60S আর 40S তৈরি হয়ে গেলে এগুলো কোথায় যায়?”</p>
+<p>Professor উত্তর দিলেন:</p>
+<p>“এগুলো Nuclear pores অতিক্রম করে Cytoplasm-এ export হয়। সেখানে mature ribosome subunits হিসেবে পাওয়া যায়।”</p>
+<p>Adi লিখল:</p>
+<p>Nucleolus → Preribosome subunits → Nuclear pores → Cytoplasm</p>
+<p>Amrita বলল, “দেখলি, Nucleus-এর ভেতরে তৈরি হওয়া জিনিসও Nuclear pores দিয়ে বাইরে যেতে পারে।”</p>
+</div></section>
+<section class="sec r" id="s7"><h3>৬. Nucleolus-এর 726টি protein!</h3><div class="body">
+<p>Professor এবার একটি সংখ্যা লিখলেন:</p>
+</div></section>
+<section class="sec r" id="s8"><h3>726</h3><div class="body">
+<p>“Gray’s Anatomy-তে উল্লেখ আছে, human nucleolar proteins-এর প্রায় 726টি শনাক্ত করা হয়েছে।”</p>
+<p>কীভাবে শনাক্ত করা হয়েছিল?</p>
+<ul><li>Protein purification</li><li>Mass spectrometry</li></ul>
+<p>Nandini বলল, “Sir, Nucleolus-এ এতগুলো protein-এর কাজ কী?”</p>
+<p>Professor বললেন, “Nucleolus-এ rRNA synthesis, processing এবং ribosome subunit assembly-এর মতো জটিল কাজ চলে। এই প্রক্রিয়াগুলোর সঙ্গে বহু protein যুক্ত থাকে।”</p>
+<p>তিনি আরও বললেন, “এই অংশের আরও বিস্তারিত আলোচনার জন্য Gray’s Anatomy-তে Boisvert et al. (2007)-এর reference দেওয়া হয়েছে।”</p>
+<p>Sayan বলল, “মানে Nucleolus-কে শুধু একটা গোলাকার structure হিসেবে দেখলে ভুল হবে। এর মধ্যে অনেক molecular activity চলছে।”</p>
+<p>Professor মৃদু হেসে বললেন, “ঠিক ধরেছ।”</p>
+</div></section>
+<section class="sec r" id="s9"><h3>৭. Electron Microscope-এ Nucleolus-এর তিনটি অঞ্চল</h3><div class="body">
+<p>Professor এবার বোর্ডে লিখলেন:</p>
+<p>Three nucleolar subregions</p>
+<p>Gray’s Anatomy অনুযায়ী Electron microscopy-তে Nucleolus-এর তিনটি subregion দেখা যায়:</p>
+<ul><li>Fibrillar centres (FCs)</li><li>Dense fibrillar components (DFCs)</li><li>Granular components (GCs)</li></ul>
+<p>Professor বললেন, “এগুলো আলাদা আলাদা নামমাত্র নয়। Ribosome biogenesis-এর বিভিন্ন ধাপের সঙ্গে প্রতিটি অঞ্চলের সম্পর্ক রয়েছে।”</p>
+</div></section>
+<section class="sec r" id="s10"><h3>A. Fibrillar Centres (FCs)</h3><div class="body">
+<p>এখানে RNA Polymerase I-এর pools অবস্থান করে।</p>
+<p>Professor বোর্ডে লিখলেন:</p>
+<p>FC → RNA Polymerase I pools</p>
+</div></section>
+<section class="sec r" id="s11"><h3>B. Dense Fibrillar Components (DFCs)</h3><div class="body">
+<p>এখানে ঘটে:</p>
+<ul><li>rRNA transcripts-এর processing।</li><li>Small nucleolar ribonucleoproteins-এর সঙ্গে coupling।</li></ul>
+<p>Professor বললেন, “অর্থাৎ, transcription-এর পরে RNA processing-এর গুরুত্বপূর্ণ ধাপগুলো DFC-এর সঙ্গে সম্পর্কিত।”</p>
+</div></section>
+<section class="sec r" id="s12"><h3>C. Granular Components (GCs)</h3><div class="body">
+<p>এখানে Ribosome subunits-এর assembly সম্পন্ন হয়।</p>
+<p>Professor লিখলেন:</p>
+<p>GC → Completion of ribosome subunit assembly</p>
+<p>Amrita এবার পুরো বিষয়টি Feynman technique দিয়ে ব্যাখ্যা করার চেষ্টা করল।</p>
+<p>— “Sir, আমি যদি সহজ করে বলি—FC-তে transcription machinery থাকে, FC-DFC boundary-তে rDNA transcription হয়, DFC-তে transcript processing ও snoRNP coupling হয়, আর GC-তে subunit assembly শেষ হয়। ঠিক বলেছি?”</p>
+<p>Professor বললেন, “খুব ভালো। তবে একটি নির্দিষ্ট বিষয় যোগ করো—rDNA transcription ঘটে FC এবং DFC-এর boundary-তে।”</p>
+<p>Amrita মাথা নাড়ল।</p>
+<p>Adi নিজের নোটে লিখল:</p>
+<p>Nucleolus-এর তিনটি অঞ্চল ও কাজ</p>
+<p>Fibrillar Centres (FCs)</p>
+<p>RNA Polymerase I</p>
+<p>RNA Polymerase I-এর pools এখানে থাকে।</p>
+<p>FC–DFC boundary</p>
+<p>Transcription</p>
+<p>rDNA repeats-এর transcription এখানে ঘটে।</p>
+<p>Dense Fibrillar Components (DFCs)</p>
+<p>rRNA transcript processing এবং small nucleolar ribonucleoproteins-এর সঙ্গে coupling।</p>
+<p>Granular Components (GCs)</p>
+<p>Assembly</p>
+<p>Ribosome subunits-এর assembly এখানে সম্পন্ন হয়।</p>
+</div></section>
+<section class="sec r" id="s13"><h3>৮. Mitosis-এর সময় Nucleolus-এর কী হয়?</h3><div class="body">
+<p>ক্লাসের শেষের দিকে Professor নতুন প্রশ্ন করলেন।</p>
+<p>“তোমরা জানো, Nucleoli interphase nucleus-এর prominent feature। তাহলে Mitosis শুরু হলে কী হয়?”</p>
+<p>Rudra বলল, “Nucleolus disassemble হয়?”</p>
+<p>Professor বললেন, “হ্যাঁ। Gray’s Anatomy অনুযায়ী, কোষ Mitosis-এ প্রবেশ করলে Nucleolus disassembled হয় এবং transcription inactive হয়ে যায়।”</p>
+<p>Adi লিখল:</p>
+<p>During mitosis:</p>
+<ul><li>Nucleolus disassembles.</li><li>Transcription becomes inactive.</li></ul>
+<p>Professor এবার বললেন:</p>
+<p>“তাহলে Mitosis শেষ হলে Nucleolus কীভাবে আবার তৈরি হয়?”</p>
+<p>তিনি বোর্ডে লিখলেন:</p>
+<p>Telophase → Nuclear envelope reorganization → Nucleolar reformation</p>
+<p>ব্যাখ্যা:</p>
+<ul><li>Telophase-এ Nuclear envelope পুনর্গঠিত হয়।</li><li>নির্দিষ্ট chromosome-এর Nucleolar organizing centres-এ transcription শুরু হওয়ার সঙ্গে Nucleolus পুনর্গঠিত হয়।</li><li>Cell cycle-এর G1 phase-এ Nucleolus functional হয়ে ওঠে।</li></ul>
+<p>Sayan বলল, “Sir, অর্থাৎ Nucleolus-এর পুনর্গঠন chromosome-এর NOR-এর সঙ্গে সম্পর্কিত?”</p>
+<p>Professor বললেন, “ঠিক তাই। Nucleolar organizing centres-এ transcription শুরু হওয়ার সঙ্গে Nucleolus আবার সংগঠিত হয়।”</p>
+<p>Amrita বলল, “আর G1 phase-এ সেটা functional হয়।”</p>
+<p>“Exactly.”</p>
+</div></section>
+<section class="sec r" id="s14"><h3>৯. কোষের বৃদ্ধি ও বিভাজনে Nucleolus কেন এত গুরুত্বপূর্ণ?</h3><div class="body">
+<p>Professor এবার পুরো ক্লাসকে বললেন:</p>
+<p>“একটি কোষ যখন বৃদ্ধি পায় এবং বিভাজনের প্রস্তুতি নেয়, তখন তার protein synthesis-এর প্রয়োজন হয়। আর protein synthesis-এর জন্য প্রয়োজন পর্যাপ্ত Ribosome।”</p>
+<p>তিনি বোর্ডে লিখলেন:</p>
+<p>Steady nucleolar activity → Adequate ribosome subunit pool → Protein synthesis</p>
+<p>অর্থাৎ, Cell growth এবং cell division-এর সময় পর্যাপ্ত Ribosome subunits-এর pool বজায় রাখতে Nucleolus-এর কার্যক্রম নিয়মিত চলা প্রয়োজন।</p>
+<p>Adi বলল, “Sir, Nucleolus-এর কাজ কমে গেলে Ribosome subunit-এর পর্যাপ্ত supply বজায় রাখা কঠিন হবে?”</p>
+<p>Professor বললেন, “Gray’s Anatomy-তে যে সম্পর্কটি উল্লেখ করা হয়েছে, সেটি হলো—cell growth ও cell division-এর সময় পর্যাপ্ত ribosome subunits নিশ্চিত করতে steady nucleolar activity প্রয়োজন।”</p>
+<p>Amrita ধীরে বলল, “তাহলে Nucleolus-এর কার্যক্রম আর কোষের protein synthesis-এর মধ্যে সরাসরি সম্পর্ক আছে।”</p>
+</div></section>
+<section class="sec r" id="s15"><h3>১০. Bloom’s Syndrome ও Werner’s Syndrome: Nucleolus-এ DNA helicases</h3><div class="body">
+<p>ক্লাসের একদম শেষ অংশে Professor একটি নতুন বিষয় তুললেন।</p>
+<p>“Gray’s Anatomy-তে Nucleolus-এর সঙ্গে DNA helicases-এর সম্পর্কও উল্লেখ করা হয়েছে।”</p>
+<p>DNA helicases হলো DNA unwinding করে এমন enzymes-এর একটি conserved group।</p>
+<p>Professor বললেন:</p>
+<p>“কিছু নির্দিষ্ট condition-এ এই DNA helicases Nucleolus-এ accumulate করে। Gray’s Anatomy উদাহরণ হিসেবে দুটি syndrome উল্লেখ করেছে।”</p>
+</div></section>
+<section class="sec r" id="s16"><h3>A. Bloom’s Syndrome</h3><div class="body">
+<p>Gray’s Anatomy-তে বর্ণিত বৈশিষ্ট্য:</p>
+<ul><li>Autosomal recessive disorder।</li><li>Growth deficiency।</li><li>Immunodeficiency।</li><li>Predisposition to cancer।</li></ul>
+</div></section>
+<section class="sec r" id="s17"><h3>B. Werner’s Syndrome</h3><div class="body">
+<p>Gray’s Anatomy-তে বর্ণিত বৈশিষ্ট্য:</p>
+<ul><li>Autosomal recessive condition।</li><li>Various age-related diseases-এর early appearance।</li></ul>
+<p>Rudra বলল, “Sir, দুটোই autosomal recessive, কিন্তু বৈশিষ্ট্য আলাদা।”</p>
+<p>Professor বললেন, “হ্যাঁ। আর আজকের আলোচনায় আমাদের নির্দিষ্ট বিষয় হলো—এই syndrome দুটিতে DNA helicases Nucleolus-এ accumulate করতে পারে।”</p>
+<p>তিনি আরও জানালেন, Nucleolar functions-এর বিস্তারিত পড়ার জন্য Gray’s Anatomy-তে Boisvert et al. (2007)-এর reference দেওয়া আছে।</p>
+</div></section>
+<section class="sec r" id="s18"><h3>১১. ক্লাস শেষে: Adi ও Amrita-র শেষ আলোচনা</h3><div class="body">
+<p>ক্লাস শেষ হয়েছে। সবাই বেরিয়ে যাচ্ছে। কিন্তু Adi আর Amrita বসে আছে নিজেদের নোট মিলিয়ে।</p>
+<p>Adi বলল, “একটা কথা বলি? আজকের Nucleolus topic-টা দেখতে ছোট, কিন্তু এর ভেতরে কতগুলো ধাপ!”</p>
+<p>Amrita বলল, “হ্যাঁ। বিশেষ করে 47S precursor, 5S rRNA আর তিনটি nucleolar region—এগুলো গুলিয়ে ফেললে পুরো mechanism-টাই ভুল হয়ে যাবে।”</p>
+<p>Adi বলল, “তুই একটা কাজ কর। আমি তোকে পুরো process-টা বলি, তুই দেখ কোথাও ভুল হচ্ছে কি না।”</p>
+<p>সে খাতা খুলে বলল:</p>
+<p>“প্রথমে rDNA genes থেকে RNA Polymerase I-এর মাধ্যমে 47S precursor তৈরি হয়। এরপর সেটা process হয়ে 28S, 18S আর 5.8S rRNA তৈরি করে। অন্যদিকে 5S rRNA Nucleolus-এর বাইরে RNA Polymerase III দিয়ে তৈরি হয়। এরপর এগুলো small nucleolar ribonucleoproteins এবং অন্যান্য non-ribosomal proteins-এর সঙ্গে যুক্ত হয়ে 60S ও 40S preribosome subunits তৈরি করে। তারপর Nuclear pores দিয়ে Cytoplasm-এ যায়।”</p>
+<p>Amrita বলল, “ঠিক আছে। কিন্তু তিনটি region-ও বল।”</p>
+<p>Adi এবার বলল:</p>
+<p>“FC-তে RNA Polymerase I-এর pools, FC-DFC boundary-তে transcription, DFC-তে processing ও snoRNP coupling, আর GC-তে ribosome subunit assembly complete হয়।”</p>
+<p>Amrita হাসল।</p>
+<p>— “এবার ঠিক আছে, ডাক্তার সাহেব।”</p>
+<p>— “এখনো ডাক্তার হইনি।”</p>
+<p>— “হবি। তবে তার আগে Gray’s শেষ কর।”</p>
+<p>Adi হেসে বলল, “একসঙ্গে শেষ করব।”</p>
+<p>Amrita কিছুক্ষণ চুপ করে রইল। তারপর বলল:</p>
+<p>“হ্যাঁ, একসঙ্গেই।”</p>
+<p>বাইরে তখন বিকেলের আলো। Library-তে যাওয়ার আগে তারা দুজনেই বুঝে নিয়েছে—Gray’s Anatomy শেষ করার পথটা দীর্ঘ। কিন্তু প্রতিটি অধ্যায় যদি এভাবেই বুঝে শেখা যায়, তাহলে কঠিন বইটাও একদিন তাদের কাছে পরিচিত হয়ে উঠবে।</p>
+</div></section>
+<section class="sec r" id="s19"><h3>আজকের Anatomy Learning Record</h3><div class="body">
+<p>Nucleolus — সম্পূর্ণ আলোচিত বিষয়</p>
+<div class="tw"><table><thead><tr><th>বিষয়</th><th>আজকের শেখা</th></tr></thead><tbody><tr><td>Nucleolus</td><td>Interphase nucleus-এর prominent feature</td></tr><tr><td>Main function</td><td>rRNA synthesis ও ribosome subunit assembly</td></tr><tr><td>NOR</td><td>rDNA genes-এর tandem repeats</td></tr><tr><td>Human NOR-bearing chromosomes</td><td>পাঁচ জোড়া acrocentric chromosomes</td></tr><tr><td>RNA Polymerase I</td><td>47S rRNA precursor synthesis</td></tr><tr><td>RNA Polymerase III</td><td>5S rRNA synthesis outside nucleolus</td></tr><tr><td>47S processing</td><td>28S, 18S, 5.8S rRNA</td></tr><tr><td>60S subunit</td><td>28S + 5.8S + 5S</td></tr><tr><td>40S subunit</td><td>18S</td></tr><tr><td>FC</td><td>RNA Polymerase I pools</td></tr><tr><td>FC–DFC boundary</td><td>rDNA transcription</td></tr><tr><td>DFC</td><td>Transcript processing ও snoRNP coupling</td></tr><tr><td>GC</td><td>Ribosome subunit assembly completion</td></tr><tr><td>Nuclear export</td><td>Nuclear pores দিয়ে Cytoplasm-এ</td></tr><tr><td>Mitosis</td><td>Nucleolus disassembles</td></tr><tr><td>Telophase</td><td>Nucleolus reforms</td></tr><tr><td>G1 phase</td><td>Nucleolus becomes functional</td></tr><tr><td>DNA helicases</td><td>Bloom’s ও Werner’s syndrome-এ Nucleolar accumulation</td></tr></tbody></table></div>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-016.html">← Episode 16</a><a href="index.html">সব পর্ব</a><a href="episode-018.html">Episode 18 →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">Episode 17: Nucleolus — নিউক্লিয়াসের ভেতরের Ribosome কারখানা</a><a href="#s2">১. Nucleolus: নিউক্লিয়াসের ভেতরের বিশেষ অঞ্চল</a><a href="#s3">২. Nucleolus-এর ভিতরে কী থাকে?</a><a href="#s4">৩. Ribosome তৈরির প্রথম ধাপ: RNA Polymerase I</a><a href="#s5">৪. 5S rRNA: একটি গুরুত্বপূর্ণ ব্যতিক্রম</a><a href="#s6">৫. 60S ও 40S: Ribosome-এর দুইটি subunit</a><a href="#s7">৬. Nucleolus-এর 726টি protein!</a><a href="#s8">726</a><a href="#s9">৭. Electron Microscope-এ Nucleolus-এর তিনটি অঞ্চল</a><a href="#s10">A. Fibrillar Centres (FCs)</a><a href="#s11">B. Dense Fibrillar Components (DFCs)</a><a href="#s12">C. Granular Components (GCs)</a><a href="#s13">৮. Mitosis-এর সময় Nucleolus-এর কী হয়?</a><a href="#s14">৯. কোষের বৃদ্ধি ও বিভাজনে Nucleolus কেন এত গুরুত্বপূর্ণ?</a><a href="#s15">১০. Bloom’s Syndrome ও Werner’s Syndrome: Nucleolus-এ DNA helicases</a><a href="#s16">A. Bloom’s Syndrome</a><a href="#s17">B. Werner’s Syndrome</a><a href="#s18">১১. ক্লাস শেষে: Adi ও Amrita-র শেষ আলোচনা</a><a href="#s19">আজকের Anatomy Learning Record</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>

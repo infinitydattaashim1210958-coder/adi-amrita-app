@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>আদি ও অমৃতা — Episode 018 · Cell Cycle — জীবনের ঘড়ি, বিভাজনের সংকেত ও অদৃশ্য Checkpoint</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b0f;--bg2:#0e141a;--ink:#dde5e9;--dim:#8794a0;--teal:#62d3c6;--amber:#e3b25a;--line:#1f2c35;--card:#0f161d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 14px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.95 "Noto Serif Bengali",Georgia,serif;overflow-x:hidden}
+#dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),rgba(98,211,198,.10),transparent 70%)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:20;box-shadow:0 0 12px var(--teal)}
+header{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 20px 40px;perspective:1000px;overflow:hidden}
+header::before{content:"";position:absolute;top:-10%;left:50%;width:520px;height:120%;margin-left:-260px;background:conic-gradient(from 180deg at 50% 0,transparent 160deg,rgba(227,178,90,.16) 175deg,rgba(227,178,90,.16) 185deg,transparent 200deg);transform-origin:50% 0;animation:swing 7s ease-in-out infinite,lamp 9s infinite;pointer-events:none}
+@keyframes swing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@keyframes lamp{0%,90%,100%{opacity:1}92%{opacity:.25}94%{opacity:.9}96%{opacity:.4}}
+.kick{font-family:"Special Elite","Noto Serif Bengali",monospace;letter-spacing:.35em;color:var(--teal);font-size:13px;text-transform:uppercase}
+h1{position:relative;font-family:"Special Elite","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(38px,9vw,84px);line-height:1.1;margin:.25em 0 .1em;color:#eef4f6;letter-spacing:.04em}
+h1::before,h1::after{content:attr(data-t);position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none}
+h1::before{color:var(--teal);animation:gl1 7s infinite}
+h1::after{color:var(--amber);animation:gl2 7s infinite}
+@keyframes gl1{0%,93%,100%{opacity:0}94%{opacity:.8;transform:translate(-4px,1px);clip-path:inset(10% 0 55% 0)}96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 8% 0)}}
+@keyframes gl2{0%,94%,100%{opacity:0}95%{opacity:.7;transform:translate(4px,-1px);clip-path:inset(40% 0 30% 0)}97%{opacity:0}}
+.ttl{font-size:clamp(20px,4.5vw,32px);color:var(--amber);font-weight:700;margin:.2em 0 1em}
+.cardwrap{width:min(300px,78vw);height:190px;margin:10px auto 18px;perspective:900px}
+.card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;touch-action:none}
+.face{position:absolute;inset:0;border:1px solid #2c3f4b;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;background:linear-gradient(145deg,#15212a,#0a1015);box-shadow:0 0 40px rgba(98,211,198,.18),inset 0 0 30px rgba(0,0,0,.6)}
+.face.b{transform:rotateY(180deg)}
+.face .e{font-family:"Special Elite",monospace;letter-spacing:.3em;color:var(--teal);font-size:12px}
+.face .n{font-family:"Special Elite",monospace;font-size:34px;color:#f1f6f8}
+.face .t2{font-size:16px;color:var(--amber);line-height:1.5}
+.pane{position:absolute;inset:-14px;border:1px solid rgba(98,211,198,.25);border-radius:12px;pointer-events:none}
+.pane.p1{transform:translateZ(-40px)}.pane.p2{transform:translateZ(-90px);border-color:rgba(227,178,90,.2)}
+.ecg{width:min(520px,90vw);height:60px;margin:6px auto 0}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:ecg 3.2s linear infinite;filter:drop-shadow(0 0 5px var(--teal))}
+@keyframes ecg{to{stroke-dashoffset:-420}}
+.hint{font-size:13px;color:var(--dim);margin-top:10px}
+.scrollcue{margin-top:26px;color:var(--dim);font-size:13px;letter-spacing:.2em;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+main{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:20px 18px 140px}
+.sec{margin:34px 0;perspective:1100px}
+.sec h3{font-size:clamp(21px,4.2vw,30px);line-height:1.4;color:var(--amber);margin:0 0 14px;padding-left:14px;border-left:3px solid var(--teal);text-shadow:0 0 16px rgba(227,178,90,.25)}
+.body{background:linear-gradient(150deg,var(--card),#0a0f14);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .2s,box-shadow .3s;transform-style:preserve-3d}
+.body:hover{box-shadow:0 18px 50px rgba(98,211,198,.12)}
+.body p{margin:.4em 0}
+.body ul{margin:.5em 0;padding-left:1.3em}
+.body li{margin:.25em 0}
+.body li::marker{color:var(--teal)}
+.r{opacity:0;filter:blur(7px);transform:translateY(34px) rotateX(8deg);transition:opacity 1s,filter 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.on{opacity:1;filter:none;transform:none}
+.tw{overflow-x:auto;margin:.7em 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:15.5px;line-height:1.6}
+th{background:#13212b;color:var(--teal);text-align:left}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(98,211,198,.05)}
+.img{margin:.8em 0;padding:12px 14px;border:1px dashed #2c3f4b;border-radius:10px;background:rgba(98,211,198,.04);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14.5px;line-height:1.5}
+.img .ic{color:var(--amber)}.img figcaption{flex:1 1 220px;color:var(--dim)}
+.img a,#toc a{color:var(--teal);text-decoration:none}
+.img a{border:1px solid #2c5a58;border-radius:99px;padding:3px 12px;font-size:13px;transition:.25s}
+.img a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 16px var(--teal)}
+.q{margin:.9em 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+.qt{font-weight:700;margin:0 0 6px!important}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.6;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 12px;margin:5px 0;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--teal);transform:translateX(4px)}
+.opt.sel{border-color:var(--amber);background:rgba(227,178,90,.12);box-shadow:0 0 14px rgba(227,178,90,.25)}
+.cnt{font-family:"Special Elite",monospace;color:var(--teal)}
+#tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-size:15px;color:#06110f;background:var(--teal);border:0;border-radius:99px;padding:10px 18px;cursor:pointer;box-shadow:0 0 20px rgba(98,211,198,.5)}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(5,8,11,.94);overflow-y:auto;padding:calc(30px + env(safe-area-inset-top,0px)) 22px 60px;display:none}
+#toc.open{display:block}
+#toc div{max-width:640px;margin:0 auto}
+#toc a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+#toc button{position:sticky;top:0;float:right;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer}
+.chip{display:inline-block;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:.2em;color:var(--amber);border:1px solid #5a4a22;border-radius:99px;padding:2px 14px;margin:-6px 0 16px}
+.epnav{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 18px 120px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.epnav a{flex:1 1 200px;text-align:center;color:var(--teal);text-decoration:none;border:1px solid #2c5a58;border-radius:12px;padding:12px 16px;font-size:15px;line-height:1.5;transition:.25s}
+.epnav a:hover{background:var(--teal);color:#06110f;box-shadow:0 0 18px var(--teal)}
+.sub2{color:var(--dim)}
+.body li .ct{margin:.3em 0}
+.body ul ul{margin:.2em 0}
+.fx{font-family:"Special Elite","Noto Serif Bengali",monospace;color:var(--teal);background:rgba(98,211,198,.05);border:1px dashed #2c3f4b;border-radius:10px;padding:10px 14px;margin:.7em 0;overflow-x:auto}
+.fx p{margin:0!important}.fxr{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}.fxb p+p{margin-top:.3em!important}
+.fx .ar{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 .45em;line-height:1.25}.fx .ar i{font-style:normal;font-size:.68em;color:var(--amber)}.fx .ar b{font-weight:400}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="dust"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <div class="kick">ADI &amp; AMRITA</div>
+  <h1 data-t="EPISODE 018">EPISODE 018</h1>
+  <div class="ttl">Cell Cycle — জীবনের ঘড়ি, বিভাজনের সংকেত ও অদৃশ্য Checkpoint</div>
+  <div class="cardwrap"><div class="card3d" id="card">
+    <div class="pane p1"></div><div class="pane p2"></div>
+    <div class="face"><div class="e">ADI &amp; AMRITA</div><div class="n">018</div></div>
+    <div class="face b"><div class="t2">Cell Cycle — জীবনের ঘড়ি, বিভাজনের সংকেত ও অদৃশ্য Checkpoint</div></div>
+  </div></div>
+  <svg class="ecg" viewBox="0 0 520 60" aria-hidden="true"><path d="M0 30H150L165 30L175 8L190 52L202 30H300L312 30L322 14L334 46L344 30H520"/></svg>
+  <div class="hint">কার্ডটি টেনে ঘুরিয়ে দেখুন</div>
+  <div class="scrollcue">▼ ▼ ▼</div>
+</header>
+<main>
+<section class="sec r" id="s1"><h3>Episode 18: Cell Cycle — জীবনের ঘড়ি, বিভাজনের সংকেত ও অদৃশ্য Checkpoint</h3><div class="body">
+<p>Adi &amp; Amrita | Dhaka Medical College | Gray’s Anatomy Study Sessions</p>
+</div></section>
+<section class="sec r" id="s2"><h3>১. নতুন অধ্যায়ের শুরু</h3><div class="body">
+<p>ঢাকা মেডিকেল কলেজের Anatomy lecture theatre।</p>
+<p>সকালের ক্লাস। Professor আজকের lecture শুরু করার আগে আগের দিনের Nucleolus নিয়ে একটি প্রশ্ন করলেন।</p>
+<p>“কোষের Ribosome তৈরির প্রধান স্থান কোনটি?”</p>
+<p>Amrita উত্তর দিল, “Nucleolus, Sir।”</p>
+<p>“আর কোষ যখন Mitosis-এ প্রবেশ করে, তখন Nucleolus-এর কী হয়?”</p>
+<p>Adi বলল, “It disassembles, Sir. Transcription becomes inactive.”</p>
+<p>Professor সন্তুষ্ট হয়ে বোর্ডে নতুন শিরোনাম লিখলেন:</p>
+<p>CELL DIVISION AND THE CELL CYCLE</p>
+<p>“আজ আমরা এমন একটি biological process পড়ব, যার মাধ্যমে একটি কোষ বৃদ্ধি পায়, নিজের DNA replicate করে এবং শেষ পর্যন্ত daughter cells তৈরি করে।”</p>
+<p>Rudra পেছন থেকে বলল, “মানে আজ থেকে কোষের জীবনচক্র!”</p>
+<p>Professor হাসলেন।</p>
+<p>“ঠিক। তবে মনে রেখো, Cell Cycle কেবল একটা সময়সূচি নয়। এটি একটি highly regulated sequence of molecular events।”</p>
+</div></section>
+<section class="sec r" id="s3"><h3>২. কেন কোষ বিভাজিত হয়?</h3><div class="body">
+<p>Professor বললেন:</p>
+<p>“Prenatal development-এর সময় শরীরের আকার ও জটিলতা বৃদ্ধির জন্য অধিকাংশ কোষ বারবার বিভাজিত হয়।”</p>
+<p>অর্থাৎ, ভ্রূণ থেকে পূর্ণাঙ্গ দেহ তৈরি হওয়ার সময় cell division অত্যন্ত গুরুত্বপূর্ণ।</p>
+<p>কিন্তু কোষ পরিণত হওয়ার সঙ্গে সঙ্গে তাদের মধ্যে structural and functional differentiation ঘটে।</p>
+<p>এখানে একটি গুরুত্বপূর্ণ বিষয়:</p>
+<p>সব কোষের বিভাজন করার ক্ষমতা সমান নয়।</p>
+<p>Gray’s Anatomy দুটি উদাহরণ দিয়েছে।</p>
+<p>A. Neurones</p>
+<p>কিছু কোষ, যেমন Neurones, পরিণত হওয়ার পর বিভাজনের ক্ষমতা হারিয়ে ফেলে।</p>
+<p>B. Replication-competent stem cells</p>
+<p>অন্যদিকে কিছু কোষ ব্যক্তির জীবনকাল জুড়ে টিকে থাকতে পারে এবং বিভাজনের ক্ষমতা বজায় রাখে।</p>
+<p>উদাহরণ:</p>
+<ul><li>Bone marrow-এর haemopoietic tissue-এর Stem cells।</li></ul>
+<p>Amrita প্রশ্ন করল, “Sir, Stem cells কি সবসময় দ্রুত বিভাজিত হয়?”</p>
+<p>Professor বললেন, “না। অনেক Stem cell অনিয়মিত বা কম frequency-তে বিভাজিত হয়। কিন্তু তারা এমন daughter cells তৈরি করতে পারে, যেগুলো পরবর্তীতে বারবার mitotic division-এর মধ্য দিয়ে যায়।”</p>
+<p>এই daughter cells-কে বলা হয়:</p>
+<p>Transit amplifying cells বা Transient amplifying cells।</p>
+</div></section>
+<section class="sec r" id="s4"><h3>Stem cell বনাম Transit amplifying cell</h3><div class="body">
+<p>Professor বোর্ডে লিখলেন:</p>
+<p>Stem cell → Transit amplifying cells → Differentiation → Ultimately cell death</p>
+<p>ব্যাখ্যা:</p>
+<ul><li>Parental stem cell নিজের population বজায় রাখতে self-renew করে।</li><li>Stem cell থেকে তৈরি Transit amplifying cells বারবার mitotic division করতে পারে।</li><li>এই বিভাজনগুলো কখনো দ্রুত succession-এ ঘটে।</li><li>বিশেষ করে যেসব cell lineage-এর lifespan কম, turnover ও replacement দ্রুত, সেখানে এমন division দেখা যায়।</li><li>Transit amplifying cells শেষ পর্যন্ত differentiate করে এবং ultimately die করে।</li></ul>
+<p>Adi বলল, “তাহলে Stem cell নিজের population বজায় রাখে, কিন্তু Transit amplifying cells মূলত দ্রুত সংখ্যাবৃদ্ধি করে replacement-এর জন্য?”</p>
+<p>Professor বললেন, “খুব ভালোভাবে ধরেছ।”</p>
+</div></section>
+<section class="sec r" id="s5"><h3>৩. Tissue অনুযায়ী Cell Division-এর হার</h3><div class="body">
+<p>Professor এবার বোর্ডে দুটি উদাহরণ লিখলেন।</p>
+</div></section>
+<section class="sec r" id="s6"><h3>A. Intestinal epithelium</h3><div class="body">
+<p>“অনেক epithelial tissue-তে damaged বা ageing cells দ্রুত replace হয়।”</p>
+<p>Gray’s Anatomy উদাহরণ হিসেবে উল্লেখ করেছে:</p>
+<p>Crypts between intestinal villi</p>
+<p>এখানে Stem cells-এর division-এর মাধ্যমে ক্ষতিগ্রস্ত বা ageing cells প্রতিস্থাপিত হতে পারে।</p>
+</div></section>
+<section class="sec r" id="s7"><h3>B. Wound healing in skin</h3><div class="body">
+<p>Professor বললেন:</p>
+<p>“তোমরা নিশ্চয়ই জানো, ত্বকে ক্ষত হলে repair process শুরু হয়। এই সময়ে cell proliferation বেড়ে যায়।”</p>
+<p>Gray’s Anatomy অনুযায়ী:</p>
+<ul><li>Wounded skin-এ cell proliferation বৃদ্ধি পায়।</li><li>Proliferation একটি peak-এ পৌঁছায়।</li><li>এরপর আবার স্বাভাবিক replacement level-এ ফিরে আসে।</li></ul>
+<p>অর্থাৎ, Cell division-এর rate স্থির নয়। Tissue-এর demand অনুযায়ী পরিবর্তিত হতে পারে।</p>
+</div></section>
+<section class="sec r" id="s8"><h3>Cell division-এর demand ও tissue growth</h3><div class="body">
+<p>Professor বোর্ডে লিখলেন:</p>
+<p>Growth and replacement demand ↔ Rate of cell division</p>
+<p>যখন এই coupling ঠিকমতো কাজ করে না, তখন দুটি ধরনের সমস্যা হতে পারে:</p>
+<ul><li>Tissue প্রয়োজনীয় কোষ তৈরি করতে ব্যর্থ হয়—ফলে tissue যথাযথভাবে grow বা replace করতে পারে না।</li><li>Tissue অতিরিক্ত বৃদ্ধি পায়—ফলে Neoplasms তৈরি হতে পারে।</li></ul>
+<p>Sayan বলল, “Sir, অর্থাৎ Cell proliferation-এর নিয়ন্ত্রণ নষ্ট হলে tissue-এর স্বাভাবিক growth pattern ব্যাহত হয়?”</p>
+<p>Professor উত্তর দিলেন, “ঠিক তাই। Cell division-এর rate tightly coupled to the demand for growth and replacement।”</p>
+</div></section>
+<section class="sec r" id="s9"><h3>৪. Cell Cycle আসলে কী?</h3><div class="body">
+<p>Professor বোর্ডে লিখলেন:</p>
+<p>Cell Cycle</p>
+<p>“Cell Cycle হলো একটি ordered sequence of events, যার শেষে একটি কোষ বৃদ্ধি পায় এবং বিভাজিত হয়ে দুটি daughter cells তৈরি করে।”</p>
+<p>Gray’s Anatomy অনুযায়ী:</p>
+<ul><li>Cell Cycle সাধারণত minimum 12 hours স্থায়ী হয়।</li><li>অধিকাংশ adult tissue-তে এটি আরও দীর্ঘ হতে পারে।</li></ul>
+<p>Cell Cycle-এর চারটি phase:</p>
+<ul><li>G₁ phase — Gap 1</li><li>S phase — DNA synthesis</li><li>G₂ phase — Gap 2</li><li>M phase — Mitosis</li></ul>
+<p>Professor বললেন:</p>
+<p>“G₁, S এবং G₂—এই তিনটি phase একসঙ্গে পরিচিত Interphase নামে। আর M হলো Mitotic phase।”</p>
+<p>Cell Cycle-এর মৌলিক বিন্যাস</p>
+<p>G₁ phase</p>
+<p>Cell growth ও পরবর্তী cycle-এর প্রস্তুতি</p>
+<p>S phase</p>
+<p>DNA synthesis / replication</p>
+<p>G₂ phase</p>
+<p>Cell prepares for division</p>
+<p>M phase</p>
+<p>Mitosis</p>
+<p>Interphase = G₁ + S + G₂; M phase হলো Mitotic phase।</p>
+<p>Amrita বলল, “তাহলে G₁, S, G₂ হলো Mitosis-এর আগের প্রস্তুতিমূলক সময়?”</p>
+<p>Professor বললেন, “হ্যাঁ। তবে G₁-কে শুধু preparation বললে পুরো বিষয়টা বোঝা যাবে না। এই phase-এ কোষ পরবর্তী cycle শুরু করার সিদ্ধান্ত নেয়।”</p>
+</div></section>
+<section class="sec r" id="s10"><h3>৫. G₁ phase: কোষের সিদ্ধান্ত নেওয়ার সময়</h3><div class="body">
+<p>Professor লিখলেন:</p>
+<p>G₁ = Growth + Growth factor response + Preparation</p>
+<p>G₁ phase-এ কোষ Growth factors-এর প্রতি response দেয়।</p>
+<p>এই Growth factors কোষকে নতুন Cell Cycle শুরু করার নির্দেশ দিতে পারে।</p>
+<p>Professor বললেন:</p>
+<p>“G₁ phase-এ কোষ যখন পরবর্তী cycle শুরু করার সিদ্ধান্ত নেয়, সেই সিদ্ধান্ত একবার নেওয়া হলে তা irreversible।”</p>
+<p>অর্থাৎ, কোষ একবার পরবর্তী cycle-এ প্রবেশের সিদ্ধান্ত নিলে সেটি আর আগের অবস্থায় ফিরে যায় না—Gray’s Anatomy-তে এই সিদ্ধান্তের irreversible হওয়ার কথা বলা হয়েছে।</p>
+<p>এ ছাড়া G₁ phase-এ:</p>
+<ul><li>পরবর্তী Cell Cycle সম্পন্ন করার জন্য প্রয়োজনীয় অধিকাংশ molecular machinery তৈরি হয়।</li><li>কোষের পরবর্তী DNA synthesis ও division-এর প্রস্তুতি গড়ে ওঠে।</li></ul>
+<p>Adi প্রশ্ন করল:</p>
+<p>“Sir, Centrosome কখন duplicate হয়?”</p>
+<p>Professor বললেন:</p>
+<p>“খুব গুরুত্বপূর্ণ প্রশ্ন। Gray’s Anatomy অনুযায়ী, Centrosomes duplicate হয় S phase-এ, Mitosis-এর প্রস্তুতির জন্য।”</p>
+<p>Adi লিখল:</p>
+<p>Centrosome duplication → S phase</p>
+</div></section>
+<section class="sec r" id="s11"><h3>৬. G₀ phase: কোষ বিভাজন না করেও সক্রিয় থাকতে পারে</h3><div class="body">
+<p>Professor এবার নতুন একটি শব্দ লিখলেন:</p>
+<p>G₀ phase</p>
+<p>“কিছু কোষের proliferation করার ক্ষমতা থাকে, কিন্তু তারা বর্তমানে বিভাজিত হচ্ছে না। এমন অবস্থাকে G₀ phase বলা হয়।”</p>
+<p>এই অবস্থার কোষগুলোকে বলা হয়:</p>
+<p>Quiescent cells</p>
+<p>তবে এখানে একটি ভুল ধারণা দূর করা দরকার।</p>
+<p>Quiescent মানে physiologically inactive নয়।</p>
+<p>Gray’s Anatomy স্পষ্টভাবে বলেছে, এই কোষগুলো physiologically বেশ active-ও হতে পারে।</p>
+<p>অর্থাৎ:</p>
+<ul><li>কোষটি বর্তমানে Cell Cycle-এর মধ্যে বিভাজিত হচ্ছে না।</li><li>কিন্তু তার physiological activity চলতে পারে।</li></ul>
+<p>Professor বললেন:</p>
+<p>“Growth factors quiescent cells-কে G₀ থেকে বের করে আবার Cell Cycle-এ ফিরিয়ে আনতে পারে।”</p>
+<p>Amrita বলল, “তাহলে G₀ হলো এমন একটা অবস্থা, যেখানে কোষ বিভাজন বন্ধ রেখেছে, কিন্তু প্রয়োজন হলে আবার cycle-এ ফিরতে পারে?”</p>
+<p>Professor বললেন, “ঠিক।”</p>
+</div></section>
+<section class="sec r" id="s12"><h3>৭. Cell Cycle-এর সময়: কোন phase কতক্ষণ?</h3><div class="body">
+<p>এবার Professor একটি গুরুত্বপূর্ণ সময়ের তালিকা দিলেন।</p>
+<p>Gray’s Anatomy অনুযায়ী অধিকাংশ cell type-এ:</p>
+<div class="tw"><table><thead><tr><th>Phase</th><th>সময়</th></tr></thead><tbody><tr><td>S phase</td><td>6–8 hours</td></tr><tr><td>G₂ phase</td><td>2–4 hours</td></tr><tr><td>M phase</td><td>1–2 hours</td></tr></tbody></table></div>
+<p>কিন্তু G₁ phase-এর duration-এ considerable variation থাকে।</p>
+<p>কিছু rapidly dividing cell-এ G₁ phase:</p>
+<ul><li>2 hours-এরও কম হতে পারে।</li></ul>
+<p>আবার একই tissue-এর অন্য কোষে:</p>
+<ul><li>100 hours-এরও বেশি হতে পারে।</li></ul>
+<p>Rudra বলল, “তাহলে Cell Cycle-এর সবচেয়ে variable অংশ হলো G₁?”</p>
+<p>Professor বললেন, “হ্যাঁ। Gray’s Anatomy-তে বিশেষভাবে G₁ phase-এর duration-এর considerable variation উল্লেখ করা হয়েছে।”</p>
+</div></section>
+<section class="sec r" id="s13"><h3>৮. Cell Cycle-এর Molecular Controller: Cyclins ও Cdks</h3><div class="body">
+<p>এবার Professor বোর্ডে দুটি নাম লিখলেন:</p>
+<p>Cyclins</p>
+<p>Cyclin-dependent kinases (Cdks)</p>
+<p>“Cell Cycle-এর progression cytoplasm-এর কিছু protein দ্বারা নিয়ন্ত্রিত হয়। এদের মধ্যে Cyclins এবং Cyclin-dependent kinases অত্যন্ত গুরুত্বপূর্ণ।”</p>
+</div></section>
+<section class="sec r" id="s14"><h3>Cyclins কী?</h3><div class="body">
+<p>Cyclins হলো এমন protein, যাদের নির্দিষ্ট ধরনের পরিবর্তন Cell Cycle-এর বিভিন্ন phase নিয়ন্ত্রণে ভূমিকা রাখে।</p>
+<p>Gray’s Anatomy-তে Cyclins-কে তিনটি প্রধান শ্রেণিতে দেখানো হয়েছে:</p>
+<ul><li>G₁ cyclins — D cyclins</li><li>S-phase cyclins — E ও A cyclins</li><li>Mitotic cyclins — B cyclins</li></ul>
+</div></section>
+<section class="sec r" id="s15"><h3>Cdks কী?</h3><div class="body">
+<p>Cdks হলো protein kinases।</p>
+<p>এগুলো Cyclin subunit-এর সঙ্গে binding করলে activated হয়।</p>
+<p>Gray’s Anatomy-তে উল্লেখিত প্রধান Cdk:</p>
+<ul><li>G₁ Cdk — Cdk4</li><li>S-phase Cdk — Cdk2</li><li>M-phase Cdk — Cdk1</li></ul>
+<p>Professor বললেন:</p>
+<p>“Cell Cycle progression আংশিকভাবে Cdks-এর activity পরিবর্তনের মাধ্যমে পরিচালিত হয়। প্রতিটি Cell Cycle stage-এ এক বা একাধিক Cdk–Cyclin pair সক্রিয় থাকে।”</p>
+<p>Cyclin–Cdk pairs</p>
+<div class="tw"><table><thead><tr><th>Cell Cycle stage</th><th>Cyclin</th><th>Cdk</th></tr></thead><tbody><tr><td>G₁</td><td>Cyclin D</td><td>Cdk4</td></tr><tr><td>G₁-এর শেষাংশ</td><td>Cyclin E</td><td>Cdk2</td></tr><tr><td>S phase</td><td>Cyclin A</td><td>Cdk2</td></tr><tr><td>G₂ completion</td><td>Cyclin A</td><td>Cdk1</td></tr><tr><td>Mitosis initiation</td><td>Cyclin B</td><td>Cdk1</td></tr></tbody></table></div>
+<p>Adi বলল, “Sir, Cyclin আর Cdk কি একসঙ্গে কাজ করে?”</p>
+<p>Professor বললেন, “হ্যাঁ। Cyclin binding-এর মাধ্যমে Cdk activated হয়। এরপর এই complex-এর kinase activity target protein-কে phosphorylate করে।”</p>
+</div></section>
+<section class="sec r" id="s16"><h3>৯. Cell Cycle-এর প্রতিটি transition-এ Protein degradation কেন দরকার?</h3><div class="body">
+<p>Professor এবার একটি নতুন enzyme system-এর নাম লিখলেন:</p>
+<p>26S proteasome</p>
+<p>“Cell Cycle-এর বিভিন্ন stage-এর মধ্যে transition ঘটানোর জন্য নির্দিষ্ট protein-এর degradation প্রয়োজন হয়।”</p>
+<p>Gray’s Anatomy অনুযায়ী:</p>
+<ul><li>Cyclins এবং অন্যান্য গুরুত্বপূর্ণ components-এর highly specific proteolysis ঘটে।</li><li>এই proteolysis-এর মাধ্যমে Cell Cycle-এর stage পরিবর্তিত হয়।</li><li>এই degradation-এর সঙ্গে 26S proteasome যুক্ত।</li></ul>
+<p>Professor উদাহরণ দিলেন:</p>
+<p>G₂ → Mitosis</p>
+<p>এই transition ঘটে Cdk1-এর activation-এর মাধ্যমে, যার partner হলো A-type ও B-type cyclins।</p>
+<p>Active Cdk1–Cyclin A এবং Cdk1–Cyclin B complex-এর phosphorylation-এর ফলে Mitosis-এ প্রবেশের সময় কোষের characteristic structural changes ঘটে।</p>
+<p>অন্যদিকে, কোষ Mitosis থেকে বেরিয়ে আসার সময়:</p>
+<p>APC/C (Anaphase Promoting Complex/Cyclosome) কাজ করে।</p>
+<p>এটি একটি E3 ubiquitin ligase।</p>
+<p>এর কাজ:</p>
+<ul><li>Cyclins-কে destruction-এর জন্য mark করা।</li><li>Mitotic Cyclin B-এর degradation ঘটানো।</li><li>Cohesins-এর destruction ঘটানো।</li></ul>
+<p>Cohesins হলো এমন protein complex, যা Sister chromatids-কে একসঙ্গে ধরে রাখে।</p>
+<p>Professor বললেন:</p>
+<p>“Cohesins ধ্বংস হওয়ার ফলে Sister chromatids আলাদা হতে পারে।”</p>
+<p>Adi বলল, “মানে Mitosis থেকে বের হওয়ার জন্য Cyclin B degradation এবং Cohesin destruction দুটোই গুরুত্বপূর্ণ?”</p>
+<p>Professor উত্তর দিলেন, “ঠিক।”</p>
+</div></section>
+<section class="sec r" id="s17"><h3>১০. Checkpoint 1: DNA synthesis শুরু করার অনুমতি</h3><div class="body">
+<p>Professor বোর্ডে লিখলেন:</p>
+<p>Checkpoint 1</p>
+<p>“Cell Cycle-এর গুরুত্বপূর্ণ checkpoint-গুলোর মধ্যে প্রথমটি G₁ phase-এর সঙ্গে সম্পর্কিত।”</p>
+<p>এখানে G₁ cyclins তাদের corresponding Cdks-এর সঙ্গে bind করে কোষকে DNA synthesis-এর প্রস্তুতি নিতে signal দেয়।</p>
+<p>এরপর আসে:</p>
+<p>S-phase promoting factor (SPF)</p>
+<p>Gray’s Anatomy অনুযায়ী:</p>
+<ul><li>SPF = Cyclin A bound to Cdk2।</li><li>এটি nucleus-এ প্রবেশ করে।</li><li>DNA synthesis stimulate করে।</li></ul>
+<p>Amrita বলল, “তাহলে Checkpoint 1-এর পর SPF nucleus-এ গিয়ে DNA synthesis শুরু করতে সাহায্য করে?”</p>
+<p>Professor বললেন, “হ্যাঁ। বইয়ের বর্ণনা অনুযায়ী এটাই।”</p>
+</div></section>
+<section class="sec r" id="s18"><h3>১১. Checkpoint 2: Mitosis শুরু করার সংকেত</h3><div class="body">
+<p>Professor এবার লিখলেন:</p>
+<p>Checkpoint 2</p>
+<p>“দ্বিতীয় checkpoint-এর সঙ্গে M-phase promoting factor সম্পর্কিত।”</p>
+<p>Gray’s Anatomy অনুযায়ী:</p>
+<p>M-phase promoting factor (MPF)</p>
+<p>= Mitotic Cyclin B bound to M-phase Cdk1।</p>
+<p>এটি Mitosis শুরু করার জন্য গুরুত্বপূর্ণ।</p>
+<p>এর প্রভাবে:</p>
+<ul><li>Mitotic spindle assembly শুরু হয়।</li><li>Nuclear envelope breakdown ঘটে।</li><li>Gene transcription arrest হয়।</li><li>Chromosomes condensation শুরু হয়।</li></ul>
+<p>Professor বললেন, “এই পরিবর্তনগুলো কোষকে Mitosis-এ প্রবেশের জন্য প্রস্তুত করে।”</p>
+<p>Adi বলল, “মানে Checkpoint 1 DNA synthesis-এর দিকে নিয়ে যায়, আর Checkpoint 2 Mitosis-এর দিকে?”</p>
+<p>Professor বললেন, “একদম। এই দুইটি checkpoint-এর কাজ আলাদা করে বুঝবে।”</p>
+</div></section>
+<section class="sec r" id="s19"><h3>Mitosis-এর মধ্যে APC/C-এর কাজ</h3><div class="body">
+<p>Professor আরও ব্যাখ্যা করলেন:</p>
+<ul><li>Metaphase-এ MPF, APC/C activate করে।</li><li>APC/C Cohesins breakdown ঘটায়।</li><li>Cohesins Sister chromatids-কে একসঙ্গে ধরে রাখে।</li><li>Anaphase-এ separated chromatids spindle-এর opposite poles-এ চলে যায়।</li><li>পরবর্তীতে B cyclins ধ্বংস হয় এবং 26S proteasome-এর মাধ্যমে degradation ঘটে।</li><li>নতুন G₁ phase শুরু হলে Cyclin D–Cdk4 complex আবার তৈরি হয়।</li></ul>
+</div></section>
+<section class="sec r" id="s20"><h3>১২. Quality Control Checkpoint: DNA ক্ষতিগ্রস্ত হলে কী হয়?</h3><div class="body">
+<p>ক্লাসের সবচেয়ে গুরুত্বপূর্ণ আলোচনাটি এবার শুরু হলো।</p>
+<p>Professor বললেন:</p>
+<p>“Checkpoint শুধু কোষকে এগিয়ে নেওয়ার জন্য নয়। কোষের DNA ক্ষতিগ্রস্ত হলে cell cycle progression থামিয়ে দেওয়ার ব্যবস্থাও রয়েছে।”</p>
+<p>Gray’s Anatomy-তে বলা হয়েছে:</p>
+<p>Quality control checkpoint 2 Cell Cycle progression delay করে, যখন DNA ক্ষতিগ্রস্ত হয়।</p>
+<p>DNA damage হতে পারে:</p>
+<ul><li>Radiation</li><li>Chemical mutagens</li></ul>
+<p>এবার Professor লিখলেন:</p>
+</div></section>
+<section class="sec r" id="s21"><h3>p53</h3><div class="body">
+<p>“p53 হলো Cell Division Cycle-এর একটি major negative control element।”</p>
+<p>যেসব কোষে checkpoint defect থাকে, বিশেষ করে p53 protein হারিয়ে গেলে, সেগুলো malignancy-র সঙ্গে সাধারণত সম্পর্কিত।</p>
+</div></section>
+<section class="sec r" id="s22"><h3>p53 কীভাবে কাজ করে?</h3><div class="body">
+<p>Professor বোর্ডে ধাপে ধাপে লিখলেন:</p>
+<ul><li>p53 protein DNA-তে bind করে।</li><li>এটি অন্য একটি gene-কে stimulate করে।</li><li>সেই gene থেকে তৈরি হয় p21 protein।</li><li>p21, Cdk2-এর সঙ্গে interact করে।</li><li>এর ফলে S-phase promoting activity বাধাপ্রাপ্ত হয়।</li></ul>
+<p>সহজভাবে:</p>
+<p class="fx">p53 → p21 → Cdk2 inhibition</p>
+<p>এর ফলে DNA synthesis-এর দিকে অগ্রসর হওয়া বাধাগ্রস্ত হয়।</p>
+<p>Professor বললেন:</p>
+<p>“এভাবে DNA damage থাকলে কোষকে S phase-এ প্রবেশ করা থেকে বিরত রাখা যায়।”</p>
+</div></section>
+<section class="sec r" id="s23"><h3>p53 mutation হলে কী হয়?</h3><div class="body">
+<p>যদি p53 mutant হয় এবং DNA-তে bind করতে না পারে, তাহলে p21 production stimulate করতে পারে না।</p>
+<p>ফলে:</p>
+<ul><li>p21 উৎপাদন বাধাগ্রস্ত হয়।</li><li>Cdk2-এর ওপর প্রয়োজনীয় inhibition থাকে না।</li><li>DNA synthesis বন্ধ করার ব্যবস্থা ব্যর্থ হয়।</li><li>কোষ oncogenic properties অর্জন করতে পারে।</li></ul>
+<p>Gray’s Anatomy p53-কে একটি Tumour suppressor gene-এর উদাহরণ হিসেবে উল্লেখ করেছে।</p>
+</div></section>
+<section class="sec r" id="s24"><h3>Li–Fraumeni syndrome</h3><div class="body">
+<p>Professor এবার একটি clinical example দিলেন।</p>
+<p>Li–Fraumeni syndrome</p>
+<ul><li>Defective p53 gene-এর সঙ্গে সম্পর্কিত।</li><li>আক্রান্ত ব্যক্তিদের মধ্যে cancer-এর frequency বেশি।</li></ul>
+<p>Professor বললেন, “তোমরা বুঝতে পারছ, Cell Cycle regulation শুধু normal growth-এর জন্য নয়; DNA damage-এর বিরুদ্ধে protective control হিসেবেও কাজ করে।”</p>
+<p>Amrita বলল, “Sir, p53 না থাকলে কোষের damaged DNA নিয়েও division চলতে পারে?”</p>
+<p>Professor বললেন, “Gray’s Anatomy-র এই অংশের মূল বক্তব্য সেটিই—mutant p53 p21 উৎপাদন উদ্দীপিত করতে না পারলে DNA synthesis বন্ধ করার নিয়ন্ত্রণ ব্যর্থ হয় এবং কোষ oncogenic properties অর্জন করতে পারে।”</p>
+</div></section>
+<section class="sec r" id="s25"><h3>১৩. Adi ও Amrita-র Library Discussion</h3><div class="body">
+<p>বিকেলে তারা Anatomy library-তে বসেছে। Rudra, Sayan ও Nandini-ও আছে।</p>
+<p>Adi একটা কাগজে Cell Cycle-এর পুরো sequence লিখছে।</p>
+<p>Amrita বলল, “তুই আগে আমাকে Cyclin–Cdk pairs বল।”</p>
+<p>Adi বলল:</p>
+<p>“G₁-এ Cyclin D–Cdk4, G₁-এর শেষদিকে Cyclin E–Cdk2, S phase-এ Cyclin A–Cdk2, G₂ completion-এ Cyclin A–Cdk1 এবং Mitosis initiation-এ Cyclin B–Cdk1।”</p>
+<p>Amrita বলল, “ভালো। এবার p53 pathway।”</p>
+<p>Adi লিখল:</p>
+<p class="fx">DNA damage → p53 → p21p21 → Cdk2 inhibition</p>
+<p>“এতে S-phase promoting activity বাধাপ্রাপ্ত হয়।”</p>
+<p>Sayan বলল, “তাহলে p53 হলো brake system!”</p>
+<p>Rudra বলল, “আর Cyclin–Cdk হলো accelerator!”</p>
+<p>Nandini হেসে বলল, “তোমরা দুজনেই গাড়ি চালানোর উদাহরণ দিয়ে Anatomy পড়বে নাকি?”</p>
+<p>Amrita বলল, “উদাহরণটা খারাপ না। তবে molecular mechanism ভুলে গেলে চলবে না।”</p>
+<p>Adi হেসে বলল, “ঠিক আছে, তুই examiner হলে আমি ফেল করব না।”</p>
+<p>Amrita একটু গম্ভীর হয়ে বলল, “আমি চাই তুই সত্যিই সব বুঝিস। শুধু পরীক্ষায় পাস করার জন্য না।”</p>
+<p>Adi কিছুক্ষণ তার দিকে তাকিয়ে রইল।</p>
+<p>“আমিও চাই, তুইও সব বুঝিস। আমরা দুজনেই ভালো ডাক্তার হব।”</p>
+</div></section>
+<section class="sec r" id="s26"><h3>আজকের Learning Record</h3><div class="body">
+</div></section>
+<section class="sec r" id="s27"><h3>১. Cell division-এর মূল ধারণা</h3><div class="body">
+<ul><li>Prenatal development-এ repeated cell division শরীরের growth ও complexity বাড়ায়।</li><li>Neurones-এর মতো কিছু কোষ mature হওয়ার পর division-এর ক্ষমতা হারায়।</li><li>Haemopoietic tissue-এর Stem cells দীর্ঘদিন proliferation capacity বজায় রাখতে পারে।</li><li>Transit amplifying cells দ্রুত mitotic division করে, পরে differentiate ও die করে।</li><li>Stem cells self-renew করে।</li><li>Intestinal crypts ও wound healing-এ cell proliferation-এর উদাহরণ রয়েছে।</li><li>Cell division-এর demand-এর সঙ্গে coupling নষ্ট হলে tissue undergrowth অথবা neoplasm হতে পারে।</li></ul>
+</div></section>
+<section class="sec r" id="s28"><h3>২. Cell Cycle</h3><div class="body">
+<div class="tw"><table><thead><tr><th>Phase</th><th>প্রধান ঘটনা</th></tr></thead><tbody><tr><td>G₁</td><td>Growth factor response, molecular machinery তৈরি, পরবর্তী cycle-এর সিদ্ধান্ত</td></tr><tr><td>S</td><td>DNA synthesis; Centrosome duplication</td></tr><tr><td>G₂</td><td>Division-এর প্রস্তুতি</td></tr><tr><td>M</td><td>Mitosis</td></tr></tbody></table></div>
+<ul><li>Interphase = G₁ + S + G₂।</li><li>M = Mitotic phase।</li><li>Cell Cycle সাধারণত ন্যূনতম 12 hours।</li><li>S = 6–8 hours; G₂ = 2–4 hours; M = 1–2 hours।</li><li>G₁-এর duration অনেক বেশি পরিবর্তনশীল।</li><li>G₀ হলো quiescent state; physiologically active-ও হতে পারে।</li><li>Growth factors G₀ থেকে Cell Cycle-এ ফিরিয়ে আনতে পারে।</li></ul>
+</div></section>
+<section class="sec r" id="s29"><h3>৩. Cyclins ও Cdks</h3><div class="body">
+<div class="tw"><table><thead><tr><th>Cyclin</th><th>Cdk</th></tr></thead><tbody><tr><td>Cyclin D</td><td>Cdk4</td></tr><tr><td>Cyclin E</td><td>Cdk2</td></tr><tr><td>Cyclin A</td><td>Cdk2</td></tr><tr><td>Cyclin A</td><td>Cdk1</td></tr><tr><td>Cyclin B</td><td>Cdk1</td></tr></tbody></table></div>
+</div></section>
+<section class="sec r" id="s30"><h3>৪. Checkpoints ও regulation</h3><div class="body">
+<ul><li>Checkpoint 1: G₁ cyclins ও corresponding Cdks; SPF = Cyclin A–Cdk2।</li><li>Checkpoint 2: MPF = Cyclin B–Cdk1।</li><li>MPF Mitosis শুরু করার জন্য mitotic spindle assembly, nuclear envelope breakdown, gene transcription arrest ও chromosome condensation trigger করে।</li><li>Metaphase-এ MPF APC/C activate করে।</li><li>APC/C Cohesins ও mitotic Cyclin B-এর degradation-এ ভূমিকা রাখে।</li><li>26S proteasome ubiquitin-marked proteins degrade করে।</li><li>DNA damage হলে quality control checkpoint progression delay করে।</li><li>p53 → p21 → Cdk2 inhibition।</li><li>p53 হলো Tumour suppressor gene-এর উদাহরণ।</li><li>Defective p53-এর সঙ্গে Li–Fraumeni syndrome-এর সম্পর্ক রয়েছে।</li></ul>
+</div></section>
+<section class="sec r" id="s31"><h3>Source Verification</h3><div class="body">
+<ul><li>Source topic: Cell Division and the Cell Cycle</li><li>Page coverage: Page 56–58 (Page 58-এর Mitosis heading-এর আগ পর্যন্ত)</li></ul>
+</div></section>
+</main>
+<nav class="epnav" aria-label="Episode navigation"><a href="episode-017.html">← Episode 17</a><a href="index.html">সব পর্ব</a><a href="episode-019a.html">Episode 19 · Version A →</a></nav>
+<button id="tb" type="button">সূচি</button>
+<div id="toc"><div><button type="button" id="tc">বন্ধ করুন</button><a href="#s1">Episode 18: Cell Cycle — জীবনের ঘড়ি, বিভাজনের সংকেত ও অদৃশ্য Checkpoint</a><a href="#s2">১. নতুন অধ্যায়ের শুরু</a><a href="#s3">২. কেন কোষ বিভাজিত হয়?</a><a href="#s4">Stem cell বনাম Transit amplifying cell</a><a href="#s5">৩. Tissue অনুযায়ী Cell Division-এর হার</a><a href="#s6">A. Intestinal epithelium</a><a href="#s7">B. Wound healing in skin</a><a href="#s8">Cell division-এর demand ও tissue growth</a><a href="#s9">৪. Cell Cycle আসলে কী?</a><a href="#s10">৫. G₁ phase: কোষের সিদ্ধান্ত নেওয়ার সময়</a><a href="#s11">৬. G₀ phase: কোষ বিভাজন না করেও সক্রিয় থাকতে পারে</a><a href="#s12">৭. Cell Cycle-এর সময়: কোন phase কতক্ষণ?</a><a href="#s13">৮. Cell Cycle-এর Molecular Controller: Cyclins ও Cdks</a><a href="#s14">Cyclins কী?</a><a href="#s15">Cdks কী?</a><a href="#s16">৯. Cell Cycle-এর প্রতিটি transition-এ Protein degradation কেন দরকার?</a><a href="#s17">১০. Checkpoint 1: DNA synthesis শুরু করার অনুমতি</a><a href="#s18">১১. Checkpoint 2: Mitosis শুরু করার সংকেত</a><a href="#s19">Mitosis-এর মধ্যে APC/C-এর কাজ</a><a href="#s20">১২. Quality Control Checkpoint: DNA ক্ষতিগ্রস্ত হলে কী হয়?</a><a href="#s21">p53</a><a href="#s22">p53 কীভাবে কাজ করে?</a><a href="#s23">p53 mutation হলে কী হয়?</a><a href="#s24">Li–Fraumeni syndrome</a><a href="#s25">১৩. Adi ও Amrita-র Library Discussion</a><a href="#s26">আজকের Learning Record</a><a href="#s27">১. Cell division-এর মূল ধারণা</a><a href="#s28">২. Cell Cycle</a><a href="#s29">৩. Cyclins ও Cdks</a><a href="#s30">৪. Checkpoints ও regulation</a><a href="#s31">Source Verification</a></div></div>
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}})},{threshold:.04,rootMargin:"0px 0px -4% 0px"});
+    $$(".r").forEach(function(el){io.observe(el)});
+  }else{$$(".r").forEach(function(el){el.classList.add("on")});}
+  /* progress */
+  var bar=$("#bar");
+  function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?Math.min(100,h.scrollTop/m*100):0)+"%";}
+  window.addEventListener("scroll",prog,{passive:true});prog();
+  /* pointer glow */
+  var g=$("#glow");
+  window.addEventListener("pointermove",function(e){g.style.setProperty("--mx",e.clientX+"px");g.style.setProperty("--my",e.clientY+"px");},{passive:true});
+  /* 3D card */
+  var cd=$("#card"),ry=0,rx=0,drag=false,lx=0,ly=0,auto=true,t0=0;
+  function paintCard(){cd.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";}
+  cd.addEventListener("pointerdown",function(e){drag=true;auto=false;lx=e.clientX;ly=e.clientY;try{cd.setPointerCapture(e.pointerId)}catch(_){}});
+  cd.addEventListener("pointermove",function(e){if(!drag)return;ry+=(e.clientX-lx)*.6;rx=Math.max(-40,Math.min(40,rx-(e.clientY-ly)*.4));lx=e.clientX;ly=e.clientY;paintCard();});
+  ["pointerup","pointercancel"].forEach(function(n){cd.addEventListener(n,function(){drag=false;setTimeout(function(){auto=true},2000)})});
+  (function loop(t){if(auto&&!drag&&!rm){ry=Math.sin(t/1800)*28;rx=Math.sin(t/2600)*8;paintCard();}requestAnimationFrame(loop)})(0);
+  /* dust motes */
+  var cv=$("#dust"),cx=cv.getContext&&cv.getContext("2d"),P=[];
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  if(cx&&!rm){
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.25,vy:-Math.random()*.3-.05,a:Math.random()*.4+.1});
+    (function dust(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=cv.height+5;p.x=Math.random()*cv.width}if(p.x<-5)p.x=cv.width+5;if(p.x>cv.width+5)p.x=-5;cx.beginPath();cx.fillStyle="rgba(190,225,225,"+p.a+")";cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();});requestAnimationFrame(dust)})();
+  }
+  /* section tilt */
+  $$(".body").forEach(function(c){
+    c.addEventListener("pointermove",function(e){if(e.pointerType==="touch")return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform="rotateY("+(px*2.5)+"deg) rotateX("+(-py*2)+"deg)";});
+    c.addEventListener("pointerleave",function(){c.style.transform="";});
+  });
+  /* toc */
+  var toc=$("#toc");
+  $("#tb").addEventListener("click",function(){toc.classList.add("open")});
+  $("#tc").addEventListener("click",function(){toc.classList.remove("open")});
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A")toc.classList.remove("open")});
+  /* quiz: selection + live counter (no answer key in source, so no grading) */
+  function upd(id){
+    var c=$('.cnt[data-qz="'+id+'"]');if(!c)return;
+    var n=0;$$('.q[data-qz="'+id+'"]').forEach(function(q){if(q.querySelector(".opt.sel"))n++});
+    c.textContent=n+"/"+c.getAttribute("data-n")+(c.getAttribute("data-a")==="1"?" answered":"");
+  }
+  $$(".q").forEach(function(q){
+    q.addEventListener("click",function(e){
+      var b=e.target.closest(".opt");if(!b)return;
+      var was=b.classList.contains("sel");
+      Array.prototype.forEach.call(q.querySelectorAll(".opt"),function(o){o.classList.remove("sel")});
+      if(!was)b.classList.add("sel");
+      upd(q.getAttribute("data-qz"));
+    });
+  });
+})();
+</script>
+</body>
+</html>
